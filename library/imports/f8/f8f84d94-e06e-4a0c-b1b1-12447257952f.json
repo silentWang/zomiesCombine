@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_boost_fastgen_pack1",
+    "texture": "1478d71c-5d68-47f9-a2ad-cb920a0e06e2",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      77,
+      54
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      77,
+      54
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

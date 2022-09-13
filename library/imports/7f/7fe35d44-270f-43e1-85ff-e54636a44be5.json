@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_angry",
+    "texture": "95473b6e-55a0-48cb-bf22-67e5e7ff950d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      46,
+      62
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      46,
+      62
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

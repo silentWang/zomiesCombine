@@ -1,0 +1,76 @@
+
+flower40.png
+size: 164,352
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 137
+  size: 85, 166
+  orig: 85, 166
+  offset: 0, 0
+  index: -1
+bot1
+  rotate: false
+  xy: 89, 258
+  size: 71, 45
+  orig: 71, 45
+  offset: 0, 0
+  index: -1
+bot2
+  rotate: false
+  xy: 2, 305
+  size: 158, 45
+  orig: 158, 45
+  offset: 0, 0
+  index: -1
+leaf1
+  rotate: false
+  xy: 118, 17
+  size: 39, 46
+  orig: 39, 46
+  offset: 0, 0
+  index: -1
+leaf2
+  rotate: false
+  xy: 2, 37
+  size: 57, 31
+  orig: 57, 31
+  offset: 0, 0
+  index: -1
+leaf3
+  rotate: false
+  xy: 87, 65
+  size: 59, 64
+  orig: 59, 64
+  offset: 0, 0
+  index: -1
+leaf4
+  rotate: false
+  xy: 61, 2
+  size: 55, 61
+  orig: 55, 61
+  offset: 0, 0
+  index: -1
+leaf5
+  rotate: false
+  xy: 89, 193
+  size: 68, 63
+  orig: 68, 63
+  offset: 0, 0
+  index: -1
+leaf6
+  rotate: false
+  xy: 2, 70
+  size: 83, 65
+  orig: 83, 65
+  offset: 0, 0
+  index: -1
+leaf7
+  rotate: false
+  xy: 89, 131
+  size: 68, 60
+  orig: 68, 60
+  offset: 0, 0
+  index: -1

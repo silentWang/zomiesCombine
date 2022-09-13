@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bt_angry",
+    "texture": "363bc333-0eac-42b8-a312-81a380d2a85e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      94,
+      89
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      94,
+      90
+    ],
+    "capInsets": [
+      46,
+      0,
+      42,
+      0
+    ]
+  }
+}

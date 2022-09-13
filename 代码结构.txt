@@ -1,0 +1,80 @@
+﻿代码结构
+resources
+	fonts		游戏中使用的fnt
+	loading		加载场景资源
+	prefab		游戏中的预制体 一般情况一个预制体关联一个同名脚本
+	scene		场景(.fire)
+	sounds		音乐文件
+	spine		骨骼动画文件
+	texture		图片资源
+script
+	event		事件
+	framwork	常用功能简单封装
+	game		游戏主要逻辑
+		DB.ts 				游戏配置文件
+		GameConst.ts 		游戏中定义的常量全局变量
+		HallScene.ts		游戏主要逻辑
+		SlotItem.ts			土地块
+		SoldierItem.ts		植物
+		UserModel.ts		游戏数据模型
+	k-cocos		一个对 CocosCreator API 的 JS 轻量扩展库。(A lightweight JavaScript extension library for cocoscreater by kuokuo.) 仓库地址： https://github.com/KuoKuo666/k-cocos
+	manager 	配置加载/对象池管理/广告管理等简单封装
+	utils		游戏中常用工具函数
+
+
+项目流程
+	loading场景 Loading.ts
+		微信:加载子包->读取本地数据(Data.loadData)->切换hall场景
+		h5：读取本地数据(Data.loadData)->切换hall场景
+
+	hall场景 HallScene.ts
+		node_path(场景中节点),敌人移动路线
+		start	更据本地数据进行界面初始化
+				注册植物拖动事件TOUCH_START	TOUCH_MOVE	TOUCH_END
+		createwave	更据关卡创建敌人
+		removeenemy	移除敌人(死亡/失败)
+		tryBuyPlant	购买植物逻辑
+		mergetip	合并植物提升
+		tryAutocom	主动合成
+
+		onBtnClicked	界面上按钮点击回调该方法通过按钮名字区分点中那个按钮
+			btn_setting		设置界面SettingUI
+			btn_sign 		签到SignUI
+			btn_buy 		购买植物
+			bt_fast_gen		购买buff DROP_PLANT
+			btn_double_coin		购买buff DOUBLE_INCOME
+			bt_auto_merge	购买buff AUTO_COM
+			btn_shop		植物商店ShopLayer		因为商店列表比较长，每次打开卡，这里特殊处理，打开后就不销毁
+
+	SoldierItem 植物
+		setItemData		设置植物数据
+		getTarget		查询攻击目标
+		update		更据配置发射炸弹Bullet
+
+	Bullet 子弹
+		setInfo	设置子弹数据
+		update	移动到敌人并对敌人造成伤害Enemy.hit
+
+	Enemy 敌人
+		setID	设置敌人数据
+		update	更据node_path位置移动
+		hit		被子弹击中
+
+
+BaseUI.ts
+	为了方便快速开发，界面调整尽量不影响代码。界面相关的预制体、场景联脚本都继承BaseUI。节点名命名尽可能不要重复。
+	
+	节点查询:
+		BaseUI提供各种 GetXXX()查询控件，方便快速访问控件(已经做了缓存,不用太担心效率问题)
+					  SetXXX()修改控件属性
+	
+	按钮点击:
+		BaseUI.onLoad会给cc.Button注册点击事件，点击后回调onBtnClicked。  
+	
+	事件:
+		rigester
+		dispatch
+		onDestroy 界面摧毁时会反注册改界面注册的事件。在重写onDestroy记得调用BaseUI.onDestroy
+
+发布
+	项目使用Cocos Creator 2.4.4发布。

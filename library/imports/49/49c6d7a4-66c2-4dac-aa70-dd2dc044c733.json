@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "zhuoshao",
+    "texture": "3ca4ce45-6da2-421d-b875-2ec0fc071091",
+    "atlas": "",
+    "rect": [
+      2,
+      2,
+      90,
+      41
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      94,
+      45
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

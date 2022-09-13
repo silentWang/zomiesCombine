@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "thanhmau",
+    "texture": "701e6505-85ff-4c74-847e-93af8793bdb0",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      14,
+      20
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      14,
+      20
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

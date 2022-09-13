@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_remove_ads",
+    "texture": "4ff0067f-980c-4ee1-8dc2-946d624aa448",
+    "atlas": "",
+    "rect": [
+      3,
+      0,
+      415,
+      144
+    ],
+    "offset": [
+      1.5,
+      0
+    ],
+    "originalSize": [
+      418,
+      144
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

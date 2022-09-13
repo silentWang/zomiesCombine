@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "fairy",
+    "texture": "320a5c9d-5c77-4678-aa70-0e8423dab0d5",
+    "atlas": "",
+    "rect": [
+      16,
+      2,
+      701,
+      487
+    ],
+    "offset": [
+      6.5,
+      0.5
+    ],
+    "originalSize": [
+      720,
+      492
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_boost_auto_merge",
+    "texture": "c9ea2a9d-4486-4cd8-b45d-22bcfe9c84e5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      112,
+      78
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      112,
+      78
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

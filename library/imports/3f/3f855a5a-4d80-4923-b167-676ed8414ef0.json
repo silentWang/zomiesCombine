@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "tut_hand",
+    "texture": "b077577a-6c8c-435f-a950-bb064ad3bce1",
+    "atlas": "",
+    "rect": [
+      0,
+      2,
+      142,
+      259
+    ],
+    "offset": [
+      -1,
+      0.5
+    ],
+    "originalSize": [
+      144,
+      264
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

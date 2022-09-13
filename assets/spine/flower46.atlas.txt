@@ -1,0 +1,125 @@
+
+flower46.png
+size: 588,140
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL
+  rotate: false
+  xy: 311, 4
+  size: 42, 51
+  orig: 42, 51
+  offset: 0, 0
+  index: -1
+armR_1
+  rotate: false
+  xy: 511, 7
+  size: 40, 57
+  orig: 40, 57
+  offset: 0, 0
+  index: -1
+armR_2
+  rotate: false
+  xy: 458, 26
+  size: 51, 38
+  orig: 51, 38
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 272, 57
+  size: 71, 78
+  orig: 71, 78
+  offset: 0, 0
+  index: -1
+body1
+  rotate: false
+  xy: 539, 69
+  size: 44, 66
+  orig: 44, 66
+  offset: 0, 0
+  index: -1
+bot1
+  rotate: false
+  xy: 355, 24
+  size: 53, 52
+  orig: 53, 52
+  offset: 0, 0
+  index: -1
+bot2
+  rotate: false
+  xy: 136, 84
+  size: 134, 51
+  orig: 134, 51
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 480, 66
+  size: 57, 69
+  orig: 57, 69
+  offset: 0, 0
+  index: -1
+face1
+  rotate: false
+  xy: 553, 6
+  size: 30, 21
+  orig: 30, 21
+  offset: 0, 0
+  index: -1
+face2
+  rotate: false
+  xy: 355, 3
+  size: 31, 19
+  orig: 31, 19
+  offset: 0, 0
+  index: -1
+fx0
+  rotate: false
+  xy: 136, 10
+  size: 110, 72
+  orig: 110, 72
+  offset: 0, 0
+  index: -1
+hair1
+  rotate: false
+  xy: 248, 4
+  size: 61, 51
+  orig: 61, 51
+  offset: 0, 0
+  index: -1
+hair2
+  rotate: false
+  xy: 345, 78
+  size: 71, 57
+  orig: 71, 57
+  offset: 0, 0
+  index: -1
+hair3
+  rotate: false
+  xy: 553, 29
+  size: 32, 38
+  orig: 32, 38
+  offset: 0, 0
+  index: -1
+hair4
+  rotate: false
+  xy: 410, 23
+  size: 46, 49
+  orig: 46, 49
+  offset: 0, 0
+  index: -1
+hair5
+  rotate: false
+  xy: 2, 2
+  size: 132, 133
+  orig: 132, 133
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 418, 74
+  size: 60, 61
+  orig: 60, 61
+  offset: 0, 0
+  index: -1

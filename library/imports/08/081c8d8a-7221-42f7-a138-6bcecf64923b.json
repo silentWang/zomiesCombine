@@ -1,0 +1,7 @@
+{
+  "__type__": "cc.TextAsset",
+  "_name": "fx_slot.atlas",
+  "_objFlags": 0,
+  "_native": "",
+  "text": "\nfx_slot.png\nsize: 252,596\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\ne0\n  rotate: false\n  xy: 2, 340\n  size: 248, 251\n  orig: 248, 251\n  offset: 0, 0\n  index: -1\nlock\n  rotate: false\n  xy: 2, 171\n  size: 248, 167\n  orig: 248, 167\n  offset: 0, 0\n  index: -1\nopen\n  rotate: false\n  xy: 2, 2\n  size: 248, 167\n  orig: 248, 167\n  offset: 0, 0\n  index: -1\n"
+}

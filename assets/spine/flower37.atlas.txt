@@ -1,0 +1,97 @@
+
+flower37.png
+size: 124,268
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 55, 25
+  size: 13, 62
+  orig: 13, 62
+  offset: 0, 0
+  index: -1
+body1
+  rotate: false
+  xy: 77, 143
+  size: 43, 42
+  orig: 43, 42
+  offset: 0, 0
+  index: -1
+body2
+  rotate: false
+  xy: 64, 89
+  size: 52, 52
+  orig: 52, 52
+  offset: 0, 0
+  index: -1
+body3
+  rotate: false
+  xy: 74, 10
+  size: 31, 29
+  orig: 31, 29
+  offset: 0, 0
+  index: -1
+bot
+  rotate: false
+  xy: 2, 236
+  size: 116, 30
+  orig: 116, 30
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 56, 10
+  size: 16, 13
+  orig: 16, 13
+  offset: 0, 0
+  index: -1
+face1
+  rotate: false
+  xy: 30, 3
+  size: 24, 20
+  orig: 24, 20
+  offset: 0, 0
+  index: -1
+face3
+  rotate: false
+  xy: 2, 2
+  size: 26, 21
+  orig: 26, 21
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 74, 41
+  size: 42, 46
+  orig: 42, 46
+  offset: 0, 0
+  index: -1
+wingLlow
+  rotate: false
+  xy: 77, 187
+  size: 44, 47
+  orig: 44, 47
+  offset: 0, 0
+  index: -1
+wingLup
+  rotate: false
+  xy: 2, 25
+  size: 51, 69
+  orig: 51, 69
+  offset: 0, 0
+  index: -1
+wingRlow
+  rotate: false
+  xy: 2, 96
+  size: 60, 52
+  orig: 60, 52
+  offset: 0, 0
+  index: -1
+wingRup
+  rotate: false
+  xy: 2, 150
+  size: 73, 84
+  orig: 73, 84
+  offset: 0, 0
+  index: -1

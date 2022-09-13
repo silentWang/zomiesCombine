@@ -1,0 +1,62 @@
+
+flower22.png
+size: 300,188
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL
+  rotate: false
+  xy: 211, 2
+  size: 77, 37
+  orig: 77, 37
+  offset: 0, 0
+  index: -1
+armR_1
+  rotate: false
+  xy: 208, 124
+  size: 68, 61
+  orig: 68, 61
+  offset: 0, 0
+  index: -1
+armR_2
+  rotate: false
+  xy: 103, 29
+  size: 106, 39
+  orig: 106, 39
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 3
+  size: 99, 119
+  orig: 99, 119
+  offset: 0, 0
+  index: -1
+bot
+  rotate: false
+  xy: 103, 70
+  size: 132, 52
+  orig: 132, 52
+  offset: 0, 0
+  index: -1
+face1
+  rotate: false
+  xy: 237, 41
+  size: 58, 34
+  orig: 58, 34
+  offset: 0, 0
+  index: -1
+face3
+  rotate: false
+  xy: 237, 77
+  size: 56, 45
+  orig: 56, 45
+  offset: 0, 0
+  index: -1
+fx0
+  rotate: false
+  xy: 2, 124
+  size: 204, 61
+  orig: 204, 61
+  offset: 0, 0
+  index: -1

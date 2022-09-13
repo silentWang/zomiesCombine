@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "glow_remove_ads",
+    "texture": "c0b88b41-a614-46f0-bcba-4d144e3edee3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      228,
+      90
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      228,
+      90
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

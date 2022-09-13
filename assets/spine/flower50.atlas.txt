@@ -1,0 +1,97 @@
+
+flower50.png
+size: 212,272
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL
+  rotate: false
+  xy: 76, 122
+  size: 61, 33
+  orig: 61, 33
+  offset: 0, 0
+  index: -1
+armR
+  rotate: false
+  xy: 151, 220
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 122
+  size: 72, 148
+  orig: 72, 148
+  offset: 0, 0
+  index: -1
+bot
+  rotate: false
+  xy: 2, 2
+  size: 115, 41
+  orig: 115, 41
+  offset: 0, 0
+  index: -1
+leaf1
+  rotate: false
+  xy: 76, 157
+  size: 57, 60
+  orig: 57, 60
+  offset: 0, 0
+  index: -1
+leaf2
+  rotate: false
+  xy: 135, 169
+  size: 66, 48
+  orig: 66, 48
+  offset: 0, 0
+  index: -1
+leaf3
+  rotate: false
+  xy: 86, 84
+  size: 84, 36
+  orig: 84, 36
+  offset: 0, 0
+  index: -1
+leaf4
+  rotate: false
+  xy: 119, 2
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+leaf5
+  rotate: false
+  xy: 2, 45
+  size: 82, 75
+  orig: 82, 75
+  offset: 0, 0
+  index: -1
+leaf6
+  rotate: false
+  xy: 76, 219
+  size: 73, 51
+  orig: 73, 51
+  offset: 0, 0
+  index: -1
+leaf7
+  rotate: false
+  xy: 145, 47
+  size: 52, 35
+  orig: 52, 35
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 86, 47
+  size: 57, 35
+  orig: 57, 35
+  offset: 0, 0
+  index: -1
+sunglasses
+  rotate: false
+  xy: 139, 131
+  size: 71, 36
+  orig: 71, 36
+  offset: 0, 0
+  index: -1

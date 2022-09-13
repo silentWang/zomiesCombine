@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "fx_victory",
+    "texture": "1cfb2c11-e8f9-41ce-a6dd-56b8079302f3",
+    "atlas": "",
+    "rect": [
+      2,
+      2,
+      1662,
+      406
+    ],
+    "offset": [
+      -1,
+      1
+    ],
+    "originalSize": [
+      1668,
+      412
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

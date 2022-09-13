@@ -1,0 +1,7 @@
+{
+  "__type__": "cc.TextAsset",
+  "_name": "flower22.atlas",
+  "_objFlags": 0,
+  "_native": "",
+  "text": "\nflower22.png\nsize: 300,188\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\narmL\n  rotate: false\n  xy: 211, 2\n  size: 77, 37\n  orig: 77, 37\n  offset: 0, 0\n  index: -1\narmR_1\n  rotate: false\n  xy: 208, 124\n  size: 68, 61\n  orig: 68, 61\n  offset: 0, 0\n  index: -1\narmR_2\n  rotate: false\n  xy: 103, 29\n  size: 106, 39\n  orig: 106, 39\n  offset: 0, 0\n  index: -1\nbody\n  rotate: false\n  xy: 2, 3\n  size: 99, 119\n  orig: 99, 119\n  offset: 0, 0\n  index: -1\nbot\n  rotate: false\n  xy: 103, 70\n  size: 132, 52\n  orig: 132, 52\n  offset: 0, 0\n  index: -1\nface1\n  rotate: false\n  xy: 237, 41\n  size: 58, 34\n  orig: 58, 34\n  offset: 0, 0\n  index: -1\nface3\n  rotate: false\n  xy: 237, 77\n  size: 56, 45\n  orig: 56, 45\n  offset: 0, 0\n  index: -1\nfx0\n  rotate: false\n  xy: 2, 124\n  size: 204, 61\n  orig: 204, 61\n  offset: 0, 0\n  index: -1\n"
+}

@@ -1,0 +1,7 @@
+{
+  "__type__": "cc.TextAsset",
+  "_name": "flower3.atlas",
+  "_objFlags": 0,
+  "_native": "",
+  "text": "\nflower3.png\nsize: 136,264\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nbody\n  rotate: false\n  xy: 93, 174\n  size: 37, 85\n  orig: 37, 85\n  offset: 0, 0\n  index: -1\nbody_item\n  rotate: false\n  xy: 94, 58\n  size: 26, 50\n  orig: 26, 50\n  offset: 0, 0\n  index: -1\nbot\n  rotate: false\n  xy: 60, 33\n  size: 69, 23\n  orig: 69, 23\n  offset: 0, 0\n  index: -1\nface1\n  rotate: false\n  xy: 60, 2\n  size: 52, 29\n  orig: 52, 29\n  offset: 0, 0\n  index: -1\nface2\n  rotate: false\n  xy: 51, 68\n  size: 41, 40\n  orig: 41, 40\n  offset: 0, 0\n  index: -1\nface3\n  rotate: false\n  xy: 2, 10\n  size: 56, 40\n  orig: 56, 40\n  offset: 0, 0\n  index: -1\nhairL\n  rotate: false\n  xy: 2, 52\n  size: 47, 60\n  orig: 47, 60\n  offset: 0, 0\n  index: -1\nhairR\n  rotate: false\n  xy: 78, 110\n  size: 56, 62\n  orig: 56, 62\n  offset: 0, 0\n  index: -1\nhairT\n  rotate: false\n  xy: 2, 181\n  size: 89, 78\n  orig: 89, 78\n  offset: 0, 0\n  index: -1\nhead\n  rotate: false\n  xy: 2, 114\n  size: 74, 65\n  orig: 74, 65\n  offset: 0, 0\n  index: -1\n"
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bt_double_coin",
+    "texture": "2219924e-0cac-47c1-b6c8-427a193e6ad3",
+    "atlas": "",
+    "rect": [
+      2,
+      2,
+      190,
+      174
+    ],
+    "offset": [
+      -1,
+      1
+    ],
+    "originalSize": [
+      196,
+      180
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

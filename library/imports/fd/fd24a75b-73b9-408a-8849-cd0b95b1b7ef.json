@@ -1,0 +1,17 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "fx_slot",
+  "_objFlags": 0,
+  "_native": ".bin",
+  "_skeletonJson": null,
+  "_atlasText": "\nfx_slot.png\nsize: 252,596\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\ne0\n  rotate: false\n  xy: 2, 340\n  size: 248, 251\n  orig: 248, 251\n  offset: 0, 0\n  index: -1\nlock\n  rotate: false\n  xy: 2, 171\n  size: 248, 167\n  orig: 248, 167\n  offset: 0, 0\n  index: -1\nopen\n  rotate: false\n  xy: 2, 2\n  size: 248, 167\n  orig: 248, 167\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "1ce5f3c8-267d-4c27-91ea-8f7fc3e160ab"
+    }
+  ],
+  "textureNames": [
+    "fx_slot.png"
+  ],
+  "scale": 1
+}

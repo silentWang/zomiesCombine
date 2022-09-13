@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_boost_angry_pack2",
+    "texture": "9f6ba46d-7e5d-4100-89ef-6653b3fb47f1",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      72,
+      75
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      72,
+      75
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

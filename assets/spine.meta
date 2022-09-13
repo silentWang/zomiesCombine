@@ -1,0 +1,20 @@
+{
+  "ver": "1.1.2",
+  "uuid": "679d5931-075c-4949-91cf-e98f02ba40cf",
+  "isBundle": true,
+  "bundleName": "",
+  "priority": 1,
+  "compressionType": {
+    "bytedance": "default"
+  },
+  "optimizeHotUpdate": {
+    "bytedance": false
+  },
+  "inlineSpriteFrames": {
+    "bytedance": false
+  },
+  "isRemoteBundle": {
+    "bytedance": true
+  },
+  "subMetas": {}
+}

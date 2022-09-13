@@ -1,0 +1,97 @@
+
+enemy44.png
+size: 472,220
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL
+  rotate: false
+  xy: 209, 18
+  size: 81, 62
+  orig: 81, 62
+  offset: 0, 0
+  index: -1
+armLlow
+  rotate: false
+  xy: 407, 115
+  size: 56, 42
+  orig: 56, 42
+  offset: 0, 0
+  index: -1
+armRlow
+  rotate: false
+  xy: 407, 159
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: -1
+armRup
+  rotate: false
+  xy: 341, 12
+  size: 41, 68
+  orig: 41, 68
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 209, 82
+  size: 147, 136
+  orig: 147, 136
+  offset: 0, 0
+  index: -1
+footL
+  rotate: false
+  xy: 407, 79
+  size: 54, 34
+  orig: 54, 34
+  offset: 0, 0
+  index: -1
+footR
+  rotate: false
+  xy: 407, 79
+  size: 54, 34
+  orig: 54, 34
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 2
+  size: 205, 216
+  orig: 205, 216
+  offset: 0, 0
+  index: -1
+legLlow
+  rotate: false
+  xy: 433, 44
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+legLup
+  rotate: false
+  xy: 292, 17
+  size: 47, 63
+  orig: 47, 63
+  offset: 0, 0
+  index: -1
+legRlow
+  rotate: false
+  xy: 433, 9
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+legRup
+  rotate: false
+  xy: 384, 13
+  size: 47, 64
+  orig: 47, 64
+  offset: 0, 0
+  index: -1
+stick
+  rotate: false
+  xy: 358, 106
+  size: 47, 112
+  orig: 47, 112
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bt_free_gems",
+    "texture": "c62916e5-ef95-4990-8e79-4c5d28058d31",
+    "atlas": "",
+    "rect": [
+      2,
+      2,
+      244,
+      146
+    ],
+    "offset": [
+      0,
+      -1
+    ],
+    "originalSize": [
+      248,
+      148
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

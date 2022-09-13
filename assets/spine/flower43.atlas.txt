@@ -1,0 +1,104 @@
+
+flower43.png
+size: 456,268
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 107, 20
+  size: 65, 72
+  orig: 65, 72
+  offset: 0, 0
+  index: -1
+bot1
+  rotate: false
+  xy: 401, 20
+  size: 50, 46
+  orig: 50, 46
+  offset: 0, 0
+  index: -1
+bot2
+  rotate: false
+  xy: 321, 218
+  size: 121, 48
+  orig: 121, 48
+  offset: 0, 0
+  index: -1
+e0
+  rotate: false
+  xy: 420, 172
+  size: 31, 44
+  orig: 31, 44
+  offset: 0, 0
+  index: -1
+e1
+  rotate: false
+  xy: 2, 94
+  size: 172, 172
+  orig: 172, 172
+  offset: 0, 0
+  index: -1
+gun
+  rotate: false
+  xy: 176, 2
+  size: 133, 115
+  orig: 133, 115
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 321, 136
+  size: 97, 80
+  orig: 97, 80
+  offset: 0, 0
+  index: -1
+hat_item
+  rotate: false
+  xy: 404, 87
+  size: 43, 47
+  orig: 43, 47
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 33
+  size: 103, 59
+  orig: 103, 59
+  offset: 0, 0
+  index: -1
+l0
+  rotate: false
+  xy: 176, 119
+  size: 143, 147
+  orig: 143, 147
+  offset: 0, 0
+  index: -1
+leaf
+  rotate: false
+  xy: 311, 12
+  size: 48, 20
+  orig: 48, 20
+  offset: 0, 0
+  index: -1
+t1
+  rotate: false
+  xy: 356, 68
+  size: 46, 66
+  orig: 46, 66
+  offset: 0, 0
+  index: -1
+t2
+  rotate: false
+  xy: 311, 34
+  size: 43, 83
+  orig: 43, 83
+  offset: 0, 0
+  index: -1
+t3
+  rotate: false
+  xy: 361, 3
+  size: 38, 63
+  orig: 38, 63
+  offset: 0, 0
+  index: -1

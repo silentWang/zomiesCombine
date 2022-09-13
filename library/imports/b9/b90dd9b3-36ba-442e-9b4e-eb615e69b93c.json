@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cover_bot",
+    "texture": "1176efc9-5fcd-44bf-8e7d-e3a23846cc58",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      491,
+      57
+    ],
+    "offset": [
+      -0.5,
+      -0.5
+    ],
+    "originalSize": [
+      492,
+      58
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

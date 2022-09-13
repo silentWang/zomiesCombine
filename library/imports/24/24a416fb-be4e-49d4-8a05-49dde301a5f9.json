@@ -1,0 +1,17 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "fx_warning_boss",
+  "_objFlags": 0,
+  "_native": ".bin",
+  "_skeletonJson": null,
+  "_atlasText": "\nfx_warning_boss.png\nsize: 1504,680\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nbg\n  rotate: false\n  xy: 545, 387\n  size: 541, 186\n  orig: 541, 186\n  offset: 0, 0\n  index: -1\ncover\n  rotate: false\n  xy: 946, 575\n  size: 100, 100\n  orig: 100, 100\n  offset: 0, 0\n  index: -1\ndeco\n  rotate: false\n  xy: 461, 652\n  size: 483, 23\n  orig: 483, 23\n  offset: 0, 0\n  index: -1\ndeco1\n  rotate: false\n  xy: 2, 662\n  size: 457, 13\n  orig: 457, 13\n  offset: 0, 0\n  index: -1\ne0\n  rotate: false\n  xy: 2, 527\n  size: 541, 123\n  orig: 541, 123\n  offset: 0, 0\n  index: -1\ne1\n  rotate: false\n  xy: 2, 233\n  size: 538, 292\n  orig: 538, 292\n  offset: 0, 0\n  index: -1\nskull\n  rotate: false\n  xy: 1088, 221\n  size: 354, 454\n  orig: 354, 454\n  offset: 0, 0\n  index: -1\ntext\n  rotate: false\n  xy: 2, 2\n  size: 1499, 217\n  orig: 1499, 217\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "55aa94e9-462d-4764-8805-d1190d7b3497"
+    }
+  ],
+  "textureNames": [
+    "fx_warning_boss.png"
+  ],
+  "scale": 1
+}

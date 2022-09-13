@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_add_slot",
+    "texture": "4eea4113-042e-44aa-9664-5ccad5515eda",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      146,
+      110
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      146,
+      110
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

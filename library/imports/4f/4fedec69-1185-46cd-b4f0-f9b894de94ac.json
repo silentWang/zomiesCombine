@@ -1,0 +1,17 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "flower32",
+  "_objFlags": 0,
+  "_native": ".bin",
+  "_skeletonJson": null,
+  "_atlasText": "\nflower32.png\nsize: 180,256\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\narmL\n  rotate: false\n  xy: 88, 31\n  size: 69, 26\n  orig: 69, 26\n  offset: 0, 0\n  index: -1\narmR\n  rotate: false\n  xy: 132, 4\n  size: 46, 25\n  orig: 46, 25\n  offset: 0, 0\n  index: -1\nbody\n  rotate: false\n  xy: 2, 6\n  size: 84, 95\n  orig: 84, 95\n  offset: 0, 0\n  index: -1\nbot\n  rotate: false\n  xy: 2, 103\n  size: 134, 43\n  orig: 134, 43\n  offset: 0, 0\n  index: -1\nface1\n  rotate: false\n  xy: 88, 2\n  size: 42, 27\n  orig: 42, 27\n  offset: 0, 0\n  index: -1\nface2\n  rotate: false\n  xy: 138, 135\n  size: 40, 11\n  orig: 40, 11\n  offset: 0, 0\n  index: -1\nhat\n  rotate: false\n  xy: 2, 148\n  size: 168, 105\n  orig: 168, 105\n  offset: 0, 0\n  index: -1\nmask\n  rotate: false\n  xy: 88, 59\n  size: 80, 42\n  orig: 80, 42\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "c4a0d1f1-cde4-4a3d-8fc8-90e1b9c52eb3"
+    }
+  ],
+  "textureNames": [
+    "flower32.png"
+  ],
+  "scale": 1
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "shop_banner_red",
+    "texture": "16264d03-0087-48ea-ba91-a9151afffb8f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      444,
+      60
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      444,
+      60
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "enemy28",
+    "texture": "581b5050-aa43-4723-a983-d38f0caddd5a",
+    "atlas": "",
+    "rect": [
+      3,
+      3,
+      189,
+      572
+    ],
+    "offset": [
+      -0.5,
+      1
+    ],
+    "originalSize": [
+      196,
+      580
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "pot2",
+  "_objFlags": 0,
+  "_native": ".bin",
+  "_skeletonJson": null,
+  "_atlasText": "\npot2.png\nsize: 200,100\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nbody\n  rotate: false\n  xy: 2, 3\n  size: 115, 92\n  orig: 115, 92\n  offset: 0, 0\n  index: -1\nleaf0\n  rotate: false\n  xy: 182, 3\n  size: 13, 43\n  orig: 13, 43\n  offset: 0, 0\n  index: -1\nleaf1\n  rotate: false\n  xy: 119, 2\n  size: 61, 44\n  orig: 61, 44\n  offset: 0, 0\n  index: -1\nleaf2\n  rotate: false\n  xy: 119, 48\n  size: 76, 47\n  orig: 76, 47\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "418aeb22-7dd0-4efc-bd5c-45360421f6a2"
+    }
+  ],
+  "textureNames": [
+    "pot2.png"
+  ],
+  "scale": 1
+}

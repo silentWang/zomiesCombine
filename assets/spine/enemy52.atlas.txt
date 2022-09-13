@@ -1,0 +1,104 @@
+
+enemy52.png
+size: 976,236
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armRlow
+  rotate: false
+  xy: 165, 3
+  size: 105, 46
+  orig: 105, 46
+  offset: 0, 0
+  index: -1
+armRup
+  rotate: false
+  xy: 395, 15
+  size: 37, 53
+  orig: 37, 53
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 617, 100
+  size: 118, 133
+  orig: 118, 133
+  offset: 0, 0
+  index: -1
+ghe
+  rotate: false
+  xy: 865, 133
+  size: 109, 100
+  orig: 109, 100
+  offset: 0, 0
+  index: -1
+ghe2
+  rotate: false
+  xy: 165, 51
+  size: 138, 182
+  orig: 138, 182
+  offset: 0, 0
+  index: -1
+gio
+  rotate: false
+  xy: 305, 5
+  size: 88, 63
+  orig: 88, 63
+  offset: 0, 0
+  index: -1
+glass
+  rotate: false
+  xy: 466, 25
+  size: 146, 69
+  orig: 146, 69
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 305, 70
+  size: 159, 163
+  orig: 159, 163
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 466, 96
+  size: 149, 137
+  orig: 149, 137
+  offset: 0, 0
+  index: -1
+leg
+  rotate: false
+  xy: 737, 108
+  size: 126, 125
+  orig: 126, 125
+  offset: 0, 0
+  index: -1
+lop1
+  rotate: false
+  xy: 614, 25
+  size: 68, 69
+  orig: 68, 69
+  offset: 0, 0
+  index: -1
+lop2
+  rotate: false
+  xy: 684, 29
+  size: 68, 69
+  orig: 68, 69
+  offset: 0, 0
+  index: -1
+xe1
+  rotate: false
+  xy: 2, 2
+  size: 161, 231
+  orig: 161, 231
+  offset: 0, 0
+  index: -1
+xe2
+  rotate: false
+  xy: 754, 2
+  size: 193, 104
+  orig: 193, 104
+  offset: 0, 0
+  index: -1

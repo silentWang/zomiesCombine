@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bt_auto_merge",
+    "texture": "fac091e2-93df-477b-984e-ac9a95af68fe",
+    "atlas": "",
+    "rect": [
+      2,
+      3,
+      190,
+      157
+    ],
+    "offset": [
+      -1,
+      0.5
+    ],
+    "originalSize": [
+      196,
+      164
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

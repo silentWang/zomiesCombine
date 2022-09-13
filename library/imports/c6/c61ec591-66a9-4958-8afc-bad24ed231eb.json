@@ -1,0 +1,17 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "fx_bt_angry",
+  "_objFlags": 0,
+  "_native": ".bin",
+  "_skeletonJson": null,
+  "_atlasText": "\nfx_bt_angry.png\nsize: 172,172\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\ne0\n  rotate: false\n  xy: 2, 2\n  size: 166, 166\n  orig: 166, 166\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "b5ab84bc-91b3-4126-b153-32ff27e9c765"
+    }
+  ],
+  "textureNames": [
+    "fx_bt_angry.png"
+  ],
+  "scale": 1
+}

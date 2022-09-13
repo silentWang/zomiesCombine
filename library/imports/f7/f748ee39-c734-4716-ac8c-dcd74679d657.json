@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_boost_x2_coin",
+    "texture": "ccea5823-311c-4986-b67f-91ae57bb9252",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      68,
+      56
+    ],
+    "offset": [
+      -1,
+      0
+    ],
+    "originalSize": [
+      70,
+      56
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

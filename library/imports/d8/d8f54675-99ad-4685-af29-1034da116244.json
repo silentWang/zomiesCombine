@@ -1,0 +1,7 @@
+{
+  "__type__": "cc.TextAsset",
+  "_name": "tut_hand.atlas",
+  "_objFlags": 0,
+  "_native": "",
+  "text": "\ntut_hand.png\nsize: 144,264\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\ne0\n  rotate: false\n  xy: 2, 2\n  size: 99, 99\n  orig: 99, 99\n  offset: 0, 0\n  index: -1\nhand_tut\n  rotate: false\n  xy: 2, 103\n  size: 140, 159\n  orig: 140, 159\n  offset: 0, 0\n  index: -1\n"
+}

@@ -1,0 +1,7 @@
+{
+  "__type__": "cc.TextAsset",
+  "_name": "bt_auto_merge.atlas",
+  "_objFlags": 0,
+  "_native": "",
+  "text": "\nbt_auto_merge.png\nsize: 196,164\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nbase\n  rotate: false\n  xy: 2, 2\n  size: 166, 158\n  orig: 166, 158\n  offset: 0, 0\n  index: -1\nl0\n  rotate: false\n  xy: 170, 111\n  size: 22, 49\n  orig: 22, 49\n  offset: 0, 0\n  index: -1\n"
+}

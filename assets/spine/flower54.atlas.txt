@@ -1,0 +1,97 @@
+
+flower54.png
+size: 148,540
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL
+  rotate: false
+  xy: 110, 36
+  size: 30, 20
+  orig: 30, 20
+  offset: 0, 0
+  index: -1
+armRUp
+  rotate: false
+  xy: 110, 58
+  size: 33, 26
+  orig: 33, 26
+  offset: 0, 0
+  index: -1
+armRlow
+  rotate: false
+  xy: 103, 2
+  size: 26, 32
+  orig: 26, 32
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 90, 186
+  size: 41, 76
+  orig: 41, 76
+  offset: 0, 0
+  index: -1
+bot1
+  rotate: false
+  xy: 2, 264
+  size: 127, 66
+  orig: 127, 66
+  offset: 0, 0
+  index: -1
+bot2
+  rotate: false
+  xy: 2, 332
+  size: 137, 49
+  orig: 137, 49
+  offset: 0, 0
+  index: -1
+face1
+  rotate: false
+  xy: 2, 102
+  size: 69, 98
+  orig: 69, 98
+  offset: 0, 0
+  index: -1
+face2
+  rotate: false
+  xy: 73, 86
+  size: 69, 98
+  orig: 69, 98
+  offset: 0, 0
+  index: -1
+face3
+  rotate: false
+  xy: 2, 2
+  size: 69, 98
+  orig: 69, 98
+  offset: 0, 0
+  index: -1
+flute
+  rotate: false
+  xy: 2, 202
+  size: 86, 60
+  orig: 86, 60
+  offset: 0, 0
+  index: -1
+hair
+  rotate: false
+  xy: 2, 383
+  size: 142, 152
+  orig: 142, 152
+  offset: 0, 0
+  index: -1
+handL
+  rotate: false
+  xy: 73, 45
+  size: 35, 39
+  orig: 35, 39
+  offset: 0, 0
+  index: -1
+handR
+  rotate: false
+  xy: 73, 16
+  size: 28, 27
+  orig: 28, 27
+  offset: 0, 0
+  index: -1

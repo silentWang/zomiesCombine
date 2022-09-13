@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "box_boost",
+    "texture": "88536734-9c4c-4654-a005-719ad08e33be",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      268,
+      100
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      268,
+      100
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

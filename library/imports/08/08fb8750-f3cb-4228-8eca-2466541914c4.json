@@ -1,0 +1,17 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "bt_starter_boost",
+  "_objFlags": 0,
+  "_native": ".bin",
+  "_skeletonJson": null,
+  "_atlasText": "\nbt_starter_boost.png\nsize: 228,640\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nbodyB\n  rotate: false\n  xy: 84, 407\n  size: 127, 93\n  orig: 127, 93\n  offset: 0, 0\n  index: -1\nbodyT\n  rotate: false\n  xy: 103, 502\n  size: 119, 67\n  orig: 119, 67\n  offset: 0, 0\n  index: -1\ngem1\n  rotate: false\n  xy: 57, 604\n  size: 34, 32\n  orig: 34, 32\n  offset: 0, 0\n  index: -1\ngem2\n  rotate: false\n  xy: 93, 602\n  size: 41, 34\n  orig: 41, 34\n  offset: 0, 0\n  index: -1\ngem3\n  rotate: false\n  xy: 29, 611\n  size: 26, 25\n  orig: 26, 25\n  offset: 0, 0\n  index: -1\ngem4\n  rotate: false\n  xy: 2, 615\n  size: 25, 21\n  orig: 25, 21\n  offset: 0, 0\n  index: -1\nitemB\n  rotate: false\n  xy: 2, 429\n  size: 80, 87\n  orig: 80, 87\n  offset: 0, 0\n  index: -1\nitemT\n  rotate: false\n  xy: 2, 537\n  size: 36, 72\n  orig: 36, 72\n  offset: 0, 0\n  index: -1\nl0\n  rotate: false\n  xy: 2, 216\n  size: 189, 189\n  orig: 189, 189\n  offset: 0, 0\n  index: -1\nl1\n  rotate: false\n  xy: 2, 2\n  size: 221, 212\n  orig: 221, 212\n  offset: 0, 0\n  index: -1\not1\n  rotate: false\n  xy: 136, 571\n  size: 62, 65\n  orig: 62, 65\n  offset: 0, 0\n  index: -1\nplant\n  rotate: false\n  xy: 40, 518\n  size: 61, 82\n  orig: 61, 82\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "7cbdc70c-2607-4b0f-ac71-b543d77b5cef"
+    }
+  ],
+  "textureNames": [
+    "bt_starter_boost.png"
+  ],
+  "scale": 1
+}

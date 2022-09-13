@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "thanhmauden",
+    "texture": "dd2ff764-bb37-4137-9be4-488fbcfa0010",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      14,
+      20
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      14,
+      20
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

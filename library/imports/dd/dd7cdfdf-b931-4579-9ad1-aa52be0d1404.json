@@ -1,0 +1,17 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "enemy4",
+  "_objFlags": 0,
+  "_native": ".bin",
+  "_skeletonJson": null,
+  "_atlasText": "\nenemy4.png\nsize: 440,224\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\narmLlow\n  rotate: false\n  xy: 358, 165\n  size: 78, 55\n  orig: 78, 55\n  offset: 0, 0\n  index: -1\narmLup\n  rotate: false\n  xy: 386, 85\n  size: 47, 41\n  orig: 47, 41\n  offset: 0, 0\n  index: -1\narmRlow\n  rotate: false\n  xy: 239, 11\n  size: 78, 61\n  orig: 78, 61\n  offset: 0, 0\n  index: -1\narmRup\n  rotate: false\n  xy: 319, 4\n  size: 57, 68\n  orig: 57, 68\n  offset: 0, 0\n  index: -1\nbody\n  rotate: false\n  xy: 239, 74\n  size: 117, 146\n  orig: 117, 146\n  offset: 0, 0\n  index: -1\nfootL\n  rotate: false\n  xy: 358, 128\n  size: 61, 35\n  orig: 61, 35\n  offset: 0, 0\n  index: -1\nfootR\n  rotate: false\n  xy: 378, 46\n  size: 60, 35\n  orig: 60, 35\n  offset: 0, 0\n  index: -1\nhead\n  rotate: false\n  xy: 2, 2\n  size: 235, 218\n  orig: 235, 218\n  offset: 0, 0\n  index: -1\nlegL\n  rotate: false\n  xy: 378, 4\n  size: 24, 40\n  orig: 24, 40\n  offset: 0, 0\n  index: -1\nlegR\n  rotate: false\n  xy: 358, 83\n  size: 26, 43\n  orig: 26, 43\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "5d8dd654-b0ae-459c-9925-be76f120eba3"
+    }
+  ],
+  "textureNames": [
+    "enemy4.png"
+  ],
+  "scale": 1
+}

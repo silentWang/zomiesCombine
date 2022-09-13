@@ -1,0 +1,83 @@
+
+flower27.png
+size: 240,236
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL
+  rotate: false
+  xy: 134, 33
+  size: 69, 41
+  orig: 69, 41
+  offset: 0, 0
+  index: -1
+armR
+  rotate: false
+  xy: 2, 35
+  size: 61, 31
+  orig: 61, 31
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 205, 62
+  size: 25, 60
+  orig: 25, 60
+  offset: 0, 0
+  index: -1
+bot1
+  rotate: false
+  xy: 134, 3
+  size: 99, 28
+  orig: 99, 28
+  offset: 0, 0
+  index: -1
+bot2
+  rotate: false
+  xy: 2, 2
+  size: 66, 25
+  orig: 66, 25
+  offset: 0, 0
+  index: -1
+face1
+  rotate: false
+  xy: 68, 29
+  size: 64, 45
+  orig: 64, 45
+  offset: 0, 0
+  index: -1
+face2
+  rotate: false
+  xy: 2, 68
+  size: 64, 51
+  orig: 64, 51
+  offset: 0, 0
+  index: -1
+face3
+  rotate: false
+  xy: 124, 76
+  size: 79, 46
+  orig: 79, 46
+  offset: 0, 0
+  index: -1
+flower
+  rotate: false
+  xy: 124, 124
+  size: 114, 108
+  orig: 114, 108
+  offset: 0, 0
+  index: -1
+flower2
+  rotate: false
+  xy: 2, 121
+  size: 120, 111
+  orig: 120, 111
+  offset: 0, 0
+  index: -1
+pearl
+  rotate: false
+  xy: 68, 93
+  size: 46, 26
+  orig: 46, 26
+  offset: 0, 0
+  index: -1

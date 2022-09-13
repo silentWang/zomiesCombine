@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bt_starter_boost",
+    "texture": "7cbdc70c-2607-4b0f-ac71-b543d77b5cef",
+    "atlas": "",
+    "rect": [
+      0,
+      4,
+      224,
+      632
+    ],
+    "offset": [
+      -2,
+      0
+    ],
+    "originalSize": [
+      228,
+      640
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

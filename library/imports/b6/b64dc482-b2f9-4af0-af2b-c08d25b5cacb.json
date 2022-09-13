@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "defeat",
+    "texture": "e5820d5e-3529-45f6-9a99-665aba8dc24e",
+    "atlas": "",
+    "rect": [
+      101,
+      1,
+      121,
+      61
+    ],
+    "offset": [
+      0.5,
+      0
+    ],
+    "originalSize": [
+      322,
+      63
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

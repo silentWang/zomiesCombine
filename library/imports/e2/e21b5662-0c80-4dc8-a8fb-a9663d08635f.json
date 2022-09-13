@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dingshen",
+    "texture": "b0134ffd-9f82-4ccb-9870-4dfffbf4201b",
+    "atlas": "",
+    "rect": [
+      6,
+      2,
+      158,
+      128
+    ],
+    "offset": [
+      2,
+      0
+    ],
+    "originalSize": [
+      166,
+      132
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

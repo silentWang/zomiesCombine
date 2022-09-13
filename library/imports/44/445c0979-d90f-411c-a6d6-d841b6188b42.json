@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "fx_ground_merge",
+    "texture": "9d4ef643-22ff-49c0-915f-a56fa4b5454e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      288,
+      208
+    ],
+    "offset": [
+      -2,
+      2
+    ],
+    "originalSize": [
+      292,
+      212
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

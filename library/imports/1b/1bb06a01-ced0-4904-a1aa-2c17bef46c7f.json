@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_boost_bonus_pack2",
+    "texture": "1fc265ff-1a3b-4935-b782-b8a874413c90",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      52,
+      53
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      52,
+      53
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

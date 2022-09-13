@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "nvatR",
+    "texture": "27ba3fc0-2714-4378-8197-b0ae5894d472",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      226,
+      677
+    ],
+    "offset": [
+      0,
+      1.5
+    ],
+    "originalSize": [
+      226,
+      680
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

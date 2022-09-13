@@ -1,0 +1,17 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "fx_lose",
+  "_objFlags": 0,
+  "_native": ".bin",
+  "_skeletonJson": null,
+  "_atlasText": "\nfx_lose.png\nsize: 1916,512\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nblack\n  rotate: false\n  xy: 1811, 105\n  size: 100, 100\n  orig: 100, 100\n  offset: 0, 0\n  index: -1\nbox\n  rotate: false\n  xy: 848, 335\n  size: 774, 175\n  orig: 774, 175\n  offset: 0, 0\n  index: -1\ncoin\n  rotate: false\n  xy: 1787, 207\n  size: 108, 115\n  orig: 108, 115\n  offset: 0, 0\n  index: -1\ne1\n  rotate: false\n  xy: 848, 19\n  size: 349, 314\n  orig: 349, 314\n  offset: 0, 0\n  index: -1\ne2\n  rotate: false\n  xy: 1199, 86\n  size: 377, 247\n  orig: 377, 247\n  offset: 0, 0\n  index: -1\nfade\n  rotate: false\n  xy: 1199, 2\n  size: 390, 82\n  orig: 390, 82\n  offset: 0, 0\n  index: -1\nl0\n  rotate: false\n  xy: 2, 40\n  size: 844, 470\n  orig: 844, 470\n  offset: 0, 0\n  index: -1\np1\n  rotate: false\n  xy: 1578, 116\n  size: 207, 206\n  orig: 207, 206\n  offset: 0, 0\n  index: -1\np2\n  rotate: false\n  xy: 1624, 324\n  size: 273, 186\n  orig: 273, 186\n  offset: 0, 0\n  index: -1\ntext\n  rotate: false\n  xy: 1591, 23\n  size: 218, 91\n  orig: 218, 91\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "3711b17c-245b-4744-aa93-afdc975b96ff"
+    }
+  ],
+  "textureNames": [
+    "fx_lose.png"
+  ],
+  "scale": 1
+}

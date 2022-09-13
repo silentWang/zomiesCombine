@@ -1,0 +1,17 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "flower9",
+  "_objFlags": 0,
+  "_native": ".bin",
+  "_skeletonJson": null,
+  "_atlasText": "\nflower9.png\nsize: 412,100\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\narmL\n  rotate: false\n  xy: 338, 2\n  size: 25, 23\n  orig: 25, 23\n  offset: 0, 0\n  index: -1\narmR\n  rotate: false\n  xy: 365, 4\n  size: 26, 21\n  orig: 26, 21\n  offset: 0, 0\n  index: -1\nbody\n  rotate: false\n  xy: 391, 46\n  size: 19, 51\n  orig: 19, 51\n  offset: 0, 0\n  index: -1\nbot\n  rotate: false\n  xy: 136, 49\n  size: 121, 48\n  orig: 121, 48\n  offset: 0, 0\n  index: -1\nface1\n  rotate: false\n  xy: 338, 27\n  size: 51, 33\n  orig: 51, 33\n  offset: 0, 0\n  index: -1\nface2\n  rotate: false\n  xy: 207, 3\n  size: 50, 44\n  orig: 50, 44\n  offset: 0, 0\n  index: -1\nface3\n  rotate: false\n  xy: 338, 62\n  size: 51, 35\n  orig: 51, 35\n  offset: 0, 0\n  index: -1\nglass\n  rotate: false\n  xy: 136, 21\n  size: 69, 26\n  orig: 69, 26\n  offset: 0, 0\n  index: -1\nhair\n  rotate: false\n  xy: 2, 16\n  size: 132, 81\n  orig: 132, 81\n  offset: 0, 0\n  index: -1\nhead\n  rotate: false\n  xy: 259, 2\n  size: 77, 95\n  orig: 77, 95\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "00a062d1-3249-452f-9ca9-a94072e7d00b"
+    }
+  ],
+  "textureNames": [
+    "flower9.png"
+  ],
+  "scale": 1
+}

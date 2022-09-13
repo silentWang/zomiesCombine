@@ -1,0 +1,125 @@
+
+flower29.png
+size: 284,268
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL
+  rotate: false
+  xy: 2, 2
+  size: 43, 33
+  orig: 43, 33
+  offset: 0, 0
+  index: -1
+armR_1
+  rotate: false
+  xy: 140, 61
+  size: 64, 65
+  orig: 64, 65
+  offset: 0, 0
+  index: -1
+armR_2
+  rotate: false
+  xy: 73, 3
+  size: 92, 35
+  orig: 92, 35
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 264, 119
+  size: 18, 71
+  orig: 18, 71
+  offset: 0, 0
+  index: -1
+bot1
+  rotate: false
+  xy: 167, 18
+  size: 90, 23
+  orig: 90, 23
+  offset: 0, 0
+  index: -1
+bot2
+  rotate: false
+  xy: 206, 43
+  size: 56, 22
+  orig: 56, 22
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 73, 99
+  size: 65, 64
+  orig: 65, 64
+  offset: 0, 0
+  index: -1
+fx0
+  rotate: false
+  xy: 2, 165
+  size: 148, 99
+  orig: 148, 99
+  offset: 0, 0
+  index: -1
+handL
+  rotate: false
+  xy: 110, 62
+  size: 17, 35
+  orig: 17, 35
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 152, 192
+  size: 119, 72
+  orig: 119, 72
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 85
+  size: 69, 78
+  orig: 69, 78
+  offset: 0, 0
+  index: -1
+scarf1
+  rotate: false
+  xy: 206, 67
+  size: 74, 50
+  orig: 74, 50
+  offset: 0, 0
+  index: -1
+scarf2
+  rotate: false
+  xy: 73, 40
+  size: 35, 57
+  orig: 35, 57
+  offset: 0, 0
+  index: -1
+scarf3
+  rotate: false
+  xy: 2, 37
+  size: 69, 46
+  orig: 69, 46
+  offset: 0, 0
+  index: -1
+shoulderL
+  rotate: false
+  xy: 110, 41
+  size: 30, 18
+  orig: 30, 18
+  offset: 0, 0
+  index: -1
+shoulderR
+  rotate: false
+  xy: 142, 43
+  size: 30, 16
+  orig: 30, 16
+  offset: 0, 0
+  index: -1
+sword
+  rotate: false
+  xy: 152, 128
+  size: 110, 62
+  orig: 110, 62
+  offset: 0, 0
+  index: -1

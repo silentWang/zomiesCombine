@@ -1,0 +1,7 @@
+{
+  "__type__": "cc.TextAsset",
+  "_name": "flower11.atlas",
+  "_objFlags": 0,
+  "_native": "",
+  "text": "\nflower11.png\nsize: 280,176\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\narmL\n  rotate: false\n  xy: 80, 7\n  size: 38, 20\n  orig: 38, 20\n  offset: 0, 0\n  index: -1\narmR\n  rotate: false\n  xy: 120, 8\n  size: 34, 19\n  orig: 34, 19\n  offset: 0, 0\n  index: -1\nbody\n  rotate: false\n  xy: 142, 52\n  size: 45, 120\n  orig: 45, 120\n  offset: 0, 0\n  index: -1\nbot1\n  rotate: false\n  xy: 2, 6\n  size: 76, 21\n  orig: 76, 21\n  offset: 0, 0\n  index: -1\nbot2\n  rotate: false\n  xy: 215, 2\n  size: 51, 14\n  orig: 51, 14\n  offset: 0, 0\n  index: -1\neye\n  rotate: false\n  xy: 215, 18\n  size: 62, 34\n  orig: 62, 34\n  offset: 0, 0\n  index: -1\nflower\n  rotate: false\n  xy: 2, 29\n  size: 138, 143\n  orig: 138, 143\n  offset: 0, 0\n  index: -1\nhead\n  rotate: false\n  xy: 189, 108\n  size: 65, 64\n  orig: 65, 64\n  offset: 0, 0\n  index: -1\nmouth\n  rotate: false\n  xy: 156, 4\n  size: 57, 46\n  orig: 57, 46\n  offset: 0, 0\n  index: -1\nmouthB\n  rotate: false\n  xy: 189, 54\n  size: 55, 52\n  orig: 55, 52\n  offset: 0, 0\n  index: -1\n"
+}

@@ -1,0 +1,17 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "enemy12",
+  "_objFlags": 0,
+  "_native": ".bin",
+  "_skeletonJson": null,
+  "_atlasText": "\nenemy12.png\nsize: 284,536\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\narmL\n  rotate: false\n  xy: 2, 2\n  size: 102, 64\n  orig: 102, 64\n  offset: 0, 0\n  index: -1\narmR\n  rotate: false\n  xy: 2, 68\n  size: 128, 93\n  orig: 128, 93\n  offset: 0, 0\n  index: -1\nbody\n  rotate: false\n  xy: 184, 17\n  size: 97, 121\n  orig: 97, 121\n  offset: 0, 0\n  index: -1\nbox\n  rotate: false\n  xy: 191, 140\n  size: 70, 150\n  orig: 70, 150\n  offset: 0, 0\n  index: -1\nfootL\n  rotate: false\n  xy: 217, 292\n  size: 41, 64\n  orig: 41, 64\n  offset: 0, 0\n  index: -1\nfootR\n  rotate: false\n  xy: 217, 358\n  size: 64, 41\n  orig: 64, 41\n  offset: 0, 0\n  index: -1\nhat\n  rotate: false\n  xy: 2, 337\n  size: 213, 195\n  orig: 213, 195\n  offset: 0, 0\n  index: -1\nhead\n  rotate: false\n  xy: 2, 163\n  size: 187, 172\n  orig: 187, 172\n  offset: 0, 0\n  index: -1\nhip\n  rotate: false\n  xy: 132, 81\n  size: 46, 37\n  orig: 46, 37\n  offset: 0, 0\n  index: -1\nlegLlow\n  rotate: false\n  xy: 132, 120\n  size: 50, 41\n  orig: 50, 41\n  offset: 0, 0\n  index: -1\nlegLup\n  rotate: false\n  xy: 217, 401\n  size: 50, 68\n  orig: 50, 68\n  offset: 0, 0\n  index: -1\nlegRlow\n  rotate: false\n  xy: 132, 28\n  size: 32, 51\n  orig: 32, 51\n  offset: 0, 0\n  index: -1\nlegRup\n  rotate: false\n  xy: 217, 471\n  size: 57, 61\n  orig: 57, 61\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "f7ef9717-cb41-4357-8103-74d4367c5ae6"
+    }
+  ],
+  "textureNames": [
+    "enemy12.png"
+  ],
+  "scale": 1
+}

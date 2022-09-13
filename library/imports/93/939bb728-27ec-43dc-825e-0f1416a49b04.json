@@ -1,0 +1,7 @@
+{
+  "__type__": "cc.TextAsset",
+  "_name": "fx_arrow.atlas",
+  "_objFlags": 0,
+  "_native": "",
+  "text": "\nfx_arrow.png\nsize: 32,44\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\narrow\n  rotate: false\n  xy: 2, 2\n  size: 28, 40\n  orig: 28, 40\n  offset: 0, 0\n  index: -1\n"
+}

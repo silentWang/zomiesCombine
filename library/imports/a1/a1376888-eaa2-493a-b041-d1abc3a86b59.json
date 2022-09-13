@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_gem_video_ads",
+    "texture": "97d8e98a-dbc4-4060-b8f7-c2274e24fbd1",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      254,
+      223
+    ],
+    "offset": [
+      0,
+      1.5
+    ],
+    "originalSize": [
+      254,
+      226
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

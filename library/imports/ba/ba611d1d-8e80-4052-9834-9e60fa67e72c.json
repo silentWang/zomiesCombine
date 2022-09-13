@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "nvatL",
+    "texture": "8400c022-74e2-4a39-9cea-ebe5733dfaee",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      280,
+      684
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      280,
+      684
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
