@@ -2,19 +2,23 @@
   "ver": "1.1.2",
   "uuid": "0a362179-e2e2-4c57-9320-dde9136d9ffb",
   "isBundle": true,
-  "bundleName": "",
-  "priority": 1,
+  "bundleName": "sounds",
+  "priority": "5",
   "compressionType": {
-    "bytedance": "default"
+    "bytedance": "default",
+    "wechatgame": "subpackage"
   },
   "optimizeHotUpdate": {
-    "bytedance": false
+    "bytedance": false,
+    "wechatgame": false
   },
   "inlineSpriteFrames": {
-    "bytedance": false
+    "bytedance": false,
+    "wechatgame": false
   },
   "isRemoteBundle": {
-    "bytedance": true
+    "bytedance": true,
+    "wechatgame": false
   },
   "subMetas": {}
 }

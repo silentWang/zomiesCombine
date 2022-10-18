@@ -2,11 +2,19 @@
   "ver": "1.1.2",
   "uuid": "745f9087-84a7-4cf8-a3b5-601db5765b7d",
   "isBundle": false,
-  "bundleName": "",
-  "priority": 1,
-  "compressionType": {},
-  "optimizeHotUpdate": {},
-  "inlineSpriteFrames": {},
-  "isRemoteBundle": {},
+  "bundleName": "splitTextureAssets",
+  "priority": "3",
+  "compressionType": {
+    "wechatgame": "subpackage"
+  },
+  "optimizeHotUpdate": {
+    "wechatgame": false
+  },
+  "inlineSpriteFrames": {
+    "wechatgame": false
+  },
+  "isRemoteBundle": {
+    "wechatgame": false
+  },
   "subMetas": {}
 }

@@ -1,0 +1,97 @@
+
+enemy28.png
+size: 196,580
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL
+  rotate: false
+  xy: 2, 17
+  size: 65, 65
+  orig: 65, 65
+  offset: 0, 0
+  index: -1
+armR
+  rotate: false
+  xy: 138, 141
+  size: 48, 76
+  orig: 48, 76
+  offset: 0, 0
+  index: -1
+bag
+  rotate: false
+  xy: 2, 84
+  size: 70, 65
+  orig: 70, 65
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 205
+  size: 134, 128
+  orig: 134, 128
+  offset: 0, 0
+  index: -1
+carvat
+  rotate: false
+  xy: 74, 79
+  size: 41, 70
+  orig: 41, 70
+  offset: 0, 0
+  index: -1
+footL
+  rotate: false
+  xy: 117, 61
+  size: 63, 39
+  orig: 63, 39
+  offset: 0, 0
+  index: -1
+footR
+  rotate: false
+  xy: 117, 102
+  size: 65, 37
+  orig: 65, 37
+  offset: 0, 0
+  index: -1
+handL
+  rotate: false
+  xy: 138, 282
+  size: 55, 51
+  orig: 55, 51
+  offset: 0, 0
+  index: -1
+handR
+  rotate: false
+  xy: 138, 219
+  size: 50, 61
+  orig: 50, 61
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 335
+  size: 187, 241
+  orig: 187, 241
+  offset: 0, 0
+  index: -1
+hip
+  rotate: false
+  xy: 2, 151
+  size: 105, 52
+  orig: 105, 52
+  offset: 0, 0
+  index: -1
+legL
+  rotate: false
+  xy: 112, 2
+  size: 39, 57
+  orig: 39, 57
+  offset: 0, 0
+  index: -1
+legR
+  rotate: false
+  xy: 69, 24
+  size: 41, 53
+  orig: 41, 53
+  offset: 0, 0
+  index: -1

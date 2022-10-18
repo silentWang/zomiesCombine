@@ -1,0 +1,83 @@
+
+flower59.png
+size: 512,196
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back1
+  rotate: false
+  xy: 446, 30
+  size: 64, 81
+  orig: 64, 81
+  offset: 0, 0
+  index: -1
+back2
+  rotate: false
+  xy: 172, 16
+  size: 89, 44
+  orig: 89, 44
+  offset: 0, 0
+  index: -1
+back3
+  rotate: false
+  xy: 263, 2
+  size: 87, 24
+  orig: 87, 24
+  offset: 0, 0
+  index: -1
+back4
+  rotate: false
+  xy: 263, 28
+  size: 88, 32
+  orig: 88, 32
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 172, 62
+  size: 205, 132
+  orig: 205, 132
+  offset: 0, 0
+  index: -1
+e0
+  rotate: false
+  xy: 379, 43
+  size: 65, 68
+  orig: 65, 68
+  offset: 0, 0
+  index: -1
+e1
+  rotate: false
+  xy: 379, 113
+  size: 80, 81
+  orig: 80, 81
+  offset: 0, 0
+  index: -1
+earL
+  rotate: false
+  xy: 461, 159
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1
+earR
+  rotate: false
+  xy: 461, 122
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 353, 5
+  size: 67, 36
+  orig: 67, 36
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 10
+  size: 168, 184
+  orig: 168, 184
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,90 @@
+
+enemy26.png
+size: 456,212
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armLlow
+  rotate: false
+  xy: 379, 59
+  size: 70, 63
+  orig: 70, 63
+  offset: 0, 0
+  index: -1
+armLup
+  rotate: false
+  xy: 314, 56
+  size: 60, 54
+  orig: 60, 54
+  offset: 0, 0
+  index: -1
+armR
+  rotate: false
+  xy: 199, 106
+  size: 109, 102
+  orig: 109, 102
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 199, 11
+  size: 113, 93
+  orig: 113, 93
+  offset: 0, 0
+  index: -1
+footL
+  rotate: false
+  xy: 310, 112
+  size: 67, 38
+  orig: 67, 38
+  offset: 0, 0
+  index: -1
+footR
+  rotate: false
+  xy: 310, 112
+  size: 67, 38
+  orig: 67, 38
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 2
+  size: 195, 206
+  orig: 195, 206
+  offset: 0, 0
+  index: -1
+hip
+  rotate: false
+  xy: 310, 152
+  size: 109, 56
+  orig: 109, 56
+  offset: 0, 0
+  index: -1
+legLlow
+  rotate: false
+  xy: 421, 167
+  size: 30, 41
+  orig: 30, 41
+  offset: 0, 0
+  index: -1
+legLup
+  rotate: false
+  xy: 376, 8
+  size: 59, 49
+  orig: 59, 49
+  offset: 0, 0
+  index: -1
+legRlow
+  rotate: false
+  xy: 421, 124
+  size: 30, 41
+  orig: 30, 41
+  offset: 0, 0
+  index: -1
+legRup
+  rotate: false
+  xy: 314, 5
+  size: 58, 49
+  orig: 58, 49
+  offset: 0, 0
+  index: -1

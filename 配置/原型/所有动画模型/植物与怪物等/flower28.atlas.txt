@@ -1,0 +1,69 @@
+
+flower28.png
+size: 364,96
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 2
+  rotate: false
+  xy: 125, 4
+  size: 35, 20
+  orig: 35, 20
+  offset: 0, 0
+  index: -1
+armR
+  rotate: false
+  xy: 162, 13
+  size: 36, 11
+  orig: 36, 11
+  offset: 0, 0
+  index: -1
+beard
+  rotate: false
+  xy: 310, 58
+  size: 49, 36
+  orig: 49, 36
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 102, 7
+  size: 21, 87
+  orig: 21, 87
+  offset: 0, 0
+  index: -1
+bot
+  rotate: false
+  xy: 209, 2
+  size: 86, 33
+  orig: 86, 33
+  offset: 0, 0
+  index: -1
+handL
+  rotate: false
+  xy: 125, 26
+  size: 82, 68
+  orig: 82, 68
+  offset: 0, 0
+  index: -1
+handR
+  rotate: false
+  xy: 310, 4
+  size: 41, 52
+  orig: 41, 52
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 209, 37
+  size: 99, 57
+  orig: 99, 57
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 7
+  size: 98, 87
+  orig: 98, 87
+  offset: 0, 0
+  index: -1

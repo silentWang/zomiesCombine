@@ -1,0 +1,1928 @@
+{
+  "projectPath": "D:\\mySpace\\ZomiesCombine",
+  "actualPlatform": "wechatgame",
+  "mtimes": {
+    "7f45b442-aea3-47ce-a13e-5bdebb08c39d": {
+      "assetMtime": 1662370951864,
+      "metaMtime": 1662371168897
+    },
+    "04f21fb6-46a9-447d-aaf8-aa1d337a5c70": {
+      "assetMtime": 1662370951876,
+      "metaMtime": 1662371168661
+    },
+    "830ddec5-06e9-4dcb-8536-622a0aeba396": {
+      "assetMtime": 1662370951876,
+      "metaMtime": 1662371168661
+    },
+    "06ca1180-c757-4ec7-9f39-b6e173934031": {
+      "assetMtime": 1662370951900,
+      "metaMtime": 1662371168529
+    },
+    "3571c18c-4938-44b6-ae89-69eb85dc4296": {
+      "assetMtime": 1662370951900,
+      "metaMtime": 1662371168529
+    },
+    "08779d5f-3198-47f1-b69c-a596b8bc6fd9": {
+      "assetMtime": 1662370951901,
+      "metaMtime": 1662371168487
+    },
+    "aeddf96e-4daf-4150-9124-9c7e3fbc6e85": {
+      "assetMtime": 1662370951901,
+      "metaMtime": 1662371168487
+    },
+    "0b524eb6-2a21-4cf9-9c3a-c833fab37412": {
+      "assetMtime": 1662370951888,
+      "metaMtime": 1662371168514
+    },
+    "3848146b-9417-4a6c-a6a6-28095b85de7e": {
+      "assetMtime": 1662370951888,
+      "metaMtime": 1662371168514
+    },
+    "0ea5d36b-5c8e-400c-8570-e0361cb5bbc2": {
+      "assetMtime": 1662370951917,
+      "metaMtime": 1662371168673
+    },
+    "e4994319-8cf9-4558-aa50-d92e85663198": {
+      "assetMtime": 1662370951917,
+      "metaMtime": 1662371168673
+    },
+    "13199c8e-951c-41d2-b0c5-3bd94468c457": {
+      "assetMtime": 1662370951922,
+      "metaMtime": 1662371168819
+    },
+    "5ea83649-1412-4651-a19e-e0d61d0d2a04": {
+      "assetMtime": 1662370951922,
+      "metaMtime": 1662371168819
+    },
+    "1c89b8fe-b990-4062-abab-93bfa9e85e57": {
+      "assetMtime": 1662370951911,
+      "metaMtime": 1662371168897
+    },
+    "3b646bde-e9e7-4800-9fa8-47fad753b945": {
+      "assetMtime": 1662370951911,
+      "metaMtime": 1662371168897
+    },
+    "22a8b499-fed7-4fc7-9e7c-f5d8d144a7ab": {
+      "assetMtime": 1662370951893,
+      "metaMtime": 1662371168597
+    },
+    "f8382a02-760c-4b77-9285-5c5eb3ee39b0": {
+      "assetMtime": 1662370951893,
+      "metaMtime": 1662371168597
+    },
+    "27a768bb-aa5e-4ecb-8e09-c04bd54994c1": {
+      "assetMtime": 1662370951896,
+      "metaMtime": 1662371168527
+    },
+    "40469697-0d8f-4251-904f-c472bb096625": {
+      "assetMtime": 1662370951896,
+      "metaMtime": 1662371168527
+    },
+    "407745f2-c34a-43c1-8b1a-5529b12f3f4f": {
+      "assetMtime": 1662370951926,
+      "metaMtime": 1662371168737
+    },
+    "27e7483f-e257-40c4-ae52-f1d64027ef1f": {
+      "assetMtime": 1662370951926,
+      "metaMtime": 1662371168737
+    },
+    "4106ec01-3a8f-49ba-b9e4-d7cc5a35a3a4": {
+      "assetMtime": 1662370951860,
+      "metaMtime": 1662371168907
+    },
+    "c1fd8402-7aea-4672-a0d1-38b0bf74462f": {
+      "assetMtime": 1662370951860,
+      "metaMtime": 1662371168907
+    },
+    "41e6f7d3-58dc-47d6-af4a-588dcdba0f90": {
+      "assetMtime": 1662370951874,
+      "metaMtime": 1662371168443
+    },
+    "6d73a861-231f-423a-b4b3-a208c9cb38bc": {
+      "assetMtime": 1662370951874,
+      "metaMtime": 1662371168443
+    },
+    "444c8279-e368-4a44-ae2a-134ca3aa1960": {
+      "assetMtime": 1662370951918,
+      "metaMtime": 1662371168715
+    },
+    "93c2dc2c-3e2b-4f2e-a0ca-d4e5c9f1429b": {
+      "assetMtime": 1662370951918,
+      "metaMtime": 1662371168715
+    },
+    "47f1a604-583d-4642-8f41-389fc1526e5c": {
+      "assetMtime": 1662370951865,
+      "metaMtime": 1662371168457
+    },
+    "5440a699-aa7c-4ba8-a334-020715bf37c6": {
+      "assetMtime": 1662370951865,
+      "metaMtime": 1662371168457
+    },
+    "568102e4-a2cc-46d1-bf80-a2c7d1610344": {
+      "assetMtime": 1662370951862,
+      "metaMtime": 1662371168446
+    },
+    "4b7b4b4a-00f5-4631-85bb-c0884a6ebb67": {
+      "assetMtime": 1662370951862,
+      "metaMtime": 1662371168446
+    },
+    "5f1d9bb5-7cee-4aaf-b614-f3171cae0d62": {
+      "assetMtime": 1662370951906,
+      "metaMtime": 1662371168872
+    },
+    "99bc6f4d-23d8-40ac-bbe7-f31ddb80bbb5": {
+      "assetMtime": 1662370951906,
+      "metaMtime": 1662371168872
+    },
+    "653355bc-2ef2-4681-afc1-c31046198001": {
+      "assetMtime": 1662370951886,
+      "metaMtime": 1662371168512
+    },
+    "ce5fce78-58eb-428a-ae35-840a5e7e28d3": {
+      "assetMtime": 1662370951886,
+      "metaMtime": 1662371168512
+    },
+    "69d3c96f-3877-4758-8d20-ae7ca934b8a2": {
+      "assetMtime": 1662370951918,
+      "metaMtime": 1662371168486
+    },
+    "9fbcf87b-2de8-4676-973a-3f9c8447fdc7": {
+      "assetMtime": 1662370951918,
+      "metaMtime": 1662371168486
+    },
+    "6c0d47aa-9b77-423e-83fa-55412eb5d7c8": {
+      "assetMtime": 1662370951881,
+      "metaMtime": 1662371168500
+    },
+    "18264abe-037f-4d2c-b4d1-00a4a41acf19": {
+      "assetMtime": 1662370951881,
+      "metaMtime": 1662371168500
+    },
+    "6e2e687a-95e2-4fa0-ba42-25610b8aae3d": {
+      "assetMtime": 1662370951869,
+      "metaMtime": 1662371168431
+    },
+    "3077280a-5b78-41f4-9046-4c08f21ca11c": {
+      "assetMtime": 1662370951869,
+      "metaMtime": 1662371168431
+    },
+    "6ff7d6bf-d919-4860-ab98-63dffab67d50": {
+      "assetMtime": 1662370951922,
+      "metaMtime": 1662371168574
+    },
+    "f770c3e7-6c9e-46ca-bfc1-913f1d9240b7": {
+      "assetMtime": 1662370951922,
+      "metaMtime": 1662371168574
+    },
+    "731fd361-acfa-45d8-98b0-c315dfdf1ddc": {
+      "assetMtime": 1662370951925,
+      "metaMtime": 1662371168837
+    },
+    "e4bb032d-3bc7-4bc8-9e63-a341beacf19b": {
+      "assetMtime": 1662370951925,
+      "metaMtime": 1662371168837
+    },
+    "7413150a-2524-4cd6-8e08-54f85c1707e9": {
+      "assetMtime": 1662370951877,
+      "metaMtime": 1662371168429
+    },
+    "cbddc089-8623-482c-b8d3-356ab931a434": {
+      "assetMtime": 1662370951877,
+      "metaMtime": 1662371168429
+    },
+    "77b9eace-e612-4e8e-9f72-0f750efc4ba0": {
+      "assetMtime": 1662370951905,
+      "metaMtime": 1662371168790
+    },
+    "4a0c1273-0d96-4b26-ae65-a8ae450afde7": {
+      "assetMtime": 1662370951905,
+      "metaMtime": 1662371168790
+    },
+    "79855a97-3d72-46bb-8e0d-111606b0d541": {
+      "assetMtime": 1662370951895,
+      "metaMtime": 1662371168576
+    },
+    "eec1299b-03c9-43d3-8f76-cfb8eb02e470": {
+      "assetMtime": 1662370951895,
+      "metaMtime": 1662371168576
+    },
+    "82e1b974-95b8-4920-a2e5-9fe537ed2734": {
+      "assetMtime": 1662370951916,
+      "metaMtime": 1662371168884
+    },
+    "ba8a7ddc-9257-45c9-a778-3f75491efc68": {
+      "assetMtime": 1662370951916,
+      "metaMtime": 1662371168884
+    },
+    "840b4cfd-902d-45bc-b9a4-dca7175ee823": {
+      "assetMtime": 1662370951884,
+      "metaMtime": 1662371168613
+    },
+    "921b764c-d55e-4a8c-a2ee-23cc998e61e1": {
+      "assetMtime": 1662370951884,
+      "metaMtime": 1662371168613
+    },
+    "86967fcf-b7db-464a-ab72-8705b0e461f0": {
+      "assetMtime": 1662370951868,
+      "metaMtime": 1662371168473
+    },
+    "0aac32c9-7a8a-47d2-91f8-e53419d456f6": {
+      "assetMtime": 1662370951868,
+      "metaMtime": 1662371168473
+    },
+    "895cf6a7-2604-4f6b-8ac2-6aa3b54f83bb": {
+      "assetMtime": 1662370951856,
+      "metaMtime": 1662371168764
+    },
+    "02e44986-ea56-40ee-aa7c-ce2a2dda8e24": {
+      "assetMtime": 1662370951856,
+      "metaMtime": 1662371168764
+    },
+    "8dce57e2-c016-4565-9686-7cae70f4c1a4": {
+      "assetMtime": 1662370951925,
+      "metaMtime": 1662371168417
+    },
+    "d91ae922-e3b8-4b5f-86b2-a6129eb68768": {
+      "assetMtime": 1662370951925,
+      "metaMtime": 1662371168417
+    },
+    "918e554b-3c38-4dce-a673-a840cda37350": {
+      "assetMtime": 1662370951854,
+      "metaMtime": 1662371168766
+    },
+    "5ebc3aa4-9bca-4db0-9170-d5f29d912a63": {
+      "assetMtime": 1662370951854,
+      "metaMtime": 1662371168766
+    },
+    "92a57abc-6c6d-46fb-8610-6fdcd209ce59": {
+      "assetMtime": 1662370951929,
+      "metaMtime": 1662371168734
+    },
+    "e921a85f-a3b5-4adf-a1c2-473ff0683355": {
+      "assetMtime": 1662370951929,
+      "metaMtime": 1662371168734
+    },
+    "92c7c666-e58e-4002-a6f8-57e55285a6c5": {
+      "assetMtime": 1662370951894,
+      "metaMtime": 1662371168542
+    },
+    "acf7d633-4cbf-46b3-aebc-5ce01d9e2d20": {
+      "assetMtime": 1662370951894,
+      "metaMtime": 1662371168542
+    },
+    "a078362e-5c70-47b2-8f5c-ad46d518b3e7": {
+      "assetMtime": 1662370951881,
+      "metaMtime": 1662371168634
+    },
+    "a2dc704f-d5db-4ec6-b925-2aa4f4e9b085": {
+      "assetMtime": 1662370951881,
+      "metaMtime": 1662371168634
+    },
+    "a36a018f-c58d-4407-a7df-8590e6c3969d": {
+      "assetMtime": 1662370951883,
+      "metaMtime": 1662371168499
+    },
+    "a4c74ac1-f3dd-4038-a68b-e8be88a87d48": {
+      "assetMtime": 1662370951883,
+      "metaMtime": 1662371168499
+    },
+    "a6a3bc92-6611-4e1e-bf36-8d1196f00a2a": {
+      "assetMtime": 1662370951891,
+      "metaMtime": 1662371168611
+    },
+    "af3e7b72-f0e4-4d10-9694-9fa6215c2c35": {
+      "assetMtime": 1662370951891,
+      "metaMtime": 1662371168611
+    },
+    "ab123d3a-8c91-421f-8ed9-0138dc1d84b6": {
+      "assetMtime": 1662370951902,
+      "metaMtime": 1662371168858
+    },
+    "85f1f655-3eb6-47e5-9be0-0d66721746ed": {
+      "assetMtime": 1662370951902,
+      "metaMtime": 1662371168858
+    },
+    "aba66ee0-85f5-472b-bca5-e64e728af659": {
+      "assetMtime": 1662370951916,
+      "metaMtime": 1662371168839
+    },
+    "757522ec-1961-4f10-aee6-b3440faebb7a": {
+      "assetMtime": 1662370951916,
+      "metaMtime": 1662371168839
+    },
+    "b1ed8153-58b9-429a-bb5c-1409389d7dac": {
+      "assetMtime": 1662370951857,
+      "metaMtime": 1662371168886
+    },
+    "abbe5a40-a21d-44bd-b2f9-92502f992a3e": {
+      "assetMtime": 1662370951857,
+      "metaMtime": 1662371168886
+    },
+    "b85033e8-fbe4-4afb-ba9f-c0424eb9449a": {
+      "assetMtime": 1662370951930,
+      "metaMtime": 1662371168821
+    },
+    "0bed7f6f-7a7b-4f2e-a8f2-91e72834c345": {
+      "assetMtime": 1662370951930,
+      "metaMtime": 1662371168821
+    },
+    "c6047742-7258-4af4-9201-7134fb3f5f5a": {
+      "assetMtime": 1662370951879,
+      "metaMtime": 1662371168415
+    },
+    "580cdda7-c8b9-4462-90e1-843545a746e4": {
+      "assetMtime": 1662370951879,
+      "metaMtime": 1662371168415
+    },
+    "c6dd7879-d933-4b77-9438-7b92b1caa4a3": {
+      "assetMtime": 1662370951894,
+      "metaMtime": 1662371168472
+    },
+    "daf3d7b1-3194-4f41-963c-62c5556d9186": {
+      "assetMtime": 1662370951894,
+      "metaMtime": 1662371168472
+    },
+    "c998ec55-6013-45f2-80e7-3ac2c6f794b8": {
+      "assetMtime": 1662370951900,
+      "metaMtime": 1662371168594
+    },
+    "7414ff1c-84f7-4c5a-9ee3-2a125e95e2fd": {
+      "assetMtime": 1662370951900,
+      "metaMtime": 1662371168594
+    },
+    "ce2479fc-031a-45db-85bf-0151fb11a3dc": {
+      "assetMtime": 1662370951923,
+      "metaMtime": 1662371168713
+    },
+    "c0c22bb5-9f1a-4b9c-b0b0-fe864842ae7a": {
+      "assetMtime": 1662370951923,
+      "metaMtime": 1662371168713
+    },
+    "d0148f85-93d8-4423-befb-fc720aee1a4a": {
+      "assetMtime": 1662370951887,
+      "metaMtime": 1662371168650
+    },
+    "e35a5459-cb8b-404b-bc68-f56b4d0b6629": {
+      "assetMtime": 1662370951887,
+      "metaMtime": 1662371168650
+    },
+    "d1618442-2269-48d6-b140-2f34d6d58d5a": {
+      "assetMtime": 1662370951903,
+      "metaMtime": 1662371168689
+    },
+    "f5fd1ff5-227c-48b4-a040-93f01dfd1b2b": {
+      "assetMtime": 1662370951903,
+      "metaMtime": 1662371168689
+    },
+    "d66bcf93-9c07-40e1-87f0-73641905d4cb": {
+      "assetMtime": 1662370951902,
+      "metaMtime": 1662371168663
+    },
+    "48a5de56-afb6-404e-83fe-b0812eaa71ea": {
+      "assetMtime": 1662370951902,
+      "metaMtime": 1662371168663
+    },
+    "d6d6ddd9-b0c5-40b3-9b50-49cf4e4dc0bb": {
+      "assetMtime": 1662370951864,
+      "metaMtime": 1662371168557
+    },
+    "4b4bea0a-f8af-4450-9364-1894f17fbfb7": {
+      "assetMtime": 1662370951864,
+      "metaMtime": 1662371168557
+    },
+    "d8cf3fa3-2606-4c8f-afbb-8f1981b6a010": {
+      "assetMtime": 1662370951890,
+      "metaMtime": 1662371168544
+    },
+    "195da113-a2d9-4fd3-96c1-c35ac59858a5": {
+      "assetMtime": 1662370951890,
+      "metaMtime": 1662371168544
+    },
+    "dc0cd463-d31b-42b2-b585-c67f88188793": {
+      "assetMtime": 1662370951886,
+      "metaMtime": 1662371168637
+    },
+    "360655ed-46fe-44fb-9d2f-61ca4401129e": {
+      "assetMtime": 1662370951886,
+      "metaMtime": 1662371168637
+    },
+    "dc3ea2ab-69c4-4887-9b13-e1d346072f86": {
+      "assetMtime": 1662370951858,
+      "metaMtime": 1662371168873
+    },
+    "1ba320f0-d507-4319-8816-f66618085e17": {
+      "assetMtime": 1662370951858,
+      "metaMtime": 1662371168873
+    },
+    "dd73847b-d23d-4cbf-ac88-90bb3fa860d3": {
+      "assetMtime": 1662370951869,
+      "metaMtime": 1662371168458
+    },
+    "6bde2fff-4ef1-4006-b32e-c78e338483af": {
+      "assetMtime": 1662370951869,
+      "metaMtime": 1662371168458
+    },
+    "e18ca23b-e098-47f3-a0b8-5f44ad9b4043": {
+      "assetMtime": 1662370951919,
+      "metaMtime": 1662371168791
+    },
+    "379f21c5-44a4-47ed-93a5-0bf842d17023": {
+      "assetMtime": 1662370951919,
+      "metaMtime": 1662371168791
+    },
+    "e1fe94b0-b39a-45f6-914f-bb058a075837": {
+      "assetMtime": 1662370951863,
+      "metaMtime": 1662371168559
+    },
+    "76cfff60-2b71-4028-ad0c-fdea3bca6865": {
+      "assetMtime": 1662370951863,
+      "metaMtime": 1662371168559
+    },
+    "e22939ac-65de-4f12-bbc0-b58eaf573142": {
+      "assetMtime": 1662370951910,
+      "metaMtime": 1662371168674
+    },
+    "f18dd1af-9788-4292-9062-869b5c81ef4a": {
+      "assetMtime": 1662370951910,
+      "metaMtime": 1662371168674
+    },
+    "e22ebf8c-9402-4be8-83b4-70c28759f708": {
+      "assetMtime": 1662370951905,
+      "metaMtime": 1662371168690
+    },
+    "ec0caf8c-665a-4f80-b79d-f201f5228d81": {
+      "assetMtime": 1662370951905,
+      "metaMtime": 1662371168690
+    },
+    "e7a02771-82ab-4e79-b1ed-46a2862f5a04": {
+      "assetMtime": 1662370951911,
+      "metaMtime": 1662371168860
+    },
+    "c5ac3756-c2ee-4286-ae63-2c34356e0f54": {
+      "assetMtime": 1662370951911,
+      "metaMtime": 1662371168860
+    },
+    "eccb2ff5-634c-4264-b90a-5c68a9af0cf1": {
+      "assetMtime": 1662370951880,
+      "metaMtime": 1662371168648
+    },
+    "f762ad6f-1925-491a-b793-bc008934aec6": {
+      "assetMtime": 1662370951880,
+      "metaMtime": 1662371168648
+    },
+    "f8c2af18-ab7b-413a-b107-c539ec842af5": {
+      "assetMtime": 1662370951931,
+      "metaMtime": 1662371168402
+    },
+    "b6a6405e-cdf3-4700-a726-7c29f0f9dfbd": {
+      "assetMtime": 1662370951931,
+      "metaMtime": 1662371168402
+    },
+    "f8d24913-be6f-43d2-89b5-28a30b8e8dae": {
+      "assetMtime": 1662370951860,
+      "metaMtime": 1662371168895
+    },
+    "3b39e8b8-09f5-4a07-a4a7-05aecb8fea16": {
+      "assetMtime": 1662370951860,
+      "metaMtime": 1662371168895
+    }
+  },
+  "result": {
+    "name": "AutoAtlas",
+    "width": 1024,
+    "height": 1024,
+    "ver": "1.2.1",
+    "uuid": "7f45b442-aea3-47ce-a13e-5bdebb08c39d",
+    "maxWidth": 1024,
+    "maxHeight": 1024,
+    "padding": 2,
+    "allowRotation": true,
+    "forceSquared": false,
+    "powerOfTwo": false,
+    "algorithm": "MaxRects",
+    "format": "png",
+    "quality": 80,
+    "contourBleed": true,
+    "paddingBleed": true,
+    "filterUnused": true,
+    "packable": false,
+    "premultiplyAlpha": false,
+    "filterMode": "bilinear",
+    "platformSettings": {},
+    "subMetas": {},
+    "bleed": 1,
+    "atlases": [
+      {
+        "files": [
+          {
+            "name": "52",
+            "uuid": "b85033e8-fbe4-4afb-ba9f-c0424eb9449a",
+            "textureUuid": "0bed7f6f-7a7b-4f2e-a8f2-91e72834c345",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_39.png",
+            "trim": {
+              "x": 3,
+              "y": 3,
+              "width": 100,
+              "height": 18,
+              "rotatedWidth": 100,
+              "rotatedHeight": 18
+            },
+            "rawWidth": 100,
+            "rawHeight": 18,
+            "width": 106,
+            "height": 24,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/0b/0bed7f6f-7a7b-4f2e-a8f2-91e72834c345.png",
+            "x": 0,
+            "y": 0,
+            "rotatedWidth": 106,
+            "rotatedHeight": 24
+          },
+          {
+            "name": "15",
+            "uuid": "47f1a604-583d-4642-8f41-389fc1526e5c",
+            "textureUuid": "5440a699-aa7c-4ba8-a334-020715bf37c6",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_13.png",
+            "trim": {
+              "x": 109,
+              "y": 3,
+              "width": 32,
+              "height": 16,
+              "rotatedWidth": 16,
+              "rotatedHeight": 32
+            },
+            "rawWidth": 32,
+            "rawHeight": 16,
+            "width": 38,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/54/5440a699-aa7c-4ba8-a334-020715bf37c6.png",
+            "x": 106,
+            "y": 0,
+            "rotated": true,
+            "rotatedWidth": 22,
+            "rotatedHeight": 38
+          },
+          {
+            "name": "43",
+            "uuid": "e22ebf8c-9402-4be8-83b4-70c28759f708",
+            "textureUuid": "ec0caf8c-665a-4f80-b79d-f201f5228d81",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_55.png",
+            "trim": {
+              "x": 3,
+              "y": 27,
+              "width": 85,
+              "height": 73,
+              "rotatedWidth": 85,
+              "rotatedHeight": 73
+            },
+            "rawWidth": 88,
+            "rawHeight": 78,
+            "width": 91,
+            "height": 79,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/ec/ec0caf8c-665a-4f80-b79d-f201f5228d81.png",
+            "x": 0,
+            "y": 24,
+            "rotatedWidth": 91,
+            "rotatedHeight": 79
+          },
+          {
+            "name": "18",
+            "uuid": "c6dd7879-d933-4b77-9438-7b92b1caa4a3",
+            "textureUuid": "daf3d7b1-3194-4f41-963c-62c5556d9186",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_41.png",
+            "trim": {
+              "x": 94,
+              "y": 41,
+              "width": 40,
+              "height": 30,
+              "rotatedWidth": 30,
+              "rotatedHeight": 40
+            },
+            "rawWidth": 40,
+            "rawHeight": 30,
+            "width": 46,
+            "height": 36,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/da/daf3d7b1-3194-4f41-963c-62c5556d9186.png",
+            "x": 91,
+            "y": 38,
+            "rotated": true,
+            "rotatedWidth": 36,
+            "rotatedHeight": 46
+          },
+          {
+            "name": "45",
+            "uuid": "ce2479fc-031a-45db-85bf-0151fb11a3dc",
+            "textureUuid": "c0c22bb5-9f1a-4b9c-b0b0-fe864842ae7a",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_43.png",
+            "trim": {
+              "x": 94,
+              "y": 87,
+              "width": 40,
+              "height": 30,
+              "rotatedWidth": 30,
+              "rotatedHeight": 40
+            },
+            "rawWidth": 41,
+            "rawHeight": 30,
+            "width": 46,
+            "height": 36,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/c0/c0c22bb5-9f1a-4b9c-b0b0-fe864842ae7a.png",
+            "x": 91,
+            "y": 84,
+            "rotated": true,
+            "rotatedWidth": 36,
+            "rotatedHeight": 46
+          },
+          {
+            "name": "46",
+            "uuid": "92a57abc-6c6d-46fb-8610-6fdcd209ce59",
+            "textureUuid": "e921a85f-a3b5-4adf-a1c2-473ff0683355",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273015_image_31.png",
+            "trim": {
+              "x": 3,
+              "y": 106,
+              "width": 62,
+              "height": 42,
+              "rotatedWidth": 62,
+              "rotatedHeight": 42
+            },
+            "rawWidth": 62,
+            "rawHeight": 42,
+            "width": 68,
+            "height": 48,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/e9/e921a85f-a3b5-4adf-a1c2-473ff0683355.png",
+            "x": 0,
+            "y": 103,
+            "rotatedWidth": 68,
+            "rotatedHeight": 48
+          },
+          {
+            "name": "38",
+            "uuid": "eccb2ff5-634c-4264-b90a-5c68a9af0cf1",
+            "textureUuid": "f762ad6f-1925-491a-b793-bc008934aec6",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_57.png",
+            "trim": {
+              "x": 71,
+              "y": 133,
+              "width": 53,
+              "height": 24,
+              "rotatedWidth": 53,
+              "rotatedHeight": 24
+            },
+            "rawWidth": 54,
+            "rawHeight": 24,
+            "width": 59,
+            "height": 30,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/f7/f762ad6f-1925-491a-b793-bc008934aec6.png",
+            "x": 68,
+            "y": 130,
+            "rotatedWidth": 59,
+            "rotatedHeight": 30
+          },
+          {
+            "name": "47",
+            "uuid": "407745f2-c34a-43c1-8b1a-5529b12f3f4f",
+            "textureUuid": "27e7483f-e257-40c4-ae52-f1d64027ef1f",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273013_image_9.png",
+            "trim": {
+              "x": 71,
+              "y": 106,
+              "width": 21,
+              "height": 10,
+              "rotatedWidth": 10,
+              "rotatedHeight": 21
+            },
+            "rawWidth": 22,
+            "rawHeight": 10,
+            "width": 27,
+            "height": 16,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/27/27e7483f-e257-40c4-ae52-f1d64027ef1f.png",
+            "x": 68,
+            "y": 103,
+            "rotated": true,
+            "rotatedWidth": 16,
+            "rotatedHeight": 27
+          },
+          {
+            "name": "56",
+            "uuid": "ab123d3a-8c91-421f-8ed9-0138dc1d84b6",
+            "textureUuid": "85f1f655-3eb6-47e5-9be0-0d66721746ed",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_36.png",
+            "trim": {
+              "x": 3,
+              "y": 154,
+              "width": 58,
+              "height": 42,
+              "rotatedWidth": 58,
+              "rotatedHeight": 42
+            },
+            "rawWidth": 58,
+            "rawHeight": 42,
+            "width": 64,
+            "height": 48,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/85/85f1f655-3eb6-47e5-9be0-0d66721746ed.png",
+            "x": 0,
+            "y": 151,
+            "rotatedWidth": 64,
+            "rotatedHeight": 48
+          },
+          {
+            "name": "40",
+            "uuid": "0ea5d36b-5c8e-400c-8570-e0361cb5bbc2",
+            "textureUuid": "e4994319-8cf9-4558-aa50-d92e85663198",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273013_image_4.png",
+            "trim": {
+              "x": 67,
+              "y": 163,
+              "width": 52,
+              "height": 36,
+              "rotatedWidth": 52,
+              "rotatedHeight": 36
+            },
+            "rawWidth": 52,
+            "rawHeight": 38,
+            "width": 58,
+            "height": 42,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/e4/e4994319-8cf9-4558-aa50-d92e85663198.png",
+            "x": 64,
+            "y": 160,
+            "rotatedWidth": 58,
+            "rotatedHeight": 42
+          },
+          {
+            "name": "25",
+            "uuid": "06ca1180-c757-4ec7-9f39-b6e173934031",
+            "textureUuid": "3571c18c-4938-44b6-ae89-69eb85dc4296",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273013_image_1.png",
+            "trim": {
+              "x": 3,
+              "y": 202,
+              "width": 48,
+              "height": 28,
+              "rotatedWidth": 48,
+              "rotatedHeight": 28
+            },
+            "rawWidth": 50,
+            "rawHeight": 30,
+            "width": 54,
+            "height": 34,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/35/3571c18c-4938-44b6-ae89-69eb85dc4296.png",
+            "x": 0,
+            "y": 199,
+            "rotatedWidth": 54,
+            "rotatedHeight": 34
+          },
+          {
+            "name": "37",
+            "uuid": "d0148f85-93d8-4423-befb-fc720aee1a4a",
+            "textureUuid": "e35a5459-cb8b-404b-bc68-f56b4d0b6629",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_44.png",
+            "trim": {
+              "x": 57,
+              "y": 205,
+              "width": 46,
+              "height": 32,
+              "rotatedWidth": 46,
+              "rotatedHeight": 32
+            },
+            "rawWidth": 46,
+            "rawHeight": 32,
+            "width": 52,
+            "height": 38,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/e3/e35a5459-cb8b-404b-bc68-f56b4d0b6629.png",
+            "x": 54,
+            "y": 202,
+            "rotatedWidth": 52,
+            "rotatedHeight": 38
+          },
+          {
+            "name": "26",
+            "uuid": "92c7c666-e58e-4002-a6f8-57e55285a6c5",
+            "textureUuid": "acf7d633-4cbf-46b3-aebc-5ce01d9e2d20",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273015_image_32.png",
+            "trim": {
+              "x": 109,
+              "y": 205,
+              "width": 28,
+              "height": 16,
+              "rotatedWidth": 16,
+              "rotatedHeight": 28
+            },
+            "rawWidth": 28,
+            "rawHeight": 16,
+            "width": 34,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/ac/acf7d633-4cbf-46b3-aebc-5ce01d9e2d20.png",
+            "x": 106,
+            "y": 202,
+            "rotated": true,
+            "rotatedWidth": 22,
+            "rotatedHeight": 34
+          },
+          {
+            "name": "53",
+            "uuid": "731fd361-acfa-45d8-98b0-c315dfdf1ddc",
+            "textureUuid": "e4bb032d-3bc7-4bc8-9e63-a341beacf19b",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_21.png",
+            "trim": {
+              "x": 109,
+              "y": 239,
+              "width": 26,
+              "height": 16,
+              "rotatedWidth": 16,
+              "rotatedHeight": 26
+            },
+            "rawWidth": 26,
+            "rawHeight": 16,
+            "width": 32,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/e4/e4bb032d-3bc7-4bc8-9e63-a341beacf19b.png",
+            "x": 106,
+            "y": 236,
+            "rotated": true,
+            "rotatedWidth": 22,
+            "rotatedHeight": 32
+          },
+          {
+            "name": "42",
+            "uuid": "d1618442-2269-48d6-b140-2f34d6d58d5a",
+            "textureUuid": "f5fd1ff5-227c-48b4-a040-93f01dfd1b2b",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_45.png",
+            "trim": {
+              "x": 3,
+              "y": 236,
+              "width": 46,
+              "height": 22,
+              "rotatedWidth": 46,
+              "rotatedHeight": 22
+            },
+            "rawWidth": 46,
+            "rawHeight": 22,
+            "width": 52,
+            "height": 28,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/f5/f5fd1ff5-227c-48b4-a040-93f01dfd1b2b.png",
+            "x": 0,
+            "y": 233,
+            "rotatedWidth": 52,
+            "rotatedHeight": 28
+          },
+          {
+            "name": "16",
+            "uuid": "dd73847b-d23d-4cbf-ac88-90bb3fa860d3",
+            "textureUuid": "6bde2fff-4ef1-4006-b32e-c78e338483af",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_51.png",
+            "trim": {
+              "x": 55,
+              "y": 243,
+              "width": 43,
+              "height": 21,
+              "rotatedWidth": 43,
+              "rotatedHeight": 21
+            },
+            "rawWidth": 44,
+            "rawHeight": 22,
+            "width": 49,
+            "height": 27,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/6b/6bde2fff-4ef1-4006-b32e-c78e338483af.png",
+            "x": 52,
+            "y": 240,
+            "rotatedWidth": 49,
+            "rotatedHeight": 27
+          },
+          {
+            "name": "48",
+            "uuid": "918e554b-3c38-4dce-a673-a840cda37350",
+            "textureUuid": "5ebc3aa4-9bca-4db0-9170-d5f29d912a63",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273015_image_30.png",
+            "trim": {
+              "x": 3,
+              "y": 264,
+              "width": 42,
+              "height": 42,
+              "rotatedWidth": 42,
+              "rotatedHeight": 42
+            },
+            "rawWidth": 42,
+            "rawHeight": 42,
+            "width": 48,
+            "height": 48,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/5e/5ebc3aa4-9bca-4db0-9170-d5f29d912a63.png",
+            "x": 0,
+            "y": 261,
+            "rotatedWidth": 48,
+            "rotatedHeight": 48
+          },
+          {
+            "name": "58",
+            "uuid": "dc3ea2ab-69c4-4887-9b13-e1d346072f86",
+            "textureUuid": "1ba320f0-d507-4319-8816-f66618085e17",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_50.png",
+            "trim": {
+              "x": 51,
+              "y": 270,
+              "width": 40,
+              "height": 42,
+              "rotatedWidth": 42,
+              "rotatedHeight": 40
+            },
+            "rawWidth": 40,
+            "rawHeight": 42,
+            "width": 46,
+            "height": 48,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/1b/1ba320f0-d507-4319-8816-f66618085e17.png",
+            "x": 48,
+            "y": 267,
+            "rotated": true,
+            "rotatedWidth": 48,
+            "rotatedHeight": 46
+          },
+          {
+            "name": "31",
+            "uuid": "c998ec55-6013-45f2-80e7-3ac2c6f794b8",
+            "textureUuid": "7414ff1c-84f7-4c5a-9ee3-2a125e95e2fd",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_42.png",
+            "trim": {
+              "x": 99,
+              "y": 271,
+              "width": 26,
+              "height": 26,
+              "rotatedWidth": 26,
+              "rotatedHeight": 26
+            },
+            "rawWidth": 26,
+            "rawHeight": 26,
+            "width": 32,
+            "height": 32,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/74/7414ff1c-84f7-4c5a-9ee3-2a125e95e2fd.png",
+            "x": 96,
+            "y": 268,
+            "rotatedWidth": 32,
+            "rotatedHeight": 32
+          },
+          {
+            "name": "39",
+            "uuid": "04f21fb6-46a9-447d-aaf8-aa1d337a5c70",
+            "textureUuid": "830ddec5-06e9-4dcb-8536-622a0aeba396",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273012_image_0.png",
+            "trim": {
+              "x": 99,
+              "y": 303,
+              "width": 26,
+              "height": 24,
+              "rotatedWidth": 26,
+              "rotatedHeight": 24
+            },
+            "rawWidth": 26,
+            "rawHeight": 24,
+            "width": 32,
+            "height": 30,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/83/830ddec5-06e9-4dcb-8536-622a0aeba396.png",
+            "x": 96,
+            "y": 300,
+            "rotatedWidth": 32,
+            "rotatedHeight": 30
+          },
+          {
+            "name": "32",
+            "uuid": "22a8b499-fed7-4fc7-9e7c-f5d8d144a7ab",
+            "textureUuid": "f8382a02-760c-4b77-9285-5c5eb3ee39b0",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273013_image_7.png",
+            "trim": {
+              "x": 3,
+              "y": 312,
+              "width": 36,
+              "height": 40,
+              "rotatedWidth": 40,
+              "rotatedHeight": 36
+            },
+            "rawWidth": 36,
+            "rawHeight": 40,
+            "width": 42,
+            "height": 46,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/f8/f8382a02-760c-4b77-9285-5c5eb3ee39b0.png",
+            "x": 0,
+            "y": 309,
+            "rotated": true,
+            "rotatedWidth": 46,
+            "rotatedHeight": 42
+          },
+          {
+            "name": "41",
+            "uuid": "e22939ac-65de-4f12-bbc0-b58eaf573142",
+            "textureUuid": "f18dd1af-9788-4292-9062-869b5c81ef4a",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_54.png",
+            "trim": {
+              "x": 49,
+              "y": 316,
+              "width": 38,
+              "height": 32,
+              "rotatedWidth": 38,
+              "rotatedHeight": 32
+            },
+            "rawWidth": 38,
+            "rawHeight": 32,
+            "width": 44,
+            "height": 38,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/f1/f18dd1af-9788-4292-9062-869b5c81ef4a.png",
+            "x": 46,
+            "y": 313,
+            "rotatedWidth": 44,
+            "rotatedHeight": 38
+          },
+          {
+            "name": "50",
+            "uuid": "e18ca23b-e098-47f3-a0b8-5f44ad9b4043",
+            "textureUuid": "379f21c5-44a4-47ed-93a5-0bf842d17023",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_52.png",
+            "trim": {
+              "x": 93,
+              "y": 333,
+              "width": 34,
+              "height": 29,
+              "rotatedWidth": 29,
+              "rotatedHeight": 34
+            },
+            "rawWidth": 36,
+            "rawHeight": 30,
+            "width": 40,
+            "height": 35,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/37/379f21c5-44a4-47ed-93a5-0bf842d17023.png",
+            "x": 90,
+            "y": 330,
+            "rotated": true,
+            "rotatedWidth": 35,
+            "rotatedHeight": 40
+          },
+          {
+            "name": "28",
+            "uuid": "e1fe94b0-b39a-45f6-914f-bb058a075837",
+            "textureUuid": "76cfff60-2b71-4028-ad0c-fdea3bca6865",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_53.png",
+            "trim": {
+              "x": 3,
+              "y": 354,
+              "width": 36,
+              "height": 36,
+              "rotatedWidth": 36,
+              "rotatedHeight": 36
+            },
+            "rawWidth": 36,
+            "rawHeight": 36,
+            "width": 42,
+            "height": 42,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/76/76cfff60-2b71-4028-ad0c-fdea3bca6865.png",
+            "x": 0,
+            "y": 351,
+            "rotatedWidth": 42,
+            "rotatedHeight": 42
+          },
+          {
+            "name": "30",
+            "uuid": "79855a97-3d72-46bb-8e0d-111606b0d541",
+            "textureUuid": "eec1299b-03c9-43d3-8f76-cfb8eb02e470",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_24.png",
+            "trim": {
+              "x": 45,
+              "y": 354,
+              "width": 34,
+              "height": 36,
+              "rotatedWidth": 36,
+              "rotatedHeight": 34
+            },
+            "rawWidth": 34,
+            "rawHeight": 36,
+            "width": 40,
+            "height": 42,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/ee/eec1299b-03c9-43d3-8f76-cfb8eb02e470.png",
+            "x": 42,
+            "y": 351,
+            "rotated": true,
+            "rotatedWidth": 42,
+            "rotatedHeight": 40
+          },
+          {
+            "name": "27",
+            "uuid": "d8cf3fa3-2606-4c8f-afbb-8f1981b6a010",
+            "textureUuid": "195da113-a2d9-4fd3-96c1-c35ac59858a5",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_48.png",
+            "trim": {
+              "x": 87,
+              "y": 373,
+              "width": 36,
+              "height": 22,
+              "rotatedWidth": 36,
+              "rotatedHeight": 22
+            },
+            "rawWidth": 36,
+            "rawHeight": 22,
+            "width": 42,
+            "height": 28,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/19/195da113-a2d9-4fd3-96c1-c35ac59858a5.png",
+            "x": 84,
+            "y": 370,
+            "rotatedWidth": 42,
+            "rotatedHeight": 28
+          },
+          {
+            "name": "21",
+            "uuid": "6c0d47aa-9b77-423e-83fa-55412eb5d7c8",
+            "textureUuid": "18264abe-037f-4d2c-b4d1-00a4a41acf19",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_18.png",
+            "trim": {
+              "x": 45,
+              "y": 394,
+              "width": 34,
+              "height": 24,
+              "rotatedWidth": 34,
+              "rotatedHeight": 24
+            },
+            "rawWidth": 34,
+            "rawHeight": 24,
+            "width": 40,
+            "height": 30,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/18/18264abe-037f-4d2c-b4d1-00a4a41acf19.png",
+            "x": 42,
+            "y": 391,
+            "rotatedWidth": 40,
+            "rotatedHeight": 30
+          },
+          {
+            "name": "10",
+            "uuid": "c6047742-7258-4af4-9201-7134fb3f5f5a",
+            "textureUuid": "580cdda7-c8b9-4462-90e1-843545a746e4",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_40.png",
+            "trim": {
+              "x": 3,
+              "y": 396,
+              "width": 34,
+              "height": 20,
+              "rotatedWidth": 34,
+              "rotatedHeight": 20
+            },
+            "rawWidth": 36,
+            "rawHeight": 20,
+            "width": 40,
+            "height": 26,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/58/580cdda7-c8b9-4462-90e1-843545a746e4.png",
+            "x": 0,
+            "y": 393,
+            "rotatedWidth": 40,
+            "rotatedHeight": 26
+          },
+          {
+            "name": "35",
+            "uuid": "a078362e-5c70-47b2-8f5c-ad46d518b3e7",
+            "textureUuid": "a2dc704f-d5db-4ec6-b925-2aa4f4e9b085",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273015_image_33.png",
+            "trim": {
+              "x": 3,
+              "y": 422,
+              "width": 34,
+              "height": 18,
+              "rotatedWidth": 34,
+              "rotatedHeight": 18
+            },
+            "rawWidth": 34,
+            "rawHeight": 18,
+            "width": 40,
+            "height": 24,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/a2/a2dc704f-d5db-4ec6-b925-2aa4f4e9b085.png",
+            "x": 0,
+            "y": 419,
+            "rotatedWidth": 40,
+            "rotatedHeight": 24
+          },
+          {
+            "name": "51",
+            "uuid": "13199c8e-951c-41d2-b0c5-3bd94468c457",
+            "textureUuid": "5ea83649-1412-4651-a19e-e0d61d0d2a04",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273013_image_5.png",
+            "trim": {
+              "x": 85,
+              "y": 401,
+              "width": 33,
+              "height": 27,
+              "rotatedWidth": 33,
+              "rotatedHeight": 27
+            },
+            "rawWidth": 34,
+            "rawHeight": 28,
+            "width": 39,
+            "height": 33,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/5e/5ea83649-1412-4651-a19e-e0d61d0d2a04.png",
+            "x": 82,
+            "y": 398,
+            "rotatedWidth": 39,
+            "rotatedHeight": 33
+          },
+          {
+            "name": "33",
+            "uuid": "a6a3bc92-6611-4e1e-bf36-8d1196f00a2a",
+            "textureUuid": "af3e7b72-f0e4-4d10-9694-9fa6215c2c35",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_35.png",
+            "trim": {
+              "x": 43,
+              "y": 424,
+              "width": 28,
+              "height": 20,
+              "rotatedWidth": 28,
+              "rotatedHeight": 20
+            },
+            "rawWidth": 28,
+            "rawHeight": 20,
+            "width": 34,
+            "height": 26,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/af/af3e7b72-f0e4-4d10-9694-9fa6215c2c35.png",
+            "x": 40,
+            "y": 421,
+            "rotatedWidth": 34,
+            "rotatedHeight": 26
+          },
+          {
+            "name": "13",
+            "uuid": "41e6f7d3-58dc-47d6-af4a-588dcdba0f90",
+            "textureUuid": "6d73a861-231f-423a-b4b3-a208c9cb38bc",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_11.png",
+            "trim": {
+              "x": 3,
+              "y": 446,
+              "width": 28,
+              "height": 14,
+              "rotatedWidth": 28,
+              "rotatedHeight": 14
+            },
+            "rawWidth": 28,
+            "rawHeight": 14,
+            "width": 34,
+            "height": 20,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/6d/6d73a861-231f-423a-b4b3-a208c9cb38bc.png",
+            "x": 0,
+            "y": 443,
+            "rotatedWidth": 34,
+            "rotatedHeight": 20
+          },
+          {
+            "name": "12",
+            "uuid": "6e2e687a-95e2-4fa0-ba42-25610b8aae3d",
+            "textureUuid": "3077280a-5b78-41f4-9046-4c08f21ca11c",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_19.png",
+            "trim": {
+              "x": 77,
+              "y": 434,
+              "width": 26,
+              "height": 18,
+              "rotatedWidth": 26,
+              "rotatedHeight": 18
+            },
+            "rawWidth": 26,
+            "rawHeight": 18,
+            "width": 32,
+            "height": 24,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/30/3077280a-5b78-41f4-9046-4c08f21ca11c.png",
+            "x": 74,
+            "y": 431,
+            "rotatedWidth": 32,
+            "rotatedHeight": 24
+          },
+          {
+            "name": "36",
+            "uuid": "dc0cd463-d31b-42b2-b585-c67f88188793",
+            "textureUuid": "360655ed-46fe-44fb-9d2f-61ca4401129e",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_49.png",
+            "trim": {
+              "x": 109,
+              "y": 434,
+              "width": 24,
+              "height": 16,
+              "rotatedWidth": 16,
+              "rotatedHeight": 24
+            },
+            "rawWidth": 24,
+            "rawHeight": 16,
+            "width": 30,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/36/360655ed-46fe-44fb-9d2f-61ca4401129e.png",
+            "x": 106,
+            "y": 431,
+            "rotated": true,
+            "rotatedWidth": 22,
+            "rotatedHeight": 30
+          },
+          {
+            "name": "49",
+            "uuid": "895cf6a7-2604-4f6b-8ac2-6aa3b54f83bb",
+            "textureUuid": "02e44986-ea56-40ee-aa7c-ce2a2dda8e24",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273015_image_28.png",
+            "trim": {
+              "x": 37,
+              "y": 450,
+              "width": 24,
+              "height": 24,
+              "rotatedWidth": 24,
+              "rotatedHeight": 24
+            },
+            "rawWidth": 24,
+            "rawHeight": 24,
+            "width": 30,
+            "height": 30,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/02/02e44986-ea56-40ee-aa7c-ce2a2dda8e24.png",
+            "x": 34,
+            "y": 447,
+            "rotatedWidth": 30,
+            "rotatedHeight": 30
+          },
+          {
+            "name": "54",
+            "uuid": "aba66ee0-85f5-472b-bca5-e64e728af659",
+            "textureUuid": "757522ec-1961-4f10-aee6-b3440faebb7a",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_37.png",
+            "trim": {
+              "x": 3,
+              "y": 466,
+              "width": 24,
+              "height": 20,
+              "rotatedWidth": 24,
+              "rotatedHeight": 20
+            },
+            "rawWidth": 24,
+            "rawHeight": 20,
+            "width": 30,
+            "height": 26,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/75/757522ec-1961-4f10-aee6-b3440faebb7a.png",
+            "x": 0,
+            "y": 463,
+            "rotatedWidth": 30,
+            "rotatedHeight": 26
+          },
+          {
+            "name": "55",
+            "uuid": "e7a02771-82ab-4e79-b1ed-46a2862f5a04",
+            "textureUuid": "c5ac3756-c2ee-4286-ae63-2c34356e0f54",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_56.png",
+            "trim": {
+              "x": 67,
+              "y": 458,
+              "width": 24,
+              "height": 20,
+              "rotatedWidth": 24,
+              "rotatedHeight": 20
+            },
+            "rawWidth": 24,
+            "rawHeight": 20,
+            "width": 30,
+            "height": 26,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/c5/c5ac3756-c2ee-4286-ae63-2c34356e0f54.png",
+            "x": 64,
+            "y": 455,
+            "rotatedWidth": 30,
+            "rotatedHeight": 26
+          },
+          {
+            "name": "59",
+            "uuid": "b1ed8153-58b9-429a-bb5c-1409389d7dac",
+            "textureUuid": "abbe5a40-a21d-44bd-b2f9-92502f992a3e",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_38.png",
+            "trim": {
+              "x": 33,
+              "y": 480,
+              "width": 24,
+              "height": 19,
+              "rotatedWidth": 24,
+              "rotatedHeight": 19
+            },
+            "rawWidth": 24,
+            "rawHeight": 20,
+            "width": 30,
+            "height": 25,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/ab/abbe5a40-a21d-44bd-b2f9-92502f992a3e.png",
+            "x": 30,
+            "y": 477,
+            "rotatedWidth": 30,
+            "rotatedHeight": 25
+          },
+          {
+            "name": "24",
+            "uuid": "27a768bb-aa5e-4ecb-8e09-c04bd54994c1",
+            "textureUuid": "40469697-0d8f-4251-904f-c472bb096625",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273013_image_8.png",
+            "trim": {
+              "x": 3,
+              "y": 492,
+              "width": 24,
+              "height": 14,
+              "rotatedWidth": 24,
+              "rotatedHeight": 14
+            },
+            "rawWidth": 24,
+            "rawHeight": 14,
+            "width": 30,
+            "height": 20,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/40/40469697-0d8f-4251-904f-c472bb096625.png",
+            "x": 0,
+            "y": 489,
+            "rotatedWidth": 30,
+            "rotatedHeight": 20
+          },
+          {
+            "name": "57",
+            "uuid": "5f1d9bb5-7cee-4aaf-b614-f3171cae0d62",
+            "textureUuid": "99bc6f4d-23d8-40ac-bbe7-f31ddb80bbb5",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_15.png",
+            "trim": {
+              "x": 97,
+              "y": 464,
+              "width": 21,
+              "height": 20,
+              "rotatedWidth": 21,
+              "rotatedHeight": 20
+            },
+            "rawWidth": 22,
+            "rawHeight": 20,
+            "width": 27,
+            "height": 26,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/99/99bc6f4d-23d8-40ac-bbe7-f31ddb80bbb5.png",
+            "x": 94,
+            "y": 461,
+            "rotatedWidth": 27,
+            "rotatedHeight": 26
+          },
+          {
+            "name": "7",
+            "uuid": "1c89b8fe-b990-4062-abab-93bfa9e85e57",
+            "textureUuid": "3b646bde-e9e7-4800-9fa8-47fad753b945",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273013_image_6.png",
+            "trim": {
+              "x": 63,
+              "y": 484,
+              "width": 21,
+              "height": 18,
+              "rotatedWidth": 21,
+              "rotatedHeight": 18
+            },
+            "rawWidth": 22,
+            "rawHeight": 18,
+            "width": 27,
+            "height": 24,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/3b/3b646bde-e9e7-4800-9fa8-47fad753b945.png",
+            "x": 60,
+            "y": 481,
+            "rotatedWidth": 27,
+            "rotatedHeight": 24
+          },
+          {
+            "name": "19",
+            "uuid": "08779d5f-3198-47f1-b69c-a596b8bc6fd9",
+            "textureUuid": "aeddf96e-4daf-4150-9124-9c7e3fbc6e85",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273013_image_2.png",
+            "trim": {
+              "x": 33,
+              "y": 505,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/ae/aeddf96e-4daf-4150-9124-9c7e3fbc6e85.png",
+            "x": 30,
+            "y": 502,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "9",
+            "uuid": "4106ec01-3a8f-49ba-b9e4-d7cc5a35a3a4",
+            "textureUuid": "c1fd8402-7aea-4672-a0d1-38b0bf74462f",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_10.png",
+            "trim": {
+              "x": 3,
+              "y": 512,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/c1/c1fd8402-7aea-4672-a0d1-38b0bf74462f.png",
+            "x": 0,
+            "y": 509,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "22",
+            "uuid": "653355bc-2ef2-4681-afc1-c31046198001",
+            "textureUuid": "ce5fce78-58eb-428a-ae35-840a5e7e28d3",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_16.png",
+            "trim": {
+              "x": 90,
+              "y": 490,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/ce/ce5fce78-58eb-428a-ae35-840a5e7e28d3.png",
+            "x": 87,
+            "y": 487,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "2",
+            "uuid": "69d3c96f-3877-4758-8d20-ae7ca934b8a2",
+            "textureUuid": "9fbcf87b-2de8-4676-973a-3f9c8447fdc7",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_17.png",
+            "trim": {
+              "x": 59,
+              "y": 508,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/9f/9fbcf87b-2de8-4676-973a-3f9c8447fdc7.png",
+            "x": 56,
+            "y": 505,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "3",
+            "uuid": "6ff7d6bf-d919-4860-ab98-63dffab67d50",
+            "textureUuid": "f770c3e7-6c9e-46ca-bfc1-913f1d9240b7",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_20.png",
+            "trim": {
+              "x": 29,
+              "y": 527,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/f7/f770c3e7-6c9e-46ca-bfc1-913f1d9240b7.png",
+            "x": 26,
+            "y": 524,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "11",
+            "uuid": "7413150a-2524-4cd6-8e08-54f85c1707e9",
+            "textureUuid": "cbddc089-8623-482c-b8d3-356ab931a434",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_22.png",
+            "trim": {
+              "x": 3,
+              "y": 534,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/cb/cbddc089-8623-482c-b8d3-356ab931a434.png",
+            "x": 0,
+            "y": 531,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "5",
+            "uuid": "77b9eace-e612-4e8e-9f72-0f750efc4ba0",
+            "textureUuid": "4a0c1273-0d96-4b26-ae65-a8ae450afde7",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_23.png",
+            "trim": {
+              "x": 85,
+              "y": 512,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/4a/4a0c1273-0d96-4b26-ae65-a8ae450afde7.png",
+            "x": 82,
+            "y": 509,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "14",
+            "uuid": "568102e4-a2cc-46d1-bf80-a2c7d1610344",
+            "textureUuid": "4b7b4b4a-00f5-4631-85bb-c0884a6ebb67",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_14.png",
+            "trim": {
+              "x": 111,
+              "y": 512,
+              "width": 20,
+              "height": 14,
+              "rotatedWidth": 14,
+              "rotatedHeight": 20
+            },
+            "rawWidth": 20,
+            "rawHeight": 14,
+            "width": 26,
+            "height": 20,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/4b/4b7b4b4a-00f5-4631-85bb-c0884a6ebb67.png",
+            "x": 108,
+            "y": 509,
+            "rotated": true,
+            "rotatedWidth": 20,
+            "rotatedHeight": 26
+          },
+          {
+            "name": "34",
+            "uuid": "840b4cfd-902d-45bc-b9a4-dca7175ee823",
+            "textureUuid": "921b764c-d55e-4a8c-a2ee-23cc998e61e1",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_26.png",
+            "trim": {
+              "x": 55,
+              "y": 530,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/92/921b764c-d55e-4a8c-a2ee-23cc998e61e1.png",
+            "x": 52,
+            "y": 527,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "17",
+            "uuid": "86967fcf-b7db-464a-ab72-8705b0e461f0",
+            "textureUuid": "0aac32c9-7a8a-47d2-91f8-e53419d456f6",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_27.png",
+            "trim": {
+              "x": 29,
+              "y": 549,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/0a/0aac32c9-7a8a-47d2-91f8-e53419d456f6.png",
+            "x": 26,
+            "y": 546,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "1",
+            "uuid": "8dce57e2-c016-4565-9686-7cae70f4c1a4",
+            "textureUuid": "d91ae922-e3b8-4b5f-86b2-a6129eb68768",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273015_image_29.png",
+            "trim": {
+              "x": 3,
+              "y": 556,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/d9/d91ae922-e3b8-4b5f-86b2-a6129eb68768.png",
+            "x": 0,
+            "y": 553,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "8",
+            "uuid": "f8d24913-be6f-43d2-89b5-28a30b8e8dae",
+            "textureUuid": "3b39e8b8-09f5-4a07-a4a7-05aecb8fea16",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_59.png",
+            "trim": {
+              "x": 3,
+              "y": 578,
+              "width": 19,
+              "height": 16,
+              "rotatedWidth": 16,
+              "rotatedHeight": 19
+            },
+            "rawWidth": 19,
+            "rawHeight": 16,
+            "width": 25,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/3b/3b39e8b8-09f5-4a07-a4a7-05aecb8fea16.png",
+            "x": 0,
+            "y": 575,
+            "rotated": true,
+            "rotatedWidth": 22,
+            "rotatedHeight": 25
+          },
+          {
+            "name": "23",
+            "uuid": "0b524eb6-2a21-4cf9-9c3a-c833fab37412",
+            "textureUuid": "3848146b-9417-4a6c-a6a6-28095b85de7e",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273013_image_3.png",
+            "trim": {
+              "x": 25,
+              "y": 578,
+              "width": 18,
+              "height": 14,
+              "rotatedWidth": 14,
+              "rotatedHeight": 18
+            },
+            "rawWidth": 18,
+            "rawHeight": 14,
+            "width": 24,
+            "height": 20,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/38/3848146b-9417-4a6c-a6a6-28095b85de7e.png",
+            "x": 22,
+            "y": 575,
+            "rotated": true,
+            "rotatedWidth": 20,
+            "rotatedHeight": 24
+          },
+          {
+            "name": "29",
+            "uuid": "d6d6ddd9-b0c5-40b3-9b50-49cf4e4dc0bb",
+            "textureUuid": "4b4bea0a-f8af-4450-9364-1894f17fbfb7",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_47.png",
+            "trim": {
+              "x": 81,
+              "y": 534,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/4b/4b4bea0a-f8af-4450-9364-1894f17fbfb7.png",
+            "x": 78,
+            "y": 531,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "0",
+            "uuid": "f8c2af18-ab7b-413a-b107-c539ec842af5",
+            "textureUuid": "b6a6405e-cdf3-4700-a726-7c29f0f9dfbd",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273017_image_58.png",
+            "trim": {
+              "x": 55,
+              "y": 552,
+              "width": 20,
+              "height": 16,
+              "rotatedWidth": 20,
+              "rotatedHeight": 16
+            },
+            "rawWidth": 20,
+            "rawHeight": 16,
+            "width": 26,
+            "height": 22,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/b6/b6a6405e-cdf3-4700-a726-7c29f0f9dfbd.png",
+            "x": 52,
+            "y": 549,
+            "rotatedWidth": 26,
+            "rotatedHeight": 22
+          },
+          {
+            "name": "6",
+            "uuid": "82e1b974-95b8-4920-a2e5-9fe537ed2734",
+            "textureUuid": "ba8a7ddc-9257-45c9-a778-3f75491efc68",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_25.png",
+            "trim": {
+              "x": 107,
+              "y": 538,
+              "width": 16,
+              "height": 12,
+              "rotatedWidth": 16,
+              "rotatedHeight": 12
+            },
+            "rawWidth": 16,
+            "rawHeight": 12,
+            "width": 22,
+            "height": 18,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/ba/ba8a7ddc-9257-45c9-a778-3f75491efc68.png",
+            "x": 104,
+            "y": 535,
+            "rotatedWidth": 22,
+            "rotatedHeight": 18
+          },
+          {
+            "name": "4",
+            "uuid": "d66bcf93-9c07-40e1-87f0-73641905d4cb",
+            "textureUuid": "48a5de56-afb6-404e-83fe-b0812eaa71ea",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273016_image_46.png",
+            "trim": {
+              "x": 45,
+              "y": 574,
+              "width": 20,
+              "height": 15,
+              "rotatedWidth": 15,
+              "rotatedHeight": 20
+            },
+            "rawWidth": 20,
+            "rawHeight": 15,
+            "width": 26,
+            "height": 21,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/48/48a5de56-afb6-404e-83fe-b0812eaa71ea.png",
+            "x": 42,
+            "y": 571,
+            "rotated": true,
+            "rotatedWidth": 21,
+            "rotatedHeight": 26
+          },
+          {
+            "name": "20",
+            "uuid": "a36a018f-c58d-4407-a7df-8590e6c3969d",
+            "textureUuid": "a4c74ac1-f3dd-4038-a68b-e8be88a87d48",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273015_image_34.png",
+            "trim": {
+              "x": 66,
+              "y": 574,
+              "width": 20,
+              "height": 14,
+              "rotatedWidth": 14,
+              "rotatedHeight": 20
+            },
+            "rawWidth": 20,
+            "rawHeight": 14,
+            "width": 26,
+            "height": 20,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/a4/a4c74ac1-f3dd-4038-a68b-e8be88a87d48.png",
+            "x": 63,
+            "y": 571,
+            "rotated": true,
+            "rotatedWidth": 20,
+            "rotatedHeight": 26
+          },
+          {
+            "name": "44",
+            "uuid": "444c8279-e368-4a44-ae2a-134ca3aa1960",
+            "textureUuid": "93c2dc2c-3e2b-4f2e-a0ca-d4e5c9f1429b",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1666071273014_image_12.png",
+            "trim": {
+              "x": 81,
+              "y": 556,
+              "width": 20,
+              "height": 12,
+              "rotatedWidth": 20,
+              "rotatedHeight": 12
+            },
+            "rawWidth": 20,
+            "rawHeight": 12,
+            "width": 26,
+            "height": 18,
+            "originalPath": "D:/mySpace/ZomiesCombine/library/imports/93/93c2dc2c-3e2b-4f2e-a0ca-d4e5c9f1429b.png",
+            "x": 78,
+            "y": 553,
+            "rotatedWidth": 26,
+            "rotatedHeight": 18
+          }
+        ],
+        "width": 128,
+        "height": 600,
+        "name": "AutoAtlas-1",
+        "imagePath": "D:\\mySpace\\ZomiesCombine\\temp\\TexturePacker\\build\\native\\assets\\resources\\texture\\bullets\\AutoAtlas.pac\\AutoAtlas-1.png",
+        "compressd": {
+          "suffix": [
+            ".png"
+          ],
+          "imagePathNoExt": "D:\\mySpace\\ZomiesCombine\\temp\\TexturePacker\\build\\native\\assets\\resources\\texture\\bullets\\AutoAtlas.pac\\compressed\\AutoAtlas-1"
+        }
+      }
+    ],
+    "unpackedTextures": []
+  }
+}

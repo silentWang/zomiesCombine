@@ -2,19 +2,23 @@
   "ver": "1.1.2",
   "uuid": "679d5931-075c-4949-91cf-e98f02ba40cf",
   "isBundle": true,
-  "bundleName": "",
-  "priority": 1,
+  "bundleName": "spine",
+  "priority": "9",
   "compressionType": {
-    "bytedance": "default"
+    "bytedance": "default",
+    "wechatgame": "subpackage"
   },
   "optimizeHotUpdate": {
-    "bytedance": false
+    "bytedance": false,
+    "wechatgame": false
   },
   "inlineSpriteFrames": {
-    "bytedance": false
+    "bytedance": false,
+    "wechatgame": false
   },
   "isRemoteBundle": {
-    "bytedance": true
+    "bytedance": true,
+    "wechatgame": false
   },
   "subMetas": {}
 }

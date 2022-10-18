@@ -1,0 +1,132 @@
+
+flower39.png
+size: 644,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL_1
+  rotate: false
+  xy: 93, 9
+  size: 36, 22
+  orig: 36, 22
+  offset: 0, 0
+  index: -1
+armL_2
+  rotate: false
+  xy: 542, 38
+  size: 68, 40
+  orig: 68, 40
+  offset: 0, 0
+  index: -1
+armR_1
+  rotate: false
+  xy: 131, 16
+  size: 39, 15
+  orig: 39, 15
+  offset: 0, 0
+  index: -1
+armR_2
+  rotate: false
+  xy: 308, 2
+  size: 60, 46
+  orig: 60, 46
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 355, 58
+  size: 55, 68
+  orig: 55, 68
+  offset: 0, 0
+  index: -1
+bodyL
+  rotate: false
+  xy: 412, 68
+  size: 65, 58
+  orig: 65, 58
+  offset: 0, 0
+  index: -1
+bodyR
+  rotate: false
+  xy: 475, 8
+  size: 65, 58
+  orig: 65, 58
+  offset: 0, 0
+  index: -1
+bodyT
+  rotate: false
+  xy: 370, 4
+  size: 103, 52
+  orig: 103, 52
+  offset: 0, 0
+  index: -1
+bot
+  rotate: false
+  xy: 181, 4
+  size: 125, 36
+  orig: 125, 36
+  offset: 0, 0
+  index: -1
+flower
+  rotate: false
+  xy: 530, 80
+  size: 52, 46
+  orig: 52, 46
+  offset: 0, 0
+  index: -1
+fx0
+  rotate: false
+  xy: 93, 33
+  size: 86, 93
+  orig: 86, 93
+  offset: 0, 0
+  index: -1
+fx1
+  rotate: false
+  xy: 239, 50
+  size: 114, 76
+  orig: 114, 76
+  offset: 0, 0
+  index: -1
+handLlow
+  rotate: false
+  xy: 479, 70
+  size: 49, 56
+  orig: 49, 56
+  offset: 0, 0
+  index: -1
+handLup
+  rotate: false
+  xy: 612, 38
+  size: 30, 40
+  orig: 30, 40
+  offset: 0, 0
+  index: -1
+handRlow
+  rotate: false
+  xy: 584, 80
+  size: 51, 46
+  orig: 51, 46
+  offset: 0, 0
+  index: -1
+handRup
+  rotate: false
+  xy: 542, 4
+  size: 40, 32
+  orig: 40, 32
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 2, 12
+  size: 89, 114
+  orig: 89, 114
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 181, 42
+  size: 56, 84
+  orig: 56, 84
+  offset: 0, 0
+  index: -1

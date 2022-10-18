@@ -1,0 +1,125 @@
+
+flower45.png
+size: 200,280
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL_1
+  rotate: false
+  xy: 140, 133
+  size: 51, 25
+  orig: 51, 25
+  offset: 0, 0
+  index: -1
+armL_2
+  rotate: false
+  xy: 140, 104
+  size: 49, 27
+  orig: 49, 27
+  offset: 0, 0
+  index: -1
+armR
+  rotate: false
+  xy: 157, 190
+  size: 41, 27
+  orig: 41, 27
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 71, 2
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 110, 7
+  size: 25, 32
+  orig: 25, 32
+  offset: 0, 0
+  index: -1
+dress1
+  rotate: false
+  xy: 2, 147
+  size: 66, 77
+  orig: 66, 77
+  offset: 0, 0
+  index: -1
+dress2
+  rotate: false
+  xy: 99, 219
+  size: 73, 59
+  orig: 73, 59
+  offset: 0, 0
+  index: -1
+dress3
+  rotate: false
+  xy: 2, 4
+  size: 67, 64
+  orig: 67, 64
+  offset: 0, 0
+  index: -1
+face1
+  rotate: false
+  xy: 157, 160
+  size: 38, 28
+  orig: 38, 28
+  offset: 0, 0
+  index: -1
+face2
+  rotate: false
+  xy: 137, 4
+  size: 34, 28
+  orig: 34, 28
+  offset: 0, 0
+  index: -1
+foot1
+  rotate: false
+  xy: 128, 66
+  size: 62, 32
+  orig: 62, 32
+  offset: 0, 0
+  index: -1
+foot2
+  rotate: false
+  xy: 2, 226
+  size: 95, 52
+  orig: 95, 52
+  offset: 0, 0
+  index: -1
+fx0
+  rotate: false
+  xy: 70, 177
+  size: 85, 40
+  orig: 85, 40
+  offset: 0, 0
+  index: -1
+hair1
+  rotate: false
+  xy: 2, 70
+  size: 67, 75
+  orig: 67, 75
+  offset: 0, 0
+  index: -1
+hair2
+  rotate: false
+  xy: 71, 100
+  size: 67, 75
+  orig: 67, 75
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 71, 41
+  size: 55, 57
+  orig: 55, 57
+  offset: 0, 0
+  index: -1
+scarf
+  rotate: false
+  xy: 137, 34
+  size: 61, 30
+  orig: 61, 30
+  offset: 0, 0
+  index: -1
