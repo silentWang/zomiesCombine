@@ -387,17 +387,14 @@ var HallScene = /** @class */ (function (_super) {
                             _this.SetText("att_x2_time", Utils_1.default.getTimeStrByS((Data_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000));
                             _this.SetText("rewardx2_time", Utils_1.default.getTimeStrByS((Data_1.default.user.double_income_time - Utils_1.default.getServerTime()) / 1000));
                             if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > 0) {
-                                _this.GetSkeleton("bt_auto_merge").setAnimation(0, "on", true);
                                 _this.SetText("auto_time", Utils_1.default.getTimeStrByS((Data_1.default.user.auto_com_time - Utils_1.default.getServerTime()) / 1000));
                             }
                             else {
-                                _this.GetSkeleton("bt_auto_merge").setAnimation(0, "off", true);
                                 _this.SetText("auto_time", "自动合成");
                             }
                             _this.SetText("lbl_drop_plant", Utils_1.default.getTimeStrByS((Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime()) / 1000));
                             _this.GetGameObject("tx_angry").active = !_this.GetGameObject("att_x2_time").active;
                             _this.GetGameObject("fx_bt_angry").active = !_this.GetGameObject("tx_angry").active;
-                            _this.GetSkeleton("btn_double_coin").setAnimation(0, Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > 0 ? "on" : "off", true);
                             if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() < 0)
                                 _this.GetSprite("bt_fast_gen_process_item").fillRange = 0;
                             else

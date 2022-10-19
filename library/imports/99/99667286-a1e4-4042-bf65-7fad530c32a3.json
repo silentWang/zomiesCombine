@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "lvl_img_gkdk",
+    "texture": "a661074d-d78d-4db3-8bb1-57e2f5d11571",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      275,
+      75
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      275,
+      75
+    ],
+    "capInsets": [
+      104,
+      0,
+      113,
+      0
+    ]
+  }
+}

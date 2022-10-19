@@ -386,18 +386,15 @@ export default class HallScene extends BaseUI {
             this.SetText("rewardx2_time", Utils.getTimeStrByS((Data.user.double_income_time - Utils.getServerTime()) / 1000));
             if( Data.user.auto_com_time - Utils.getServerTime() > 0)
             {
-                this.GetSkeleton("bt_auto_merge").setAnimation(0,"on",true);
                 this.SetText("auto_time", Utils.getTimeStrByS((Data.user.auto_com_time - Utils.getServerTime()) / 1000));
             }
             else
             {
-                this.GetSkeleton("bt_auto_merge").setAnimation(0,"off",true);
                 this.SetText("auto_time", "自动合成");
             }
             this.SetText("lbl_drop_plant", Utils.getTimeStrByS((Data.user.drop_plant_time - Utils.getServerTime()) / 1000));
             this.GetGameObject("tx_angry").active = !this.GetGameObject("att_x2_time").active;
             this.GetGameObject("fx_bt_angry").active = !this.GetGameObject("tx_angry").active;
-            this.GetSkeleton("btn_double_coin").setAnimation(0,Data.user.double_income_time - Utils.getServerTime()>0?"on":"off",true);
 
 
             if(Data.user.drop_plant_time - Utils.getServerTime()<0)

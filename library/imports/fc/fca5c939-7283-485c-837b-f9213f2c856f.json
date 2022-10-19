@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "NewProject_6_tex",
-    "texture": "b4ad2d83-e7fa-4c6e-a845-83b5846b6a88",
+    "name": "btn_double",
+    "texture": "f43979ad-c0c0-46e1-83d1-33d1d00ed933",
     "atlas": "",
     "rect": [
-      1,
-      1,
-      245,
-      252
+      0,
+      0,
+      90,
+      92
     ],
     "offset": [
-      -4.5,
-      1
+      0,
+      0
     ],
     "originalSize": [
-      256,
-      256
+      90,
+      92
     ],
     "capInsets": [
       0,

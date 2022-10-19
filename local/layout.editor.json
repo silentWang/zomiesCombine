@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 354.0500183105469,
+                "height": 346.8500061035156,
                 "type": "panel",
-                "width": 312.20001220703125
+                "width": 309.6125183105469
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 355.0500183105469,
+                "height": 347.8374938964844,
                 "type": "panel",
-                "width": 312.20001220703125
+                "width": 309.6125183105469
               }
             ],
-            "height": 712.1000366210938,
+            "height": 697.7000122070312,
             "type": "dock-v",
-            "width": 312.20001220703125
+            "width": 309.6125183105469
           },
           {
             "children": [
@@ -43,9 +43,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 437.45001220703125,
+                "height": 428.70001220703125,
                 "type": "panel",
-                "width": 847.5499877929688
+                "width": 839.7999877929688
               },
               {
                 "active": 0,
@@ -53,14 +53,14 @@
                   "console",
                   "timeline"
                 ],
-                "height": 271.6499938964844,
+                "height": 266,
                 "type": "panel",
-                "width": 847.5499877929688
+                "width": 839.7999877929688
               }
             ],
-            "height": 712.1000366210938,
+            "height": 697.7000122070312,
             "type": "dock-v",
-            "width": 847.5499877929688
+            "width": 839.7999877929688
           },
           {
             "active": 0,
@@ -68,9 +68,9 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 712.1000366210938,
+            "height": 697.7000122070312,
             "type": "panel",
-            "width": 370.2375183105469
+            "width": 366.9750061035156
           }
         ],
         "type": "dock-h"
@@ -84,9 +84,7 @@
         "inspector",
         "cocos-services"
       ]
-    },
-    "window-1666078102152": {},
-    "worker": {}
+    }
   },
   "panels": {
     "preferences": {
@@ -114,10 +112,10 @@
       "height": 832
     },
     "sprite-editor": {
-      "x": 508,
-      "y": 124,
-      "width": 516,
-      "height": 540
+      "x": 2092,
+      "y": 263,
+      "width": 523,
+      "height": 548
     },
     "game-window": {
       "x": 448,
