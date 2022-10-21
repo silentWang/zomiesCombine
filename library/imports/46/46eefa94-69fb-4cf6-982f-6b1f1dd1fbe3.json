@@ -293,7 +293,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "6d36cd0a-ebf5-4594-8dfd-a43686611b50"
+      "__uuid__": "f0e84e29-df5b-4a6d-ad70-07ac4e73e6ab"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -650,7 +650,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "5",
     "_N$string": "5",
     "_fontSize": 20,
@@ -976,7 +977,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "描述描述描述描述描述描述描述描述描述",
     "_N$string": "描述描述描述描述描述描述描述描述描述",
     "_fontSize": 21,
@@ -1097,7 +1099,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "lbl_power",
     "_N$string": "lbl_power",
     "_fontSize": 20,
@@ -1218,7 +1221,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "lbl_cd",
     "_N$string": "lbl_cd",
     "_fontSize": 20,
@@ -1363,8 +1367,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 75,
-      "height": 97
+      "width": 73,
+      "height": 95
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1630,7 +1634,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "1",
     "_N$string": "1",
     "_fontSize": 20,
@@ -2003,7 +2008,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "1",
     "_N$string": "1",
     "_fontSize": 21,
@@ -2051,7 +2057,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "f31a7b77-4782-481f-b7cc-54c67ceb34cf"
+      "__uuid__": "bfec4631-b36a-4581-8d22-0d0cbe77975f"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -2423,7 +2429,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "免费",
     "_N$string": "免费",
     "_fontSize": 22,
@@ -2866,7 +2873,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "1",
     "_N$string": "1",
     "_fontSize": 22,
@@ -2914,7 +2922,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "6d2c9866-3b71-4119-a9b6-68ec2c5a971f"
+      "__uuid__": "27ed9e03-a9a7-49d6-8365-2c6c9cb2af28"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -3568,7 +3576,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "1",
     "_N$string": "1",
     "_fontSize": 20,
@@ -3894,7 +3903,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "描述描述描述描述描述描述描述描述描述",
     "_N$string": "描述描述描述描述描述描述描述描述描述",
     "_fontSize": 21,
@@ -4015,7 +4025,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "lbl_power",
     "_N$string": "lbl_power",
     "_fontSize": 20,
@@ -4136,7 +4147,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "lbl_cd",
     "_N$string": "lbl_cd",
     "_fontSize": 20,
@@ -4548,7 +4560,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "1",
     "_N$string": "1",
     "_fontSize": 20,
@@ -4685,7 +4698,7 @@
     "asset": {
       "__uuid__": "46eefa94-69fb-4cf6-982f-6b1f1dd1fbe3"
     },
-    "fileId": "33LRQ0tTRJWr7S93R4ZuOQ",
+    "fileId": "",
     "sync": false
   }
 ]

@@ -82,7 +82,7 @@ var SettingUI = /** @class */ (function (_super) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 AdCenter_1.default.Instance().showGridAd();
-                AudioMgr_1.default.Instance().playSFX("ui_open_popup_1");
+                // AudioMgr.Instance().playSFX("ui_open_popup_1");
                 this.btn_music = this.GetGameObject("btn_music_on");
                 this.btn_music_close = this.GetGameObject("btn_music_off");
                 this.btn_sound = this.GetGameObject("btn_sound_on");

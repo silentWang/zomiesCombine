@@ -424,7 +424,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "10000",
     "_N$string": "10000",
     "_fontSize": 40,
@@ -610,7 +611,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "领 取",
     "_N$string": "领 取",
     "_fontSize": 28,
@@ -737,7 +739,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "10000",
     "_N$string": "10000",
     "_fontSize": 40,
@@ -785,7 +788,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "faf97838-6f73-49a9-a9f5-08a5f15bf598"
+      "__uuid__": "3c645692-e7c8-4392-a3d2-ef1d5d9c1e90"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -900,7 +903,7 @@
     "asset": {
       "__uuid__": "b3b97d4d-8eb7-4c78-94e8-d99985e94cdd"
     },
-    "fileId": "25gWnKuChMCLqA6uc/sOF8",
+    "fileId": "",
     "sync": false
   }
 ]

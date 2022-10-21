@@ -1,6 +1,7 @@
 import BaseUI from "../framwork/BaseUI";
 import MsgHints from "../framwork/MsgHints";
 import Data from "../manager/Data";
+import WxCenter from "../manager/WxCenter";
 import AudioMgr from "../utils/AudioMgr";
 import Utils from "../utils/Utils";
 import { DB_level, DB_plant } from "./DB";
@@ -284,6 +285,7 @@ export default class HallScene extends BaseUI {
 	{
         this.hidemergetips();
         HallScene._instance = this;
+        WxCenter.init();
 
         // if (window["wx"]) {
         //     let obj = window["wx"].getLaunchOptionsSync({})
@@ -364,9 +366,9 @@ export default class HallScene extends BaseUI {
 
 		//更新各种时间
         this.GetGameObject("bottom").runAction(cc.sequence( cc.callFunc(() => {
-            this.GetGameObject("att_x2_time").active = Data.user.double_att_time - Utils.getServerTime() > 0;
-            this.GetGameObject("lvl_number").active = Data.user.double_income_time - Utils.getServerTime() > 0;
-            this.GetGameObject("lbl_drop_plant").active = Data.user.drop_plant_time - Utils.getServerTime() > 0;
+            let isX2In = Data.user.double_att_time - Utils.getServerTime() > 0;
+            let isInDb = Data.user.double_income_time - Utils.getServerTime() > 0;
+            let isDpIn = Data.user.drop_plant_time - Utils.getServerTime() > 0;
 
             //校验时间
             if (Data.user.double_att_time - Utils.getServerTime() > max_auto_double_att * 60 * 1000) {
@@ -382,8 +384,8 @@ export default class HallScene extends BaseUI {
                 Data.user.drop_plant_time = Utils.getServerTime();
             }
 
-            this.SetText("att_x2_time", Utils.getTimeStrByS((Data.user.double_att_time - Utils.getServerTime()) / 1000));
-            this.SetText("rewardx2_time", Utils.getTimeStrByS((Data.user.double_income_time - Utils.getServerTime()) / 1000));
+            this.SetText("att_x2_time", isX2In ? Utils.getTimeStrByS((Data.user.double_att_time - Utils.getServerTime()) / 1000) : '狂暴');
+            this.SetText("rewardx2_time", isInDb ? Utils.getTimeStrByS((Data.user.double_income_time - Utils.getServerTime()) / 1000) : '双倍');
             if( Data.user.auto_com_time - Utils.getServerTime() > 0)
             {
                 this.SetText("auto_time", Utils.getTimeStrByS((Data.user.auto_com_time - Utils.getServerTime()) / 1000));
@@ -392,9 +394,8 @@ export default class HallScene extends BaseUI {
             {
                 this.SetText("auto_time", "自动合成");
             }
-            this.SetText("lbl_drop_plant", Utils.getTimeStrByS((Data.user.drop_plant_time - Utils.getServerTime()) / 1000));
-            this.GetGameObject("tx_angry").active = !this.GetGameObject("att_x2_time").active;
-            this.GetGameObject("fx_bt_angry").active = !this.GetGameObject("tx_angry").active;
+            this.SetText("lbl_drop_plant",isDpIn ? Utils.getTimeStrByS((Data.user.drop_plant_time - Utils.getServerTime()) / 1000) : '掉落');
+            this.GetGameObject("fx_bt_angry").active = this.GetGameObject("att_x2_time").active;
 
 
             if(Data.user.drop_plant_time - Utils.getServerTime()<0)
@@ -777,7 +778,8 @@ export default class HallScene extends BaseUI {
     {
         let lv = Data.user.GetMaxLv() - 3;
         if(lv<1)lv = 1;
-    this.SetText("lbl_buy_cost",Utils.formatNumber(Data.user.BuyPrice(lv)));
+        this.SetText("lbl_buy_lvl",'LV.' + lv);
+        this.SetText("lbl_buy_cost",Utils.formatNumber(Data.user.BuyPrice(lv)));
         this.SetSprite("icon_buy","texture/plants/"+(lv-1));
     }
 
@@ -917,6 +919,9 @@ export default class HallScene extends BaseUI {
             case "btn_delete":
                 if(this.GetGameObject("btn_delete").opacity == 255)
                 MsgHints.show("拖动到这里卖出")
+                break;
+            case "btn_inviate":
+                WxCenter.shareAppMessage();
                 break;
             case "btn_Recorder":
                 if (this.bRecorder == false) {

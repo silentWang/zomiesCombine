@@ -1,6 +1,6 @@
 {
   "ver": "2.3.5",
-  "uuid": "831efbde-77c5-4240-be5f-3e65a8f8d8a7",
+  "uuid": "e49bfea6-63c6-48f1-9fdf-bd3582b794c0",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "1medal": {
       "ver": "1.0.4",
-      "uuid": "703cce74-f197-4c87-8b33-db58cfdf58fe",
-      "rawTextureUuid": "831efbde-77c5-4240-be5f-3e65a8f8d8a7",
+      "uuid": "e4fe7c60-b95a-4d27-8def-e4c5f5949b1a",
+      "rawTextureUuid": "e49bfea6-63c6-48f1-9fdf-bd3582b794c0",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

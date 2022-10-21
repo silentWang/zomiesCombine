@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bt_gold_store",
+    "texture": "b2260f08-92d1-418e-ad71-24e782ac306a",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      54,
+      51
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      54,
+      52
+    ],
+    "capInsets": [
+      23,
+      17.5,
+      23,
+      23.5
+    ]
+  }
+}

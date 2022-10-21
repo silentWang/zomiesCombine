@@ -50,7 +50,7 @@ export default class AudioMgr extends Singleton {
         "hit":300,
         "merge_success":100,
         "skill_freeze":300,
-        "skill_slow":300,
+        "skill_slow":300
     }
 
     async playSFX(url: string) {

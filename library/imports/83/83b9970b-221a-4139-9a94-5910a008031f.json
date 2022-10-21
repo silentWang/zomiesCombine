@@ -460,7 +460,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "新植物解锁",
     "_N$string": "新植物解锁",
     "_fontSize": 30,
@@ -627,7 +628,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "lv30",
     "_N$string": "lv30",
     "_fontSize": 28,
@@ -945,7 +947,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "领  取",
     "_N$string": "领  取",
     "_fontSize": 35,
@@ -1011,7 +1014,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "faf97838-6f73-49a9-a9f5-08a5f15bf598"
+      "__uuid__": "3c645692-e7c8-4392-a3d2-ef1d5d9c1e90"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1142,7 +1145,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 72.67,
+      "width": 93.67,
       "height": 50
     },
     "_anchorPoint": {
@@ -1206,8 +1209,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 46,
-      "height": 43
+      "width": 67,
+      "height": 66
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1325,7 +1328,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        9.665,
+        20.165,
         62.108999999999995,
         0,
         0,
@@ -1363,7 +1366,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "0",
     "_N$string": "0",
     "_fontSize": 40,
@@ -1405,7 +1409,7 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 72.67,
+      "width": 93.67,
       "height": 50
     },
     "_resize": 1,
@@ -1472,7 +1476,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70.67,
+      "width": 93.67,
       "height": 50
     },
     "_anchorPoint": {
@@ -1536,8 +1540,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 44,
-      "height": 48
+      "width": 67,
+      "height": 67
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1655,7 +1659,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        8.665,
+        20.165,
         4.358,
         0,
         0,
@@ -1693,7 +1697,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "0",
     "_N$string": "0",
     "_fontSize": 40,
@@ -1735,7 +1740,7 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 70.67,
+      "width": 93.67,
       "height": 50
     },
     "_resize": 1,
@@ -1797,7 +1802,7 @@
     "asset": {
       "__uuid__": "83b9970b-221a-4139-9a94-5910a008031f"
     },
-    "fileId": "25gWnKuChMCLqA6uc/sOF8",
+    "fileId": "",
     "sync": false
   }
 ]

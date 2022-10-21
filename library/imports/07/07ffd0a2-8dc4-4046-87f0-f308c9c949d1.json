@@ -875,7 +875,7 @@
         1,
         1,
         1,
-        1
+        0
       ]
     },
     "_eulerAngles": {
@@ -1079,7 +1079,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "提示",
     "_N$string": "提示",
     "_fontSize": 30,
@@ -1188,7 +1189,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "分享录屏?",
     "_N$string": "分享录屏?",
     "_fontSize": 30,
@@ -1475,7 +1477,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "保存到相册",
     "_N$string": "保存到相册",
     "_fontSize": 26,
@@ -1523,7 +1526,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "f31a7b77-4782-481f-b7cc-54c67ceb34cf"
+      "__uuid__": "bfec4631-b36a-4581-8d22-0d0cbe77975f"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1790,7 +1793,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "分享",
     "_N$string": "分享",
     "_fontSize": 26,
@@ -1838,7 +1842,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "6d2c9866-3b71-4119-a9b6-68ec2c5a971f"
+      "__uuid__": "27ed9e03-a9a7-49d6-8365-2c6c9cb2af28"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -2005,7 +2009,7 @@
     "asset": {
       "__uuid__": "07ffd0a2-8dc4-4046-87f0-f308c9c949d1"
     },
-    "fileId": "3c1Qk/59NLKKbBR0Pam/y8",
+    "fileId": "",
     "sync": false
   }
 ]

@@ -1,6 +1,6 @@
 {
   "ver": "2.3.5",
-  "uuid": "3d1ae9c0-3311-47ac-8fec-09515660a020",
+  "uuid": "b2260f08-92d1-418e-ad71-24e782ac306a",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "bt_gold_store": {
       "ver": "1.0.4",
-      "uuid": "f31a7b77-4782-481f-b7cc-54c67ceb34cf",
-      "rawTextureUuid": "3d1ae9c0-3311-47ac-8fec-09515660a020",
+      "uuid": "bfec4631-b36a-4581-8d22-0d0cbe77975f",
+      "rawTextureUuid": "b2260f08-92d1-418e-ad71-24e782ac306a",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -26,9 +26,9 @@
       "height": 51,
       "rawWidth": 54,
       "rawHeight": 52,
-      "borderTop": 21.5,
-      "borderBottom": 20.5,
-      "borderLeft": 26,
+      "borderTop": 17.5,
+      "borderBottom": 23.5,
+      "borderLeft": 23,
       "borderRight": 23,
       "subMetas": {}
     }

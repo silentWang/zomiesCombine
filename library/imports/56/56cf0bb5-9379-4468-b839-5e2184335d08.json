@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_buy_icon_bg",
+    "texture": "3f185aa9-3db0-4307-b801-acc031e6621d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      91,
+      91
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      91,
+      91
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

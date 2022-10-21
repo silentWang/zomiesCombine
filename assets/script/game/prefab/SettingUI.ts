@@ -20,7 +20,7 @@ export default class SettingUI extends BaseUI {
     async start() {
         AdCenter.Instance().showGridAd();
 
-        AudioMgr.Instance().playSFX("ui_open_popup_1");
+        // AudioMgr.Instance().playSFX("ui_open_popup_1");
         this.btn_music = this.GetGameObject("btn_music_on");
         this.btn_music_close = this.GetGameObject("btn_music_off");
 

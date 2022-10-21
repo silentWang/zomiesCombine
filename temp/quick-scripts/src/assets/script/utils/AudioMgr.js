@@ -74,7 +74,7 @@ var AudioMgr = /** @class */ (function (_super) {
             "hit": 300,
             "merge_success": 100,
             "skill_freeze": 300,
-            "skill_slow": 300,
+            "skill_slow": 300
         };
         return _this;
     }

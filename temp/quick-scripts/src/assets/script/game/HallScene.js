@@ -62,6 +62,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../framwork/BaseUI");
 var MsgHints_1 = require("../framwork/MsgHints");
 var Data_1 = require("../manager/Data");
+var WxCenter_1 = require("../manager/WxCenter");
 var AudioMgr_1 = require("../utils/AudioMgr");
 var Utils_1 = require("../utils/Utils");
 var DB_1 = require("./DB");
@@ -320,6 +321,7 @@ var HallScene = /** @class */ (function (_super) {
                     case 0:
                         this.hidemergetips();
                         HallScene_1._instance = this;
+                        WxCenter_1.default.init();
                         slots = this.GetGameObject("slots");
                         i = 0;
                         for (_i = 0, _a = slots.children; _i < _a.length; _i++) {
@@ -368,9 +370,9 @@ var HallScene = /** @class */ (function (_super) {
                         })));
                         //更新各种时间
                         this.GetGameObject("bottom").runAction(cc.sequence(cc.callFunc(function () {
-                            _this.GetGameObject("att_x2_time").active = Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > 0;
-                            _this.GetGameObject("lvl_number").active = Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > 0;
-                            _this.GetGameObject("lbl_drop_plant").active = Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > 0;
+                            var isX2In = Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > 0;
+                            var isInDb = Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > 0;
+                            var isDpIn = Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > 0;
                             //校验时间
                             if (Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > AdLayer_1.max_auto_double_att * 60 * 1000) {
                                 Data_1.default.user.double_att_time = Utils_1.default.getServerTime();
@@ -384,17 +386,16 @@ var HallScene = /** @class */ (function (_super) {
                             if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > AdLayer_1.max_drop_plant * 60 * 1000) {
                                 Data_1.default.user.drop_plant_time = Utils_1.default.getServerTime();
                             }
-                            _this.SetText("att_x2_time", Utils_1.default.getTimeStrByS((Data_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000));
-                            _this.SetText("rewardx2_time", Utils_1.default.getTimeStrByS((Data_1.default.user.double_income_time - Utils_1.default.getServerTime()) / 1000));
+                            _this.SetText("att_x2_time", isX2In ? Utils_1.default.getTimeStrByS((Data_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000) : '狂暴');
+                            _this.SetText("rewardx2_time", isInDb ? Utils_1.default.getTimeStrByS((Data_1.default.user.double_income_time - Utils_1.default.getServerTime()) / 1000) : '双倍');
                             if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > 0) {
                                 _this.SetText("auto_time", Utils_1.default.getTimeStrByS((Data_1.default.user.auto_com_time - Utils_1.default.getServerTime()) / 1000));
                             }
                             else {
                                 _this.SetText("auto_time", "自动合成");
                             }
-                            _this.SetText("lbl_drop_plant", Utils_1.default.getTimeStrByS((Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime()) / 1000));
-                            _this.GetGameObject("tx_angry").active = !_this.GetGameObject("att_x2_time").active;
-                            _this.GetGameObject("fx_bt_angry").active = !_this.GetGameObject("tx_angry").active;
+                            _this.SetText("lbl_drop_plant", isDpIn ? Utils_1.default.getTimeStrByS((Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime()) / 1000) : '掉落');
+                            _this.GetGameObject("fx_bt_angry").active = _this.GetGameObject("att_x2_time").active;
                             if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() < 0)
                                 _this.GetSprite("bt_fast_gen_process_item").fillRange = 0;
                             else
@@ -729,6 +730,7 @@ var HallScene = /** @class */ (function (_super) {
         var lv = Data_1.default.user.GetMaxLv() - 3;
         if (lv < 1)
             lv = 1;
+        this.SetText("lbl_buy_lvl", 'LV.' + lv);
         this.SetText("lbl_buy_cost", Utils_1.default.formatNumber(Data_1.default.user.BuyPrice(lv)));
         this.SetSprite("icon_buy", "texture/plants/" + (lv - 1));
     };
@@ -861,6 +863,9 @@ var HallScene = /** @class */ (function (_super) {
             case "btn_delete":
                 if (this.GetGameObject("btn_delete").opacity == 255)
                     MsgHints_1.default.show("拖动到这里卖出");
+                break;
+            case "btn_inviate":
+                WxCenter_1.default.shareAppMessage();
                 break;
             case "btn_Recorder":
                 if (this.bRecorder == false) {

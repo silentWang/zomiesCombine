@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bt_green_store",
+    "texture": "5b9e133d-bbb9-4ce0-893e-d9d49bac86f2",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      54,
+      51
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      54,
+      52
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

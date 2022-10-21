@@ -49,8 +49,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 720,
-      "height": 1252
+      "width": 750,
+      "height": 1334
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -61,8 +61,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        360,
-        626,
+        375,
+        667,
         0,
         0,
         0,
@@ -1130,7 +1130,7 @@
         1,
         1,
         1,
-        1
+        0
       ]
     },
     "_eulerAngles": {
@@ -1334,7 +1334,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "游戏设置",
     "_N$string": "游戏设置",
     "_fontSize": 30,
@@ -1596,7 +1597,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "音乐",
     "_N$string": "音乐",
     "_fontSize": 25,
@@ -1705,7 +1707,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "音效",
     "_N$string": "音效",
     "_fontSize": 25,
@@ -2597,7 +2600,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "分享游戏",
     "_N$string": "分享游戏",
     "_fontSize": 25,
@@ -2898,7 +2902,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "游戏进度",
     "_N$string": "游戏进度",
     "_fontSize": 24,
@@ -3078,7 +3083,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "下载进度",
     "_N$string": "下载进度",
     "_fontSize": 24,
@@ -3126,7 +3132,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "faf97838-6f73-49a9-a9f5-08a5f15bf598"
+      "__uuid__": "3c645692-e7c8-4392-a3d2-ef1d5d9c1e90"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -3150,7 +3156,9 @@
       "__id__": 72
     },
     "_enabled": true,
-    "_normalMaterial": null,
+    "_normalMaterial": {
+      "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+    },
     "_grayMaterial": null,
     "duration": 0.1,
     "zoomScale": 1.2,
@@ -3348,7 +3356,6 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": -32768,
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
@@ -3368,7 +3375,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": true,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "云端进度获取中...",
     "_N$string": "云端进度获取中...",
     "_fontSize": 18,
@@ -3395,7 +3403,7 @@
     "asset": {
       "__uuid__": "e2b0e511-a633-4348-9ac9-3f795259e400"
     },
-    "fileId": "c9OyGvGcpMCJKQUcy8UP5s",
+    "fileId": "07MXTjggZBVKxx0iJSefIp",
     "sync": false
   },
   {
@@ -3545,7 +3553,7 @@
     "asset": {
       "__uuid__": "e2b0e511-a633-4348-9ac9-3f795259e400"
     },
-    "fileId": "7a+Bw49XdIOJiIj7FgpwU0",
+    "fileId": "",
     "sync": false
   }
 ]

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "box_paper",
+    "texture": "90f32897-ccf5-4f15-a63a-c3d10d6e796c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      273,
+      283
+    ],
+    "offset": [
+      -0.5,
+      0.5
+    ],
+    "originalSize": [
+      274,
+      284
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

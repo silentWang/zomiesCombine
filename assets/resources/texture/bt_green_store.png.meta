@@ -1,6 +1,6 @@
 {
   "ver": "2.3.5",
-  "uuid": "f9055268-859c-4bcf-8ce0-0ad2dc5cbb0b",
+  "uuid": "5b9e133d-bbb9-4ce0-893e-d9d49bac86f2",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "bt_green_store": {
       "ver": "1.0.4",
-      "uuid": "3bb0952b-3d01-4a4c-8b1d-c272ad3cc1a9",
-      "rawTextureUuid": "f9055268-859c-4bcf-8ce0-0ad2dc5cbb0b",
+      "uuid": "f7e57642-8fde-4c8a-aa38-3e49736d0ac8",
+      "rawTextureUuid": "5b9e133d-bbb9-4ce0-893e-d9d49bac86f2",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

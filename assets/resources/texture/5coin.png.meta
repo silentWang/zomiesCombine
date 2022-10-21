@@ -1,6 +1,6 @@
 {
   "ver": "2.3.5",
-  "uuid": "b6a72d8e-a0d1-42c4-ae19-7116c2c0690c",
+  "uuid": "8caaf779-9c32-4ed0-892c-3fec80ebc939",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "5coin": {
       "ver": "1.0.4",
-      "uuid": "bd0b23cf-0c2d-4d77-ac56-459e62396ad7",
-      "rawTextureUuid": "b6a72d8e-a0d1-42c4-ae19-7116c2c0690c",
+      "uuid": "92fe1ff8-4cdc-41ac-ba40-403b4c1b1652",
+      "rawTextureUuid": "8caaf779-9c32-4ed0-892c-3fec80ebc939",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
