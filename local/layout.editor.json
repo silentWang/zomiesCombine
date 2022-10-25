@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1536,
-      "y": 0,
-      "width": 1536,
-      "height": 816,
+      "x": -8,
+      "y": -8,
+      "width": 1552,
+      "height": 832,
       "layout": {
         "children": [
           {
@@ -18,49 +18,66 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 417.8125,
+                "height": 299.4125061035156,
                 "type": "panel",
-                "width": 313.875
+                "width": 204
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 292.875,
+                "height": 412.1875,
                 "type": "panel",
-                "width": 313.875
+                "width": 204
               }
             ],
-            "height": 713.7000122070312,
+            "height": 714.6000366210938,
             "type": "dock-v",
-            "width": 313.875
+            "width": 204
           },
           {
             "children": [
               {
-                "active": 0,
                 "children": [
-                  "scene"
+                  {
+                    "active": 0,
+                    "children": [
+                      "scene"
+                    ],
+                    "height": 413.1750183105469,
+                    "type": "panel",
+                    "width": 754.9874877929688
+                  },
+                  {
+                    "active": 0,
+                    "children": [
+                      "node-library"
+                    ],
+                    "height": 413.1750183105469,
+                    "type": "panel",
+                    "width": 264
+                  }
                 ],
-                "height": 438.8125,
-                "type": "panel",
-                "width": 848.6625366210938
+                "height": 413.1750183105469,
+                "type": "dock-h",
+                "width": 1022
               },
               {
                 "active": 0,
                 "children": [
                   "console",
-                  "timeline"
+                  "timeline",
+                  "game-window"
                 ],
-                "height": 271.88751220703125,
+                "height": 298.4125061035156,
                 "type": "panel",
-                "width": 848.6625366210938
+                "width": 1022
               }
             ],
-            "height": 713.7000122070312,
+            "height": 714.6000366210938,
             "type": "dock-v",
-            "width": 848.6625366210938
+            "width": 1022
           },
           {
             "active": 0,
@@ -68,9 +85,9 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 713.7000122070312,
+            "height": 714.6000366210938,
             "type": "panel",
-            "width": 369.8500061035156
+            "width": 304
           }
         ],
         "type": "dock-h"
@@ -79,13 +96,14 @@
         "hierarchy",
         "assets",
         "scene",
+        "node-library",
         "console",
         "timeline",
+        "game-window",
         "inspector",
         "cocos-services"
       ]
-    },
-    "window-1666346923309": {}
+    }
   },
   "panels": {
     "preferences": {
@@ -125,16 +143,16 @@
       "height": 544
     },
     "package-manager": {
-      "x": 508,
+      "x": 496,
       "y": 0,
-      "width": 523,
+      "width": 524,
       "height": 816
     },
     "builder": {
-      "x": 2008,
-      "y": 64,
-      "width": 520,
-      "height": 748
+      "x": 478,
+      "y": 29,
+      "width": 521,
+      "height": 749
     },
     "node-library": {
       "x": 608,
@@ -143,10 +161,10 @@
       "height": 520
     },
     "project-settings": {
-      "x": 1951,
+      "x": 1948,
       "y": 168,
-      "width": 603,
-      "height": 567
+      "width": 607,
+      "height": 568
     },
     "package-asset.import": {
       "x": 2205,
