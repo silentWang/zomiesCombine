@@ -1,5 +1,6 @@
 import BaseUI from "../../framwork/BaseUI";
 import Data from "../../manager/Data";
+import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 
@@ -21,8 +22,10 @@ export default class LoseUI extends BaseUI {
             console.log("---",t,Utils.getTimeStrByS(t))
             this.GetGameObject("btn_get").active = t<=4;
             this.SetText("lbl_time",Utils.getTimeStrByS(t))
-           
-            if(t<0)this.closeUI();
+            if(t<0) {
+                this.getCoinReward();
+                this.closeUI();
+            }
             t--;
         }),cc.delayTime(1)).repeat(7))
     }
@@ -31,18 +34,19 @@ export default class LoseUI extends BaseUI {
     setInfo(coin:number)
     {
         this.coin = coin;
-        this.SetText("lbl_coin",Utils.formatNumber(coin));
+        this.SetText("lbl_coin",Utils.formatNumber(coin*5));
+        this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     }
     closeUI() {
+        this.shutAnim();
+    }
+
+    private getCoinReward(){
         let coin = this.coin;
         AudioMgr.Instance().playSFX("coin");
         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
-            if(b)
-            {
-                Data.user.coin+= coin
-            }  
+            if(b) Data.user.coin+= coin
         })
-        this.shutAnim();
     }
 
     onBtnClicked(event, customEventData) {
@@ -50,8 +54,15 @@ export default class LoseUI extends BaseUI {
         AudioMgr.Instance().playSFX("click");
         switch (btnName) {
             case "btn_get":
+                WxCenter.showRewardedVideoAd(()=>{
+                    this.getCoinReward();
+                });
                 this.closeUI();
                 break;
+            case 'btn_normal':
+                this.getCoinReward();
+                this.closeUI();
+                break;    
         }
     }
 }

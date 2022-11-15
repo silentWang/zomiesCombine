@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_hsbq",
+    "texture": "6cbf511f-7e11-498a-acce-7003cc095e01",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      97,
+      46
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      97,
+      46
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "__type__": "cc.TextAsset",
-  "_name": "enemy2.atlas",
-  "_objFlags": 0,
-  "_native": "",
-  "text": "\nenemy2.png\nsize: 580,208\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\narmLlow\n  rotate: false\n  xy: 544, 12\n  size: 34, 73\n  orig: 34, 73\n  offset: 0, 0\n  index: -1\narmLup\n  rotate: false\n  xy: 199, 5\n  size: 65, 52\n  orig: 65, 52\n  offset: 0, 0\n  index: -1\narmRlow\n  rotate: false\n  xy: 512, 143\n  size: 50, 63\n  orig: 50, 63\n  offset: 0, 0\n  index: -1\narmRup\n  rotate: false\n  xy: 356, 10\n  size: 62, 47\n  orig: 62, 47\n  offset: 0, 0\n  index: -1\nbody\n  rotate: false\n  xy: 199, 59\n  size: 170, 147\n  orig: 170, 147\n  offset: 0, 0\n  index: -1\nfootL\n  rotate: false\n  xy: 422, 76\n  size: 64, 44\n  orig: 64, 44\n  offset: 0, 0\n  index: -1\nfootR\n  rotate: false\n  xy: 488, 87\n  size: 67, 33\n  orig: 67, 33\n  offset: 0, 0\n  index: -1\nhead\n  rotate: false\n  xy: 2, 2\n  size: 195, 204\n  orig: 195, 204\n  offset: 0, 0\n  index: -1\nhip\n  rotate: false\n  xy: 371, 122\n  size: 139, 84\n  orig: 139, 84\n  offset: 0, 0\n  index: -1\nlegLlow\n  rotate: false\n  xy: 420, 4\n  size: 45, 56\n  orig: 45, 56\n  offset: 0, 0\n  index: -1\nlegLup\n  rotate: false\n  xy: 266, 6\n  size: 88, 51\n  orig: 88, 51\n  offset: 0, 0\n  index: -1\nlegRlow\n  rotate: false\n  xy: 371, 62\n  size: 49, 58\n  orig: 49, 58\n  offset: 0, 0\n  index: -1\nlegRup\n  rotate: false\n  xy: 467, 3\n  size: 75, 71\n  orig: 75, 71\n  offset: 0, 0\n  index: -1\n"
-}

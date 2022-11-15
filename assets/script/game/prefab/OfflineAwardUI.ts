@@ -2,6 +2,7 @@ import BaseUI from "../../framwork/BaseUI";
 import MsgHints from "../../framwork/MsgHints";
 import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
+import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import BigNumber from "../../utils/BigNumber";
 import Utils from "../../utils/Utils";
@@ -39,11 +40,17 @@ export default class OfflineAwardUI extends BaseUI {
                     })
                 this.closeUI()
                 break;
+            case "btn_normal":
+                AudioMgr.Instance().playSFX("coin");
+                Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
+                    if(b) Data.user.coin += this._data  
+                })
+                this.closeUI();
+                break
             case "btn_ad":
-                AdCenter.Instance().play(0, (b) => {
+                let func = (b)=>{
                     if (b) {
                         let coin = this._data * 2
-                        
                         AudioMgr.Instance().playSFX("coin");
                         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
                             if(b)
@@ -53,7 +60,9 @@ export default class OfflineAwardUI extends BaseUI {
                         })
                         this.closeUI()
                     }
-                })
+                }
+                // AdCenter.Instance().play(0, func)
+                WxCenter.showRewardedVideoAd(func);
                 break;
             case "btn_gem":
                 {

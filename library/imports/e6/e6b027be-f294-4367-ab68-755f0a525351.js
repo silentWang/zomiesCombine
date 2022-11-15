@@ -124,9 +124,9 @@ var ShopItem = /** @class */ (function (_super) {
     };
     ShopItem.prototype.setItemData = function (gun) {
         return __awaiter(this, void 0, void 0, function () {
-            var node, bhide, buytype, skill, skilltype, value, str, _a, _b, _c, _d;
-            return __generator(this, function (_e) {
-                switch (_e.label) {
+            var node, bhide, buytype, skill, skilltype, value, str, _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0:
                         node = null;
                         bhide = false;
@@ -167,7 +167,7 @@ var ShopItem = /** @class */ (function (_super) {
                             }
                         }
                         this._findInChildren(node, "lbl_lv").getComponent(cc.Label).string = "" + gun[0];
-                        this._findInChildren(node, "New Label").getComponent(cc.Label).string = "" + (gun[0] + 2);
+                        this._findInChildren(node, "New Label").getComponent(cc.Label).string = "到" + (gun[0] + 2) + '级解锁';
                         skill = gun[3].split("|");
                         skilltype = skill[0];
                         value = skill[1];
@@ -183,30 +183,28 @@ var ShopItem = /** @class */ (function (_super) {
                         else if (skilltype == 3) {
                             str = "技能:" + value + "%几率冰冻目标1秒";
                         }
-                        this._findInChildren(node, "lbl_name").getComponent(cc.Label).string = str;
+                        this._findInChildren(node, "lbl_name").getComponent(cc.Label).string = bhide ? '未知萌鸡' : gun[7];
+                        this._findInChildren(node, "lbl_desc").getComponent(cc.Label).string = bhide ? '技能:未知' : str;
                         this._findInChildren(node, "lbl_cd").getComponent(cc.Label).string = bhide ? "?" : gun[1] + "";
                         this._findInChildren(node, "lbl_power").getComponent(cc.Label).string = bhide ? "?" : Utils_1.default.formatNumber(gun[2]) + "";
                         _a = this._findInChildren(node, "gun").getComponent(cc.Sprite);
                         return [4 /*yield*/, Utils_1.default.loadRes("texture/plants/" + (gun[0] - 1), cc.SpriteFrame)];
                     case 1:
-                        _a.spriteFrame = (_e.sent());
-                        _b = this._findInChildren(node, "gun").getComponent(cc.Sprite);
-                        return [4 /*yield*/, Utils_1.default.loadRes("texture/plants/" + (gun[0] - 1), cc.SpriteFrame)];
-                    case 2:
-                        _b.spriteFrame = (_e.sent());
-                        if (!(gun[0] + 1 < 60)) return [3 /*break*/, 4];
-                        _c = this._findInChildren(node, "0").getComponent(cc.Sprite);
-                        return [4 /*yield*/, Utils_1.default.loadRes("texture/plants/" + (gun[0] + 1), cc.SpriteFrame)];
-                    case 3:
-                        _c.spriteFrame = (_e.sent());
-                        return [3 /*break*/, 6];
-                    case 4:
-                        _d = this._findInChildren(node, "0").getComponent(cc.Sprite);
-                        return [4 /*yield*/, Utils_1.default.loadRes("texture/plants/59", cc.SpriteFrame)];
-                    case 5:
-                        _d.spriteFrame = (_e.sent());
-                        _e.label = 6;
-                    case 6:
+                        _a.spriteFrame = (_b.sent());
+                        // this._findInChildren(node,"gun").getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]-1),cc.SpriteFrame) as cc.SpriteFrame;
+                        // let cs = this._findInChildren(node,"0");
+                        // if(gun[0]+1<60)
+                        // {
+                        //     if(cs){
+                        //         cs.getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]+1),cc.SpriteFrame) as cc.SpriteFrame;
+                        //     }
+                        // }
+                        // else
+                        // {
+                        //     if(cs){
+                        //          cs.getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/59",cc.SpriteFrame) as cc.SpriteFrame;
+                        //     }
+                        // }
                         this.cost_coin = Data_1.default.user.BuyPrice(gun[0]);
                         this.SetText("lbl_buy_coin", Utils_1.default.formatNumber(this.cost_coin));
                         this.GetButton("btn_yellow").interactable = Data_1.default.user.coin >= this.cost_coin;

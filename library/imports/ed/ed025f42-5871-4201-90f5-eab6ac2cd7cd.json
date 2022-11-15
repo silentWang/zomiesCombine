@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_zhenguan",
+    "texture": "d5b0f964-defe-4102-a499-b12321e5de6c",
+    "atlas": "",
+    "rect": [
+      54,
+      58,
+      168,
+      146
+    ],
+    "offset": [
+      6,
+      1
+    ],
+    "originalSize": [
+      264,
+      264
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

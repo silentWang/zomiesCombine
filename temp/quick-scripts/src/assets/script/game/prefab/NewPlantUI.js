@@ -84,7 +84,7 @@ var NewPlantUI = /** @class */ (function (_super) {
                         coin = Data_1.default.user.BuyPrice(Math.max(1, lv - 3));
                         levelup = DB_1.DB_levelupGem[lv + ""];
                         this.GetGameObject("node_gem").active = levelup;
-                        this.SetText("lbl_lv", "等级" + lv);
+                        this.SetText("lbl_lv", "等级 " + lv);
                         AudioMgr_1.default.Instance().playSFX("unlock_plant");
                         this.coin = coin;
                         if (levelup) {

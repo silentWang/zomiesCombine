@@ -26,6 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
+var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -37,29 +38,35 @@ var VictoryUI = /** @class */ (function (_super) {
         return _this;
     }
     VictoryUI.prototype.start = function () {
+        var _this = this;
         // this.GetGameObject("lbl_coin").opacity = 0;
         // this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(1,255)));
-        var _this = this;
         AudioMgr_1.default.Instance().playSFX("win_stage");
         this.GetSkeleton("fx_victory").setAnimation(0, "start", false);
         this.GetSkeleton("fx_victory").setAnimation(1, "idle", true);
         this.GetGameObject("btn_get").active = false;
         var t = 5;
         this.node.runAction(cc.sequence(cc.callFunc(function () {
-            console.log("---", t, Utils_1.default.getTimeStrByS(t));
             _this.SetText("lbl_time", Utils_1.default.getTimeStrByS(t));
             _this.GetGameObject("btn_get").active = t <= 4;
-            if (t < 0)
+            if (t < 0) {
+                _this.getCoinReward();
                 _this.closeUI();
+            }
             t--;
         }), cc.delayTime(1)).repeat(7));
     };
     VictoryUI.prototype.setInfo = function (coin) {
         this.coin = coin;
-        this.SetText("lbl_coin", Utils_1.default.formatNumber(coin));
+        this.SetText("lbl_coin", Utils_1.default.formatNumber(coin * 5));
+        this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
     };
     VictoryUI.prototype.closeUI = function () {
-        var coin = this.coin;
+        this.shutAnim();
+    };
+    VictoryUI.prototype.getCoinReward = function (isdouble) {
+        if (isdouble === void 0) { isdouble = false; }
+        var coin = isdouble ? this.coin * 2 : this.coin;
         AudioMgr_1.default.Instance().playSFX("coin");
         Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
             if (b) {
@@ -68,13 +75,20 @@ var VictoryUI = /** @class */ (function (_super) {
                     AdCenter_1.default.Instance().showinterstitialAd();
             }
         });
-        this.shutAnim();
     };
     VictoryUI.prototype.onBtnClicked = function (event, customEventData) {
+        var _this = this;
         var btnName = event.target.name;
         AudioMgr_1.default.Instance().playSFX("click");
         switch (btnName) {
             case "btn_get":
+                this.closeUI();
+                WxCenter_1.default.showRewardedVideoAd(function () {
+                    _this.getCoinReward();
+                });
+                break;
+            case "btn_normal":
+                this.getCoinReward();
                 this.closeUI();
                 break;
         }

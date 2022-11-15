@@ -95,9 +95,9 @@ var Enemy = /** @class */ (function (_super) {
     };
     Enemy.prototype.setID = function (id, boss) {
         return __awaiter(this, void 0, void 0, function () {
-            var info, _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var info, skpath, atlaspath, armature, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         this.type = boss ? 1 : 0;
                         info = DB_1.DB_zombie[id + ""];
@@ -115,7 +115,7 @@ var Enemy = /** @class */ (function (_super) {
                         // console.log(this.type == 2?"boss":"e",this.maxhp,this.money,"====")
                         this.node.position = HallScene_1.default.Instance.path[0];
                         this.node.scale = this.type == 0 ? .8 : 1.1;
-                        this.GetGameObject("sp").scaleX = 0.5;
+                        // this.GetGameObject("sp").scaleX = 0.5;
                         if (id == 25) {
                             AudioMgr_1.default.Instance().playSFX("dog");
                         }
@@ -125,11 +125,19 @@ var Enemy = /** @class */ (function (_super) {
                         else {
                             AudioMgr_1.default.Instance().playSFX(Utils_1.default.getRandom(0, 1) < .6 ? "zb1" : "zb2");
                         }
-                        _a = this.GetSkeleton("sp");
-                        return [4 /*yield*/, Utils_1.default.loadRes("spine:enemy" + id, sp.SkeletonData)];
+                        skpath = "spine:enemy" + id + "_ske";
+                        atlaspath = "spine:enemy" + id + "_tex";
+                        armature = this.GetDragonAmature("sp");
+                        _a = armature;
+                        return [4 /*yield*/, Utils_1.default.loadRes(skpath, dragonBones.DragonBonesAsset)];
                     case 1:
-                        _a.skeletonData = (_b.sent());
-                        this.GetSkeleton("sp").setAnimation(0, "run", true);
+                        _a.dragonAsset = (_c.sent());
+                        _b = armature;
+                        return [4 /*yield*/, Utils_1.default.loadRes(atlaspath, dragonBones.DragonBonesAtlasAsset)];
+                    case 2:
+                        _b.dragonAtlasAsset = (_c.sent());
+                        armature.armatureName = "Armature";
+                        armature.playAnimation('run', 0);
                         this.GetGameObject("New ProgressBar").opacity = 0;
                         return [2 /*return*/];
                 }
@@ -210,12 +218,14 @@ var Enemy = /** @class */ (function (_super) {
     Enemy.prototype.slowdown = function () {
         var _this = this;
         AudioMgr_1.default.Instance().playSFX("skill_slow");
-        this.GetSkeleton("sp").timeScale = 0.5;
+        // this.GetSkeleton("sp").timeScale = 0.5;
+        this.GetDragonAmature('sp').timeScale = 0.5;
         this.GetGameObject("jiansu").active = true;
         this.GetGameObject("sp").stopAllActions();
         this.GetGameObject("sp").runAction(cc.sequence(cc.delayTime(1), cc.callFunc(function () {
             _this.GetGameObject("sp").color = cc.Color.WHITE;
-            _this.GetSkeleton("sp").timeScale = 1;
+            // this.GetSkeleton("sp").timeScale = 1;
+            _this.GetDragonAmature('sp').timeScale = 1;
             _this.GetGameObject("jiansu").active = false;
         })));
     };
@@ -226,10 +236,10 @@ var Enemy = /** @class */ (function (_super) {
         this.GetGameObject("fx_stun").stopAllActions();
         this.GetGameObject("fx_stun").active = true;
         this.purpleendtime = Utils_1.default.getServerTime() + 1000;
-        this.GetSkeleton("sp").paused = true;
+        // this.GetSkeleton("sp").paused = true;
         this.GetGameObject("fx_stun").runAction(cc.sequence(cc.delayTime(1), cc.callFunc(function () {
             _this.GetGameObject("fx_stun").active = false;
-            _this.GetSkeleton("sp").paused = false;
+            // this.GetSkeleton("sp").paused = false;  
             _this.bfrozen = false;
         })));
     };

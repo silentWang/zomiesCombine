@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_toumingx",
+    "texture": "3e554497-faf9-4ee1-9b4d-9fce96483c17",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      82,
+      81
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      82,
+      82
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

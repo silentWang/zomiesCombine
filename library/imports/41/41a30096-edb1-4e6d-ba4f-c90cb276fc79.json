@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_tcfang",
+    "texture": "8582b0e7-e579-4da3-b59a-03bb614423ef",
+    "atlas": "",
+    "rect": [
+      0,
+      2,
+      124,
+      120
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      124,
+      126
+    ],
+    "capInsets": [
+      51,
+      48,
+      52,
+      50
+    ]
+  }
+}

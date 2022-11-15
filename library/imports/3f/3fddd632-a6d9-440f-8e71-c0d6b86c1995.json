@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_icon_dengji",
+    "texture": "0f8e76d0-7bb4-4778-9758-5a2cd20deb77",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      39,
+      45
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      39,
+      45
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

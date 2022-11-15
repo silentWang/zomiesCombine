@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_jindan",
+    "texture": "dc7891ff-9f4d-4093-a15e-592bcccda2ae",
+    "atlas": "",
+    "rect": [
+      51,
+      36,
+      168,
+      184
+    ],
+    "offset": [
+      3,
+      4
+    ],
+    "originalSize": [
+      264,
+      264
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -96,18 +96,19 @@ export default class AdLayer extends BaseUI {
         // this.getComponentInChildren(AdOrShare).changeType(btntype);
 
         if (this.type == EADLAYER.AUTO_COM) {
-            this.SetText("lbl_effect", "增加" + add_time_auto_com + "分钟自动合成时间");
+            this.SetText("lbl_effect", "+" + add_time_auto_com + "分钟");
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
 
-            this.SetText("lbl_effect", "增加" + add_time_double_att + "分钟持续时间");
+            this.SetText("lbl_effect", "+" + add_time_double_att + "分钟");
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            this.SetText("lbl_effect", "增加" + add_time_double_income + "分钟双倍收益时间");
+            // this.SetText("lbl_effect", "增加" + add_time_double_income + "分钟双倍收益时间");
+            this.SetText("lbl_effect", "+" + add_time_double_income + "分钟");
         }
         else if(this.type == EADLAYER.DROP_PLANT)
         {
-            this.SetText("lbl_effect", "增加" + add_time_drop_plant + "分钟植物快速掉落时间");
+            this.SetText("lbl_effect", "+" + add_time_drop_plant + "分钟");
         }
 
         // var b: boolean = true;
@@ -120,8 +121,7 @@ export default class AdLayer extends BaseUI {
         // this.GetGameObject("btn_play").active = b;
     }
 
-    private addvalue(gem:number = 0)
-    {
+    private checkIsMax(){
         // if (this.type == EADLAYER.AUTO_COM && Data.user.auto_com_time == 0) {
         //     Data.user.auto_com_time = Utils.getServerTime();
         //     Data.user.auto_com_time += add_time_auto_com * 60 * 1000;
@@ -150,31 +150,34 @@ export default class AdLayer extends BaseUI {
         //     return
         // }
 
-        if (this.type == EADLAYER.AUTO_COM) {
-            if (Data.user.auto_com_time - Utils.getServerTime() > (max_auto_com - add_time_auto_com) * 60 * 1000) {
-                MsgHints.show("最大累积时间" + max_auto_com + "分钟");
-                return;
-            }
-        }
-        else if (this.type == EADLAYER.DOUBLE_ATT) {
-            if (Data.user.double_att_time - Utils.getServerTime() > (max_auto_double_att - add_time_double_att) * 60 * 1000) {
-                MsgHints.show("最大累积时间" + max_auto_double_att + "分钟");
-                return;
-            }
-        }
-        else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            if (Data.user.double_income_time - Utils.getServerTime() > (max_auto_double_income - add_time_double_income) * 60 * 1000) {
-                MsgHints.show("最大累积时间" + max_auto_double_income + "分钟");
-                return;
-            }
-        }
-        else if (this.type == EADLAYER.DROP_PLANT) {
-            if (Data.user.drop_plant_time - Utils.getServerTime() > (max_drop_plant - add_time_drop_plant) * 60 * 1000) {
-                MsgHints.show("最大累积时间" + max_drop_plant + "分钟");
-                return;
-            }
-        }
+        // if (this.type == EADLAYER.AUTO_COM) {
+        //     if (Data.user.auto_com_time - Utils.getServerTime() > (max_auto_com - add_time_auto_com) * 60 * 1000) {
+        //         MsgHints.show("最大累积时间" + max_auto_com + "分钟");
+        //         return;
+        //     }
+        // }
+        // else if (this.type == EADLAYER.DOUBLE_ATT) {
+        //     if (Data.user.double_att_time - Utils.getServerTime() > (max_auto_double_att - add_time_double_att) * 60 * 1000) {
+        //         MsgHints.show("最大累积时间" + max_auto_double_att + "分钟");
+        //         return;
+        //     }
+        // }
+        // else if (this.type == EADLAYER.DOUBLE_INCOME) {
+        //     if (Data.user.double_income_time - Utils.getServerTime() > (max_auto_double_income - add_time_double_income) * 60 * 1000) {
+        //         MsgHints.show("最大累积时间" + max_auto_double_income + "分钟");
+        //         return;
+        //     }
+        // }
+        // else if (this.type == EADLAYER.DROP_PLANT) {
+        //     if (Data.user.drop_plant_time - Utils.getServerTime() > (max_drop_plant - add_time_drop_plant) * 60 * 1000) {
+        //         MsgHints.show("最大累积时间" + max_drop_plant + "分钟");
+        //         return;
+        //     }
+        // }
+    }
 
+    private addvalue(gem:number = 0)
+    {
         if(gem>0)
         {
             if(gem > Data.user.gem)
@@ -232,11 +235,11 @@ export default class AdLayer extends BaseUI {
                 break;
             case "btn_ad":
                 AdCenter.Instance().play(0,(b)=>{
-                    if(b)
-                    {
-                        this.addvalue();
-                    }
+                    if(b) this.addvalue();
                 })
+                break;
+            case "btn_normal":
+                this.addvalue();
                 break;
             case "btn_gem":
                 let gem = 0;

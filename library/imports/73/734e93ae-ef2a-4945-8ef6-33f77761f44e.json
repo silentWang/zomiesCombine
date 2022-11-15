@@ -122,8 +122,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 214.05221557617188,
-      "height": 346.9652404785156
+      "width": 253.99996525382838,
+      "height": 155.0000706502242
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -141,8 +141,8 @@
         0,
         0,
         1,
-        0.5,
-        0.5,
+        1,
+        1,
         1
       ]
     },
@@ -160,7 +160,7 @@
     "_id": ""
   },
   {
-    "__type__": "sp.Skeleton",
+    "__type__": "dragonBones.ArmatureDisplay",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -169,35 +169,33 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "7afd064b-113f-480e-b793-8817d19f63c3"
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "paused": false,
-    "defaultSkin": "default",
-    "defaultAnimation": "run",
+    "_armatureName": "Armature",
+    "_animationName": "run",
     "_preCacheMode": 0,
     "_cacheMode": 0,
-    "loop": true,
-    "premultipliedAlpha": true,
-    "timeScale": 1,
+    "playTimes": -1,
+    "premultipliedAlpha": false,
+    "_armatureKey": "29808d0b-f526-4c6c-b350-9016545958c2#005c3bb3-efb0-46b8-a774-1b25751c2258",
     "_accTime": 0,
     "_playCount": 0,
     "_frameCache": null,
     "_curFrame": null,
-    "_skeletonCache": null,
-    "_animationName": "run",
-    "_animationQueue": [],
-    "_headAniInfo": null,
-    "_playTimes": 0,
-    "_isAniComplete": true,
-    "_N$skeletonData": {
-      "__uuid__": "8646eea1-1ae5-4e29-ab9a-ee5026f1b0ce"
+    "_playing": false,
+    "_armatureCache": null,
+    "_N$dragonAsset": {
+      "__uuid__": "29808d0b-f526-4c6c-b350-9016545958c2"
     },
+    "_N$dragonAtlasAsset": {
+      "__uuid__": "005c3bb3-efb0-46b8-a774-1b25751c2258"
+    },
+    "_N$_defaultArmatureIndex": 0,
+    "_N$_animationIndex": 1,
     "_N$_defaultCacheMode": 0,
-    "_N$debugSlots": false,
+    "_N$timeScale": 1,
     "_N$debugBones": false,
-    "_N$debugMesh": false,
-    "_N$useTint": false,
     "_N$enableBatch": false,
     "_id": ""
   },
@@ -209,7 +207,7 @@
     "asset": {
       "__uuid__": "734e93ae-ef2a-4945-8ef6-33f77761f44e"
     },
-    "fileId": "f2OyW2VzdEbbdfALkEx4VH",
+    "fileId": "23ISKmvChGz4yEQstn9NtG",
     "sync": false
   },
   {
@@ -890,7 +888,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "100",
     "_N$string": "100",
     "_fontSize": 36,
@@ -1110,7 +1109,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "100",
     "_N$string": "100",
     "_fontSize": 32,
@@ -1163,7 +1163,7 @@
     "asset": {
       "__uuid__": "734e93ae-ef2a-4945-8ef6-33f77761f44e"
     },
-    "fileId": "12OcmgQ2lEOJMeYFeFU12q",
+    "fileId": "",
     "sync": false
   }
 ]

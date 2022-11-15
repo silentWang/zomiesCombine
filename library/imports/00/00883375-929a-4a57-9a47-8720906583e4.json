@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "shangdian_lsk",
+    "texture": "15f97a38-ef83-4228-b968-a3dc04c84018",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      341,
+      117
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      341,
+      118
+    ],
+    "capInsets": [
+      219,
+      49.5,
+      98,
+      49.5
+    ]
+  }
+}

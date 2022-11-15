@@ -25,8 +25,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var MsgHints_1 = require("../../framwork/MsgHints");
-var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
+var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var BigNumber_1 = require("../../utils/BigNumber");
 var Utils_1 = require("../../utils/Utils");
@@ -67,8 +67,16 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                 });
                 this.closeUI();
                 break;
+            case "btn_normal":
+                AudioMgr_1.default.Instance().playSFX("coin");
+                Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
+                    if (b)
+                        Data_1.default.user.coin += _this._data;
+                });
+                this.closeUI();
+                break;
             case "btn_ad":
-                AdCenter_1.default.Instance().play(0, function (b) {
+                var func = function (b) {
                     if (b) {
                         var coin_2 = _this._data * 2;
                         AudioMgr_1.default.Instance().playSFX("coin");
@@ -79,7 +87,9 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                         });
                         _this.closeUI();
                     }
-                });
+                };
+                // AdCenter.Instance().play(0, func)
+                WxCenter_1.default.showRewardedVideoAd(func);
                 break;
             case "btn_gem":
                 {

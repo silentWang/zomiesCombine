@@ -500,8 +500,8 @@
     "relativePath": "model\\primitives.fbx"
   },
   "0463d547-dc1d-4b6b-ba47-43f469f409e3": {
-    "asset": 1662370953604,
-    "meta": 1666078095336,
+    "asset": 1668477266826,
+    "meta": 1668507303456,
     "relativePath": "resources"
   },
   "0f0f2e84-4c52-4b92-bd59-604ac90804ad": {
@@ -535,8 +535,8 @@
     "relativePath": "resources\\prefab\\Bullet.prefab"
   },
   "7f64f3d7-f786-42e5-923b-fdf904cb68cc": {
-    "asset": 1662370951799,
-    "meta": 1662371167871,
+    "asset": 1668509030852,
+    "meta": 1668509030863,
     "relativePath": "resources\\prefab\\AdLayer.prefab"
   },
   "74dac448-e09a-4944-b107-a342116bf450": {
@@ -560,8 +560,8 @@
     "relativePath": "resources\\prefab\\common\\msghints.anim"
   },
   "734e93ae-ef2a-4945-8ef6-33f77761f44e": {
-    "asset": 1662370951802,
-    "meta": 1662371167880,
+    "asset": 1668347000372,
+    "meta": 1668347000381,
     "relativePath": "resources\\prefab\\Enemy.prefab"
   },
   "a3418b13-b1b4-4807-bbc4-053c8713409b": {
@@ -585,8 +585,8 @@
     "relativePath": "resources\\prefab\\GetCoin.prefab"
   },
   "b3b97d4d-8eb7-4c78-94e8-d99985e94cdd": {
-    "asset": 1666346887393,
-    "meta": 1666346887405,
+    "asset": 1668497498599,
+    "meta": 1668497498604,
     "relativePath": "resources\\prefab\\LoseUI.prefab"
   },
   "07ffd0a2-8dc4-4046-87f0-f308c9c949d1": {
@@ -595,28 +595,28 @@
     "relativePath": "resources\\prefab\\LuPinResult.prefab"
   },
   "83b9970b-221a-4139-9a94-5910a008031f": {
-    "asset": 1666346604665,
-    "meta": 1666346604670,
+    "asset": 1668497386581,
+    "meta": 1668497386590,
     "relativePath": "resources\\prefab\\NewPlantUI.prefab"
   },
   "f6c4f7dd-dfda-4341-a734-4fd90852bff7": {
-    "asset": 1662370951791,
-    "meta": 1662371167904,
+    "asset": 1668495192471,
+    "meta": 1668495192476,
     "relativePath": "resources\\prefab\\OfflineAwardUI.prefab"
   },
   "e2b0e511-a633-4348-9ac9-3f795259e400": {
-    "asset": 1666345285262,
-    "meta": 1666345285281,
+    "asset": 1668496541469,
+    "meta": 1668496541483,
     "relativePath": "resources\\prefab\\SettingUI.prefab"
   },
   "6c8b8dcd-add2-4890-af4c-c11de1080010": {
-    "asset": 1662370951801,
-    "meta": 1662371167910,
+    "asset": 1668480191048,
+    "meta": 1668480191058,
     "relativePath": "resources\\prefab\\ShopLayer.prefab"
   },
   "46eefa94-69fb-4cf6-982f-6b1f1dd1fbe3": {
-    "asset": 1666345591561,
-    "meta": 1666345591569,
+    "asset": 1668499487678,
+    "meta": 1668499487690,
     "relativePath": "resources\\prefab\\ShopItem.prefab"
   },
   "0d3d21c8-b356-4b24-880e-05da9a9ff4c6": {
@@ -640,8 +640,8 @@
     "relativePath": "resources\\scene"
   },
   "7da706f0-e5f7-41a5-a655-369900b310bf": {
-    "asset": 1666346662105,
-    "meta": 1666346662112,
+    "asset": 1668497486258,
+    "meta": 1668497486268,
     "relativePath": "resources\\prefab\\VictoryUI.prefab"
   },
   "339a09db-d191-4161-9d7e-0b4bdfaa0194": {
@@ -650,13 +650,13 @@
     "relativePath": "resources\\scene\\loading.fire"
   },
   "745f9087-84a7-4cf8-a3b5-601db5765b7d": {
-    "asset": 1666439095196,
-    "meta": 1666440764289,
+    "asset": 1668495674602,
+    "meta": 1668507303463,
     "relativePath": "resources\\texture"
   },
   "e9babb2a-f7d3-4002-af7c-cbec28e91585": {
-    "asset": 1666441755887,
-    "meta": 1666441755925,
+    "asset": 1668485435368,
+    "meta": 1668485435405,
     "relativePath": "resources\\scene\\hall.fire"
   },
   "b6a6405e-cdf3-4700-a726-7c29f0f9dfbd": {
@@ -1189,11 +1189,6 @@
     "meta": 1662371169872,
     "relativePath": "script\\framwork"
   },
-  "da6dd47c-9b31-42b4-8d7d-98cc0ac4144f": {
-    "asset": 1662370952212,
-    "meta": 1662371169972,
-    "relativePath": "script\\framwork\\BaseUI.ts"
-  },
   "747f84ed-bbd2-4642-b25f-cc50e4f17a53": {
     "asset": 1662370952213,
     "meta": 1662371170408,
@@ -1219,11 +1214,6 @@
     "meta": 1662371170572,
     "relativePath": "script\\game\\AchievementModel.ts"
   },
-  "7de6c87d-a312-4e66-8a63-f8a15cfd6e49": {
-    "asset": 1662370952255,
-    "meta": 1662371170703,
-    "relativePath": "script\\game\\DB.ts"
-  },
   "278a8849-c9b2-4fdd-a55c-4aaa6419b2e7": {
     "asset": 1662370952234,
     "meta": 1662371170708,
@@ -1233,11 +1223,6 @@
     "asset": 1662370953131,
     "meta": 1662371170876,
     "relativePath": "script\\game\\prefab"
-  },
-  "735437b3-6c52-4e9b-b346-fd5b46f70a15": {
-    "asset": 1662370952252,
-    "meta": 1662371170911,
-    "relativePath": "script\\game\\prefab\\AdLayer.ts"
   },
   "d79a1206-61ce-43b3-b450-57d842634b1d": {
     "asset": 1662370952240,
@@ -1249,11 +1234,6 @@
     "meta": 1662371170932,
     "relativePath": "script\\game\\prefab\\Bullet.ts"
   },
-  "7abb6370-eb08-42e4-8ada-f373c83602e3": {
-    "asset": 1662370952237,
-    "meta": 1662371170977,
-    "relativePath": "script\\game\\prefab\\Enemy.ts"
-  },
   "f1d793f8-c1c1-4af4-ac07-0ac25625695d": {
     "asset": 1662370952249,
     "meta": 1662371170988,
@@ -1264,30 +1244,10 @@
     "meta": 1662371170996,
     "relativePath": "script\\game\\prefab\\FairyItem.ts"
   },
-  "824b03e2-4c24-4bf6-81e3-0f36898a3bd5": {
-    "asset": 1662370952241,
-    "meta": 1662371171010,
-    "relativePath": "script\\game\\prefab\\LoseUI.ts"
-  },
   "9fd9ddac-c922-4e9f-9285-88e759721b29": {
     "asset": 1662370952238,
     "meta": 1662371171022,
     "relativePath": "script\\game\\prefab\\LuPinResult.ts"
-  },
-  "46e3ee62-4f1e-414f-b7c3-466ceac36a96": {
-    "asset": 1662370952239,
-    "meta": 1662371171035,
-    "relativePath": "script\\game\\prefab\\NewPlantUI.ts"
-  },
-  "4750996f-37ae-40dd-8b54-c614bc4777d4": {
-    "asset": 1662370952242,
-    "meta": 1662371171048,
-    "relativePath": "script\\game\\prefab\\OfflineAwardUI.ts"
-  },
-  "e6b027be-f294-4367-ab68-755f0a525351": {
-    "asset": 1662370952253,
-    "meta": 1662371171098,
-    "relativePath": "script\\game\\prefab\\ShopItem.ts"
   },
   "97852671-1dc0-48bb-a596-69094e85d661": {
     "asset": 1662370952248,
@@ -1298,11 +1258,6 @@
     "asset": 1662370952252,
     "meta": 1662371171145,
     "relativePath": "script\\game\\prefab\\SignUI.ts"
-  },
-  "bdcb95a9-f18c-4512-b599-6f9a9899a394": {
-    "asset": 1662370952250,
-    "meta": 1662371171156,
-    "relativePath": "script\\game\\prefab\\VictoryUI.ts"
   },
   "8cf32de0-c5be-42d3-8cf1-68349454702f": {
     "asset": 1662370952231,
@@ -1505,8 +1460,8 @@
     "relativePath": "sounds\\zb1.mp3"
   },
   "679d5931-075c-4949-91cf-e98f02ba40cf": {
-    "asset": 1666439102116,
-    "meta": 1666440764289,
+    "asset": 1668346159076,
+    "meta": 1668346159982,
     "relativePath": "spine"
   },
   "c6a252d5-189f-4891-bc41-c3be1de3ce15": {
@@ -1521,7 +1476,7 @@
   },
   "db879b2d-6d17-422a-9a03-c1054f110582": {
     "asset": 1662370951713,
-    "meta": 1666441410738,
+    "meta": 1668507303786,
     "relativePath": "spine\\bt_auto_merge.skel"
   },
   "c8698461-ca29-4fb6-815e-5ac636a6748b": {
@@ -1536,7 +1491,7 @@
   },
   "9ce8871b-0451-42d1-a1ad-1080ce1082e6": {
     "asset": 1662370951424,
-    "meta": 1666441410737,
+    "meta": 1668507303786,
     "relativePath": "spine\\bt_double_coin.skel"
   },
   "b9a2825d-984b-4f0b-bdb0-03e9d6e26057": {
@@ -1551,7 +1506,7 @@
   },
   "3e35fbe3-6770-4250-b52b-e1bf083a0ceb": {
     "asset": 1662370951492,
-    "meta": 1666441410738,
+    "meta": 1668507303787,
     "relativePath": "spine\\bt_free_gems.skel"
   },
   "32350220-066d-4ee4-a550-a2329a1ca866": {
@@ -1566,7 +1521,7 @@
   },
   "08fb8750-f3cb-4228-8eca-2466541914c4": {
     "asset": 1662370951515,
-    "meta": 1666441410738,
+    "meta": 1668507303788,
     "relativePath": "spine\\bt_starter_boost.skel"
   },
   "119f238c-96c4-462b-b7f0-5157ede7ddae": {
@@ -1584,799 +1539,19 @@
     "meta": 1662371172069,
     "relativePath": "spine\\bt_trash.png"
   },
-  "554ad706-4bc0-4948-b769-76de15f10de7": {
-    "asset": 1662370951033,
-    "meta": 1662371172070,
-    "relativePath": "spine\\enemy1.atlas.txt"
-  },
   "cba8aa4c-4b2f-44cf-9ad9-562f465b3bdb": {
     "asset": 1662370951555,
-    "meta": 1666441410738,
+    "meta": 1668507303788,
     "relativePath": "spine\\bt_trash.skel"
-  },
-  "8646eea1-1ae5-4e29-ab9a-ee5026f1b0ce": {
-    "asset": 1662370951742,
-    "meta": 1666441410738,
-    "relativePath": "spine\\enemy1.skel"
-  },
-  "cdf82bdf-6aae-4668-a1eb-6d9ebfa1a466": {
-    "asset": 1662370951368,
-    "meta": 1662371172078,
-    "relativePath": "spine\\enemy10.atlas.txt"
-  },
-  "2e8846ad-572b-4195-a441-767cedd90234": {
-    "asset": 1662370951605,
-    "meta": 1662371172084,
-    "relativePath": "spine\\enemy1.png"
-  },
-  "ca9763eb-e84f-49ab-8faf-becdca6bf8f4": {
-    "asset": 1662370951615,
-    "meta": 1666441410741,
-    "relativePath": "spine\\enemy10.skel"
-  },
-  "e9c17eae-01d6-4f2a-bb3e-c930203458c8": {
-    "asset": 1662370951109,
-    "meta": 1662371172088,
-    "relativePath": "spine\\enemy11.atlas.txt"
-  },
-  "3a48cf43-140f-406b-9262-344ec3b44a35": {
-    "asset": 1662370951398,
-    "meta": 1662371172089,
-    "relativePath": "spine\\enemy10.png"
-  },
-  "632d5fdc-f5a6-4cd8-8a03-83141502733f": {
-    "asset": 1662370951727,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy11.skel"
-  },
-  "f0a0efb0-92a2-488d-aa99-b47e92328c52": {
-    "asset": 1662370951748,
-    "meta": 1662371172093,
-    "relativePath": "spine\\enemy12.atlas.txt"
-  },
-  "5d9b7fc7-37d9-4409-aec9-575504de9774": {
-    "asset": 1662370951372,
-    "meta": 1662371172101,
-    "relativePath": "spine\\enemy11.png"
-  },
-  "cc80162f-c2df-49c9-81a6-39601ef6e62a": {
-    "asset": 1662370950951,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy12.skel"
-  },
-  "d719c689-cbce-441b-b2e0-a92777fc0fb8": {
-    "asset": 1662370951579,
-    "meta": 1662371172105,
-    "relativePath": "spine\\enemy13.atlas.txt"
-  },
-  "f7ef9717-cb41-4357-8103-74d4367c5ae6": {
-    "asset": 1662370951322,
-    "meta": 1662371172107,
-    "relativePath": "spine\\enemy12.png"
-  },
-  "96ec0e74-4a3e-4a7d-84c0-fbd2a1c94ee1": {
-    "asset": 1662370951126,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy13.skel"
-  },
-  "b89db646-b458-4b82-a0ab-2280052914e0": {
-    "asset": 1662370951626,
-    "meta": 1662371172113,
-    "relativePath": "spine\\enemy14.atlas.txt"
-  },
-  "a1faf81d-896e-424b-9c9b-cd601d9cddc8": {
-    "asset": 1662370951347,
-    "meta": 1662371172120,
-    "relativePath": "spine\\enemy13.png"
-  },
-  "8bd3fe2e-c16c-42a7-828a-d83b7d9173c1": {
-    "asset": 1662370951199,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy14.skel"
-  },
-  "c5777367-012a-49a2-9093-36b756910356": {
-    "asset": 1662370951461,
-    "meta": 1662371172123,
-    "relativePath": "spine\\enemy15.atlas.txt"
-  },
-  "cc7a1f5f-8be3-48ba-acd9-abddbfe161cd": {
-    "asset": 1662370951143,
-    "meta": 1662371172124,
-    "relativePath": "spine\\enemy14.png"
-  },
-  "84d7b84e-a230-4357-9040-519e8d3cc633": {
-    "asset": 1662370951354,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy15.skel"
-  },
-  "99059abc-7c0c-4ed4-ab75-6bf547091e10": {
-    "asset": 1662370951221,
-    "meta": 1662371172129,
-    "relativePath": "spine\\enemy16.atlas.txt"
-  },
-  "c2b3eb4c-8469-4aac-ac23-137afab29c94": {
-    "asset": 1662370951173,
-    "meta": 1662371172137,
-    "relativePath": "spine\\enemy15.png"
-  },
-  "76613045-3f78-4451-8d87-33bbd998d00f": {
-    "asset": 1662370951489,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy16.skel"
-  },
-  "1776745c-ec1b-48bd-b0a7-79dcb534c970": {
-    "asset": 1662370951227,
-    "meta": 1662371172141,
-    "relativePath": "spine\\enemy16.png"
-  },
-  "48ac94ee-9c40-426f-80bf-69f8514cf918": {
-    "asset": 1662370951042,
-    "meta": 1662371172145,
-    "relativePath": "spine\\enemy17.atlas.txt"
-  },
-  "5684b787-88de-4b41-b016-94ec1496e3ad": {
-    "asset": 1662370951498,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy17.skel"
-  },
-  "62882088-6d84-408c-a5ba-99d18179b13c": {
-    "asset": 1662370951426,
-    "meta": 1662371172150,
-    "relativePath": "spine\\enemy18.atlas.txt"
-  },
-  "7b644e39-fd3a-4141-ab9f-63fd2a966f22": {
-    "asset": 1662370951206,
-    "meta": 1662371172159,
-    "relativePath": "spine\\enemy17.png"
-  },
-  "c9851c4f-85fa-41df-9981-1fe2c2cd35df": {
-    "asset": 1662370951550,
-    "meta": 1662371172161,
-    "relativePath": "spine\\enemy18.png"
-  },
-  "9dc17e48-1722-4f34-aa82-83988eb56ef4": {
-    "asset": 1662370951585,
-    "meta": 1662371172162,
-    "relativePath": "spine\\enemy19.atlas.txt"
-  },
-  "391ed8a5-b1f3-4c02-b2df-3d026d7bcf71": {
-    "asset": 1662370951138,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy18.skel"
-  },
-  "7b755d1b-5d7a-4726-8e29-80aaeef4e8f2": {
-    "asset": 1662370951399,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy19.skel"
-  },
-  "d378bfa0-8013-4c03-af15-367095ffc01a": {
-    "asset": 1662370951641,
-    "meta": 1662371172169,
-    "relativePath": "spine\\enemy2.atlas.txt"
-  },
-  "b6502c6e-be17-4d2c-b76b-90fa1887aca2": {
-    "asset": 1662370951571,
-    "meta": 1662371172174,
-    "relativePath": "spine\\enemy19.png"
-  },
-  "347ea902-bb70-4807-8fe2-153cfaf7a070": {
-    "asset": 1662370950969,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy2.skel"
-  },
-  "2afd29ee-8487-4d5a-8077-5f05170b47e5": {
-    "asset": 1662370951491,
-    "meta": 1662371172179,
-    "relativePath": "spine\\enemy20.atlas.txt"
-  },
-  "7c8087bc-9d9c-4ac9-b0a7-2055d12155d1": {
-    "asset": 1662370951657,
-    "meta": 1662371172182,
-    "relativePath": "spine\\enemy2.png"
-  },
-  "cf7d88ed-4399-4962-8190-ef3f8fe4f907": {
-    "asset": 1662370951431,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy20.skel"
-  },
-  "6cdc8268-e829-48ce-bb25-cd60438c1a72": {
-    "asset": 1662370951667,
-    "meta": 1662371172186,
-    "relativePath": "spine\\enemy21.atlas.txt"
-  },
-  "876624e7-9683-43eb-9da8-9efd933fb381": {
-    "asset": 1662370951444,
-    "meta": 1662371172196,
-    "relativePath": "spine\\enemy20.png"
-  },
-  "b0de74cd-8fc0-4a29-b440-8830ae644268": {
-    "asset": 1662370951421,
-    "meta": 1662371172197,
-    "relativePath": "spine\\enemy21.png"
-  },
-  "220eafc2-e0d2-4897-89b4-25c272778138": {
-    "asset": 1662370951023,
-    "meta": 1662371172199,
-    "relativePath": "spine\\enemy22.atlas.txt"
-  },
-  "21a92140-5f33-4dde-83c6-72dd5246b68e": {
-    "asset": 1662370951564,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy21.skel"
-  },
-  "5c6b1540-4575-4daf-8040-3f417ccd1bd5": {
-    "asset": 1662370951162,
-    "meta": 1666441410742,
-    "relativePath": "spine\\enemy22.skel"
-  },
-  "7c199871-62ff-4867-b52b-918448ffb920": {
-    "asset": 1662370951200,
-    "meta": 1662371172205,
-    "relativePath": "spine\\enemy23.atlas.txt"
-  },
-  "2e5b53e6-c86c-4b1b-bf43-800a1b861ad4": {
-    "asset": 1662370951462,
-    "meta": 1662371172214,
-    "relativePath": "spine\\enemy22.png"
-  },
-  "895215e2-2895-4e1a-a171-5d5cd200443a": {
-    "asset": 1662370951380,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy23.skel"
-  },
-  "574d75e2-d5af-40b4-b28e-031efc7b3af7": {
-    "asset": 1662370951480,
-    "meta": 1662371172219,
-    "relativePath": "spine\\enemy23.png"
-  },
-  "5fc52f4f-0c89-400e-8395-90c7a4eef611": {
-    "asset": 1662370951123,
-    "meta": 1662371172221,
-    "relativePath": "spine\\enemy24.atlas.txt"
-  },
-  "7a9b816b-8d6d-4306-819f-030cbde656cb": {
-    "asset": 1662370951029,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy24.skel"
-  },
-  "c542382f-9505-4de6-b372-ac84b516897c": {
-    "asset": 1662370951388,
-    "meta": 1662371172225,
-    "relativePath": "spine\\enemy25.atlas.txt"
-  },
-  "55497b0d-d3f7-43f2-80c9-05c3aae4375a": {
-    "asset": 1662370951546,
-    "meta": 1662371172237,
-    "relativePath": "spine\\enemy24.png"
-  },
-  "8b515b1a-55cb-4598-85ad-68074ebc5b18": {
-    "asset": 1662370951574,
-    "meta": 1662371172237,
-    "relativePath": "spine\\enemy25.png"
-  },
-  "eaf51084-fbfb-4ddf-a91e-b3209dca2229": {
-    "asset": 1662370951553,
-    "meta": 1662371172239,
-    "relativePath": "spine\\enemy26.atlas.txt"
-  },
-  "a8d3f83f-7a3e-4273-bd7b-3b63d4ea1e3a": {
-    "asset": 1662370951059,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy25.skel"
-  },
-  "7a4f6814-6d66-4ca8-8132-d48bb3465347": {
-    "asset": 1662370951645,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy26.skel"
-  },
-  "86e783f7-4fde-4233-b50e-79a1c85f4c90": {
-    "asset": 1662370951725,
-    "meta": 1662371172244,
-    "relativePath": "spine\\enemy27.atlas.txt"
-  },
-  "5d46b0bc-48a0-43c6-9773-b8c7a0ffb304": {
-    "asset": 1662370951527,
-    "meta": 1662371172250,
-    "relativePath": "spine\\enemy26.png"
-  },
-  "2f46c93f-44b4-42aa-a88d-c2efac07d406": {
-    "asset": 1662370951699,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy27.skel"
-  },
-  "7ba40b79-a33b-440f-bca8-2059f460af86": {
-    "asset": 1662370951344,
-    "meta": 1662371172254,
-    "relativePath": "spine\\enemy28.atlas.txt"
-  },
-  "9a5fb046-551b-4496-84bd-a9caf51553b1": {
-    "asset": 1662370951508,
-    "meta": 1662371172257,
-    "relativePath": "spine\\enemy27.png"
-  },
-  "6fcd2a87-d16e-4b05-b381-9b6e6fe7e414": {
-    "asset": 1662370950971,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy28.skel"
-  },
-  "e98b00ea-1d93-4689-80ed-577aa9fa84c9": {
-    "asset": 1662370951077,
-    "meta": 1662371172261,
-    "relativePath": "spine\\enemy29.atlas.txt"
-  },
-  "581b5050-aa43-4723-a983-d38f0caddd5a": {
-    "asset": 1662370951141,
-    "meta": 1662371172265,
-    "relativePath": "spine\\enemy28.png"
-  },
-  "5f9d3424-83cc-4a49-8729-690ff1f02f46": {
-    "asset": 1662370951107,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy29.skel"
-  },
-  "c0d565d4-71be-469b-83b3-4db462db9352": {
-    "asset": 1662370951458,
-    "meta": 1662371172270,
-    "relativePath": "spine\\enemy3.atlas.txt"
-  },
-  "fc887e18-8f34-4a25-9f58-15a1fff541b6": {
-    "asset": 1662370951175,
-    "meta": 1662371172272,
-    "relativePath": "spine\\enemy29.png"
-  },
-  "052aa572-0b05-4288-a85b-ed0fba7d590a": {
-    "asset": 1662370951110,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy3.skel"
-  },
-  "ec4d76d1-12c8-4044-86b6-8b42d03c0819": {
-    "asset": 1662370951120,
-    "meta": 1662371172280,
-    "relativePath": "spine\\enemy30.atlas.txt"
-  },
-  "d70efaa6-6ac3-4ad7-8c14-1af88cb9b8dc": {
-    "asset": 1662370951646,
-    "meta": 1662371172284,
-    "relativePath": "spine\\enemy3.png"
-  },
-  "cd566740-b595-435d-b66b-1838dbfef277": {
-    "asset": 1662370951628,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy30.skel"
-  },
-  "aec89589-48fb-47d3-b98d-94884aded955": {
-    "asset": 1662370951407,
-    "meta": 1662371172288,
-    "relativePath": "spine\\enemy31.atlas.txt"
-  },
-  "1ba3743e-47f0-4617-ba20-324e937380ad": {
-    "asset": 1662370951549,
-    "meta": 1662371172292,
-    "relativePath": "spine\\enemy30.png"
-  },
-  "9d8992e3-71f2-480d-a18b-b8e28ff46f87": {
-    "asset": 1662370951717,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy31.skel"
-  },
-  "af7c9b99-3d96-4ec8-ad04-03e529397b86": {
-    "asset": 1662370951544,
-    "meta": 1662371172297,
-    "relativePath": "spine\\enemy32.atlas.txt"
-  },
-  "c3fb957b-720f-45d9-94d7-8998801d6c30": {
-    "asset": 1662370951573,
-    "meta": 1662371172300,
-    "relativePath": "spine\\enemy31.png"
-  },
-  "e01e4663-ca1c-446f-a554-10d4349660a5": {
-    "asset": 1662370951044,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy32.skel"
-  },
-  "5d266b21-646d-456a-a656-bb9291d43111": {
-    "asset": 1662370951741,
-    "meta": 1662371172304,
-    "relativePath": "spine\\enemy33.atlas.txt"
-  },
-  "b957fc96-6901-44c3-b2a4-638e1ca1a50e": {
-    "asset": 1662370951528,
-    "meta": 1662371172312,
-    "relativePath": "spine\\enemy32.png"
-  },
-  "88d5a0bd-878b-4d68-be0d-2bfb87396035": {
-    "asset": 1662370951046,
-    "meta": 1666441410750,
-    "relativePath": "spine\\enemy33.skel"
-  },
-  "ce9f4064-9def-427b-9b06-1d0a45555361": {
-    "asset": 1662370951506,
-    "meta": 1662371172317,
-    "relativePath": "spine\\enemy33.png"
-  },
-  "8e1bcf26-f832-4303-8c8c-3e53bab56d01": {
-    "asset": 1662370951472,
-    "meta": 1662371172318,
-    "relativePath": "spine\\enemy34.atlas.txt"
-  },
-  "b3960d1e-37db-4d4b-9da9-2864293f01c1": {
-    "asset": 1662370951182,
-    "meta": 1666441410758,
-    "relativePath": "spine\\enemy34.skel"
-  },
-  "b510fc5c-c816-4130-b9f9-898d1de53403": {
-    "asset": 1662370951668,
-    "meta": 1662371172323,
-    "relativePath": "spine\\enemy35.atlas.txt"
-  },
-  "178c8e36-8964-4a92-b823-573c1cee8c19": {
-    "asset": 1662370951441,
-    "meta": 1662371172330,
-    "relativePath": "spine\\enemy34.png"
-  },
-  "9de45332-94c1-45f2-aecc-2c16a49939e3": {
-    "asset": 1662370951359,
-    "meta": 1666441410758,
-    "relativePath": "spine\\enemy35.skel"
-  },
-  "9f0d873d-6570-4a47-bd06-cbf1f71ccd8b": {
-    "asset": 1662370951423,
-    "meta": 1662371172335,
-    "relativePath": "spine\\enemy35.png"
-  },
-  "9d4fa23e-c121-4a5b-9388-48587f6684e3": {
-    "asset": 1662370951004,
-    "meta": 1662371172336,
-    "relativePath": "spine\\enemy36.atlas.txt"
-  },
-  "61e79b9c-33fd-45e2-ba61-292a120a83b5": {
-    "asset": 1662370951410,
-    "meta": 1666441410758,
-    "relativePath": "spine\\enemy36.skel"
-  },
-  "349bdba8-be9e-46a1-8a5f-83d31cfbae67": {
-    "asset": 1662370951208,
-    "meta": 1662371172341,
-    "relativePath": "spine\\enemy37.atlas.txt"
-  },
-  "6019cf14-e7d1-42e3-9aa9-3cf80e18d856": {
-    "asset": 1662370951460,
-    "meta": 1662371172347,
-    "relativePath": "spine\\enemy36.png"
-  },
-  "8bbb6f6c-2c21-4802-9ac6-5eed6d365010": {
-    "asset": 1662370951582,
-    "meta": 1666441410758,
-    "relativePath": "spine\\enemy37.skel"
-  },
-  "ae04b374-4c03-4230-8a22-5aff8b161713": {
-    "asset": 1662370951615,
-    "meta": 1662371172351,
-    "relativePath": "spine\\enemy38.atlas.txt"
-  },
-  "b7207fd1-7b86-47c3-ad58-77e5efa58e97": {
-    "asset": 1662370951482,
-    "meta": 1662371172352,
-    "relativePath": "spine\\enemy37.png"
-  },
-  "685486bf-e6b0-4847-85b3-eaa6f94a6cae": {
-    "asset": 1662370951301,
-    "meta": 1666441410758,
-    "relativePath": "spine\\enemy38.skel"
-  },
-  "dc4b22c2-797d-49ae-a6a2-c63e49dc350a": {
-    "asset": 1662370951437,
-    "meta": 1662371172356,
-    "relativePath": "spine\\enemy39.atlas.txt"
-  },
-  "f787a6a7-7685-4e1d-a23e-2cf704ec6241": {
-    "asset": 1662370951397,
-    "meta": 1662371172365,
-    "relativePath": "spine\\enemy38.png"
-  },
-  "ec2a5241-c7c5-4215-8863-12591c315e8e": {
-    "asset": 1662370951317,
-    "meta": 1666441410758,
-    "relativePath": "spine\\enemy39.skel"
-  },
-  "e0f89f13-f6cb-4779-9ffb-f5c8ac792ee2": {
-    "asset": 1662370951756,
-    "meta": 1662371172370,
-    "relativePath": "spine\\enemy4.atlas.txt"
-  },
-  "7bb4fc78-210c-48d6-852f-f43a2365ebcd": {
-    "asset": 1662370951374,
-    "meta": 1662371172373,
-    "relativePath": "spine\\enemy39.png"
-  },
-  "dd7cdfdf-b931-4579-9ad1-aa52be0d1404": {
-    "asset": 1662370951214,
-    "meta": 1666441410758,
-    "relativePath": "spine\\enemy4.skel"
-  },
-  "07ca70b4-06dc-47b0-8b1c-274eb8572faa": {
-    "asset": 1662370951149,
-    "meta": 1662371172377,
-    "relativePath": "spine\\enemy40.atlas.txt"
-  },
-  "5d8dd654-b0ae-459c-9925-be76f120eba3": {
-    "asset": 1662370951743,
-    "meta": 1662371172382,
-    "relativePath": "spine\\enemy4.png"
-  },
-  "f7166a4c-9198-44da-a212-c77c65afe08a": {
-    "asset": 1662370951494,
-    "meta": 1666441410758,
-    "relativePath": "spine\\enemy40.skel"
-  },
-  "1d0e70a9-2033-4c2d-b554-a94a283643cd": {
-    "asset": 1662370950952,
-    "meta": 1662371172386,
-    "relativePath": "spine\\enemy41.atlas.txt"
-  },
-  "4e56248d-ad91-423c-816c-5d627e8d5c64": {
-    "asset": 1662370951666,
-    "meta": 1662371172395,
-    "relativePath": "spine\\enemy40.png"
-  },
-  "a44b3c1d-33d8-4184-8219-122e1c2e31cd": {
-    "asset": 1662370951493,
-    "meta": 1666441410758,
-    "relativePath": "spine\\enemy41.skel"
-  },
-  "408abf4c-d8ec-45df-b35e-86b81bed3ced": {
-    "asset": 1662370951622,
-    "meta": 1662371172400,
-    "relativePath": "spine\\enemy42.atlas.txt"
-  },
-  "901f11ba-d4c1-4b14-8125-0ec09d81d520": {
-    "asset": 1662370951638,
-    "meta": 1662371172403,
-    "relativePath": "spine\\enemy41.png"
-  },
-  "0d3b574f-640f-4755-811f-8d2918904934": {
-    "asset": 1662370951356,
-    "meta": 1666441410758,
-    "relativePath": "spine\\enemy42.skel"
-  },
-  "e5358adc-44eb-4b32-a1eb-ddf10829deec": {
-    "asset": 1662370951447,
-    "meta": 1662371172407,
-    "relativePath": "spine\\enemy43.atlas.txt"
-  },
-  "79c6c31c-a5e6-46f0-a2cc-02a7b6b10a5c": {
-    "asset": 1662370951591,
-    "meta": 1662371172418,
-    "relativePath": "spine\\enemy42.png"
-  },
-  "870407d3-cd2f-4483-b9e0-4a3d5da44739": {
-    "asset": 1662370951613,
-    "meta": 1662371172420,
-    "relativePath": "spine\\enemy43.png"
-  },
-  "237e9107-467d-4716-8ccf-9c1767c78f1f": {
-    "asset": 1662370951690,
-    "meta": 1662371172421,
-    "relativePath": "spine\\enemy44.atlas.txt"
-  },
-  "12ae7502-eed1-4663-bfe6-10433ad9fc61": {
-    "asset": 1662370951190,
-    "meta": 1666441410766,
-    "relativePath": "spine\\enemy43.skel"
-  },
-  "7a57cb9d-7cba-4f28-8590-cc93a2af9c17": {
-    "asset": 1662370951129,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy44.skel"
-  },
-  "f14c4051-5c24-49a3-845f-e56fb4d16257": {
-    "asset": 1662370951497,
-    "meta": 1662371172429,
-    "relativePath": "spine\\enemy45.atlas.txt"
-  },
-  "66e4a675-0820-4505-a46b-454f3c2eaef0": {
-    "asset": 1662370951687,
-    "meta": 1662371172436,
-    "relativePath": "spine\\enemy44.png"
-  },
-  "814810ca-31fe-4cfb-9b00-8f60c397452c": {
-    "asset": 1662370950950,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy45.skel"
-  },
-  "c20f51d2-2a2b-4454-aef2-271860c70223": {
-    "asset": 1662370951350,
-    "meta": 1662371172441,
-    "relativePath": "spine\\enemy46.atlas.txt"
-  },
-  "7ff69163-2158-4c7b-aab5-6fcff0fd6b2c": {
-    "asset": 1662370951705,
-    "meta": 1662371172442,
-    "relativePath": "spine\\enemy45.png"
-  },
-  "f7521174-d9f2-43be-8f12-8aaefaafcbf7": {
-    "asset": 1662370951719,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy46.skel"
-  },
-  "ad3ac811-6c73-4f9b-8c53-44ab0ed7fac8": {
-    "asset": 1662370951064,
-    "meta": 1662371172447,
-    "relativePath": "spine\\enemy47.atlas.txt"
-  },
-  "f11711e4-5af0-4cd2-b52b-c7f186e97f92": {
-    "asset": 1662370951751,
-    "meta": 1662371172459,
-    "relativePath": "spine\\enemy46.png"
-  },
-  "8a6099d1-9947-4ebc-984c-4a4569b0953e": {
-    "asset": 1662370951731,
-    "meta": 1662371172462,
-    "relativePath": "spine\\enemy47.png"
-  },
-  "505e7d8e-ede0-47cf-a70e-df7fbd9900db": {
-    "asset": 1662370951543,
-    "meta": 1662371172463,
-    "relativePath": "spine\\enemy48.atlas.txt"
-  },
-  "3dc470ac-7e83-4425-9cd5-4675979bb5a4": {
-    "asset": 1662370951619,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy47.skel"
-  },
-  "e98b6b18-e4cf-438e-bc35-a12b2cd50324": {
-    "asset": 1662370951081,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy48.skel"
-  },
-  "8a32c954-70ab-435d-9d33-0792dd625307": {
-    "asset": 1662370951730,
-    "meta": 1662371172469,
-    "relativePath": "spine\\enemy49.atlas.txt"
-  },
-  "1f1e84a8-efaf-4b74-ac0e-af9c4d4eafce": {
-    "asset": 1662370951035,
-    "meta": 1662371172480,
-    "relativePath": "spine\\enemy49.png"
-  },
-  "842f557c-08ca-403a-9c8a-b5c23675d3f4": {
-    "asset": 1662370951012,
-    "meta": 1662371172486,
-    "relativePath": "spine\\enemy48.png"
-  },
-  "484f50c9-172e-475e-9442-99da5f397028": {
-    "asset": 1662370951004,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy49.skel"
-  },
-  "42e99f40-1f0f-477e-881b-410aaf9e0e78": {
-    "asset": 1662370951563,
-    "meta": 1662371172488,
-    "relativePath": "spine\\enemy5.atlas.txt"
-  },
-  "80687b43-57af-4bcc-8eb5-f6e12dceabda": {
-    "asset": 1662370951335,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy5.skel"
-  },
-  "70ef60a1-4d2a-453f-b907-cedea583eae0": {
-    "asset": 1662370951678,
-    "meta": 1662371172492,
-    "relativePath": "spine\\enemy50.atlas.txt"
-  },
-  "3cd217ec-513c-4b9c-8874-1871fcffbe08": {
-    "asset": 1662370951740,
-    "meta": 1662371172501,
-    "relativePath": "spine\\enemy5.png"
-  },
-  "b93f707c-fea5-4f3a-867f-f0caadc3e143": {
-    "asset": 1662370951739,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy50.skel"
-  },
-  "fb62a74e-f120-4fd1-94b5-c22dc990aef6": {
-    "asset": 1662370951511,
-    "meta": 1662371172505,
-    "relativePath": "spine\\enemy51.atlas.txt"
-  },
-  "e8d7e229-600e-4ac0-a7bc-6c72dc020d73": {
-    "asset": 1662370951683,
-    "meta": 1662371172514,
-    "relativePath": "spine\\enemy50.png"
-  },
-  "fbcbb053-f7f1-4e80-9310-b97a2ce20f82": {
-    "asset": 1662370951608,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy51.skel"
-  },
-  "2c6034d0-54fd-488c-a3e6-b8c02fbb14bf": {
-    "asset": 1662370951345,
-    "meta": 1662371172518,
-    "relativePath": "spine\\enemy52.atlas.txt"
-  },
-  "d8c5892a-a15e-4b52-89c3-5b57a0847364": {
-    "asset": 1662370951709,
-    "meta": 1662371172525,
-    "relativePath": "spine\\enemy51.png"
-  },
-  "f09f0241-2663-4d5b-aec2-841e65e66a17": {
-    "asset": 1662370951116,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy52.skel"
-  },
-  "7eed7069-9455-4a64-a385-5add636dd07e": {
-    "asset": 1662370951379,
-    "meta": 1662371172529,
-    "relativePath": "spine\\enemy6.atlas.txt"
-  },
-  "a18eb23c-890f-46f6-a68b-ce5fc6dabf54": {
-    "asset": 1662370951750,
-    "meta": 1662371172533,
-    "relativePath": "spine\\enemy52.png"
-  },
-  "9e4ff570-84cd-41ff-a91d-7f6dbf295432": {
-    "asset": 1662370951473,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy6.skel"
-  },
-  "2281e36a-8afe-41e4-9a79-541baa0f0c2d": {
-    "asset": 1662370951090,
-    "meta": 1662371172537,
-    "relativePath": "spine\\enemy7.atlas.txt"
-  },
-  "9d364bfa-41a5-454a-b4dc-249056d5ad29": {
-    "asset": 1662370951691,
-    "meta": 1662371172540,
-    "relativePath": "spine\\enemy6.png"
-  },
-  "17fac72d-b323-41e4-a097-556863bfc9d6": {
-    "asset": 1662370951515,
-    "meta": 1666441410767,
-    "relativePath": "spine\\enemy7.skel"
-  },
-  "ca4ace25-c8f0-4d46-9e02-9aa0db3d1d27": {
-    "asset": 1662370951522,
-    "meta": 1662371172543,
-    "relativePath": "spine\\enemy8.atlas.txt"
-  },
-  "615e58e9-be8b-412f-b817-d6b58d07f5a8": {
-    "asset": 1662370951701,
-    "meta": 1662371172548,
-    "relativePath": "spine\\enemy7.png"
-  },
-  "63f25746-d933-4480-bc8e-22b1ebf2ccba": {
-    "asset": 1662370951148,
-    "meta": 1666441410775,
-    "relativePath": "spine\\enemy8.skel"
-  },
-  "992b615a-9180-4e99-8008-fed6e96e6a4a": {
-    "asset": 1662370951711,
-    "meta": 1662371172552,
-    "relativePath": "spine\\enemy9.atlas.txt"
-  },
-  "2e1be160-49b7-459e-b25e-85eb1f12b813": {
-    "asset": 1662370950978,
-    "meta": 1662371172555,
-    "relativePath": "spine\\enemy8.png"
-  },
-  "3a80239c-af1d-42d1-894c-3fb4dcd4088f": {
-    "asset": 1662370951391,
-    "meta": 1666441410775,
-    "relativePath": "spine\\enemy9.skel"
   },
   "5347e9bb-29fd-4797-bf6c-72a952d4e31c": {
     "asset": 1662370951180,
     "meta": 1662371172559,
     "relativePath": "spine\\fairy.atlas.txt"
   },
-  "d2809348-6c0f-4300-907d-88c934c258ee": {
-    "asset": 1662370950960,
-    "meta": 1662371172567,
-    "relativePath": "spine\\enemy9.png"
-  },
   "9407a815-061b-4e0d-8593-07ddcb156c48": {
     "asset": 1662370951408,
-    "meta": 1666441410775,
+    "meta": 1668507303789,
     "relativePath": "spine\\fairy.skel"
   },
   "335cb290-a2cb-4eda-bd9b-37482f91b16e": {
@@ -2401,12 +1576,12 @@
   },
   "53213395-4252-474a-845f-65d7464d318f": {
     "asset": 1662370951071,
-    "meta": 1666441410775,
+    "meta": 1668507303792,
     "relativePath": "spine\\flower1.skel"
   },
   "7a84e8e5-cfad-4c1c-a39a-631653dc742f": {
     "asset": 1662370951007,
-    "meta": 1666441410775,
+    "meta": 1668507303793,
     "relativePath": "spine\\flower10.skel"
   },
   "5563ed86-62ca-451b-bdd0-5a72bc272578": {
@@ -2421,7 +1596,7 @@
   },
   "450ec078-910c-4326-b5df-2b390071d153": {
     "asset": 1662370951080,
-    "meta": 1666441410775,
+    "meta": 1668507303796,
     "relativePath": "spine\\flower11.skel"
   },
   "de986f0b-fcc2-4cd5-af17-76c828dc9690": {
@@ -2436,7 +1611,7 @@
   },
   "23a35fb6-2874-4474-aa87-97497e149317": {
     "asset": 1662370951669,
-    "meta": 1666441410775,
+    "meta": 1668507303797,
     "relativePath": "spine\\flower12.skel"
   },
   "5219915a-050c-4024-a558-451d5064880c": {
@@ -2451,7 +1626,7 @@
   },
   "63e44865-b63e-46af-97ff-fc9fe8d862a7": {
     "asset": 1662370951679,
-    "meta": 1666441410775,
+    "meta": 1668507303798,
     "relativePath": "spine\\flower13.skel"
   },
   "0737b3c3-8066-4054-99ee-709f927571b5": {
@@ -2466,7 +1641,7 @@
   },
   "3421f65e-c957-4d75-b96f-61217489a520": {
     "asset": 1662370951449,
-    "meta": 1666441410775,
+    "meta": 1668507303799,
     "relativePath": "spine\\flower14.skel"
   },
   "b4adace4-f2e6-4170-bf39-64dae090609d": {
@@ -2481,7 +1656,7 @@
   },
   "66158506-c594-4852-81c6-e373c8f9e4a7": {
     "asset": 1662370951545,
-    "meta": 1666441410775,
+    "meta": 1668507303800,
     "relativePath": "spine\\flower15.skel"
   },
   "fc1c777e-a8eb-4fbe-b460-e45c21df5d58": {
@@ -2496,7 +1671,7 @@
   },
   "8d2b1dd9-b091-4192-9982-faadd93af77f": {
     "asset": 1662370951133,
-    "meta": 1666441410775,
+    "meta": 1668507303801,
     "relativePath": "spine\\flower16.skel"
   },
   "0c6d27d1-c41a-41d7-8cad-b162ab2f30e1": {
@@ -2511,7 +1686,7 @@
   },
   "ba945ba5-34c3-4925-9833-9afb3549cf88": {
     "asset": 1662370951405,
-    "meta": 1666441410775,
+    "meta": 1668507303803,
     "relativePath": "spine\\flower17.skel"
   },
   "945c90c6-3d32-4316-b174-f9cdd9baad93": {
@@ -2526,7 +1701,7 @@
   },
   "be3669d5-340d-4305-8b2b-bcb53da8f694": {
     "asset": 1662370951484,
-    "meta": 1666441410775,
+    "meta": 1668507303802,
     "relativePath": "spine\\flower18.skel"
   },
   "da4d88ac-0744-410a-a0fb-54cd972f6e1f": {
@@ -2541,7 +1716,7 @@
   },
   "341ccb41-64ef-44f2-96bc-a1793e52e47e": {
     "asset": 1662370951504,
-    "meta": 1666441410775,
+    "meta": 1668507303809,
     "relativePath": "spine\\flower19.skel"
   },
   "59b69d03-bb8c-43ff-acb5-1c1e3cb380dc": {
@@ -2556,7 +1731,7 @@
   },
   "6a49f7e4-21e8-44f3-ae9b-9de938013968": {
     "asset": 1662370951660,
-    "meta": 1666441410775,
+    "meta": 1668507303810,
     "relativePath": "spine\\flower2.skel"
   },
   "fa419def-6782-40ab-a409-42cebb59e02f": {
@@ -2571,7 +1746,7 @@
   },
   "ff51fc72-3188-4dbd-b449-c24b1dfda527": {
     "asset": 1662370951221,
-    "meta": 1666441410783,
+    "meta": 1668507303811,
     "relativePath": "spine\\flower20.skel"
   },
   "51dc77fc-bdf5-4e11-8c17-e1d443e142f1": {
@@ -2586,7 +1761,7 @@
   },
   "88e53246-0d72-4bc1-80e7-f7cb47025924": {
     "asset": 1662370951328,
-    "meta": 1666441410783,
+    "meta": 1668507303811,
     "relativePath": "spine\\flower21.skel"
   },
   "775cab08-f91d-42e2-8dbf-af0d854a4875": {
@@ -2601,7 +1776,7 @@
   },
   "38b8f19a-0e81-45c7-9ec9-57c1a3e378b6": {
     "asset": 1662370951468,
-    "meta": 1666441410783,
+    "meta": 1668507303812,
     "relativePath": "spine\\flower22.skel"
   },
   "d798b824-89d1-4a03-9050-d040c75258da": {
@@ -2616,7 +1791,7 @@
   },
   "690a98bd-5fcf-4f50-89c5-723293ccfb26": {
     "asset": 1662370951520,
-    "meta": 1666441410786,
+    "meta": 1668507303813,
     "relativePath": "spine\\flower23.skel"
   },
   "bdec7c14-86b0-4d55-9924-e9cde5a6fc90": {
@@ -2641,12 +1816,12 @@
   },
   "5e3b1cf4-ff5a-4ff8-8382-92472a82134f": {
     "asset": 1662370951596,
-    "meta": 1666441410786,
+    "meta": 1668507303815,
     "relativePath": "spine\\flower24.skel"
   },
   "edd1ec73-987d-4433-8cb3-e57facf81c7f": {
     "asset": 1662370951745,
-    "meta": 1666441410786,
+    "meta": 1668507303814,
     "relativePath": "spine\\flower25.skel"
   },
   "840b2d41-d767-497d-aec3-783719699c48": {
@@ -2661,7 +1836,7 @@
   },
   "5732d4c1-bd17-492c-b915-b13aa9689be2": {
     "asset": 1662370950974,
-    "meta": 1666441410786,
+    "meta": 1668507303815,
     "relativePath": "spine\\flower26.skel"
   },
   "66325073-1d20-43e9-a2db-bdc386a97ea6": {
@@ -2676,7 +1851,7 @@
   },
   "6f16c164-a49c-4699-a6f9-a68e43e3a39b": {
     "asset": 1662370951098,
-    "meta": 1666441410786,
+    "meta": 1668507303816,
     "relativePath": "spine\\flower27.skel"
   },
   "0de9f97c-8413-42c2-a6f4-83d4ba79512b": {
@@ -2691,7 +1866,7 @@
   },
   "e9cfc3ef-60e8-43c4-824f-d67a943ced81": {
     "asset": 1662370951647,
-    "meta": 1666441410786,
+    "meta": 1668507303816,
     "relativePath": "spine\\flower28.skel"
   },
   "1cf18fce-462e-4a36-99a2-977a60882ae2": {
@@ -2706,7 +1881,7 @@
   },
   "1ee0c67e-276c-4a20-80e9-f332e705145f": {
     "asset": 1662370951695,
-    "meta": 1666441410786,
+    "meta": 1668507303817,
     "relativePath": "spine\\flower29.skel"
   },
   "0200d7e8-e45d-44fe-9271-a561b1f2f42c": {
@@ -2721,7 +1896,7 @@
   },
   "fa6179ab-b0c1-4df1-a144-677bdb535eff": {
     "asset": 1662370951689,
-    "meta": 1666441410786,
+    "meta": 1668507303817,
     "relativePath": "spine\\flower3.skel"
   },
   "cf2a5321-df22-47d2-8f42-e717e0cd32fd": {
@@ -2736,7 +1911,7 @@
   },
   "f573943a-c105-47a1-aab6-d0b3f2067ae9": {
     "asset": 1662370950996,
-    "meta": 1666441410786,
+    "meta": 1668507303819,
     "relativePath": "spine\\flower30.skel"
   },
   "b3590b53-a90c-4df2-a4a5-341c21a631f1": {
@@ -2761,12 +1936,12 @@
   },
   "4b5a49a2-e907-4cc7-81ee-43edee681be6": {
     "asset": 1662370951086,
-    "meta": 1666441410786,
+    "meta": 1668507303819,
     "relativePath": "spine\\flower31.skel"
   },
   "4fedec69-1185-46cd-b4f0-f9b894de94ac": {
     "asset": 1662370951584,
-    "meta": 1666441410786,
+    "meta": 1668507303820,
     "relativePath": "spine\\flower32.skel"
   },
   "a0f0f3f7-8b11-4214-abe6-a41101286a34": {
@@ -2781,7 +1956,7 @@
   },
   "8b58b4ec-fca5-4620-b365-31ff4064010e": {
     "asset": 1662370951761,
-    "meta": 1666441410786,
+    "meta": 1668507303821,
     "relativePath": "spine\\flower33.skel"
   },
   "a63af9b2-20e7-4ed6-93f0-96f760a0b389": {
@@ -2796,7 +1971,7 @@
   },
   "e30bc1da-f3d2-43a2-9e6b-36f1266623a2": {
     "asset": 1662370951456,
-    "meta": 1666441410786,
+    "meta": 1668507303821,
     "relativePath": "spine\\flower34.skel"
   },
   "d4cd29e7-2123-42e1-a6db-7c61662b834d": {
@@ -2811,7 +1986,7 @@
   },
   "920381c6-4525-4734-aa04-c788d004e24e": {
     "asset": 1662370951537,
-    "meta": 1666441410794,
+    "meta": 1668507303822,
     "relativePath": "spine\\flower35.skel"
   },
   "6771d9f0-cefb-4fe3-ab76-f211193dcc12": {
@@ -2826,7 +2001,7 @@
   },
   "a6254711-ad98-4932-8c1c-13f37fe273a7": {
     "asset": 1662370951301,
-    "meta": 1666441410794,
+    "meta": 1668507303823,
     "relativePath": "spine\\flower36.skel"
   },
   "17c24858-928a-4bb2-bf3e-a45a71798446": {
@@ -2841,7 +2016,7 @@
   },
   "2a96df1a-c8ff-4214-9edc-77815d8f7173": {
     "asset": 1662370951314,
-    "meta": 1666441410794,
+    "meta": 1668507303825,
     "relativePath": "spine\\flower37.skel"
   },
   "2d523f54-3bbb-46ab-98be-13d49ef5a134": {
@@ -2856,7 +2031,7 @@
   },
   "a964025e-84ec-4c4e-a209-bd3eae7e4792": {
     "asset": 1662370951412,
-    "meta": 1666441410794,
+    "meta": 1668507303824,
     "relativePath": "spine\\flower38.skel"
   },
   "ea42917b-5387-49e8-92b9-0670b4e0742f": {
@@ -2871,7 +2046,7 @@
   },
   "61d438e0-301d-484a-ab5e-c0c228e07f62": {
     "asset": 1662370951580,
-    "meta": 1666441410794,
+    "meta": 1668507303826,
     "relativePath": "spine\\flower39.skel"
   },
   "4a18e7c4-8276-4eb8-ae74-5ec7ade60c38": {
@@ -2886,7 +2061,7 @@
   },
   "3612ea2a-3ae2-4e72-a33c-c3c9f2f11154": {
     "asset": 1662370951440,
-    "meta": 1666441410794,
+    "meta": 1668507303825,
     "relativePath": "spine\\flower4.skel"
   },
   "410fa212-c061-4bf5-89c6-80dea1ad65cd": {
@@ -2901,7 +2076,7 @@
   },
   "a9fde918-d605-4cb1-9d74-131ef69bebe3": {
     "asset": 1662370951409,
-    "meta": 1666441410794,
+    "meta": 1668507303826,
     "relativePath": "spine\\flower40.skel"
   },
   "b1282921-72f5-4e7f-bce2-e6b60b2046e5": {
@@ -2916,7 +2091,7 @@
   },
   "fa13cd54-a61e-4c65-837c-8107ef764060": {
     "asset": 1662370951132,
-    "meta": 1666441410794,
+    "meta": 1668507303827,
     "relativePath": "spine\\flower41.skel"
   },
   "8aa6e3af-b247-495e-8d8b-4c5a34353550": {
@@ -2931,7 +2106,7 @@
   },
   "c216f271-43e9-4566-86d1-7d026c793b88": {
     "asset": 1662370951543,
-    "meta": 1666441410794,
+    "meta": 1668507303830,
     "relativePath": "spine\\flower42.skel"
   },
   "b56540c7-c773-4225-8add-f094c7df381b": {
@@ -2946,7 +2121,7 @@
   },
   "dca39160-1b5c-4db6-a1fe-dd1974e69fe5": {
     "asset": 1662370951451,
-    "meta": 1666441410794,
+    "meta": 1668507303830,
     "relativePath": "spine\\flower43.skel"
   },
   "384f0317-7bce-4e2d-9e4c-f92fd4b89d39": {
@@ -2971,12 +2146,12 @@
   },
   "ec2c2c87-c332-4e8e-908c-e05eb31c739c": {
     "asset": 1662370951675,
-    "meta": 1666441410794,
+    "meta": 1668507303831,
     "relativePath": "spine\\flower44.skel"
   },
   "1018f761-745f-47b2-8fd2-a2cd902db6d1": {
     "asset": 1662370951672,
-    "meta": 1666441410802,
+    "meta": 1668507303832,
     "relativePath": "spine\\flower45.skel"
   },
   "941a548f-1251-43b4-9f4a-6d71e1beb3ce": {
@@ -2991,7 +2166,7 @@
   },
   "67abb959-c5df-40b8-bd24-1b9da325b775": {
     "asset": 1662370951084,
-    "meta": 1666441410802,
+    "meta": 1668507303833,
     "relativePath": "spine\\flower46.skel"
   },
   "96640c78-0dfd-4860-af88-b23f905e96ce": {
@@ -3006,7 +2181,7 @@
   },
   "edb850e2-758c-4369-a5e3-18fc3dbceae5": {
     "asset": 1662370950999,
-    "meta": 1666441410802,
+    "meta": 1668507303834,
     "relativePath": "spine\\flower47.skel"
   },
   "f9600981-db4c-49e4-b30f-3619abad0b70": {
@@ -3031,12 +2206,12 @@
   },
   "3327bfbc-dcc3-4a19-a1b7-2c509e28ddae": {
     "asset": 1662370951724,
-    "meta": 1666441410802,
+    "meta": 1668507303835,
     "relativePath": "spine\\flower48.skel"
   },
   "f7553a44-17ec-4133-8820-ed4ad3371944": {
     "asset": 1662370951616,
-    "meta": 1666441410802,
+    "meta": 1668507303836,
     "relativePath": "spine\\flower49.skel"
   },
   "002d16c8-7836-4909-a640-bd3b5a91b118": {
@@ -3061,12 +2236,12 @@
   },
   "a5cda53d-078c-40d8-8d90-19381a1234b6": {
     "asset": 1662370951552,
-    "meta": 1666441410802,
+    "meta": 1668507303837,
     "relativePath": "spine\\flower5.skel"
   },
   "cbb537d7-954e-48b0-a50d-bb317f099663": {
     "asset": 1662370951070,
-    "meta": 1666441410806,
+    "meta": 1668507303837,
     "relativePath": "spine\\flower50.skel"
   },
   "f8920673-200f-4cc7-a674-e3affc0773ce": {
@@ -3081,7 +2256,7 @@
   },
   "e8f2d434-678a-43e4-a5d9-a990cf9f54d4": {
     "asset": 1662370951024,
-    "meta": 1666441410806,
+    "meta": 1668507303838,
     "relativePath": "spine\\flower51.skel"
   },
   "d60da122-3e71-42c0-ae76-caf4c94fb286": {
@@ -3096,7 +2271,7 @@
   },
   "ed604db3-719b-43f8-9d20-8f58ca3785e2": {
     "asset": 1662370951691,
-    "meta": 1666441410806,
+    "meta": 1668507303838,
     "relativePath": "spine\\flower52.skel"
   },
   "6c711e8d-6ea4-4782-b5ab-f31628e03791": {
@@ -3111,7 +2286,7 @@
   },
   "87275de5-0860-4be7-81b4-03ef6835dc27": {
     "asset": 1662370951654,
-    "meta": 1666441410806,
+    "meta": 1668507303839,
     "relativePath": "spine\\flower53.skel"
   },
   "40219104-bf92-4a31-8209-6f558ea656b3": {
@@ -3126,7 +2301,7 @@
   },
   "bd70b6cb-f7f5-4034-8a1a-748ccca80e6a": {
     "asset": 1662370951557,
-    "meta": 1666441410806,
+    "meta": 1668507303840,
     "relativePath": "spine\\flower54.skel"
   },
   "940b7271-979d-4168-acf2-dad0a343f777": {
@@ -3141,7 +2316,7 @@
   },
   "69de6af3-dfc6-44b9-9bea-2bd2270a8005": {
     "asset": 1662370951438,
-    "meta": 1666441410806,
+    "meta": 1668507303841,
     "relativePath": "spine\\flower55.skel"
   },
   "79882d19-d9a9-4b18-973d-3411cecb7e7e": {
@@ -3166,12 +2341,12 @@
   },
   "3a5e1a69-19b4-41d2-958f-f4ead43f6eee": {
     "asset": 1662370951393,
-    "meta": 1666441410810,
+    "meta": 1668507303841,
     "relativePath": "spine\\flower56.skel"
   },
   "ea514b9d-c9c2-4d22-93fb-8505e76b87a3": {
     "asset": 1662370951152,
-    "meta": 1666441410811,
+    "meta": 1668507303843,
     "relativePath": "spine\\flower57.skel"
   },
   "0b7412eb-b8bf-4b9c-9d71-e42c72f31214": {
@@ -3186,7 +2361,7 @@
   },
   "378bc051-0280-40d7-adb5-e9d5e0b13bb1": {
     "asset": 1662370951513,
-    "meta": 1666441410811,
+    "meta": 1668507303842,
     "relativePath": "spine\\flower58.skel"
   },
   "7b181d90-365d-43c9-9e3c-cab2c1b93830": {
@@ -3201,7 +2376,7 @@
   },
   "8f68f0ad-90f3-4dcd-bb9f-9c2abb244fe0": {
     "asset": 1662370951471,
-    "meta": 1666441410811,
+    "meta": 1668507303844,
     "relativePath": "spine\\flower59.skel"
   },
   "bad0b77a-aff1-41e3-9500-178ec2d495fe": {
@@ -3226,12 +2401,12 @@
   },
   "50ab5579-95d4-475e-8e1a-ac756a050e3b": {
     "asset": 1662370951144,
-    "meta": 1666441410811,
+    "meta": 1668507303844,
     "relativePath": "spine\\flower6.skel"
   },
   "26d6d73b-4cb3-4729-b513-51688c993451": {
     "asset": 1662370951317,
-    "meta": 1666441410811,
+    "meta": 1668507303845,
     "relativePath": "spine\\flower60.skel"
   },
   "edc442d7-d661-4ade-9c07-49684325f4cb": {
@@ -3246,7 +2421,7 @@
   },
   "cfa69163-5399-4669-b7aa-c9814fb22492": {
     "asset": 1662370951395,
-    "meta": 1666441410811,
+    "meta": 1668507303845,
     "relativePath": "spine\\flower7.skel"
   },
   "5ec7687a-4d95-4814-b7ac-99f9d9019e16": {
@@ -3261,7 +2436,7 @@
   },
   "75665a75-ad08-4e77-825d-909f303935e6": {
     "asset": 1662370951481,
-    "meta": 1666441410811,
+    "meta": 1668507303847,
     "relativePath": "spine\\flower8.skel"
   },
   "57230533-019b-4018-a143-4a57387848fd": {
@@ -3276,7 +2451,7 @@
   },
   "ded5382b-b2a6-4d03-a706-78c210d590bf": {
     "asset": 1662370951507,
-    "meta": 1666441410815,
+    "meta": 1668507303846,
     "relativePath": "spine\\flower9.skel"
   },
   "939bb728-27ec-43dc-825e-0f1416a49b04": {
@@ -3291,7 +2466,7 @@
   },
   "718a78cb-34f7-4cbd-929e-5a866c5ee97e": {
     "asset": 1662370951188,
-    "meta": 1666441410815,
+    "meta": 1668507303847,
     "relativePath": "spine\\fx_arrow.skel"
   },
   "c6956a8f-c3dd-42d0-9419-6961b8315c5f": {
@@ -3306,7 +2481,7 @@
   },
   "c61ec591-66a9-4958-8afc-bad24ed231eb": {
     "asset": 1662370951632,
-    "meta": 1666441410815,
+    "meta": 1668507303848,
     "relativePath": "spine\\fx_bt_angry.skel"
   },
   "11447f6c-d972-4640-82cf-ce0ab6ed75dd": {
@@ -3321,7 +2496,7 @@
   },
   "5881c8d7-81b2-4b57-8188-a466c43112a4": {
     "asset": 1662370950975,
-    "meta": 1666441410815,
+    "meta": 1668507303849,
     "relativePath": "spine\\fx_ground_merge.skel"
   },
   "1c63b418-27bb-496e-8836-d72b3c72db8e": {
@@ -3331,7 +2506,7 @@
   },
   "10147467-3a70-4101-8654-fe8232f3d8d0": {
     "asset": 1662370951547,
-    "meta": 1666441410815,
+    "meta": 1668507303850,
     "relativePath": "spine\\fx_lose.skel"
   },
   "081c8d8a-7221-42f7-a138-6bcecf64923b": {
@@ -3346,7 +2521,7 @@
   },
   "fd24a75b-73b9-408a-8849-cd0b95b1b7ef": {
     "asset": 1662370951581,
-    "meta": 1666441410815,
+    "meta": 1668507303850,
     "relativePath": "spine\\fx_slot.skel"
   },
   "b9fc9c37-0197-4e9f-9a0d-010264a66140": {
@@ -3366,7 +2541,7 @@
   },
   "67454650-94c7-4fe7-bf74-9aa55065d8ed": {
     "asset": 1662370950979,
-    "meta": 1666441410815,
+    "meta": 1668507303851,
     "relativePath": "spine\\fx_stun.skel"
   },
   "f0b818f7-64df-449a-a0df-09d990af2710": {
@@ -3376,7 +2551,7 @@
   },
   "0315b880-5035-4920-8c3a-e315838ce339": {
     "asset": 1662370951639,
-    "meta": 1666441410819,
+    "meta": 1668507303852,
     "relativePath": "spine\\fx_victory.skel"
   },
   "bfcceb5e-764d-4c24-82f4-8533d8fb20a4": {
@@ -3391,7 +2566,7 @@
   },
   "24a416fb-be4e-49d4-8a05-49dde301a5f9": {
     "asset": 1662370950965,
-    "meta": 1666441410819,
+    "meta": 1668507303852,
     "relativePath": "spine\\fx_warning_boss.skel"
   },
   "5cff1f55-2ce7-49cf-b515-c794c1f82d08": {
@@ -3561,7 +2736,7 @@
   },
   "eef62a64-ec64-43f4-9901-7401aed16e59": {
     "asset": 1662370951389,
-    "meta": 1666441410819,
+    "meta": 1668507303853,
     "relativePath": "spine\\pot1.skel"
   },
   "480f1731-9044-41da-b3b8-87a9eb89d5c0": {
@@ -3576,7 +2751,7 @@
   },
   "58bbf297-868b-4b9b-b882-3f7c738496e8": {
     "asset": 1662370951435,
-    "meta": 1666441410819,
+    "meta": 1668507303853,
     "relativePath": "spine\\pot2.skel"
   },
   "418aeb22-7dd0-4efc-bd5c-45360421f6a2": {
@@ -3591,7 +2766,7 @@
   },
   "e992277e-09f3-4633-95a4-5c882df2f6dd": {
     "asset": 1662370951560,
-    "meta": 1666441410823,
+    "meta": 1668507303854,
     "relativePath": "spine\\pot3.skel"
   },
   "ba26022c-3119-4dc8-9e33-cf9b6a836efe": {
@@ -3606,7 +2781,7 @@
   },
   "84a97586-0098-4e4c-8a4b-ddc611e13321": {
     "asset": 1662370951650,
-    "meta": 1666441410823,
+    "meta": 1668507303854,
     "relativePath": "spine\\pot4.skel"
   },
   "4a34618c-0398-47f8-b3a2-0e87fdd7d07e": {
@@ -3621,7 +2796,7 @@
   },
   "f2b29f12-002f-4458-a460-8a6badb9fe9c": {
     "asset": 1662370951122,
-    "meta": 1666441410823,
+    "meta": 1668507303854,
     "relativePath": "spine\\tut_hand.skel"
   },
   "b077577a-6c8c-435f-a950-bb064ad3bce1": {
@@ -3833,16 +3008,6 @@
     "asset": 1666048078000,
     "meta": 1666077000333,
     "relativePath": "resources\\texture\\plants\\58.png"
-  },
-  "b649ad67-0ada-4268-b6a8-eeae097da02c": {
-    "asset": 1666252013228,
-    "meta": 1666252570661,
-    "relativePath": "script\\game\\HallScene.ts"
-  },
-  "51ec5990-36b8-428c-9173-a0269d9cd058": {
-    "asset": 1666252550101,
-    "meta": 1666252570677,
-    "relativePath": "script\\manager\\WxCenter.ts"
   },
   "a80ebdb7-07f7-4ef7-9ebc-0f13fa7e55f4": {
     "asset": 1666253278286,
@@ -4419,11 +3584,6 @@
     "meta": 1666343880545,
     "relativePath": "resources\\texture\\mblood_2.png"
   },
-  "7a09e674-a23b-4942-aa71-a896ca88c4c2": {
-    "asset": 1662370951970,
-    "meta": 1666343880546,
-    "relativePath": "resources\\texture\\off.png"
-  },
   "8022a692-3d48-404b-9416-7b1c3ccba2ba": {
     "asset": 1666046692000,
     "meta": 1666343880554,
@@ -4433,11 +3593,6 @@
     "asset": 1662370953288,
     "meta": 1666343880555,
     "relativePath": "resources\\texture\\plants"
-  },
-  "fed905b1-ca64-4d73-994f-66830df904d2": {
-    "asset": 1662370951840,
-    "meta": 1666343880556,
-    "relativePath": "resources\\texture\\on.png"
   },
   "ca6c862c-b74f-41b4-b0d7-9a1d545bd51c": {
     "asset": 1662370952097,
@@ -4618,5 +3773,1135 @@
     "asset": 1666416764878,
     "meta": 1666439104637,
     "relativePath": "spine\\fx_ground_merge.png"
+  },
+  "b649ad67-0ada-4268-b6a8-eeae097da02c": {
+    "asset": 1668160506030,
+    "meta": 1668160508136,
+    "relativePath": "script\\game\\HallScene.ts"
+  },
+  "da6dd47c-9b31-42b4-8d7d-98cc0ac4144f": {
+    "asset": 1668161666961,
+    "meta": 1668161722761,
+    "relativePath": "script\\framwork\\BaseUI.ts"
+  },
+  "5277673d-66a7-4b79-991a-580d0e33f3a4": {
+    "asset": 1668184212217,
+    "meta": 1668212773157,
+    "relativePath": "spine\\enemy10_ske.json"
+  },
+  "4b4098c9-1fed-4553-b423-c14cba8d2a02": {
+    "asset": 1668183283128,
+    "meta": 1668212773164,
+    "relativePath": "spine\\enemy2_ske.json"
+  },
+  "3c7f56a3-7c47-4774-af65-5113dfc95908": {
+    "asset": 1668184212218,
+    "meta": 1668212773300,
+    "relativePath": "spine\\enemy10_tex.json"
+  },
+  "dabdf608-443d-417a-974d-0957bbc7f49d": {
+    "asset": 1668155510000,
+    "meta": 1668212773195,
+    "relativePath": "spine\\enemy2_tex.png"
+  },
+  "1853ad54-042b-4386-bd4c-ca8f86d6befd": {
+    "asset": 1668183283129,
+    "meta": 1668212773302,
+    "relativePath": "spine\\enemy2_tex.json"
+  },
+  "a947ee14-613c-4001-8430-6901bb070e64": {
+    "asset": 1668155510000,
+    "meta": 1668212773202,
+    "relativePath": "spine\\enemy10_tex.png"
+  },
+  "9016bd1e-5cd6-4653-a52e-f682561dab51": {
+    "asset": 1668183424019,
+    "meta": 1668212773204,
+    "relativePath": "spine\\enemy3_ske.json"
+  },
+  "3c91c2b1-08f2-4b44-8535-47e96caa8b38": {
+    "asset": 1668183606227,
+    "meta": 1668212773206,
+    "relativePath": "spine\\enemy4_ske.json"
+  },
+  "4755eb0b-c850-406e-b306-0ee03256881d": {
+    "asset": 1668183606237,
+    "meta": 1668212773304,
+    "relativePath": "spine\\enemy4_tex.json"
+  },
+  "ee0f48a1-5c81-4a84-9314-79a11355341b": {
+    "asset": 1668183424020,
+    "meta": 1668212773305,
+    "relativePath": "spine\\enemy3_tex.json"
+  },
+  "c582a670-12d0-41b4-9594-70876c2892a2": {
+    "asset": 1668155510000,
+    "meta": 1668212773231,
+    "relativePath": "spine\\enemy3_tex.png"
+  },
+  "a6b3c221-1585-43d6-82a1-0c2b71bfe9d3": {
+    "asset": 1668155616000,
+    "meta": 1668212773233,
+    "relativePath": "spine\\enemy4_tex.png"
+  },
+  "42a51e69-17fa-43b6-affa-781f24e5b30b": {
+    "asset": 1668183738713,
+    "meta": 1668212773236,
+    "relativePath": "spine\\enemy5_ske.json"
+  },
+  "6f281659-384a-4e78-9aaa-0f3e8708544b": {
+    "asset": 1668183995796,
+    "meta": 1668212773238,
+    "relativePath": "spine\\enemy6_ske.json"
+  },
+  "ce180df7-b936-44f7-a4d6-ff77f3a69327": {
+    "asset": 1668183738722,
+    "meta": 1668212773309,
+    "relativePath": "spine\\enemy5_tex.json"
+  },
+  "0ea07a7f-caa7-4edf-ac61-39088e83138a": {
+    "asset": 1668155510000,
+    "meta": 1668212773257,
+    "relativePath": "spine\\enemy5_tex.png"
+  },
+  "0aa0043b-e63a-46ab-9a55-990b3546fc86": {
+    "asset": 1668183995797,
+    "meta": 1668212773310,
+    "relativePath": "spine\\enemy6_tex.json"
+  },
+  "1c6c335d-2d66-43c8-bd02-6cd1e9e4fca2": {
+    "asset": 1668155510000,
+    "meta": 1668212773259,
+    "relativePath": "spine\\enemy6_tex.png"
+  },
+  "edbcf811-80bc-4356-aec4-f30c038c600a": {
+    "asset": 1668184074455,
+    "meta": 1668212773260,
+    "relativePath": "spine\\enemy7_ske.json"
+  },
+  "56a1bc30-5e48-40ee-8756-9dfb2b36df2a": {
+    "asset": 1668184132044,
+    "meta": 1668212773263,
+    "relativePath": "spine\\enemy8_ske.json"
+  },
+  "c4e7165a-8a92-4642-a67a-a3f7b4aaa192": {
+    "asset": 1668184074464,
+    "meta": 1668212773313,
+    "relativePath": "spine\\enemy7_tex.json"
+  },
+  "4b8f5c6b-0219-41eb-a626-a7a5a77166de": {
+    "asset": 1668155510000,
+    "meta": 1668212773279,
+    "relativePath": "spine\\enemy7_tex.png"
+  },
+  "fb159574-1154-4442-8f19-adf25647c909": {
+    "asset": 1668184132053,
+    "meta": 1668212773314,
+    "relativePath": "spine\\enemy8_tex.json"
+  },
+  "608bbbf9-06ab-4a6a-ac80-5e21db75bddd": {
+    "asset": 1668155510000,
+    "meta": 1668212773281,
+    "relativePath": "spine\\enemy8_tex.png"
+  },
+  "5269f493-c2af-4f4c-967c-63374ceb6e0a": {
+    "asset": 1668184167431,
+    "meta": 1668212773282,
+    "relativePath": "spine\\enemy9_ske.json"
+  },
+  "d8d3fba0-1a0d-476b-939e-6b18fc4bfce9": {
+    "asset": 1668155616000,
+    "meta": 1668212773296,
+    "relativePath": "spine\\enemy9_tex.png"
+  },
+  "516d8035-488b-423f-92fe-b6713be6bd44": {
+    "asset": 1668184167432,
+    "meta": 1668212773317,
+    "relativePath": "spine\\enemy9_tex.json"
+  },
+  "7abb6370-eb08-42e4-8ada-f373c83602e3": {
+    "asset": 1668346149477,
+    "meta": 1668346159982,
+    "relativePath": "script\\game\\prefab\\Enemy.ts"
+  },
+  "29808d0b-f526-4c6c-b350-9016545958c2": {
+    "asset": 1668182782028,
+    "meta": 1668213031739,
+    "relativePath": "spine\\enemy1_ske.json"
+  },
+  "5becd5f5-a8f2-4f87-b94b-7876dcde612f": {
+    "asset": 1668155510000,
+    "meta": 1668213031764,
+    "relativePath": "spine\\enemy1_tex.png"
+  },
+  "005c3bb3-efb0-46b8-a774-1b25751c2258": {
+    "asset": 1668182782029,
+    "meta": 1668213031766,
+    "relativePath": "spine\\enemy1_tex.json"
+  },
+  "45ec6954-d814-4211-908a-dcd341ee1a1f": {
+    "asset": 1668311478068,
+    "meta": 1668346160008,
+    "relativePath": "spine\\enemy11_ske.json"
+  },
+  "1a5f2851-219f-49fd-98ca-d76660e0c630": {
+    "asset": 1668317520530,
+    "meta": 1668346160022,
+    "relativePath": "spine\\enemy12_ske.json"
+  },
+  "eb99dcde-c805-4f85-a0f9-089823c5f85b": {
+    "asset": 1668311478069,
+    "meta": 1668346161044,
+    "relativePath": "spine\\enemy11_tex.json"
+  },
+  "e1c7dabe-fd0c-480b-8afc-f719cc52b6a5": {
+    "asset": 1668293212000,
+    "meta": 1668346160052,
+    "relativePath": "spine\\enemy11_tex.png"
+  },
+  "a61416f6-5801-4460-9d2d-c0464fa07929": {
+    "asset": 1668317520539,
+    "meta": 1668346161044,
+    "relativePath": "spine\\enemy12_tex.json"
+  },
+  "a1b44efa-f60a-4b88-860d-2326620a4b43": {
+    "asset": 1668293212000,
+    "meta": 1668346160064,
+    "relativePath": "spine\\enemy12_tex.png"
+  },
+  "7adfdae4-103b-4955-8440-51a6aecb1bd5": {
+    "asset": 1668317561600,
+    "meta": 1668346160072,
+    "relativePath": "spine\\enemy13_ske.json"
+  },
+  "8e1409a4-6319-4cea-8437-147d0368b275": {
+    "asset": 1668317604010,
+    "meta": 1668346160076,
+    "relativePath": "spine\\enemy14_ske.json"
+  },
+  "745e967f-8500-496d-b0c5-82b77e0304aa": {
+    "asset": 1668317561610,
+    "meta": 1668346161044,
+    "relativePath": "spine\\enemy13_tex.json"
+  },
+  "183cf355-bf12-4913-bad1-6c6e779edda7": {
+    "asset": 1668293212000,
+    "meta": 1668346160101,
+    "relativePath": "spine\\enemy13_tex.png"
+  },
+  "bad5e80a-8b65-42f2-bba3-bf5aca231087": {
+    "asset": 1668317604011,
+    "meta": 1668346161044,
+    "relativePath": "spine\\enemy14_tex.json"
+  },
+  "b8854644-b68b-42e4-a9dc-846480aad2f6": {
+    "asset": 1668293212000,
+    "meta": 1668346160105,
+    "relativePath": "spine\\enemy14_tex.png"
+  },
+  "1a704a8f-4530-4e90-a5d2-6462aa4897c0": {
+    "asset": 1668317633633,
+    "meta": 1668346160109,
+    "relativePath": "spine\\enemy15_ske.json"
+  },
+  "93d6bdd2-a33f-4c8f-9a8f-d65b9f646b33": {
+    "asset": 1668317744447,
+    "meta": 1668346160109,
+    "relativePath": "spine\\enemy16_ske.json"
+  },
+  "bfebe311-e817-4ff0-b8ae-5e0bfb2ff67c": {
+    "asset": 1668317633634,
+    "meta": 1668346161044,
+    "relativePath": "spine\\enemy15_tex.json"
+  },
+  "31551b8f-bf2d-414d-b378-e3c34bdbf8fb": {
+    "asset": 1668293214000,
+    "meta": 1668346160139,
+    "relativePath": "spine\\enemy15_tex.png"
+  },
+  "836cf402-1dbe-4a62-88f4-f4f8975e35bd": {
+    "asset": 1668317744457,
+    "meta": 1668346161044,
+    "relativePath": "spine\\enemy16_tex.json"
+  },
+  "f58048d4-ee5b-4b18-9ad3-fcce6ac5f72b": {
+    "asset": 1668293214000,
+    "meta": 1668346160143,
+    "relativePath": "spine\\enemy16_tex.png"
+  },
+  "def125d5-5391-49b6-9aeb-c47477c79ba9": {
+    "asset": 1668317804294,
+    "meta": 1668346160143,
+    "relativePath": "spine\\enemy17_ske.json"
+  },
+  "2c2c7d90-97c7-47e6-a0dd-213e00128175": {
+    "asset": 1668317826249,
+    "meta": 1668346160151,
+    "relativePath": "spine\\enemy18_ske.json"
+  },
+  "f31cf468-86bd-48a9-9118-4e68dfa40d1c": {
+    "asset": 1668317804304,
+    "meta": 1668346161044,
+    "relativePath": "spine\\enemy17_tex.json"
+  },
+  "c22dfd4b-73ac-47db-8fd0-12d662aa57fd": {
+    "asset": 1668293214000,
+    "meta": 1668346160173,
+    "relativePath": "spine\\enemy17_tex.png"
+  },
+  "5673cd95-aa1c-47c0-af00-84d4a0e7fa61": {
+    "asset": 1668293214000,
+    "meta": 1668346160173,
+    "relativePath": "spine\\enemy18_tex.png"
+  },
+  "485a3b08-6ccb-4bb1-835f-f3e7d848926b": {
+    "asset": 1668317880227,
+    "meta": 1668346160177,
+    "relativePath": "spine\\enemy19_ske.json"
+  },
+  "4158af6c-ce5b-42ca-b9f7-d73198e1480a": {
+    "asset": 1668317826259,
+    "meta": 1668346161060,
+    "relativePath": "spine\\enemy18_tex.json"
+  },
+  "7a3c171d-dd72-4223-86cf-b6c158617ff3": {
+    "asset": 1668317923931,
+    "meta": 1668346160181,
+    "relativePath": "spine\\enemy20_ske.json"
+  },
+  "e2d9ec00-0f72-42be-aaa6-1af8a7ffde31": {
+    "asset": 1668317880228,
+    "meta": 1668346161060,
+    "relativePath": "spine\\enemy19_tex.json"
+  },
+  "1c77455d-b4be-44e3-a310-9c0dc21434aa": {
+    "asset": 1668293214000,
+    "meta": 1668346160204,
+    "relativePath": "spine\\enemy19_tex.png"
+  },
+  "256fdf2b-95f2-441c-8342-92b1bca7df5a": {
+    "asset": 1668317923941,
+    "meta": 1668346161060,
+    "relativePath": "spine\\enemy20_tex.json"
+  },
+  "78085f88-2b1f-49b9-9900-4370f044431e": {
+    "asset": 1668293212000,
+    "meta": 1668346160208,
+    "relativePath": "spine\\enemy20_tex.png"
+  },
+  "0d32ec75-8146-4178-9dca-5b90dcfed88e": {
+    "asset": 1668317957068,
+    "meta": 1668346160212,
+    "relativePath": "spine\\enemy21_ske.json"
+  },
+  "0f1d04ab-cc79-427f-b969-8d39a0e4abbd": {
+    "asset": 1668318041224,
+    "meta": 1668346160220,
+    "relativePath": "spine\\enemy22_ske.json"
+  },
+  "7d288bc9-a85a-416f-9243-1998116e5a88": {
+    "asset": 1668318041225,
+    "meta": 1668346161060,
+    "relativePath": "spine\\enemy22_tex.json"
+  },
+  "10f4bc4b-cd45-416e-8cf8-05d3a4d1b7e1": {
+    "asset": 1668317957077,
+    "meta": 1668346161060,
+    "relativePath": "spine\\enemy21_tex.json"
+  },
+  "696a0271-c1bf-4145-9020-1861afe86c20": {
+    "asset": 1668293268000,
+    "meta": 1668346160244,
+    "relativePath": "spine\\enemy21_tex.png"
+  },
+  "727a0893-c870-4893-842a-0a15ea6aed0f": {
+    "asset": 1668293268000,
+    "meta": 1668346160244,
+    "relativePath": "spine\\enemy22_tex.png"
+  },
+  "3aa9f622-5014-40a7-93a5-426a003837d8": {
+    "asset": 1668318076808,
+    "meta": 1668346160248,
+    "relativePath": "spine\\enemy23_ske.json"
+  },
+  "0fba6b15-9875-44ae-9e22-9c8ecf2d4b7c": {
+    "asset": 1668318205245,
+    "meta": 1668346160252,
+    "relativePath": "spine\\enemy24_ske.json"
+  },
+  "a81b70e2-c4f5-4312-94b6-fa8dfb64f871": {
+    "asset": 1668318076818,
+    "meta": 1668346161060,
+    "relativePath": "spine\\enemy23_tex.json"
+  },
+  "8838bb00-ee7b-4542-a95a-ecec802ba5fa": {
+    "asset": 1668318205246,
+    "meta": 1668346161060,
+    "relativePath": "spine\\enemy24_tex.json"
+  },
+  "98fa63f6-97eb-4128-a3e4-825d874707a8": {
+    "asset": 1668293268000,
+    "meta": 1668346160276,
+    "relativePath": "spine\\enemy23_tex.png"
+  },
+  "403f6a2b-211b-45a3-942c-d4cbd58b76d0": {
+    "asset": 1668293270000,
+    "meta": 1668346160278,
+    "relativePath": "spine\\enemy24_tex.png"
+  },
+  "8d03cb1f-bbd9-4a02-a979-3d5a00d7881a": {
+    "asset": 1668318276149,
+    "meta": 1668346160278,
+    "relativePath": "spine\\enemy25_ske.json"
+  },
+  "c74989bf-6e28-4793-9bd0-259e3daf4ec3": {
+    "asset": 1668318382465,
+    "meta": 1668346160282,
+    "relativePath": "spine\\enemy26_ske.json"
+  },
+  "62196365-8a1c-4c59-a01a-a4528a1adf1e": {
+    "asset": 1668318276150,
+    "meta": 1668346161075,
+    "relativePath": "spine\\enemy25_tex.json"
+  },
+  "36a979f3-dbf6-4ad9-9a05-0677f58daeb5": {
+    "asset": 1668293270000,
+    "meta": 1668346160308,
+    "relativePath": "spine\\enemy25_tex.png"
+  },
+  "a5d7de7f-28e0-49f2-9704-b70e86237811": {
+    "asset": 1668318410242,
+    "meta": 1668346160312,
+    "relativePath": "spine\\enemy27_ske.json"
+  },
+  "d38e3e98-cc6d-426b-87a6-37e6ff29b54b": {
+    "asset": 1668318382474,
+    "meta": 1668346161075,
+    "relativePath": "spine\\enemy26_tex.json"
+  },
+  "23220bef-ea81-4307-af76-fd68f4790e60": {
+    "asset": 1668293270000,
+    "meta": 1668346160312,
+    "relativePath": "spine\\enemy26_tex.png"
+  },
+  "959156c4-e7d4-4bd4-a2c2-78a3731baa82": {
+    "asset": 1668318425119,
+    "meta": 1668346160316,
+    "relativePath": "spine\\enemy28_ske.json"
+  },
+  "0e20b4e5-78a4-4e55-a4fd-837d69d726e4": {
+    "asset": 1668318410251,
+    "meta": 1668346161075,
+    "relativePath": "spine\\enemy27_tex.json"
+  },
+  "ee2d3a4c-3a1e-4a8c-b642-78bf2bf565f3": {
+    "asset": 1668293270000,
+    "meta": 1668346160337,
+    "relativePath": "spine\\enemy27_tex.png"
+  },
+  "04d5ed99-2991-47d5-b583-788c8f5a3fe1": {
+    "asset": 1668318464487,
+    "meta": 1668346160338,
+    "relativePath": "spine\\enemy29_ske.json"
+  },
+  "3e1b1d22-a88e-46a1-8501-17702f24b392": {
+    "asset": 1668318425120,
+    "meta": 1668346161075,
+    "relativePath": "spine\\enemy28_tex.json"
+  },
+  "927387d6-168a-4a95-9a57-ec15c44da549": {
+    "asset": 1668293270000,
+    "meta": 1668346160342,
+    "relativePath": "spine\\enemy28_tex.png"
+  },
+  "8d8dfdf0-73ad-4a06-9314-c6863f616e1f": {
+    "asset": 1668318516036,
+    "meta": 1668346160346,
+    "relativePath": "spine\\enemy30_ske.json"
+  },
+  "f474c268-5503-457b-9b83-6988bbb7e856": {
+    "asset": 1668318464488,
+    "meta": 1668346161075,
+    "relativePath": "spine\\enemy29_tex.json"
+  },
+  "7464d240-3054-4140-814f-60cc1abd2c2e": {
+    "asset": 1668318516037,
+    "meta": 1668346161075,
+    "relativePath": "spine\\enemy30_tex.json"
+  },
+  "bb94c2fa-8b69-46ec-a08d-9e20456e345a": {
+    "asset": 1668293270000,
+    "meta": 1668346160364,
+    "relativePath": "spine\\enemy29_tex.png"
+  },
+  "afc2495a-b092-4bc7-bdc9-4d4961aa82fa": {
+    "asset": 1668318627643,
+    "meta": 1668346160366,
+    "relativePath": "spine\\enemy31_ske.json"
+  },
+  "674ac449-1da4-436d-83eb-d9829c5839b9": {
+    "asset": 1668293268000,
+    "meta": 1668346160366,
+    "relativePath": "spine\\enemy30_tex.png"
+  },
+  "a3eb7862-4166-42e9-863a-631e0ba987d9": {
+    "asset": 1668318654648,
+    "meta": 1668346160366,
+    "relativePath": "spine\\enemy32_ske.json"
+  },
+  "53d36a98-c2f4-40e3-975e-27440a0b9e4f": {
+    "asset": 1668318627643,
+    "meta": 1668346161091,
+    "relativePath": "spine\\enemy31_tex.json"
+  },
+  "edbb3cc0-5fbf-4bfd-8e37-2846853b5728": {
+    "asset": 1668293372000,
+    "meta": 1668346160389,
+    "relativePath": "spine\\enemy31_tex.png"
+  },
+  "701a2cd6-e433-4497-98f6-e3f2c0a7eb5b": {
+    "asset": 1668318762048,
+    "meta": 1668346160390,
+    "relativePath": "spine\\enemy33_ske.json"
+  },
+  "8d50a840-38e1-46b4-ac34-3dad53e457ba": {
+    "asset": 1668318654658,
+    "meta": 1668346161091,
+    "relativePath": "spine\\enemy32_tex.json"
+  },
+  "7bcf891f-62e0-48ce-b07d-bcd71963f7b9": {
+    "asset": 1668293372000,
+    "meta": 1668346160390,
+    "relativePath": "spine\\enemy32_tex.png"
+  },
+  "55cbd37d-a90c-483a-b360-5a40ccc42000": {
+    "asset": 1668318810260,
+    "meta": 1668346160390,
+    "relativePath": "spine\\enemy34_ske.json"
+  },
+  "f912f317-a48a-4acb-b7f9-86a5b3aca04b": {
+    "asset": 1668318762058,
+    "meta": 1668346161091,
+    "relativePath": "spine\\enemy33_tex.json"
+  },
+  "e6ace3c4-1ca0-40a7-bc87-3314f8d1d781": {
+    "asset": 1668293372000,
+    "meta": 1668346160408,
+    "relativePath": "spine\\enemy33_tex.png"
+  },
+  "29e804c2-378e-4225-9050-f715d1147fe7": {
+    "asset": 1668319129091,
+    "meta": 1668346160413,
+    "relativePath": "spine\\enemy35_ske.json"
+  },
+  "3b613506-a93d-43e8-9e45-0b64ef7bc8a5": {
+    "asset": 1668318810261,
+    "meta": 1668346161091,
+    "relativePath": "spine\\enemy34_tex.json"
+  },
+  "0c7c1f8a-53bb-426d-b277-9a1ef14ac1df": {
+    "asset": 1668293372000,
+    "meta": 1668346160413,
+    "relativePath": "spine\\enemy34_tex.png"
+  },
+  "a1abe6ff-2a0f-4e3c-b7d9-e59fa1435bda": {
+    "asset": 1668319172811,
+    "meta": 1668346160413,
+    "relativePath": "spine\\enemy36_ske.json"
+  },
+  "713cd7df-41b6-4602-90bb-a97b330caffc": {
+    "asset": 1668319129092,
+    "meta": 1668346161091,
+    "relativePath": "spine\\enemy35_tex.json"
+  },
+  "cf8cec40-d453-49d9-a0f6-73dc173ec863": {
+    "asset": 1668293372000,
+    "meta": 1668346160437,
+    "relativePath": "spine\\enemy35_tex.png"
+  },
+  "e714b68e-5b27-4ea6-8956-729b4191304b": {
+    "asset": 1668319172812,
+    "meta": 1668346161091,
+    "relativePath": "spine\\enemy36_tex.json"
+  },
+  "7062ea1b-0227-4719-a860-efebddef7fa3": {
+    "asset": 1668319325385,
+    "meta": 1668346160437,
+    "relativePath": "spine\\enemy37_ske.json"
+  },
+  "23453682-e869-4a71-8f84-9baed0649a59": {
+    "asset": 1668293372000,
+    "meta": 1668346160437,
+    "relativePath": "spine\\enemy36_tex.png"
+  },
+  "6de9dc1a-7164-4167-a64b-3daf3142107b": {
+    "asset": 1668319354680,
+    "meta": 1668346160437,
+    "relativePath": "spine\\enemy38_ske.json"
+  },
+  "df27185c-3f0c-4e17-a498-82a4d2641d57": {
+    "asset": 1668319325395,
+    "meta": 1668346161091,
+    "relativePath": "spine\\enemy37_tex.json"
+  },
+  "f4a482e2-6544-490f-aa17-ded71259161b": {
+    "asset": 1668293374000,
+    "meta": 1668346160455,
+    "relativePath": "spine\\enemy37_tex.png"
+  },
+  "0f843a11-22fa-4fbf-84bf-f4bb91c9678f": {
+    "asset": 1668319354690,
+    "meta": 1668346161106,
+    "relativePath": "spine\\enemy38_tex.json"
+  },
+  "c8badec9-53f6-4adf-a907-43e6e281acf9": {
+    "asset": 1668293374000,
+    "meta": 1668346160467,
+    "relativePath": "spine\\enemy38_tex.png"
+  },
+  "2ad4d89b-e691-4e02-8711-4bcbf8da1e22": {
+    "asset": 1668319408787,
+    "meta": 1668346160467,
+    "relativePath": "spine\\enemy39_ske.json"
+  },
+  "b1685d73-3156-4198-aa4a-a87095115727": {
+    "asset": 1668319462495,
+    "meta": 1668346160467,
+    "relativePath": "spine\\enemy40_ske.json"
+  },
+  "434bf150-f13d-4938-9d34-427d9340931f": {
+    "asset": 1668319408798,
+    "meta": 1668346161106,
+    "relativePath": "spine\\enemy39_tex.json"
+  },
+  "869dadfa-5fc6-4591-b4f3-0ec85a097463": {
+    "asset": 1668293374000,
+    "meta": 1668346160493,
+    "relativePath": "spine\\enemy39_tex.png"
+  },
+  "41609e6e-1b6f-479e-af15-832ea6189cd0": {
+    "asset": 1668319462505,
+    "meta": 1668346161106,
+    "relativePath": "spine\\enemy40_tex.json"
+  },
+  "48d91610-2bbf-4dee-918d-fb27ade68105": {
+    "asset": 1668293372000,
+    "meta": 1668346160493,
+    "relativePath": "spine\\enemy40_tex.png"
+  },
+  "3dc6ce4d-9e80-427f-bf1d-2af0fdfaac16": {
+    "asset": 1668319548232,
+    "meta": 1668346160493,
+    "relativePath": "spine\\enemy41_ske.json"
+  },
+  "a3dee1ee-e083-464d-8e08-ec2c1ac1fa25": {
+    "asset": 1668319577482,
+    "meta": 1668346160493,
+    "relativePath": "spine\\enemy42_ske.json"
+  },
+  "c4d0dfff-0a4c-4652-9bea-8ed79ae466a4": {
+    "asset": 1668319548233,
+    "meta": 1668346161106,
+    "relativePath": "spine\\enemy41_tex.json"
+  },
+  "c7a984ed-d8d7-4290-af67-d57de34ce993": {
+    "asset": 1668293432000,
+    "meta": 1668346160519,
+    "relativePath": "spine\\enemy41_tex.png"
+  },
+  "bd1192ce-e0fa-4cab-87f9-103b420a9686": {
+    "asset": 1668319577483,
+    "meta": 1668346161106,
+    "relativePath": "spine\\enemy42_tex.json"
+  },
+  "e1f1ea42-9a1d-491f-a4c5-d7c0a6c43d9a": {
+    "asset": 1668293432000,
+    "meta": 1668346160519,
+    "relativePath": "spine\\enemy42_tex.png"
+  },
+  "e1e50753-5924-4317-8d9b-bf970dbe57f1": {
+    "asset": 1668319630165,
+    "meta": 1668346160519,
+    "relativePath": "spine\\enemy43_ske.json"
+  },
+  "57f40723-d288-4bda-973c-9ad5e521206d": {
+    "asset": 1668319649706,
+    "meta": 1668346160519,
+    "relativePath": "spine\\enemy44_ske.json"
+  },
+  "f856be12-3854-49c0-8ac8-693da7a60437": {
+    "asset": 1668319630174,
+    "meta": 1668346161106,
+    "relativePath": "spine\\enemy43_tex.json"
+  },
+  "921036d0-4b93-4e73-8bf2-781c2bd74317": {
+    "asset": 1668293432000,
+    "meta": 1668346160549,
+    "relativePath": "spine\\enemy43_tex.png"
+  },
+  "f83a55e7-3aee-4642-8401-8e2ab84e212a": {
+    "asset": 1668319683787,
+    "meta": 1668346160549,
+    "relativePath": "spine\\enemy45_ske.json"
+  },
+  "180a9bd1-486e-4667-9d1c-200c6509abd5": {
+    "asset": 1668319649715,
+    "meta": 1668346161106,
+    "relativePath": "spine\\enemy44_tex.json"
+  },
+  "b7d79023-1d43-433d-beaf-7c6d306ebb97": {
+    "asset": 1668293432000,
+    "meta": 1668346160556,
+    "relativePath": "spine\\enemy44_tex.png"
+  },
+  "44afc736-9fad-44a5-84dc-97fe247a38cb": {
+    "asset": 1668319709846,
+    "meta": 1668346160556,
+    "relativePath": "spine\\enemy46_ske.json"
+  },
+  "ebf4c01d-1e36-4528-9dff-349707ed4337": {
+    "asset": 1668319683788,
+    "meta": 1668346161122,
+    "relativePath": "spine\\enemy45_tex.json"
+  },
+  "e2bac59c-edb2-4f46-b4b8-bf999f9235d9": {
+    "asset": 1668293432000,
+    "meta": 1668346160573,
+    "relativePath": "spine\\enemy45_tex.png"
+  },
+  "0b43516f-6209-4962-a0f5-9f46f761ef2b": {
+    "asset": 1668319709847,
+    "meta": 1668346161125,
+    "relativePath": "spine\\enemy46_tex.json"
+  },
+  "e1501ac8-e7e9-4029-b5f8-e4ccab6f29d2": {
+    "asset": 1668319778549,
+    "meta": 1668346160580,
+    "relativePath": "spine\\enemy47_ske.json"
+  },
+  "7d3e9943-adbf-4f77-9a3c-d5e9ae778fe4": {
+    "asset": 1668293432000,
+    "meta": 1668346160580,
+    "relativePath": "spine\\enemy46_tex.png"
+  },
+  "96fa745f-e988-477d-a7c5-4d9ff7529f8e": {
+    "asset": 1668319818309,
+    "meta": 1668346160580,
+    "relativePath": "spine\\enemy48_ske.json"
+  },
+  "f3a74182-45cf-4343-a81a-314d32fa5268": {
+    "asset": 1668319778551,
+    "meta": 1668346161125,
+    "relativePath": "spine\\enemy47_tex.json"
+  },
+  "a45adf7e-d256-436d-954c-e2ac84bfc50c": {
+    "asset": 1668293432000,
+    "meta": 1668346160608,
+    "relativePath": "spine\\enemy47_tex.png"
+  },
+  "7adca043-9ade-4e52-a41b-9f19f8f0ffad": {
+    "asset": 1668319849593,
+    "meta": 1668346160611,
+    "relativePath": "spine\\enemy49_ske.json"
+  },
+  "fb52884b-c2df-4db1-be8d-160a5d0d099a": {
+    "asset": 1668319818310,
+    "meta": 1668346161125,
+    "relativePath": "spine\\enemy48_tex.json"
+  },
+  "29ce00eb-e52a-4780-b564-0ab8726ef63a": {
+    "asset": 1668293432000,
+    "meta": 1668346160612,
+    "relativePath": "spine\\enemy48_tex.png"
+  },
+  "04eb1dc5-a602-4ad6-b702-8d4094be72f3": {
+    "asset": 1668319888446,
+    "meta": 1668346160612,
+    "relativePath": "spine\\enemy50_ske.json"
+  },
+  "47314500-5e0b-4044-acfb-920bda092efd": {
+    "asset": 1668319849602,
+    "meta": 1668346161125,
+    "relativePath": "spine\\enemy49_tex.json"
+  },
+  "b826818e-cc35-485c-afa1-693610996939": {
+    "asset": 1668319888455,
+    "meta": 1668346161132,
+    "relativePath": "spine\\enemy50_tex.json"
+  },
+  "957680a8-bbb8-40d0-bca2-f00cf623f652": {
+    "asset": 1668293432000,
+    "meta": 1668346160638,
+    "relativePath": "spine\\enemy49_tex.png"
+  },
+  "e319fdf4-d94e-481a-8361-f0b73416b155": {
+    "asset": 1668293432000,
+    "meta": 1668346160638,
+    "relativePath": "spine\\enemy50_tex.png"
+  },
+  "daf19091-cd9d-497e-96ee-bab72cab6e8e": {
+    "asset": 1668319999043,
+    "meta": 1668346160638,
+    "relativePath": "spine\\enemy51_ske.json"
+  },
+  "18246b4e-2aaa-4e75-8323-b7e9f57bfc5c": {
+    "asset": 1668320050506,
+    "meta": 1668346160638,
+    "relativePath": "spine\\enemy52_ske.json"
+  },
+  "c48f80b8-07a7-4fd2-a19f-a10b7c2f6912": {
+    "asset": 1668319999044,
+    "meta": 1668346161132,
+    "relativePath": "spine\\enemy51_tex.json"
+  },
+  "5d3c49b7-3a2d-46ac-9eef-38886e42e8c2": {
+    "asset": 1668293474000,
+    "meta": 1668346160654,
+    "relativePath": "spine\\enemy51_tex.png"
+  },
+  "c39be93f-3c3d-4710-abb3-866cc39c3384": {
+    "asset": 1668320088046,
+    "meta": 1668346160663,
+    "relativePath": "spine\\enemy53_ske.json"
+  },
+  "21dc7efa-06fe-4f29-a2b5-34fddd35cbbd": {
+    "asset": 1668320050507,
+    "meta": 1668346161132,
+    "relativePath": "spine\\enemy52_tex.json"
+  },
+  "84376126-3419-4b8c-b484-ed5d48baab29": {
+    "asset": 1668293474000,
+    "meta": 1668346160663,
+    "relativePath": "spine\\enemy52_tex.png"
+  },
+  "4a21786f-2814-48d0-8063-69f32511e024": {
+    "asset": 1668345182401,
+    "meta": 1668346160663,
+    "relativePath": "spine\\enemy54_ske.json"
+  },
+  "75a507ba-7889-4960-ac56-1a7eb0a9d26b": {
+    "asset": 1668345182393,
+    "meta": 1668346161132,
+    "relativePath": "spine\\enemy54_tex.json"
+  },
+  "8a8189c5-e3a0-4b97-a75a-0f66dde64b9f": {
+    "asset": 1668320088055,
+    "meta": 1668346161132,
+    "relativePath": "spine\\enemy53_tex.json"
+  },
+  "089d1ace-d26d-4bdb-bf76-a01d23c89382": {
+    "asset": 1668293476000,
+    "meta": 1668346160679,
+    "relativePath": "spine\\enemy53_tex.png"
+  },
+  "cdada95c-5d2a-44d7-8e80-b1d9c7fa63c0": {
+    "asset": 1668320310497,
+    "meta": 1668346160684,
+    "relativePath": "spine\\enemy55_ske.json"
+  },
+  "f4350251-bcb7-4c66-b9ab-11d18d65445d": {
+    "asset": 1668316428000,
+    "meta": 1668346160684,
+    "relativePath": "spine\\enemy54_tex.png"
+  },
+  "bf945ca6-91ae-4f6f-8035-d8852292414e": {
+    "asset": 1668320457883,
+    "meta": 1668346160684,
+    "relativePath": "spine\\enemy56_ske.json"
+  },
+  "90ba6ad8-84ab-41b6-b586-642510e9e35c": {
+    "asset": 1668320310508,
+    "meta": 1668346161132,
+    "relativePath": "spine\\enemy55_tex.json"
+  },
+  "36dd0c9b-2207-443c-8f66-133ff79cf104": {
+    "asset": 1668293476000,
+    "meta": 1668346160706,
+    "relativePath": "spine\\enemy55_tex.png"
+  },
+  "e75975d9-ac06-4a9b-9c1a-52d71bdd1dff": {
+    "asset": 1668320552596,
+    "meta": 1668346160711,
+    "relativePath": "spine\\enemy57_ske.json"
+  },
+  "c1156a19-e460-41ec-bbe5-f6a71b470d2d": {
+    "asset": 1668320457884,
+    "meta": 1668346161148,
+    "relativePath": "spine\\enemy56_tex.json"
+  },
+  "9c49e303-8485-4f63-b1f9-1ce138faedb1": {
+    "asset": 1668293476000,
+    "meta": 1668346160711,
+    "relativePath": "spine\\enemy56_tex.png"
+  },
+  "8b32574d-b73a-4061-af95-f1fc7ae22b83": {
+    "asset": 1668320605676,
+    "meta": 1668346160711,
+    "relativePath": "spine\\enemy58_ske.json"
+  },
+  "dc5defff-7839-40d6-953e-1490862c2059": {
+    "asset": 1668320552597,
+    "meta": 1668346161148,
+    "relativePath": "spine\\enemy57_tex.json"
+  },
+  "c2a24ef4-a993-4c37-a768-4afc0be1bdeb": {
+    "asset": 1668293476000,
+    "meta": 1668346160739,
+    "relativePath": "spine\\enemy57_tex.png"
+  },
+  "38a4d01a-1674-4a6b-a6a4-cb8b06b7cd92": {
+    "asset": 1668320650619,
+    "meta": 1668346160739,
+    "relativePath": "spine\\enemy59_ske.json"
+  },
+  "9484a9ed-9519-45aa-a512-d33177223fb1": {
+    "asset": 1668320605685,
+    "meta": 1668346161148,
+    "relativePath": "spine\\enemy58_tex.json"
+  },
+  "3ddaad47-f420-4164-9a31-fb62405accc0": {
+    "asset": 1668293476000,
+    "meta": 1668346160739,
+    "relativePath": "spine\\enemy58_tex.png"
+  },
+  "010442cd-6538-4c4e-88ce-a0458c4a0fba": {
+    "asset": 1668320705369,
+    "meta": 1668346160739,
+    "relativePath": "spine\\enemy60_ske.json"
+  },
+  "aceb649a-c7f0-4ad9-a83e-9f28d1c325cb": {
+    "asset": 1668320650629,
+    "meta": 1668346161148,
+    "relativePath": "spine\\enemy59_tex.json"
+  },
+  "c252f0d7-49d1-4783-8a0e-aa64dd119cc2": {
+    "asset": 1668320705371,
+    "meta": 1668346161148,
+    "relativePath": "spine\\enemy60_tex.json"
+  },
+  "8f1c3c0d-cc2b-4117-a53d-d86dabd257cd": {
+    "asset": 1668293476000,
+    "meta": 1668346160765,
+    "relativePath": "spine\\enemy59_tex.png"
+  },
+  "f05f8397-2abf-42f4-a5c9-6ed4af68bd3a": {
+    "asset": 1668293474000,
+    "meta": 1668346160773,
+    "relativePath": "spine\\enemy60_tex.png"
+  },
+  "f4ab9602-98ad-4f5f-b3d9-6a05f7c06e2a": {
+    "asset": 1668497130155,
+    "meta": 1668507303457,
+    "relativePath": "resources\\newtexture"
+  },
+  "fba5909f-e277-4372-9ae5-da3e7fa1af64": {
+    "asset": 1668447826000,
+    "meta": 1668481582769,
+    "relativePath": "resources\\newtexture\\shangdian_hsk.png"
+  },
+  "15f97a38-ef83-4228-b968-a3dc04c84018": {
+    "asset": 1668447826000,
+    "meta": 1668478291382,
+    "relativePath": "resources\\newtexture\\shangdian_lsk.png"
+  },
+  "057bb2d5-134b-412a-bb6d-44316ff157dc": {
+    "asset": 1668447826000,
+    "meta": 1668479188106,
+    "relativePath": "resources\\newtexture\\ty_hongsexan.png"
+  },
+  "96d6e168-a9f1-4a75-8ad3-040aa3ec6d6a": {
+    "asset": 1668447826000,
+    "meta": 1668477349516,
+    "relativePath": "resources\\newtexture\\ty_fenxiang.png"
+  },
+  "84eb07f9-4f5c-4adf-a5d2-6b83b2cc31f5": {
+    "asset": 1668447826000,
+    "meta": 1668477349526,
+    "relativePath": "resources\\newtexture\\ty_hspd.png"
+  },
+  "889b1d7a-2628-4a06-a739-c797d912fb31": {
+    "asset": 1668447826000,
+    "meta": 1668479836729,
+    "relativePath": "resources\\newtexture\\ty_huisexan.png"
+  },
+  "87be4ea1-1cfe-442b-ad9b-fb6b58aaf3d2": {
+    "asset": 1668447826000,
+    "meta": 1668477349537,
+    "relativePath": "resources\\newtexture\\ty_jianbiantiao.png"
+  },
+  "62d84196-1d66-48a4-be01-f0e92a58e2bb": {
+    "asset": 1668447826000,
+    "meta": 1668477349538,
+    "relativePath": "resources\\newtexture\\ty_jinbi.png"
+  },
+  "62e548f8-393e-4630-8164-c47f5671a3e7": {
+    "asset": 1668447826000,
+    "meta": 1668479503093,
+    "relativePath": "resources\\newtexture\\ty_lansexan.png"
+  },
+  "b17a6caa-98db-4a5e-8517-f39290c5af67": {
+    "asset": 1668447826000,
+    "meta": 1668485124884,
+    "relativePath": "resources\\newtexture\\ty_lsan.png"
+  },
+  "5297a104-671e-41a0-a19a-aa9f9d57a51d": {
+    "asset": 1668447826000,
+    "meta": 1668477473328,
+    "relativePath": "resources\\newtexture\\ty_sdbtk.png"
+  },
+  "317f246e-3416-4030-83df-922ab9b523f2": {
+    "asset": 1668447826000,
+    "meta": 1668477349562,
+    "relativePath": "resources\\newtexture\\ty_lspd.png"
+  },
+  "4306c72c-d0f9-416b-85dc-f563dba234f0": {
+    "asset": 1668447826000,
+    "meta": 1668477349571,
+    "relativePath": "resources\\newtexture\\ty_shipin.png"
+  },
+  "4d809ba7-ae87-4bf8-9712-2e7a536c5b6a": {
+    "asset": 1668447826000,
+    "meta": 1668477349573,
+    "relativePath": "resources\\newtexture\\ty_sdzs.png"
+  },
+  "59388cd5-eb49-4fd4-9664-ea0cc6141431": {
+    "asset": 1668447826000,
+    "meta": 1668491906321,
+    "relativePath": "resources\\newtexture\\ty_tcb.png"
+  },
+  "1ac07c5a-4036-4a59-b40e-409cc1f10cb3": {
+    "asset": 1668447826000,
+    "meta": 1668477707599,
+    "relativePath": "resources\\newtexture\\ty_tc.png"
+  },
+  "4460c666-106b-4883-9863-34cb48407979": {
+    "asset": 1668447826000,
+    "meta": 1668477349593,
+    "relativePath": "resources\\newtexture\\ty_tcbt.png"
+  },
+  "8582b0e7-e579-4da3-b59a-03bb614423ef": {
+    "asset": 1668447826000,
+    "meta": 1668484801744,
+    "relativePath": "resources\\newtexture\\ty_tcfang.png"
+  },
+  "3e554497-faf9-4ee1-9b4d-9fce96483c17": {
+    "asset": 1668447826000,
+    "meta": 1668477349602,
+    "relativePath": "resources\\newtexture\\ty_toumingx.png"
+  },
+  "4af1da4a-b1b0-4f2b-a045-51fa57456882": {
+    "asset": 1668447826000,
+    "meta": 1668477349604,
+    "relativePath": "resources\\newtexture\\ty_tcyuan.png"
+  },
+  "fc30a7e6-81b7-484b-8c9d-dbdc76a0d958": {
+    "asset": 1668447826000,
+    "meta": 1668477349610,
+    "relativePath": "resources\\newtexture\\ty_x.png"
+  },
+  "0f8e76d0-7bb4-4778-9758-5a2cd20deb77": {
+    "asset": 1668478560184,
+    "meta": 1668478590530,
+    "relativePath": "resources\\newtexture\\ty_icon_dengji.png"
+  },
+  "363124e6-2bd8-4457-b646-a15099a90b08": {
+    "asset": 1668478951461,
+    "meta": 1668478974481,
+    "relativePath": "resources\\newtexture\\ty_icon_gong.png"
+  },
+  "ea4c0135-6e0d-4c5a-9ca2-6a4ae26422d1": {
+    "asset": 1668478954207,
+    "meta": 1668478974484,
+    "relativePath": "resources\\newtexture\\ty_icon_lengque.png"
+  },
+  "4feb4815-a514-4485-a916-6ee382dc0a05": {
+    "asset": 1668481897767,
+    "meta": 1668481912976,
+    "relativePath": "resources\\newtexture\\ty_icon_dengjihuise.png"
+  },
+  "6cbf511f-7e11-498a-acce-7003cc095e01": {
+    "asset": 1668484954341,
+    "meta": 1668484965334,
+    "relativePath": "resources\\newtexture\\ty_hsbq.png"
+  },
+  "8ccfa09d-0070-4558-9e83-11481a5e5039": {
+    "asset": 1668493471414,
+    "meta": 1668494426654,
+    "relativePath": "resources\\newtexture\\ty_ytjb.png"
+  },
+  "fed905b1-ca64-4d73-994f-66830df904d2": {
+    "asset": 1668495550967,
+    "meta": 1668495976982,
+    "relativePath": "resources\\texture\\on.png"
+  },
+  "7a09e674-a23b-4942-aa71-a896ca88c4c2": {
+    "asset": 1668495562333,
+    "meta": 1668495674633,
+    "relativePath": "resources\\texture\\off.png"
+  },
+  "f9b56424-a1c9-4d80-a041-ebffcba0c503": {
+    "asset": 1668495566011,
+    "meta": 1668495674651,
+    "relativePath": "resources\\texture\\icon_yinxiao.png"
+  },
+  "52db08cb-c992-4188-aa0b-9e57d2876f6a": {
+    "asset": 1668495557378,
+    "meta": 1668495674652,
+    "relativePath": "resources\\texture\\icon_yinyue.png"
+  },
+  "2dede7ff-6638-4561-a3bf-12beca067eb7": {
+    "asset": 1668497112474,
+    "meta": 1668497130191,
+    "relativePath": "resources\\newtexture\\ty_zhantai.png"
+  },
+  "46e3ee62-4f1e-414f-b7c3-466ceac36a96": {
+    "asset": 1668497276261,
+    "meta": 1668497284996,
+    "relativePath": "script\\game\\prefab\\NewPlantUI.ts"
+  },
+  "824b03e2-4c24-4bf6-81e3-0f36898a3bd5": {
+    "asset": 1668497919895,
+    "meta": 1668498028639,
+    "relativePath": "script\\game\\prefab\\LoseUI.ts"
+  },
+  "bdcb95a9-f18c-4512-b599-6f9a9899a394": {
+    "asset": 1668497896443,
+    "meta": 1668498028693,
+    "relativePath": "script\\game\\prefab\\VictoryUI.ts"
+  },
+  "51ec5990-36b8-428c-9173-a0269d9cd058": {
+    "asset": 1668497974191,
+    "meta": 1668498028718,
+    "relativePath": "script\\manager\\WxCenter.ts"
+  },
+  "4750996f-37ae-40dd-8b54-c614bc4777d4": {
+    "asset": 1668498041486,
+    "meta": 1668498068510,
+    "relativePath": "script\\game\\prefab\\OfflineAwardUI.ts"
+  },
+  "7de6c87d-a312-4e66-8a63-f8a15cfd6e49": {
+    "asset": 1668498704981,
+    "meta": 1668498707836,
+    "relativePath": "script\\game\\DB.ts"
+  },
+  "e6b027be-f294-4367-ab68-755f0a525351": {
+    "asset": 1668501995337,
+    "meta": 1668507303606,
+    "relativePath": "script\\game\\prefab\\ShopItem.ts"
+  },
+  "d5b0f964-defe-4102-a499-b12321e5de6c": {
+    "asset": 1668508451366,
+    "meta": 1668508467826,
+    "relativePath": "resources\\newtexture\\ty_zhenguan.png"
+  },
+  "dc7891ff-9f4d-4093-a15e-592bcccda2ae": {
+    "asset": 1668508912942,
+    "meta": 1668508927880,
+    "relativePath": "resources\\newtexture\\ty_jindan.png"
+  },
+  "735437b3-6c52-4e9b-b346-fd5b46f70a15": {
+    "asset": 1668509805289,
+    "meta": 1668509807214,
+    "relativePath": "script\\game\\prefab\\AdLayer.ts"
   }
 }

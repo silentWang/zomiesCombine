@@ -131,7 +131,7 @@ export default class ShopItem extends BaseUI {
         }
 
         this._findInChildren(node,"lbl_lv").getComponent(cc.Label).string = ""+gun[0];
-        this._findInChildren(node,"New Label").getComponent(cc.Label).string = ""+(gun[0]+2);
+        this._findInChildren(node,"New Label").getComponent(cc.Label).string = "到"+(gun[0]+2)+'级解锁';
 
         let skill = gun[3].split("|");
         let skilltype = skill[0];
@@ -151,20 +151,26 @@ export default class ShopItem extends BaseUI {
             str ="技能:" + value+"%几率冰冻目标1秒";
         }
 
-        this._findInChildren(node,"lbl_name").getComponent(cc.Label).string = str;
+        this._findInChildren(node,"lbl_name").getComponent(cc.Label).string = bhide?'未知萌鸡':gun[7];
+        this._findInChildren(node,"lbl_desc").getComponent(cc.Label).string = bhide?'技能:未知':str;
         this._findInChildren(node,"lbl_cd").getComponent(cc.Label).string =bhide?"?": gun[1]+"";
         this._findInChildren(node,"lbl_power").getComponent(cc.Label).string = bhide?"?":Utils.formatNumber(gun[2])+"";
         this._findInChildren(node,"gun").getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]-1),cc.SpriteFrame) as cc.SpriteFrame;
-        this._findInChildren(node,"gun").getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]-1),cc.SpriteFrame) as cc.SpriteFrame;
+        // this._findInChildren(node,"gun").getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]-1),cc.SpriteFrame) as cc.SpriteFrame;
        
-        if(gun[0]+1<60)
-        {
-            this._findInChildren(node,"0").getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]+1),cc.SpriteFrame) as cc.SpriteFrame;
-        }
-        else
-        {
-            this._findInChildren(node,"0").getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/59",cc.SpriteFrame) as cc.SpriteFrame;
-        }
+        // let cs = this._findInChildren(node,"0");
+        // if(gun[0]+1<60)
+        // {
+        //     if(cs){
+        //         cs.getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]+1),cc.SpriteFrame) as cc.SpriteFrame;
+        //     }
+        // }
+        // else
+        // {
+        //     if(cs){
+        //          cs.getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/59",cc.SpriteFrame) as cc.SpriteFrame;
+        //     }
+        // }
         
         this.cost_coin = Data.user.BuyPrice(gun[0])
         this.SetText("lbl_buy_coin",Utils.formatNumber( this.cost_coin));

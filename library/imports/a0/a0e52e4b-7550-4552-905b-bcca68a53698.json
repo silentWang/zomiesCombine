@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "enemy13_tex",
+    "texture": "183cf355-bf12-4913-bad1-6c6e779edda7",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      249,
+      325
+    ],
+    "offset": [
+      -2.5,
+      92.5
+    ],
+    "originalSize": [
+      256,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

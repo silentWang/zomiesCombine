@@ -19,7 +19,7 @@ export default class NewPlantUI extends BaseUI {
         let coin = Data.user.BuyPrice(Math.max(1,lv-3));
         let levelup = DB_levelupGem[lv+""];
         this.GetGameObject("node_gem").active = levelup;
-        this.SetText("lbl_lv","等级"+lv);
+        this.SetText("lbl_lv","等级 "+lv);
 
         AudioMgr.Instance().playSFX("unlock_plant")
 

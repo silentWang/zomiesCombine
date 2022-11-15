@@ -57,7 +57,7 @@ export default class Enemy extends BaseUI {
         // console.log(this.type == 2?"boss":"e",this.maxhp,this.money,"====")
         this.node.position = HallScene.Instance.path[0];
         this.node.scale = this.type==0?.8:1.1;
-        this.GetGameObject("sp").scaleX = 0.5;
+        // this.GetGameObject("sp").scaleX = 0.5;
         if(id == 25)
         {
             AudioMgr.Instance().playSFX("dog")
@@ -70,9 +70,23 @@ export default class Enemy extends BaseUI {
         {
             AudioMgr.Instance().playSFX(Utils.getRandom(0,1)<.6? "zb1":"zb2")
         }
-        this.GetSkeleton("sp").skeletonData = await Utils.loadRes("spine:enemy"+id,sp.SkeletonData) as sp.SkeletonData;
-        this.GetSkeleton("sp").setAnimation(0,"run",true);
+        let skpath = `spine:enemy${id}_ske`;
+        let atlaspath = `spine:enemy${id}_tex`;
+        let armature = this.GetDragonAmature("sp");
+        armature.dragonAsset = await Utils.loadRes(skpath,dragonBones.DragonBonesAsset) as dragonBones.DragonBonesAsset;
+        armature.dragonAtlasAsset = await Utils.loadRes(atlaspath,dragonBones.DragonBonesAtlasAsset) as dragonBones.DragonBonesAtlasAsset;
+        armature.armatureName = "Armature";
+        armature.playAnimation('run',0);
         this.GetGameObject("New ProgressBar").opacity = 0;
+
+        // let factory = dragonBones.CCFactory.getInstance();
+        // factory.replaceSkin(armature.armature(), (armatureDisplay2.armature() as dragonBones.Armature).armatureData.defaultSkin, true);
+
+        // 原逻辑
+        // let respath = "spine:enemy" + id;
+        // this.GetSkeleton("sp").skeletonData = await Utils.loadRes(respath,sp.SkeletonData) as sp.SkeletonData;
+        // this.GetSkeleton("sp").setAnimation(0,"run",true);
+        // this.GetGameObject("New ProgressBar").opacity = 0;
     }
 
     hit(plantlv:number)
@@ -166,12 +180,14 @@ export default class Enemy extends BaseUI {
     {
         
         AudioMgr.Instance().playSFX("skill_slow")
-        this.GetSkeleton("sp").timeScale = 0.5;
+        // this.GetSkeleton("sp").timeScale = 0.5;
+        this.GetDragonAmature('sp').timeScale = 0.5;
         this.GetGameObject("jiansu").active = true;
         this.GetGameObject("sp").stopAllActions();
-            this.GetGameObject("sp").runAction(cc.sequence(cc.delayTime(1),cc.callFunc(()=>{
+        this.GetGameObject("sp").runAction(cc.sequence(cc.delayTime(1),cc.callFunc(()=>{
             this.GetGameObject("sp").color = cc.Color.WHITE;
-            this.GetSkeleton("sp").timeScale = 1;
+            // this.GetSkeleton("sp").timeScale = 1;
+            this.GetDragonAmature('sp').timeScale = 1;
             this.GetGameObject("jiansu").active = false;
         })))
     }
@@ -184,10 +200,10 @@ export default class Enemy extends BaseUI {
         this.GetGameObject("fx_stun").stopAllActions();
         this.GetGameObject("fx_stun").active = true;
         this.purpleendtime = Utils.getServerTime() + 1000;
-        this.GetSkeleton("sp").paused = true;
+        // this.GetSkeleton("sp").paused = true;
         this.GetGameObject("fx_stun").runAction(cc.sequence(cc.delayTime(1),cc.callFunc(()=>{
             this.GetGameObject("fx_stun").active = false;
-            this.GetSkeleton("sp").paused = false;  
+            // this.GetSkeleton("sp").paused = false;  
             this.bfrozen = false;
         })))
     }

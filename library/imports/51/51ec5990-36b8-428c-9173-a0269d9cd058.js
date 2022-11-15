@@ -44,7 +44,8 @@ var WxCenter = /** @class */ (function () {
             console.log(err);
         });
     };
-    WxCenter.showRewardedVideoAd = function () {
+    WxCenter.showRewardedVideoAd = function (callback) {
+        if (callback === void 0) { callback = null; }
         if (!this.wx)
             return;
         var wx = this.wx;
@@ -62,6 +63,7 @@ var WxCenter = /** @class */ (function () {
             // 小于 2.1.0 的基础库版本，res 是一个 undefined
             if (res && res.isEnded || res === undefined) {
                 // 正常播放结束，可以下发游戏奖励
+                callback && callback(true);
             }
             else {
                 // 播放中途退出，不下发游戏奖励

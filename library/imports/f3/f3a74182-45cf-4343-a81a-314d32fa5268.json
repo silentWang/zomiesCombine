@@ -1,0 +1,14 @@
+{
+  "__type__": "dragonBones.DragonBonesAtlasAsset",
+  "_name": "enemy47_tex",
+  "_objFlags": 0,
+  "_native": "",
+  "_atlasJson": "{\"width\":256,\"imagePath\":\"enemy47_tex.png\",\"height\":256,\"name\":\"enemy47\",\"SubTexture\":[{\"width\":173,\"y\":165,\"height\":31,\"name\":\"hsl_a/touying\",\"x\":1},{\"width\":78,\"y\":165,\"height\":58,\"name\":\"weiba\",\"x\":176},{\"width\":34,\"y\":198,\"height\":41,\"name\":\"houtui_b\",\"x\":73},{\"width\":34,\"y\":198,\"height\":41,\"name\":\"qiantui_b\",\"x\":1},{\"width\":221,\"y\":1,\"height\":162,\"name\":\"shenti\",\"x\":1},{\"width\":34,\"y\":198,\"height\":41,\"name\":\"houtui_a\",\"x\":109},{\"width\":34,\"y\":198,\"height\":41,\"name\":\"qiantui_a\",\"x\":37}]}",
+  "_texture": {
+    "__uuid__": "a45adf7e-d256-436d-954c-e2ac84bfc50c"
+  },
+  "texture": {
+    "__uuid__": "a45adf7e-d256-436d-954c-e2ac84bfc50c"
+  },
+  "_textureAtlasData": null
+}

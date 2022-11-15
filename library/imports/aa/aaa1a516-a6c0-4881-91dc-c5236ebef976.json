@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_jianbiantiao",
+    "texture": "87be4ea1-1cfe-442b-ad9b-fb6b58aaf3d2",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      328,
+      62
+    ],
+    "offset": [
+      0.5,
+      0
+    ],
+    "originalSize": [
+      329,
+      62
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

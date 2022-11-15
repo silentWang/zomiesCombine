@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_hspd",
+    "texture": "84eb07f9-4f5c-4adf-a5d2-6b83b2cc31f5",
+    "atlas": "",
+    "rect": [
+      0,
+      3,
+      469,
+      115
+    ],
+    "offset": [
+      0,
+      -1.5
+    ],
+    "originalSize": [
+      469,
+      118
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

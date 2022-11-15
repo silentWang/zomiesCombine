@@ -142,6 +142,14 @@ var BaseUI = /** @class */ (function (_super) {
             return tmp.getComponent(sp.Skeleton);
         return null;
     };
+    BaseUI.prototype.GetDragonAmature = function (name) {
+        if (this.m_objects && this.m_objects.has(name))
+            return this.m_objects[name].getComponent(sp.Skeleton);
+        var tmp = this.GetGameObject(name);
+        if (tmp)
+            return tmp.getComponent(dragonBones.ArmatureDisplay);
+        return null;
+    };
     BaseUI.prototype.GetSprite = function (name) {
         if (this.m_objects && this.m_objects.has(name))
             return this.m_objects[name].getComponent(cc.Sprite);

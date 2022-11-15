@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_icon_dengjihuise",
+    "texture": "4feb4815-a514-4485-a916-6ee382dc0a05",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      39,
+      45
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      39,
+      45
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "__type__": "dragonBones.DragonBonesAtlasAsset",
+  "_name": "enemy54_tex",
+  "_objFlags": 0,
+  "_native": "",
+  "_atlasJson": "{\"width\":256,\"imagePath\":\"enemy54_tex.png\",\"name\":\"enemy54\",\"SubTexture\":[{\"width\":173,\"y\":153,\"height\":31,\"name\":\"hsl_a/touying\",\"x\":1},{\"width\":22,\"y\":153,\"height\":22,\"name\":\"weiba\",\"x\":176},{\"width\":191,\"y\":1,\"height\":150,\"name\":\"shenti\",\"x\":1}],\"height\":256}",
+  "_texture": {
+    "__uuid__": "f4350251-bcb7-4c66-b9ab-11d18d65445d"
+  },
+  "texture": {
+    "__uuid__": "f4350251-bcb7-4c66-b9ab-11d18d65445d"
+  },
+  "_textureAtlasData": null
+}

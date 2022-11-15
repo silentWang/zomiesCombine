@@ -25,6 +25,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var Data_1 = require("../../manager/Data");
+var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -47,30 +48,42 @@ var LoseUI = /** @class */ (function (_super) {
             console.log("---", t, Utils_1.default.getTimeStrByS(t));
             _this.GetGameObject("btn_get").active = t <= 4;
             _this.SetText("lbl_time", Utils_1.default.getTimeStrByS(t));
-            if (t < 0)
+            if (t < 0) {
+                _this.getCoinReward();
                 _this.closeUI();
+            }
             t--;
         }), cc.delayTime(1)).repeat(7));
     };
     LoseUI.prototype.setInfo = function (coin) {
         this.coin = coin;
-        this.SetText("lbl_coin", Utils_1.default.formatNumber(coin));
+        this.SetText("lbl_coin", Utils_1.default.formatNumber(coin * 5));
+        this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
     };
     LoseUI.prototype.closeUI = function () {
+        this.shutAnim();
+    };
+    LoseUI.prototype.getCoinReward = function () {
         var coin = this.coin;
         AudioMgr_1.default.Instance().playSFX("coin");
         Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
-            if (b) {
+            if (b)
                 Data_1.default.user.coin += coin;
-            }
         });
-        this.shutAnim();
     };
     LoseUI.prototype.onBtnClicked = function (event, customEventData) {
+        var _this = this;
         var btnName = event.target.name;
         AudioMgr_1.default.Instance().playSFX("click");
         switch (btnName) {
             case "btn_get":
+                WxCenter_1.default.showRewardedVideoAd(function () {
+                    _this.getCoinReward();
+                });
+                this.closeUI();
+                break;
+            case 'btn_normal':
+                this.getCoinReward();
                 this.closeUI();
                 break;
         }

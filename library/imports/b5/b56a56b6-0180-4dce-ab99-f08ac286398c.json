@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_huisexan",
+    "texture": "889b1d7a-2628-4a06-a739-c797d912fb31",
+    "atlas": "",
+    "rect": [
+      0,
+      2,
+      123,
+      77
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      123,
+      81
+    ],
+    "capInsets": [
+      54,
+      0,
+      54,
+      0
+    ]
+  }
+}

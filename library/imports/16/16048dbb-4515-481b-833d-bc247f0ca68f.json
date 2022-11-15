@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_sdbtk",
+    "texture": "5297a104-671e-41a0-a19a-aa9f9d57a51d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      101,
+      91
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      101,
+      91
+    ],
+    "capInsets": [
+      42,
+      46,
+      41,
+      38
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
+import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 
@@ -12,18 +13,18 @@ export default class VictoryUI extends BaseUI {
     start () {
         // this.GetGameObject("lbl_coin").opacity = 0;
         // this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(1,255)));
-
         AudioMgr.Instance().playSFX("win_stage")
         this.GetSkeleton("fx_victory").setAnimation(0,"start",false);
         this.GetSkeleton("fx_victory").setAnimation(1,"idle",true);
-
         this.GetGameObject("btn_get").active = false;
         let t = 5;
         this.node.runAction(cc.sequence(cc.callFunc(()=>{
-            console.log("---",t,Utils.getTimeStrByS(t))
             this.SetText("lbl_time",Utils.getTimeStrByS(t))
             this.GetGameObject("btn_get").active = t<=4;
-            if(t<0)this.closeUI();
+            if(t<0) {
+                this.getCoinReward();
+                this.closeUI();
+            }
             t--;
         }),cc.delayTime(1)).repeat(7))
     }
@@ -32,12 +33,16 @@ export default class VictoryUI extends BaseUI {
     setInfo(coin:number)
     {
         this.coin = coin;
-        this.SetText("lbl_coin",Utils.formatNumber(coin));
+        this.SetText("lbl_coin",Utils.formatNumber(coin*5));
+        this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     }
 
     closeUI() {
-        let coin = this.coin;
-        
+        this.shutAnim();
+    }
+
+    private getCoinReward(isdouble = false){
+        let coin = isdouble ? this.coin * 2 : this.coin;
         AudioMgr.Instance().playSFX("coin");
         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
             if(b)
@@ -47,7 +52,6 @@ export default class VictoryUI extends BaseUI {
                     AdCenter.Instance().showinterstitialAd();
             }  
         })
-        this.shutAnim();
     }
 
     onBtnClicked(event, customEventData) {
@@ -55,6 +59,13 @@ export default class VictoryUI extends BaseUI {
         AudioMgr.Instance().playSFX("click");
         switch (btnName) {
             case "btn_get":
+                this.closeUI();
+                WxCenter.showRewardedVideoAd(()=>{
+                    this.getCoinReward();
+                });
+                break;
+            case "btn_normal":
+                this.getCoinReward();
                 this.closeUI();
                 break;
         }

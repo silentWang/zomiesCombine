@@ -72,6 +72,13 @@ export default class BaseUI extends cc.Component {
         return null;
     }
 
+    public GetDragonAmature(name: string): dragonBones.ArmatureDisplay {
+        if (this.m_objects && this.m_objects.has(name)) return this.m_objects[name].getComponent(sp.Skeleton);
+        var tmp = this.GetGameObject(name);
+        if (tmp) return tmp.getComponent(dragonBones.ArmatureDisplay);
+        return null;
+    }
+
     public GetSprite(name: string): cc.Sprite {
         if (this.m_objects && this.m_objects.has(name)) return this.m_objects[name].getComponent(cc.Sprite);
         var tmp = this.GetGameObject(name);
