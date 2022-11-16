@@ -912,7 +912,7 @@ export let DB_slot = [
 	{id:6,type:0,price:100},
 	{id:7,type:0,price:1500},
 	{id:8,type:0,price:10560},
-	{id:9,type:1,price:10},
+	{id:9,type:0,price:166160},
 	{id:10,type:0,price:344160},
 	{id:11,type:0,price:1770000},
 	{id:12,type:0,price:3070000},

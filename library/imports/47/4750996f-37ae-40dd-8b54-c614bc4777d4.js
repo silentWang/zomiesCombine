@@ -25,8 +25,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var MsgHints_1 = require("../../framwork/MsgHints");
+var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
-var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var BigNumber_1 = require("../../utils/BigNumber");
 var Utils_1 = require("../../utils/Utils");
@@ -88,8 +88,7 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                         _this.closeUI();
                     }
                 };
-                // AdCenter.Instance().play(0, func)
-                WxCenter_1.default.showRewardedVideoAd(func);
+                AdCenter_1.default.Instance().play(func);
                 break;
             case "btn_gem":
                 {

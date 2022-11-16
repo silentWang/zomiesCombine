@@ -6,6 +6,7 @@ import AudioMgr from "../utils/AudioMgr";
 import Utils from "../utils/Utils";
 import { DB_level, DB_plant } from "./DB";
 import AdLayer, { max_auto_double_att, max_auto_double_income, max_auto_com, max_drop_plant, EADLAYER } from "./prefab/AdLayer";
+import ShareLayer from "./prefab/ShareLayer";
 import Enemy from "./prefab/Enemy";
 import LoseUI from "./prefab/LoseUI";
 import LuPinResult from "./prefab/LuPinResult";
@@ -68,7 +69,7 @@ export default class HallScene extends BaseUI {
 	{
         if(dt>1)dt=1;
 		this.SetText("lbl_coin",Utils.formatNumber(Data.user.coin)+"");
-        this.SetText("lbl_gem",Utils.formatNumber(Data.user.gem)+"");
+        // this.SetText("lbl_gem",Utils.formatNumber(Data.user.gem)+"");
         
         if(this.recordertime != 0)
         {
@@ -921,7 +922,10 @@ export default class HallScene extends BaseUI {
                 MsgHints.show("拖动到这里卖出")
                 break;
             case "btn_inviate":
-                WxCenter.shareAppMessage();
+                // WxCenter.shareAppMessage();
+                Utils.createUI("prefab/ShareLayer").then((node:cc.Node)=>{
+                    node.getComponent(ShareLayer).setData(100000);
+                })
                 break;
             case "btn_Recorder":
                 if (this.bRecorder == false) {

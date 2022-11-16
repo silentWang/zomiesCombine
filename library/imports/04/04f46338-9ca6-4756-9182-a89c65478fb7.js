@@ -20,6 +20,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Singleton_1 = require("./Singleton");
 var MsgHints_1 = require("../framwork/MsgHints");
 var Utils_1 = require("../utils/Utils");
+var WxCenter_1 = require("./WxCenter");
 var tt = window["tt"];
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var AdCenter = /** @class */ (function (_super) {
@@ -81,8 +82,8 @@ var AdCenter = /** @class */ (function (_super) {
         if (this.bannerAd)
             this.bannerAd.hide();
     };
-    AdCenter.prototype.play = function (type, callback) {
-        var _this = this;
+    AdCenter.prototype.play = function (callback, type) {
+        if (type === void 0) { type = 0; }
         if (Utils_1.default.getServerTime() - this._lasttryplaytime < 1000) {
             console.log("点击过于频繁");
             return;
@@ -90,6 +91,11 @@ var AdCenter = /** @class */ (function (_super) {
         console.log("尝试播放广告");
         this._lasttryplaytime = Utils_1.default.getServerTime();
         this.callBack = callback;
+        WxCenter_1.default.showRewardedVideoAd(callback);
+        // this.dyShowVideo();
+    };
+    AdCenter.prototype.dyShowVideo = function () {
+        var _this = this;
         if (this.VideoAd) {
             this.VideoAd.show().catch(function () {
                 _this.VideoAd.load()

@@ -1,5 +1,4 @@
 import BaseUI from "../../framwork/BaseUI";
-import MsgHints from "../../framwork/MsgHints";
 import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
 import AudioMgr from "../../utils/AudioMgr";
@@ -35,23 +34,13 @@ export default class FairyBonusUI extends BaseUI {
                 this.closeUI();
                 break;
             case "btn_ad":
-                AdCenter.Instance().play(0,(b)=>{
+                AdCenter.Instance().play((b)=>{
                     if(b)
                     {
                         Data.user.DropGiftPts = Data.user.DropGiftPts.concat(this.superPot);
                         this.closeUI();
                     }
-                })
-                break;
-            case "btn_gem":
-                if(Data.user.gem<3)
-                {
-                    MsgHints.show("钻石不足")
-                    return;
-                }
-                Data.user.gem -= 3;
-                Data.user.DropGiftPts = Data.user.DropGiftPts.concat(this.superPot);
-                this.closeUI();
+                });
                 break;
         }
     }

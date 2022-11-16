@@ -2,7 +2,6 @@ import BaseUI from "../../framwork/BaseUI";
 import MsgHints from "../../framwork/MsgHints";
 import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
-import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import BigNumber from "../../utils/BigNumber";
 import Utils from "../../utils/Utils";
@@ -61,8 +60,7 @@ export default class OfflineAwardUI extends BaseUI {
                         this.closeUI()
                     }
                 }
-                // AdCenter.Instance().play(0, func)
-                WxCenter.showRewardedVideoAd(func);
+                AdCenter.Instance().play(func)
                 break;
             case "btn_gem":
                 {

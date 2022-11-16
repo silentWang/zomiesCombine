@@ -67,6 +67,7 @@ var AudioMgr_1 = require("../utils/AudioMgr");
 var Utils_1 = require("../utils/Utils");
 var DB_1 = require("./DB");
 var AdLayer_1 = require("./prefab/AdLayer");
+var ShareLayer_1 = require("./prefab/ShareLayer");
 var Enemy_1 = require("./prefab/Enemy");
 var LoseUI_1 = require("./prefab/LoseUI");
 var LuPinResult_1 = require("./prefab/LuPinResult");
@@ -134,7 +135,7 @@ var HallScene = /** @class */ (function (_super) {
         if (dt > 1)
             dt = 1;
         this.SetText("lbl_coin", Utils_1.default.formatNumber(Data_1.default.user.coin) + "");
-        this.SetText("lbl_gem", Utils_1.default.formatNumber(Data_1.default.user.gem) + "");
+        // this.SetText("lbl_gem",Utils.formatNumber(Data.user.gem)+"");
         if (this.recordertime != 0) {
             var s = Math.floor((Utils_1.default.getServerTime() - this.recordertime) / 1000);
             if (s > 0)
@@ -865,7 +866,10 @@ var HallScene = /** @class */ (function (_super) {
                     MsgHints_1.default.show("拖动到这里卖出");
                 break;
             case "btn_inviate":
-                WxCenter_1.default.shareAppMessage();
+                // WxCenter.shareAppMessage();
+                Utils_1.default.createUI("prefab/ShareLayer").then(function (node) {
+                    node.getComponent(ShareLayer_1.default).setData(100000);
+                });
                 break;
             case "btn_Recorder":
                 if (this.bRecorder == false) {

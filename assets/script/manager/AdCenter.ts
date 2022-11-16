@@ -2,6 +2,7 @@ import Singleton from "./Singleton";
 import MsgHints from "../framwork/MsgHints";
 
 import Utils from '../utils/Utils';
+import WxCenter from "./WxCenter";
 const tt = window["tt"];
 
 const { ccclass, property } = cc._decorator;
@@ -74,10 +75,9 @@ export default class AdCenter extends Singleton {
             this.bannerAd.hide()
     }
 
-
     private callBack: Function;
     private _lasttryplaytime: number = 0;
-    public play(type: number, callback: Function) {
+    public play(callback: Function, type:number = 0) {
         if (Utils.getServerTime() - this._lasttryplaytime < 1000) {
             console.log("点击过于频繁")
             return;
@@ -85,7 +85,11 @@ export default class AdCenter extends Singleton {
         console.log("尝试播放广告")
         this._lasttryplaytime = Utils.getServerTime();
         this.callBack = callback;
+        WxCenter.showRewardedVideoAd(callback);
+        // this.dyShowVideo();
+    }
 
+    private dyShowVideo(){
         if ( this.VideoAd) {
             this.VideoAd.show().catch(() => {
                 this.VideoAd.load()
@@ -100,4 +104,5 @@ export default class AdCenter extends Singleton {
             this.callBack(true);
         }
     }
+
 }

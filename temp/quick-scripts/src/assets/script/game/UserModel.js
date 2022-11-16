@@ -34,6 +34,7 @@ var UserModel = /** @class */ (function () {
         this.double_att_time = 0;
         this.double_income_time = 0;
         this.drop_plant_time = 0;
+        this.share_times = 10;
         this.slots = [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0];
         this.lv = 1;
         this.wave = 1;
@@ -290,6 +291,9 @@ var UserModel = /** @class */ (function () {
     __decorate([
         save
     ], UserModel.prototype, "drop_plant_time", void 0);
+    __decorate([
+        save
+    ], UserModel.prototype, "share_times", void 0);
     __decorate([
         save
     ], UserModel.prototype, "slots", void 0);

@@ -63,6 +63,7 @@ export default class SlotItem extends BaseUI {
             Data.user.gem -= DB_slot[curopen].price
         }
         console.log("解锁土地",curopen)
+        MsgHints.show("成功解锁新位置");
         Data.save();
         this.dispatch(GameConst.OPEN_SLOT,curopen);
         this.setIndex(this.index);

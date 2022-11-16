@@ -24,8 +24,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
+var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
-var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -77,7 +77,7 @@ var LoseUI = /** @class */ (function (_super) {
         AudioMgr_1.default.Instance().playSFX("click");
         switch (btnName) {
             case "btn_get":
-                WxCenter_1.default.showRewardedVideoAd(function () {
+                AdCenter_1.default.Instance().play(function () {
                     _this.getCoinReward();
                 });
                 this.closeUI();

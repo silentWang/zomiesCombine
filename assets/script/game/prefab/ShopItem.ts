@@ -189,7 +189,7 @@ export default class ShopItem extends BaseUI {
         AudioMgr.Instance().playSFX("click");
         switch (btnName) {
             case "btn_free":
-                AdCenter.Instance().play(0,(b)=>{
+                AdCenter.Instance().play((b)=>{
                     if(b)
                     {
                         if(HallScene.Instance.tryBuyPlant(this.gun[0],2))

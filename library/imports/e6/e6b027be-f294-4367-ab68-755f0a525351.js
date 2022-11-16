@@ -221,7 +221,7 @@ var ShopItem = /** @class */ (function (_super) {
         AudioMgr_1.default.Instance().playSFX("click");
         switch (btnName) {
             case "btn_free":
-                AdCenter_1.default.Instance().play(0, function (b) {
+                AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
                         if (HallScene_1.default.Instance.tryBuyPlant(_this.gun[0], 2)) {
                             MsgHints_1.default.show("购买成功");

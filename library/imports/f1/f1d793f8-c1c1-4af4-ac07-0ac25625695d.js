@@ -24,7 +24,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
-var MsgHints_1 = require("../../framwork/MsgHints");
 var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
 var AudioMgr_1 = require("../../utils/AudioMgr");
@@ -57,21 +56,12 @@ var FairyBonusUI = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_ad":
-                AdCenter_1.default.Instance().play(0, function (b) {
+                AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
                         Data_1.default.user.DropGiftPts = Data_1.default.user.DropGiftPts.concat(_this.superPot);
                         _this.closeUI();
                     }
                 });
-                break;
-            case "btn_gem":
-                if (Data_1.default.user.gem < 3) {
-                    MsgHints_1.default.show("钻石不足");
-                    return;
-                }
-                Data_1.default.user.gem -= 3;
-                Data_1.default.user.DropGiftPts = Data_1.default.user.DropGiftPts.concat(this.superPot);
-                this.closeUI();
                 break;
         }
     };

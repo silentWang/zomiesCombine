@@ -1115,8 +1115,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 88,
-      "height": 36
+      "width": 83.38,
+      "height": 45.36
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1177,20 +1177,18 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_srcBlendFactor": 770,
+    "_srcBlendFactor": 768,
     "_dstBlendFactor": 771,
     "_string": "1.53M",
     "_N$string": "1.53M",
     "_fontSize": 30,
     "_lineHeight": 36,
     "_enableWrapText": true,
-    "_N$file": {
-      "__uuid__": "78e6d26a-d021-47fc-a7c0-14fee21869e1"
-    },
-    "_isSystemFontUsed": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
     "_spacingX": -3,
     "_batchAsBitmap": false,
-    "_styleFlags": 3,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -1348,8 +1346,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 64.33,
-      "height": 36
+      "width": 58.39,
+      "height": 45.36
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1417,13 +1415,11 @@
     "_fontSize": 30,
     "_lineHeight": 36,
     "_enableWrapText": true,
-    "_N$file": {
-      "__uuid__": "78e6d26a-d021-47fc-a7c0-14fee21869e1"
-    },
-    "_isSystemFontUsed": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
     "_spacingX": -3,
     "_batchAsBitmap": false,
-    "_styleFlags": 3,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -4124,13 +4120,11 @@
     "_fontSize": 30,
     "_lineHeight": 36,
     "_enableWrapText": true,
-    "_N$file": {
-      "__uuid__": "78e6d26a-d021-47fc-a7c0-14fee21869e1"
-    },
-    "_isSystemFontUsed": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
     "_spacingX": -3,
     "_batchAsBitmap": false,
-    "_styleFlags": 3,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -4357,13 +4351,11 @@
     "_fontSize": 30,
     "_lineHeight": 36,
     "_enableWrapText": true,
-    "_N$file": {
-      "__uuid__": "78e6d26a-d021-47fc-a7c0-14fee21869e1"
-    },
-    "_isSystemFontUsed": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
     "_spacingX": -3,
     "_batchAsBitmap": false,
-    "_styleFlags": 3,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,

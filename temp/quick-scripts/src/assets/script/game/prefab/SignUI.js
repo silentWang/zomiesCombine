@@ -184,7 +184,7 @@ var SignUI = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_2times":
-                AdCenter_1.default.Instance().play(0, function (b) {
+                AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
                         Data_1.default.user.signinfo.sign_beisu = 2;
                         _this.flayAnim(2);
@@ -197,7 +197,7 @@ var SignUI = /** @class */ (function (_super) {
                 });
                 break;
             case "btn_3times":
-                AdCenter_1.default.Instance().play(0, function (b) {
+                AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
                         Data_1.default.user.signinfo.sign_beisu = 3;
                         _this.flayAnim(3);

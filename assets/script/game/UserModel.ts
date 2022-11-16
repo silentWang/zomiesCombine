@@ -40,6 +40,8 @@ export default class UserModel {
     @save public double_income_time:number = 0;
     @save public drop_plant_time:number = 0;
 
+    @save public share_times:number = 10;
+
     @save public slots = [1,1,1,1,1,0,0,0,0,0,0,0];
     @save public lv = 1;
     @save public wave = 1;

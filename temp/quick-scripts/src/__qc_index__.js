@@ -23,6 +23,7 @@ require('./assets/script/game/prefab/LuPinResult');
 require('./assets/script/game/prefab/NewPlantUI');
 require('./assets/script/game/prefab/OfflineAwardUI');
 require('./assets/script/game/prefab/SettingUI');
+require('./assets/script/game/prefab/ShareLayer');
 require('./assets/script/game/prefab/ShopItem');
 require('./assets/script/game/prefab/ShopLayer');
 require('./assets/script/game/prefab/SignUI');

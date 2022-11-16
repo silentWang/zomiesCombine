@@ -181,7 +181,7 @@ export default class SignUI extends BaseUI {
                 this.closeUI();
                 break;
             case "btn_2times":
-                AdCenter.Instance().play(0, (b) => {
+                AdCenter.Instance().play((b) => {
                     if (b) {
                         Data.user.signinfo.sign_beisu = 2;
                         this.flayAnim(2);
@@ -194,7 +194,7 @@ export default class SignUI extends BaseUI {
                 })
                 break;
             case "btn_3times":
-                AdCenter.Instance().play(0, (b) => {
+                AdCenter.Instance().play((b) => {
                     if (b) {
                         Data.user.signinfo.sign_beisu = 3;
                         this.flayAnim(3);

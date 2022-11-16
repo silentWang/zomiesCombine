@@ -66,6 +66,18 @@ var AdLayer = /** @class */ (function (_super) {
     AdLayer.prototype.update = function (dt) {
         if (dt > 1)
             dt = 1;
+        var _a = this.getEndAndMaxTime(), end_time = _a.end_time, max = _a.max;
+        if (end_time > Utils_1.default.getServerTime()) {
+            var nLeft = end_time - Utils_1.default.getServerTime();
+            this.SetProgressBar("New ProgressBar", (nLeft / 1000 / 60) / max);
+            this.SetText("lbl_time", Utils_1.default.getTimeStrByS(nLeft / 1000));
+        }
+        else {
+            this.SetProgressBar("New ProgressBar", 0);
+            this.SetText("lbl_time", "");
+        }
+    };
+    AdLayer.prototype.getEndAndMaxTime = function () {
         var end_time = 0;
         var max = 0;
         if (this.type == EADLAYER.AUTO_COM) {
@@ -84,15 +96,7 @@ var AdLayer = /** @class */ (function (_super) {
             end_time = Data_1.default.user.drop_plant_time;
             max = exports.max_drop_plant;
         }
-        if (end_time > Utils_1.default.getServerTime()) {
-            var nLeft = end_time - Utils_1.default.getServerTime();
-            this.SetProgressBar("New ProgressBar", (nLeft / 1000 / 60) / max);
-            this.SetText("lbl_time", Utils_1.default.getTimeStrByS(nLeft / 1000));
-        }
-        else {
-            this.SetProgressBar("New ProgressBar", 0);
-            this.SetText("lbl_time", "");
-        }
+        return { end_time: end_time, max: max };
     };
     AdLayer.prototype.setType = function (e) {
         this.type = e;
@@ -119,6 +123,8 @@ var AdLayer = /** @class */ (function (_super) {
         else if (this.type == EADLAYER.DROP_PLANT) {
             this.SetText("lbl_effect", "+" + add_time_drop_plant + "分钟");
         }
+        var _a = this.getEndAndMaxTime(), end_time = _a.end_time, max = _a.max;
+        this.GetGameObject('btn_normal').active = end_time <= Utils_1.default.getServerTime();
         // var b: boolean = true;
         // if (this.type == EADLAYER.AUTO_COM && Data.user.auto_com_time == 0)
         //     b = false;
@@ -128,66 +134,17 @@ var AdLayer = /** @class */ (function (_super) {
         //     b = false;
         // this.GetGameObject("btn_play").active = b;
     };
-    AdLayer.prototype.checkIsMax = function () {
-        // if (this.type == EADLAYER.AUTO_COM && Data.user.auto_com_time == 0) {
-        //     Data.user.auto_com_time = Utils.getServerTime();
-        //     Data.user.auto_com_time += add_time_auto_com * 60 * 1000;
-        //     cc.log("第一次免广告")
-        //     return
-        // }
-        // if (this.type == EADLAYER.DOUBLE_ATT && Data.user.double_att_time == 0) {
-        //     Data.user.double_att_time = Utils.getServerTime();
-        //     Data.user.double_att_time += add_time_double_att * 60 * 1000;
-        //     cc.log("第一次免广告")
-        //     return
-        // }
-        // if (this.type == EADLAYER.DOUBLE_INCOME && Data.user.double_income_time == 0) {
-        //     Data.user.double_income_time = Utils.getServerTime();
-        //     Data.user.double_income_time += add_time_double_income * 60 * 1000;
-        //     cc.log("第一次免广告")
-        //     return
-        // }
-        // if (this.type == EADLAYER.DROP_PLANT && Data.user.drop_plant_time == 0) {
-        //     Data.user.drop_plant_time = Utils.getServerTime();
-        //     Data.user.drop_plant_time += add_time_drop_plant * 60 * 1000;
-        //     cc.log("第一次免广告")
-        //     return
-        // }
-        // if (this.type == EADLAYER.AUTO_COM) {
-        //     if (Data.user.auto_com_time - Utils.getServerTime() > (max_auto_com - add_time_auto_com) * 60 * 1000) {
-        //         MsgHints.show("最大累积时间" + max_auto_com + "分钟");
-        //         return;
-        //     }
-        // }
-        // else if (this.type == EADLAYER.DOUBLE_ATT) {
-        //     if (Data.user.double_att_time - Utils.getServerTime() > (max_auto_double_att - add_time_double_att) * 60 * 1000) {
-        //         MsgHints.show("最大累积时间" + max_auto_double_att + "分钟");
-        //         return;
-        //     }
-        // }
-        // else if (this.type == EADLAYER.DOUBLE_INCOME) {
-        //     if (Data.user.double_income_time - Utils.getServerTime() > (max_auto_double_income - add_time_double_income) * 60 * 1000) {
-        //         MsgHints.show("最大累积时间" + max_auto_double_income + "分钟");
-        //         return;
-        //     }
-        // }
-        // else if (this.type == EADLAYER.DROP_PLANT) {
-        //     if (Data.user.drop_plant_time - Utils.getServerTime() > (max_drop_plant - add_time_drop_plant) * 60 * 1000) {
-        //         MsgHints.show("最大累积时间" + max_drop_plant + "分钟");
-        //         return;
-        //     }
-        // }
-    };
     AdLayer.prototype.addvalue = function (gem) {
-        if (gem === void 0) { gem = 0; }
-        if (gem > 0) {
-            if (gem > Data_1.default.user.gem) {
-                MsgHints_1.default.show("钻石不足");
-                return;
-            }
-            else
-                Data_1.default.user.gem -= gem;
-        }
+        if (gem === void 0) { gem = 1; }
+        // if(gem>0)
+        // {
+        //     if(gem > Data.user.gem)
+        //     {
+        //         MsgHints.show("钻石不足");
+        //         return;
+        //     }
+        //     else  Data.user.gem -= gem;
+        // }
         if (this.type == EADLAYER.AUTO_COM) {
             if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > (exports.max_auto_com - add_time_auto_com) * 60 * 1000) {
                 MsgHints_1.default.show("最大累积时间" + exports.max_auto_com + "分钟");
@@ -195,7 +152,7 @@ var AdLayer = /** @class */ (function (_super) {
             }
             if (Data_1.default.user.auto_com_time < Utils_1.default.getServerTime())
                 Data_1.default.user.auto_com_time = Utils_1.default.getServerTime();
-            Data_1.default.user.auto_com_time += add_time_auto_com * 60 * 1000;
+            Data_1.default.user.auto_com_time += add_time_auto_com * 60 * 1000 * gem;
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
             if (Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > (exports.max_auto_double_att - add_time_double_att) * 60 * 1000) {
@@ -204,7 +161,7 @@ var AdLayer = /** @class */ (function (_super) {
             }
             if (Data_1.default.user.double_att_time < Utils_1.default.getServerTime())
                 Data_1.default.user.double_att_time = Utils_1.default.getServerTime();
-            Data_1.default.user.double_att_time += add_time_double_att * 60 * 1000;
+            Data_1.default.user.double_att_time += add_time_double_att * 60 * 1000 * gem;
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
             if (Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > (exports.max_auto_double_income - add_time_double_income) * 60 * 1000) {
@@ -213,7 +170,7 @@ var AdLayer = /** @class */ (function (_super) {
             }
             if (Data_1.default.user.double_income_time < Utils_1.default.getServerTime())
                 Data_1.default.user.double_income_time = Utils_1.default.getServerTime();
-            Data_1.default.user.double_income_time += add_time_double_income * 60 * 1000;
+            Data_1.default.user.double_income_time += add_time_double_income * 60 * 1000 * gem;
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
             if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > (exports.max_drop_plant - add_time_drop_plant) * 60 * 1000) {
@@ -222,7 +179,7 @@ var AdLayer = /** @class */ (function (_super) {
             }
             if (Data_1.default.user.drop_plant_time < Utils_1.default.getServerTime())
                 Data_1.default.user.drop_plant_time = Utils_1.default.getServerTime();
-            Data_1.default.user.drop_plant_time += add_time_drop_plant * 60 * 1000;
+            Data_1.default.user.drop_plant_time += add_time_drop_plant * 60 * 1000 * gem;
         }
         Data_1.default.save();
     };
@@ -235,30 +192,31 @@ var AdLayer = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_ad":
-                AdCenter_1.default.Instance().play(0, function (b) {
+                AdCenter_1.default.Instance().play(function (b) {
                     if (b)
-                        _this.addvalue();
+                        _this.addvalue(2);
                 });
                 break;
             case "btn_normal":
-                this.addvalue();
+                this.addvalue(1);
+                this.GetGameObject('btn_normal').active = false;
                 break;
-            case "btn_gem":
-                var gem = 0;
-                if (this.type == EADLAYER.AUTO_COM) {
-                    gem = auto_com_gem;
-                }
-                else if (this.type == EADLAYER.DOUBLE_ATT) {
-                    gem = double_att_gem;
-                }
-                else if (this.type == EADLAYER.DOUBLE_INCOME) {
-                    gem = double_income_gem;
-                }
-                else if (this.type == EADLAYER.DROP_PLANT) {
-                    gem = double_drop_plant_gem;
-                }
-                this.addvalue(gem);
-                break;
+            // case "btn_gem":
+            //     let gem = 0;
+            //     if (this.type == EADLAYER.AUTO_COM) {
+            //         gem = auto_com_gem
+            //     }
+            //     else if (this.type == EADLAYER.DOUBLE_ATT) {
+            //         gem = double_att_gem
+            //     }
+            //     else if (this.type == EADLAYER.DOUBLE_INCOME) {
+            //         gem = double_income_gem                   
+            //     }
+            //     else if (this.type == EADLAYER.DROP_PLANT) {
+            //         gem = double_drop_plant_gem                 
+            //     }
+            //     this.addvalue(gem);
+            //     break;
         }
     };
     AdLayer = __decorate([

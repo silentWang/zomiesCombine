@@ -77,6 +77,7 @@ var SlotItem = /** @class */ (function (_super) {
             Data_1.default.user.gem -= DB_1.DB_slot[curopen].price;
         }
         console.log("解锁土地", curopen);
+        MsgHints_1.default.show("成功解锁新位置");
         Data_1.default.save();
         this.dispatch(GameConst_1.default.OPEN_SLOT, curopen);
         this.setIndex(this.index);

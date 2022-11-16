@@ -1,7 +1,6 @@
 import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
-import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 
@@ -60,7 +59,7 @@ export default class VictoryUI extends BaseUI {
         switch (btnName) {
             case "btn_get":
                 this.closeUI();
-                WxCenter.showRewardedVideoAd(()=>{
+                AdCenter.Instance().play(()=>{
                     this.getCoinReward();
                 });
                 break;
