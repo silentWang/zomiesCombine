@@ -28,6 +28,7 @@ var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
+var HallScene_1 = require("../HallScene");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var LoseUI = /** @class */ (function (_super) {
     __extends(LoseUI, _super);
@@ -37,31 +38,18 @@ var LoseUI = /** @class */ (function (_super) {
         return _this;
     }
     LoseUI.prototype.start = function () {
-        var _this = this;
         this.GetGameObject("lbl_coin").opacity = 0;
         this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(1, 255)));
-        this.GetGameObject("btn_get").active = false;
         AudioMgr_1.default.Instance().playSFX("fail");
-        // this.GetSkeleton("fx_victory").setAnimation(0,"start",false);
-        var t = 5;
-        this.node.runAction(cc.sequence(cc.callFunc(function () {
-            console.log("---", t, Utils_1.default.getTimeStrByS(t));
-            _this.GetGameObject("btn_get").active = t <= 4;
-            _this.SetText("lbl_time", Utils_1.default.getTimeStrByS(t));
-            if (t < 0) {
-                _this.getCoinReward();
-                _this.closeUI();
-            }
-            t--;
-        }), cc.delayTime(1)).repeat(7));
     };
     LoseUI.prototype.setInfo = function (coin) {
         this.coin = coin;
-        this.SetText("lbl_coin", Utils_1.default.formatNumber(coin * 5));
+        this.SetText("lbl_coin", Utils_1.default.formatNumber(coin * 1.8));
         this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
     };
     LoseUI.prototype.closeUI = function () {
         this.shutAnim();
+        HallScene_1.default.Instance.createwave();
     };
     LoseUI.prototype.getCoinReward = function () {
         var coin = this.coin;

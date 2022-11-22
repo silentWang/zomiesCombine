@@ -69,11 +69,11 @@ var AdLayer = /** @class */ (function (_super) {
         var _a = this.getEndAndMaxTime(), end_time = _a.end_time, max = _a.max;
         if (end_time > Utils_1.default.getServerTime()) {
             var nLeft = end_time - Utils_1.default.getServerTime();
-            this.SetProgressBar("New ProgressBar", (nLeft / 1000 / 60) / max);
+            // this.SetProgressBar("New ProgressBar",(nLeft/1000/60)/max);
             this.SetText("lbl_time", Utils_1.default.getTimeStrByS(nLeft / 1000));
         }
         else {
-            this.SetProgressBar("New ProgressBar", 0);
+            // this.SetProgressBar("New ProgressBar",0);
             this.SetText("lbl_time", "");
         }
     };
@@ -104,12 +104,6 @@ var AdLayer = /** @class */ (function (_super) {
         this.GetGameObject("icon_auto_merge").active = e == EADLAYER.AUTO_COM;
         this.GetGameObject("icon_income").active = e == EADLAYER.DOUBLE_INCOME;
         this.GetGameObject("icon_angre").active = e == EADLAYER.DOUBLE_ATT;
-        // let btntype = AD_SHARE.攻击x2
-        // if (e == EADLAYER.AUTO_COM)
-        //     btntype = AD_SHARE.自动合成
-        // else if (e == EADLAYER.DOUBLE_INCOME)
-        //     btntype = AD_SHARE.收益x2
-        // this.getComponentInChildren(AdOrShare).changeType(btntype);
         if (this.type == EADLAYER.AUTO_COM) {
             this.SetText("lbl_effect", "+" + add_time_auto_com + "分钟");
         }
@@ -125,26 +119,10 @@ var AdLayer = /** @class */ (function (_super) {
         }
         var _a = this.getEndAndMaxTime(), end_time = _a.end_time, max = _a.max;
         this.GetGameObject('btn_normal').active = end_time <= Utils_1.default.getServerTime();
-        // var b: boolean = true;
-        // if (this.type == EADLAYER.AUTO_COM && Data.user.auto_com_time == 0)
-        //     b = false;
-        // if (this.type == EADLAYER.DOUBLE_ATT && Data.user.double_att_time == 0)
-        //     b = false;
-        // if (this.type == EADLAYER.DOUBLE_INCOME && Data.user.double_income_time == 0)
-        //     b = false;
-        // this.GetGameObject("btn_play").active = b;
     };
     AdLayer.prototype.addvalue = function (gem) {
         if (gem === void 0) { gem = 1; }
-        // if(gem>0)
-        // {
-        //     if(gem > Data.user.gem)
-        //     {
-        //         MsgHints.show("钻石不足");
-        //         return;
-        //     }
-        //     else  Data.user.gem -= gem;
-        // }
+        var isUse = false;
         if (this.type == EADLAYER.AUTO_COM) {
             if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > (exports.max_auto_com - add_time_auto_com) * 60 * 1000) {
                 MsgHints_1.default.show("最大累积时间" + exports.max_auto_com + "分钟");
@@ -153,6 +131,7 @@ var AdLayer = /** @class */ (function (_super) {
             if (Data_1.default.user.auto_com_time < Utils_1.default.getServerTime())
                 Data_1.default.user.auto_com_time = Utils_1.default.getServerTime();
             Data_1.default.user.auto_com_time += add_time_auto_com * 60 * 1000 * gem;
+            isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
             if (Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > (exports.max_auto_double_att - add_time_double_att) * 60 * 1000) {
@@ -162,6 +141,7 @@ var AdLayer = /** @class */ (function (_super) {
             if (Data_1.default.user.double_att_time < Utils_1.default.getServerTime())
                 Data_1.default.user.double_att_time = Utils_1.default.getServerTime();
             Data_1.default.user.double_att_time += add_time_double_att * 60 * 1000 * gem;
+            isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
             if (Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > (exports.max_auto_double_income - add_time_double_income) * 60 * 1000) {
@@ -171,6 +151,7 @@ var AdLayer = /** @class */ (function (_super) {
             if (Data_1.default.user.double_income_time < Utils_1.default.getServerTime())
                 Data_1.default.user.double_income_time = Utils_1.default.getServerTime();
             Data_1.default.user.double_income_time += add_time_double_income * 60 * 1000 * gem;
+            isUse = true;
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
             if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > (exports.max_drop_plant - add_time_drop_plant) * 60 * 1000) {
@@ -180,8 +161,13 @@ var AdLayer = /** @class */ (function (_super) {
             if (Data_1.default.user.drop_plant_time < Utils_1.default.getServerTime())
                 Data_1.default.user.drop_plant_time = Utils_1.default.getServerTime();
             Data_1.default.user.drop_plant_time += add_time_drop_plant * 60 * 1000 * gem;
+            isUse = true;
         }
         Data_1.default.save();
+        if (isUse) {
+            this.closeUI();
+            MsgHints_1.default.show('使用成功');
+        }
     };
     AdLayer.prototype.onBtnClicked = function (event, customEventData) {
         var _this = this;

@@ -279,21 +279,21 @@ export default class Utils {
         }
 
         let createNode = (type) => {
-            if(type == 0)
-            return PoolMgr.Instance().get("Coin");
-            if(type == 1)
-            return PoolMgr.Instance().get("Gem");
+            if(type == 0) return PoolMgr.Instance().get("Coin");
+            // if(type == 1)
+            // return PoolMgr.Instance().get("Gem");
+            return null;
         }
 
+        let nodeArray = [];
         if(startNode.parent){
             let start = startNode.parent.convertToWorldSpaceAR(startNode.position);
             start = cc.find("Canvas").convertToNodeSpaceAR(start);
             var array = getPoint(radius, start.x, start.y, count);
-    
-            var nodeArray = new Array();
+            if(!array) return;
             for (var i = 0; i < array.length; i++) {
                 var gold = createNode(type);
-                if(!gold)return;
+                if(!gold) return;
                 gold.parent = cc.find("Canvas")
                 var randPos = cc.v2(array[i].x + Utils.getRandomInt(0, 50), array[i].y + Utils.getRandomInt(0, 50));
                 gold.setPosition(start);
@@ -305,7 +305,6 @@ export default class Utils {
         let srcNode = cc.find("Canvas").getComponent("HallScene") .GetGameObject(targetNodeName); ;//HallScene.Instance.GetGameObject(targetNodeName);
         let dstPos = srcNode.parent.convertToWorldSpaceAR(srcNode.position); 
         dstPos = cc.find("Canvas") .convertToNodeSpaceAR(dstPos)
-      
         var targetGoldNode = srcNode;
         for (var i = 0; i < nodeArray.length; i++) {
             var pos = nodeArray[i].randPos;

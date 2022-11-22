@@ -186,6 +186,7 @@ var HallScene = /** @class */ (function (_super) {
         });
     };
     HallScene.prototype.removeenemy = function (node, bFail) {
+        var isStop = false;
         if (bFail)
             this.bFail = true;
         for (var i = this.enemylist.length - 1; i >= 0; --i) {
@@ -198,6 +199,7 @@ var HallScene = /** @class */ (function (_super) {
             if (this.bFail) {
                 if (Data_1.default.user.wave >= this.wave_info[2]) {
                     Data_1.default.user.wave = 1;
+                    isStop = true;
                     var enemy_1 = node.getComponent(Enemy_1.default);
                     Utils_1.default.createUI("prefab/LoseUI").then(function (node) {
                         node.getComponent(LoseUI_1.default).setInfo(enemy_1.getBossMoney());
@@ -218,6 +220,7 @@ var HallScene = /** @class */ (function (_super) {
                             node.getComponent(VictoryUI_1.default).setInfo(money_1);
                         });
                     })));
+                    isStop = true;
                     Data_1.default.user.wave = 1;
                     Data_1.default.user.lv++;
                     Data_1.default.save(true);
@@ -230,6 +233,8 @@ var HallScene = /** @class */ (function (_super) {
                     this.playSkAni("spine:other/shengjichenggong", "effect", this.node, cc.v3(0, 150, 0), 2);
                 }
             }
+            if (isStop)
+                return;
             this.createwave();
         }
     };

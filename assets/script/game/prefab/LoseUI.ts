@@ -3,6 +3,7 @@ import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
+import HallScene from "../HallScene";
 
 
 const {ccclass, property} = cc._decorator;
@@ -12,33 +13,19 @@ export default class LoseUI extends BaseUI {
     start () {
         this.GetGameObject("lbl_coin").opacity = 0;
         this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(1,255)));
-
-        this.GetGameObject("btn_get").active = false;
-
         AudioMgr.Instance().playSFX("fail")
-        // this.GetSkeleton("fx_victory").setAnimation(0,"start",false);
-        let t = 5;
-        this.node.runAction(cc.sequence(cc.callFunc(()=>{
-            console.log("---",t,Utils.getTimeStrByS(t))
-            this.GetGameObject("btn_get").active = t<=4;
-            this.SetText("lbl_time",Utils.getTimeStrByS(t))
-            if(t<0) {
-                this.getCoinReward();
-                this.closeUI();
-            }
-            t--;
-        }),cc.delayTime(1)).repeat(7))
     }
 
     private coin = 0;
     setInfo(coin:number)
     {
         this.coin = coin;
-        this.SetText("lbl_coin",Utils.formatNumber(coin*5));
+        this.SetText("lbl_coin",Utils.formatNumber(coin*1.8));
         this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     }
     closeUI() {
         this.shutAnim();
+        HallScene.Instance.createwave();
     }
 
     private getCoinReward(){

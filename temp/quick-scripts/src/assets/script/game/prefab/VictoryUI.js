@@ -28,6 +28,7 @@ var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
+var HallScene_1 = require("../HallScene");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var VictoryUI = /** @class */ (function (_super) {
     __extends(VictoryUI, _super);
@@ -37,35 +38,24 @@ var VictoryUI = /** @class */ (function (_super) {
         return _this;
     }
     VictoryUI.prototype.start = function () {
-        var _this = this;
         // this.GetGameObject("lbl_coin").opacity = 0;
         // this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(1,255)));
         AudioMgr_1.default.Instance().playSFX("win_stage");
         this.GetSkeleton("fx_victory").setAnimation(0, "start", false);
         this.GetSkeleton("fx_victory").setAnimation(1, "idle", true);
-        this.GetGameObject("btn_get").active = false;
-        var t = 5;
-        this.node.runAction(cc.sequence(cc.callFunc(function () {
-            _this.SetText("lbl_time", Utils_1.default.getTimeStrByS(t));
-            _this.GetGameObject("btn_get").active = t <= 4;
-            if (t < 0) {
-                _this.getCoinReward();
-                _this.closeUI();
-            }
-            t--;
-        }), cc.delayTime(1)).repeat(7));
     };
     VictoryUI.prototype.setInfo = function (coin) {
         this.coin = coin;
-        this.SetText("lbl_coin", Utils_1.default.formatNumber(coin * 5));
+        this.SetText("lbl_coin", Utils_1.default.formatNumber(coin * 2));
         this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
     };
     VictoryUI.prototype.closeUI = function () {
         this.shutAnim();
+        HallScene_1.default.Instance.createwave();
     };
     VictoryUI.prototype.getCoinReward = function (isdouble) {
         if (isdouble === void 0) { isdouble = false; }
-        var coin = isdouble ? this.coin * 2 : this.coin;
+        var coin = isdouble ? this.coin * Utils_1.default.getRandom(1.2, 2) : this.coin;
         AudioMgr_1.default.Instance().playSFX("coin");
         Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
             if (b) {

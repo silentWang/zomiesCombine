@@ -262,14 +262,17 @@ var Utils = /** @class */ (function () {
         var createNode = function (type) {
             if (type == 0)
                 return PoolMgr_1.default.Instance().get("Coin");
-            if (type == 1)
-                return PoolMgr_1.default.Instance().get("Gem");
+            // if(type == 1)
+            // return PoolMgr.Instance().get("Gem");
+            return null;
         };
+        var nodeArray = [];
         if (startNode.parent) {
             var start = startNode.parent.convertToWorldSpaceAR(startNode.position);
             start = cc.find("Canvas").convertToNodeSpaceAR(start);
             var array = getPoint(radius, start.x, start.y, count);
-            var nodeArray = new Array();
+            if (!array)
+                return;
             for (var i = 0; i < array.length; i++) {
                 var gold = createNode(type);
                 if (!gold)

@@ -47,17 +47,17 @@ export default class AdLayer extends BaseUI {
 
     update(dt)
     {
-        if(dt>1)dt=1;
+        if(dt > 1) dt = 1;
         let {end_time,max} = this.getEndAndMaxTime();
-        if(end_time>Utils.getServerTime())
+        if(end_time > Utils.getServerTime())
         {
             let nLeft = end_time - Utils.getServerTime();
-            this.SetProgressBar("New ProgressBar",(nLeft/1000/60)/max);
+            // this.SetProgressBar("New ProgressBar",(nLeft/1000/60)/max);
             this.SetText("lbl_time",Utils.getTimeStrByS(nLeft/1000));
         }
         else
         {
-            this.SetProgressBar("New ProgressBar",0);
+            // this.SetProgressBar("New ProgressBar",0);
             this.SetText("lbl_time","");
         }
     }
@@ -93,13 +93,6 @@ export default class AdLayer extends BaseUI {
         this.GetGameObject("icon_income").active = e == EADLAYER.DOUBLE_INCOME;
         this.GetGameObject("icon_angre").active = e == EADLAYER.DOUBLE_ATT;
 
-        // let btntype = AD_SHARE.攻击x2
-        // if (e == EADLAYER.AUTO_COM)
-        //     btntype = AD_SHARE.自动合成
-        // else if (e == EADLAYER.DOUBLE_INCOME)
-        //     btntype = AD_SHARE.收益x2
-        // this.getComponentInChildren(AdOrShare).changeType(btntype);
-
         if (this.type == EADLAYER.AUTO_COM) {
             this.SetText("lbl_effect", "+" + add_time_auto_com + "分钟");
         }
@@ -115,31 +108,13 @@ export default class AdLayer extends BaseUI {
         {
             this.SetText("lbl_effect", "+" + add_time_drop_plant + "分钟");
         }
-
         let {end_time,max} = this.getEndAndMaxTime();
         this.GetGameObject('btn_normal').active = end_time <= Utils.getServerTime()
-
-        // var b: boolean = true;
-        // if (this.type == EADLAYER.AUTO_COM && Data.user.auto_com_time == 0)
-        //     b = false;
-        // if (this.type == EADLAYER.DOUBLE_ATT && Data.user.double_att_time == 0)
-        //     b = false;
-        // if (this.type == EADLAYER.DOUBLE_INCOME && Data.user.double_income_time == 0)
-        //     b = false;
-        // this.GetGameObject("btn_play").active = b;
     }
 
     private addvalue(gem:number = 1)
     {
-        // if(gem>0)
-        // {
-        //     if(gem > Data.user.gem)
-        //     {
-        //         MsgHints.show("钻石不足");
-        //         return;
-        //     }
-        //     else  Data.user.gem -= gem;
-        // }
+        let isUse = false;
         if (this.type == EADLAYER.AUTO_COM) {
             if (Data.user.auto_com_time - Utils.getServerTime() > (max_auto_com - add_time_auto_com) * 60 * 1000) {
                 MsgHints.show("最大累积时间" + max_auto_com + "分钟");
@@ -148,6 +123,7 @@ export default class AdLayer extends BaseUI {
             if (Data.user.auto_com_time < Utils.getServerTime())
                 Data.user.auto_com_time = Utils.getServerTime();
             Data.user.auto_com_time += add_time_auto_com * 60 * 1000 * gem;
+            isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
             if (Data.user.double_att_time - Utils.getServerTime() > (max_auto_double_att - add_time_double_att) * 60 * 1000) {
@@ -157,6 +133,7 @@ export default class AdLayer extends BaseUI {
             if (Data.user.double_att_time < Utils.getServerTime())
                 Data.user.double_att_time = Utils.getServerTime();
             Data.user.double_att_time += add_time_double_att * 60 * 1000 * gem;
+            isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
             if (Data.user.double_income_time - Utils.getServerTime() > (max_auto_double_income - add_time_double_income) * 60 * 1000) {
@@ -166,6 +143,7 @@ export default class AdLayer extends BaseUI {
             if (Data.user.double_income_time < Utils.getServerTime())
                 Data.user.double_income_time = Utils.getServerTime();
             Data.user.double_income_time += add_time_double_income * 60 * 1000 * gem;
+            isUse = true;
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
             if (Data.user.drop_plant_time - Utils.getServerTime() > (max_drop_plant - add_time_drop_plant) * 60 * 1000) {
@@ -175,8 +153,13 @@ export default class AdLayer extends BaseUI {
             if (Data.user.drop_plant_time < Utils.getServerTime())
                 Data.user.drop_plant_time = Utils.getServerTime();
             Data.user.drop_plant_time += add_time_drop_plant * 60 * 1000 * gem;
+            isUse = true;
         }
         Data.save();
+        if(isUse) {
+            this.closeUI();
+            MsgHints.show('使用成功');
+        }
     }
 
     onBtnClicked(event, customEventData) {

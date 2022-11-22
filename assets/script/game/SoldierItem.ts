@@ -46,7 +46,7 @@ export default class SoldierItem extends BaseUI {
         let isNull = this.datacopy == null;
         this.GetGameObject("level_1").active = !isNull;
         if(isNull){
-            this.GetGameObject('container').removeAllChildren();
+            this.GetGameObject('chick').active = false;
             this.GetGameObject("lbl_lv").active = false;
             this.GetGameObject("flower1").active = false;
             return;
@@ -56,12 +56,14 @@ export default class SoldierItem extends BaseUI {
             this.GetGameObject("lbl_lv").getComponent(cc.Label).string = "lv." + this.datacopy.lv;
             if(this.droptype==0)
             {
+                this.GetGameObject('chick').active = true;
                 this.GetGameObject("lbl_lv").active = true;
                 this.GetGameObject("flower1").active = false;
                 await this.produceChick();
             }
             else
             {
+                this.GetGameObject('chick').active = false;
                 this.GetGameObject("lbl_lv").active = false;
                 this.GetGameObject("flower1").active = true;
                 if(this.droptype == 4)
@@ -103,31 +105,13 @@ export default class SoldierItem extends BaseUI {
         {
             this.curplayani = nowani;
             let sfid = Math.min(this.datacopy.lv,60);
-
-            sfid = 12
-
-            // this.GetSkeleton("flower1").skeletonData = await Utils.loadRes(`spine:flower${sfid}`,sp.SkeletonData) as sp.SkeletonData;
-            // this.GetSkeleton("flower1").setAnimation(0,"idleL",true);
-
             let skpath = `spine:flower${sfid}_ske`;
             let atlaspath = `spine:flower${sfid}_tex`;
-            let tnode = new cc.Node('chick');
-            let newArm = tnode.addComponent(dragonBones.ArmatureDisplay);
-            newArm.dragonAsset = await Utils.loadRes(skpath,dragonBones.DragonBonesAsset) as dragonBones.DragonBonesAsset;
-            newArm.dragonAtlasAsset = await Utils.loadRes(atlaspath,dragonBones.DragonBonesAtlasAsset) as dragonBones.DragonBonesAtlasAsset;
-            newArm.armatureName = 'Armature';
-            newArm.playAnimation('idleL',0);
-            let container = this.GetGameObject('container');
-            container.removeAllChildren();
-            container.addChild(tnode);
-
-
-            // let nowArm = this.GetDragonAmature("chick");
-            // let skinData = (newArm.armature() as dragonBones.Armature).armatureData.defaultSkin;
-            // dragonBones.CCFactory.getInstance().replaceSkin(nowArm.armature(),skinData,true);
-            
-            // nowArm.armatureName = "Armature";
-            // nowArm.playAnimation('idleL',0);
+            let chick = this.GetDragonAmature('chick');
+            chick.dragonAsset = await Utils.loadRes(skpath,dragonBones.DragonBonesAsset) as dragonBones.DragonBonesAsset;
+            chick.dragonAtlasAsset = await Utils.loadRes(atlaspath,dragonBones.DragonBonesAtlasAsset) as dragonBones.DragonBonesAtlasAsset;
+            chick.armatureName = 'Armature';
+            chick.playAnimation('idleL',0);
         }
     }
 
@@ -156,19 +140,17 @@ export default class SoldierItem extends BaseUI {
     {
         if(dt>1) dt=1;
         let chick = this.GetDragonAmature('chick')
-        if(this.datacopy && this.droptype == 0 && Data.user.double_att_time>Utils.getServerTime())
+        if(this.datacopy && this.droptype == 0 && Data.user.double_att_time > Utils.getServerTime())
         {
-            // this.GetSkeleton("flower1").timeScale = 1.5;
             if(chick) chick.timeScale = 1.5;
             this.GetGameObject("kb").active = true;
         }
         else
         {
-            // this.GetSkeleton("flower1").timeScale = 1;
             if(chick) chick.timeScale = 1;
             this.GetGameObject("kb").active = false;
         }
-        if(this.droptype!=0 )
+        if(this.droptype != 0)
         {
             if(Utils.getServerTime() > this.droptype0endtime)
             {
@@ -176,45 +158,40 @@ export default class SoldierItem extends BaseUI {
                 this.updateItem();
             }
         }
-        if(this.bDrag)return;
-        if(!this.datacopy)return;
-        if(this.droptype!=0)return;
+        if(this.bDrag) return;
+        if(!this.datacopy) return;
+        if(this.droptype!=0) return;
         this.lastfire += dt;
-        if(this.lastfire >= this.cd / ((Data.user.double_att_time>Utils.getServerTime())?2:1))
+        if(this.lastfire >= this.cd / ((Data.user.double_att_time > Utils.getServerTime()) ? 2 : 1))
         {
             this.lastfire = 0;
             let target = this.getTarget();
             if(target)
             {
                 this.node.runAction(cc.sequence(cc.delayTime(0.5),cc.callFunc(()=>{
-                    if(this.bDrag)return;
-                    if(!this.datacopy)return;
-
+                    if(this.bDrag) return;
+                    if(!this.datacopy) return;
                     let b = cc.instantiate(this.bullet_pre);
-                    b.position = this.node.position.add(target.x>this.node.x?cc.v3(15,35,0):cc.v3(-15,35,0));
+                    b.position = this.node.position.add(target.x > this.node.x ? cc.v3(30,35,0):cc.v3(-30,35,0));
                     b.parent = HallScene.Instance.GetGameObject("node_bullet");
                     b.getComponent(Bullet).setInfo(target,this.datacopy.lv);
+                    let amr = this.GetDragonAmature('chick');
+                    if(target.x > this.node.x)
+                    {
+                        // this.GetSkeleton("flower1").setAnimation(0,"atkR",false);
+                        // this.GetSkeleton("flower1").setAnimation(1,"idleR",true);
+                        (amr.armature() as dragonBones.Armature).animation.gotoAndPlayByFrame('atkR',1,1);
+                        this.curplayani = "idleR";
+                    }
+                    else
+                    {
+                        // this.GetSkeleton("flower1").setAnimation(0,"atkL",false);
+                        // this.GetSkeleton("flower1").setAnimation(1,"idleL",true);
+                        
+                        (amr.armature() as dragonBones.Armature).animation.gotoAndPlayByFrame('atkL',1,1);
+                        this.curplayani = "idleL";
+                    }
                 })))
-                let amr = this.GetDragonAmature('chick');
-                if(target.x>this.node.x)
-                {
-                    // this.GetSkeleton("flower1").setAnimation(0,"atkR",false);
-                    // this.GetSkeleton("flower1").setAnimation(1,"idleR",true);
-
-                    (amr.armature() as dragonBones.Armature).animation.gotoAndPlayByFrame('atkR',1,1);
-                    // this.GetDragonAmature('chick').playAnimation('idleR',0);1
-                    this.curplayani = "idleR";
-                }
-                else
-                {
-                    // this.GetSkeleton("flower1").setAnimation(0,"atkL",false);
-                    // this.GetSkeleton("flower1").setAnimation(1,"idleL",true);
-                    
-                    (amr.armature() as dragonBones.Armature).animation.gotoAndPlayByFrame('atkL',1,1);
-                    // this.GetDragonAmature('chick').playAnimation('atkL',1);
-                    // this.GetDragonAmature('chick').playAnimation('idleL',0);
-                    this.curplayani = "idleL";
-                }
             }
         }
     }

@@ -36,7 +36,6 @@ export default class HallScene extends BaseUI {
     public enemylist:cc.Node[] = [];
     private wave_info:any = null;
 
-
     hidemergetips()
     {
         let slots = this.GetGameObject("slots");//fx_ground_merge
@@ -120,7 +119,8 @@ export default class HallScene extends BaseUI {
     private bFail = false;
     removeenemy(node:cc.Node,bFail:boolean)
     {
-        if(bFail)this.bFail = true;
+        let isStop = false;
+        if(bFail) this.bFail = true;
         for(var i = this.enemylist.length-1;i>=0;--i)
         {
             if(node == this.enemylist[i])
@@ -136,6 +136,7 @@ export default class HallScene extends BaseUI {
                 if(Data.user.wave>= this.wave_info[2])
                 {
                     Data.user.wave= 1;
+                    isStop = true;
                     let enemy = node.getComponent(Enemy);
                     Utils.createUI("prefab/LoseUI").then((node:cc.Node)=>{
                         node.getComponent(LoseUI).setInfo(enemy.getBossMoney())
@@ -159,6 +160,7 @@ export default class HallScene extends BaseUI {
                             node.getComponent(VictoryUI).setInfo(money)
                         })
                     })))
+                    isStop = true;
                     Data.user.wave= 1;
                     Data.user.lv++;
                     Data.save(true);
@@ -172,6 +174,7 @@ export default class HallScene extends BaseUI {
                     this.playSkAni("spine:other/shengjichenggong", "effect", this.node,cc.v3(0,150,0), 2);
                 }
             }
+            if(isStop) return;
             this.createwave();
         }
     }
