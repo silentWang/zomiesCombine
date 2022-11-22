@@ -1,7 +1,0 @@
-{
-  "__type__": "cc.TextAsset",
-  "_name": "flower34.atlas",
-  "_objFlags": 0,
-  "_native": "",
-  "text": "\nflower34.png\nsize: 348,188\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\narmL\n  rotate: false\n  xy: 102, 67\n  size: 86, 38\n  orig: 86, 38\n  offset: 0, 0\n  index: -1\narmR\n  rotate: false\n  xy: 272, 55\n  size: 73, 30\n  orig: 73, 30\n  offset: 0, 0\n  index: -1\nbody\n  rotate: false\n  xy: 2, 8\n  size: 98, 178\n  orig: 98, 178\n  offset: 0, 0\n  index: -1\nbot\n  rotate: false\n  xy: 208, 87\n  size: 134, 53\n  orig: 134, 53\n  offset: 0, 0\n  index: -1\nhead1\n  rotate: false\n  xy: 102, 107\n  size: 104, 79\n  orig: 104, 79\n  offset: 0, 0\n  index: -1\nhead2\n  rotate: false\n  xy: 208, 142\n  size: 105, 44\n  orig: 105, 44\n  offset: 0, 0\n  index: -1\nhead3\n  rotate: false\n  xy: 190, 8\n  size: 80, 77\n  orig: 80, 77\n  offset: 0, 0\n  index: -1\nleaf1\n  rotate: false\n  xy: 272, 12\n  size: 66, 41\n  orig: 66, 41\n  offset: 0, 0\n  index: -1\nleaf2\n  rotate: false\n  xy: 102, 2\n  size: 66, 63\n  orig: 66, 63\n  offset: 0, 0\n  index: -1\n"
-}

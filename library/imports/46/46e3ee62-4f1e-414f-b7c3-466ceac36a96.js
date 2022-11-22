@@ -76,9 +76,9 @@ var NewPlantUI = /** @class */ (function (_super) {
     }
     NewPlantUI.prototype.start = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var lv, coin, levelup, _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var lv, coin, levelup, skpath, atlaspath, armature, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         lv = Data_1.default.user.GetMaxLv();
                         coin = Data_1.default.user.BuyPrice(Math.max(1, lv - 3));
@@ -92,11 +92,19 @@ var NewPlantUI = /** @class */ (function (_super) {
                             // this.SetText("lbl_gem",this.gem+"");
                         }
                         this.SetText("lbl_coin", Utils_1.default.formatNumber(coin));
-                        _a = this.GetSkeleton("flower1");
-                        return [4 /*yield*/, Utils_1.default.loadRes("spine:flower" + lv, sp.SkeletonData)];
+                        skpath = "spine:flower" + lv + "_ske";
+                        atlaspath = "spine:flower" + lv + "_tex";
+                        armature = this.GetDragonAmature("chick");
+                        _a = armature;
+                        return [4 /*yield*/, Utils_1.default.loadRes(skpath, dragonBones.DragonBonesAsset)];
                     case 1:
-                        _a.skeletonData = (_b.sent());
-                        this.GetSkeleton("flower1").setAnimation(0, "idleL", true);
+                        _a.dragonAsset = (_c.sent());
+                        _b = armature;
+                        return [4 /*yield*/, Utils_1.default.loadRes(atlaspath, dragonBones.DragonBonesAtlasAsset)];
+                    case 2:
+                        _b.dragonAtlasAsset = (_c.sent());
+                        armature.armatureName = "Armature";
+                        armature.playAnimation('idleL', 0);
                         AdCenter_1.default.Instance().showGridAd();
                         return [2 /*return*/];
                 }

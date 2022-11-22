@@ -107,8 +107,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 322.5,
-      "height": 27
+      "width": 323.57,
+      "height": 35.28
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -157,16 +157,15 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "增加5分钟的自动合成时间",
     "_N$string": "增加5分钟的自动合成时间",
-    "_fontSize": 27,
-    "_lineHeight": 27,
+    "_fontSize": 28,
+    "_lineHeight": 28,
     "_enableWrapText": true,
-    "_N$file": {
-      "__uuid__": "78e6d26a-d021-47fc-a7c0-14fee21869e1"
-    },
-    "_isSystemFontUsed": false,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
     "_spacingX": -3,
     "_batchAsBitmap": false,
     "_styleFlags": 1,
@@ -248,7 +247,7 @@
     "asset": {
       "__uuid__": "d84212f4-eb86-4042-b793-ec53e63e22c8"
     },
-    "fileId": "9dPoqX2mBM1YytUM6sgHkP",
+    "fileId": "",
     "sync": false
   }
 ]

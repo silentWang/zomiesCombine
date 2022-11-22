@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "flower24_tex",
+    "texture": "81ca3cd9-4837-441f-a688-a2587ab29c30",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      328,
+      248
+    ],
+    "offset": [
+      -91,
+      3
+    ],
+    "originalSize": [
+      512,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -222,8 +222,6 @@ export default class HallScene extends BaseUI {
             this.node.runAction(cc.sequence(cc.delayTime(2.2 * i),cc.callFunc(()=>{
                 let e = cc.instantiate(this.enemy_pre);
                 e.parent = this.GetGameObject("node_obj");
-
-                
                 e.getComponent(Enemy).setID(id,i>=num);
                 this.enemylist.push(e);
                 if(i == list.length-1)

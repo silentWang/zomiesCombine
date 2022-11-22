@@ -114,7 +114,7 @@ var Enemy = /** @class */ (function (_super) {
                         this.money = Math.floor(info[3] * Utils_1.default.getRandom(0.8, 1.2));
                         // console.log(this.type == 2?"boss":"e",this.maxhp,this.money,"====")
                         this.node.position = HallScene_1.default.Instance.path[0];
-                        this.node.scale = this.type == 0 ? .8 : 1.1;
+                        this.node.scale = this.type == 0 ? .8 : 1;
                         // this.GetGameObject("sp").scaleX = 0.5;
                         if (id == 25) {
                             AudioMgr_1.default.Instance().playSFX("dog");

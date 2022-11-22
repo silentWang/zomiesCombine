@@ -1,0 +1,14 @@
+{
+  "__type__": "dragonBones.DragonBonesAtlasAsset",
+  "_name": "flower15_tex",
+  "_objFlags": 0,
+  "_native": "",
+  "_atlasJson": "{\"width\":512,\"imagePath\":\"flower15_tex.png\",\"name\":\"flower15\",\"SubTexture\":[{\"width\":116,\"y\":81,\"height\":42,\"name\":\"flower1/touying\",\"x\":141},{\"width\":138,\"y\":1,\"height\":238,\"name\":\"shenti\",\"x\":1},{\"width\":108,\"y\":1,\"height\":78,\"name\":\"wuqi\",\"x\":141},{\"frameY\":-1,\"y\":125,\"frameWidth\":38,\"frameHeight\":62,\"width\":37,\"height\":60,\"name\":\"huo5\",\"frameX\":0,\"x\":183},{\"frameY\":-1,\"y\":187,\"frameWidth\":42,\"frameHeight\":58,\"width\":39,\"height\":56,\"name\":\"huo6\",\"frameX\":-2,\"x\":183},{\"frameY\":-2,\"y\":66,\"frameWidth\":45,\"frameHeight\":66,\"width\":42,\"height\":60,\"name\":\"huo2\",\"frameX\":-2,\"x\":259},{\"frameY\":-1,\"y\":125,\"frameWidth\":42,\"frameHeight\":66,\"width\":40,\"height\":61,\"name\":\"huo1\",\"frameX\":-1,\"x\":141},{\"frameY\":-1,\"y\":1,\"frameWidth\":42,\"frameHeight\":62,\"width\":41,\"height\":61,\"name\":\"huo3\",\"frameX\":-1,\"x\":294},{\"frameY\":-1,\"y\":1,\"frameWidth\":44,\"frameHeight\":64,\"width\":41,\"height\":63,\"name\":\"huo4\",\"frameX\":-1,\"x\":251}],\"height\":256}",
+  "_texture": {
+    "__uuid__": "a1ae358e-0f27-4419-b014-ba959f8c441b"
+  },
+  "texture": {
+    "__uuid__": "a1ae358e-0f27-4419-b014-ba959f8c441b"
+  },
+  "_textureAtlasData": null
+}

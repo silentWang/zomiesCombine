@@ -1,7 +1,0 @@
-{
-  "__type__": "cc.TextAsset",
-  "_name": "flower37.atlas",
-  "_objFlags": 0,
-  "_native": "",
-  "text": "\nflower37.png\nsize: 124,268\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nbody\n  rotate: false\n  xy: 55, 25\n  size: 13, 62\n  orig: 13, 62\n  offset: 0, 0\n  index: -1\nbody1\n  rotate: false\n  xy: 77, 143\n  size: 43, 42\n  orig: 43, 42\n  offset: 0, 0\n  index: -1\nbody2\n  rotate: false\n  xy: 64, 89\n  size: 52, 52\n  orig: 52, 52\n  offset: 0, 0\n  index: -1\nbody3\n  rotate: false\n  xy: 74, 10\n  size: 31, 29\n  orig: 31, 29\n  offset: 0, 0\n  index: -1\nbot\n  rotate: false\n  xy: 2, 236\n  size: 116, 30\n  orig: 116, 30\n  offset: 0, 0\n  index: -1\nbullet\n  rotate: false\n  xy: 56, 10\n  size: 16, 13\n  orig: 16, 13\n  offset: 0, 0\n  index: -1\nface1\n  rotate: false\n  xy: 30, 3\n  size: 24, 20\n  orig: 24, 20\n  offset: 0, 0\n  index: -1\nface3\n  rotate: false\n  xy: 2, 2\n  size: 26, 21\n  orig: 26, 21\n  offset: 0, 0\n  index: -1\nhat\n  rotate: false\n  xy: 74, 41\n  size: 42, 46\n  orig: 42, 46\n  offset: 0, 0\n  index: -1\nwingLlow\n  rotate: false\n  xy: 77, 187\n  size: 44, 47\n  orig: 44, 47\n  offset: 0, 0\n  index: -1\nwingLup\n  rotate: false\n  xy: 2, 25\n  size: 51, 69\n  orig: 51, 69\n  offset: 0, 0\n  index: -1\nwingRlow\n  rotate: false\n  xy: 2, 96\n  size: 60, 52\n  orig: 60, 52\n  offset: 0, 0\n  index: -1\nwingRup\n  rotate: false\n  xy: 2, 150\n  size: 73, 84\n  orig: 73, 84\n  offset: 0, 0\n  index: -1\n"
-}

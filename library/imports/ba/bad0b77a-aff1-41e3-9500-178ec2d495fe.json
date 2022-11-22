@@ -1,7 +1,0 @@
-{
-  "__type__": "cc.TextAsset",
-  "_name": "flower6.atlas",
-  "_objFlags": 0,
-  "_native": "",
-  "text": "\nflower6.png\nsize: 232,144\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\narmL\n  rotate: false\n  xy: 161, 14\n  size: 23, 17\n  orig: 23, 17\n  offset: 0, 0\n  index: -1\narmR\n  rotate: false\n  xy: 134, 12\n  size: 25, 19\n  orig: 25, 19\n  offset: 0, 0\n  index: -1\nbody\n  rotate: false\n  xy: 213, 35\n  size: 15, 69\n  orig: 15, 69\n  offset: 0, 0\n  index: -1\nbot\n  rotate: false\n  xy: 134, 106\n  size: 94, 35\n  orig: 94, 35\n  offset: 0, 0\n  index: -1\nface1\n  rotate: false\n  xy: 2, 2\n  size: 15, 9\n  orig: 15, 9\n  offset: 0, 0\n  index: -1\nface2\n  rotate: false\n  xy: 134, 33\n  size: 52, 35\n  orig: 52, 35\n  offset: 0, 0\n  index: -1\nface3\n  rotate: false\n  xy: 134, 70\n  size: 77, 34\n  orig: 77, 34\n  offset: 0, 0\n  index: -1\nhead\n  rotate: false\n  xy: 2, 13\n  size: 130, 128\n  orig: 130, 128\n  offset: 0, 0\n  index: -1\n"
-}

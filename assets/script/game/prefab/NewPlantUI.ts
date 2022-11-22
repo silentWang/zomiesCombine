@@ -31,8 +31,13 @@ export default class NewPlantUI extends BaseUI {
         }
         this.SetText("lbl_coin",Utils.formatNumber(coin));
 
-        this.GetSkeleton("flower1").skeletonData = await Utils.loadRes("spine:flower"+lv,sp.SkeletonData) as sp.SkeletonData;
-        this.GetSkeleton("flower1").setAnimation(0,"idleL",true);
+        let skpath = `spine:flower${lv}_ske`;
+        let atlaspath = `spine:flower${lv}_tex`;
+        let armature = this.GetDragonAmature("chick");
+        armature.dragonAsset = await Utils.loadRes(skpath,dragonBones.DragonBonesAsset) as dragonBones.DragonBonesAsset;
+        armature.dragonAtlasAsset = await Utils.loadRes(atlaspath,dragonBones.DragonBonesAtlasAsset) as dragonBones.DragonBonesAtlasAsset;
+        armature.armatureName = "Armature";
+        armature.playAnimation('idleL',0);
 
         AdCenter.Instance().showGridAd();
     }

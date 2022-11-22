@@ -265,18 +265,20 @@ var Utils = /** @class */ (function () {
             if (type == 1)
                 return PoolMgr_1.default.Instance().get("Gem");
         };
-        var start = startNode.parent.convertToWorldSpaceAR(startNode.position);
-        start = cc.find("Canvas").convertToNodeSpaceAR(start);
-        var array = getPoint(radius, start.x, start.y, count);
-        var nodeArray = new Array();
-        for (var i = 0; i < array.length; i++) {
-            var gold = createNode(type);
-            if (!gold)
-                return;
-            gold.parent = cc.find("Canvas");
-            var randPos = cc.v2(array[i].x + Utils.getRandomInt(0, 50), array[i].y + Utils.getRandomInt(0, 50));
-            gold.setPosition(start);
-            nodeArray.push({ gold: gold, randPos: randPos });
+        if (startNode.parent) {
+            var start = startNode.parent.convertToWorldSpaceAR(startNode.position);
+            start = cc.find("Canvas").convertToNodeSpaceAR(start);
+            var array = getPoint(radius, start.x, start.y, count);
+            var nodeArray = new Array();
+            for (var i = 0; i < array.length; i++) {
+                var gold = createNode(type);
+                if (!gold)
+                    return;
+                gold.parent = cc.find("Canvas");
+                var randPos = cc.v2(array[i].x + Utils.getRandomInt(0, 50), array[i].y + Utils.getRandomInt(0, 50));
+                gold.setPosition(start);
+                nodeArray.push({ gold: gold, randPos: randPos });
+            }
         }
         var notPlay = false;
         var srcNode = cc.find("Canvas").getComponent("HallScene").GetGameObject(targetNodeName);

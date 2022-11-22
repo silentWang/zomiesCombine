@@ -285,18 +285,20 @@ export default class Utils {
             return PoolMgr.Instance().get("Gem");
         }
 
-        let start = startNode.parent.convertToWorldSpaceAR(startNode.position);
-        start = cc.find("Canvas").convertToNodeSpaceAR(start);
-        var array = getPoint(radius, start.x, start.y, count);
-
-        var nodeArray = new Array();
-        for (var i = 0; i < array.length; i++) {
-            var gold = createNode(type);
-            if(!gold)return;
-            gold.parent = cc.find("Canvas")
-            var randPos = cc.v2(array[i].x + Utils.getRandomInt(0, 50), array[i].y + Utils.getRandomInt(0, 50));
-            gold.setPosition(start);
-            nodeArray.push({ gold, randPos });
+        if(startNode.parent){
+            let start = startNode.parent.convertToWorldSpaceAR(startNode.position);
+            start = cc.find("Canvas").convertToNodeSpaceAR(start);
+            var array = getPoint(radius, start.x, start.y, count);
+    
+            var nodeArray = new Array();
+            for (var i = 0; i < array.length; i++) {
+                var gold = createNode(type);
+                if(!gold)return;
+                gold.parent = cc.find("Canvas")
+                var randPos = cc.v2(array[i].x + Utils.getRandomInt(0, 50), array[i].y + Utils.getRandomInt(0, 50));
+                gold.setPosition(start);
+                nodeArray.push({ gold, randPos });
+            }
         }
 
         var notPlay = false;

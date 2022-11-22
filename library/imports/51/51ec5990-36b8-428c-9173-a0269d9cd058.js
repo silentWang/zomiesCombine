@@ -66,16 +66,26 @@ var WxCenter = /** @class */ (function () {
         }
         callback && callback(true);
         var wx = this.wx;
-        var rewardedVideoAd = wx.createRewardedVideoAd({ adUnitId: 'xxxx' });
-        rewardedVideoAd.onError(function (err) {
+        var videoAd = this.rewardVideo;
+        if (!videoAd) {
+            videoAd = wx.createRewardedVideoAd({ adUnitId: 'xxxx' });
+            this.rewardVideo = videoAd;
+        }
+        videoAd.onError(function (err) {
             console.log(err);
             //重新拉取
-            rewardedVideoAd.load().then(function () { return rewardedVideoAd.show(); });
+            videoAd.load().then(function () { return videoAd.show(); });
         });
-        rewardedVideoAd.show().then(function (res) {
+        videoAd.show().then(function (res) {
             // console.log('激励视频 广告显示')
+            videoAd.load().then(function () { return videoAd.show(); }).catch(function (err) {
+                wx.showToast({
+                    title: WxCenter.videoAdErrHandle(err),
+                    icon: 'none'
+                });
+            });
         });
-        rewardedVideoAd.onClose(function (res) {
+        videoAd.onClose(function (res) {
             // 用户点击了【关闭广告】按钮
             // 小于 2.1.0 的基础库版本，res 是一个 undefined
             if (res && res.isEnded || res === undefined) {
@@ -86,6 +96,23 @@ var WxCenter = /** @class */ (function () {
                 // 播放中途退出，不下发游戏奖励
             }
         });
+    };
+    WxCenter.videoAdErrHandle = function (err) {
+        console.log('视频加载失败');
+        console.log(err);
+        // {errMsg: "no advertisement", errCode: 1004}
+        var errHandle = {
+            1000: '后端接口调用失败',
+            1001: '参数错误',
+            1002: '广告单元无效',
+            1003: '内部错误',
+            1004: '无合适的广告',
+            1005: '广告组件审核中',
+            1006: '广告组件被驳回',
+            1007: '广告组件被封禁',
+            1008: '广告单元已关闭',
+        };
+        return errHandle[err.errCode] || '视频加载错误,重新加载页面试试吧';
     };
     return WxCenter;
 }());

@@ -56,7 +56,7 @@ export default class Enemy extends BaseUI {
 
         // console.log(this.type == 2?"boss":"e",this.maxhp,this.money,"====")
         this.node.position = HallScene.Instance.path[0];
-        this.node.scale = this.type==0?.8:1.1;
+        this.node.scale = this.type == 0 ? .8 : 1;
         // this.GetGameObject("sp").scaleX = 0.5;
         if(id == 25)
         {

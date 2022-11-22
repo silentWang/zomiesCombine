@@ -1,0 +1,14 @@
+{
+  "__type__": "dragonBones.DragonBonesAtlasAsset",
+  "_name": "gxgg_tex",
+  "_objFlags": 0,
+  "_native": "",
+  "_atlasJson": "{\"width\":512,\"imagePath\":\"gxgg_tex.png\",\"name\":\"gxgg\",\"SubTexture\":[{\"width\":375,\"y\":1,\"height\":365,\"name\":\"shengli/guangquan\",\"x\":1},{\"width\":79,\"y\":190,\"height\":87,\"name\":\"shengli/jiangbei1\",\"x\":378},{\"width\":78,\"y\":279,\"height\":87,\"name\":\"shengli/jiangbei2\",\"x\":378},{\"width\":103,\"y\":1,\"height\":187,\"name\":\"shengli/shenzi\",\"x\":378},{\"width\":37,\"y\":279,\"height\":36,\"name\":\"shengli/xingxing2\",\"x\":458},{\"width\":27,\"y\":190,\"height\":26,\"name\":\"shengli/xingxing\",\"x\":459}],\"height\":512}",
+  "_texture": {
+    "__uuid__": "758b1e38-0d70-4532-83fd-72a5a84ac7ca"
+  },
+  "texture": {
+    "__uuid__": "758b1e38-0d70-4532-83fd-72a5a84ac7ca"
+  },
+  "_textureAtlasData": null
+}

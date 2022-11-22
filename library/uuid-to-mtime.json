@@ -550,8 +550,8 @@
     "relativePath": "resources\\prefab\\Coin.prefab"
   },
   "d84212f4-eb86-4042-b793-ec53e63e22c8": {
-    "asset": 1662370951807,
-    "meta": 1662371167876,
+    "asset": 1668998868099,
+    "meta": 1668998868104,
     "relativePath": "resources\\prefab\\common\\msg_hints.prefab"
   },
   "1f9b4788-81dc-49c3-82ca-3d1d88114aa2": {
@@ -560,8 +560,8 @@
     "relativePath": "resources\\prefab\\common\\msghints.anim"
   },
   "734e93ae-ef2a-4945-8ef6-33f77761f44e": {
-    "asset": 1668347000372,
-    "meta": 1668347000381,
+    "asset": 1668997802944,
+    "meta": 1668997802950,
     "relativePath": "resources\\prefab\\Enemy.prefab"
   },
   "a3418b13-b1b4-4807-bbc4-053c8713409b": {
@@ -585,8 +585,8 @@
     "relativePath": "resources\\prefab\\GetCoin.prefab"
   },
   "b3b97d4d-8eb7-4c78-94e8-d99985e94cdd": {
-    "asset": 1668512950124,
-    "meta": 1668512950137,
+    "asset": 1668999272974,
+    "meta": 1668999272978,
     "relativePath": "resources\\prefab\\LoseUI.prefab"
   },
   "07ffd0a2-8dc4-4046-87f0-f308c9c949d1": {
@@ -595,8 +595,8 @@
     "relativePath": "resources\\prefab\\LuPinResult.prefab"
   },
   "83b9970b-221a-4139-9a94-5910a008031f": {
-    "asset": 1668599418103,
-    "meta": 1668599418112,
+    "asset": 1668948800431,
+    "meta": 1668948800446,
     "relativePath": "resources\\prefab\\NewPlantUI.prefab"
   },
   "f6c4f7dd-dfda-4341-a734-4fd90852bff7": {
@@ -620,8 +620,8 @@
     "relativePath": "resources\\prefab\\ShopItem.prefab"
   },
   "0d3d21c8-b356-4b24-880e-05da9a9ff4c6": {
-    "asset": 1662370951815,
-    "meta": 1662371167915,
+    "asset": 1669024273691,
+    "meta": 1669024273697,
     "relativePath": "resources\\prefab\\SoldierItem.prefab"
   },
   "ac215788-a6dd-4e31-a16f-0aea152dd29e": {
@@ -640,8 +640,8 @@
     "relativePath": "resources\\scene"
   },
   "7da706f0-e5f7-41a5-a655-369900b310bf": {
-    "asset": 1668497486258,
-    "meta": 1668497486268,
+    "asset": 1668999371200,
+    "meta": 1668999371204,
     "relativePath": "resources\\prefab\\VictoryUI.prefab"
   },
   "339a09db-d191-4161-9d7e-0b4bdfaa0194": {
@@ -655,8 +655,8 @@
     "relativePath": "resources\\texture"
   },
   "e9babb2a-f7d3-4002-af7c-cbec28e91585": {
-    "asset": 1668599040061,
-    "meta": 1668599040119,
+    "asset": 1668999478137,
+    "meta": 1668999478172,
     "relativePath": "resources\\scene\\hall.fire"
   },
   "b6a6405e-cdf3-4700-a726-7c29f0f9dfbd": {
@@ -1254,11 +1254,6 @@
     "meta": 1668598601207,
     "relativePath": "script\\game\\prefab\\SignUI.ts"
   },
-  "5817607b-c732-4656-bfdd-da65026d4044": {
-    "asset": 1662370952231,
-    "meta": 1662371171204,
-    "relativePath": "script\\game\\SoldierItem.ts"
-  },
   "0e4e85f7-e5fd-4ee6-bd09-7fda0c2b0b90": {
     "asset": 1662370953105,
     "meta": 1662371171261,
@@ -1338,11 +1333,6 @@
     "asset": 1662370952225,
     "meta": 1662371171494,
     "relativePath": "script\\utils\\Shake.ts"
-  },
-  "ff7483d2-efe8-4420-8891-085bc2c1b4b2": {
-    "asset": 1662370952219,
-    "meta": 1662371171557,
-    "relativePath": "script\\utils\\Utils.ts"
   },
   "0a362179-e2e2-4c57-9320-dde9136d9ffb": {
     "asset": 1662370953066,
@@ -1445,8 +1435,8 @@
     "relativePath": "sounds\\zb1.mp3"
   },
   "679d5931-075c-4949-91cf-e98f02ba40cf": {
-    "asset": 1668346159076,
-    "meta": 1668346159982,
+    "asset": 1668947789391,
+    "meta": 1668997218459,
     "relativePath": "spine"
   },
   "c6a252d5-189f-4891-bc41-c3be1de3ce15": {
@@ -1461,7 +1451,7 @@
   },
   "db879b2d-6d17-422a-9a03-c1054f110582": {
     "asset": 1662370951713,
-    "meta": 1668598601396,
+    "meta": 1669024465572,
     "relativePath": "spine\\bt_auto_merge.skel"
   },
   "c8698461-ca29-4fb6-815e-5ac636a6748b": {
@@ -1476,7 +1466,7 @@
   },
   "9ce8871b-0451-42d1-a1ad-1080ce1082e6": {
     "asset": 1662370951424,
-    "meta": 1668598601397,
+    "meta": 1669024465571,
     "relativePath": "spine\\bt_double_coin.skel"
   },
   "b9a2825d-984b-4f0b-bdb0-03e9d6e26057": {
@@ -1491,7 +1481,7 @@
   },
   "3e35fbe3-6770-4250-b52b-e1bf083a0ceb": {
     "asset": 1662370951492,
-    "meta": 1668598601397,
+    "meta": 1669024465573,
     "relativePath": "spine\\bt_free_gems.skel"
   },
   "32350220-066d-4ee4-a550-a2329a1ca866": {
@@ -1506,7 +1496,7 @@
   },
   "08fb8750-f3cb-4228-8eca-2466541914c4": {
     "asset": 1662370951515,
-    "meta": 1668598601398,
+    "meta": 1669024465573,
     "relativePath": "spine\\bt_starter_boost.skel"
   },
   "119f238c-96c4-462b-b7f0-5157ede7ddae": {
@@ -1526,7 +1516,7 @@
   },
   "cba8aa4c-4b2f-44cf-9ad9-562f465b3bdb": {
     "asset": 1662370951555,
-    "meta": 1668598601399,
+    "meta": 1669024465574,
     "relativePath": "spine\\bt_trash.skel"
   },
   "5347e9bb-29fd-4797-bf6c-72a952d4e31c": {
@@ -1536,922 +1526,22 @@
   },
   "9407a815-061b-4e0d-8593-07ddcb156c48": {
     "asset": 1662370951408,
-    "meta": 1668598601398,
+    "meta": 1669024465574,
     "relativePath": "spine\\fairy.skel"
-  },
-  "335cb290-a2cb-4eda-bd9b-37482f91b16e": {
-    "asset": 1662370951735,
-    "meta": 1662371172570,
-    "relativePath": "spine\\flower1.atlas.txt"
   },
   "320a5c9d-5c77-4678-aa70-0e8423dab0d5": {
     "asset": 1662370951310,
     "meta": 1662371172580,
     "relativePath": "spine\\fairy.png"
   },
-  "5d590a64-875e-4055-9576-507346f34e90": {
-    "asset": 1662370951047,
-    "meta": 1662371172581,
-    "relativePath": "spine\\flower1.png"
-  },
-  "067c90f7-6b35-4b0a-aa6e-823a206d19f3": {
-    "asset": 1662370951080,
-    "meta": 1662371172582,
-    "relativePath": "spine\\flower10.atlas.txt"
-  },
-  "53213395-4252-474a-845f-65d7464d318f": {
-    "asset": 1662370951071,
-    "meta": 1668598601400,
-    "relativePath": "spine\\flower1.skel"
-  },
-  "7a84e8e5-cfad-4c1c-a39a-631653dc742f": {
-    "asset": 1662370951007,
-    "meta": 1668598601401,
-    "relativePath": "spine\\flower10.skel"
-  },
-  "5563ed86-62ca-451b-bdd0-5a72bc272578": {
-    "asset": 1662370951344,
-    "meta": 1662371172587,
-    "relativePath": "spine\\flower11.atlas.txt"
-  },
-  "d04e99ad-230b-4b08-bdda-584003e4b333": {
-    "asset": 1662370951512,
-    "meta": 1662371172590,
-    "relativePath": "spine\\flower10.png"
-  },
-  "450ec078-910c-4326-b5df-2b390071d153": {
-    "asset": 1662370951080,
-    "meta": 1668598601401,
-    "relativePath": "spine\\flower11.skel"
-  },
-  "de986f0b-fcc2-4cd5-af17-76c828dc9690": {
-    "asset": 1662370951518,
-    "meta": 1662371172596,
-    "relativePath": "spine\\flower11.png"
-  },
-  "6c07a565-4f50-4cc0-94ee-04bbc3096c11": {
-    "asset": 1662370951513,
-    "meta": 1662371172597,
-    "relativePath": "spine\\flower12.atlas.txt"
-  },
-  "23a35fb6-2874-4474-aa87-97497e149317": {
-    "asset": 1662370951669,
-    "meta": 1668598601402,
-    "relativePath": "spine\\flower12.skel"
-  },
-  "5219915a-050c-4024-a558-451d5064880c": {
-    "asset": 1662370951681,
-    "meta": 1662371172602,
-    "relativePath": "spine\\flower13.atlas.txt"
-  },
-  "56ad8e34-b772-425c-8712-bc711f167aa5": {
-    "asset": 1662370951564,
-    "meta": 1662371172605,
-    "relativePath": "spine\\flower12.png"
-  },
-  "63e44865-b63e-46af-97ff-fc9fe8d862a7": {
-    "asset": 1662370951679,
-    "meta": 1668598601402,
-    "relativePath": "spine\\flower13.skel"
-  },
-  "0737b3c3-8066-4054-99ee-709f927571b5": {
-    "asset": 1662370951450,
-    "meta": 1662371172609,
-    "relativePath": "spine\\flower14.atlas.txt"
-  },
-  "a3e40ea6-07c1-43ac-b090-46da4e6e41c7": {
-    "asset": 1662370951559,
-    "meta": 1662371172610,
-    "relativePath": "spine\\flower13.png"
-  },
-  "3421f65e-c957-4d75-b96f-61217489a520": {
-    "asset": 1662370951449,
-    "meta": 1668598601403,
-    "relativePath": "spine\\flower14.skel"
-  },
-  "b4adace4-f2e6-4170-bf39-64dae090609d": {
-    "asset": 1662370951600,
-    "meta": 1662371172614,
-    "relativePath": "spine\\flower15.atlas.txt"
-  },
-  "6fa3ddae-7e85-4e47-a5bb-d596cb840e7a": {
-    "asset": 1662370951475,
-    "meta": 1662371172620,
-    "relativePath": "spine\\flower14.png"
-  },
-  "66158506-c594-4852-81c6-e373c8f9e4a7": {
-    "asset": 1662370951545,
-    "meta": 1668598601403,
-    "relativePath": "spine\\flower15.skel"
-  },
-  "fc1c777e-a8eb-4fbe-b460-e45c21df5d58": {
-    "asset": 1662370950957,
-    "meta": 1662371172623,
-    "relativePath": "spine\\flower16.atlas.txt"
-  },
-  "3d72ddde-2bb4-4e39-8d77-4ce2a1c1f832": {
-    "asset": 1662370951467,
-    "meta": 1662371172624,
-    "relativePath": "spine\\flower15.png"
-  },
-  "8d2b1dd9-b091-4192-9982-faadd93af77f": {
-    "asset": 1662370951133,
-    "meta": 1668598601404,
-    "relativePath": "spine\\flower16.skel"
-  },
-  "0c6d27d1-c41a-41d7-8cad-b162ab2f30e1": {
-    "asset": 1662370951132,
-    "meta": 1662371172628,
-    "relativePath": "spine\\flower17.atlas.txt"
-  },
-  "d6b9bfd3-8026-4ebd-bf06-4041fe18f9a7": {
-    "asset": 1662370951429,
-    "meta": 1662371172633,
-    "relativePath": "spine\\flower16.png"
-  },
-  "ba945ba5-34c3-4925-9833-9afb3549cf88": {
-    "asset": 1662370951405,
-    "meta": 1668598601404,
-    "relativePath": "spine\\flower17.skel"
-  },
-  "945c90c6-3d32-4316-b174-f9cdd9baad93": {
-    "asset": 1662370951439,
-    "meta": 1662371172637,
-    "relativePath": "spine\\flower17.png"
-  },
-  "172f446e-3ea3-4e04-85fc-c31184bc165d": {
-    "asset": 1662370951652,
-    "meta": 1662371172638,
-    "relativePath": "spine\\flower18.atlas.txt"
-  },
-  "be3669d5-340d-4305-8b2b-bcb53da8f694": {
-    "asset": 1662370951484,
-    "meta": 1668598601405,
-    "relativePath": "spine\\flower18.skel"
-  },
-  "da4d88ac-0744-410a-a0fb-54cd972f6e1f": {
-    "asset": 1662370951486,
-    "meta": 1662371172644,
-    "relativePath": "spine\\flower19.atlas.txt"
-  },
-  "36fb525c-7808-45f0-9e93-b30d79b148e8": {
-    "asset": 1662370951342,
-    "meta": 1662371172647,
-    "relativePath": "spine\\flower18.png"
-  },
-  "341ccb41-64ef-44f2-96bc-a1793e52e47e": {
-    "asset": 1662370951504,
-    "meta": 1668598601405,
-    "relativePath": "spine\\flower19.skel"
-  },
-  "59b69d03-bb8c-43ff-acb5-1c1e3cb380dc": {
-    "asset": 1662370951110,
-    "meta": 1662371172652,
-    "relativePath": "spine\\flower2.atlas.txt"
-  },
-  "605fb674-280a-4bed-b8cc-0fd82fb578f2": {
-    "asset": 1662370951329,
-    "meta": 1662371172653,
-    "relativePath": "spine\\flower19.png"
-  },
-  "6a49f7e4-21e8-44f3-ae9b-9de938013968": {
-    "asset": 1662370951660,
-    "meta": 1668598601406,
-    "relativePath": "spine\\flower2.skel"
-  },
-  "fa419def-6782-40ab-a409-42cebb59e02f": {
-    "asset": 1662370951586,
-    "meta": 1662371172657,
-    "relativePath": "spine\\flower20.atlas.txt"
-  },
-  "6fa7bce4-7185-4e38-af65-d6211342aef8": {
-    "asset": 1662370951086,
-    "meta": 1662371172659,
-    "relativePath": "spine\\flower2.png"
-  },
-  "ff51fc72-3188-4dbd-b449-c24b1dfda527": {
-    "asset": 1662370951221,
-    "meta": 1668598601407,
-    "relativePath": "spine\\flower20.skel"
-  },
-  "51dc77fc-bdf5-4e11-8c17-e1d443e142f1": {
-    "asset": 1662370951428,
-    "meta": 1662371172663,
-    "relativePath": "spine\\flower21.atlas.txt"
-  },
-  "c3e7b172-2cf2-44cd-8ecd-38e8810e4102": {
-    "asset": 1662370951214,
-    "meta": 1662371172667,
-    "relativePath": "spine\\flower20.png"
-  },
-  "88e53246-0d72-4bc1-80e7-f7cb47025924": {
-    "asset": 1662370951328,
-    "meta": 1668598601407,
-    "relativePath": "spine\\flower21.skel"
-  },
-  "775cab08-f91d-42e2-8dbf-af0d854a4875": {
-    "asset": 1662370951176,
-    "meta": 1662371172671,
-    "relativePath": "spine\\flower22.atlas.txt"
-  },
-  "e73a0d9d-2eb4-40ab-a808-48902c4c01f7": {
-    "asset": 1662370951222,
-    "meta": 1662371172675,
-    "relativePath": "spine\\flower21.png"
-  },
-  "38b8f19a-0e81-45c7-9ec9-57c1a3e378b6": {
-    "asset": 1662370951468,
-    "meta": 1668598601408,
-    "relativePath": "spine\\flower22.skel"
-  },
-  "d798b824-89d1-4a03-9050-d040c75258da": {
-    "asset": 1662370950995,
-    "meta": 1662371172678,
-    "relativePath": "spine\\flower23.atlas.txt"
-  },
-  "ccabd106-09bc-478a-8cad-c7634f75b2ca": {
-    "asset": 1662370951169,
-    "meta": 1662371172680,
-    "relativePath": "spine\\flower22.png"
-  },
-  "690a98bd-5fcf-4f50-89c5-723293ccfb26": {
-    "asset": 1662370951520,
-    "meta": 1668598601409,
-    "relativePath": "spine\\flower23.skel"
-  },
-  "bdec7c14-86b0-4d55-9924-e9cde5a6fc90": {
-    "asset": 1662370951316,
-    "meta": 1662371172683,
-    "relativePath": "spine\\flower24.atlas.txt"
-  },
-  "cffc5385-c96c-45c8-a7ed-f2d03f1b5921": {
-    "asset": 1662370951145,
-    "meta": 1662371172689,
-    "relativePath": "spine\\flower23.png"
-  },
-  "4289d3d8-a995-40c1-8e7a-e04dad967ac4": {
-    "asset": 1662370951339,
-    "meta": 1662371172691,
-    "relativePath": "spine\\flower24.png"
-  },
-  "88d96fac-5ad1-4312-899f-e184e8e6c851": {
-    "asset": 1662370951057,
-    "meta": 1662371172693,
-    "relativePath": "spine\\flower25.atlas.txt"
-  },
-  "5e3b1cf4-ff5a-4ff8-8382-92472a82134f": {
-    "asset": 1662370951596,
-    "meta": 1668598601409,
-    "relativePath": "spine\\flower24.skel"
-  },
-  "edd1ec73-987d-4433-8cb3-e57facf81c7f": {
-    "asset": 1662370951745,
-    "meta": 1668598601410,
-    "relativePath": "spine\\flower25.skel"
-  },
-  "840b2d41-d767-497d-aec3-783719699c48": {
-    "asset": 1662370951694,
-    "meta": 1662371172699,
-    "relativePath": "spine\\flower26.atlas.txt"
-  },
-  "1683a5ba-07d2-49b5-8d84-dc68b681d57f": {
-    "asset": 1662370951331,
-    "meta": 1662371172703,
-    "relativePath": "spine\\flower25.png"
-  },
-  "5732d4c1-bd17-492c-b915-b13aa9689be2": {
-    "asset": 1662370950974,
-    "meta": 1668598601411,
-    "relativePath": "spine\\flower26.skel"
-  },
-  "66325073-1d20-43e9-a2db-bdc386a97ea6": {
-    "asset": 1662370951531,
-    "meta": 1662371172706,
-    "relativePath": "spine\\flower27.atlas.txt"
-  },
-  "5ce43d5f-05c2-4911-b2ad-7817a5b9b70c": {
-    "asset": 1662370951382,
-    "meta": 1662371172708,
-    "relativePath": "spine\\flower26.png"
-  },
-  "6f16c164-a49c-4699-a6f9-a68e43e3a39b": {
-    "asset": 1662370951098,
-    "meta": 1668598601412,
-    "relativePath": "spine\\flower27.skel"
-  },
-  "0de9f97c-8413-42c2-a6f4-83d4ba79512b": {
-    "asset": 1662370951098,
-    "meta": 1662371172713,
-    "relativePath": "spine\\flower28.atlas.txt"
-  },
-  "1a68b3ac-34af-481c-b8a2-e7421187d3bd": {
-    "asset": 1662370951393,
-    "meta": 1662371172716,
-    "relativePath": "spine\\flower27.png"
-  },
-  "e9cfc3ef-60e8-43c4-824f-d67a943ced81": {
-    "asset": 1662370951647,
-    "meta": 1668598601412,
-    "relativePath": "spine\\flower28.skel"
-  },
-  "1cf18fce-462e-4a36-99a2-977a60882ae2": {
-    "asset": 1662370951361,
-    "meta": 1662371172719,
-    "relativePath": "spine\\flower29.atlas.txt"
-  },
-  "2c010a89-94f1-4a34-9de4-390330656232": {
-    "asset": 1662370951474,
-    "meta": 1662371172721,
-    "relativePath": "spine\\flower28.png"
-  },
-  "1ee0c67e-276c-4a20-80e9-f332e705145f": {
-    "asset": 1662370951695,
-    "meta": 1668598601413,
-    "relativePath": "spine\\flower29.skel"
-  },
-  "0200d7e8-e45d-44fe-9271-a561b1f2f42c": {
-    "asset": 1662370951402,
-    "meta": 1662371172725,
-    "relativePath": "spine\\flower3.atlas.txt"
-  },
-  "883d26d8-bc28-450e-ac0c-5cc09c335a6d": {
-    "asset": 1662370951469,
-    "meta": 1662371172729,
-    "relativePath": "spine\\flower29.png"
-  },
-  "fa6179ab-b0c1-4df1-a144-677bdb535eff": {
-    "asset": 1662370951689,
-    "meta": 1668598601413,
-    "relativePath": "spine\\flower3.skel"
-  },
-  "cf2a5321-df22-47d2-8f42-e717e0cd32fd": {
-    "asset": 1662370951332,
-    "meta": 1662371172733,
-    "relativePath": "spine\\flower30.atlas.txt"
-  },
-  "5b713fc6-3e51-4377-8995-76cbf4c83f8a": {
-    "asset": 1662370951128,
-    "meta": 1662371172734,
-    "relativePath": "spine\\flower3.png"
-  },
-  "f573943a-c105-47a1-aab6-d0b3f2067ae9": {
-    "asset": 1662370950996,
-    "meta": 1668598601414,
-    "relativePath": "spine\\flower30.skel"
-  },
-  "b3590b53-a90c-4df2-a4a5-341c21a631f1": {
-    "asset": 1662370951053,
-    "meta": 1662371172738,
-    "relativePath": "spine\\flower31.atlas.txt"
-  },
-  "929ef811-903d-4f00-8813-118f8541a03e": {
-    "asset": 1662370951341,
-    "meta": 1662371172746,
-    "relativePath": "spine\\flower30.png"
-  },
-  "0d5091f4-9484-4e49-bfab-d5a0ec20d023": {
-    "asset": 1662370951330,
-    "meta": 1662371172747,
-    "relativePath": "spine\\flower31.png"
-  },
-  "968a215c-61b6-4d00-9ca7-64ab1e5494fb": {
-    "asset": 1662370951716,
-    "meta": 1662371172748,
-    "relativePath": "spine\\flower32.atlas.txt"
-  },
-  "4b5a49a2-e907-4cc7-81ee-43edee681be6": {
-    "asset": 1662370951086,
-    "meta": 1668598601414,
-    "relativePath": "spine\\flower31.skel"
-  },
-  "4fedec69-1185-46cd-b4f0-f9b894de94ac": {
-    "asset": 1662370951584,
-    "meta": 1668598601415,
-    "relativePath": "spine\\flower32.skel"
-  },
-  "a0f0f3f7-8b11-4214-abe6-a41101286a34": {
-    "asset": 1662370951526,
-    "meta": 1662371172754,
-    "relativePath": "spine\\flower33.atlas.txt"
-  },
-  "c4a0d1f1-cde4-4a3d-8fc8-90e1b9c52eb3": {
-    "asset": 1662370951383,
-    "meta": 1662371172757,
-    "relativePath": "spine\\flower32.png"
-  },
-  "8b58b4ec-fca5-4620-b365-31ff4064010e": {
-    "asset": 1662370951761,
-    "meta": 1668598601416,
-    "relativePath": "spine\\flower33.skel"
-  },
-  "a63af9b2-20e7-4ed6-93f0-96f760a0b389": {
-    "asset": 1662370951593,
-    "meta": 1662371172761,
-    "relativePath": "spine\\flower34.atlas.txt"
-  },
-  "fd095b9b-26c0-4e8f-8afa-6c7308766653": {
-    "asset": 1662370951391,
-    "meta": 1662371172764,
-    "relativePath": "spine\\flower33.png"
-  },
-  "e30bc1da-f3d2-43a2-9e6b-36f1266623a2": {
-    "asset": 1662370951456,
-    "meta": 1668598601416,
-    "relativePath": "spine\\flower34.skel"
-  },
-  "d4cd29e7-2123-42e1-a6db-7c61662b834d": {
-    "asset": 1662370951412,
-    "meta": 1662371172768,
-    "relativePath": "spine\\flower35.atlas.txt"
-  },
-  "ff508290-6d04-420c-9d8e-bcea182b95ef": {
-    "asset": 1662370951211,
-    "meta": 1662371172772,
-    "relativePath": "spine\\flower34.png"
-  },
-  "920381c6-4525-4734-aa04-c788d004e24e": {
-    "asset": 1662370951537,
-    "meta": 1668598601417,
-    "relativePath": "spine\\flower35.skel"
-  },
-  "6771d9f0-cefb-4fe3-ab76-f211193dcc12": {
-    "asset": 1662370951177,
-    "meta": 1662371172776,
-    "relativePath": "spine\\flower36.atlas.txt"
-  },
-  "e27b89ad-92e2-4a8e-bcba-344352e12172": {
-    "asset": 1662370951224,
-    "meta": 1662371172777,
-    "relativePath": "spine\\flower35.png"
-  },
-  "a6254711-ad98-4932-8c1c-13f37fe273a7": {
-    "asset": 1662370951301,
-    "meta": 1668598601417,
-    "relativePath": "spine\\flower36.skel"
-  },
-  "17c24858-928a-4bb2-bf3e-a45a71798446": {
-    "asset": 1662370950972,
-    "meta": 1662371172782,
-    "relativePath": "spine\\flower37.atlas.txt"
-  },
-  "14e53bd6-d39f-4e03-aad8-b3a1dbd7239b": {
-    "asset": 1662370951166,
-    "meta": 1662371172785,
-    "relativePath": "spine\\flower36.png"
-  },
-  "2a96df1a-c8ff-4214-9edc-77815d8f7173": {
-    "asset": 1662370951314,
-    "meta": 1668598601418,
-    "relativePath": "spine\\flower37.skel"
-  },
-  "2d523f54-3bbb-46ab-98be-13d49ef5a134": {
-    "asset": 1662370951453,
-    "meta": 1662371172789,
-    "relativePath": "spine\\flower38.atlas.txt"
-  },
-  "4e935021-c503-4e9a-8008-6314a0ed0332": {
-    "asset": 1662370951151,
-    "meta": 1662371172790,
-    "relativePath": "spine\\flower37.png"
-  },
-  "a964025e-84ec-4c4e-a209-bd3eae7e4792": {
-    "asset": 1662370951412,
-    "meta": 1668598601418,
-    "relativePath": "spine\\flower38.skel"
-  },
-  "ea42917b-5387-49e8-92b9-0670b4e0742f": {
-    "asset": 1662370951635,
-    "meta": 1662371172794,
-    "relativePath": "spine\\flower39.atlas.txt"
-  },
-  "44db4efd-a912-432f-9d0a-287cd656169b": {
-    "asset": 1662370951510,
-    "meta": 1662371172798,
-    "relativePath": "spine\\flower38.png"
-  },
-  "61d438e0-301d-484a-ab5e-c0c228e07f62": {
-    "asset": 1662370951580,
-    "meta": 1668598601419,
-    "relativePath": "spine\\flower39.skel"
-  },
-  "4a18e7c4-8276-4eb8-ae74-5ec7ade60c38": {
-    "asset": 1662370951006,
-    "meta": 1662371172802,
-    "relativePath": "spine\\flower4.atlas.txt"
-  },
-  "2233b401-279a-4e8d-a1b6-83102610e9db": {
-    "asset": 1662370951519,
-    "meta": 1662371172803,
-    "relativePath": "spine\\flower39.png"
-  },
-  "3612ea2a-3ae2-4e72-a33c-c3c9f2f11154": {
-    "asset": 1662370951440,
-    "meta": 1668598601420,
-    "relativePath": "spine\\flower4.skel"
-  },
-  "410fa212-c061-4bf5-89c6-80dea1ad65cd": {
-    "asset": 1662370951033,
-    "meta": 1662371172807,
-    "relativePath": "spine\\flower40.atlas.txt"
-  },
-  "93825a76-6490-490a-a35f-125387cdddc3": {
-    "asset": 1662370950998,
-    "meta": 1662371172812,
-    "relativePath": "spine\\flower4.png"
-  },
-  "a9fde918-d605-4cb1-9d74-131ef69bebe3": {
-    "asset": 1662370951409,
-    "meta": 1668598601420,
-    "relativePath": "spine\\flower40.skel"
-  },
-  "b1282921-72f5-4e7f-bce2-e6b60b2046e5": {
-    "asset": 1662370951312,
-    "meta": 1662371172816,
-    "relativePath": "spine\\flower41.atlas.txt"
-  },
-  "6b00a0c2-7e2f-4e29-921d-d737c7bb0c98": {
-    "asset": 1662370950962,
-    "meta": 1662371172817,
-    "relativePath": "spine\\flower40.png"
-  },
-  "fa13cd54-a61e-4c65-837c-8107ef764060": {
-    "asset": 1662370951132,
-    "meta": 1668598601421,
-    "relativePath": "spine\\flower41.skel"
-  },
-  "8aa6e3af-b247-495e-8d8b-4c5a34353550": {
-    "asset": 1662370951459,
-    "meta": 1662371172820,
-    "relativePath": "spine\\flower42.atlas.txt"
-  },
-  "79309324-f386-4aea-abc6-ee0238570194": {
-    "asset": 1662370950977,
-    "meta": 1662371172828,
-    "relativePath": "spine\\flower41.png"
-  },
-  "c216f271-43e9-4566-86d1-7d026c793b88": {
-    "asset": 1662370951543,
-    "meta": 1668598601421,
-    "relativePath": "spine\\flower42.skel"
-  },
-  "b56540c7-c773-4225-8add-f094c7df381b": {
-    "asset": 1662370951030,
-    "meta": 1662371172831,
-    "relativePath": "spine\\flower42.png"
-  },
-  "da556ec3-da3a-4d60-8d41-5d51013bff4e": {
-    "asset": 1662370951644,
-    "meta": 1662371172832,
-    "relativePath": "spine\\flower43.atlas.txt"
-  },
-  "dca39160-1b5c-4db6-a1fe-dd1974e69fe5": {
-    "asset": 1662370951451,
-    "meta": 1668598601422,
-    "relativePath": "spine\\flower43.skel"
-  },
-  "384f0317-7bce-4e2d-9e4c-f92fd4b89d39": {
-    "asset": 1662370951562,
-    "meta": 1662371172837,
-    "relativePath": "spine\\flower44.atlas.txt"
-  },
-  "7aede001-9f70-4a4d-9d73-3db9df9bdc74": {
-    "asset": 1662370951021,
-    "meta": 1662371172844,
-    "relativePath": "spine\\flower43.png"
-  },
-  "9f08a3f7-59d2-49dc-b2bd-cf977d12b92c": {
-    "asset": 1662370951114,
-    "meta": 1662371172845,
-    "relativePath": "spine\\flower44.png"
-  },
-  "84755626-4598-40bc-8be7-e5b0432a671a": {
-    "asset": 1662370951752,
-    "meta": 1662371172846,
-    "relativePath": "spine\\flower45.atlas.txt"
-  },
-  "ec2c2c87-c332-4e8e-908c-e05eb31c739c": {
-    "asset": 1662370951675,
-    "meta": 1668598601423,
-    "relativePath": "spine\\flower44.skel"
-  },
-  "1018f761-745f-47b2-8fd2-a2cd902db6d1": {
-    "asset": 1662370951672,
-    "meta": 1668598601423,
-    "relativePath": "spine\\flower45.skel"
-  },
-  "941a548f-1251-43b4-9f4a-6d71e1beb3ce": {
-    "asset": 1662370951088,
-    "meta": 1662371172852,
-    "relativePath": "spine\\flower46.atlas.txt"
-  },
-  "5f9ca307-b675-4e80-8e69-9bb1abe7a05a": {
-    "asset": 1662370951102,
-    "meta": 1662371172856,
-    "relativePath": "spine\\flower45.png"
-  },
-  "67abb959-c5df-40b8-bd24-1b9da325b775": {
-    "asset": 1662370951084,
-    "meta": 1668598601424,
-    "relativePath": "spine\\flower46.skel"
-  },
-  "96640c78-0dfd-4860-af88-b23f905e96ce": {
-    "asset": 1662370951376,
-    "meta": 1662371172859,
-    "relativePath": "spine\\flower47.atlas.txt"
-  },
-  "393b851f-02e5-4bd7-8a26-be815feac831": {
-    "asset": 1662370951062,
-    "meta": 1662371172861,
-    "relativePath": "spine\\flower46.png"
-  },
-  "edb850e2-758c-4369-a5e3-18fc3dbceae5": {
-    "asset": 1662370950999,
-    "meta": 1668598601424,
-    "relativePath": "spine\\flower47.skel"
-  },
-  "f9600981-db4c-49e4-b30f-3619abad0b70": {
-    "asset": 1662370951710,
-    "meta": 1662371172865,
-    "relativePath": "spine\\flower48.atlas.txt"
-  },
-  "00538216-bc31-4eb7-b5bf-948012e7e6f0": {
-    "asset": 1662370951068,
-    "meta": 1662371172875,
-    "relativePath": "spine\\flower47.png"
-  },
-  "a01cbd69-4f2c-45d5-beb5-07f63d5cc11c": {
-    "asset": 1662370951604,
-    "meta": 1662371172876,
-    "relativePath": "spine\\flower48.png"
-  },
-  "c4461318-073a-4197-8f64-a22fef15fafc": {
-    "asset": 1662370951521,
-    "meta": 1662371172877,
-    "relativePath": "spine\\flower49.atlas.txt"
-  },
-  "3327bfbc-dcc3-4a19-a1b7-2c509e28ddae": {
-    "asset": 1662370951724,
-    "meta": 1668598601425,
-    "relativePath": "spine\\flower48.skel"
-  },
-  "f7553a44-17ec-4133-8820-ed4ad3371944": {
-    "asset": 1662370951616,
-    "meta": 1668598601425,
-    "relativePath": "spine\\flower49.skel"
-  },
-  "002d16c8-7836-4909-a640-bd3b5a91b118": {
-    "asset": 1662370951212,
-    "meta": 1662371172882,
-    "relativePath": "spine\\flower5.atlas.txt"
-  },
-  "677513a0-db45-463a-aa19-5cfaf9728f8b": {
-    "asset": 1662370951597,
-    "meta": 1662371172890,
-    "relativePath": "spine\\flower49.png"
-  },
-  "9b44b3e7-c0a1-4a8c-b3b6-387df3ae0ad6": {
-    "asset": 1662370951045,
-    "meta": 1662371172891,
-    "relativePath": "spine\\flower5.png"
-  },
-  "c0f1d345-366e-42cf-a6c4-3853fb33e5ac": {
-    "asset": 1662370951583,
-    "meta": 1662371172892,
-    "relativePath": "spine\\flower50.atlas.txt"
-  },
-  "a5cda53d-078c-40d8-8d90-19381a1234b6": {
-    "asset": 1662370951552,
-    "meta": 1668598601426,
-    "relativePath": "spine\\flower5.skel"
-  },
-  "cbb537d7-954e-48b0-a50d-bb317f099663": {
-    "asset": 1662370951070,
-    "meta": 1668598601427,
-    "relativePath": "spine\\flower50.skel"
-  },
-  "f8920673-200f-4cc7-a674-e3affc0773ce": {
-    "asset": 1662370951748,
-    "meta": 1662371172899,
-    "relativePath": "spine\\flower51.atlas.txt"
-  },
-  "8bf1d8d6-9aea-4788-b5c1-910bc74c2c37": {
-    "asset": 1662370951113,
-    "meta": 1662371172902,
-    "relativePath": "spine\\flower50.png"
-  },
-  "e8f2d434-678a-43e4-a5d9-a990cf9f54d4": {
-    "asset": 1662370951024,
-    "meta": 1668598601427,
-    "relativePath": "spine\\flower51.skel"
-  },
-  "d60da122-3e71-42c0-ae76-caf4c94fb286": {
-    "asset": 1662370951106,
-    "meta": 1662371172905,
-    "relativePath": "spine\\flower52.atlas.txt"
-  },
-  "9955d730-a75b-4715-9859-443a2c2112d2": {
-    "asset": 1662370951105,
-    "meta": 1662371172912,
-    "relativePath": "spine\\flower51.png"
-  },
-  "ed604db3-719b-43f8-9d20-8f58ca3785e2": {
-    "asset": 1662370951691,
-    "meta": 1668598601428,
-    "relativePath": "spine\\flower52.skel"
-  },
-  "6c711e8d-6ea4-4782-b5ab-f31628e03791": {
-    "asset": 1662370951061,
-    "meta": 1662371172916,
-    "relativePath": "spine\\flower52.png"
-  },
-  "b1b93287-34b7-4c2d-b76e-6f315fb9765e": {
-    "asset": 1662370951363,
-    "meta": 1662371172917,
-    "relativePath": "spine\\flower53.atlas.txt"
-  },
-  "87275de5-0860-4be7-81b4-03ef6835dc27": {
-    "asset": 1662370951654,
-    "meta": 1668598601428,
-    "relativePath": "spine\\flower53.skel"
-  },
-  "40219104-bf92-4a31-8209-6f558ea656b3": {
-    "asset": 1662370951038,
-    "meta": 1662371172921,
-    "relativePath": "spine\\flower54.atlas.txt"
-  },
-  "8ad0db6d-f44d-4104-94ee-fd36c7ba08f8": {
-    "asset": 1662370951069,
-    "meta": 1662371172926,
-    "relativePath": "spine\\flower53.png"
-  },
-  "bd70b6cb-f7f5-4034-8a1a-748ccca80e6a": {
-    "asset": 1662370951557,
-    "meta": 1668598601429,
-    "relativePath": "spine\\flower54.skel"
-  },
-  "940b7271-979d-4168-acf2-dad0a343f777": {
-    "asset": 1662370951220,
-    "meta": 1662371172931,
-    "relativePath": "spine\\flower55.atlas.txt"
-  },
-  "7e64c21d-0381-4368-ad3a-efbce546ef5e": {
-    "asset": 1662370950963,
-    "meta": 1662371172932,
-    "relativePath": "spine\\flower54.png"
-  },
-  "69de6af3-dfc6-44b9-9bea-2bd2270a8005": {
-    "asset": 1662370951438,
-    "meta": 1668598601430,
-    "relativePath": "spine\\flower55.skel"
-  },
-  "79882d19-d9a9-4b18-973d-3411cecb7e7e": {
-    "asset": 1662370951465,
-    "meta": 1662371172936,
-    "relativePath": "spine\\flower56.atlas.txt"
-  },
-  "6c71a2e7-7993-43e1-8637-89a1aaec964e": {
-    "asset": 1662370950975,
-    "meta": 1662371172943,
-    "relativePath": "spine\\flower55.png"
-  },
-  "96584e69-af97-4fb4-b5c2-a03c5359aa51": {
-    "asset": 1662370951031,
-    "meta": 1662371172944,
-    "relativePath": "spine\\flower56.png"
-  },
-  "1193189e-31c2-48ef-ab20-d58f368dc5b2": {
-    "asset": 1662370951630,
-    "meta": 1662371172946,
-    "relativePath": "spine\\flower57.atlas.txt"
-  },
-  "3a5e1a69-19b4-41d2-958f-f4ead43f6eee": {
-    "asset": 1662370951393,
-    "meta": 1668598601430,
-    "relativePath": "spine\\flower56.skel"
-  },
-  "ea514b9d-c9c2-4d22-93fb-8505e76b87a3": {
-    "asset": 1662370951152,
-    "meta": 1668598601431,
-    "relativePath": "spine\\flower57.skel"
-  },
-  "0b7412eb-b8bf-4b9c-9d71-e42c72f31214": {
-    "asset": 1662370951161,
-    "meta": 1662371172952,
-    "relativePath": "spine\\flower58.atlas.txt"
-  },
-  "8b7ae4b4-7ecd-431a-94e4-13ce18c008cc": {
-    "asset": 1662370951019,
-    "meta": 1662371172956,
-    "relativePath": "spine\\flower57.png"
-  },
-  "378bc051-0280-40d7-adb5-e9d5e0b13bb1": {
-    "asset": 1662370951513,
-    "meta": 1668598601432,
-    "relativePath": "spine\\flower58.skel"
-  },
-  "7b181d90-365d-43c9-9e3c-cab2c1b93830": {
-    "asset": 1662370951738,
-    "meta": 1662371172960,
-    "relativePath": "spine\\flower58.png"
-  },
-  "bd5cbbdf-eecb-455f-a864-45eb1de5be81": {
-    "asset": 1662370950992,
-    "meta": 1662371172961,
-    "relativePath": "spine\\flower59.atlas.txt"
-  },
-  "8f68f0ad-90f3-4dcd-bb9f-9c2abb244fe0": {
-    "asset": 1662370951471,
-    "meta": 1668598601433,
-    "relativePath": "spine\\flower59.skel"
-  },
-  "bad0b77a-aff1-41e3-9500-178ec2d495fe": {
-    "asset": 1662370951483,
-    "meta": 1662371172965,
-    "relativePath": "spine\\flower6.atlas.txt"
-  },
-  "9b292791-8ba3-445f-a2cc-0fac620c7b17": {
-    "asset": 1662370951744,
-    "meta": 1662371172971,
-    "relativePath": "spine\\flower59.png"
-  },
-  "3cc20e4d-8bf7-4d2c-812e-275a71d78ce0": {
-    "asset": 1662370950997,
-    "meta": 1662371172974,
-    "relativePath": "spine\\flower6.png"
-  },
-  "2efdba21-987d-4754-8be2-43cffeffc2aa": {
-    "asset": 1662370951201,
-    "meta": 1662371172975,
-    "relativePath": "spine\\flower60.atlas.txt"
-  },
-  "50ab5579-95d4-475e-8e1a-ac756a050e3b": {
-    "asset": 1662370951144,
-    "meta": 1668598601432,
-    "relativePath": "spine\\flower6.skel"
-  },
-  "26d6d73b-4cb3-4729-b513-51688c993451": {
-    "asset": 1662370951317,
-    "meta": 1668598601434,
-    "relativePath": "spine\\flower60.skel"
-  },
-  "edc442d7-d661-4ade-9c07-49684325f4cb": {
-    "asset": 1662370951673,
-    "meta": 1662371172982,
-    "relativePath": "spine\\flower7.atlas.txt"
-  },
-  "a31f492f-eef7-4d05-9147-dca17cf70771": {
-    "asset": 1662370951609,
-    "meta": 1662371172985,
-    "relativePath": "spine\\flower60.png"
-  },
-  "cfa69163-5399-4669-b7aa-c9814fb22492": {
-    "asset": 1662370951395,
-    "meta": 1668598601434,
-    "relativePath": "spine\\flower7.skel"
-  },
-  "5ec7687a-4d95-4814-b7ac-99f9d9019e16": {
-    "asset": 1662370950949,
-    "meta": 1662371172989,
-    "relativePath": "spine\\flower7.png"
-  },
-  "01f3d536-638a-48bd-a6b5-de715c6ec7bc": {
-    "asset": 1662370951153,
-    "meta": 1662371172990,
-    "relativePath": "spine\\flower8.atlas.txt"
-  },
-  "75665a75-ad08-4e77-825d-909f303935e6": {
-    "asset": 1662370951481,
-    "meta": 1668598601435,
-    "relativePath": "spine\\flower8.skel"
-  },
-  "57230533-019b-4018-a143-4a57387848fd": {
-    "asset": 1662370950954,
-    "meta": 1662371172993,
-    "relativePath": "spine\\flower9.atlas.txt"
-  },
-  "41b6918a-dd73-4c6b-b1cc-a178caf0897b": {
-    "asset": 1662370951676,
-    "meta": 1662371172997,
-    "relativePath": "spine\\flower8.png"
-  },
-  "ded5382b-b2a6-4d03-a706-78c210d590bf": {
-    "asset": 1662370951507,
-    "meta": 1668598601435,
-    "relativePath": "spine\\flower9.skel"
-  },
   "939bb728-27ec-43dc-825e-0f1416a49b04": {
     "asset": 1662370951612,
     "meta": 1662371173001,
     "relativePath": "spine\\fx_arrow.atlas.txt"
   },
-  "00a062d1-3249-452f-9ca9-a94072e7d00b": {
-    "asset": 1662370951715,
-    "meta": 1662371173002,
-    "relativePath": "spine\\flower9.png"
-  },
   "718a78cb-34f7-4cbd-929e-5a866c5ee97e": {
     "asset": 1662370951188,
-    "meta": 1668598601437,
+    "meta": 1669024465575,
     "relativePath": "spine\\fx_arrow.skel"
   },
   "c6956a8f-c3dd-42d0-9419-6961b8315c5f": {
@@ -2466,7 +1556,7 @@
   },
   "c61ec591-66a9-4958-8afc-bad24ed231eb": {
     "asset": 1662370951632,
-    "meta": 1668598601436,
+    "meta": 1669024465575,
     "relativePath": "spine\\fx_bt_angry.skel"
   },
   "11447f6c-d972-4640-82cf-ce0ab6ed75dd": {
@@ -2481,7 +1571,7 @@
   },
   "5881c8d7-81b2-4b57-8188-a466c43112a4": {
     "asset": 1662370950975,
-    "meta": 1668598601437,
+    "meta": 1669024465576,
     "relativePath": "spine\\fx_ground_merge.skel"
   },
   "1c63b418-27bb-496e-8836-d72b3c72db8e": {
@@ -2491,7 +1581,7 @@
   },
   "10147467-3a70-4101-8654-fe8232f3d8d0": {
     "asset": 1662370951547,
-    "meta": 1668598601438,
+    "meta": 1669024465576,
     "relativePath": "spine\\fx_lose.skel"
   },
   "081c8d8a-7221-42f7-a138-6bcecf64923b": {
@@ -2506,7 +1596,7 @@
   },
   "fd24a75b-73b9-408a-8849-cd0b95b1b7ef": {
     "asset": 1662370951581,
-    "meta": 1668598601438,
+    "meta": 1669024465576,
     "relativePath": "spine\\fx_slot.skel"
   },
   "b9fc9c37-0197-4e9f-9a0d-010264a66140": {
@@ -2526,7 +1616,7 @@
   },
   "67454650-94c7-4fe7-bf74-9aa55065d8ed": {
     "asset": 1662370950979,
-    "meta": 1668598601439,
+    "meta": 1669024465577,
     "relativePath": "spine\\fx_stun.skel"
   },
   "f0b818f7-64df-449a-a0df-09d990af2710": {
@@ -2536,7 +1626,7 @@
   },
   "0315b880-5035-4920-8c3a-e315838ce339": {
     "asset": 1662370951639,
-    "meta": 1668598601439,
+    "meta": 1669024465577,
     "relativePath": "spine\\fx_victory.skel"
   },
   "bfcceb5e-764d-4c24-82f4-8533d8fb20a4": {
@@ -2551,12 +1641,12 @@
   },
   "24a416fb-be4e-49d4-8a05-49dde301a5f9": {
     "asset": 1662370950965,
-    "meta": 1668598601440,
+    "meta": 1669024465577,
     "relativePath": "spine\\fx_warning_boss.skel"
   },
   "5cff1f55-2ce7-49cf-b515-c794c1f82d08": {
-    "asset": 1666147702143,
-    "meta": 1666147813321,
+    "asset": 1668998550549,
+    "meta": 1668999641219,
     "relativePath": "spine\\other"
   },
   "9aa1b096-f322-4fc3-bc72-2f1e528ec477": {
@@ -2721,7 +1811,7 @@
   },
   "eef62a64-ec64-43f4-9901-7401aed16e59": {
     "asset": 1662370951389,
-    "meta": 1668598601442,
+    "meta": 1669024465578,
     "relativePath": "spine\\pot1.skel"
   },
   "480f1731-9044-41da-b3b8-87a9eb89d5c0": {
@@ -2736,7 +1826,7 @@
   },
   "58bbf297-868b-4b9b-b882-3f7c738496e8": {
     "asset": 1662370951435,
-    "meta": 1668598601441,
+    "meta": 1669024465578,
     "relativePath": "spine\\pot2.skel"
   },
   "418aeb22-7dd0-4efc-bd5c-45360421f6a2": {
@@ -2751,7 +1841,7 @@
   },
   "e992277e-09f3-4633-95a4-5c882df2f6dd": {
     "asset": 1662370951560,
-    "meta": 1668598601443,
+    "meta": 1669024465579,
     "relativePath": "spine\\pot3.skel"
   },
   "ba26022c-3119-4dc8-9e33-cf9b6a836efe": {
@@ -2766,7 +1856,7 @@
   },
   "84a97586-0098-4e4c-8a4b-ddc611e13321": {
     "asset": 1662370951650,
-    "meta": 1668598601445,
+    "meta": 1669024465579,
     "relativePath": "spine\\pot4.skel"
   },
   "4a34618c-0398-47f8-b3a2-0e87fdd7d07e": {
@@ -2781,7 +1871,7 @@
   },
   "f2b29f12-002f-4458-a460-8a6badb9fe9c": {
     "asset": 1662370951122,
-    "meta": 1668598601446,
+    "meta": 1669024465580,
     "relativePath": "spine\\tut_hand.skel"
   },
   "b077577a-6c8c-435f-a950-bb064ad3bce1": {
@@ -3894,11 +2984,6 @@
     "meta": 1668212773317,
     "relativePath": "spine\\enemy9_tex.json"
   },
-  "7abb6370-eb08-42e4-8ada-f373c83602e3": {
-    "asset": 1668346149477,
-    "meta": 1668346159982,
-    "relativePath": "script\\game\\prefab\\Enemy.ts"
-  },
   "29808d0b-f526-4c6c-b350-9016545958c2": {
     "asset": 1668182782028,
     "meta": 1668213031739,
@@ -4869,11 +3954,6 @@
     "meta": 1668512324577,
     "relativePath": "script\\game\\DB.ts"
   },
-  "46e3ee62-4f1e-414f-b7c3-466ceac36a96": {
-    "asset": 1668512501957,
-    "meta": 1668512511322,
-    "relativePath": "script\\game\\prefab\\NewPlantUI.ts"
-  },
   "04f46338-9ca6-4756-9182-a89c65478fb7": {
     "asset": 1668595191088,
     "meta": 1668595193832,
@@ -4889,14 +3969,9 @@
     "meta": 1668596680474,
     "relativePath": "script\\game\\UserModel.ts"
   },
-  "b649ad67-0ada-4268-b6a8-eeae097da02c": {
-    "asset": 1668597006851,
-    "meta": 1668597009108,
-    "relativePath": "script\\game\\HallScene.ts"
-  },
   "51ec5990-36b8-428c-9173-a0269d9cd058": {
-    "asset": 1668598054938,
-    "meta": 1668598079883,
+    "asset": 1668600414307,
+    "meta": 1668732053732,
     "relativePath": "script\\manager\\WxCenter.ts"
   },
   "53527b4a-e8f0-4e8c-915a-79cf2174eb13": {
@@ -4913,5 +3988,960 @@
     "asset": 1668599793620,
     "meta": 1668599794670,
     "relativePath": "script\\game\\prefab\\FairyBonusUI.ts"
+  },
+  "17e23301-9333-4a02-a7c5-8893c48708ef": {
+    "asset": 1668849769545,
+    "meta": 1668943611233,
+    "relativePath": "spine\\flower1_ske.json"
+  },
+  "571ae61c-e3af-4a1f-b485-3c3c93a8524f": {
+    "asset": 1668901350000,
+    "meta": 1668943611262,
+    "relativePath": "spine\\flower1_tex.png"
+  },
+  "1391fdb7-12b5-4cba-bf72-45b6ff4d877e": {
+    "asset": 1668849769546,
+    "meta": 1668943611264,
+    "relativePath": "spine\\flower1_tex.json"
+  },
+  "295bce32-e38e-4846-b355-289e2bf32feb": {
+    "asset": 1668923744837,
+    "meta": 1668947789438,
+    "relativePath": "spine\\flower10_ske.json"
+  },
+  "2a8d4033-a31d-4756-abcf-27d2fe080f09": {
+    "asset": 1668923026558,
+    "meta": 1668947789442,
+    "relativePath": "spine\\flower11_ske.json"
+  },
+  "babc2749-e817-4f2c-888f-59372f532e92": {
+    "asset": 1668923744847,
+    "meta": 1668947790299,
+    "relativePath": "spine\\flower10_tex.json"
+  },
+  "d33bf84d-fc69-406c-9423-8b60baec50cb": {
+    "asset": 1668901350000,
+    "meta": 1668947789471,
+    "relativePath": "spine\\flower10_tex.png"
+  },
+  "35305a92-d026-43b8-a4c9-41e100ad1c51": {
+    "asset": 1668923026568,
+    "meta": 1668947790299,
+    "relativePath": "spine\\flower11_tex.json"
+  },
+  "0c503a5c-455a-4170-9f0b-4fdfc91aa83c": {
+    "asset": 1668901386000,
+    "meta": 1668947789479,
+    "relativePath": "spine\\flower11_tex.png"
+  },
+  "65d9500d-3d2b-4128-b386-02633e7c4d25": {
+    "asset": 1668927001554,
+    "meta": 1668947789483,
+    "relativePath": "spine\\flower12_ske.json"
+  },
+  "725ef896-37f4-4c72-8c71-071b3af31a07": {
+    "asset": 1668928788432,
+    "meta": 1668947789487,
+    "relativePath": "spine\\flower13_ske.json"
+  },
+  "8760afee-e9e1-46dd-af69-694285cc48dc": {
+    "asset": 1668927001555,
+    "meta": 1668947790303,
+    "relativePath": "spine\\flower12_tex.json"
+  },
+  "f8af22cd-3b13-4cdc-a3f2-a8c35dc77455": {
+    "asset": 1668901386000,
+    "meta": 1668947789511,
+    "relativePath": "spine\\flower13_tex.png"
+  },
+  "638a2076-a862-42e4-a9bc-e8f55aea5d8a": {
+    "asset": 1668901386000,
+    "meta": 1668947789516,
+    "relativePath": "spine\\flower12_tex.png"
+  },
+  "c72be364-07b4-4e0a-b9c3-afc3dd4d098e": {
+    "asset": 1668928815631,
+    "meta": 1668947789516,
+    "relativePath": "spine\\flower14_ske.json"
+  },
+  "4a954e4b-37c8-44ae-9d21-455c9a10b732": {
+    "asset": 1668928788442,
+    "meta": 1668947790303,
+    "relativePath": "spine\\flower13_tex.json"
+  },
+  "ef2faccc-c31a-4c64-82fa-678296bf8951": {
+    "asset": 1668928844255,
+    "meta": 1668947789520,
+    "relativePath": "spine\\flower15_ske.json"
+  },
+  "a6e1f41e-c45e-47b9-a4a6-f8961077c363": {
+    "asset": 1668928815632,
+    "meta": 1668947790307,
+    "relativePath": "spine\\flower14_tex.json"
+  },
+  "3dc37348-bd89-4b0e-9630-d22775de98a2": {
+    "asset": 1668901386000,
+    "meta": 1668947789547,
+    "relativePath": "spine\\flower14_tex.png"
+  },
+  "5fda5a4e-c982-4b78-895b-e312372deca9": {
+    "asset": 1668928844265,
+    "meta": 1668947790307,
+    "relativePath": "spine\\flower15_tex.json"
+  },
+  "a1ae358e-0f27-4419-b014-ba959f8c441b": {
+    "asset": 1668901386000,
+    "meta": 1668947789547,
+    "relativePath": "spine\\flower15_tex.png"
+  },
+  "230de1d4-9320-4953-aebd-940788c1855f": {
+    "asset": 1668928895629,
+    "meta": 1668947789551,
+    "relativePath": "spine\\flower16_ske.json"
+  },
+  "b439d4fe-0ea2-4bb2-89d7-cfb923fc5c60": {
+    "asset": 1668928916880,
+    "meta": 1668947789555,
+    "relativePath": "spine\\flower17_ske.json"
+  },
+  "9be75903-c192-43f6-91d7-1cc7170068af": {
+    "asset": 1668928895630,
+    "meta": 1668947790311,
+    "relativePath": "spine\\flower16_tex.json"
+  },
+  "14a9b4a3-c203-4b10-8b65-ebbc05c3f627": {
+    "asset": 1668901386000,
+    "meta": 1668947789576,
+    "relativePath": "spine\\flower16_tex.png"
+  },
+  "7563cc9f-716d-4308-83d5-c9d22806e1b3": {
+    "asset": 1668928916890,
+    "meta": 1668947790311,
+    "relativePath": "spine\\flower17_tex.json"
+  },
+  "7c299846-8e37-4d66-963f-5e93adbf78e2": {
+    "asset": 1668901386000,
+    "meta": 1668947789576,
+    "relativePath": "spine\\flower17_tex.png"
+  },
+  "1b087b85-03da-4f69-b7a0-4c6470af4b01": {
+    "asset": 1668928937987,
+    "meta": 1668947789580,
+    "relativePath": "spine\\flower18_ske.json"
+  },
+  "3a319934-66ba-439a-b18f-84e64033a0e9": {
+    "asset": 1668928958533,
+    "meta": 1668947789584,
+    "relativePath": "spine\\flower19_ske.json"
+  },
+  "881de4d4-0a4f-4d48-ba88-85c964db3261": {
+    "asset": 1668928937988,
+    "meta": 1668947790315,
+    "relativePath": "spine\\flower18_tex.json"
+  },
+  "0494a132-532c-4c54-87bc-240b63c3402c": {
+    "asset": 1668901386000,
+    "meta": 1668947789601,
+    "relativePath": "spine\\flower18_tex.png"
+  },
+  "2ce198d8-fa1e-4e07-adc8-473d47733c59": {
+    "asset": 1668928958542,
+    "meta": 1668947790319,
+    "relativePath": "spine\\flower19_tex.json"
+  },
+  "26f25f6e-0acb-47b8-895c-941ff4577197": {
+    "asset": 1668901386000,
+    "meta": 1668947789605,
+    "relativePath": "spine\\flower19_tex.png"
+  },
+  "50e18fed-a1a5-4fd5-9b2f-a97c314e5dc2": {
+    "asset": 1668849576052,
+    "meta": 1668947789609,
+    "relativePath": "spine\\flower2_ske.json"
+  },
+  "c1262c7e-028e-45f5-ac16-5738f8651d23": {
+    "asset": 1668928978427,
+    "meta": 1668947789609,
+    "relativePath": "spine\\flower20_ske.json"
+  },
+  "21e8f08f-aaa3-4152-aa81-d2cd820a0a46": {
+    "asset": 1668849576052,
+    "meta": 1668947790322,
+    "relativePath": "spine\\flower2_tex.json"
+  },
+  "bf168863-99ca-4634-b165-189f79e7b83d": {
+    "asset": 1668901350000,
+    "meta": 1668947789631,
+    "relativePath": "spine\\flower2_tex.png"
+  },
+  "4bf23714-57bf-41c8-a41c-8159deb1410f": {
+    "asset": 1668928978428,
+    "meta": 1668947790322,
+    "relativePath": "spine\\flower20_tex.json"
+  },
+  "f034bd89-83c3-4da2-8ef6-06f0a3e7eabe": {
+    "asset": 1668901386000,
+    "meta": 1668947789635,
+    "relativePath": "spine\\flower20_tex.png"
+  },
+  "12447a8f-5fb8-448e-9014-0e3633ecf509": {
+    "asset": 1668929017055,
+    "meta": 1668947789635,
+    "relativePath": "spine\\flower21_ske.json"
+  },
+  "5e61524a-e649-4267-b831-2dcc3669bdaf": {
+    "asset": 1668929037954,
+    "meta": 1668947789639,
+    "relativePath": "spine\\flower22_ske.json"
+  },
+  "ad65f8b7-3651-4db1-b722-32ccc1f2fb0d": {
+    "asset": 1668929017065,
+    "meta": 1668947790327,
+    "relativePath": "spine\\flower21_tex.json"
+  },
+  "3d4c372b-94d9-4d27-b8c8-41fa92d2be83": {
+    "asset": 1668901412000,
+    "meta": 1668947789661,
+    "relativePath": "spine\\flower21_tex.png"
+  },
+  "c26bb0d0-61ed-4813-b623-8b308134f417": {
+    "asset": 1668929037955,
+    "meta": 1668947790327,
+    "relativePath": "spine\\flower22_tex.json"
+  },
+  "1864286e-4342-4841-8916-ccdab9f95cf8": {
+    "asset": 1668901412000,
+    "meta": 1668947789661,
+    "relativePath": "spine\\flower22_tex.png"
+  },
+  "23d428df-c1b0-4b75-a05e-d2244802a352": {
+    "asset": 1668929068083,
+    "meta": 1668947789665,
+    "relativePath": "spine\\flower23_ske.json"
+  },
+  "13c8f7e5-d578-48a9-800d-01e4cc246135": {
+    "asset": 1668929087566,
+    "meta": 1668947789669,
+    "relativePath": "spine\\flower24_ske.json"
+  },
+  "d5d8e466-cd55-4403-a874-58599314b69d": {
+    "asset": 1668929068092,
+    "meta": 1668947790327,
+    "relativePath": "spine\\flower23_tex.json"
+  },
+  "a78b4a49-27e9-4f1d-85ae-b6a2aa8c3822": {
+    "asset": 1668929087567,
+    "meta": 1668947790332,
+    "relativePath": "spine\\flower24_tex.json"
+  },
+  "20932c78-3c3b-44ae-80c4-9422567cd7c7": {
+    "asset": 1668901412000,
+    "meta": 1668947789685,
+    "relativePath": "spine\\flower23_tex.png"
+  },
+  "81ca3cd9-4837-441f-a688-a2587ab29c30": {
+    "asset": 1668901412000,
+    "meta": 1668947789689,
+    "relativePath": "spine\\flower24_tex.png"
+  },
+  "8d2cbb03-526f-44d8-a4fe-5f4bbeef8e51": {
+    "asset": 1668929113155,
+    "meta": 1668947789693,
+    "relativePath": "spine\\flower25_ske.json"
+  },
+  "e94ba6da-8d7f-4d17-81dc-21fe14ff8a61": {
+    "asset": 1668929167166,
+    "meta": 1668947789697,
+    "relativePath": "spine\\flower26_ske.json"
+  },
+  "7475a161-cc0e-4c73-969b-ec832bad5b11": {
+    "asset": 1668929167167,
+    "meta": 1668947790332,
+    "relativePath": "spine\\flower26_tex.json"
+  },
+  "f52e948b-2d96-48ad-b1e4-086295ea6115": {
+    "asset": 1668929113165,
+    "meta": 1668947790336,
+    "relativePath": "spine\\flower25_tex.json"
+  },
+  "3352636b-4214-4e6a-bbd2-ed35da3a192b": {
+    "asset": 1668901412000,
+    "meta": 1668947789714,
+    "relativePath": "spine\\flower26_tex.png"
+  },
+  "e75c7d29-8326-47d9-9c44-1d15cb1828c9": {
+    "asset": 1668901412000,
+    "meta": 1668947789718,
+    "relativePath": "spine\\flower25_tex.png"
+  },
+  "502b94c0-7394-4e24-8979-8082237597dd": {
+    "asset": 1668929375449,
+    "meta": 1668947789718,
+    "relativePath": "spine\\flower27_ske.json"
+  },
+  "58a9d242-9e4c-4380-93ea-6869dd592ec8": {
+    "asset": 1668929567859,
+    "meta": 1668947789726,
+    "relativePath": "spine\\flower28_ske.json"
+  },
+  "ad8e42a4-ae43-4182-a9fd-522ad0691078": {
+    "asset": 1668929375460,
+    "meta": 1668947790337,
+    "relativePath": "spine\\flower27_tex.json"
+  },
+  "d4631933-aa5c-4b7b-9b52-b90bf5343837": {
+    "asset": 1668901412000,
+    "meta": 1668947789742,
+    "relativePath": "spine\\flower27_tex.png"
+  },
+  "ccdf89f2-b4e9-4de8-b906-38d644076432": {
+    "asset": 1668929567860,
+    "meta": 1668947790337,
+    "relativePath": "spine\\flower28_tex.json"
+  },
+  "bd9f5632-c091-42dc-a092-669d99029e3e": {
+    "asset": 1668901412000,
+    "meta": 1668947789746,
+    "relativePath": "spine\\flower28_tex.png"
+  },
+  "90c87c42-4cb7-4715-86bd-0221d558929c": {
+    "asset": 1668929772890,
+    "meta": 1668947789746,
+    "relativePath": "spine\\flower29_ske.json"
+  },
+  "c54c60a1-c47e-48a9-8ad2-003d29bf0834": {
+    "asset": 1668859737324,
+    "meta": 1668947789754,
+    "relativePath": "spine\\flower3_ske.json"
+  },
+  "dbdb8456-9577-41f2-bda6-c1644d34311d": {
+    "asset": 1668929772899,
+    "meta": 1668947790341,
+    "relativePath": "spine\\flower29_tex.json"
+  },
+  "a54481c8-9763-4d64-8644-b20682364733": {
+    "asset": 1668901412000,
+    "meta": 1668947789772,
+    "relativePath": "spine\\flower29_tex.png"
+  },
+  "1a1bd72f-fca0-4b97-bfab-1c293f9267e5": {
+    "asset": 1668859737325,
+    "meta": 1668947790341,
+    "relativePath": "spine\\flower3_tex.json"
+  },
+  "988e38a6-f4bb-43ef-9820-9a028f126421": {
+    "asset": 1668901350000,
+    "meta": 1668947789772,
+    "relativePath": "spine\\flower3_tex.png"
+  },
+  "bb2a73af-44ff-4e8a-9174-9ab99a4c0c63": {
+    "asset": 1668929936041,
+    "meta": 1668947789776,
+    "relativePath": "spine\\flower30_ske.json"
+  },
+  "afd32599-6a61-414f-856f-c41d5e09097a": {
+    "asset": 1668929185195,
+    "meta": 1668947789780,
+    "relativePath": "spine\\flower31_ske.json"
+  },
+  "d0d5e6fb-3c31-44f9-bafd-5fc576965726": {
+    "asset": 1668929936042,
+    "meta": 1668947790347,
+    "relativePath": "spine\\flower30_tex.json"
+  },
+  "db3614eb-5b17-4b85-acfb-f9f1d3a3ccc4": {
+    "asset": 1668901412000,
+    "meta": 1668947789801,
+    "relativePath": "spine\\flower30_tex.png"
+  },
+  "de06620f-66c7-4dfe-bd51-ac2646cea0e8": {
+    "asset": 1668901464000,
+    "meta": 1668947789801,
+    "relativePath": "spine\\flower31_tex.png"
+  },
+  "dd5d122d-609b-41b3-a7e1-e1d872f0a900": {
+    "asset": 1668929185205,
+    "meta": 1668947790347,
+    "relativePath": "spine\\flower31_tex.json"
+  },
+  "779d7040-1319-4ef4-9831-f45ceb053a80": {
+    "asset": 1668929392939,
+    "meta": 1668947789805,
+    "relativePath": "spine\\flower32_ske.json"
+  },
+  "396205ee-dc92-412d-8f67-5ea6aa9f6d6b": {
+    "asset": 1668929631345,
+    "meta": 1668947789809,
+    "relativePath": "spine\\flower33_ske.json"
+  },
+  "02bc2b09-e591-4013-83ae-db27a910ad6b": {
+    "asset": 1668929631355,
+    "meta": 1668947790350,
+    "relativePath": "spine\\flower33_tex.json"
+  },
+  "8b5d6fb3-4ee5-4c92-9ab2-a6cf833e5659": {
+    "asset": 1668929392941,
+    "meta": 1668947790354,
+    "relativePath": "spine\\flower32_tex.json"
+  },
+  "8c9e20f8-176d-4b72-bd2a-c45a28a07cb1": {
+    "asset": 1668901464000,
+    "meta": 1668947789828,
+    "relativePath": "spine\\flower32_tex.png"
+  },
+  "f486d778-6143-4329-a741-e55dde4c9a2f": {
+    "asset": 1668930290576,
+    "meta": 1668947789828,
+    "relativePath": "spine\\flower33_tex.png"
+  },
+  "155992c8-53d8-44be-861b-b357c4038481": {
+    "asset": 1668929790610,
+    "meta": 1668947789832,
+    "relativePath": "spine\\flower34_ske.json"
+  },
+  "6153fad8-159c-419b-b77f-175b5ce4607d": {
+    "asset": 1668929956799,
+    "meta": 1668947789836,
+    "relativePath": "spine\\flower35_ske.json"
+  },
+  "3c0d212f-23ef-459f-a4d4-97ccab034828": {
+    "asset": 1668929956808,
+    "meta": 1668947790359,
+    "relativePath": "spine\\flower35_tex.json"
+  },
+  "516d6429-4ada-4a32-9a86-3be7f0112972": {
+    "asset": 1668929790612,
+    "meta": 1668947790359,
+    "relativePath": "spine\\flower34_tex.json"
+  },
+  "5b725e52-5f9d-413f-a9f1-00a2bd946a39": {
+    "asset": 1668930298785,
+    "meta": 1668947789854,
+    "relativePath": "spine\\flower34_tex.png"
+  },
+  "89502569-a4df-45ae-b407-e3b5fc9e5592": {
+    "asset": 1668901464000,
+    "meta": 1668947789858,
+    "relativePath": "spine\\flower35_tex.png"
+  },
+  "d20611ba-8b40-46a6-95cd-ad678c6f2174": {
+    "asset": 1668929203428,
+    "meta": 1668947789858,
+    "relativePath": "spine\\flower36_ske.json"
+  },
+  "1b5092ef-47d0-460f-9834-aabd19ed81a4": {
+    "asset": 1668929405787,
+    "meta": 1668947789862,
+    "relativePath": "spine\\flower37_ske.json"
+  },
+  "06feda0b-80f7-4659-b84d-b0819ea269bd": {
+    "asset": 1668929203428,
+    "meta": 1668947790366,
+    "relativePath": "spine\\flower36_tex.json"
+  },
+  "199b5e6d-a119-4952-9714-a221244edb93": {
+    "asset": 1668901526000,
+    "meta": 1668947789878,
+    "relativePath": "spine\\flower36_tex.png"
+  },
+  "09072841-a388-4ff6-8c27-b2bda4fbc397": {
+    "asset": 1668929405797,
+    "meta": 1668947790368,
+    "relativePath": "spine\\flower37_tex.json"
+  },
+  "53b757ab-7951-4a70-b5b3-0cc7ae3b1de8": {
+    "asset": 1668901526000,
+    "meta": 1668947789883,
+    "relativePath": "spine\\flower37_tex.png"
+  },
+  "9406dd73-f396-4edb-be88-aec5be89340c": {
+    "asset": 1668929653389,
+    "meta": 1668947789883,
+    "relativePath": "spine\\flower38_ske.json"
+  },
+  "1c5f2c17-95ce-43d8-8561-9749cf40bafd": {
+    "asset": 1668929804095,
+    "meta": 1668947789887,
+    "relativePath": "spine\\flower39_ske.json"
+  },
+  "68859eca-b256-495b-bf8e-46d37ea11ce1": {
+    "asset": 1668929653390,
+    "meta": 1668947790369,
+    "relativePath": "spine\\flower38_tex.json"
+  },
+  "bdf62673-3d46-438b-8c69-f3c4b8762a38": {
+    "asset": 1668901528000,
+    "meta": 1668947789903,
+    "relativePath": "spine\\flower38_tex.png"
+  },
+  "713e8834-3c41-4bac-b795-2a1118e804a1": {
+    "asset": 1668929804105,
+    "meta": 1668947790372,
+    "relativePath": "spine\\flower39_tex.json"
+  },
+  "182a017e-c915-4126-a028-0138abb8686e": {
+    "asset": 1668901528000,
+    "meta": 1668947789903,
+    "relativePath": "spine\\flower39_tex.png"
+  },
+  "d8eb857b-ad56-49d0-80e0-face4005f922": {
+    "asset": 1668860123712,
+    "meta": 1668947789907,
+    "relativePath": "spine\\flower4_ske.json"
+  },
+  "49f859f4-8105-49c5-af13-e0bf1ad14d6f": {
+    "asset": 1668929969461,
+    "meta": 1668947789911,
+    "relativePath": "spine\\flower40_ske.json"
+  },
+  "0942c19a-0366-4b3b-b97f-d80367b62ede": {
+    "asset": 1668929969462,
+    "meta": 1668947790376,
+    "relativePath": "spine\\flower40_tex.json"
+  },
+  "c530702b-7833-459c-9382-d9945e88f875": {
+    "asset": 1668860123713,
+    "meta": 1668947790376,
+    "relativePath": "spine\\flower4_tex.json"
+  },
+  "d1e8634a-ffb9-4156-bb7a-b74fad4b4e53": {
+    "asset": 1668901350000,
+    "meta": 1668947789928,
+    "relativePath": "spine\\flower4_tex.png"
+  },
+  "64579b16-5753-4a50-b325-c5b8bdf47cf1": {
+    "asset": 1668901526000,
+    "meta": 1668947789932,
+    "relativePath": "spine\\flower40_tex.png"
+  },
+  "cf72a9d6-58a4-4ee3-8dde-9d62b01a634b": {
+    "asset": 1668929221977,
+    "meta": 1668947789932,
+    "relativePath": "spine\\flower41_ske.json"
+  },
+  "e31926d8-9395-454f-bfe9-7c5fe91ff24f": {
+    "asset": 1668929430955,
+    "meta": 1668947789936,
+    "relativePath": "spine\\flower42_ske.json"
+  },
+  "dc9453f9-134f-4f8b-80df-0c5bdab81968": {
+    "asset": 1668929221987,
+    "meta": 1668947790383,
+    "relativePath": "spine\\flower41_tex.json"
+  },
+  "0578841e-3ae9-448b-a473-6e7aa2def186": {
+    "asset": 1668929430956,
+    "meta": 1668947790386,
+    "relativePath": "spine\\flower42_tex.json"
+  },
+  "74f0d72e-7b16-42bc-b2f0-b9ae7b1fdc89": {
+    "asset": 1668901558000,
+    "meta": 1668947789952,
+    "relativePath": "spine\\flower41_tex.png"
+  },
+  "507b2761-9fcc-492b-a025-42e36db1d186": {
+    "asset": 1668901558000,
+    "meta": 1668947789956,
+    "relativePath": "spine\\flower42_tex.png"
+  },
+  "a97942b2-7a21-4ff2-a892-f3468391eb9e": {
+    "asset": 1668929673443,
+    "meta": 1668947789960,
+    "relativePath": "spine\\flower43_ske.json"
+  },
+  "f6f510c3-4862-4242-bf72-7d4a150fe545": {
+    "asset": 1668929822891,
+    "meta": 1668947789964,
+    "relativePath": "spine\\flower44_ske.json"
+  },
+  "01f3d891-338d-43bc-9c76-c8e6d6a27c92": {
+    "asset": 1668929673453,
+    "meta": 1668947790387,
+    "relativePath": "spine\\flower43_tex.json"
+  },
+  "ce717ee5-a654-4b84-a21c-c88fc582773a": {
+    "asset": 1668901558000,
+    "meta": 1668947789982,
+    "relativePath": "spine\\flower43_tex.png"
+  },
+  "848ca5af-94d1-438f-a990-35fadb0e0fb7": {
+    "asset": 1668929822892,
+    "meta": 1668947790391,
+    "relativePath": "spine\\flower44_tex.json"
+  },
+  "7e70b735-4d3a-4c1b-95b4-f0d9e69f2791": {
+    "asset": 1668901558000,
+    "meta": 1668947789986,
+    "relativePath": "spine\\flower44_tex.png"
+  },
+  "27ad07a1-f6a4-4b71-95fd-70bdadaa0f7c": {
+    "asset": 1668929981599,
+    "meta": 1668947789986,
+    "relativePath": "spine\\flower45_ske.json"
+  },
+  "c37d3472-ac2c-436c-96f2-d1feb2fc2d3d": {
+    "asset": 1668929250136,
+    "meta": 1668947789990,
+    "relativePath": "spine\\flower46_ske.json"
+  },
+  "1258e028-c404-436a-ad81-9275aaa1b9f2": {
+    "asset": 1668929981610,
+    "meta": 1668947790391,
+    "relativePath": "spine\\flower45_tex.json"
+  },
+  "0f1cf992-8afa-44c3-9201-5cb329d683e8": {
+    "asset": 1668901558000,
+    "meta": 1668947790006,
+    "relativePath": "spine\\flower45_tex.png"
+  },
+  "b8041fe3-dfd1-485d-9257-43012017cd5a": {
+    "asset": 1668929250137,
+    "meta": 1668947790395,
+    "relativePath": "spine\\flower46_tex.json"
+  },
+  "24483f77-ef0f-4dd4-80de-259815689c10": {
+    "asset": 1668901558000,
+    "meta": 1668947790010,
+    "relativePath": "spine\\flower46_tex.png"
+  },
+  "d5a35857-3564-417a-9eb1-7e88651f02de": {
+    "asset": 1668929445016,
+    "meta": 1668947790010,
+    "relativePath": "spine\\flower47_ske.json"
+  },
+  "d3554cd9-d437-41d1-a977-498160ab05fa": {
+    "asset": 1668929690908,
+    "meta": 1668947790014,
+    "relativePath": "spine\\flower48_ske.json"
+  },
+  "1735a485-ecae-4c04-b0c5-b52e5e8646e4": {
+    "asset": 1668929445017,
+    "meta": 1668947790396,
+    "relativePath": "spine\\flower47_tex.json"
+  },
+  "db8cd77e-29ca-483e-8350-61dcaf905234": {
+    "asset": 1668901558000,
+    "meta": 1668947790031,
+    "relativePath": "spine\\flower47_tex.png"
+  },
+  "4c835977-f67b-4866-815c-4f9cd93476b6": {
+    "asset": 1668929690909,
+    "meta": 1668947790396,
+    "relativePath": "spine\\flower48_tex.json"
+  },
+  "ae6db623-e184-4ecd-b20e-4786ffcc38e4": {
+    "asset": 1668901558000,
+    "meta": 1668947790035,
+    "relativePath": "spine\\flower48_tex.png"
+  },
+  "9b448d13-1ef7-4179-a7cc-07bfe5456c8b": {
+    "asset": 1668929836208,
+    "meta": 1668947790039,
+    "relativePath": "spine\\flower49_ske.json"
+  },
+  "355c4ee9-11e5-4b0c-b249-0e18ada26a5d": {
+    "asset": 1668860291851,
+    "meta": 1668947790043,
+    "relativePath": "spine\\flower5_ske.json"
+  },
+  "5e873179-e745-4057-b2be-28a0a52bd831": {
+    "asset": 1668929836217,
+    "meta": 1668947790401,
+    "relativePath": "spine\\flower49_tex.json"
+  },
+  "c9bc7568-b5e5-404d-83ec-9cd76959b4be": {
+    "asset": 1668860291861,
+    "meta": 1668947790405,
+    "relativePath": "spine\\flower5_tex.json"
+  },
+  "d902a04f-7a38-4beb-aa3e-e52659e46be0": {
+    "asset": 1668930378083,
+    "meta": 1668947790061,
+    "relativePath": "spine\\flower49_tex.png"
+  },
+  "fa4ca081-aef2-4583-9cf0-fa32019bc7c5": {
+    "asset": 1668901350000,
+    "meta": 1668947790061,
+    "relativePath": "spine\\flower5_tex.png"
+  },
+  "5d654836-d612-42dd-85ec-73df4fcf7c3f": {
+    "asset": 1668929996143,
+    "meta": 1668947790065,
+    "relativePath": "spine\\flower50_ske.json"
+  },
+  "db47a837-fea5-4798-859f-6140ffa5f52a": {
+    "asset": 1668929266545,
+    "meta": 1668947790069,
+    "relativePath": "spine\\flower51_ske.json"
+  },
+  "3b47aa1d-4eb1-4abb-8184-3dde2c8f6377": {
+    "asset": 1668929996144,
+    "meta": 1668947790406,
+    "relativePath": "spine\\flower50_tex.json"
+  },
+  "5319a8d0-501e-4d45-996f-d39a004876a3": {
+    "asset": 1668901558000,
+    "meta": 1668947790087,
+    "relativePath": "spine\\flower50_tex.png"
+  },
+  "24775a9c-7bf2-41fe-885d-c9735e8f4e72": {
+    "asset": 1668929266555,
+    "meta": 1668947790410,
+    "relativePath": "spine\\flower51_tex.json"
+  },
+  "1dd67124-9d87-4945-b671-c2e25f4edc47": {
+    "asset": 1668901606000,
+    "meta": 1668947790087,
+    "relativePath": "spine\\flower51_tex.png"
+  },
+  "3d01ac99-911f-4343-920a-42a6c762286f": {
+    "asset": 1668929463449,
+    "meta": 1668947790091,
+    "relativePath": "spine\\flower52_ske.json"
+  },
+  "fbbd4a6e-07c8-440d-bd39-c3acd1ed321f": {
+    "asset": 1668929706884,
+    "meta": 1668947790095,
+    "relativePath": "spine\\flower53_ske.json"
+  },
+  "2e6b08af-f1df-4102-947c-b7d098b56454": {
+    "asset": 1668929463450,
+    "meta": 1668947790415,
+    "relativePath": "spine\\flower52_tex.json"
+  },
+  "679ff234-2ca8-41de-a090-5a867c3bc7b4": {
+    "asset": 1668901606000,
+    "meta": 1668947790114,
+    "relativePath": "spine\\flower52_tex.png"
+  },
+  "f65aa909-32c6-4fe6-9ba9-f31e98096293": {
+    "asset": 1668929706894,
+    "meta": 1668947790419,
+    "relativePath": "spine\\flower53_tex.json"
+  },
+  "41131375-3e3e-4a7d-8a2d-b36269003fbe": {
+    "asset": 1668901606000,
+    "meta": 1668947790118,
+    "relativePath": "spine\\flower53_tex.png"
+  },
+  "aa9d7b1c-4df5-416c-99d4-7edb8af2e8e2": {
+    "asset": 1668929849459,
+    "meta": 1668947790122,
+    "relativePath": "spine\\flower54_ske.json"
+  },
+  "7ed84ee9-3ed6-4aff-bf11-4104c96fa76b": {
+    "asset": 1668930009362,
+    "meta": 1668947790122,
+    "relativePath": "spine\\flower55_ske.json"
+  },
+  "8fd7c5cf-3bd8-47f7-9d1c-8eb02accd50a": {
+    "asset": 1668929849460,
+    "meta": 1668947790419,
+    "relativePath": "spine\\flower54_tex.json"
+  },
+  "7650131a-a8da-43e4-9da3-6c16dddfcd35": {
+    "asset": 1668901606000,
+    "meta": 1668947790146,
+    "relativePath": "spine\\flower54_tex.png"
+  },
+  "b297afba-1c8b-4397-8e23-3b9537205273": {
+    "asset": 1668930009372,
+    "meta": 1668947790423,
+    "relativePath": "spine\\flower55_tex.json"
+  },
+  "b440f32a-465b-47f7-8c7e-9db04bbaba51": {
+    "asset": 1668901606000,
+    "meta": 1668947790146,
+    "relativePath": "spine\\flower55_tex.png"
+  },
+  "bb8d4677-a2e4-4d7a-94ad-34c21a0f3a98": {
+    "asset": 1668929281604,
+    "meta": 1668947790150,
+    "relativePath": "spine\\flower56_ske.json"
+  },
+  "0d7d5054-b229-4d99-830f-519cf05f0950": {
+    "asset": 1668929479929,
+    "meta": 1668947790154,
+    "relativePath": "spine\\flower57_ske.json"
+  },
+  "71f85c35-8786-4a6c-be2a-7bf092f7056a": {
+    "asset": 1668929281605,
+    "meta": 1668947790423,
+    "relativePath": "spine\\flower56_tex.json"
+  },
+  "0929d576-9de1-46d0-8b6f-b9fe462b60e2": {
+    "asset": 1668929479930,
+    "meta": 1668947790427,
+    "relativePath": "spine\\flower57_tex.json"
+  },
+  "1c5dd059-7be9-43f2-bfa0-0688209685fd": {
+    "asset": 1668930437196,
+    "meta": 1668947790177,
+    "relativePath": "spine\\flower57_tex.png"
+  },
+  "9654870e-5d43-42bd-b0ca-aba2a61e0e45": {
+    "asset": 1668930427940,
+    "meta": 1668947790181,
+    "relativePath": "spine\\flower56_tex.png"
+  },
+  "c1a8c273-a46e-4f56-a29e-1d8234e6921c": {
+    "asset": 1668929724715,
+    "meta": 1668947790185,
+    "relativePath": "spine\\flower58_ske.json"
+  },
+  "5db3db84-837a-4f8f-9b8a-d66e5890aad9": {
+    "asset": 1668929861822,
+    "meta": 1668947790189,
+    "relativePath": "spine\\flower59_ske.json"
+  },
+  "19185b4a-feb9-4e52-b573-7539727910e7": {
+    "asset": 1668929724724,
+    "meta": 1668947790431,
+    "relativePath": "spine\\flower58_tex.json"
+  },
+  "6e67aa39-d489-4f1c-b622-7d9f9654f57e": {
+    "asset": 1668930443724,
+    "meta": 1668947790217,
+    "relativePath": "spine\\flower58_tex.png"
+  },
+  "322071a3-3ec3-4c83-9874-4c47666e026e": {
+    "asset": 1668929861832,
+    "meta": 1668947790432,
+    "relativePath": "spine\\flower59_tex.json"
+  },
+  "3cd296dc-5972-4e4b-90f1-6e06704824ba": {
+    "asset": 1668930452303,
+    "meta": 1668947790218,
+    "relativePath": "spine\\flower59_tex.png"
+  },
+  "29e6ccb3-499f-410a-9535-5755917c37b8": {
+    "asset": 1668928435852,
+    "meta": 1668947790222,
+    "relativePath": "spine\\flower6_ske.json"
+  },
+  "5d5fdfb4-ac73-4de0-8f4a-579bfae6895e": {
+    "asset": 1668930021972,
+    "meta": 1668947790226,
+    "relativePath": "spine\\flower60_ske.json"
+  },
+  "8f6bb373-cbaf-4d23-92ef-af57831b3369": {
+    "asset": 1668928435853,
+    "meta": 1668947790436,
+    "relativePath": "spine\\flower6_tex.json"
+  },
+  "a7dfdeb5-9229-4846-adfb-3b37e8ad45c4": {
+    "asset": 1668901350000,
+    "meta": 1668947790251,
+    "relativePath": "spine\\flower6_tex.png"
+  },
+  "8ae75e47-3a19-4314-ab27-d17a600744cb": {
+    "asset": 1668930021973,
+    "meta": 1668947790436,
+    "relativePath": "spine\\flower60_tex.json"
+  },
+  "f8588ed0-9abe-4ada-a5e9-42b69811931f": {
+    "asset": 1668901606000,
+    "meta": 1668947790255,
+    "relativePath": "spine\\flower60_tex.png"
+  },
+  "a4b32beb-7ac9-4255-b355-6c7070f57e51": {
+    "asset": 1668926965024,
+    "meta": 1668947790259,
+    "relativePath": "spine\\flower7_ske.json"
+  },
+  "8e5713b5-da24-4bf4-b2a5-4b0ee2e4a17b": {
+    "asset": 1668927526177,
+    "meta": 1668947790259,
+    "relativePath": "spine\\flower8_ske.json"
+  },
+  "6c75b59c-d5ec-40b1-bc97-2516947e686c": {
+    "asset": 1668926965025,
+    "meta": 1668947790438,
+    "relativePath": "spine\\flower7_tex.json"
+  },
+  "d74363b3-a727-467b-b014-5b8ad83f75f9": {
+    "asset": 1668901350000,
+    "meta": 1668947790278,
+    "relativePath": "spine\\flower7_tex.png"
+  },
+  "dd94bb22-76cb-4fb4-9fd0-ac99d25d2a97": {
+    "asset": 1668923428322,
+    "meta": 1668947790279,
+    "relativePath": "spine\\flower9_ske.json"
+  },
+  "6f1d6fc9-8e7b-461b-b915-eddd0e05b6fd": {
+    "asset": 1668927526187,
+    "meta": 1668947790438,
+    "relativePath": "spine\\flower8_tex.json"
+  },
+  "98af102e-e552-4d5d-9a88-7e66d459555f": {
+    "asset": 1668901350000,
+    "meta": 1668947790279,
+    "relativePath": "spine\\flower8_tex.png"
+  },
+  "11cb0b26-aaed-4544-b450-0321c15f2a05": {
+    "asset": 1668901350000,
+    "meta": 1668947790295,
+    "relativePath": "spine\\flower9_tex.png"
+  },
+  "5fe580f8-c4f9-4c2d-ac35-906d067a295d": {
+    "asset": 1668923428323,
+    "meta": 1668947790443,
+    "relativePath": "spine\\flower9_tex.json"
+  },
+  "46e3ee62-4f1e-414f-b7c3-466ceac36a96": {
+    "asset": 1668948764775,
+    "meta": 1668948775135,
+    "relativePath": "script\\game\\prefab\\NewPlantUI.ts"
+  },
+  "ff7483d2-efe8-4420-8891-085bc2c1b4b2": {
+    "asset": 1668998015239,
+    "meta": 1668998016039,
+    "relativePath": "script\\utils\\Utils.ts"
+  },
+  "7abb6370-eb08-42e4-8ada-f373c83602e3": {
+    "asset": 1668998339176,
+    "meta": 1668998340423,
+    "relativePath": "script\\game\\prefab\\Enemy.ts"
+  },
+  "0040e227-77b6-44a5-a814-fd3db4cc36db": {
+    "asset": 1668952242062,
+    "meta": 1668998550555,
+    "relativePath": "spine\\other\\cgsb_ske.json"
+  },
+  "3c55f8b4-d4e2-4e87-bccb-a39a69262f31": {
+    "asset": 1668951818327,
+    "meta": 1668998550557,
+    "relativePath": "spine\\other\\gxgg_ske.json"
+  },
+  "f08537fc-6dc2-4036-97fd-a12e986aee8f": {
+    "asset": 1668952242071,
+    "meta": 1668998550593,
+    "relativePath": "spine\\other\\cgsb_tex.json"
+  },
+  "1c9beef4-9df4-4b0f-9037-dd727881ce6f": {
+    "asset": 1668951818328,
+    "meta": 1668998550593,
+    "relativePath": "spine\\other\\gxgg_tex.json"
+  },
+  "758b1e38-0d70-4532-83fd-72a5a84ac7ca": {
+    "asset": 1668952371364,
+    "meta": 1668998550584,
+    "relativePath": "spine\\other\\gxgg_tex.png"
+  },
+  "32a1e5cd-291f-4790-8f2a-6fd063f7ff2c": {
+    "asset": 1668952368765,
+    "meta": 1668998550590,
+    "relativePath": "spine\\other\\cgsb_tex.png"
+  },
+  "b649ad67-0ada-4268-b6a8-eeae097da02c": {
+    "asset": 1669024268877,
+    "meta": 1669024272386,
+    "relativePath": "script\\game\\HallScene.ts"
+  },
+  "5817607b-c732-4656-bfdd-da65026d4044": {
+    "asset": 1669024389205,
+    "meta": 1669024391325,
+    "relativePath": "script\\game\\SoldierItem.ts"
   }
 }

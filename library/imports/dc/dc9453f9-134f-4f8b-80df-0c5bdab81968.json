@@ -1,0 +1,14 @@
+{
+  "__type__": "dragonBones.DragonBonesAtlasAsset",
+  "_name": "flower41_tex",
+  "_objFlags": 0,
+  "_native": "",
+  "_atlasJson": "{\"width\":512,\"imagePath\":\"flower41_tex.png\",\"name\":\"flower41\",\"SubTexture\":[{\"width\":116,\"y\":190,\"height\":42,\"name\":\"flower1/touying\",\"x\":1},{\"width\":113,\"y\":1,\"height\":187,\"name\":\"shenti\",\"x\":1},{\"width\":155,\"y\":1,\"height\":97,\"name\":\"wuqi\",\"x\":116},{\"frameY\":-1,\"y\":146,\"frameWidth\":55,\"frameHeight\":31,\"width\":53,\"height\":29,\"name\":\"qh1\",\"frameX\":-1,\"x\":116},{\"frameY\":-1,\"y\":100,\"frameWidth\":66,\"frameHeight\":46,\"width\":63,\"height\":44,\"name\":\"qh2\",\"frameX\":-2,\"x\":116}],\"height\":256}",
+  "_texture": {
+    "__uuid__": "74f0d72e-7b16-42bc-b2f0-b9ae7b1fdc89"
+  },
+  "texture": {
+    "__uuid__": "74f0d72e-7b16-42bc-b2f0-b9ae7b1fdc89"
+  },
+  "_textureAtlasData": null
+}
