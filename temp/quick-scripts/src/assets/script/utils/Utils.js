@@ -262,8 +262,6 @@ var Utils = /** @class */ (function () {
         var createNode = function (type) {
             if (type == 0)
                 return PoolMgr_1.default.Instance().get("Coin");
-            // if(type == 1)
-            // return PoolMgr.Instance().get("Gem");
             return null;
         };
         var nodeArray = [];

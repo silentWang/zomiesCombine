@@ -75,12 +75,14 @@ var AdCenter = /** @class */ (function (_super) {
         }
     };
     AdCenter.prototype.showGridAd = function () {
-        if (this.bannerAd)
-            this.bannerAd.show();
+        // if (this.bannerAd)
+        //     this.bannerAd.show()
+        WxCenter_1.default.showBanner();
     };
     AdCenter.prototype.hideGridAd = function () {
-        if (this.bannerAd)
-            this.bannerAd.hide();
+        // if (this.bannerAd)
+        //     this.bannerAd.hide()
+        WxCenter_1.default.hideBanner();
     };
     AdCenter.prototype.play = function (callback, type) {
         if (type === void 0) { type = 0; }

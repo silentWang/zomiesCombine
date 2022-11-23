@@ -124,9 +124,9 @@ var ShopItem = /** @class */ (function (_super) {
     };
     ShopItem.prototype.setItemData = function (gun) {
         return __awaiter(this, void 0, void 0, function () {
-            var node, bhide, buytype, skill, skilltype, value, str, _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var node, bhide, buytype, skill, skilltype, value, str, skpath, atlaspath, chick, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         node = null;
                         bhide = false;
@@ -187,10 +187,22 @@ var ShopItem = /** @class */ (function (_super) {
                         this._findInChildren(node, "lbl_desc").getComponent(cc.Label).string = bhide ? '技能:未知' : str;
                         this._findInChildren(node, "lbl_cd").getComponent(cc.Label).string = bhide ? "?" : gun[1] + "";
                         this._findInChildren(node, "lbl_power").getComponent(cc.Label).string = bhide ? "?" : Utils_1.default.formatNumber(gun[2]) + "";
-                        _a = this._findInChildren(node, "gun").getComponent(cc.Sprite);
-                        return [4 /*yield*/, Utils_1.default.loadRes("texture/plants/" + (gun[0] - 1), cc.SpriteFrame)];
+                        if (!!bhide) return [3 /*break*/, 3];
+                        skpath = "spine:flower" + gun[0] + "_ske";
+                        atlaspath = "spine:flower" + gun[0] + "_tex";
+                        chick = this.GetDragonAmature('shopChick');
+                        _a = chick;
+                        return [4 /*yield*/, Utils_1.default.loadRes(skpath, dragonBones.DragonBonesAsset)];
                     case 1:
-                        _a.spriteFrame = (_b.sent());
+                        _a.dragonAsset = (_c.sent());
+                        _b = chick;
+                        return [4 /*yield*/, Utils_1.default.loadRes(atlaspath, dragonBones.DragonBonesAtlasAsset)];
+                    case 2:
+                        _b.dragonAtlasAsset = (_c.sent());
+                        chick.armatureName = 'Armature';
+                        chick.playAnimation('idleL', 0);
+                        _c.label = 3;
+                    case 3:
                         // this._findInChildren(node,"gun").getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]-1),cc.SpriteFrame) as cc.SpriteFrame;
                         // let cs = this._findInChildren(node,"0");
                         // if(gun[0]+1<60)

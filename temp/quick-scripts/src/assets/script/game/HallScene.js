@@ -135,7 +135,6 @@ var HallScene = /** @class */ (function (_super) {
         if (dt > 1)
             dt = 1;
         this.SetText("lbl_coin", Utils_1.default.formatNumber(Data_1.default.user.coin) + "");
-        // this.SetText("lbl_gem",Utils.formatNumber(Data.user.gem)+"");
         if (this.recordertime != 0) {
             var s = Math.floor((Utils_1.default.getServerTime() - this.recordertime) / 1000);
             if (s > 0)
@@ -380,16 +379,16 @@ var HallScene = /** @class */ (function (_super) {
                             var isInDb = Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > 0;
                             var isDpIn = Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > 0;
                             //校验时间
-                            if (Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > AdLayer_1.max_auto_double_att * 60 * 1000) {
+                            if (Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > AdLayer_1.MAX_DOUBLE_ATT_TIME * 60 * 1000) {
                                 Data_1.default.user.double_att_time = Utils_1.default.getServerTime();
                             }
-                            if (Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > AdLayer_1.max_auto_double_income * 60 * 1000) {
+                            if (Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > AdLayer_1.MAX_DOUBLE_INCOME_TIME * 60 * 1000) {
                                 Data_1.default.user.double_income_time = Utils_1.default.getServerTime();
                             }
-                            if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > AdLayer_1.max_auto_com * 60 * 1000) {
+                            if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > AdLayer_1.MAX_AUTO_COM_TIME * 60 * 1000) {
                                 Data_1.default.user.auto_com_time = Utils_1.default.getServerTime();
                             }
-                            if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > AdLayer_1.max_drop_plant * 60 * 1000) {
+                            if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > AdLayer_1.MAX_DROP_PLANT_TIME * 60 * 1000) {
                                 Data_1.default.user.drop_plant_time = Utils_1.default.getServerTime();
                             }
                             _this.SetText("att_x2_time", isX2In ? Utils_1.default.getTimeStrByS((Data_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000) : '狂暴');
@@ -405,7 +404,7 @@ var HallScene = /** @class */ (function (_super) {
                             if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() < 0)
                                 _this.GetSprite("bt_fast_gen_process_item").fillRange = 0;
                             else
-                                _this.GetSprite("bt_fast_gen_process_item").fillRange = ((Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime()) / 1000 / 60) / AdLayer_1.max_drop_plant; // (max_drop_plant * 60 - (Data.user.drop_plant_time - Utils.getServerTime())/1000) /max_drop_plant * 60
+                                _this.GetSprite("bt_fast_gen_process_item").fillRange = ((Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime()) / 1000 / 60) / AdLayer_1.MAX_DROP_PLANT_TIME; // (max_drop_plant * 60 - (Data.user.drop_plant_time - Utils.getServerTime())/1000) /max_drop_plant * 60
                             // this.updateUI();
                             // TaskLayer.checkTask();//任务检测
                             // if (GameManager.Instance().isGuide == false)
@@ -555,12 +554,12 @@ var HallScene = /** @class */ (function (_super) {
                         _this.setdragitempos(pos);
                         var pos1 = _this.GetGameObject("btn_delete").position;
                         pos1 = _this.GetGameObject("btn_delete").parent.convertToWorldSpaceAR(pos1);
-                        if (e.getLocation().sub(cc.v2(pos1.x, pos1.y)).mag() < 100) {
-                            _this.GetGameObject("btn_delete").scale = 0.55;
-                        }
-                        else {
-                            _this.GetGameObject("btn_delete").scale = 0.5;
-                        }
+                        // if (e.getLocation().sub(cc.v2(pos1.x,pos1.y)).mag() < 100) {
+                        //     this.GetGameObject("btn_delete").scale = 0.55;
+                        // }
+                        // else {
+                        //     this.GetGameObject("btn_delete").scale = 0.5;
+                        // }
                     }
                 }, this);
                 node_com.on(cc.Node.EventType.TOUCH_END, this.docomp, this);
@@ -620,7 +619,7 @@ var HallScene = /** @class */ (function (_super) {
         this.touchendtime = Utils_1.default.getServerTime();
         this.hidemergetips();
         this.GetGameObject("btn_delete").stopAllActions();
-        this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(2), cc.fadeTo(1, 0)));
+        this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(0.5, 0)));
         this.GetGameObject("node_com").runAction(cc.sequence(cc.delayTime(1), cc.callFunc(function () {
             _this.bPauseAutoCom = false;
             _this.bInAutoCom = false;
@@ -639,7 +638,7 @@ var HallScene = /** @class */ (function (_super) {
                 this.item_drag.node.active = false;
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
-                this.GetGameObject("btn_delete").scale = 0.5;
+                // this.GetGameObject("btn_delete").scale = 0.5;
                 var tmp = 0;
                 for (var i = 0; i < this.items.length; ++i) {
                     if (this.items[i].datacopy)
@@ -733,12 +732,33 @@ var HallScene = /** @class */ (function (_super) {
         this.playSkAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0, 20, 0)), 1);
     };
     HallScene.prototype.updateBuyButton = function () {
-        var lv = Data_1.default.user.GetMaxLv() - 3;
-        if (lv < 1)
-            lv = 1;
-        this.SetText("lbl_buy_lvl", 'LV.' + lv);
-        this.SetText("lbl_buy_cost", Utils_1.default.formatNumber(Data_1.default.user.BuyPrice(lv)));
-        this.SetSprite("icon_buy", "texture/plants/" + (lv - 1));
+        return __awaiter(this, void 0, void 0, function () {
+            var lv, skpath, atlaspath, chick, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        lv = Data_1.default.user.GetMaxLv() - 3;
+                        if (lv < 1)
+                            lv = 1;
+                        this.SetText("lbl_buy_lvl", 'LV.' + lv);
+                        this.SetText("lbl_buy_cost", Utils_1.default.formatNumber(Data_1.default.user.BuyPrice(lv)));
+                        skpath = "spine:flower" + lv + "_ske";
+                        atlaspath = "spine:flower" + lv + "_tex";
+                        chick = this.GetDragonAmature('chickbuy');
+                        _a = chick;
+                        return [4 /*yield*/, Utils_1.default.loadRes(skpath, dragonBones.DragonBonesAsset)];
+                    case 1:
+                        _a.dragonAsset = (_c.sent());
+                        _b = chick;
+                        return [4 /*yield*/, Utils_1.default.loadRes(atlaspath, dragonBones.DragonBonesAtlasAsset)];
+                    case 2:
+                        _b.dragonAtlasAsset = (_c.sent());
+                        chick.armatureName = 'Armature';
+                        chick.playAnimation('idleL', 0);
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     HallScene.prototype.tryBuyPlant = function (lv, buytype) {
         var item = null;
@@ -788,7 +808,7 @@ var HallScene = /** @class */ (function (_super) {
                 MsgHints_1.default.show("位置不够啦！");
                 this.GetGameObject("btn_delete").stopAllActions();
                 this.GetGameObject("btn_delete").opacity = 255;
-                this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(2), cc.fadeTo(1, 0)));
+                this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(0.5, 0)));
             }
             return false;
         }

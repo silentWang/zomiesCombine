@@ -66,13 +66,15 @@ export default class AdCenter extends Singleton {
 
     public showGridAd() 
     {
-        if (this.bannerAd)
-            this.bannerAd.show()
+        // if (this.bannerAd)
+        //     this.bannerAd.show()
+        WxCenter.showBanner();
     }
 
     public hideGridAd() {
-        if (this.bannerAd)
-            this.bannerAd.hide()
+        // if (this.bannerAd)
+        //     this.bannerAd.hide()
+        WxCenter.hideBanner();
     }
 
     private callBack: Function;

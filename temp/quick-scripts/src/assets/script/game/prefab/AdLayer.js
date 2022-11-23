@@ -23,7 +23,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EADLAYER = exports.max_drop_plant = exports.max_auto_double_att = exports.max_auto_double_income = exports.max_auto_com = void 0;
+exports.EADLAYER = exports.MAX_DOUBLE_ATT_TIME = exports.MAX_DROP_PLANT_TIME = exports.MAX_DOUBLE_INCOME_TIME = exports.MAX_AUTO_COM_TIME = void 0;
 var BaseUI_1 = require("../../framwork/BaseUI");
 var MsgHints_1 = require("../../framwork/MsgHints");
 var AdCenter_1 = require("../../manager/AdCenter");
@@ -39,18 +39,14 @@ var EADLAYER;
     EADLAYER[EADLAYER["DROP_PLANT"] = 3] = "DROP_PLANT";
 })(EADLAYER || (EADLAYER = {}));
 exports.EADLAYER = EADLAYER;
-var add_time_auto_com = 2;
-var add_time_double_income = 10;
-var add_time_drop_plant = 10;
-var add_time_double_att = 1;
-var auto_com_gem = 4;
-var double_income_gem = 4;
-var double_att_gem = 4;
-var double_drop_plant_gem = 4;
-exports.max_auto_com = 10;
-exports.max_auto_double_income = 60;
-exports.max_auto_double_att = 6;
-exports.max_drop_plant = 60;
+var AUTO_COM_TIME = 2;
+var DOUBLE_INCOME_TIME = 10;
+var DROP_PLANT_TIME = 10;
+var DOUBLE_ATT_TIME = 1;
+exports.MAX_AUTO_COM_TIME = 4;
+exports.MAX_DOUBLE_INCOME_TIME = 20;
+exports.MAX_DROP_PLANT_TIME = 20;
+exports.MAX_DOUBLE_ATT_TIME = 2;
 var AdLayer = /** @class */ (function (_super) {
     __extends(AdLayer, _super);
     function AdLayer() {
@@ -82,19 +78,19 @@ var AdLayer = /** @class */ (function (_super) {
         var max = 0;
         if (this.type == EADLAYER.AUTO_COM) {
             end_time = Data_1.default.user.auto_com_time;
-            max = exports.max_auto_com;
+            max = exports.MAX_AUTO_COM_TIME;
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
             end_time = Data_1.default.user.double_att_time;
-            max = exports.max_auto_double_att;
+            max = exports.MAX_DOUBLE_ATT_TIME;
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
             end_time = Data_1.default.user.double_income_time;
-            max = exports.max_auto_double_income;
+            max = exports.MAX_DOUBLE_INCOME_TIME;
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
             end_time = Data_1.default.user.drop_plant_time;
-            max = exports.max_drop_plant;
+            max = exports.MAX_DROP_PLANT_TIME;
         }
         return { end_time: end_time, max: max };
     };
@@ -105,62 +101,63 @@ var AdLayer = /** @class */ (function (_super) {
         this.GetGameObject("icon_income").active = e == EADLAYER.DOUBLE_INCOME;
         this.GetGameObject("icon_angre").active = e == EADLAYER.DOUBLE_ATT;
         if (this.type == EADLAYER.AUTO_COM) {
-            this.SetText("lbl_effect", "+" + add_time_auto_com + "分钟");
+            this.SetText("lbl_effect", "+" + AUTO_COM_TIME + "分钟");
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
-            this.SetText("lbl_effect", "+" + add_time_double_att + "分钟");
+            this.SetText("lbl_effect", "+" + DOUBLE_ATT_TIME + "分钟");
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            // this.SetText("lbl_effect", "增加" + add_time_double_income + "分钟双倍收益时间");
-            this.SetText("lbl_effect", "+" + add_time_double_income + "分钟");
+            this.SetText("lbl_effect", "+" + DOUBLE_INCOME_TIME + "分钟");
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
-            this.SetText("lbl_effect", "+" + add_time_drop_plant + "分钟");
+            this.SetText("lbl_effect", "+" + DROP_PLANT_TIME + "分钟");
         }
         var _a = this.getEndAndMaxTime(), end_time = _a.end_time, max = _a.max;
-        this.GetGameObject('btn_normal').active = end_time <= Utils_1.default.getServerTime();
+        var isRunning = end_time > Utils_1.default.getServerTime();
+        // this.GetGameObject('btn_ad').active = !isRunning;
+        this.GetGameObject('btn_normal').active = !isRunning;
     };
-    AdLayer.prototype.addvalue = function (gem) {
-        if (gem === void 0) { gem = 1; }
+    AdLayer.prototype.addvalue = function (double) {
+        if (double === void 0) { double = 1; }
         var isUse = false;
         if (this.type == EADLAYER.AUTO_COM) {
-            if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > (exports.max_auto_com - add_time_auto_com) * 60 * 1000) {
-                MsgHints_1.default.show("最大累积时间" + exports.max_auto_com + "分钟");
+            if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > (exports.MAX_AUTO_COM_TIME - AUTO_COM_TIME) * 60 * 1000) {
+                MsgHints_1.default.show("最大累积时间" + exports.MAX_AUTO_COM_TIME + "分钟");
                 return;
             }
             if (Data_1.default.user.auto_com_time < Utils_1.default.getServerTime())
                 Data_1.default.user.auto_com_time = Utils_1.default.getServerTime();
-            Data_1.default.user.auto_com_time += add_time_auto_com * 60 * 1000 * gem;
+            Data_1.default.user.auto_com_time += AUTO_COM_TIME * 60 * 1000 * double;
             isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
-            if (Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > (exports.max_auto_double_att - add_time_double_att) * 60 * 1000) {
-                MsgHints_1.default.show("最大累积时间" + exports.max_auto_double_att + "分钟");
+            if (Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > (exports.MAX_DOUBLE_ATT_TIME - DOUBLE_ATT_TIME) * 60 * 1000) {
+                MsgHints_1.default.show("最大累积时间" + exports.MAX_DOUBLE_ATT_TIME + "分钟");
                 return;
             }
             if (Data_1.default.user.double_att_time < Utils_1.default.getServerTime())
                 Data_1.default.user.double_att_time = Utils_1.default.getServerTime();
-            Data_1.default.user.double_att_time += add_time_double_att * 60 * 1000 * gem;
+            Data_1.default.user.double_att_time += DOUBLE_ATT_TIME * 60 * 1000 * double;
             isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            if (Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > (exports.max_auto_double_income - add_time_double_income) * 60 * 1000) {
-                MsgHints_1.default.show("最大累积时间" + exports.max_auto_double_income + "分钟");
+            if (Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > (exports.MAX_DOUBLE_INCOME_TIME - DOUBLE_INCOME_TIME) * 60 * 1000) {
+                MsgHints_1.default.show("最大累积时间" + exports.MAX_DOUBLE_INCOME_TIME + "分钟");
                 return;
             }
             if (Data_1.default.user.double_income_time < Utils_1.default.getServerTime())
                 Data_1.default.user.double_income_time = Utils_1.default.getServerTime();
-            Data_1.default.user.double_income_time += add_time_double_income * 60 * 1000 * gem;
+            Data_1.default.user.double_income_time += DOUBLE_INCOME_TIME * 60 * 1000 * double;
             isUse = true;
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
-            if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > (exports.max_drop_plant - add_time_drop_plant) * 60 * 1000) {
-                MsgHints_1.default.show("最大累积时间" + exports.max_drop_plant + "分钟");
+            if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > (exports.MAX_DROP_PLANT_TIME - DROP_PLANT_TIME) * 60 * 1000) {
+                MsgHints_1.default.show("最大累积时间" + exports.MAX_DROP_PLANT_TIME + "分钟");
                 return;
             }
             if (Data_1.default.user.drop_plant_time < Utils_1.default.getServerTime())
                 Data_1.default.user.drop_plant_time = Utils_1.default.getServerTime();
-            Data_1.default.user.drop_plant_time += add_time_drop_plant * 60 * 1000 * gem;
+            Data_1.default.user.drop_plant_time += DROP_PLANT_TIME * 60 * 1000 * double;
             isUse = true;
         }
         Data_1.default.save();
@@ -187,22 +184,6 @@ var AdLayer = /** @class */ (function (_super) {
                 this.addvalue(1);
                 this.GetGameObject('btn_normal').active = false;
                 break;
-            // case "btn_gem":
-            //     let gem = 0;
-            //     if (this.type == EADLAYER.AUTO_COM) {
-            //         gem = auto_com_gem
-            //     }
-            //     else if (this.type == EADLAYER.DOUBLE_ATT) {
-            //         gem = double_att_gem
-            //     }
-            //     else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            //         gem = double_income_gem                   
-            //     }
-            //     else if (this.type == EADLAYER.DROP_PLANT) {
-            //         gem = double_drop_plant_gem                 
-            //     }
-            //     this.addvalue(gem);
-            //     break;
         }
     };
     AdLayer = __decorate([

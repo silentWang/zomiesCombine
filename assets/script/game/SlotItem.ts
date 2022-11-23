@@ -13,7 +13,7 @@ export default class SlotItem extends BaseUI {
     static getCurOpen()
     {
         let curopen = -1
-        for(var i= 1;i<12;++i)
+        for(var i = 1;i < 12;++i)
         {
             if(Data.user.slots[i] == 0)
             {
@@ -75,7 +75,6 @@ export default class SlotItem extends BaseUI {
     {
         this.index = i;
         this.SetText("lbl_index",i+"");
-        // console.log(i,Data.user.slots[i])
         let curopen = SlotItem.getCurOpen();
         this.node.getComponent(cc.Button).interactable = this.index-1>=curopen && curopen !=-1;
 

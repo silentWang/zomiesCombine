@@ -33,9 +33,6 @@ export default class DebugTools extends cc.Component {
         this.addBtn("lv++", () => {
            Data.user.lv++;
         })
-
-
-
     }
 
     addBtn(name: string, callback: Function) {

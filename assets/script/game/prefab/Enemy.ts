@@ -37,18 +37,16 @@ export default class Enemy extends BaseUI {
     {
         this.type = boss?1:0;
         let info = DB_zombie[id+""];
- 
-        if(id >100)
+        if(id > 100)
         {
             id -= 100;
             this.type = 2;
         }
 
-        if(id>52)
-            id = Utils.getRandomInt(1,52);
+        if(id > 52) id = Utils.getRandomInt(1,52);
 
         // this.GetGameObject("boss").active = this.type == 2;
-
+        this.GetGameObject('sp').scale = this.type == 2 ? 1 : 0.74;
         this.sped = info[2] * this.base_speed;
         this.maxhp = info[1];
         this.hp = this.maxhp;
@@ -78,64 +76,51 @@ export default class Enemy extends BaseUI {
         armature.armatureName = "Armature";
         armature.playAnimation('run',0);
         this.GetGameObject("New ProgressBar").opacity = 0;
-
-        // let factory = dragonBones.CCFactory.getInstance();
-        // factory.replaceSkin(armature.armature(), (armatureDisplay2.armature() as dragonBones.Armature).armatureData.defaultSkin, true);
-
-        // 原逻辑
-        // let respath = "spine:enemy" + id;
-        // this.GetSkeleton("sp").skeletonData = await Utils.loadRes(respath,sp.SkeletonData) as sp.SkeletonData;
-        // this.GetSkeleton("sp").setAnimation(0,"run",true);
-        // this.GetGameObject("New ProgressBar").opacity = 0;
     }
 
     hit(plantlv:number)
     {
-        if(this.hp<=0)return;
-
+        if(this.hp <= 0)return;
         let info = DB_plant[plantlv-1];
-
         let skill = String(info[3]).split("|");
         let skilltype = Number(skill[0]);
         let skillvalue = Number(skill[1]);
         let power = Number(info[2])
-
         let bbj = false;
+        let isskill = false;
         if(Utils.getRandom(0,100) < skillvalue)
         {
             if(skilltype == 1)//减速
             {
                 this.slowdown();
+                isskill = true;
             }
             else if(skilltype == 2)//双倍伤害
             {
-                power*=2;
+                power *= 2;
                 bbj = true;
+                isskill = true;
             }
             else if(skilltype ==3)//冰冻
             {
+                isskill = true;
                 this.frozen();
             }
         }
-
-
         this.hp -= power;
         this.hp = Math.max(this.hp,0)
-
         this.SetProgressBar("New ProgressBar",this.hp/this.maxhp);
         this.GetGameObject("New ProgressBar").stopAllActions();
         this.GetGameObject("New ProgressBar").opacity = 255;
         this.GetGameObject("New ProgressBar").runAction(cc.sequence(cc.delayTime(1),cc.fadeTo(0.2,0)))
-
-       if(bbj)
-       {
+        if(!isskill) AudioMgr.Instance().playSFX('hit');
+        if(bbj){
             this.showWLBaoji(power,Utils.getRandom(0,1)>0.5);
-       }
-       else
-       {
+        }
+        else{
             this.showFSHurt(power,Utils.getRandom(0,1)>0.5);
-       }
-        if(this.hp<=0)
+        }
+        if(this.hp <= 0)
         {
             HallScene.Instance.removeenemy(this.node,false);
             this.GetGameObject("sp").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(.2,0),cc.callFunc(()=>{
@@ -162,9 +147,9 @@ export default class Enemy extends BaseUI {
             // if(this.type == 2)
             //     this.playSkAni("spine/other/death","animation",this.node,cc.v3(0,75,0),0.8)
             // else
-                this.playSkAni("spine:other/zhuoshao","effect",this.node,cc.v3(0,75,0),1).then((node)=>{
+            this.playSkAni("spine:other/zhuoshao","effect",this.node,cc.v3(0,75,0),1).then((node)=>{
                 node.scale =2 ;
-               });
+            });
         }
         else
         {
@@ -172,13 +157,11 @@ export default class Enemy extends BaseUI {
             this.playSkAni("spine:other/jizhong","animation",this.node,cc.v3(0,75,0),1)
             this.redendtime = Utils.getServerTime() + 300;
         }
-        AudioMgr.Instance().playSFX("hit")
         // this.GetGameObject("hit").getComponent(cc.Animation).play("hit");
     }
 
     slowdown()
     {
-        
         AudioMgr.Instance().playSFX("skill_slow")
         // this.GetSkeleton("sp").timeScale = 0.5;
         this.GetDragonAmature('sp').timeScale = 0.5;

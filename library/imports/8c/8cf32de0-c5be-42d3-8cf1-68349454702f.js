@@ -85,7 +85,6 @@ var SlotItem = /** @class */ (function (_super) {
     SlotItem.prototype.setIndex = function (i) {
         this.index = i;
         this.SetText("lbl_index", i + "");
-        // console.log(i,Data.user.slots[i])
         var curopen = SlotItem_1.getCurOpen();
         this.node.getComponent(cc.Button).interactable = this.index - 1 >= curopen && curopen != -1;
         // this.GetSkeleton("fx_slot").setAnimation(0,"buy",true)

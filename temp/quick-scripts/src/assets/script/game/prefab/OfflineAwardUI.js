@@ -24,7 +24,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
-var MsgHints_1 = require("../../framwork/MsgHints");
 var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
 var AudioMgr_1 = require("../../utils/AudioMgr");
@@ -89,23 +88,6 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                     }
                 };
                 AdCenter_1.default.Instance().play(func);
-                break;
-            case "btn_gem":
-                {
-                    if (Data_1.default.user.gem < 5) {
-                        MsgHints_1.default.show("钻石不足");
-                        return;
-                    }
-                    var coin_3 = this._data * 3;
-                    AudioMgr_1.default.Instance().playSFX("coin");
-                    Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
-                        if (b) {
-                            Data_1.default.user.coin += coin_3;
-                            Data_1.default.user.gem -= 5;
-                        }
-                    });
-                    this.closeUI();
-                }
                 break;
         }
     };

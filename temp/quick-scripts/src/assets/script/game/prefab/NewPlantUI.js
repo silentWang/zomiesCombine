@@ -71,26 +71,20 @@ var NewPlantUI = /** @class */ (function (_super) {
     function NewPlantUI() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.coin = 0;
-        _this.gem = 0;
         return _this;
     }
     NewPlantUI.prototype.start = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var lv, coin, levelup, skpath, atlaspath, armature, _a, _b;
+            var lv, coin, skpath, atlaspath, armature, _a, _b;
             return __generator(this, function (_c) {
                 switch (_c.label) {
                     case 0:
                         lv = Data_1.default.user.GetMaxLv();
                         coin = Data_1.default.user.BuyPrice(Math.max(1, lv - 3));
-                        levelup = DB_1.DB_levelupGem[lv + ""];
-                        // this.GetGameObject("node_gem").active = levelup;
+                        this.SetText('lbl_name', DB_1.DB_plant[lv - 1][7] + '');
                         this.SetText("lbl_lv", "等级 " + lv);
                         AudioMgr_1.default.Instance().playSFX("unlock_plant");
                         this.coin = coin;
-                        if (levelup) {
-                            this.gem = levelup[1];
-                            // this.SetText("lbl_gem",this.gem+"");
-                        }
                         this.SetText("lbl_coin", Utils_1.default.formatNumber(coin));
                         skpath = "spine:flower" + lv + "_ske";
                         atlaspath = "spine:flower" + lv + "_tex";
@@ -122,21 +116,12 @@ var NewPlantUI = /** @class */ (function (_super) {
             case "btn_get":
                 {
                     var coin_1 = this.coin;
-                    var gem_1 = this.gem;
                     AudioMgr_1.default.Instance().playSFX("coin");
                     Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                         if (b) {
                             Data_1.default.user.coin += coin_1;
                         }
                     });
-                    if (gem_1 > 0) {
-                        AudioMgr_1.default.Instance().playSFX("gem");
-                        Utils_1.default.flyAnim(1, this.node, "icon_gem", Utils_1.default.getRandomInt(2, 4), 85, function (b) {
-                            if (b) {
-                                Data_1.default.user.gem += gem_1;
-                            }
-                        });
-                    }
                     this.closeUI();
                 }
                 break;

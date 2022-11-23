@@ -3,7 +3,7 @@ import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
-import { DB_levelupGem } from "../DB";
+import { DB_plant } from "../DB";
 
 
 const {ccclass, property} = cc._decorator;
@@ -12,25 +12,14 @@ const {ccclass, property} = cc._decorator;
 export default class NewPlantUI extends BaseUI {
 
     private coin = 0;
-    private gem = 0;
     async start () {
-
         let lv = Data.user.GetMaxLv()
         let coin = Data.user.BuyPrice(Math.max(1,lv-3));
-        let levelup = DB_levelupGem[lv+""];
-        // this.GetGameObject("node_gem").active = levelup;
+        this.SetText('lbl_name',DB_plant[lv - 1][7] + '');
         this.SetText("lbl_lv","等级 "+lv);
-
         AudioMgr.Instance().playSFX("unlock_plant")
-
         this.coin = coin;
-        if(levelup)
-        {
-            this.gem = levelup[1]
-            // this.SetText("lbl_gem",this.gem+"");
-        }
         this.SetText("lbl_coin",Utils.formatNumber(coin));
-
         let skpath = `spine:flower${lv}_ske`;
         let atlaspath = `spine:flower${lv}_tex`;
         let armature = this.GetDragonAmature("chick");
@@ -38,7 +27,6 @@ export default class NewPlantUI extends BaseUI {
         armature.dragonAtlasAsset = await Utils.loadRes(atlaspath,dragonBones.DragonBonesAtlasAsset) as dragonBones.DragonBonesAtlasAsset;
         armature.armatureName = "Armature";
         armature.playAnimation('idleL',0);
-
         AdCenter.Instance().showGridAd();
     }
 
@@ -55,8 +43,6 @@ export default class NewPlantUI extends BaseUI {
             case "btn_get":
                 {
                     let coin = this.coin
-                    let gem = this.gem;
-                    
                     AudioMgr.Instance().playSFX("coin");
                     Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
                         if(b)
@@ -64,16 +50,6 @@ export default class NewPlantUI extends BaseUI {
                             Data.user.coin += coin;
                         }  
                     })
-                    if(gem>0)
-                    {
-                        AudioMgr.Instance().playSFX("gem");
-                        Utils.flyAnim(1,this.node,"icon_gem",Utils.getRandomInt(2,4),85,(b)=>{
-                            if(b)
-                            {
-                                Data.user.gem += gem;
-                            }  
-                        })
-                    }
                     this.closeUI();
                 }
                 break;

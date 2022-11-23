@@ -5,7 +5,7 @@ import WxCenter from "../manager/WxCenter";
 import AudioMgr from "../utils/AudioMgr";
 import Utils from "../utils/Utils";
 import { DB_level, DB_plant } from "./DB";
-import AdLayer, { max_auto_double_att, max_auto_double_income, max_auto_com, max_drop_plant, EADLAYER } from "./prefab/AdLayer";
+import AdLayer, { MAX_DOUBLE_ATT_TIME, MAX_DOUBLE_INCOME_TIME, MAX_AUTO_COM_TIME, MAX_DROP_PLANT_TIME, EADLAYER } from "./prefab/AdLayer";
 import ShareLayer from "./prefab/ShareLayer";
 import Enemy from "./prefab/Enemy";
 import LoseUI from "./prefab/LoseUI";
@@ -68,8 +68,6 @@ export default class HallScene extends BaseUI {
 	{
         if(dt>1)dt=1;
 		this.SetText("lbl_coin",Utils.formatNumber(Data.user.coin)+"");
-        // this.SetText("lbl_gem",Utils.formatNumber(Data.user.gem)+"");
-        
         if(this.recordertime != 0)
         {
             let s = Math.floor((Utils.getServerTime() - this.recordertime)/1000);
@@ -288,30 +286,6 @@ export default class HallScene extends BaseUI {
         this.hidemergetips();
         HallScene._instance = this;
         WxCenter.init();
-
-        // if (window["wx"]) {
-        //     let obj = window["wx"].getLaunchOptionsSync({})
-        //     console.log('启动小程序的路径:', obj.path)
-        //     console.log('启动小程序的场景值:', obj.scene)
-        //     console.log('启动小程序的 query 参数:', obj.query)
-        //     console.log('来源信息:', obj.shareTicket)
-        //     console.log('来源信息参数appId:', obj.referrerInfo.appId)
-        //     console.log('来源信息传过来的数据:', obj.referrerInfo.extraData)
-
-        //     window["wx"].onShareMessageToFriend((errMsg) => {
-        //         console.log("errMsg", errMsg)
-        //         if (errMsg.success) {
-        //             AudioMgr.Instance().playSFX("gem");
-        //             Utils.flyAnim(1,this.node,"icon_gem",Utils.getRandomInt(2,4),85,(b)=>{
-        //                 if(b)
-        //                 {
-        //                     Data.user.gem += GameConst.INVITE_FRIEND_ADD_GEM;
-        //                 }  
-        //             })
-        //         }
-        //     })
-        // }
-        
 		let slots = this.GetGameObject("slots");
 		let i = 0;
 		for(var slot of slots.children)
@@ -373,16 +347,16 @@ export default class HallScene extends BaseUI {
             let isDpIn = Data.user.drop_plant_time - Utils.getServerTime() > 0;
 
             //校验时间
-            if (Data.user.double_att_time - Utils.getServerTime() > max_auto_double_att * 60 * 1000) {
+            if (Data.user.double_att_time - Utils.getServerTime() > MAX_DOUBLE_ATT_TIME * 60 * 1000) {
                 Data.user.double_att_time = Utils.getServerTime();
             }
-            if (Data.user.double_income_time - Utils.getServerTime() > max_auto_double_income * 60 * 1000) {
+            if (Data.user.double_income_time - Utils.getServerTime() > MAX_DOUBLE_INCOME_TIME * 60 * 1000) {
                 Data.user.double_income_time = Utils.getServerTime();
             }
-            if (Data.user.auto_com_time - Utils.getServerTime() > max_auto_com * 60 * 1000) {
+            if (Data.user.auto_com_time - Utils.getServerTime() > MAX_AUTO_COM_TIME * 60 * 1000) {
                 Data.user.auto_com_time = Utils.getServerTime();
             }
-            if (Data.user.drop_plant_time - Utils.getServerTime() > max_drop_plant * 60 * 1000) {
+            if (Data.user.drop_plant_time - Utils.getServerTime() > MAX_DROP_PLANT_TIME * 60 * 1000) {
                 Data.user.drop_plant_time = Utils.getServerTime();
             }
 
@@ -403,7 +377,7 @@ export default class HallScene extends BaseUI {
             if(Data.user.drop_plant_time - Utils.getServerTime()<0)
                 this.GetSprite("bt_fast_gen_process_item").fillRange = 0;
             else
-                this.GetSprite("bt_fast_gen_process_item").fillRange = ( (Data.user.drop_plant_time - Utils.getServerTime())/1000/60)/max_drop_plant;// (max_drop_plant * 60 - (Data.user.drop_plant_time - Utils.getServerTime())/1000) /max_drop_plant * 60
+                this.GetSprite("bt_fast_gen_process_item").fillRange = ( (Data.user.drop_plant_time - Utils.getServerTime())/1000/60)/MAX_DROP_PLANT_TIME;// (max_drop_plant * 60 - (Data.user.drop_plant_time - Utils.getServerTime())/1000) /max_drop_plant * 60
 
             // this.updateUI();
             // TaskLayer.checkTask();//任务检测
@@ -587,12 +561,12 @@ export default class HallScene extends BaseUI {
 
                 var pos1 = this.GetGameObject("btn_delete").position;
                 pos1 = this.GetGameObject("btn_delete").parent.convertToWorldSpaceAR(pos1);
-                if (e.getLocation().sub(cc.v2(pos1.x,pos1.y)).mag() < 100) {
-                    this.GetGameObject("btn_delete").scale = 0.55;
-                }
-                else {
-                    this.GetGameObject("btn_delete").scale = 0.5;
-                }
+                // if (e.getLocation().sub(cc.v2(pos1.x,pos1.y)).mag() < 100) {
+                //     this.GetGameObject("btn_delete").scale = 0.55;
+                // }
+                // else {
+                //     this.GetGameObject("btn_delete").scale = 0.5;
+                // }
             }
         }, this);
 
@@ -650,7 +624,7 @@ export default class HallScene extends BaseUI {
         this.touchendtime = Utils.getServerTime();
         this.hidemergetips();
         this.GetGameObject("btn_delete").stopAllActions();
-        this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(2),cc.fadeTo(1,0)))
+        this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(0.5,0)))
 
         this.GetGameObject("node_com").runAction(cc.sequence(cc.delayTime(1), cc.callFunc(() => {
             this.bPauseAutoCom = false;
@@ -671,7 +645,7 @@ export default class HallScene extends BaseUI {
                 this.item_drag.node.active = false;
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
-                this.GetGameObject("btn_delete").scale = 0.5;
+                // this.GetGameObject("btn_delete").scale = 0.5;
                 var tmp: number = 0;
                 for (var i = 0; i < this.items.length; ++i) {
                     if (this.items[i].datacopy) tmp++;
@@ -776,17 +750,23 @@ export default class HallScene extends BaseUI {
             this.playSkAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0,20,0)), 1);
     }
 
-    updateBuyButton()
+    async updateBuyButton()
     {
         let lv = Data.user.GetMaxLv() - 3;
         if(lv<1)lv = 1;
         this.SetText("lbl_buy_lvl",'LV.' + lv);
         this.SetText("lbl_buy_cost",Utils.formatNumber(Data.user.BuyPrice(lv)));
-        this.SetSprite("icon_buy","texture/plants/"+(lv-1));
+
+        let skpath = `spine:flower${lv}_ske`;
+        let atlaspath = `spine:flower${lv}_tex`;
+        let chick = this.GetDragonAmature('chickbuy');
+        chick.dragonAsset = await Utils.loadRes(skpath,dragonBones.DragonBonesAsset) as dragonBones.DragonBonesAsset;
+        chick.dragonAtlasAsset = await Utils.loadRes(atlaspath,dragonBones.DragonBonesAtlasAsset) as dragonBones.DragonBonesAtlasAsset;
+        chick.armatureName = 'Armature';
+        chick.playAnimation('idleL',0);
     }
 
      public tryBuyPlant(lv:number,buytype:number) {//0 coin 1 gem 2 ad 3普通掉落 4小精灵掉落
-
         var item: SoldierItem = null;
         for (var i = 0; i < 12; ++i) {
             if (Data.user.slots[i] == 0) continue;
@@ -837,7 +817,7 @@ export default class HallScene extends BaseUI {
                 MsgHints.show("位置不够啦！");
                 this.GetGameObject("btn_delete").stopAllActions();
                 this.GetGameObject("btn_delete").opacity = 255;
-                this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(2),cc.fadeTo(1,0)))
+                this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(0.5,0)))
             }
             return false
         }

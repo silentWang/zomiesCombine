@@ -108,6 +108,7 @@ var Enemy = /** @class */ (function (_super) {
                         if (id > 52)
                             id = Utils_1.default.getRandomInt(1, 52);
                         // this.GetGameObject("boss").active = this.type == 2;
+                        this.GetGameObject('sp').scale = this.type == 2 ? 1 : 0.74;
                         this.sped = info[2] * this.base_speed;
                         this.maxhp = info[1];
                         this.hp = this.maxhp;
@@ -154,18 +155,22 @@ var Enemy = /** @class */ (function (_super) {
         var skillvalue = Number(skill[1]);
         var power = Number(info[2]);
         var bbj = false;
+        var isskill = false;
         if (Utils_1.default.getRandom(0, 100) < skillvalue) {
             if (skilltype == 1) //减速
              {
                 this.slowdown();
+                isskill = true;
             }
             else if (skilltype == 2) //双倍伤害
              {
                 power *= 2;
                 bbj = true;
+                isskill = true;
             }
             else if (skilltype == 3) //冰冻
              {
+                isskill = true;
                 this.frozen();
             }
         }
@@ -175,6 +180,8 @@ var Enemy = /** @class */ (function (_super) {
         this.GetGameObject("New ProgressBar").stopAllActions();
         this.GetGameObject("New ProgressBar").opacity = 255;
         this.GetGameObject("New ProgressBar").runAction(cc.sequence(cc.delayTime(1), cc.fadeTo(0.2, 0)));
+        if (!isskill)
+            AudioMgr_1.default.Instance().playSFX('hit');
         if (bbj) {
             this.showWLBaoji(power, Utils_1.default.getRandom(0, 1) > 0.5);
         }
@@ -212,7 +219,6 @@ var Enemy = /** @class */ (function (_super) {
             this.playSkAni("spine:other/jizhong", "animation", this.node, cc.v3(0, 75, 0), 1);
             this.redendtime = Utils_1.default.getServerTime() + 300;
         }
-        AudioMgr_1.default.Instance().playSFX("hit");
         // this.GetGameObject("hit").getComponent(cc.Animation).play("hit");
     };
     Enemy.prototype.slowdown = function () {

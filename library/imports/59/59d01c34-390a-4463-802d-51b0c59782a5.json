@@ -1,0 +1,14 @@
+{
+  "__type__": "dragonBones.DragonBonesAtlasAsset",
+  "_name": "feiji_tex",
+  "_objFlags": 0,
+  "_native": "",
+  "_atlasJson": "{\"SubTexture\":[{\"width\":44,\"y\":276,\"height\":64,\"name\":\"huo4\",\"x\":1},{\"width\":42,\"y\":342,\"height\":66,\"name\":\"huo1\",\"x\":1},{\"width\":42,\"y\":342,\"height\":58,\"name\":\"huo6\",\"x\":45},{\"width\":45,\"y\":208,\"height\":66,\"name\":\"huo2\",\"x\":1},{\"width\":42,\"y\":410,\"height\":62,\"name\":\"huo3\",\"x\":1},{\"width\":38,\"y\":276,\"height\":62,\"name\":\"huo5\",\"x\":47},{\"width\":214,\"y\":1,\"height\":205,\"name\":\"ty_jilaodi\",\"x\":1}],\"width\":256,\"height\":512,\"name\":\"feiji\",\"imagePath\":\"feiji_tex.png\"}",
+  "_texture": {
+    "__uuid__": "bc98b537-d8a7-4a99-aef1-0f910668bf12"
+  },
+  "texture": {
+    "__uuid__": "bc98b537-d8a7-4a99-aef1-0f910668bf12"
+  },
+  "_textureAtlasData": null
+}

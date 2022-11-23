@@ -62,24 +62,6 @@ export default class OfflineAwardUI extends BaseUI {
                 }
                 AdCenter.Instance().play(func)
                 break;
-            case "btn_gem":
-                {
-                    if(Data.user.gem < 5){
-                        MsgHints.show("钻石不足")
-                        return
-                    }
-                    let coin = this._data * 3
-                    AudioMgr.Instance().playSFX("coin");
-                    Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
-                        if(b)
-                        {
-                            Data.user.coin += coin 
-                            Data.user.gem -= 5
-                        }  
-                    })
-                    this.closeUI()
-                }
-                break;
         }
     }
 }

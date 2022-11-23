@@ -15,25 +15,20 @@ enum EADLAYER {
     DROP_PLANT
 }
 
-const add_time_auto_com = 2;
-const add_time_double_income = 10;
-const add_time_drop_plant = 10;
-const add_time_double_att = 1;
+const AUTO_COM_TIME = 2;
+const DOUBLE_INCOME_TIME = 10;
+const DROP_PLANT_TIME = 10;
+const DOUBLE_ATT_TIME = 1;
 
-const auto_com_gem = 4;
-const double_income_gem = 4;
-const double_att_gem = 4;
-const double_drop_plant_gem = 4;
-
-export const max_auto_com = 10;
-export const max_auto_double_income = 60;
-export const max_auto_double_att = 6;
-export const max_drop_plant = 60;
+export const MAX_AUTO_COM_TIME = 4;
+export const MAX_DOUBLE_INCOME_TIME = 20;
+export const MAX_DROP_PLANT_TIME = 20;
+export const MAX_DOUBLE_ATT_TIME = 2;
 
 @ccclass
 export default class AdLayer extends BaseUI {
 
-
+    private type: EADLAYER;
     start()
     {
         AdCenter.Instance().showGridAd();
@@ -67,25 +62,24 @@ export default class AdLayer extends BaseUI {
         let max = 0;
         if (this.type == EADLAYER.AUTO_COM) {
             end_time = Data.user.auto_com_time;
-            max = max_auto_com;
+            max = MAX_AUTO_COM_TIME;
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
             end_time = Data.user.double_att_time;
-            max = max_auto_double_att;
+            max = MAX_DOUBLE_ATT_TIME;
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
             end_time = Data.user.double_income_time;
-            max = max_auto_double_income;
+            max = MAX_DOUBLE_INCOME_TIME;
         }
         else if(this.type == EADLAYER.DROP_PLANT)
         {
             end_time = Data.user.drop_plant_time;
-            max = max_drop_plant;
+            max = MAX_DROP_PLANT_TIME;
         }
         return {end_time,max}
     }
 
-    private type: EADLAYER;
     setType(e: EADLAYER) {
         this.type = e;
         this.GetGameObject("icon_fast").active = e == EADLAYER.DROP_PLANT;
@@ -94,65 +88,65 @@ export default class AdLayer extends BaseUI {
         this.GetGameObject("icon_angre").active = e == EADLAYER.DOUBLE_ATT;
 
         if (this.type == EADLAYER.AUTO_COM) {
-            this.SetText("lbl_effect", "+" + add_time_auto_com + "分钟");
+            this.SetText("lbl_effect", "+" + AUTO_COM_TIME + "分钟");
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
-
-            this.SetText("lbl_effect", "+" + add_time_double_att + "分钟");
+            this.SetText("lbl_effect", "+" + DOUBLE_ATT_TIME + "分钟");
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            // this.SetText("lbl_effect", "增加" + add_time_double_income + "分钟双倍收益时间");
-            this.SetText("lbl_effect", "+" + add_time_double_income + "分钟");
+            this.SetText("lbl_effect", "+" + DOUBLE_INCOME_TIME + "分钟");
         }
         else if(this.type == EADLAYER.DROP_PLANT)
         {
-            this.SetText("lbl_effect", "+" + add_time_drop_plant + "分钟");
+            this.SetText("lbl_effect", "+" + DROP_PLANT_TIME + "分钟");
         }
         let {end_time,max} = this.getEndAndMaxTime();
-        this.GetGameObject('btn_normal').active = end_time <= Utils.getServerTime()
+        let isRunning = end_time > Utils.getServerTime();
+        // this.GetGameObject('btn_ad').active = !isRunning;
+        this.GetGameObject('btn_normal').active = !isRunning;
     }
 
-    private addvalue(gem:number = 1)
+    private addvalue(double:number = 1)
     {
         let isUse = false;
         if (this.type == EADLAYER.AUTO_COM) {
-            if (Data.user.auto_com_time - Utils.getServerTime() > (max_auto_com - add_time_auto_com) * 60 * 1000) {
-                MsgHints.show("最大累积时间" + max_auto_com + "分钟");
+            if (Data.user.auto_com_time - Utils.getServerTime() > (MAX_AUTO_COM_TIME - AUTO_COM_TIME) * 60 * 1000) {
+                MsgHints.show("最大累积时间" + MAX_AUTO_COM_TIME + "分钟");
                 return;
             }
             if (Data.user.auto_com_time < Utils.getServerTime())
                 Data.user.auto_com_time = Utils.getServerTime();
-            Data.user.auto_com_time += add_time_auto_com * 60 * 1000 * gem;
+            Data.user.auto_com_time += AUTO_COM_TIME * 60 * 1000 * double;
             isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
-            if (Data.user.double_att_time - Utils.getServerTime() > (max_auto_double_att - add_time_double_att) * 60 * 1000) {
-                MsgHints.show("最大累积时间" + max_auto_double_att + "分钟");
+            if (Data.user.double_att_time - Utils.getServerTime() > (MAX_DOUBLE_ATT_TIME - DOUBLE_ATT_TIME) * 60 * 1000) {
+                MsgHints.show("最大累积时间" + MAX_DOUBLE_ATT_TIME + "分钟");
                 return;
             }
             if (Data.user.double_att_time < Utils.getServerTime())
                 Data.user.double_att_time = Utils.getServerTime();
-            Data.user.double_att_time += add_time_double_att * 60 * 1000 * gem;
+            Data.user.double_att_time += DOUBLE_ATT_TIME * 60 * 1000 * double;
             isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            if (Data.user.double_income_time - Utils.getServerTime() > (max_auto_double_income - add_time_double_income) * 60 * 1000) {
-                MsgHints.show("最大累积时间" + max_auto_double_income + "分钟");
+            if (Data.user.double_income_time - Utils.getServerTime() > (MAX_DOUBLE_INCOME_TIME - DOUBLE_INCOME_TIME) * 60 * 1000) {
+                MsgHints.show("最大累积时间" + MAX_DOUBLE_INCOME_TIME + "分钟");
                 return;
             }
             if (Data.user.double_income_time < Utils.getServerTime())
                 Data.user.double_income_time = Utils.getServerTime();
-            Data.user.double_income_time += add_time_double_income * 60 * 1000 * gem;
+            Data.user.double_income_time += DOUBLE_INCOME_TIME * 60 * 1000 * double;
             isUse = true;
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
-            if (Data.user.drop_plant_time - Utils.getServerTime() > (max_drop_plant - add_time_drop_plant) * 60 * 1000) {
-                MsgHints.show("最大累积时间" + max_drop_plant + "分钟");
+            if (Data.user.drop_plant_time - Utils.getServerTime() > (MAX_DROP_PLANT_TIME - DROP_PLANT_TIME) * 60 * 1000) {
+                MsgHints.show("最大累积时间" + MAX_DROP_PLANT_TIME + "分钟");
                 return;
             }
             if (Data.user.drop_plant_time < Utils.getServerTime())
                 Data.user.drop_plant_time = Utils.getServerTime();
-            Data.user.drop_plant_time += add_time_drop_plant * 60 * 1000 * gem;
+            Data.user.drop_plant_time += DROP_PLANT_TIME * 60 * 1000 * double;
             isUse = true;
         }
         Data.save();
@@ -178,23 +172,7 @@ export default class AdLayer extends BaseUI {
                 this.addvalue(1);
                 this.GetGameObject('btn_normal').active = false;
                 break;
-            // case "btn_gem":
-            //     let gem = 0;
-            //     if (this.type == EADLAYER.AUTO_COM) {
-            //         gem = auto_com_gem
-            //     }
-            //     else if (this.type == EADLAYER.DOUBLE_ATT) {
-            //         gem = double_att_gem
-            //     }
-            //     else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            //         gem = double_income_gem                   
-            //     }
-            //     else if (this.type == EADLAYER.DROP_PLANT) {
-            //         gem = double_drop_plant_gem                 
-            //     }
-            //     this.addvalue(gem);
-            //     break;
-            }
+        }
     }
 }
 

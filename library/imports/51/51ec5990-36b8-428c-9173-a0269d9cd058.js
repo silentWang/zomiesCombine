@@ -42,25 +42,32 @@ var WxCenter = /** @class */ (function () {
         if (!this.wx)
             return;
         var wx = this.wx;
-        var bannerAd = wx.createBannerAd({
-            adUnitId: 'xxxx',
-            style: {
-                left: 10,
-                top: 76,
-                width: 320,
-                adIntervals: 30,
-            }
-        });
-        bannerAd.show();
-        bannerAd.onError(function (err) {
-            console.log(err);
-        });
+        if (!this.bannerAd) {
+            this.bannerAd = wx.createBannerAd({
+                adUnitId: 'xxxx',
+                style: {
+                    left: 10,
+                    top: 76,
+                    width: 320,
+                    adIntervals: 30,
+                }
+            });
+            this.bannerAd.onError(function (err) {
+                console.log(err);
+            });
+        }
+        this.bannerAd.show();
+    };
+    WxCenter.hideBanner = function () {
+        if (!this.bannerAd)
+            return;
+        this.bannerAd.hide();
     };
     WxCenter.showRewardedVideoAd = function (callback) {
         if (callback === void 0) { callback = null; }
         if (!this.wx) {
-            MsgHints_1.default.show("假装看了一个广告");
-            console.log('假装看了一个广告');
+            MsgHints_1.default.show("看了一个广告");
+            console.log('看了一个广告');
             callback && callback(true);
             return;
         }

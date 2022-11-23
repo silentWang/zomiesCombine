@@ -2,7 +2,7 @@ import MsgHints from "../framwork/MsgHints";
 
 export default class WxCenter {
     private static wx:any;
-
+    private static bannerAd:any;
     private static rewardVideo:any;
     static init(){
         this.wx = window && window['wx'];
@@ -34,25 +34,32 @@ export default class WxCenter {
     static showBanner(){
         if(!this.wx) return;
         let wx = this.wx;
-        let bannerAd = wx.createBannerAd({
-            adUnitId: 'xxxx',
-            style: {
-              left: 10,
-              top: 76,
-              width: 320,
-              adIntervals:30,
-            }
-          })
-        bannerAd.show();
-        bannerAd.onError(err => {
-            console.log(err);
-        });
+        if(!this.bannerAd){
+            this.bannerAd = wx.createBannerAd({
+                adUnitId: 'xxxx',
+                style: {
+                  left: 10,
+                  top: 76,
+                  width: 320,
+                  adIntervals:30,
+                }
+            })
+            this.bannerAd.onError(err => {
+                console.log(err);
+            });
+        }
+        this.bannerAd.show();
+    }
+
+    static hideBanner(){
+        if(!this.bannerAd) return;
+        this.bannerAd.hide();
     }
 
     static showRewardedVideoAd(callback:Function = null){
         if(!this.wx) {
-            MsgHints.show("假装看了一个广告");
-            console.log('假装看了一个广告')
+            MsgHints.show("看了一个广告");
+            console.log('看了一个广告')
             callback && callback(true);
             return;
         }

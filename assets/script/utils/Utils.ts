@@ -280,8 +280,6 @@ export default class Utils {
 
         let createNode = (type) => {
             if(type == 0) return PoolMgr.Instance().get("Coin");
-            // if(type == 1)
-            // return PoolMgr.Instance().get("Gem");
             return null;
         }
 
