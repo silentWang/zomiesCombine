@@ -28,7 +28,19 @@ var Data = /** @class */ (function () {
         if (localdata) {
             localdata = JSON.parse(localdata);
             // console.log('本地数据', localdata)
+            var savedatatime = cc.sys.localStorage.getItem("savedatatime");
+            ;
+            if (savedatatime > 0) {
+                var now = new Date().getDate();
+                var d = new Date(savedatatime).getDate();
+                if (now != d) {
+                    localdata.share_times = 10;
+                    localdata.today_getcoin_times = 0;
+                    localdata.today_getchick_times = 0;
+                }
+            }
             Data.user.setData(localdata['user']);
+            Data.save();
         }
         else {
             //没有档案重置下音乐开关
@@ -49,5 +61,6 @@ var Data = /** @class */ (function () {
     return Data;
 }());
 exports.default = Data;
+window['Data'] = Data;
 
 cc._RF.pop();

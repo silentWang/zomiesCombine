@@ -74,7 +74,6 @@ export default class ShopItem extends BaseUI {
 
 
     private cost_coin:number = 0;
-    private cost_gem:number = 0;
     gun:any = null;
     async setItemData(gun:any)
     {   
@@ -87,17 +86,13 @@ export default class ShopItem extends BaseUI {
         this.GetGameObject("show").active = false;
         this.GetGameObject("hide").active = false;
 
-        this.GetGameObject("btn_gem").active = false;
         this.GetGameObject("btn_yellow").active = false;
         this.GetGameObject("btn_free").active = false;
         this.GetGameObject("btn_gray").active = false;
-
-        this.cost_gem = Math.min(gun[6],5);
+        
         if((buytype & GunBuyType.GEM_BUY) != 0 && gun[6]>0)
         {
             this.GetGameObject("show").active = true;
-
-            this.GetGameObject("btn_gem").active = true;
             node = this.GetGameObject("show");
         }
         else if((buytype & GunBuyType.CAN_AD_BUY) != 0)
@@ -110,8 +105,6 @@ export default class ShopItem extends BaseUI {
         {
             this.GetGameObject("show").active = true;
             this.GetGameObject("btn_yellow").active = true;
-
-           
             node = this.GetGameObject("show");
         }
         else
@@ -139,7 +132,7 @@ export default class ShopItem extends BaseUI {
 
         let str = "";
 
-        if(bhide)value = "?"
+        if(bhide) value = "?"
         if(skilltype == 1)
         {
             str ="技能:" + value+"%的几率触发减速目标1秒";
@@ -156,7 +149,6 @@ export default class ShopItem extends BaseUI {
         this._findInChildren(node,"lbl_cd").getComponent(cc.Label).string =bhide?"?": gun[1]+"";
         this._findInChildren(node,"lbl_power").getComponent(cc.Label).string = bhide?"?":Utils.formatNumber(gun[2])+"";
         
-        // this._findInChildren(node,"gun").getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]-1),cc.SpriteFrame) as cc.SpriteFrame;
         if(!bhide){
             let skpath = `spine:flower${gun[0]}_ske`;
             let atlaspath = `spine:flower${gun[0]}_tex`;
@@ -166,31 +158,10 @@ export default class ShopItem extends BaseUI {
             chick.armatureName = 'Armature';
             chick.playAnimation('idleL',0);
         }
-
-        // this._findInChildren(node,"gun").getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]-1),cc.SpriteFrame) as cc.SpriteFrame;
-       
-        // let cs = this._findInChildren(node,"0");
-        // if(gun[0]+1<60)
-        // {
-        //     if(cs){
-        //         cs.getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]+1),cc.SpriteFrame) as cc.SpriteFrame;
-        //     }
-        // }
-        // else
-        // {
-        //     if(cs){
-        //          cs.getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/59",cc.SpriteFrame) as cc.SpriteFrame;
-        //     }
-        // }
         
         this.cost_coin = Data.user.BuyPrice(gun[0])
         this.SetText("lbl_buy_coin",Utils.formatNumber( this.cost_coin));
         this.GetButton("btn_yellow").interactable = Data.user.coin >= this.cost_coin;
-        this.SetText("lbl_buy_gem",Utils.formatNumber( this.cost_gem));    //钻石产出少，最多就5个钻石吧
-        // if(Utils.getServerTime() - DataManager.Instance().lastShareGetGunTime < GAME_CONFIG.SHARE_GET_GUN_TIME)
-        // {
-        //     this.GetGameObject("btn_free").active = false;
-        // }
     }
     
     onBtnClicked(event, customEventData) {
@@ -223,18 +194,6 @@ export default class ShopItem extends BaseUI {
                     this.dispatch(GameConst.BUY_PLANT,this.gun,this.node.getComponent(ListItem).listId);
                 }
                 break;
-            case "btn_gem":
-                if(Data.user.gem < this.cost_gem )
-                {
-                    MsgHints.show("钻石不足")
-                    return;
-                }
-                if(HallScene.Instance.tryBuyPlant(this.gun[0],1))
-                {
-                    MsgHints.show("购买成功");
-                    this.dispatch(GameConst.BUY_PLANT,this.gun,this.node.getComponent(ListItem).listId);
-                }
-                break
         }
     }
 }

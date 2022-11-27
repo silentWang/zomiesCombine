@@ -300,7 +300,7 @@ export default class Utils {
         }
 
         var notPlay = false;
-        let srcNode = cc.find("Canvas").getComponent("HallScene") .GetGameObject(targetNodeName); ;//HallScene.Instance.GetGameObject(targetNodeName);
+        let srcNode = cc.find("Canvas").getComponent("HallScene").GetGameObject(targetNodeName); ;//HallScene.Instance.GetGameObject(targetNodeName);
         let dstPos = srcNode.parent.convertToWorldSpaceAR(srcNode.position); 
         dstPos = cc.find("Canvas") .convertToNodeSpaceAR(dstPos)
         var targetGoldNode = srcNode;

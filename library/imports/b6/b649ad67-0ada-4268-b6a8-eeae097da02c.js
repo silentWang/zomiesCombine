@@ -76,6 +76,7 @@ var ShopLayer_1 = require("./prefab/ShopLayer");
 var VictoryUI_1 = require("./prefab/VictoryUI");
 var SlotItem_1 = require("./SlotItem");
 var SoldierItem_1 = require("./SoldierItem");
+var CoinNotEnoughUI_1 = require("./prefab/CoinNotEnoughUI");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var HallScene = /** @class */ (function (_super) {
     __extends(HallScene, _super);
@@ -760,6 +761,7 @@ var HallScene = /** @class */ (function (_super) {
             });
         });
     };
+    //0 coin 1 gem 2 ad 3普通掉落 4小精灵掉落
     HallScene.prototype.tryBuyPlant = function (lv, buytype) {
         var item = null;
         for (var i = 0; i < 12; ++i) {
@@ -779,7 +781,21 @@ var HallScene = /** @class */ (function (_super) {
             if (buytype == 0) {
                 var cost = Data_1.default.user.BuyPrice(lv);
                 if (Data_1.default.user.BuyPrice(lv) > Data_1.default.user.coin) {
-                    MsgHints_1.default.show("金币不足");
+                    var type_1 = 0;
+                    if (Data_1.default.user.today_getchick_times < Data_1.default.user.today_getchick_total) {
+                        type_1 = 1;
+                    }
+                    else if (Data_1.default.user.today_getcoin_times < Data_1.default.user.today_getcoin_total) {
+                        type_1 = 2;
+                    }
+                    if (type_1 > 0) {
+                        Utils_1.default.createUI("prefab/CoinNotEnough").then(function (node) {
+                            node.getComponent(CoinNotEnoughUI_1.default).setType(type_1);
+                        });
+                    }
+                    else {
+                        MsgHints_1.default.show("金币不足");
+                    }
                     return;
                 }
                 Data_1.default.user.coin -= cost;
@@ -792,9 +808,9 @@ var HallScene = /** @class */ (function (_super) {
                 }
                 Data_1.default.user.gem -= gem;
             }
-            else {
+            else if (buytype == 2) {
             }
-            if (buytype >= 3) {
+            else if (buytype >= 3) {
                 console.log("花盆掉落");
             }
             AudioMgr_1.default.Instance().playSFX("flower_pot_land");

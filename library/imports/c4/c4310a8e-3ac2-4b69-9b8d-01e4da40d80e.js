@@ -69,8 +69,8 @@ var AudioMgr = /** @class */ (function (_super) {
         _this.bgm_url = "BGM1";
         _this.lastplaysfxtime = {};
         _this.sfxcd = {
-            "zb1": 1500,
-            "zb2": 1500,
+            "huangshulang": 1500,
+            "huli": 1500,
             "hit": 300,
             "merge_success": 100,
             "skill_freeze": 300,

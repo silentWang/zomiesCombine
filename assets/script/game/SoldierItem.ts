@@ -28,7 +28,7 @@ export default class SoldierItem extends BaseUI {
 
     setItemData(d: PlantInfo,droptype:number = -1) {// 3普通掉落 4小精灵掉落
         if(droptype != -1) this.droptype = droptype;
-        if(this.droptype!=0 &&  this.droptype0endtime < Utils.getServerTime())
+        if(this.droptype ! = 0 &&  this.droptype0endtime < Utils.getServerTime())
         {
             this.droptype0endtime = Utils.getServerTime() + 10000;
         }
@@ -59,7 +59,7 @@ export default class SoldierItem extends BaseUI {
         if (!isNull)
         {
             this.GetGameObject("lbl_lv").getComponent(cc.Label).string = "lv." + this.datacopy.lv;
-            if(this.droptype==0)
+            if(this.droptype == 0)
             {
                 this.GetGameObject('chick').active = true;
                 this.GetGameObject("lbl_lv").active = true;

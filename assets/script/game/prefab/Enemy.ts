@@ -56,18 +56,7 @@ export default class Enemy extends BaseUI {
         this.node.position = HallScene.Instance.path[0];
         this.node.scale = this.type == 0 ? .8 : 1;
         // this.GetGameObject("sp").scaleX = 0.5;
-        if(id == 25)
-        {
-            AudioMgr.Instance().playSFX("dog")
-        }
-        else if(id == 13)
-        {
-            AudioMgr.Instance().playSFX("pig")
-        }
-        else
-        {
-            AudioMgr.Instance().playSFX(Utils.getRandom(0,1)<.6? "zb1":"zb2")
-        }
+        AudioMgr.Instance().playSFX('chuxian')
         let skpath = `spine:enemy${id}_ske`;
         let atlaspath = `spine:enemy${id}_tex`;
         let armature = this.GetDragonAmature("sp");

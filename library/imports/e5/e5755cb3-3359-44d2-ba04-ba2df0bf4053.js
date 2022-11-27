@@ -24,6 +24,7 @@ function save(target, propertyKey) {
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var UserModel = /** @class */ (function () {
     function UserModel() {
+        this.last_date = 0;
         this.signinfo = { sign_index: 0, sign_time: 0, sign_beisu: 0 };
         this.nickName = "";
         this.avatarUrl = "";
@@ -34,6 +35,10 @@ var UserModel = /** @class */ (function () {
         this.double_att_time = 0;
         this.double_income_time = 0;
         this.drop_plant_time = 0;
+        this.today_getchick_times = 0;
+        this.today_getchick_total = 5;
+        this.today_getcoin_times = 0;
+        this.today_getcoin_total = 5;
         this.share_times = 10;
         this.slots = [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0];
         this.lv = 1;
@@ -263,6 +268,9 @@ var UserModel = /** @class */ (function () {
     };
     __decorate([
         save
+    ], UserModel.prototype, "last_date", void 0);
+    __decorate([
+        save
     ], UserModel.prototype, "signinfo", void 0);
     __decorate([
         save
@@ -291,6 +299,18 @@ var UserModel = /** @class */ (function () {
     __decorate([
         save
     ], UserModel.prototype, "drop_plant_time", void 0);
+    __decorate([
+        save
+    ], UserModel.prototype, "today_getchick_times", void 0);
+    __decorate([
+        save
+    ], UserModel.prototype, "today_getchick_total", void 0);
+    __decorate([
+        save
+    ], UserModel.prototype, "today_getcoin_times", void 0);
+    __decorate([
+        save
+    ], UserModel.prototype, "today_getcoin_total", void 0);
     __decorate([
         save
     ], UserModel.prototype, "share_times", void 0);

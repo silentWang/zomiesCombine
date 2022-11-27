@@ -67,8 +67,8 @@ var LoseUI = /** @class */ (function (_super) {
             case "btn_get":
                 AdCenter_1.default.Instance().play(function () {
                     _this.getCoinReward();
+                    _this.closeUI();
                 });
-                this.closeUI();
                 break;
             case 'btn_normal':
                 this.getCoinReward();

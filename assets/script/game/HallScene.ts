@@ -16,6 +16,7 @@ import VictoryUI from "./prefab/VictoryUI";
 import SlotItem from "./SlotItem";
 import SoldierItem from "./SoldierItem";
 import { PlantInfo } from "./UserModel";
+import CoinNotEnoughUI from "./prefab/CoinNotEnoughUI";
 
 
 const { ccclass, property } = cc._decorator;
@@ -149,7 +150,7 @@ export default class HallScene extends BaseUI {
             else
             {
                 Data.user.wave++;
-                if(Data.user.wave> this.wave_info[2])
+                if(Data.user.wave > this.wave_info[2])
                 {
                     let enemy = node.getComponent(Enemy);
                     let money = enemy.getBossMoney();
@@ -193,7 +194,7 @@ export default class HallScene extends BaseUI {
             this.wave_info = DB_level[key];
         }
 
-        if(Data.user.wave== this.wave_info[2])
+        if(Data.user.wave == this.wave_info[2])
         {
             AudioMgr.Instance().playBGM("bgBoss");
             this.node.runAction(cc.sequence(cc.delayTime(.8),cc.callFunc(()=>{
@@ -765,12 +766,11 @@ export default class HallScene extends BaseUI {
         chick.armatureName = 'Armature';
         chick.playAnimation('idleL',0);
     }
-
-     public tryBuyPlant(lv:number,buytype:number) {//0 coin 1 gem 2 ad 3普通掉落 4小精灵掉落
+    //0 coin 1 gem 2 ad 3普通掉落 4小精灵掉落
+    public tryBuyPlant(lv:number,buytype:number) {
         var item: SoldierItem = null;
         for (var i = 0; i < 12; ++i) {
             if (Data.user.slots[i] == 0) continue;
-
             if (!this.items[i].datacopy && this.autocomindexs[0] != i && this.autocomindexs[1] != i) {
                 item = this.items[i];
                 break;
@@ -785,7 +785,21 @@ export default class HallScene extends BaseUI {
             if (buytype == 0) {
                 let cost = Data.user.BuyPrice(lv);
                 if (Data.user.BuyPrice(lv) > Data.user.coin) {
-                    MsgHints.show("金币不足");
+                    let type = 0;
+                    if(Data.user.today_getchick_times < Data.user.today_getchick_total){
+                        type = 1;
+                    }
+                    else if(Data.user.today_getcoin_times < Data.user.today_getcoin_total){
+                        type = 2;
+                    }
+                    if(type > 0){
+                        Utils.createUI("prefab/CoinNotEnough").then((node:cc.Node)=>{
+                            node.getComponent(CoinNotEnoughUI).setType(type);
+                        });
+                    }
+                    else{
+                        MsgHints.show("金币不足");
+                    }
                     return;
                 }
                 Data.user.coin -= cost;
@@ -798,10 +812,10 @@ export default class HallScene extends BaseUI {
                 }
                 Data.user.gem -= gem;
             }
-            else {
+            else if(buytype == 2){
 
             }
-            if (buytype >= 3) {
+            else if (buytype >= 3) {
                 console.log("花盆掉落")
             }
             
@@ -865,7 +879,7 @@ export default class HallScene extends BaseUI {
 			case "btn_buy":
                 this.tryBuyPlant(null,0);
                 this.GetGameObject("guild_0").active = false;
-                if(Data.user.guideIndex==0)
+                if(Data.user.guideIndex == 0)
                 {
                     Data.user.guideIndex++;
                     Data.save();

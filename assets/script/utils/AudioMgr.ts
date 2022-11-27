@@ -45,8 +45,8 @@ export default class AudioMgr extends Singleton {
 
     private lastplaysfxtime = {};
     private sfxcd = {
-        "zb1":1500,
-        "zb2":1500,
+        "huangshulang":1500,
+        "huli":1500,
         "hit":300,
         "merge_success":100,
         "skill_freeze":300,

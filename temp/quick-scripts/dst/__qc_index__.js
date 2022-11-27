@@ -26,6 +26,7 @@ require('./assets/script/game/UserModel');
 require('./assets/script/game/prefab/AdLayer');
 require('./assets/script/game/prefab/BossCommingUI');
 require('./assets/script/game/prefab/Bullet');
+require('./assets/script/game/prefab/CoinNotEnoughUI');
 require('./assets/script/game/prefab/Enemy');
 require('./assets/script/game/prefab/FairyBonusUI');
 require('./assets/script/game/prefab/FairyItem');

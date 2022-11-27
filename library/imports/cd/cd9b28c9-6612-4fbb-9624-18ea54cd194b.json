@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "fx_warning_boss_tex",
+    "texture": "36380283-184f-405e-89bd-3c2bdc10ea04",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      1301,
+      187
+    ],
+    "offset": [
+      -372.5,
+      33.5
+    ],
+    "originalSize": [
+      2048,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

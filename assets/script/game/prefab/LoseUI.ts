@@ -43,8 +43,8 @@ export default class LoseUI extends BaseUI {
             case "btn_get":
                 AdCenter.Instance().play(()=>{
                     this.getCoinReward();
+                    this.closeUI();
                 });
-                this.closeUI();
                 break;
             case 'btn_normal':
                 this.getCoinReward();

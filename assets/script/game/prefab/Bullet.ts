@@ -11,8 +11,11 @@ export default class Bullet extends BaseUI {
 
     start()
     {
-        this.GetGameObject("trail2").opacity = 0;
-        this.GetGameObject("trail2").runAction(cc.fadeTo(0.4,255));
+        let bt = this.GetGameObject("trail2");
+        if(bt){
+            bt.opacity = 0;
+            bt.runAction(cc.fadeTo(0.4,255));
+        }
         this.node.scale = 1.2;
     }
     update (dt) {
@@ -49,8 +52,11 @@ export default class Bullet extends BaseUI {
         this.target = target;
         this.GetSprite("sp").spriteFrame = await Utils.loadRes("texture/bullets/"+(plantlv-1),cc.SpriteFrame) as cc.SpriteFrame;
         // console.log(DB_plant[plantlv-1][9])
-        this.GetGameObject("trail2").color = cc.Color.RED.fromHEX(String(DB_plant[plantlv-1][9]))
-        this.GetGameObject("trail2").height =  this.GetGameObject("sp").height;
+        let bt = this.GetGameObject("trail2");
+        if(bt){
+            bt.color = cc.Color.RED.fromHEX(String(DB_plant[plantlv-1][9]))
+            bt.height =  this.GetGameObject("sp").height;
+        }
         // this.GetGameObject("streak").getComponent(cc.MotionStreak).stroke = this.GetGameObject("sp").height;
         // this.GetGameObject("streak").getComponent(cc.MotionStreak).color = cc.Color.RED.fromHEX(String(DB_plant[plantlv-1][9]))
     }

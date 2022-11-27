@@ -82,7 +82,6 @@ var ShopItem = /** @class */ (function (_super) {
     function ShopItem() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.cost_coin = 0;
-        _this.cost_gem = 0;
         _this.gun = null;
         return _this;
     }
@@ -134,14 +133,11 @@ var ShopItem = /** @class */ (function (_super) {
                         this.gun = gun;
                         this.GetGameObject("show").active = false;
                         this.GetGameObject("hide").active = false;
-                        this.GetGameObject("btn_gem").active = false;
                         this.GetGameObject("btn_yellow").active = false;
                         this.GetGameObject("btn_free").active = false;
                         this.GetGameObject("btn_gray").active = false;
-                        this.cost_gem = Math.min(gun[6], 5);
                         if ((buytype & GunBuyType.GEM_BUY) != 0 && gun[6] > 0) {
                             this.GetGameObject("show").active = true;
-                            this.GetGameObject("btn_gem").active = true;
                             node = this.GetGameObject("show");
                         }
                         else if ((buytype & GunBuyType.CAN_AD_BUY) != 0) {
@@ -203,24 +199,9 @@ var ShopItem = /** @class */ (function (_super) {
                         chick.playAnimation('idleL', 0);
                         _c.label = 3;
                     case 3:
-                        // this._findInChildren(node,"gun").getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]-1),cc.SpriteFrame) as cc.SpriteFrame;
-                        // let cs = this._findInChildren(node,"0");
-                        // if(gun[0]+1<60)
-                        // {
-                        //     if(cs){
-                        //         cs.getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/"+(gun[0]+1),cc.SpriteFrame) as cc.SpriteFrame;
-                        //     }
-                        // }
-                        // else
-                        // {
-                        //     if(cs){
-                        //          cs.getComponent(cc.Sprite).spriteFrame = await Utils.loadRes("texture/plants/59",cc.SpriteFrame) as cc.SpriteFrame;
-                        //     }
-                        // }
                         this.cost_coin = Data_1.default.user.BuyPrice(gun[0]);
                         this.SetText("lbl_buy_coin", Utils_1.default.formatNumber(this.cost_coin));
                         this.GetButton("btn_yellow").interactable = Data_1.default.user.coin >= this.cost_coin;
-                        this.SetText("lbl_buy_gem", Utils_1.default.formatNumber(this.cost_gem)); //钻石产出少，最多就5个钻石吧
                         return [2 /*return*/];
                 }
             });
@@ -248,16 +229,6 @@ var ShopItem = /** @class */ (function (_super) {
                     return;
                 }
                 if (HallScene_1.default.Instance.tryBuyPlant(this.gun[0], 0)) {
-                    MsgHints_1.default.show("购买成功");
-                    this.dispatch(GameConst_1.default.BUY_PLANT, this.gun, this.node.getComponent(ListItem_1.default).listId);
-                }
-                break;
-            case "btn_gem":
-                if (Data_1.default.user.gem < this.cost_gem) {
-                    MsgHints_1.default.show("钻石不足");
-                    return;
-                }
-                if (HallScene_1.default.Instance.tryBuyPlant(this.gun[0], 1)) {
                     MsgHints_1.default.show("购买成功");
                     this.dispatch(GameConst_1.default.BUY_PLANT, this.gun, this.node.getComponent(ListItem_1.default).listId);
                 }

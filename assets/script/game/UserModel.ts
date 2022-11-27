@@ -27,7 +27,7 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class UserModel {
 
-    
+    @save public last_date:number = 0;
     @save public signinfo: SignInfo = { sign_index: 0, sign_time: 0, sign_beisu: 0 };
     @save public nickName: string = "";
     @save public avatarUrl: string = "";
@@ -39,6 +39,12 @@ export default class UserModel {
     @save public double_att_time:number = 0;
     @save public double_income_time:number = 0;
     @save public drop_plant_time:number = 0;
+
+    @save public today_getchick_times = 0;
+    @save public today_getchick_total = 5;
+    
+    @save public today_getcoin_times = 0;
+    @save public today_getcoin_total = 5;
 
     @save public share_times:number = 10;
 
@@ -225,7 +231,7 @@ export default class UserModel {
     }
 
     //购买
-    public  BuyPlant(index: number, lv: number) {
+    public BuyPlant(index: number, lv: number) {
         if(!this.plantBuyTimes[lv])this.plantBuyTimes[lv]=0;
         this.plantBuyTimes[lv]++;
         if(this.ComPlants.find((p)=>{

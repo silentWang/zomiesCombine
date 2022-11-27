@@ -49,9 +49,9 @@ export default class VictoryUI extends BaseUI {
         AudioMgr.Instance().playSFX("click");
         switch (btnName) {
             case "btn_get":
-                this.closeUI();
                 AdCenter.Instance().play(()=>{
                     this.getCoinReward();
+                    this.closeUI();
                 });
                 break;
             case "btn_normal":

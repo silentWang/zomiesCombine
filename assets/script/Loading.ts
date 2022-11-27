@@ -32,11 +32,6 @@ export default class Loading extends BaseUI {
         cc.debug.setDisplayStats(false);
         cc.game.setFrameRate(60);
 
-        let savedatatime = cc.sys.localStorage.getItem("savedatatime");
-        if (savedatatime) {
-            savedatatime = Number(savedatatime);
-        }
-
         super.onLoad();
         if(wx)
         {

@@ -71,9 +71,9 @@ var VictoryUI = /** @class */ (function (_super) {
         AudioMgr_1.default.Instance().playSFX("click");
         switch (btnName) {
             case "btn_get":
-                this.closeUI();
                 AdCenter_1.default.Instance().play(function () {
                     _this.getCoinReward();
+                    _this.closeUI();
                 });
                 break;
             case "btn_normal":

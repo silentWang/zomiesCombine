@@ -87,15 +87,11 @@ var Loading = /** @class */ (function (_super) {
     };
     Loading.prototype.onLoad = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var savedatatime, descs, index;
+            var descs, index;
             var _this = this;
             return __generator(this, function (_a) {
                 cc.debug.setDisplayStats(false);
                 cc.game.setFrameRate(60);
-                savedatatime = cc.sys.localStorage.getItem("savedatatime");
-                if (savedatatime) {
-                    savedatatime = Number(savedatatime);
-                }
                 _super.prototype.onLoad.call(this);
                 if (wx) {
                     wx.setPreferredFramesPerSecond(60);

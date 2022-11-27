@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "effects_card_24_tex",
+    "texture": "d268a526-ab31-403a-94b2-40a4d395d42c",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      466,
+      379
+    ],
+    "offset": [
+      -22,
+      65.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -117,15 +117,7 @@ var Enemy = /** @class */ (function (_super) {
                         this.node.position = HallScene_1.default.Instance.path[0];
                         this.node.scale = this.type == 0 ? .8 : 1;
                         // this.GetGameObject("sp").scaleX = 0.5;
-                        if (id == 25) {
-                            AudioMgr_1.default.Instance().playSFX("dog");
-                        }
-                        else if (id == 13) {
-                            AudioMgr_1.default.Instance().playSFX("pig");
-                        }
-                        else {
-                            AudioMgr_1.default.Instance().playSFX(Utils_1.default.getRandom(0, 1) < .6 ? "zb1" : "zb2");
-                        }
+                        AudioMgr_1.default.Instance().playSFX('chuxian');
                         skpath = "spine:enemy" + id + "_ske";
                         atlaspath = "spine:enemy" + id + "_tex";
                         armature = this.GetDragonAmature("sp");

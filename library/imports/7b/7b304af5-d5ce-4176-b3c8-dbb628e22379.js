@@ -74,8 +74,11 @@ var Bullet = /** @class */ (function (_super) {
         return _this;
     }
     Bullet.prototype.start = function () {
-        this.GetGameObject("trail2").opacity = 0;
-        this.GetGameObject("trail2").runAction(cc.fadeTo(0.4, 255));
+        var bt = this.GetGameObject("trail2");
+        if (bt) {
+            bt.opacity = 0;
+            bt.runAction(cc.fadeTo(0.4, 255));
+        }
         this.node.scale = 1.2;
     };
     Bullet.prototype.update = function (dt) {
@@ -100,7 +103,7 @@ var Bullet = /** @class */ (function (_super) {
     };
     Bullet.prototype.setInfo = function (target, plantlv) {
         return __awaiter(this, void 0, void 0, function () {
-            var _a;
+            var _a, bt;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
@@ -111,9 +114,11 @@ var Bullet = /** @class */ (function (_super) {
                         return [4 /*yield*/, Utils_1.default.loadRes("texture/bullets/" + (plantlv - 1), cc.SpriteFrame)];
                     case 1:
                         _a.spriteFrame = (_b.sent());
-                        // console.log(DB_plant[plantlv-1][9])
-                        this.GetGameObject("trail2").color = cc.Color.RED.fromHEX(String(DB_1.DB_plant[plantlv - 1][9]));
-                        this.GetGameObject("trail2").height = this.GetGameObject("sp").height;
+                        bt = this.GetGameObject("trail2");
+                        if (bt) {
+                            bt.color = cc.Color.RED.fromHEX(String(DB_1.DB_plant[plantlv - 1][9]));
+                            bt.height = this.GetGameObject("sp").height;
+                        }
                         return [2 /*return*/];
                 }
             });

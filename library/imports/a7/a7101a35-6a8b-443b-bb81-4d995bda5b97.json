@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_weizhi",
+    "texture": "4d96207a-0047-4050-a426-75c0064f0505",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      85,
+      99
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      85,
+      99
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
