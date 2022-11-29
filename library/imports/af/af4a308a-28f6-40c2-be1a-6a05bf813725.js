@@ -136,8 +136,12 @@ var Loading = /** @class */ (function (_super) {
                                 _a.sent();
                                 AudioMgr_1.default.Instance().loadSounds();
                                 cc.director.loadScene("hall");
+                                p = 1;
                                 _a.label = 3;
-                            case 3: return [2 /*return*/];
+                            case 3:
+                                this.GetGameObject('plane').x = p * 600 - 320;
+                                this.SetText('lbl_progress', (~~(p * 100)) + '%');
+                                return [2 /*return*/];
                         }
                     });
                 }); })).repeatForever());

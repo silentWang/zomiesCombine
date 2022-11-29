@@ -41,6 +41,7 @@ var LoseUI = /** @class */ (function (_super) {
         this.GetGameObject("lbl_coin").opacity = 0;
         this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(1, 255)));
         AudioMgr_1.default.Instance().playSFX("fail");
+        Utils_1.default.playBreath(this.GetGameObject('btn_get'));
     };
     LoseUI.prototype.setInfo = function (coin) {
         this.coin = coin;

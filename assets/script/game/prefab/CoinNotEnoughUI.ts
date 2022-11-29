@@ -9,9 +9,11 @@ import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
 import AudioMgr from "../../utils/AudioMgr";
+import BigNumber from "../../utils/BigNumber";
 import Utils from "../../utils/Utils";
 import { DB_plant } from "../DB";
 import HallScene from "../HallScene";
+import UserModel from "../UserModel";
 
 const {ccclass, property} = cc._decorator;
 
@@ -29,7 +31,7 @@ export default class CoinNotEnoughUI extends BaseUI {
     // onLoad () {}
 
     start () {
-
+        Utils.playBreath(this.GetGameObject('btn_ad'))
     }
 
     // update (dt) {}
@@ -41,7 +43,7 @@ export default class CoinNotEnoughUI extends BaseUI {
         let str = '';
         if(type == 1){
             str = `${Data.user.today_getchick_times}/${Data.user.today_getchick_total}`;
-            let lv = Data.user.GetMaxLv() - 3 > 0 ? Data.user.GetMaxLv() - 3 : 1;
+            let lv = Data.user.GetMaxLv() - 1 > 0 ? Data.user.GetMaxLv() - 1 : 1;
             let skpath = `spine:flower${lv}_ske`;
             let atlaspath = `spine:flower${lv}_tex`;
             let chick = this.GetDragonAmature('chick');
@@ -50,27 +52,32 @@ export default class CoinNotEnoughUI extends BaseUI {
             chick.armatureName = 'Armature';
             chick.playAnimation('idleL',0);
             this.lbl_chickname.string = `“${DB_plant[lv - 1][7]}”`;
+            this.SetText('lbl_effect','x1');
         }
         else if(type == 2){
             str = `${Data.user.today_getcoin_times}/${Data.user.today_getcoin_total}`;
+            let lv = Data.user.GetMaxLv() - 1 > 0 ? Data.user.GetMaxLv() - 1 : 1;
+            let coin = 0.5*Data.user.BuyPrice(lv);
+            this.SetText('lbl_effect',`+${BigNumber.getLargeString(Utils.fixFloat(coin))}`);
         }
-        this.lbl_times.string = `当日次数${str}`
+        this.lbl_times.string = `当日次数${str}`;
     }
 
     private addValue(){
         let type = this.type;
         if(type == 1){
             Data.user.today_getchick_times++;
-            HallScene.Instance.tryBuyPlant(0,2);
+            let lv = Data.user.GetMaxLv() - 1 > 0 ? Data.user.GetMaxLv() - 1 : 1;
+            HallScene.Instance.tryBuyPlant(lv,2);
             Data.save();
             this.closeUI();
         }
         else if(type == 2){
             Data.user.today_getcoin_times++;
-            let coin = 10000;
+            let coin = 0.5*Data.user.BuyPrice(Data.user.GetMaxLv());
             AudioMgr.Instance().playSFX("coin");
             Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
-                if(b) Data.user.coin += coin 
+                if(b) Data.user.coin += coin;
                 Data.save();
             })
             this.closeUI();

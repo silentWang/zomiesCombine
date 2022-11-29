@@ -14,6 +14,7 @@ export default class LoseUI extends BaseUI {
         this.GetGameObject("lbl_coin").opacity = 0;
         this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(1,255)));
         AudioMgr.Instance().playSFX("fail")
+        Utils.playBreath(this.GetGameObject('btn_get'))
     }
 
     private coin = 0;

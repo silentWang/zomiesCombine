@@ -27,6 +27,7 @@ var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
 var AudioMgr_1 = require("../../utils/AudioMgr");
+var Utils_1 = require("../../utils/Utils");
 var DB_1 = require("../DB");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var FairyBonusUI = /** @class */ (function (_super) {
@@ -37,15 +38,23 @@ var FairyBonusUI = /** @class */ (function (_super) {
         return _this;
     }
     FairyBonusUI.prototype.start = function () {
-        var t = Data_1.default.user.GetMaxLv();
-        var n = DB_1.DB_droneRewards[t + ""][1];
-        for (var o = 0; o < 4; o++)
-            this.superPot.push(n);
         AdCenter_1.default.Instance().showGridAd();
+        Utils_1.default.playBreath(this.GetGameObject('btn_ad'));
     };
     FairyBonusUI.prototype.onDestroy = function () {
         AdCenter_1.default.Instance().hideGridAd();
         _super.prototype.onDestroy.call(this);
+    };
+    FairyBonusUI.prototype.getSuperPot = function (db) {
+        if (db === void 0) { db = false; }
+        var t = Data_1.default.user.GetMaxLv();
+        var n = DB_1.DB_droneRewards[t + ""][1];
+        var len = db ? 8 : 4;
+        var pots = [];
+        for (var o = 0; o < len; o++) {
+            pots.push(n);
+        }
+        return pots;
     };
     FairyBonusUI.prototype.onBtnClicked = function (event, customEventData) {
         var _this = this;
@@ -55,10 +64,16 @@ var FairyBonusUI = /** @class */ (function (_super) {
             case "btn_close":
                 this.closeUI();
                 break;
+            case "btn_normal":
+                var spt = this.getSuperPot();
+                Data_1.default.user.DropGiftPts = Data_1.default.user.DropGiftPts.concat(spt);
+                this.closeUI();
+                break;
             case "btn_ad":
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
-                        Data_1.default.user.DropGiftPts = Data_1.default.user.DropGiftPts.concat(_this.superPot);
+                        var spt_1 = _this.getSuperPot(true);
+                        Data_1.default.user.DropGiftPts = Data_1.default.user.DropGiftPts.concat(spt_1);
                         _this.closeUI();
                     }
                 });

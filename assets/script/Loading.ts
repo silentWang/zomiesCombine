@@ -40,9 +40,7 @@ export default class Loading extends BaseUI {
         }
         
         PoolMgr.Instance().loadPrefabs()
-
         this.startLoginAction();
-
         let descs = ["初次加载时间可能会较长，请耐心等待...."];
         let index = 0;
         this.node.runAction(cc.sequence(cc.delayTime(2), cc.callFunc(() => {
@@ -53,7 +51,6 @@ export default class Loading extends BaseUI {
         })).repeatForever())
 
         this.GetGameObject("btn_rstart").active = false;
-
     }
 
     startLoginAction() {
@@ -65,14 +62,14 @@ export default class Loading extends BaseUI {
                 this.SetProgressBar("ProgressBar", p);
                 if (p >= 1) {
                     this.node.stopAllActions();
-
                     await Utils.loadBundler("spine");
                     await Utils.loadBundler("sounds");
-                    
                     AudioMgr.Instance().loadSounds();
-
                     cc.director.loadScene("hall");
+                    p = 1;
                 }
+                this.GetGameObject('plane').x = p*600 - 320;
+                this.SetText('lbl_progress',(~~(p*100)) + '%');
             })).repeatForever());
         })))
     }

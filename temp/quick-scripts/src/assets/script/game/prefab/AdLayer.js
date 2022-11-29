@@ -40,13 +40,13 @@ var EADLAYER;
 })(EADLAYER || (EADLAYER = {}));
 exports.EADLAYER = EADLAYER;
 var AUTO_COM_TIME = 2;
-var DOUBLE_INCOME_TIME = 10;
+var DOUBLE_INCOME_TIME = 2;
 var DROP_PLANT_TIME = 10;
-var DOUBLE_ATT_TIME = 1;
+var DOUBLE_ATT_TIME = 0.5;
 exports.MAX_AUTO_COM_TIME = 4;
-exports.MAX_DOUBLE_INCOME_TIME = 20;
+exports.MAX_DOUBLE_INCOME_TIME = 4;
 exports.MAX_DROP_PLANT_TIME = 20;
-exports.MAX_DOUBLE_ATT_TIME = 2;
+exports.MAX_DOUBLE_ATT_TIME = 1;
 var AdLayer = /** @class */ (function (_super) {
     __extends(AdLayer, _super);
     function AdLayer() {
@@ -54,6 +54,7 @@ var AdLayer = /** @class */ (function (_super) {
     }
     AdLayer.prototype.start = function () {
         AdCenter_1.default.Instance().showGridAd();
+        Utils_1.default.playBreath(this.GetGameObject('btn_ad'));
     };
     AdLayer.prototype.onDestroy = function () {
         AdCenter_1.default.Instance().hideGridAd();
@@ -104,7 +105,8 @@ var AdLayer = /** @class */ (function (_super) {
             this.SetText("lbl_effect", "+" + AUTO_COM_TIME + "分钟");
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
-            this.SetText("lbl_effect", "+" + DOUBLE_ATT_TIME + "分钟");
+            this.SetText("lbl_effect", "+" + DOUBLE_ATT_TIME * 60 + "秒");
+            this.SetText('lbl_d', "\u8FDB\u5165\u72C2\u66B4\u72B6\u6001  \u6301\u7EED" + DOUBLE_ATT_TIME * 60 + "\u79D2");
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
             this.SetText("lbl_effect", "+" + DOUBLE_INCOME_TIME + "分钟");

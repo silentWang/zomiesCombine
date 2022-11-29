@@ -2,6 +2,7 @@ import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
 import AudioMgr from "../../utils/AudioMgr";
+import Utils from "../../utils/Utils";
 import { DB_droneRewards } from "../DB";
 
 
@@ -9,21 +10,27 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class FairyBonusUI extends BaseUI {
-     superPot = [];
+    superPot = [];
     start () {
-        var t =  Data.user.GetMaxLv();
-        var n = DB_droneRewards[t+""][1];
-        
-        for (var o = 0; o < 4; o++) 
-            this.superPot.push(n);
-
         AdCenter.Instance().showGridAd();
+        Utils.playBreath(this.GetGameObject('btn_ad'))
     }
 
     onDestroy()
     {
         AdCenter.Instance().hideGridAd();
         super.onDestroy();
+    }
+
+    private getSuperPot(db:boolean = false){
+        var t =  Data.user.GetMaxLv();
+        var n = DB_droneRewards[t+""][1];
+        let len = db ? 8 : 4;
+        let pots = [];
+        for (var o = 0; o < len; o++){
+            pots.push(n);
+        } 
+        return pots;
     }
     
     onBtnClicked(event, customEventData) {
@@ -33,11 +40,17 @@ export default class FairyBonusUI extends BaseUI {
             case "btn_close":
                 this.closeUI();
                 break;
+            case "btn_normal":
+                let spt = this.getSuperPot();
+                Data.user.DropGiftPts = Data.user.DropGiftPts.concat(spt);
+                this.closeUI();
+                break;
             case "btn_ad":
                 AdCenter.Instance().play((b)=>{
                     if(b)
                     {
-                        Data.user.DropGiftPts = Data.user.DropGiftPts.concat(this.superPot);
+                        let spt = this.getSuperPot(true);
+                        Data.user.DropGiftPts = Data.user.DropGiftPts.concat(spt);
                         this.closeUI();
                     }
                 });

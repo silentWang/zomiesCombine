@@ -21,6 +21,7 @@ export default class NewClass extends BaseUI {
     private coinVal:number;
     start()
     {
+        Utils.playBreath(this.GetGameObject('btn_share'))
     }
 
     onDestroy()
@@ -28,9 +29,10 @@ export default class NewClass extends BaseUI {
         super.onDestroy();
     }
 
-    setData(value:number){
-        this.coinVal = value;
-        let coin = BigNumber.getLargeString(Utils.fixFloat(value));
+    setData(){
+        let lv = Data.user.GetMaxLv() - 1 > 0 ? Data.user.GetMaxLv() - 1 : 1;
+        this.coinVal = 0.5*Data.user.BuyPrice(lv);
+        let coin = BigNumber.getLargeString(Utils.fixFloat(this.coinVal));
         let times = Data.user.share_times;
         this.SetText("lbl_coin",coin)
         this.SetText("lbl_times",`还可分享${times}次`);

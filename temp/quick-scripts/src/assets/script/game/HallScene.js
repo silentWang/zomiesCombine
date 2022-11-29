@@ -187,6 +187,7 @@ var HallScene = /** @class */ (function (_super) {
     };
     HallScene.prototype.removeenemy = function (node, bFail) {
         var isStop = false;
+        var isChange = false;
         if (bFail)
             this.bFail = true;
         for (var i = this.enemylist.length - 1; i >= 0; --i) {
@@ -212,6 +213,7 @@ var HallScene = /** @class */ (function (_super) {
             }
             else {
                 Data_1.default.user.wave++;
+                isChange = true;
                 if (Data_1.default.user.wave > this.wave_info[2]) {
                     var enemy = node.getComponent(Enemy_1.default);
                     var money_1 = enemy.getBossMoney();
@@ -223,6 +225,7 @@ var HallScene = /** @class */ (function (_super) {
                     isStop = true;
                     Data_1.default.user.wave = 1;
                     Data_1.default.user.lv++;
+                    this.openNewSlot();
                     Data_1.default.save(true);
                     var key = Data_1.default.user.lv + "_" + Data_1.default.user.wave;
                     this.wave_info = DB_1.DB_level[key];
@@ -235,11 +238,12 @@ var HallScene = /** @class */ (function (_super) {
             }
             if (isStop)
                 return;
-            this.createwave();
+            this.createwave(isChange);
         }
     };
-    HallScene.prototype.createwave = function () {
+    HallScene.prototype.createwave = function (isChange) {
         var _this = this;
+        if (isChange === void 0) { isChange = false; }
         this.bFail = false;
         this.createcomplete = false;
         var key = Data_1.default.user.lv + "_" + Data_1.default.user.wave;
@@ -286,6 +290,9 @@ var HallScene = /** @class */ (function (_super) {
         this.SetText("lbl_waves", Data_1.default.user.wave + "/" + this.wave_info[2]);
         this.SetText("lbl_pre_lv", (Data_1.default.user.lv - 1) + "");
         this.SetText("lbl_nex_lv", (Data_1.default.user.lv + 1) + "");
+        if (isChange) {
+            Utils_1.default.playBreath(this.GetGameObject('lbl_waves'), 1, 3, 0.5, false);
+        }
     };
     HallScene.prototype.initComposeItems = function () {
         var list = Data_1.default.user.ComPlants;
@@ -392,7 +399,7 @@ var HallScene = /** @class */ (function (_super) {
                             if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > AdLayer_1.MAX_DROP_PLANT_TIME * 60 * 1000) {
                                 Data_1.default.user.drop_plant_time = Utils_1.default.getServerTime();
                             }
-                            _this.SetText("att_x2_time", isX2In ? Utils_1.default.getTimeStrByS((Data_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000) : '狂暴');
+                            _this.SetText("att_x2_time", isX2In ? Utils_1.default.getTimeStrByS((Data_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000) : '打鸡血');
                             _this.SetText("rewardx2_time", isInDb ? Utils_1.default.getTimeStrByS((Data_1.default.user.double_income_time - Utils_1.default.getServerTime()) / 1000) : '双倍');
                             if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > 0) {
                                 _this.SetText("auto_time", Utils_1.default.getTimeStrByS((Data_1.default.user.auto_com_time - Utils_1.default.getServerTime()) / 1000));
@@ -402,10 +409,10 @@ var HallScene = /** @class */ (function (_super) {
                             }
                             _this.SetText("lbl_drop_plant", isDpIn ? Utils_1.default.getTimeStrByS((Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime()) / 1000) : '掉落');
                             _this.GetGameObject("fx_bt_angry").active = _this.GetGameObject("att_x2_time").active;
-                            if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() < 0)
-                                _this.GetSprite("bt_fast_gen_process_item").fillRange = 0;
-                            else
-                                _this.GetSprite("bt_fast_gen_process_item").fillRange = ((Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime()) / 1000 / 60) / AdLayer_1.MAX_DROP_PLANT_TIME; // (max_drop_plant * 60 - (Data.user.drop_plant_time - Utils.getServerTime())/1000) /max_drop_plant * 60
+                            // if(Data.user.drop_plant_time - Utils.getServerTime()<0)
+                            //     this.GetSprite("bt_fast_gen_process_item").fillRange = 0;
+                            // else
+                            //     this.GetSprite("bt_fast_gen_process_item").fillRange = ( (Data.user.drop_plant_time - Utils.getServerTime())/1000/60)/MAX_DROP_PLANT_TIME;// (max_drop_plant * 60 - (Data.user.drop_plant_time - Utils.getServerTime())/1000) /max_drop_plant * 60
                             // this.updateUI();
                             // TaskLayer.checkTask();//任务检测
                             // if (GameManager.Instance().isGuide == false)
@@ -479,6 +486,22 @@ var HallScene = /** @class */ (function (_super) {
         }
         Utils_1.default.sharetime = 0;
         Utils_1.default.sharecallback = null;
+    };
+    HallScene.prototype.openNewSlot = function () {
+        var curopen = SlotItem_1.default.getCurOpen();
+        if (curopen < 0)
+            return;
+        var lv = DB_1.DB_slot[curopen].price;
+        if (lv < Data_1.default.user.lv)
+            return;
+        Data_1.default.user.slots[curopen] = 1;
+        Data_1.default.save();
+        var slots = this.GetGameObject("slots");
+        var slot = slots.children[curopen];
+        if (slot) {
+            slot.getComponent(SlotItem_1.default).setIndex(curopen);
+            MsgHints_1.default.show("成功解锁新位置");
+        }
     };
     HallScene.prototype.initView = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -909,7 +932,7 @@ var HallScene = /** @class */ (function (_super) {
             case "btn_inviate":
                 // WxCenter.shareAppMessage();
                 Utils_1.default.createUI("prefab/ShareLayer").then(function (node) {
-                    node.getComponent(ShareLayer_1.default).setData(100000);
+                    node.getComponent(ShareLayer_1.default).setData();
                 });
                 break;
             case "btn_Recorder":

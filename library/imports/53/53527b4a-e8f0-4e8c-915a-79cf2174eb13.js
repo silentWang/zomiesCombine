@@ -42,13 +42,15 @@ var NewClass = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NewClass.prototype.start = function () {
+        Utils_1.default.playBreath(this.GetGameObject('btn_share'));
     };
     NewClass.prototype.onDestroy = function () {
         _super.prototype.onDestroy.call(this);
     };
-    NewClass.prototype.setData = function (value) {
-        this.coinVal = value;
-        var coin = BigNumber_1.default.getLargeString(Utils_1.default.fixFloat(value));
+    NewClass.prototype.setData = function () {
+        var lv = Data_1.default.user.GetMaxLv() - 1 > 0 ? Data_1.default.user.GetMaxLv() - 1 : 1;
+        this.coinVal = 0.5 * Data_1.default.user.BuyPrice(lv);
+        var coin = BigNumber_1.default.getLargeString(Utils_1.default.fixFloat(this.coinVal));
         var times = Data_1.default.user.share_times;
         this.SetText("lbl_coin", coin);
         this.SetText("lbl_times", "\u8FD8\u53EF\u5206\u4EAB" + times + "\u6B21");

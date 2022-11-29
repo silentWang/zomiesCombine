@@ -90,7 +90,7 @@ var SoldierItem = /** @class */ (function (_super) {
         if (droptype === void 0) { droptype = -1; }
         if (droptype != -1)
             this.droptype = droptype;
-        if (this.droptype = 0 && this.droptype0endtime < Utils_1.default.getServerTime()) {
+        if (this.droptype != 0 && this.droptype0endtime < Utils_1.default.getServerTime()) {
             this.droptype0endtime = Utils_1.default.getServerTime() + 10000;
         }
         //减少重绘制
@@ -203,7 +203,7 @@ var SoldierItem = /** @class */ (function (_super) {
     SoldierItem.prototype.getTarget = function () {
         var enemylist = HallScene_1.default.Instance.enemylist;
         var target = null;
-        var mindis = 400;
+        var mindis = 600;
         for (var i = 0; i < enemylist.length; ++i) {
             if (enemylist[i].x < -cc.winSize.width / 2)
                 continue;

@@ -307,6 +307,20 @@ var Utils = /** @class */ (function () {
             node.runAction(seq);
         }
     };
+    Utils.playBreath = function (target, sscale, tscale, duration, loop) {
+        var _this = this;
+        if (sscale === void 0) { sscale = 1; }
+        if (tscale === void 0) { tscale = 1.12; }
+        if (duration === void 0) { duration = 0.8; }
+        if (loop === void 0) { loop = true; }
+        target.stopAllActions();
+        target.setScale(sscale);
+        var seq = cc.sequence(cc.scaleTo(duration, tscale, tscale), cc.scaleTo(duration, sscale, sscale), cc.callFunc(function () {
+            if (loop)
+                _this.playBreath(target);
+        }));
+        target.runAction(seq);
+    };
     Utils.timeOffset = 0;
     Utils.sharetime = 0;
     Utils.sharecallback = null;

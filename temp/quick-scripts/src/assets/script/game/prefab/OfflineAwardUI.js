@@ -50,6 +50,7 @@ var OfflineAwardUI = /** @class */ (function (_super) {
     });
     OfflineAwardUI.prototype.start = function () {
         this.node.zIndex = 99999;
+        Utils_1.default.playBreath(this.GetGameObject('btn_ad'));
     };
     OfflineAwardUI.prototype.onBtnClicked = function (event, customEventData) {
         var _this = this;

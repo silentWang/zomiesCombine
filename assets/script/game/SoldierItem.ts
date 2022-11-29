@@ -1,5 +1,6 @@
 import BaseUI from "../framwork/BaseUI";
 import Data from "../manager/Data";
+import AudioMgr from "../utils/AudioMgr";
 import Utils from "../utils/Utils";
 import { DB_plant } from "./DB";
 import HallScene from "./HallScene";
@@ -28,7 +29,7 @@ export default class SoldierItem extends BaseUI {
 
     setItemData(d: PlantInfo,droptype:number = -1) {// 3普通掉落 4小精灵掉落
         if(droptype != -1) this.droptype = droptype;
-        if(this.droptype ! = 0 &&  this.droptype0endtime < Utils.getServerTime())
+        if(this.droptype != 0 &&  this.droptype0endtime < Utils.getServerTime())
         {
             this.droptype0endtime = Utils.getServerTime() + 10000;
         }
@@ -121,7 +122,7 @@ export default class SoldierItem extends BaseUI {
     {
         let enemylist = HallScene.Instance.enemylist;
         let target = null;
-        let mindis = 400;
+        let mindis = 600;
         for(var i = 0;i<enemylist.length;++i)
         {
             if(enemylist[i].x< -cc.winSize.width/2)continue;

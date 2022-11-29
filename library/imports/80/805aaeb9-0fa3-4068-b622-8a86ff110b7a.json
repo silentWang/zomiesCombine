@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "diaoluo_egg",
+    "texture": "c71c9199-d06a-4415-a188-d3bf2d438ef7",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      90,
+      92
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      90,
+      92
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

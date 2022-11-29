@@ -4,6 +4,7 @@ import { DB_slot } from './DB';
 import Utils from '../utils/Utils';
 import MsgHints from '../framwork/MsgHints';
 import GameConst from './GameConst';
+import HallScene from './HallScene';
 
 const {ccclass, property} = cc._decorator;
 
@@ -21,52 +22,50 @@ export default class SlotItem extends BaseUI {
                 break;
             }
         }
-
         return curopen;
-
     }
 
     onBtnClicked(event, customEventData) {
-        let curopen = SlotItem.getCurOpen();
-        if(curopen == -1)return;
-        if(this.index-1 > curopen )
-        {
-            MsgHints.show("需要先解锁"+(curopen+1));
-            return;
-        }
+        // let curopen = SlotItem.getCurOpen();
+        // if(curopen == -1)return;
+        // if(this.index-1 > curopen )
+        // {
+        //     MsgHints.show("需要先解锁"+(curopen+1));
+        //     return;
+        // }
 
-        let type = DB_slot[curopen].type;
-        if(type == 0)
-        {
-            if(Data.user.coin < DB_slot[curopen].price)
-            {
-                MsgHints.show("金币不足");
-                return
-            }
-        }
-        else
-        {
-            if(Data.user.gem < DB_slot[curopen].price)
-            {
-                MsgHints.show("钻石不足");
-                return
-            }
-        }
+        // let type = DB_slot[curopen].type;
+        // if(type == 0)
+        // {
+        //     if(Data.user.coin < DB_slot[curopen].price)
+        //     {
+        //         MsgHints.show("金币不足");
+        //         return
+        //     }
+        // }
+        // else
+        // {
+        //     if(Data.user.gem < DB_slot[curopen].price)
+        //     {
+        //         MsgHints.show("钻石不足");
+        //         return
+        //     }
+        // }
 
-        Data.user.slots[curopen] = 1;
-        if(type == 0)
-        {
-            Data.user.coin -= DB_slot[curopen].price
-        }
-        else
-        {
-            Data.user.gem -= DB_slot[curopen].price
-        }
-        console.log("解锁土地",curopen)
-        MsgHints.show("成功解锁新位置");
-        Data.save();
-        this.dispatch(GameConst.OPEN_SLOT,curopen);
-        this.setIndex(this.index);
+        // Data.user.slots[curopen] = 1;
+        // if(type == 0)
+        // {
+        //     Data.user.coin -= DB_slot[curopen].price
+        // }
+        // else
+        // {
+        //     Data.user.gem -= DB_slot[curopen].price
+        // }
+        // console.log("解锁土地",curopen)
+        // MsgHints.show("成功解锁新位置");
+        // Data.save();
+        // this.dispatch(GameConst.OPEN_SLOT,curopen);
+        // this.setIndex(this.index);
     }
 
 
@@ -81,13 +80,10 @@ export default class SlotItem extends BaseUI {
         // this.GetSkeleton("fx_slot").setAnimation(0,"buy",true)
         // this.GetGameObject("fx_slot").active = false;
         let info = Data.user.slots[i-1];
-
         this.GetGameObject("lock").active = info == 0;
         this.GetGameObject("lbl_index").active = info == 0;
         this.GetGameObject("node_cost").active = info == 0;
-
-        this.GetGameObject("2btcoin").active = DB_slot[i-1].type == 0;
-        this.GetGameObject("2btdiamond").active = DB_slot[i-1].type == 1;
-        this.SetText("lbl_open_cost",Utils.formatNumber( DB_slot[i-1].price))
+        let str  = `${DB_slot[i-1].price}关`;
+        this.SetText("lbl_open_cost",str);
     }
 }

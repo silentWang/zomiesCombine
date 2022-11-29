@@ -35,7 +35,7 @@ export default class Enemy extends BaseUI {
     private type = 0;//0 普通 1 小boss 2大boss
     async setID(id:number,boss:boolean)//是否boss
     {
-        this.type = boss?1:0;
+        this.type = boss ? 1:0;
         let info = DB_zombie[id+""];
         if(id > 100)
         {
@@ -55,7 +55,6 @@ export default class Enemy extends BaseUI {
         // console.log(this.type == 2?"boss":"e",this.maxhp,this.money,"====")
         this.node.position = HallScene.Instance.path[0];
         this.node.scale = this.type == 0 ? .8 : 1;
-        // this.GetGameObject("sp").scaleX = 0.5;
         AudioMgr.Instance().playSFX('chuxian')
         let skpath = `spine:enemy${id}_ske`;
         let atlaspath = `spine:enemy${id}_tex`;
@@ -211,7 +210,7 @@ export default class Enemy extends BaseUI {
             this.node.position =HallScene.Instance.path[this.pathindex];
             this.pathindex++;
             if(this.pathindex == 3)
-                this.GetGameObject("sp").scaleX= -0.5;
+                this.GetGameObject("sp").scaleX = -0.74;
 
             if(this.pathindex>=HallScene.Instance.path.length)
             {

@@ -60,8 +60,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
-var Utils_1 = require("../../utils/Utils");
-var DB_1 = require("../DB");
+var AudioMgr_1 = require("../../utils/AudioMgr");
 var Enemy_1 = require("./Enemy");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Bullet = /** @class */ (function (_super) {
@@ -103,24 +102,12 @@ var Bullet = /** @class */ (function (_super) {
     };
     Bullet.prototype.setInfo = function (target, plantlv) {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, bt;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        plantlv = Math.min(plantlv, 60);
-                        this.plantlv = plantlv;
-                        this.target = target;
-                        _a = this.GetSprite("sp");
-                        return [4 /*yield*/, Utils_1.default.loadRes("texture/bullets/" + (plantlv - 1), cc.SpriteFrame)];
-                    case 1:
-                        _a.spriteFrame = (_b.sent());
-                        bt = this.GetGameObject("trail2");
-                        if (bt) {
-                            bt.color = cc.Color.RED.fromHEX(String(DB_1.DB_plant[plantlv - 1][9]));
-                            bt.height = this.GetGameObject("sp").height;
-                        }
-                        return [2 /*return*/];
-                }
+            return __generator(this, function (_a) {
+                plantlv = Math.min(plantlv, 60);
+                this.plantlv = plantlv;
+                this.target = target;
+                AudioMgr_1.default.Instance().playSFX('skill1');
+                return [2 /*return*/];
             });
         });
     };

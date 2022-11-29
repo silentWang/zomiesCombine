@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ty_jilaodi",
+    "texture": "a1786490-49e3-4074-98c7-99569ec0fcf6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      214,
+      205
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      214,
+      205
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

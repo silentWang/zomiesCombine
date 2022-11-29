@@ -43,6 +43,7 @@ var VictoryUI = /** @class */ (function (_super) {
         AudioMgr_1.default.Instance().playSFX("win_stage");
         this.GetSkeleton("fx_victory").setAnimation(0, "start", false);
         this.GetSkeleton("fx_victory").setAnimation(1, "idle", true);
+        Utils_1.default.playBreath(this.GetGameObject('btn_get'));
     };
     VictoryUI.prototype.setInfo = function (coin) {
         this.coin = coin;

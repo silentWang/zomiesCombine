@@ -1,0 +1,7 @@
+{
+  "__type__": "dragonBones.DragonBonesAsset",
+  "_name": "bullet4_ske",
+  "_objFlags": 0,
+  "_native": "",
+  "_dragonBonesJson": "{\"frameRate\":24,\"isGlobal\":0,\"name\":\"bullet4\",\"version\":\"4.0\",\"armature\":[{\"slot\":[{\"color\":{},\"name\":\"xy\",\"parent\":\"xy\"}],\"type\":\"Armature\",\"frameRate\":24,\"defaultActions\":[{\"gotoAndPlay\":\"bullet4\"}],\"skin\":[{\"slot\":[{\"display\":[{\"path\":\"xy\",\"type\":\"image\",\"name\":\"xy\",\"transform\":{\"y\":-0.2314,\"skX\":0.4559,\"skY\":0.4559,\"x\":0.4623}}],\"name\":\"xy\"}],\"name\":\"\"}],\"animation\":[{\"slot\":[],\"frame\":[],\"playTimes\":0,\"ffd\":[],\"duration\":14,\"ik\":[],\"name\":\"bullet4\",\"bone\":[{\"frame\":[{\"duration\":14,\"transform\":{}}],\"name\":\"root\"},{\"frame\":[{\"duration\":14,\"transform\":{},\"tweenEasing\":0},{\"duration\":0,\"transform\":{\"skX\":-178.5441,\"skY\":-178.5441}}],\"name\":\"xy\"}]}],\"ik\":[],\"name\":\"Armature\",\"bone\":[{\"transform\":{},\"name\":\"root\"},{\"length\":18,\"transform\":{\"y\":-0.0143,\"skX\":-0.4559,\"skY\":-0.4559,\"x\":-0.0425},\"parent\":\"root\",\"name\":\"xy\"}],\"aabb\":{\"width\":49,\"y\":-23.74940156924486,\"height\":47,\"x\":-24.08208584311233}}]}"
+}

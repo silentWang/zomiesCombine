@@ -16,14 +16,14 @@ enum EADLAYER {
 }
 
 const AUTO_COM_TIME = 2;
-const DOUBLE_INCOME_TIME = 10;
+const DOUBLE_INCOME_TIME = 2;
 const DROP_PLANT_TIME = 10;
-const DOUBLE_ATT_TIME = 1;
+const DOUBLE_ATT_TIME = 0.5;
 
 export const MAX_AUTO_COM_TIME = 4;
-export const MAX_DOUBLE_INCOME_TIME = 20;
+export const MAX_DOUBLE_INCOME_TIME = 4;
 export const MAX_DROP_PLANT_TIME = 20;
-export const MAX_DOUBLE_ATT_TIME = 2;
+export const MAX_DOUBLE_ATT_TIME = 1;
 
 @ccclass
 export default class AdLayer extends BaseUI {
@@ -32,6 +32,7 @@ export default class AdLayer extends BaseUI {
     start()
     {
         AdCenter.Instance().showGridAd();
+        Utils.playBreath(this.GetGameObject('btn_ad'))
     }
 
     onDestroy()
@@ -91,7 +92,8 @@ export default class AdLayer extends BaseUI {
             this.SetText("lbl_effect", "+" + AUTO_COM_TIME + "分钟");
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
-            this.SetText("lbl_effect", "+" + DOUBLE_ATT_TIME + "分钟");
+            this.SetText("lbl_effect", "+" + DOUBLE_ATT_TIME*60 + "秒");
+            this.SetText('lbl_d',`进入狂暴状态  持续${DOUBLE_ATT_TIME*60}秒`)
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
             this.SetText("lbl_effect", "+" + DOUBLE_INCOME_TIME + "分钟");

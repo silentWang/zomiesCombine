@@ -61,6 +61,5 @@ var Data = /** @class */ (function () {
     return Data;
 }());
 exports.default = Data;
-window['Data'] = Data;
 
 cc._RF.pop();

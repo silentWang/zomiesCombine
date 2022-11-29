@@ -26,9 +26,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../framwork/BaseUI");
 var Data_1 = require("../manager/Data");
 var DB_1 = require("./DB");
-var Utils_1 = require("../utils/Utils");
-var MsgHints_1 = require("../framwork/MsgHints");
-var GameConst_1 = require("./GameConst");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var SlotItem = /** @class */ (function (_super) {
     __extends(SlotItem, _super);
@@ -49,38 +46,44 @@ var SlotItem = /** @class */ (function (_super) {
         return curopen;
     };
     SlotItem.prototype.onBtnClicked = function (event, customEventData) {
-        var curopen = SlotItem_1.getCurOpen();
-        if (curopen == -1)
-            return;
-        if (this.index - 1 > curopen) {
-            MsgHints_1.default.show("需要先解锁" + (curopen + 1));
-            return;
-        }
-        var type = DB_1.DB_slot[curopen].type;
-        if (type == 0) {
-            if (Data_1.default.user.coin < DB_1.DB_slot[curopen].price) {
-                MsgHints_1.default.show("金币不足");
-                return;
-            }
-        }
-        else {
-            if (Data_1.default.user.gem < DB_1.DB_slot[curopen].price) {
-                MsgHints_1.default.show("钻石不足");
-                return;
-            }
-        }
-        Data_1.default.user.slots[curopen] = 1;
-        if (type == 0) {
-            Data_1.default.user.coin -= DB_1.DB_slot[curopen].price;
-        }
-        else {
-            Data_1.default.user.gem -= DB_1.DB_slot[curopen].price;
-        }
-        console.log("解锁土地", curopen);
-        MsgHints_1.default.show("成功解锁新位置");
-        Data_1.default.save();
-        this.dispatch(GameConst_1.default.OPEN_SLOT, curopen);
-        this.setIndex(this.index);
+        // let curopen = SlotItem.getCurOpen();
+        // if(curopen == -1)return;
+        // if(this.index-1 > curopen )
+        // {
+        //     MsgHints.show("需要先解锁"+(curopen+1));
+        //     return;
+        // }
+        // let type = DB_slot[curopen].type;
+        // if(type == 0)
+        // {
+        //     if(Data.user.coin < DB_slot[curopen].price)
+        //     {
+        //         MsgHints.show("金币不足");
+        //         return
+        //     }
+        // }
+        // else
+        // {
+        //     if(Data.user.gem < DB_slot[curopen].price)
+        //     {
+        //         MsgHints.show("钻石不足");
+        //         return
+        //     }
+        // }
+        // Data.user.slots[curopen] = 1;
+        // if(type == 0)
+        // {
+        //     Data.user.coin -= DB_slot[curopen].price
+        // }
+        // else
+        // {
+        //     Data.user.gem -= DB_slot[curopen].price
+        // }
+        // console.log("解锁土地",curopen)
+        // MsgHints.show("成功解锁新位置");
+        // Data.save();
+        // this.dispatch(GameConst.OPEN_SLOT,curopen);
+        // this.setIndex(this.index);
     };
     SlotItem.prototype.setIndex = function (i) {
         this.index = i;
@@ -93,9 +96,8 @@ var SlotItem = /** @class */ (function (_super) {
         this.GetGameObject("lock").active = info == 0;
         this.GetGameObject("lbl_index").active = info == 0;
         this.GetGameObject("node_cost").active = info == 0;
-        this.GetGameObject("2btcoin").active = DB_1.DB_slot[i - 1].type == 0;
-        this.GetGameObject("2btdiamond").active = DB_1.DB_slot[i - 1].type == 1;
-        this.SetText("lbl_open_cost", Utils_1.default.formatNumber(DB_1.DB_slot[i - 1].price));
+        var str = DB_1.DB_slot[i - 1].price + "\u5173";
+        this.SetText("lbl_open_cost", str);
     };
     var SlotItem_1;
     SlotItem = SlotItem_1 = __decorate([

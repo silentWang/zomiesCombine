@@ -334,6 +334,19 @@ export default class Utils {
         }
     }
 
+    public static playBreath(target:cc.Node,sscale = 1,tscale = 1.12,duration = 0.8,loop:boolean = true){
+        target.stopAllActions();
+        target.setScale(sscale);
+        let seq = cc.sequence(
+            cc.scaleTo(duration, tscale, tscale),
+            cc.scaleTo(duration, sscale, sscale),
+            cc.callFunc(() => {
+                if(loop) this.playBreath(target);
+            }),
+        );
+        target.runAction(seq);
+    }
+
 };
 
 

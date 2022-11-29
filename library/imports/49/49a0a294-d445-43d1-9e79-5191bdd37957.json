@@ -1,0 +1,14 @@
+{
+  "__type__": "dragonBones.DragonBonesAtlasAsset",
+  "_name": "bullet5_tex",
+  "_objFlags": 0,
+  "_native": "",
+  "_atlasJson": "{\"width\":256,\"SubTexture\":[{\"width\":42,\"y\":1,\"height\":62,\"name\":\"huo3\",\"x\":138},{\"width\":42,\"y\":1,\"height\":66,\"name\":\"huo1\",\"x\":94},{\"width\":42,\"y\":67,\"height\":58,\"name\":\"huo6\",\"x\":48},{\"width\":44,\"y\":1,\"height\":64,\"name\":\"huo4\",\"x\":48},{\"width\":45,\"y\":1,\"height\":66,\"name\":\"huo2\",\"x\":1},{\"width\":38,\"y\":65,\"height\":62,\"name\":\"huo5\",\"x\":138}],\"height\":128,\"name\":\"bullet5\",\"imagePath\":\"bullet5_tex.png\"}",
+  "_texture": {
+    "__uuid__": "6ccdde2b-a836-431b-888b-d7ab1e6e5a16"
+  },
+  "texture": {
+    "__uuid__": "6ccdde2b-a836-431b-888b-d7ab1e6e5a16"
+  },
+  "_textureAtlasData": null
+}

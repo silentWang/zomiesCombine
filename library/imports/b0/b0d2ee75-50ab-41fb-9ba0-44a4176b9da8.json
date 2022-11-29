@@ -1,0 +1,14 @@
+{
+  "__type__": "dragonBones.DragonBonesAtlasAsset",
+  "_name": "bullet1_tex",
+  "_objFlags": 0,
+  "_native": "",
+  "_atlasJson": "{\"width\":256,\"imagePath\":\"bullet1_tex.png\",\"height\":256,\"name\":\"bullet1\",\"SubTexture\":[{\"width\":136,\"y\":115,\"height\":55,\"name\":\"pt\",\"x\":1},{\"width\":162,\"y\":1,\"height\":55,\"name\":\"pt3\",\"x\":1},{\"width\":136,\"y\":58,\"height\":55,\"name\":\"pt2\",\"x\":1}]}",
+  "_texture": {
+    "__uuid__": "de4f30b8-9ade-4372-9e37-fa6395288069"
+  },
+  "texture": {
+    "__uuid__": "de4f30b8-9ade-4372-9e37-fa6395288069"
+  },
+  "_textureAtlasData": null
+}

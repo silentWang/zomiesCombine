@@ -116,7 +116,6 @@ var Enemy = /** @class */ (function (_super) {
                         // console.log(this.type == 2?"boss":"e",this.maxhp,this.money,"====")
                         this.node.position = HallScene_1.default.Instance.path[0];
                         this.node.scale = this.type == 0 ? .8 : 1;
-                        // this.GetGameObject("sp").scaleX = 0.5;
                         AudioMgr_1.default.Instance().playSFX('chuxian');
                         skpath = "spine:enemy" + id + "_ske";
                         atlaspath = "spine:enemy" + id + "_tex";
@@ -262,7 +261,7 @@ var Enemy = /** @class */ (function (_super) {
             this.node.position = HallScene_1.default.Instance.path[this.pathindex];
             this.pathindex++;
             if (this.pathindex == 3)
-                this.GetGameObject("sp").scaleX = -0.5;
+                this.GetGameObject("sp").scaleX = -0.74;
             if (this.pathindex >= HallScene_1.default.Instance.path.length) {
                 console.log("逃过");
                 HallScene_1.default.Instance.removeenemy(this.node, true);

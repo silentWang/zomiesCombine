@@ -1,4 +1,5 @@
 import BaseUI from "../../framwork/BaseUI";
+import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 import { DB_plant } from "../DB";
 import Enemy from "./Enemy";
@@ -19,7 +20,7 @@ export default class Bullet extends BaseUI {
         this.node.scale = 1.2;
     }
     update (dt) {
-        if(dt>1)dt=1;
+        if(dt > 1) dt = 1;
         if( this.target)
         {
             let d = this.target.position.add(cc.v3(0,80,0)) .sub(this.node.position);
@@ -50,13 +51,25 @@ export default class Bullet extends BaseUI {
         plantlv = Math.min(plantlv,60)
         this.plantlv = plantlv;
         this.target = target;
-        this.GetSprite("sp").spriteFrame = await Utils.loadRes("texture/bullets/"+(plantlv-1),cc.SpriteFrame) as cc.SpriteFrame;
-        // console.log(DB_plant[plantlv-1][9])
-        let bt = this.GetGameObject("trail2");
-        if(bt){
-            bt.color = cc.Color.RED.fromHEX(String(DB_plant[plantlv-1][9]))
-            bt.height =  this.GetGameObject("sp").height;
-        }
+        AudioMgr.Instance().playSFX('skill1');
+
+        // let idx = Math.ceil(plantlv/10);
+        // idx = idx > 5 ? 5 : idx;
+        // let skpath = `spine:other/bullet${idx}_ske`;
+        // let atlaspath = `spine:other/bullet${idx}_tex`;
+        // let bullet = this.GetDragonAmature('bsp');
+        // bullet.dragonAsset = await Utils.loadRes(skpath,dragonBones.DragonBonesAsset) as dragonBones.DragonBonesAsset;
+        // bullet.dragonAtlasAsset = await Utils.loadRes(atlaspath,dragonBones.DragonBonesAtlasAsset) as dragonBones.DragonBonesAtlasAsset;
+        // bullet.armatureName = 'Armature';
+        // bullet.playAnimation('bullet' + idx,0);
+
+        // 原逻辑
+        // this.GetSprite("sp").spriteFrame = await Utils.loadRes("texture/bullets/"+(plantlv-1),cc.SpriteFrame) as cc.SpriteFrame;
+        // let bt = this.GetGameObject("trail2");
+        // if(bt){
+        //     bt.color = cc.Color.RED.fromHEX(String(DB_plant[plantlv-1][9]))
+        //     bt.height =  this.GetGameObject("sp").height;
+        // }
         // this.GetGameObject("streak").getComponent(cc.MotionStreak).stroke = this.GetGameObject("sp").height;
         // this.GetGameObject("streak").getComponent(cc.MotionStreak).color = cc.Color.RED.fromHEX(String(DB_plant[plantlv-1][9]))
     }

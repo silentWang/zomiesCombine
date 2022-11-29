@@ -23,6 +23,7 @@ export default class OfflineAwardUI extends BaseUI {
 
     start() {
         this.node.zIndex = 99999;
+        Utils.playBreath(this.GetGameObject('btn_ad'))
     }
     onBtnClicked(event, customEventData) {
         var btnName = event.target.name;

@@ -16,6 +16,7 @@ export default class VictoryUI extends BaseUI {
         AudioMgr.Instance().playSFX("win_stage")
         this.GetSkeleton("fx_victory").setAnimation(0,"start",false);
         this.GetSkeleton("fx_victory").setAnimation(1,"idle",true);
+        Utils.playBreath(this.GetGameObject('btn_get'))
     }
 
     private coin = 0;
@@ -37,8 +38,8 @@ export default class VictoryUI extends BaseUI {
         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
             if(b)
             {
-                Data.user.coin+= coin;
-                if(Data.user.lv>=30)
+                Data.user.coin += coin;
+                if(Data.user.lv >= 30)
                     AdCenter.Instance().showinterstitialAd();
             }  
         })

@@ -4,7 +4,7 @@ import Data from "../manager/Data";
 import WxCenter from "../manager/WxCenter";
 import AudioMgr from "../utils/AudioMgr";
 import Utils from "../utils/Utils";
-import { DB_level, DB_plant } from "./DB";
+import { DB_level, DB_plant, DB_slot } from "./DB";
 import AdLayer, { MAX_DOUBLE_ATT_TIME, MAX_DOUBLE_INCOME_TIME, MAX_AUTO_COM_TIME, MAX_DROP_PLANT_TIME, EADLAYER } from "./prefab/AdLayer";
 import ShareLayer from "./prefab/ShareLayer";
 import Enemy from "./prefab/Enemy";
@@ -119,6 +119,7 @@ export default class HallScene extends BaseUI {
     removeenemy(node:cc.Node,bFail:boolean)
     {
         let isStop = false;
+        let isChange = false;
         if(bFail) this.bFail = true;
         for(var i = this.enemylist.length-1;i>=0;--i)
         {
@@ -150,6 +151,7 @@ export default class HallScene extends BaseUI {
             else
             {
                 Data.user.wave++;
+                isChange = true;
                 if(Data.user.wave > this.wave_info[2])
                 {
                     let enemy = node.getComponent(Enemy);
@@ -160,8 +162,9 @@ export default class HallScene extends BaseUI {
                         })
                     })))
                     isStop = true;
-                    Data.user.wave= 1;
+                    Data.user.wave = 1;
                     Data.user.lv++;
+                    this.openNewSlot();
                     Data.save(true);
                     let key = Data.user.lv + "_" + Data.user.wave;
                     this.wave_info = DB_level[key];
@@ -174,12 +177,12 @@ export default class HallScene extends BaseUI {
                 }
             }
             if(isStop) return;
-            this.createwave();
+            this.createwave(isChange);
         }
     }
 
     private createcomplete = false;
-    createwave()
+    createwave(isChange:boolean = false)
     {
         this.bFail = false;
         this.createcomplete = false;
@@ -236,6 +239,9 @@ export default class HallScene extends BaseUI {
         this.SetText("lbl_waves",Data.user.wave+"/"+ this.wave_info[2]);
         this.SetText("lbl_pre_lv",(Data.user.lv-1)+"");
         this.SetText("lbl_nex_lv",(Data.user.lv+1)+"");
+        if(isChange){
+            Utils.playBreath(this.GetGameObject('lbl_waves'),1,3,0.5,false);
+        }
     }
 
     public path:cc.Vec3[] = [];
@@ -289,18 +295,14 @@ export default class HallScene extends BaseUI {
         WxCenter.init();
 		let slots = this.GetGameObject("slots");
 		let i = 0;
-		for(var slot of slots.children)
-		{
+		for(var slot of slots.children){
 			slot.getComponent(SlotItem).setIndex(++i);
 		}
-
         await this.initView();
 
 		this.node.runAction(cc.sequence(cc.delayTime(0.5), cc.callFunc(() => {
             this.tryAutocom();
-
             if (this.item_drag.node.active) return
-
             // 小精灵掉落
             if(Data.user.DropGiftPts.length>0)
             {
@@ -361,7 +363,7 @@ export default class HallScene extends BaseUI {
                 Data.user.drop_plant_time = Utils.getServerTime();
             }
 
-            this.SetText("att_x2_time", isX2In ? Utils.getTimeStrByS((Data.user.double_att_time - Utils.getServerTime()) / 1000) : '狂暴');
+            this.SetText("att_x2_time", isX2In ? Utils.getTimeStrByS((Data.user.double_att_time - Utils.getServerTime()) / 1000) : '打鸡血');
             this.SetText("rewardx2_time", isInDb ? Utils.getTimeStrByS((Data.user.double_income_time - Utils.getServerTime()) / 1000) : '双倍');
             if( Data.user.auto_com_time - Utils.getServerTime() > 0)
             {
@@ -375,10 +377,10 @@ export default class HallScene extends BaseUI {
             this.GetGameObject("fx_bt_angry").active = this.GetGameObject("att_x2_time").active;
 
 
-            if(Data.user.drop_plant_time - Utils.getServerTime()<0)
-                this.GetSprite("bt_fast_gen_process_item").fillRange = 0;
-            else
-                this.GetSprite("bt_fast_gen_process_item").fillRange = ( (Data.user.drop_plant_time - Utils.getServerTime())/1000/60)/MAX_DROP_PLANT_TIME;// (max_drop_plant * 60 - (Data.user.drop_plant_time - Utils.getServerTime())/1000) /max_drop_plant * 60
+            // if(Data.user.drop_plant_time - Utils.getServerTime()<0)
+            //     this.GetSprite("bt_fast_gen_process_item").fillRange = 0;
+            // else
+            //     this.GetSprite("bt_fast_gen_process_item").fillRange = ( (Data.user.drop_plant_time - Utils.getServerTime())/1000/60)/MAX_DROP_PLANT_TIME;// (max_drop_plant * 60 - (Data.user.drop_plant_time - Utils.getServerTime())/1000) /max_drop_plant * 60
 
             // this.updateUI();
             // TaskLayer.checkTask();//任务检测
@@ -470,7 +472,20 @@ export default class HallScene extends BaseUI {
         Utils.sharecallback = null;
     }
 
-
+    openNewSlot(){
+        let curopen = SlotItem.getCurOpen();
+        if(curopen < 0) return;
+        let lv = DB_slot[curopen].price;
+        if(lv < Data.user.lv) return;
+        Data.user.slots[curopen] = 1;
+        Data.save();
+        let slots = this.GetGameObject("slots");
+        let slot = slots.children[curopen];
+        if(slot){
+            slot.getComponent(SlotItem).setIndex(curopen);
+            MsgHints.show("成功解锁新位置");
+        }
+    }
 
 	@property(cc.Prefab)
     pre_soldier: cc.Prefab = null;
@@ -919,7 +934,7 @@ export default class HallScene extends BaseUI {
             case "btn_inviate":
                 // WxCenter.shareAppMessage();
                 Utils.createUI("prefab/ShareLayer").then((node:cc.Node)=>{
-                    node.getComponent(ShareLayer).setData(100000);
+                    node.getComponent(ShareLayer).setData();
                 })
                 break;
             case "btn_Recorder":
