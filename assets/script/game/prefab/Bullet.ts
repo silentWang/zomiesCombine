@@ -10,6 +10,11 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class Bullet extends BaseUI {
 
+    private target:cc.Node = null;
+    private sped:number = 700;
+    private plantlv = 0;
+    private skillType = 0;
+
     start()
     {
         let bt = this.GetGameObject("trail2");
@@ -19,6 +24,7 @@ export default class Bullet extends BaseUI {
         }
         this.node.scale = 1.2;
     }
+    
     update (dt) {
         if(dt > 1) dt = 1;
         if( this.target)
@@ -26,7 +32,7 @@ export default class Bullet extends BaseUI {
             let d = this.target.position.add(cc.v3(0,80,0)) .sub(this.node.position);
             if(d.mag() < this.sped * dt *2)
             {
-                this.target.getComponent(Enemy).hit(this.plantlv);
+                this.target.getComponent(Enemy).hit(this.plantlv,this.skillType);
                 // this.node.position = this.target.position.add(cc.v3(0,80,0))
                 this.node.destroy();
                 this.node.removeFromParent(true);
@@ -43,16 +49,32 @@ export default class Bullet extends BaseUI {
 
     }
 
-    private target:cc.Node = null;
-    private sped:number = 700;
-    private plantlv = 0;
+    private getBulletType(){
+        let info = DB_plant[this.plantlv - 1];
+        let skill = String(info[3]).split("|");
+        let skilltype = Number(skill[0]);
+        let skillvalue = Number(skill[1]);
+        if(Utils.getRandom(0,100) < skillvalue) return skilltype;
+    }
+
     async setInfo(target:cc.Node,plantlv:number)
     {
         plantlv = Math.min(plantlv,60)
         this.plantlv = plantlv;
         this.target = target;
-        AudioMgr.Instance().playSFX('skill1');
-
+        this.skillType = this.getBulletType();
+        if(this.skillType == 1){
+            AudioMgr.Instance().playSFX('skill5');
+        }
+        else if(this.skillType == 2){
+            AudioMgr.Instance().playSFX('skill3');
+        }
+        else if(this.skillType == 3){
+            AudioMgr.Instance().playSFX('skill2');
+        }
+        else {
+            AudioMgr.Instance().playSFX('skill1');
+        }
         // let idx = Math.ceil(plantlv/10);
         // idx = idx > 5 ? 5 : idx;
         // let skpath = `spine:other/bullet${idx}_ske`;

@@ -28,6 +28,7 @@ var BaseUI_1 = require("../../framwork/BaseUI");
 var MsgHints_1 = require("../../framwork/MsgHints");
 var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
+var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -103,16 +104,20 @@ var AdLayer = /** @class */ (function (_super) {
         this.GetGameObject("icon_angre").active = e == EADLAYER.DOUBLE_ATT;
         if (this.type == EADLAYER.AUTO_COM) {
             this.SetText("lbl_effect", "+" + AUTO_COM_TIME + "分钟");
+            WxCenter_1.default.aldReport('AutoShow', 'show');
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
             this.SetText("lbl_effect", "+" + DOUBLE_ATT_TIME * 60 + "秒");
             this.SetText('lbl_d', "\u8FDB\u5165\u72C2\u66B4\u72B6\u6001  \u6301\u7EED" + DOUBLE_ATT_TIME * 60 + "\u79D2");
+            WxCenter_1.default.aldReport('RageShow', 'show');
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
             this.SetText("lbl_effect", "+" + DOUBLE_INCOME_TIME + "分钟");
+            WxCenter_1.default.aldReport('DoubleShow', 'show');
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
             this.SetText("lbl_effect", "+" + DROP_PLANT_TIME + "分钟");
+            WxCenter_1.default.aldReport('DropShow', 'show');
         }
         var _a = this.getEndAndMaxTime(), end_time = _a.end_time, max = _a.max;
         var isRunning = end_time > Utils_1.default.getServerTime();
@@ -123,6 +128,7 @@ var AdLayer = /** @class */ (function (_super) {
         if (double === void 0) { double = 1; }
         var isUse = false;
         if (this.type == EADLAYER.AUTO_COM) {
+            WxCenter_1.default.aldReport('AutoClick', 'click');
             if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > (exports.MAX_AUTO_COM_TIME - AUTO_COM_TIME) * 60 * 1000) {
                 MsgHints_1.default.show("最大累积时间" + exports.MAX_AUTO_COM_TIME + "分钟");
                 return;
@@ -133,6 +139,7 @@ var AdLayer = /** @class */ (function (_super) {
             isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
+            WxCenter_1.default.aldReport('RageClick', 'click');
             if (Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > (exports.MAX_DOUBLE_ATT_TIME - DOUBLE_ATT_TIME) * 60 * 1000) {
                 MsgHints_1.default.show("最大累积时间" + exports.MAX_DOUBLE_ATT_TIME + "分钟");
                 return;
@@ -143,6 +150,7 @@ var AdLayer = /** @class */ (function (_super) {
             isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
+            WxCenter_1.default.aldReport('DoubleClick', 'click');
             if (Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > (exports.MAX_DOUBLE_INCOME_TIME - DOUBLE_INCOME_TIME) * 60 * 1000) {
                 MsgHints_1.default.show("最大累积时间" + exports.MAX_DOUBLE_INCOME_TIME + "分钟");
                 return;
@@ -153,6 +161,9 @@ var AdLayer = /** @class */ (function (_super) {
             isUse = true;
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
+            if (double == 2) {
+                WxCenter_1.default.aldReport('DropClick', 'click');
+            }
             if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > (exports.MAX_DROP_PLANT_TIME - DROP_PLANT_TIME) * 60 * 1000) {
                 MsgHints_1.default.show("最大累积时间" + exports.MAX_DROP_PLANT_TIME + "分钟");
                 return;

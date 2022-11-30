@@ -26,6 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
+var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var HallScene_1 = require("../HallScene");
@@ -42,11 +43,27 @@ var LoseUI = /** @class */ (function (_super) {
         this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(1, 255)));
         AudioMgr_1.default.Instance().playSFX("fail");
         Utils_1.default.playBreath(this.GetGameObject('btn_get'));
+        WxCenter_1.default.aldReport('FailShow', 'show');
     };
     LoseUI.prototype.setInfo = function (coin) {
         this.coin = coin;
-        this.SetText("lbl_coin", Utils_1.default.formatNumber(coin * 1.8));
+        this.aTobAnim(coin * 1.8);
         this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
+    };
+    LoseUI.prototype.aTobAnim = function (num) {
+        var _this = this;
+        var aver = Math.ceil(num / 60);
+        var xn = 0;
+        this.SetText("lbl_coin", Utils_1.default.formatNumber(0));
+        var cb = function () {
+            xn += aver;
+            if (xn >= num) {
+                xn = num;
+                _this.unschedule(cb);
+            }
+            _this.SetText("lbl_coin", Utils_1.default.formatNumber(xn));
+        };
+        this.schedule(cb, 0, 61);
     };
     LoseUI.prototype.closeUI = function () {
         this.shutAnim();
@@ -66,6 +83,7 @@ var LoseUI = /** @class */ (function (_super) {
         AudioMgr_1.default.Instance().playSFX("click");
         switch (btnName) {
             case "btn_get":
+                WxCenter_1.default.aldReport('FailClick', 'click');
                 AdCenter_1.default.Instance().play(function () {
                     _this.getCoinReward();
                     _this.closeUI();

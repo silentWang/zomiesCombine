@@ -48,7 +48,7 @@ export default class UserModel {
 
     @save public share_times:number = 10;
 
-    @save public slots = [1,1,1,1,1,0,0,0,0,0,0,0];
+    @save public slots = [1,1,1,0,0,0,0,0,0,0,0,0];
     @save public lv = 1;
     @save public wave = 1;
 
@@ -194,10 +194,8 @@ export default class UserModel {
         }
 
         let tmplv = this.GetMaxLv();
-
         var tmpPre: PlantInfo = this.getPlantInfo(i0);
         var lv = tmpPre.lv;
-
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == i0) {
                 this.ComPlants.splice(i, 1);
@@ -218,9 +216,8 @@ export default class UserModel {
         this.ComPlants.push({ open: tmpPre.open, index: i0, lv: lv + 1 });
         this.todayComTimes++;
 
-        
         let tmplv2 = this.GetMaxLv();
-        if(tmplv2>tmplv && tmplv2<60)
+        if(tmplv2 > tmplv && tmplv2 < 60)
         {
             console.log("新植物     ")
             Utils.createUI("prefab/NewPlantUI")

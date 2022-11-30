@@ -66,7 +66,7 @@ var AudioMgr = /** @class */ (function (_super) {
         // getUrl(url: string): cc.AudioClip {
         //     return cc.loader.getRes("sounds/" + url);
         // }
-        _this.bgm_url = "BGM1";
+        _this.bgm_url = "";
         _this.lastplaysfxtime = {};
         _this.sfxcd = {
             "huangshulang": 1500,
@@ -92,10 +92,12 @@ var AudioMgr = /** @class */ (function (_super) {
     };
     AudioMgr.prototype.playBGM = function (url) {
         return __awaiter(this, void 0, void 0, function () {
-            var audioUrl;
+            var ischange, audioUrl;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        ischange = this.bgm_url == url;
+                        if (!!ischange) return [3 /*break*/, 2];
                         this.bgm_url = url;
                         return [4 /*yield*/, Utils_1.default.loadRes("sounds:" + url, cc.AudioClip)];
                     case 1:
@@ -106,7 +108,8 @@ var AudioMgr = /** @class */ (function (_super) {
                         if (this.bgmVolume > 0) {
                             this.bgmAudioID = cc.audioEngine.play(audioUrl, true, this.bgmVolume);
                         }
-                        return [2 /*return*/];
+                        _a.label = 2;
+                    case 2: return [2 /*return*/];
                 }
             });
         });

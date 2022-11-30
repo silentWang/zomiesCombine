@@ -1,6 +1,7 @@
 import BaseUI from "./framwork/BaseUI";
 import Data from "./manager/Data";
 import PoolMgr from "./manager/PoolMgr";
+import WxCenter from "./manager/WxCenter";
 import AudioMgr from "./utils/AudioMgr";
 import Utils from "./utils/Utils";
 
@@ -28,13 +29,16 @@ export default class Loading extends BaseUI {
         }
     }
 
+    start(){
+        WxCenter.aldReport('LoadingShow','show');
+    }
+
     async onLoad() {
         cc.debug.setDisplayStats(false);
         cc.game.setFrameRate(60);
 
         super.onLoad();
-        if(wx)
-        {
+        if(wx) {
             wx.setPreferredFramesPerSecond(60);
             wx.setKeepScreenOn({ keepScreenOn: true });
         }
@@ -63,8 +67,9 @@ export default class Loading extends BaseUI {
                 if (p >= 1) {
                     this.node.stopAllActions();
                     await Utils.loadBundler("spine");
-                    await Utils.loadBundler("sounds");
-                    AudioMgr.Instance().loadSounds();
+                    Utils.loadBundler("sounds").then(()=>{
+                        AudioMgr.Instance().loadSounds();
+                    });
                     cc.director.loadScene("hall");
                     p = 1;
                 }

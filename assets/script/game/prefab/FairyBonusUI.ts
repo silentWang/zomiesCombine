@@ -1,6 +1,7 @@
 import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
+import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 import { DB_droneRewards } from "../DB";
@@ -14,6 +15,7 @@ export default class FairyBonusUI extends BaseUI {
     start () {
         AdCenter.Instance().showGridAd();
         Utils.playBreath(this.GetGameObject('btn_ad'))
+        WxCenter.aldReport('AirdropShow','show');
     }
 
     onDestroy()
@@ -41,11 +43,13 @@ export default class FairyBonusUI extends BaseUI {
                 this.closeUI();
                 break;
             case "btn_normal":
+                WxCenter.aldReport('AirdropClick','click');
                 let spt = this.getSuperPot();
                 Data.user.DropGiftPts = Data.user.DropGiftPts.concat(spt);
                 this.closeUI();
                 break;
             case "btn_ad":
+                WxCenter.aldReport('AirdropClick','click');
                 AdCenter.Instance().play((b)=>{
                     if(b)
                     {

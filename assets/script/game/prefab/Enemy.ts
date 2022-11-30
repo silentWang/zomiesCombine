@@ -66,35 +66,30 @@ export default class Enemy extends BaseUI {
         this.GetGameObject("New ProgressBar").opacity = 0;
     }
 
-    hit(plantlv:number)
+    hit(plantlv:number,skilltype:number)
     {
         if(this.hp <= 0)return;
         let info = DB_plant[plantlv-1];
-        let skill = String(info[3]).split("|");
-        let skilltype = Number(skill[0]);
-        let skillvalue = Number(skill[1]);
         let power = Number(info[2])
         let bbj = false;
         let isskill = false;
-        if(Utils.getRandom(0,100) < skillvalue)
-        {
-            if(skilltype == 1)//减速
-            {
-                this.slowdown();
-                isskill = true;
-            }
-            else if(skilltype == 2)//双倍伤害
-            {
-                power *= 2;
-                bbj = true;
-                isskill = true;
-            }
-            else if(skilltype ==3)//冰冻
-            {
-                isskill = true;
-                this.frozen();
-            }
+        if(skilltype == 1){
+            //减速
+            this.slowdown();
+            isskill = true;
         }
+        else if(skilltype == 2){
+            //双倍伤害
+            power *= 2;
+            bbj = true;
+            isskill = true;
+        }
+        else if(skilltype == 3){
+            //冰冻
+            isskill = true;
+            this.frozen();
+        }
+        
         this.hp -= power;
         this.hp = Math.max(this.hp,0)
         this.SetProgressBar("New ProgressBar",this.hp/this.maxhp);

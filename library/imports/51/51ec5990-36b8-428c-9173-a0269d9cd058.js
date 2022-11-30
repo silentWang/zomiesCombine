@@ -121,6 +121,23 @@ var WxCenter = /** @class */ (function () {
         };
         return errHandle[err.errCode] || '视频加载错误,重新加载页面试试吧';
     };
+    /**通用统计 */
+    WxCenter.aldReport = function (rid, type) {
+        if (type === void 0) { type = 'show'; }
+        if (!this.wx || !this.wx.aldStage)
+            return;
+        var wx = this.wx;
+        wx.aldSendEvent(rid, { action: type });
+    };
+    WxCenter.aldLevelReport = function (level) {
+        if (!this.wx || !this.wx.aldStage)
+            return;
+        var wx = this.wx;
+        wx.aldLevel.onSetLevel({
+            levelId: level + '',
+            levelName: "\u7B49\u7EA7" + level,
+        });
+    };
     return WxCenter;
 }());
 exports.default = WxCenter;

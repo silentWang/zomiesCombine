@@ -168,6 +168,7 @@ export default class HallScene extends BaseUI {
                     Data.save(true);
                     let key = Data.user.lv + "_" + Data.user.wave;
                     this.wave_info = DB_level[key];
+                    WxCenter.aldLevelReport(Data.user.lv);
                 }
                 else
                 {
@@ -290,6 +291,7 @@ export default class HallScene extends BaseUI {
 	
 	async start()
 	{
+        WxCenter.aldReport('HomeShow','show');
         this.hidemergetips();
         HallScene._instance = this;
         WxCenter.init();
@@ -640,7 +642,7 @@ export default class HallScene extends BaseUI {
         this.touchendtime = Utils.getServerTime();
         this.hidemergetips();
         this.GetGameObject("btn_delete").stopAllActions();
-        this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(0.5,0)))
+        this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.25),cc.fadeTo(0.25,0)))
 
         this.GetGameObject("node_com").runAction(cc.sequence(cc.delayTime(1), cc.callFunc(() => {
             this.bPauseAutoCom = false;
@@ -846,7 +848,7 @@ export default class HallScene extends BaseUI {
                 MsgHints.show("位置不够啦！");
                 this.GetGameObject("btn_delete").stopAllActions();
                 this.GetGameObject("btn_delete").opacity = 255;
-                this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(0.5,0)))
+                this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.25),cc.fadeTo(0.25,0)))
             }
             return false
         }
@@ -933,6 +935,7 @@ export default class HallScene extends BaseUI {
                 break;
             case "btn_inviate":
                 // WxCenter.shareAppMessage();
+                WxCenter.aldReport('InvitationClick','click');
                 Utils.createUI("prefab/ShareLayer").then((node:cc.Node)=>{
                     node.getComponent(ShareLayer).setData();
                 })

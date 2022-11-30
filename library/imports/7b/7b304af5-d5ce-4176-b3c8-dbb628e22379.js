@@ -61,6 +61,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AudioMgr_1 = require("../../utils/AudioMgr");
+var Utils_1 = require("../../utils/Utils");
+var DB_1 = require("../DB");
 var Enemy_1 = require("./Enemy");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Bullet = /** @class */ (function (_super) {
@@ -70,6 +72,7 @@ var Bullet = /** @class */ (function (_super) {
         _this.target = null;
         _this.sped = 700;
         _this.plantlv = 0;
+        _this.skillType = 0;
         return _this;
     }
     Bullet.prototype.start = function () {
@@ -86,7 +89,7 @@ var Bullet = /** @class */ (function (_super) {
         if (this.target) {
             var d = this.target.position.add(cc.v3(0, 80, 0)).sub(this.node.position);
             if (d.mag() < this.sped * dt * 2) {
-                this.target.getComponent(Enemy_1.default).hit(this.plantlv);
+                this.target.getComponent(Enemy_1.default).hit(this.plantlv, this.skillType);
                 // this.node.position = this.target.position.add(cc.v3(0,80,0))
                 this.node.destroy();
                 this.node.removeFromParent(true);
@@ -100,13 +103,33 @@ var Bullet = /** @class */ (function (_super) {
             this.node.removeFromParent(true);
         }
     };
+    Bullet.prototype.getBulletType = function () {
+        var info = DB_1.DB_plant[this.plantlv - 1];
+        var skill = String(info[3]).split("|");
+        var skilltype = Number(skill[0]);
+        var skillvalue = Number(skill[1]);
+        if (Utils_1.default.getRandom(0, 100) < skillvalue)
+            return skilltype;
+    };
     Bullet.prototype.setInfo = function (target, plantlv) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 plantlv = Math.min(plantlv, 60);
                 this.plantlv = plantlv;
                 this.target = target;
-                AudioMgr_1.default.Instance().playSFX('skill1');
+                this.skillType = this.getBulletType();
+                if (this.skillType == 1) {
+                    AudioMgr_1.default.Instance().playSFX('skill5');
+                }
+                else if (this.skillType == 2) {
+                    AudioMgr_1.default.Instance().playSFX('skill3');
+                }
+                else if (this.skillType == 3) {
+                    AudioMgr_1.default.Instance().playSFX('skill2');
+                }
+                else {
+                    AudioMgr_1.default.Instance().playSFX('skill1');
+                }
                 return [2 /*return*/];
             });
         });

@@ -136,34 +136,29 @@ var Enemy = /** @class */ (function (_super) {
             });
         });
     };
-    Enemy.prototype.hit = function (plantlv) {
+    Enemy.prototype.hit = function (plantlv, skilltype) {
         var _this = this;
         if (this.hp <= 0)
             return;
         var info = DB_1.DB_plant[plantlv - 1];
-        var skill = String(info[3]).split("|");
-        var skilltype = Number(skill[0]);
-        var skillvalue = Number(skill[1]);
         var power = Number(info[2]);
         var bbj = false;
         var isskill = false;
-        if (Utils_1.default.getRandom(0, 100) < skillvalue) {
-            if (skilltype == 1) //减速
-             {
-                this.slowdown();
-                isskill = true;
-            }
-            else if (skilltype == 2) //双倍伤害
-             {
-                power *= 2;
-                bbj = true;
-                isskill = true;
-            }
-            else if (skilltype == 3) //冰冻
-             {
-                isskill = true;
-                this.frozen();
-            }
+        if (skilltype == 1) {
+            //减速
+            this.slowdown();
+            isskill = true;
+        }
+        else if (skilltype == 2) {
+            //双倍伤害
+            power *= 2;
+            bbj = true;
+            isskill = true;
+        }
+        else if (skilltype == 3) {
+            //冰冻
+            isskill = true;
+            this.frozen();
         }
         this.hp -= power;
         this.hp = Math.max(this.hp, 0);

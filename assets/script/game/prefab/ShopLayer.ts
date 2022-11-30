@@ -1,6 +1,7 @@
 import BaseUI from "../../framwork/BaseUI";
 import List from "../../framwork/List";
 import Data from "../../manager/Data";
+import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 import { DB_plant } from "../DB";
@@ -31,6 +32,7 @@ export default class ShopLayer extends BaseUI{
 
     list = null;
     start () {
+        WxCenter.aldReport('ShopShow','show');
         ShopLayer._instance = this.node;
         this.list = DB_plant
         this.reLoad();

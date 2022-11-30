@@ -62,6 +62,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("./framwork/BaseUI");
 var Data_1 = require("./manager/Data");
 var PoolMgr_1 = require("./manager/PoolMgr");
+var WxCenter_1 = require("./manager/WxCenter");
 var AudioMgr_1 = require("./utils/AudioMgr");
 var Utils_1 = require("./utils/Utils");
 var wx = window["wx"] || window["tt"];
@@ -84,6 +85,9 @@ var Loading = /** @class */ (function (_super) {
                 }
                 break;
         }
+    };
+    Loading.prototype.start = function () {
+        WxCenter_1.default.aldReport('LoadingShow', 'show');
     };
     Loading.prototype.onLoad = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -126,19 +130,18 @@ var Loading = /** @class */ (function (_super) {
                             case 0:
                                 p += 0.018;
                                 this.SetProgressBar("ProgressBar", p);
-                                if (!(p >= 1)) return [3 /*break*/, 3];
+                                if (!(p >= 1)) return [3 /*break*/, 2];
                                 this.node.stopAllActions();
                                 return [4 /*yield*/, Utils_1.default.loadBundler("spine")];
                             case 1:
                                 _a.sent();
-                                return [4 /*yield*/, Utils_1.default.loadBundler("sounds")];
-                            case 2:
-                                _a.sent();
-                                AudioMgr_1.default.Instance().loadSounds();
+                                Utils_1.default.loadBundler("sounds").then(function () {
+                                    AudioMgr_1.default.Instance().loadSounds();
+                                });
                                 cc.director.loadScene("hall");
                                 p = 1;
-                                _a.label = 3;
-                            case 3:
+                                _a.label = 2;
+                            case 2:
                                 this.GetGameObject('plane').x = p * 600 - 320;
                                 this.SetText('lbl_progress', (~~(p * 100)) + '%');
                                 return [2 /*return*/];

@@ -229,6 +229,7 @@ var HallScene = /** @class */ (function (_super) {
                     Data_1.default.save(true);
                     var key = Data_1.default.user.lv + "_" + Data_1.default.user.wave;
                     this.wave_info = DB_1.DB_level[key];
+                    WxCenter_1.default.aldLevelReport(Data_1.default.user.lv);
                 }
                 else {
                     AudioMgr_1.default.Instance().playSFX("win_wave");
@@ -332,6 +333,7 @@ var HallScene = /** @class */ (function (_super) {
             return __generator(this, function (_d) {
                 switch (_d.label) {
                     case 0:
+                        WxCenter_1.default.aldReport('HomeShow', 'show');
                         this.hidemergetips();
                         HallScene_1._instance = this;
                         WxCenter_1.default.init();
@@ -643,7 +645,7 @@ var HallScene = /** @class */ (function (_super) {
         this.touchendtime = Utils_1.default.getServerTime();
         this.hidemergetips();
         this.GetGameObject("btn_delete").stopAllActions();
-        this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(0.5, 0)));
+        this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.25), cc.fadeTo(0.25, 0)));
         this.GetGameObject("node_com").runAction(cc.sequence(cc.delayTime(1), cc.callFunc(function () {
             _this.bPauseAutoCom = false;
             _this.bInAutoCom = false;
@@ -847,7 +849,7 @@ var HallScene = /** @class */ (function (_super) {
                 MsgHints_1.default.show("位置不够啦！");
                 this.GetGameObject("btn_delete").stopAllActions();
                 this.GetGameObject("btn_delete").opacity = 255;
-                this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(0.5, 0)));
+                this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.25), cc.fadeTo(0.25, 0)));
             }
             return false;
         }
@@ -931,6 +933,7 @@ var HallScene = /** @class */ (function (_super) {
                 break;
             case "btn_inviate":
                 // WxCenter.shareAppMessage();
+                WxCenter_1.default.aldReport('InvitationClick', 'click');
                 Utils_1.default.createUI("prefab/ShareLayer").then(function (node) {
                     node.getComponent(ShareLayer_1.default).setData();
                 });

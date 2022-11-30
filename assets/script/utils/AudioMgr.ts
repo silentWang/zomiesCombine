@@ -26,15 +26,18 @@ export default class AudioMgr extends Singleton {
     //     return cc.loader.getRes("sounds/" + url);
     // }
 
-    private bgm_url: string = "BGM1"
+    private bgm_url: string = ""
     async playBGM(url: string) {
-        this.bgm_url = url;
-        var audioUrl = await Utils.loadRes("sounds:"+url,cc.AudioClip) as cc.AudioClip;// this.getUrl(url);
-        if (this.bgmAudioID >= 0) {
-            cc.audioEngine.stop(this.bgmAudioID);
-        }
-        if (this.bgmVolume > 0) {
-            this.bgmAudioID = cc.audioEngine.play(audioUrl, true, this.bgmVolume);
+        let ischange = this.bgm_url == url;
+        if(!ischange){
+            this.bgm_url = url;
+            var audioUrl = await Utils.loadRes("sounds:"+url,cc.AudioClip) as cc.AudioClip;// this.getUrl(url);
+            if (this.bgmAudioID >= 0) {
+                cc.audioEngine.stop(this.bgmAudioID);
+            }
+            if (this.bgmVolume > 0) {
+                this.bgmAudioID = cc.audioEngine.play(audioUrl, true, this.bgmVolume);
+            }
         }
     }
 
@@ -63,7 +66,6 @@ export default class AudioMgr extends Singleton {
             return;
         }
         this.lastplaysfxtime[url] = new Date().getTime();
-
         var audioUrl = await Utils.loadRes("sounds:"+url,cc.AudioClip) as cc.AudioClip; ;//this.getUrl(url);
         if (audioUrl&&this.sfxVolume > 0) {
             this.audioId = cc.audioEngine.play(audioUrl, false, this.sfxVolume);

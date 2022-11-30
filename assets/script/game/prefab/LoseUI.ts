@@ -1,6 +1,7 @@
 import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
+import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 import HallScene from "../HallScene";
@@ -15,15 +16,32 @@ export default class LoseUI extends BaseUI {
         this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(1,255)));
         AudioMgr.Instance().playSFX("fail")
         Utils.playBreath(this.GetGameObject('btn_get'))
+        WxCenter.aldReport('FailShow','show');
     }
 
     private coin = 0;
     setInfo(coin:number)
     {
         this.coin = coin;
-        this.SetText("lbl_coin",Utils.formatNumber(coin*1.8));
+        this.aTobAnim(coin*1.8);
         this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     }
+
+    private aTobAnim(num:number){
+        let aver = Math.ceil(num/60);
+        let xn = 0;
+        this.SetText("lbl_coin",Utils.formatNumber(0));
+        let cb = ()=>{
+            xn += aver;
+            if(xn >= num){
+                xn = num;
+                this.unschedule(cb);
+            }
+            this.SetText("lbl_coin",Utils.formatNumber(xn));
+        }
+        this.schedule(cb,0,61);
+    }
+
     closeUI() {
         this.shutAnim();
         HallScene.Instance.createwave();
@@ -42,6 +60,7 @@ export default class LoseUI extends BaseUI {
         AudioMgr.Instance().playSFX("click");
         switch (btnName) {
             case "btn_get":
+                WxCenter.aldReport('FailClick','click');
                 AdCenter.Instance().play(()=>{
                     this.getCoinReward();
                     this.closeUI();

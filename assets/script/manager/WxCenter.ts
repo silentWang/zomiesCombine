@@ -114,5 +114,20 @@ export default class WxCenter {
         }
         return errHandle[err.errCode] || '视频加载错误,重新加载页面试试吧'
     }
+    /**通用统计 */
+    public static aldReport(rid:string,type:string = 'show'){
+        if(!this.wx || !this.wx.aldStage) return;
+        let wx = this.wx;
+        wx.aldSendEvent(rid,{action:type});
+    }
+    
+    public static aldLevelReport(level:number){
+        if(!this.wx || !this.wx.aldStage) return;
+        let wx = this.wx;
+        wx.aldLevel.onSetLevel({
+            levelId: level + '',  // 等级id 必传
+            levelName: `等级${level}`,  // 等级名称 必传
+        });
+    }
 
 }

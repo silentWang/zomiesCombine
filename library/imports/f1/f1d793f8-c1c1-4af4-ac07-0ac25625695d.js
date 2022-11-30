@@ -26,6 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
 var Data_1 = require("../../manager/Data");
+var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var DB_1 = require("../DB");
@@ -40,6 +41,7 @@ var FairyBonusUI = /** @class */ (function (_super) {
     FairyBonusUI.prototype.start = function () {
         AdCenter_1.default.Instance().showGridAd();
         Utils_1.default.playBreath(this.GetGameObject('btn_ad'));
+        WxCenter_1.default.aldReport('AirdropShow', 'show');
     };
     FairyBonusUI.prototype.onDestroy = function () {
         AdCenter_1.default.Instance().hideGridAd();
@@ -65,11 +67,13 @@ var FairyBonusUI = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_normal":
+                WxCenter_1.default.aldReport('AirdropClick', 'click');
                 var spt = this.getSuperPot();
                 Data_1.default.user.DropGiftPts = Data_1.default.user.DropGiftPts.concat(spt);
                 this.closeUI();
                 break;
             case "btn_ad":
+                WxCenter_1.default.aldReport('AirdropClick', 'click');
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
                         var spt_1 = _this.getSuperPot(true);

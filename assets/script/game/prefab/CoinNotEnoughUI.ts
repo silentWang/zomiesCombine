@@ -8,6 +8,7 @@
 import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
 import Data from "../../manager/Data";
+import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import BigNumber from "../../utils/BigNumber";
 import Utils from "../../utils/Utils";
@@ -60,6 +61,7 @@ export default class CoinNotEnoughUI extends BaseUI {
             let coin = 0.5*Data.user.BuyPrice(lv);
             this.SetText('lbl_effect',`+${BigNumber.getLargeString(Utils.fixFloat(coin))}`);
         }
+        WxCenter.aldReport('LackShow','show');
         this.lbl_times.string = `当日次数${str}`;
     }
 
@@ -93,6 +95,7 @@ export default class CoinNotEnoughUI extends BaseUI {
                 this.closeUI();
                 break;
             case "btn_ad":
+                WxCenter.aldReport('LackClick','click');
                 AdCenter.Instance().play((b)=>{
                     if(b) this.addValue();
                 });

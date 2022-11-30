@@ -26,6 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var List_1 = require("../../framwork/List");
 var Data_1 = require("../../manager/Data");
+var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var DB_1 = require("../DB");
@@ -51,6 +52,7 @@ var ShopLayer = /** @class */ (function (_super) {
     };
     ShopLayer.prototype.start = function () {
         var _this = this;
+        WxCenter_1.default.aldReport('ShopShow', 'show');
         ShopLayer_1._instance = this.node;
         this.list = DB_1.DB_plant;
         this.reLoad();
