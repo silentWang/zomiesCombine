@@ -319,7 +319,7 @@ var Utils = /** @class */ (function () {
             if (loop)
                 _this.playBreath(target);
         }));
-        target.runAction(seq);
+        return target.runAction(seq);
     };
     Utils.timeOffset = 0;
     Utils.sharetime = 0;

@@ -13,6 +13,7 @@ var Data = /** @class */ (function () {
     }
     Data.save = function (bRemote) {
         if (bRemote === void 0) { bRemote = false; }
+        Data.resetOneDayData();
         var obj = {};
         obj['user'] = Data.user.getUploadData();
         Data.savedata(obj, bRemote);
@@ -28,17 +29,7 @@ var Data = /** @class */ (function () {
         if (localdata) {
             localdata = JSON.parse(localdata);
             // console.log('本地数据', localdata)
-            var savedatatime = cc.sys.localStorage.getItem("savedatatime");
-            ;
-            if (savedatatime > 0) {
-                var now = new Date().getDate();
-                var d = new Date(savedatatime).getDate();
-                if (now != d) {
-                    localdata.share_times = 10;
-                    localdata.today_getcoin_times = 0;
-                    localdata.today_getchick_times = 0;
-                }
-            }
+            this.resetOneDayData();
             Data.user.setData(localdata['user']);
             Data.save();
         }
@@ -56,6 +47,20 @@ var Data = /** @class */ (function () {
         cc.sys.localStorage.setItem("savedatatime", Utils_1.default.getServerTime());
         var strdata = JSON.stringify(data);
         cc.sys.localStorage.setItem(GameConst_1.default.local_data_key, strdata);
+    };
+    Data.resetOneDayData = function () {
+        var savedatatime = parseInt(cc.sys.localStorage.getItem("savedatatime"));
+        if (savedatatime > 0) {
+            var n = new Date(Utils_1.default.getServerTime()).getDate();
+            var d = new Date(savedatatime).getDate();
+            console.log('ccccccc', n);
+            console.log('ddddddd', d);
+            if (n != d) {
+                Data.user.share_times = 10;
+                Data.user.today_getcoin_times = 0;
+                Data.user.today_getchick_times = 0;
+            }
+        }
     };
     Data.user = new UserModel_1.default();
     return Data;

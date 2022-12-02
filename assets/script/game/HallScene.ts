@@ -364,7 +364,7 @@ export default class HallScene extends BaseUI {
             if (Data.user.drop_plant_time - Utils.getServerTime() > MAX_DROP_PLANT_TIME * 60 * 1000) {
                 Data.user.drop_plant_time = Utils.getServerTime();
             }
-
+            this.breathAngry(isX2In);
             this.SetText("att_x2_time", isX2In ? Utils.getTimeStrByS((Data.user.double_att_time - Utils.getServerTime()) / 1000) : '打鸡血');
             this.SetText("rewardx2_time", isInDb ? Utils.getTimeStrByS((Data.user.double_income_time - Utils.getServerTime()) / 1000) : '双倍');
             if( Data.user.auto_com_time - Utils.getServerTime() > 0)
@@ -377,8 +377,6 @@ export default class HallScene extends BaseUI {
             }
             this.SetText("lbl_drop_plant",isDpIn ? Utils.getTimeStrByS((Data.user.drop_plant_time - Utils.getServerTime()) / 1000) : '掉落');
             this.GetGameObject("fx_bt_angry").active = this.GetGameObject("att_x2_time").active;
-
-
             // if(Data.user.drop_plant_time - Utils.getServerTime()<0)
             //     this.GetSprite("bt_fast_gen_process_item").fillRange = 0;
             // else
@@ -389,9 +387,6 @@ export default class HallScene extends BaseUI {
             // if (GameManager.Instance().isGuide == false)
             //     this.GetGameObject("btn_auto").active = Data.user.guideIndex > 2;
             // Data.user.checkNewTody();
-
-
-             
 		}),cc.delayTime(1)).repeatForever());
         this.GetGameObject("btn_delete").opacity = 0;
         this.GetGameObject("guild_0").active = Data.user.guideIndex == 0;
@@ -404,9 +399,7 @@ export default class HallScene extends BaseUI {
         //     this.GetGameObject("powerman").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
 
             // this.GetGameObject("btn_inviate").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
-            this.GetGameObject("lupin_gem").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
-
-
+        this.GetGameObject("lupin_gem").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
         
         if (this.GetGameObject("btn_Recorder")) this.GetGameObject("btn_Recorder").active = window["tt"];
         if (window["tt"]) {
@@ -443,7 +436,6 @@ export default class HallScene extends BaseUI {
                 })
             });
         }
-        
         cc.game.on(cc.game.EVENT_SHOW, this.onGameShow, this);
         cc.game.on(cc.game.EVENT_HIDE, this.onGameHide, this);
     }
@@ -487,6 +479,26 @@ export default class HallScene extends BaseUI {
             slot.getComponent(SlotItem).setIndex(curopen);
             MsgHints.show("成功解锁新位置");
         }
+    }
+
+    private isInAngry = false;
+    public breathAngry(isbool:boolean){
+        let node = this.GetGameObject('btn_angry')
+        if(!node) return;
+        if(isbool) {
+            if(this.isInAngry){
+                node.stopAllActions();
+                node.scaleX = 1;
+                node.scaleY = 1;
+            }
+            this.isInAngry = false;
+            return;
+        }
+        if(this.isInAngry) return;
+        this.isInAngry = true;
+        node.runAction(cc.sequence(cc.delayTime(10), cc.callFunc(() => {
+            Utils.playBreath(node).setTag(2);
+        })).repeat(1)).setTag(1)
     }
 
 	@property(cc.Prefab)

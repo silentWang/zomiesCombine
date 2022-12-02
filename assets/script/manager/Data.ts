@@ -8,10 +8,10 @@ export default class Data {
     public static user: UserModel = new UserModel();
 
     public static save( bRemote: boolean = false) {
-        var obj = {}
+        Data.resetOneDayData();
+        let obj = {}
         obj['user'] = Data.user.getUploadData()
         Data.savedata(obj, bRemote)
-
         //上传服务器
         // if (window["wx"]) {
         //     window["wx"].setUserCloudStorage({
@@ -24,16 +24,7 @@ export default class Data {
         if (localdata) {
             localdata = JSON.parse(localdata);
             // console.log('本地数据', localdata)
-            let savedatatime = cc.sys.localStorage.getItem("savedatatime");;
-            if(savedatatime > 0){
-                let now = new Date().getDate();
-                let d = new Date(savedatatime).getDate();
-                if(now != d){
-                    localdata.share_times = 10;
-                    localdata.today_getcoin_times = 0;
-                    localdata.today_getchick_times = 0;
-                }
-            }
+            this.resetOneDayData();
             Data.user.setData(localdata['user']);
             Data.save();
         }
@@ -52,4 +43,20 @@ export default class Data {
         var strdata = JSON.stringify(data);
         cc.sys.localStorage.setItem(GameConst.local_data_key, strdata);
     }
+
+    public static resetOneDayData(){
+        let savedatatime = parseInt(cc.sys.localStorage.getItem("savedatatime"));
+        if(savedatatime > 0){
+            let n = new Date(Utils.getServerTime()).getDate();
+            let d = new Date(savedatatime).getDate();
+            console.log('ccccccc',n)
+            console.log('ddddddd',d)
+            if(n != d){
+                Data.user.share_times = 10;
+                Data.user.today_getcoin_times = 0;
+                Data.user.today_getchick_times = 0;
+            }
+        }
+    }
+
 }

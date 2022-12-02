@@ -96,6 +96,7 @@ var HallScene = /** @class */ (function (_super) {
         _this.bInAutoCom = false; //是否正在自动合成动画
         _this.bRecorder = false;
         _this.recordertime = 0;
+        _this.isInAngry = false;
         _this.pre_soldier = null;
         _this.bChoosed = false;
         _this.touchPos = cc.Vec2.ZERO;
@@ -401,6 +402,7 @@ var HallScene = /** @class */ (function (_super) {
                             if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > AdLayer_1.MAX_DROP_PLANT_TIME * 60 * 1000) {
                                 Data_1.default.user.drop_plant_time = Utils_1.default.getServerTime();
                             }
+                            _this.breathAngry(isX2In);
                             _this.SetText("att_x2_time", isX2In ? Utils_1.default.getTimeStrByS((Data_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000) : '打鸡血');
                             _this.SetText("rewardx2_time", isInDb ? Utils_1.default.getTimeStrByS((Data_1.default.user.double_income_time - Utils_1.default.getServerTime()) / 1000) : '双倍');
                             if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > 0) {
@@ -504,6 +506,26 @@ var HallScene = /** @class */ (function (_super) {
             slot.getComponent(SlotItem_1.default).setIndex(curopen);
             MsgHints_1.default.show("成功解锁新位置");
         }
+    };
+    HallScene.prototype.breathAngry = function (isbool) {
+        var node = this.GetGameObject('btn_angry');
+        if (!node)
+            return;
+        if (isbool) {
+            if (this.isInAngry) {
+                node.stopAllActions();
+                node.scaleX = 1;
+                node.scaleY = 1;
+            }
+            this.isInAngry = false;
+            return;
+        }
+        if (this.isInAngry)
+            return;
+        this.isInAngry = true;
+        node.runAction(cc.sequence(cc.delayTime(10), cc.callFunc(function () {
+            Utils_1.default.playBreath(node).setTag(2);
+        })).repeat(1)).setTag(1);
     };
     HallScene.prototype.initView = function () {
         return __awaiter(this, void 0, void 0, function () {

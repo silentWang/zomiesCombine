@@ -228,7 +228,6 @@ var UserModel = /** @class */ (function () {
     };
     //摧毁
     UserModel.prototype.DropWuJiang = function (index) {
-        console.log("DropWuJiang", index);
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
                 var tmp = this.BuyPrice(this.ComPlants[i].lv);

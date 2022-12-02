@@ -344,7 +344,7 @@ export default class Utils {
                 if(loop) this.playBreath(target);
             }),
         );
-        target.runAction(seq);
+        return target.runAction(seq);
     }
 
 };

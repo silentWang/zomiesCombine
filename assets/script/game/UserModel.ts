@@ -247,7 +247,6 @@ export default class UserModel {
 
     //摧毁
     public DropWuJiang(index: number) {
-        console.log("DropWuJiang", index)
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
                 var tmp = this.BuyPrice(this.ComPlants[i].lv)
@@ -266,7 +265,6 @@ export default class UserModel {
         for (var i = 0; i < savepars.length; ++i) {
             data[savepars[i]] = this[savepars[i]];
         }
-
         return data;
     }
     public setData(data: any) {
