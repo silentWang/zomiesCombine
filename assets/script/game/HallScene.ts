@@ -1,20 +1,20 @@
 import BaseUI from "../framwork/BaseUI";
-import MsgHints from "../framwork/MsgHints";
-import Data from "../manager/Data";
+import MsgToast from "../framwork/MsgToast";
+import ChickData from "../manager/ChickData";
 import WxCenter from "../manager/WxCenter";
 import AudioMgr from "../utils/AudioMgr";
 import Utils from "../utils/Utils";
-import { DB_level, DB_plant, DB_slot } from "./DB";
-import AdLayer, { MAX_DOUBLE_ATT_TIME, MAX_DOUBLE_INCOME_TIME, MAX_AUTO_COM_TIME, MAX_DROP_PLANT_TIME, EADLAYER } from "./prefab/AdLayer";
-import ShareLayer from "./prefab/ShareLayer";
+import { User_level, Config_chick, Config_ground } from "./Config";
+import CommonView, { MAX_DOUBLE_ATT_TIME, MAX_DOUBLE_INCOME_TIME, MAX_AUTO_COM_TIME, MAX_DROP_PLANT_TIME, EADLAYER } from "./prefab/CommonView";
+import ShareLayer from "./prefab/ShareView";
 import Enemy from "./prefab/Enemy";
-import LoseUI from "./prefab/LoseUI";
-import LuPinResult from "./prefab/LuPinResult";
+import FailView from "./prefab/FailView";
+import RecordView from "./prefab/RecordView";
 import OfflineAwardUI from "./prefab/OfflineAwardUI";
-import ShopLayer from "./prefab/ShopLayer";
-import VictoryUI from "./prefab/VictoryUI";
-import SlotItem from "./SlotItem";
-import SoldierItem from "./SoldierItem";
+import ShopView from "./prefab/ShopView";
+import WinView from "./prefab/WinView";
+import GroundItem from "./GroundItem";
+import ChickItem from "./ChickItem";
 import { PlantInfo } from "./UserModel";
 import CoinNotEnoughUI from "./prefab/CoinNotEnoughUI";
 
@@ -56,7 +56,6 @@ export default class HallScene extends BaseUI {
                 indexs.push(item.index);
             }
         }
-        // console.log(indexs);
         let slots = this.GetGameObject("slots");//fx_ground_merge
         for(var i = 0;i<slots.children.length;++i)
         {
@@ -68,7 +67,7 @@ export default class HallScene extends BaseUI {
     update(dt)
 	{
         if(dt>1)dt=1;
-		this.SetText("lbl_coin",Utils.formatNumber(Data.user.coin)+"");
+		this.SetText("lbl_coin",Utils.formatNumber(ChickData.user.coin)+"");
         if(this.recordertime != 0)
         {
             let s = Math.floor((Utils.getServerTime() - this.recordertime)/1000);
@@ -88,11 +87,11 @@ export default class HallScene extends BaseUI {
         }
 
         this._lastdroptime += dt;
-        if(this._lastdroptime > 25 * (Data.user.drop_plant_time > Utils.getServerTime()?.3:1))
+        if(this._lastdroptime > 25 * (ChickData.user.drop_plant_time > Utils.getServerTime()?.3:1))
         {
             //普通花盆掉落
             if (this.item_drag.datacopy) return
-            let lv = Math.max(1, Data.user.GetMaxLv() - Utils.getRandomInt(6, 9));
+            let lv = Math.max(1, ChickData.user.GetMaxLv() - Utils.getRandomInt(6, 9));
             this.tryBuyPlant(lv, 3)
             this._lastdroptime = 0;
         }
@@ -133,42 +132,42 @@ export default class HallScene extends BaseUI {
         {
             if(this.bFail)
             {
-                if(Data.user.wave>= this.wave_info[2])
+                if(ChickData.user.wave>= this.wave_info[2])
                 {
-                    Data.user.wave= 1;
+                    ChickData.user.wave= 1;
                     isStop = true;
                     let enemy = node.getComponent(Enemy);
                     Utils.createUI("prefab/LoseUI").then((node:cc.Node)=>{
-                        node.getComponent(LoseUI).setInfo(enemy.getBossMoney())
+                        node.getComponent(FailView).setInfo(enemy.getBossMoney())
                     })
                 }
                 else
                 {
-                    Data.user.wave = 1;
+                    ChickData.user.wave = 1;
                     this.showImage("texture/defeat");
                 }
             }
             else
             {
-                Data.user.wave++;
+                ChickData.user.wave++;
                 isChange = true;
-                if(Data.user.wave > this.wave_info[2])
+                if(ChickData.user.wave > this.wave_info[2])
                 {
                     let enemy = node.getComponent(Enemy);
                     let money = enemy.getBossMoney();
 				    this.node.runAction(cc.sequence(cc.delayTime(1.2),cc.callFunc(()=>{
                         Utils.createUI("prefab/VictoryUI").then((node:cc.Node)=>{
-                            node.getComponent(VictoryUI).setInfo(money)
+                            node.getComponent(WinView).setInfo(money)
                         })
                     })))
                     isStop = true;
-                    Data.user.wave = 1;
-                    Data.user.lv++;
+                    ChickData.user.wave = 1;
+                    ChickData.user.lv++;
                     this.openNewSlot();
-                    Data.save(true);
-                    let key = Data.user.lv + "_" + Data.user.wave;
-                    this.wave_info = DB_level[key];
-                    WxCenter.aldLevelReport(Data.user.lv);
+                    ChickData.save(true);
+                    let key = ChickData.user.lv + "_" + ChickData.user.wave;
+                    this.wave_info = User_level[key];
+                    WxCenter.aldLevelReport(ChickData.user.lv);
                 }
                 else
                 {
@@ -188,24 +187,24 @@ export default class HallScene extends BaseUI {
         this.bFail = false;
         this.createcomplete = false;
 
-        let key = Data.user.lv + "_" + Data.user.wave;
-        this.wave_info = DB_level[key];
+        let key = ChickData.user.lv + "_" + ChickData.user.wave;
+        this.wave_info = User_level[key];
 
         //通关后就一直读最后一关
         if(!this.wave_info)
         {
-            let key = 60 + "_" + Data.user.wave;
-            this.wave_info = DB_level[key];
+            let key = 60 + "_" + ChickData.user.wave;
+            this.wave_info = User_level[key];
         }
 
-        if(Data.user.wave == this.wave_info[2])
+        if(ChickData.user.wave == this.wave_info[2])
         {
             AudioMgr.Instance().playBGM("bgBoss");
             this.node.runAction(cc.sequence(cc.delayTime(.8),cc.callFunc(()=>{
                 Utils.createUI("prefab/BossCommingUI")
             })))
         }
-        else if(Data.user.wave == 1)
+        else if(ChickData.user.wave == 1)
         {
             AudioMgr.Instance().playBGM("BGM1");
         }
@@ -236,10 +235,10 @@ export default class HallScene extends BaseUI {
         }
         
         //关卡信息
-        this.SetText("lbl_cur_lv",Data.user.lv+"");
-        this.SetText("lbl_waves",Data.user.wave+"/"+ this.wave_info[2]);
-        this.SetText("lbl_pre_lv",(Data.user.lv-1)+"");
-        this.SetText("lbl_nex_lv",(Data.user.lv+1)+"");
+        this.SetText("lbl_cur_lv",ChickData.user.lv+"");
+        this.SetText("lbl_waves",ChickData.user.wave+"/"+ this.wave_info[2]);
+        this.SetText("lbl_pre_lv",(ChickData.user.lv-1)+"");
+        this.SetText("lbl_nex_lv",(ChickData.user.lv+1)+"");
         if(isChange){
             Utils.playBreath(this.GetGameObject('lbl_waves'),1,3,0.5,false);
         }
@@ -247,12 +246,12 @@ export default class HallScene extends BaseUI {
 
     public path:cc.Vec3[] = [];
 
-	item_drag: SoldierItem = null;
+	item_drag: ChickItem = null;
 	autocomindexs: number[] = [-1, -1];
 
-    private items: Array<SoldierItem> = [];
+    private items: Array<ChickItem> = [];
     initComposeItems() {
-        var list = Data.user.ComPlants;
+        var list = ChickData.user.ComPlants;
         
         let m = {};
         for (var i = list.length - 1; i >= 0; i--) {
@@ -274,10 +273,10 @@ export default class HallScene extends BaseUI {
     bPauseAutoCom: boolean = false; //是否暂停自动合成
 	bInAutoCom: boolean = false;     //是否正在自动合成动画
 	
-	getItemByPos(pos: cc.Vec2): SoldierItem {
+	getItemByPos(pos: cc.Vec2): ChickItem {
         for (var i = 0; i < this.items.length; ++i) {
             if (this.items[i].node.getBoundingBox().contains(pos)) {
-                return this.items[i].node.getComponent(SoldierItem);
+                return this.items[i].node.getComponent(ChickItem);
             }
         }
         return null;
@@ -298,7 +297,7 @@ export default class HallScene extends BaseUI {
 		let slots = this.GetGameObject("slots");
 		let i = 0;
 		for(var slot of slots.children){
-			slot.getComponent(SlotItem).setIndex(++i);
+			slot.getComponent(GroundItem).setIndex(++i);
 		}
         await this.initView();
 
@@ -306,33 +305,34 @@ export default class HallScene extends BaseUI {
             this.tryAutocom();
             if (this.item_drag.node.active) return
             // 小精灵掉落
-            if(Data.user.DropGiftPts.length>0)
+            if(ChickData.user.DropGiftPts.length>0)
             {
-               let b= this.tryBuyPlant(Data.user.DropGiftPts[0],4);
+               let b= this.tryBuyPlant(ChickData.user.DropGiftPts[0],4);
                if(b)
-                   Data.user.DropGiftPts.shift();
+                   ChickData.user.DropGiftPts.shift();
             }
            //  广告购买成功，因为没有空位未成功添加
-           if(Data.user.AdBuyNotDrop.length>0)
+           if(ChickData.user.AdBuyNotDrop.length>0)
             {
-               let b= this.tryBuyPlant(Data.user.AdBuyNotDrop[0],2);
+               let b= this.tryBuyPlant(ChickData.user.AdBuyNotDrop[0],2);
                if(b)
-                   Data.user.AdBuyNotDrop.shift();
+                   ChickData.user.AdBuyNotDrop.shift();
             }
 
 		})).repeatForever())
         
-        Data.user.auto_com_time = Math.max(0,Data.user.auto_com_time);
-        Data.user.double_income_time = Math.max(0,Data.user.double_income_time);
-        Data.user.drop_plant_time = Math.max(0,Data.user.drop_plant_time);
-        Data.user.double_att_time = Math.max(0,Data.user.double_att_time);
+        ChickData.user.auto_com_time = Math.max(0,ChickData.user.auto_com_time);
+        ChickData.user.double_income_time = Math.max(0,ChickData.user.double_income_time);
+        ChickData.user.drop_plant_time = Math.max(0,ChickData.user.drop_plant_time);
+        ChickData.user.double_att_time = Math.max(0,ChickData.user.double_att_time);
         this.updateBuyButton();
 
-         //离线奖励,暂时只给6小时的         
-         var t = (Utils.getServerTime() - Data.user.serverTime) / 1000;
-         if ( Data.user.serverTime != 0 && t>3*60) {
+         //离线奖励,暂时只给6小时的
+         let stime = ChickData.user.serverTime;    
+         var t = (Utils.getServerTime() - stime) / 1000;
+         if (stime != 0 && t > 3*60) {
              var t = Math.min(7200 * 3, t);
-             var money = Data.user.getOfflineEarning(t/60);
+             var money = ChickData.user.getOfflineEarning(t/60);
              Utils.createUI('prefab/OfflineAwardUI', null, (ui) => {
                  ui.getComponent(OfflineAwardUI).data = money;
              })
@@ -347,35 +347,35 @@ export default class HallScene extends BaseUI {
 
 		//更新各种时间
         this.GetGameObject("bottom").runAction(cc.sequence( cc.callFunc(() => {
-            let isX2In = Data.user.double_att_time - Utils.getServerTime() > 0;
-            let isInDb = Data.user.double_income_time - Utils.getServerTime() > 0;
-            let isDpIn = Data.user.drop_plant_time - Utils.getServerTime() > 0;
+            let isX2In = ChickData.user.double_att_time - Utils.getServerTime() > 0;
+            let isInDb = ChickData.user.double_income_time - Utils.getServerTime() > 0;
+            let isDpIn = ChickData.user.drop_plant_time - Utils.getServerTime() > 0;
 
             //校验时间
-            if (Data.user.double_att_time - Utils.getServerTime() > MAX_DOUBLE_ATT_TIME * 60 * 1000) {
-                Data.user.double_att_time = Utils.getServerTime();
+            if (ChickData.user.double_att_time - Utils.getServerTime() > MAX_DOUBLE_ATT_TIME * 60 * 1000) {
+                ChickData.user.double_att_time = Utils.getServerTime();
             }
-            if (Data.user.double_income_time - Utils.getServerTime() > MAX_DOUBLE_INCOME_TIME * 60 * 1000) {
-                Data.user.double_income_time = Utils.getServerTime();
+            if (ChickData.user.double_income_time - Utils.getServerTime() > MAX_DOUBLE_INCOME_TIME * 60 * 1000) {
+                ChickData.user.double_income_time = Utils.getServerTime();
             }
-            if (Data.user.auto_com_time - Utils.getServerTime() > MAX_AUTO_COM_TIME * 60 * 1000) {
-                Data.user.auto_com_time = Utils.getServerTime();
+            if (ChickData.user.auto_com_time - Utils.getServerTime() > MAX_AUTO_COM_TIME * 60 * 1000) {
+                ChickData.user.auto_com_time = Utils.getServerTime();
             }
-            if (Data.user.drop_plant_time - Utils.getServerTime() > MAX_DROP_PLANT_TIME * 60 * 1000) {
-                Data.user.drop_plant_time = Utils.getServerTime();
+            if (ChickData.user.drop_plant_time - Utils.getServerTime() > MAX_DROP_PLANT_TIME * 60 * 1000) {
+                ChickData.user.drop_plant_time = Utils.getServerTime();
             }
             this.breathAngry(isX2In);
-            this.SetText("att_x2_time", isX2In ? Utils.getTimeStrByS((Data.user.double_att_time - Utils.getServerTime()) / 1000) : '打鸡血');
-            this.SetText("rewardx2_time", isInDb ? Utils.getTimeStrByS((Data.user.double_income_time - Utils.getServerTime()) / 1000) : '双倍');
-            if( Data.user.auto_com_time - Utils.getServerTime() > 0)
+            this.SetText("att_x2_time", isX2In ? Utils.getTimeStrByS((ChickData.user.double_att_time - Utils.getServerTime()) / 1000) : '打鸡血');
+            this.SetText("rewardx2_time", isInDb ? Utils.getTimeStrByS((ChickData.user.double_income_time - Utils.getServerTime()) / 1000) : '双倍');
+            if( ChickData.user.auto_com_time - Utils.getServerTime() > 0)
             {
-                this.SetText("auto_time", Utils.getTimeStrByS((Data.user.auto_com_time - Utils.getServerTime()) / 1000));
+                this.SetText("auto_time", Utils.getTimeStrByS((ChickData.user.auto_com_time - Utils.getServerTime()) / 1000));
             }
             else
             {
                 this.SetText("auto_time", "自动合成");
             }
-            this.SetText("lbl_drop_plant",isDpIn ? Utils.getTimeStrByS((Data.user.drop_plant_time - Utils.getServerTime()) / 1000) : '掉落');
+            this.SetText("lbl_drop_plant",isDpIn ? Utils.getTimeStrByS((ChickData.user.drop_plant_time - Utils.getServerTime()) / 1000) : '掉落');
             this.GetGameObject("fx_bt_angry").active = this.GetGameObject("att_x2_time").active;
             // if(Data.user.drop_plant_time - Utils.getServerTime()<0)
             //     this.GetSprite("bt_fast_gen_process_item").fillRange = 0;
@@ -389,7 +389,7 @@ export default class HallScene extends BaseUI {
             // Data.user.checkNewTody();
 		}),cc.delayTime(1)).repeatForever());
         this.GetGameObject("btn_delete").opacity = 0;
-        this.GetGameObject("guild_0").active = Data.user.guideIndex == 0;
+        this.GetGameObject("guild_0").active = ChickData.user.guideIndex == 0;
 
         // if (this.GetGameObject("supermarket"))
         //     this.GetGameObject("supermarket").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(2)).repeatForever());
@@ -410,7 +410,7 @@ export default class HallScene extends BaseUI {
                 this.GetGameObject("btn_end").active = true;
                 this.GetGameObject("btn_Recorder").stopAllActions();
                 this.GetGameObject("btn_Recorder").runAction(cc.sequence(cc.scaleTo(0.5, .9), cc.scaleTo(0.5, 1)).repeatForever());
-                console.log("tt录屏开始");
+                //console.log("tt录屏开始");
                 this.recordertime = Utils.getServerTime();
             });
 
@@ -421,18 +421,18 @@ export default class HallScene extends BaseUI {
                 this.GetGameObject("btn_Recorder").scale = 1;
                 this.GetGameObject("btn_VCR").active = true;
                 this.GetGameObject("btn_end").active = false;
-                console.log("tt录屏结束");
-                console.log(res.videoPath);
+                // console.log("tt录屏结束");
+                // console.log(res.videoPath);
                 
                 if (Utils.getServerTime() - this.recordertime < 3000) {
-                    MsgHints.show("录屏时间过短");
+                    // MsgHints.show("录屏时间过短");
                     this.recordertime = 0
                     return;
                 }
 
                 this.recordertime = 0
                 Utils.createUI("prefab/LuPinResult", null, (node: cc.Node) => {
-                    node.getComponent(LuPinResult).setData(res);
+                    node.getComponent(RecordView).setData(res);
                 })
             });
         }
@@ -457,7 +457,7 @@ export default class HallScene extends BaseUI {
                 Utils.sharecallback(true)
             }
             else {
-                MsgHints.show("分享失败");
+                MsgToast.show("分享失败");
                 Utils.sharecallback(false)
             }
         }
@@ -467,17 +467,17 @@ export default class HallScene extends BaseUI {
     }
 
     openNewSlot(){
-        let curopen = SlotItem.getCurOpen();
+        let curopen = GroundItem.getCurOpen();
         if(curopen < 0) return;
-        let lv = DB_slot[curopen].price;
-        if(lv < Data.user.lv) return;
-        Data.user.slots[curopen] = 1;
-        Data.save();
+        let lv = Config_ground[curopen].price;
+        if(lv < ChickData.user.lv) return;
+        ChickData.user.slots[curopen] = 1;
+        ChickData.save();
         let slots = this.GetGameObject("slots");
         let slot = slots.children[curopen];
         if(slot){
-            slot.getComponent(SlotItem).setIndex(curopen);
-            MsgHints.show("成功解锁新位置");
+            slot.getComponent(GroundItem).setIndex(curopen);
+            MsgToast.show("成功解锁新位置");
         }
     }
 
@@ -513,7 +513,7 @@ export default class HallScene extends BaseUI {
 			node.parent = node_com;
 			node.position = this.GetGameObject("slots").children[i].position;// cc.v2(x, y);
 			node.name = "itme" + index;
-			var plant: SoldierItem = node.getComponent(SoldierItem);
+			var plant: ChickItem = node.getComponent(ChickItem);
 			plant.index = index;
 			this.items.push(plant);
 			++index
@@ -524,7 +524,7 @@ export default class HallScene extends BaseUI {
         node_drag.name = "item_drag";
         node_drag.x = -1000;
 
-        this.item_drag = this.GetGameObject("item_drag").getComponent(SoldierItem);
+        this.item_drag = this.GetGameObject("item_drag").getComponent(ChickItem);
         this.item_drag.node.active = false;
         this.item_drag.bDrag = true;
 
@@ -609,7 +609,7 @@ export default class HallScene extends BaseUI {
 	
     tryAutocom() {
         if (this.bPauseAutoCom || this.bInAutoCom) return;
-        if (Utils.getServerTime() < Data.user.auto_com_time && !this.bInAutoCom) {
+        if (Utils.getServerTime() < ChickData.user.auto_com_time && !this.bInAutoCom) {
             this.initComposeItems();
 
             for (let i = 0; i < this.items.length ; ++i) {
@@ -682,22 +682,22 @@ export default class HallScene extends BaseUI {
                 }
 
                 if (tmp <= 2) {
-                    MsgHints.show("植物数量过少不能删除");
+                    MsgToast.show("植物数量过少不能删除");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
                     return;
                 }
 
-                if (this.item_drag.datacopy.lv >= Data.user.GetMaxLv()) {
-                    MsgHints.show("最高等级植物就不删除了吧！");
+                if (this.item_drag.datacopy.lv >= ChickData.user.GetMaxLv()) {
+                    MsgToast.show("最高等级植物就不删除了吧！");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
                     return;
                 }
 
-                Data.user.DropWuJiang(this.item_drag.datacopy.index);
+                ChickData.user.DropWuJiang(this.item_drag.datacopy.index);
                 this.item_drag.linkItem.setItemData(null);
                 this.item_drag.linkItem = null;
 
@@ -709,9 +709,9 @@ export default class HallScene extends BaseUI {
 
             //合成 移动  交换
             pos = this.GetGameObject("node_com").convertToNodeSpaceAR(pos);
-            var item: SoldierItem = this.getItemByPos(pos);
+            var item: ChickItem = this.getItemByPos(pos);
 
-            if (item == null || Data.user.slots[item.index] == 0 || item == this.item_drag.linkItem || (item && item.droptype != 0)) {
+            if (item == null || ChickData.user.slots[item.index] == 0 || item == this.item_drag.linkItem || (item && item.droptype != 0)) {
 
                 //取消
                 if(this.item_drag.linkItem)
@@ -729,7 +729,7 @@ export default class HallScene extends BaseUI {
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
                 //移动
-                Data.user.CompMove(this.item_drag.linkItem.index, item.index);
+                ChickData.user.CompMove(this.item_drag.linkItem.index, item.index);
                 item.setItemData(this.item_drag.datacopy);
                 this.item_drag.linkItem.setItemData(null);
                 this.item_drag.linkItem = null;
@@ -745,7 +745,7 @@ export default class HallScene extends BaseUI {
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
                 //交换
-                Data.user.CompMove(this.item_drag.linkItem.index, item.index);
+                ChickData.user.CompMove(this.item_drag.linkItem.index, item.index);
 
                 var _tmp: PlantInfo = JSON.parse(JSON.stringify(item.datacopy));
                 item.setItemData(this.item_drag.datacopy);
@@ -758,16 +758,16 @@ export default class HallScene extends BaseUI {
         }
     }
 	
-    comani(item: SoldierItem) {
-        let b = Data.user.ComposePlant(item.index, this.item_drag.datacopy.index);
+    comani(item: ChickItem) {
+        let b = ChickData.user.ComposePlant(item.index, this.item_drag.datacopy.index);
         this.GetGameObject("guild_1").active = false;
-        if(Data.user.guideIndex == 1)
+        if(ChickData.user.guideIndex == 1)
         {
-            Data.user.guideIndex ++;
-            Data.save();
+            ChickData.user.guideIndex ++;
+            ChickData.save();
         }
         if (!b) return;
-        let nextGun = Data.user.getPlantInfo(item.index);
+        let nextGun = ChickData.user.getPlantInfo(item.index);
         item.setItemData(nextGun);
         this.GetGameObject("item_drag").active = false;
 
@@ -782,10 +782,10 @@ export default class HallScene extends BaseUI {
 
     async updateBuyButton()
     {
-        let lv = Data.user.GetMaxLv() - 3;
+        let lv = ChickData.user.GetMaxLv() - 3;
         if(lv<1)lv = 1;
         this.SetText("lbl_buy_lvl",'LV.' + lv);
-        this.SetText("lbl_buy_cost",Utils.formatNumber(Data.user.BuyPrice(lv)));
+        this.SetText("lbl_buy_cost",Utils.formatNumber(ChickData.user.BuyPrice(lv)));
 
         let skpath = `spine:flower${lv}_ske`;
         let atlaspath = `spine:flower${lv}_tex`;
@@ -797,28 +797,28 @@ export default class HallScene extends BaseUI {
     }
     //0 coin 1 gem 2 ad 3普通掉落 4小精灵掉落
     public tryBuyPlant(lv:number,buytype:number) {
-        var item: SoldierItem = null;
+        var item: ChickItem = null;
         for (var i = 0; i < 12; ++i) {
-            if (Data.user.slots[i] == 0) continue;
+            if (ChickData.user.slots[i] == 0) continue;
             if (!this.items[i].datacopy && this.autocomindexs[0] != i && this.autocomindexs[1] != i) {
                 item = this.items[i];
                 break;
             }
         }
         if (!lv) {
-            lv = Data.user.GetMaxLv() - 3;
+            lv = ChickData.user.GetMaxLv() - 3;
             if(lv<1)lv = 1;
         }
 
         if (item) {
             if (buytype == 0) {
-                let cost = Data.user.BuyPrice(lv);
-                if (Data.user.BuyPrice(lv) > Data.user.coin) {
+                let cost = ChickData.user.BuyPrice(lv);
+                if (ChickData.user.BuyPrice(lv) > ChickData.user.coin) {
                     let type = 0;
-                    if(Data.user.today_getchick_times < Data.user.today_getchick_total){
+                    if(ChickData.user.today_getchick_times < ChickData.user.today_getchick_total){
                         type = 1;
                     }
-                    else if(Data.user.today_getcoin_times < Data.user.today_getcoin_total){
+                    else if(ChickData.user.today_getcoin_times < ChickData.user.today_getcoin_total){
                         type = 2;
                     }
                     if(type > 0){
@@ -827,37 +827,37 @@ export default class HallScene extends BaseUI {
                         });
                     }
                     else{
-                        MsgHints.show("金币不足");
+                        MsgToast.show("金币不足");
                     }
                     return;
                 }
-                Data.user.coin -= cost;
+                ChickData.user.coin -= cost;
             }
             else if (buytype == 1) {
-                let gem = Math.min(5, Number(DB_plant[lv - 1][6]));
-                if (gem > Data.user.gem) {
-                    MsgHints.show("钻石不足");
+                let gem = Math.min(5, Number(Config_chick[lv - 1][6]));
+                if (gem > ChickData.user.gem) {
+                    // MsgToast.show("钻石不足");
                     return;
                 }
-                Data.user.gem -= gem;
+                ChickData.user.gem -= gem;
             }
             else if(buytype == 2){
 
             }
             else if (buytype >= 3) {
-                console.log("花盆掉落")
+                // console.log("飞机掉落")
             }
             
             AudioMgr.Instance().playSFX("flower_pot_land")
 
             this.docomp(null);
-            item.setItemData(Data.user.BuyPlant(item.index, lv) as PlantInfo,buytype);
+            item.setItemData(ChickData.user.BuyPlant(item.index, lv) as PlantInfo,buytype);
             this.updateBuyButton();
             return true
         }
         else {
             if (buytype <= 2) {
-                MsgHints.show("位置不够啦！");
+                MsgToast.show("位置不够啦！");
                 this.GetGameObject("btn_delete").stopAllActions();
                 this.GetGameObject("btn_delete").opacity = 255;
                 this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.25),cc.fadeTo(0.25,0)))
@@ -908,42 +908,42 @@ export default class HallScene extends BaseUI {
 			case "btn_buy":
                 this.tryBuyPlant(null,0);
                 this.GetGameObject("guild_0").active = false;
-                if(Data.user.guideIndex == 0)
+                if(ChickData.user.guideIndex == 0)
                 {
-                    Data.user.guideIndex++;
-                    Data.save();
+                    ChickData.user.guideIndex++;
+                    ChickData.save();
                 }
-                if(Data.user.guideIndex == 1)
+                if(ChickData.user.guideIndex == 1)
                 {
                     this.mergetip();
                 }
 				break;
 			case "bt_fast_gen":
 				Utils.createUI("prefab/AdLayer").then((node:cc.Node)=>{
-					node.getComponent(AdLayer).setType(EADLAYER.DROP_PLANT)
+					node.getComponent(CommonView).setType(EADLAYER.DROP_PLANT)
 				})
 				break;
 			case "btn_angry":
 				Utils.createUI("prefab/AdLayer").then((node:cc.Node)=>{
-					node.getComponent(AdLayer).setType(EADLAYER.DOUBLE_ATT)
+					node.getComponent(CommonView).setType(EADLAYER.DOUBLE_ATT)
 				})
 				break;
 			case "btn_double_coin":
 				Utils.createUI("prefab/AdLayer").then((node:cc.Node)=>{
-					node.getComponent(AdLayer).setType(EADLAYER.DOUBLE_INCOME)
+					node.getComponent(CommonView).setType(EADLAYER.DOUBLE_INCOME)
 				})
 				break;
 			case "bt_auto_merge":
 				Utils.createUI("prefab/AdLayer").then((node:cc.Node)=>{
-					node.getComponent(AdLayer).setType(EADLAYER.AUTO_COM)
+					node.getComponent(CommonView).setType(EADLAYER.AUTO_COM)
 				})
                 break;
             case "btn_shop":
-               ShopLayer.show();
+               ShopView.show();
                 break;
             case "btn_delete":
                 if(this.GetGameObject("btn_delete").opacity == 255)
-                MsgHints.show("拖动到这里卖出")
+                MsgToast.show("拖动到这里卖出")
                 break;
             case "btn_inviate":
                 // WxCenter.shareAppMessage();

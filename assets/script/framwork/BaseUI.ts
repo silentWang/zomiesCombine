@@ -25,9 +25,6 @@ export default class BaseUI extends cc.Component {
         }
 
         this._addClickEvent(this.node);
-
-        // if (this.addClickEvent)
-        // console.log(this.node.name)
         this._create_time = Utils.getServerTime();
     }
     public _create_time: number = 0;
@@ -152,19 +149,10 @@ export default class BaseUI extends cc.Component {
 
     _isSkipNode(node: cc.Node): boolean {
         if (this.node == node) {
-            // console.log("====", node.name)
             return false;
         }
         let b = node.getComponent(BaseUI);
-        // if (b) {
-        //     console.log("跳过", b.name)
-        // }
         return b != null;
-        // for (var i = 0; i < this.skipNode.length; ++i) {
-        //     if (node == this.skipNode[i])
-        //         return true;
-        // }
-        // return false;
     }
 
     _addClickEvent(node) {

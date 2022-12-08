@@ -1,4 +1,4 @@
-import MsgHints from "../framwork/MsgHints";
+import MsgToast from "../framwork/MsgToast";
 
 export default class WxCenter {
     private static wx:any;
@@ -58,7 +58,7 @@ export default class WxCenter {
 
     static showRewardedVideoAd(callback:Function = null){
         if(!this.wx) {
-            MsgHints.show("看了一个广告");
+            MsgToast.show("看了一个广告");
             console.log('看了一个广告')
             callback && callback(true);
             return;
@@ -69,12 +69,23 @@ export default class WxCenter {
         if(!videoAd){
             videoAd = wx.createRewardedVideoAd({ adUnitId: 'xxxx' });
             this.rewardVideo = videoAd;
+            videoAd.onError(err => {
+                console.log(err);
+                //重新拉取
+                videoAd.load().then(() => videoAd.show())
+            });
+            videoAd.onClose(res => {
+                // 用户点击了【关闭广告】按钮
+                // 小于 2.1.0 的基础库版本，res 是一个 undefined
+                if (res && res.isEnded || res === undefined) {
+                  // 正常播放结束，可以下发游戏奖励
+                  callback && callback(true);
+                }
+                else {
+                    // 播放中途退出，不下发游戏奖励
+                }
+            })
         }
-        videoAd.onError(err => {
-            console.log(err);
-            //重新拉取
-            videoAd.load().then(() => videoAd.show())
-        });
         videoAd.show().then(res=>{
             // console.log('激励视频 广告显示')
             videoAd.load().then(() => videoAd.show()).catch(err => {
@@ -83,17 +94,6 @@ export default class WxCenter {
                     icon: 'none'
                 })
             })
-        })
-        videoAd.onClose(res => {
-            // 用户点击了【关闭广告】按钮
-            // 小于 2.1.0 的基础库版本，res 是一个 undefined
-            if (res && res.isEnded || res === undefined) {
-              // 正常播放结束，可以下发游戏奖励
-              callback && callback(true);
-            }
-            else {
-                // 播放中途退出，不下发游戏奖励
-            }
         })
     }
 

@@ -1,8 +1,8 @@
 import BaseUI from "../../framwork/BaseUI";
 import ListItem from "../../framwork/ListItem";
-import MsgHints from "../../framwork/MsgHints";
+import MsgToast from "../../framwork/MsgToast";
 import AdCenter from "../../manager/AdCenter";
-import Data from "../../manager/Data";
+import ChickData from "../../manager/ChickData";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 import GameConst from "../GameConst";
@@ -26,7 +26,7 @@ export default class ShopItem extends BaseUI {
     //观看视频免费获得的枪械等级
     private WatchAdBuy(id:number):boolean
     {
-        var gunlv = Data.user.GetMaxLv();
+        var gunlv = ChickData.user.GetMaxLv();
         if(gunlv < 8)return false;
         return gunlv - 4 == id;
     }
@@ -34,7 +34,7 @@ export default class ShopItem extends BaseUI {
     //不可指定购买只可查看的区间
     private OnlyCheck(id:number):boolean
     {
-        var gunlv = Data.user.GetMaxLv();
+        var gunlv = ChickData.user.GetMaxLv();
         if(gunlv - 2 <= id && id <= gunlv )
         {
             return true;
@@ -44,13 +44,13 @@ export default class ShopItem extends BaseUI {
 
     private BuyGem(id:number):boolean
     {
-        var gunlv = Data.user.GetMaxLv();
+        var gunlv = ChickData.user.GetMaxLv();
         return gunlv - 1 == id;
     }
 
     private getBuyType(gun)
     {
-        var gunlv = Data.user.GetMaxLv()
+        var gunlv = ChickData.user.GetMaxLv()
         var type:number = 0;
         if(gun[0] <= gunlv - 2)
         {
@@ -159,9 +159,9 @@ export default class ShopItem extends BaseUI {
             chick.playAnimation('idleL',0);
         }
         
-        this.cost_coin = Data.user.BuyPrice(gun[0])
+        this.cost_coin = ChickData.user.BuyPrice(gun[0])
         this.SetText("lbl_buy_coin",Utils.formatNumber( this.cost_coin));
-        this.GetButton("btn_yellow").interactable = Data.user.coin >= this.cost_coin;
+        this.GetButton("btn_yellow").interactable = ChickData.user.coin >= this.cost_coin;
     }
     
     onBtnClicked(event, customEventData) {
@@ -176,22 +176,22 @@ export default class ShopItem extends BaseUI {
                     {
                         if(HallScene.Instance.tryBuyPlant(this.gun[0],2))
                         {
-                           MsgHints.show("购买成功");
-                           this.dispatch(GameConst.BUY_PLANT,this.gun,this.node.getComponent(ListItem).listId);
+                           MsgToast.show("购买成功");
+                           this.dispatch(GameConst.BUY_CHICK,this.gun,this.node.getComponent(ListItem).listId);
                         }
                     }
                 })
                 break
             case "btn_yellow":
-                if(Data.user.coin < this.cost_coin )
+                if(ChickData.user.coin < this.cost_coin )
                 {
-                    MsgHints.show("金币不足")
+                    MsgToast.show("金币不足")
                     return;
                 }
                 if(HallScene.Instance.tryBuyPlant(this.gun[0],0))
                 {
-                    MsgHints.show("购买成功");
-                    this.dispatch(GameConst.BUY_PLANT,this.gun,this.node.getComponent(ListItem).listId);
+                    MsgToast.show("购买成功");
+                    this.dispatch(GameConst.BUY_CHICK,this.gun,this.node.getComponent(ListItem).listId);
                 }
                 break;
         }

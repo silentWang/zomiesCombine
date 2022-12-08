@@ -22,7 +22,7 @@ export default class Utils {
                 let index = filepath.lastIndexOf("/");
                 let name = filepath.substr(index + 1, filepath.length - index);
                 if (parent.getComponentInChildren(name)) {
-                    console.log("重复UI跳过")
+                    // console.log("重复UI跳过")
                     return
                 }
                 var tmp: cc.Node = cc.instantiate(ret);
@@ -113,7 +113,7 @@ export default class Utils {
                     if (callback) callback(true);
                 },
                 fail(e) {
-                    console.log("分享失败");
+                    // console.log("分享失败");
                     // callback(false);
                 }
             });
@@ -222,8 +222,7 @@ export default class Utils {
                 resolve(ret);
                 return;
             }
-
-            // console.log(bundel,path);
+            
             cc.assetManager.getBundle(bundel).load(path,type,(err,ret)=>{
                 if (err) {
                     cc.error(path, err);

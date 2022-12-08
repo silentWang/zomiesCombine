@@ -66,9 +66,7 @@ var ConfigManager = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 if (this.bInit)
                     return [2 /*return*/];
-                //这个游戏配置放到 DB.ts里面的
                 this.bInit = true;
-                console.log("配置加载完成");
                 return [2 /*return*/];
             });
         });
@@ -116,7 +114,6 @@ var readConfig = function (filepath, c) { return __awaiter(void 0, void 0, void 
                             var item = new c();
                             for (var j = 0; j < datas.length; ++j) {
                                 var value = datas[j];
-                                // console.log(i,j)
                                 switch (template[j].value) {
                                     case "number":
                                         value = Number(value);

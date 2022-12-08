@@ -3,7 +3,7 @@
   "_name": "flower18_tex",
   "_objFlags": 0,
   "_native": "",
-  "_atlasJson": "{\"width\":256,\"imagePath\":\"flower18_tex.png\",\"name\":\"flower18\",\"SubTexture\":[{\"width\":116,\"y\":82,\"height\":42,\"name\":\"flower1/touying\",\"x\":131},{\"width\":128,\"y\":1,\"height\":211,\"name\":\"shenti\",\"x\":1},{\"width\":110,\"y\":1,\"height\":79,\"name\":\"wuqi\",\"x\":131},{\"frameY\":-1,\"y\":126,\"frameWidth\":66,\"frameHeight\":46,\"width\":63,\"height\":44,\"name\":\"qh2\",\"frameX\":-2,\"x\":131},{\"frameY\":-2,\"y\":169,\"frameWidth\":55,\"frameHeight\":31,\"width\":53,\"height\":28,\"name\":\"qh1\",\"frameX\":-1,\"x\":196},{\"frameY\":-1,\"y\":126,\"frameWidth\":47,\"frameHeight\":43,\"width\":46,\"height\":41,\"name\":\"xh\",\"frameX\":0,\"x\":196}],\"height\":256}",
+  "_atlasJson": "{\"imagePath\":\"flower18_tex.png\",\"width\":256,\"height\":256,\"name\":\"flower18\",\"SubTexture\":[{\"width\":116,\"y\":212,\"height\":42,\"name\":\"flower1/touying\",\"x\":1},{\"width\":127,\"y\":1,\"height\":209,\"name\":\"shenti18\",\"x\":1},{\"width\":110,\"y\":1,\"height\":79,\"name\":\"wuqi\",\"x\":130},{\"frameY\":-2,\"y\":128,\"frameWidth\":55,\"frameHeight\":31,\"width\":53,\"height\":28,\"name\":\"qh1\",\"frameX\":-1,\"x\":130},{\"frameY\":-1,\"y\":82,\"frameWidth\":66,\"frameHeight\":46,\"width\":62,\"height\":44,\"name\":\"qh2\",\"frameX\":-3,\"x\":130},{\"frameY\":-1,\"y\":212,\"frameWidth\":47,\"frameHeight\":43,\"width\":46,\"height\":41,\"name\":\"xh\",\"frameX\":0,\"x\":119}]}",
   "_texture": {
     "__uuid__": "0494a132-532c-4c54-87bc-240b63c3402c"
   },

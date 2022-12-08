@@ -1,7 +1,7 @@
 import BaseUI from "../../framwork/BaseUI";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
-import { DB_plant } from "../DB";
+import { Config_chick } from "../Config";
 import Enemy from "./Enemy";
 
 
@@ -17,12 +17,12 @@ export default class Bullet extends BaseUI {
 
     start()
     {
-        let bt = this.GetGameObject("trail2");
-        if(bt){
-            bt.opacity = 0;
-            bt.runAction(cc.fadeTo(0.4,255));
-        }
-        this.node.scale = 1.2;
+        // let bt = this.GetGameObject("trail2");
+        // if(bt){
+        //     bt.opacity = 0;
+        //     bt.runAction(cc.fadeTo(0.4,255));
+        // }
+        // this.node.scale = 1.2;
     }
     
     update (dt) {
@@ -50,7 +50,7 @@ export default class Bullet extends BaseUI {
     }
 
     private getBulletType(){
-        let info = DB_plant[this.plantlv - 1];
+        let info = Config_chick[this.plantlv - 1];
         let skill = String(info[3]).split("|");
         let skilltype = Number(skill[0]);
         let skillvalue = Number(skill[1]);
@@ -75,15 +75,19 @@ export default class Bullet extends BaseUI {
         else {
             AudioMgr.Instance().playSFX('skill1');
         }
-        // let idx = Math.ceil(plantlv/10);
-        // idx = idx > 5 ? 5 : idx;
+
+
+        this.resetBullet();
+        let idx = Config_chick[plantlv - 1][8];
+        idx = (!idx || idx > 5) ? 1 : idx;
         // let skpath = `spine:other/bullet${idx}_ske`;
         // let atlaspath = `spine:other/bullet${idx}_tex`;
-        // let bullet = this.GetDragonAmature('bsp');
+        let bullet = this.GetDragonAmature('bsp'+idx);
+        this.GetGameObject('bsp'+idx).active = true;
+        bullet.armatureName = 'Armature';
+        bullet.playAnimation('bullet' + idx,0);
         // bullet.dragonAsset = await Utils.loadRes(skpath,dragonBones.DragonBonesAsset) as dragonBones.DragonBonesAsset;
         // bullet.dragonAtlasAsset = await Utils.loadRes(atlaspath,dragonBones.DragonBonesAtlasAsset) as dragonBones.DragonBonesAtlasAsset;
-        // bullet.armatureName = 'Armature';
-        // bullet.playAnimation('bullet' + idx,0);
 
         // 原逻辑
         // this.GetSprite("sp").spriteFrame = await Utils.loadRes("texture/bullets/"+(plantlv-1),cc.SpriteFrame) as cc.SpriteFrame;
@@ -95,4 +99,13 @@ export default class Bullet extends BaseUI {
         // this.GetGameObject("streak").getComponent(cc.MotionStreak).stroke = this.GetGameObject("sp").height;
         // this.GetGameObject("streak").getComponent(cc.MotionStreak).color = cc.Color.RED.fromHEX(String(DB_plant[plantlv-1][9]))
     }
+
+    private resetBullet(){
+        this.GetGameObject('bsp1').active = false;
+        this.GetGameObject('bsp2').active = false;
+        this.GetGameObject('bsp3').active = false;
+        this.GetGameObject('bsp4').active = false;
+        this.GetGameObject('bsp5').active = false;
+    }
+
 }

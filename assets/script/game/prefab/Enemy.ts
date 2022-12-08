@@ -1,8 +1,8 @@
 import BaseUI from "../../framwork/BaseUI";
-import Data from "../../manager/Data";
+import ChickData from "../../manager/ChickData";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
-import { DB_zombie, DB_plant } from "../DB";
+import { Config_animals, Config_chick } from "../Config";
 import HallScene from "../HallScene";
 
 
@@ -23,7 +23,7 @@ export default class Enemy extends BaseUI {
     {
         if(this.type == 2)
         {
-            if(Data.user.double_income_time > Utils.getServerTime())
+            if(ChickData.user.double_income_time > Utils.getServerTime())
             {
                 this.money *= 2;
             }
@@ -36,7 +36,7 @@ export default class Enemy extends BaseUI {
     async setID(id:number,boss:boolean)//是否boss
     {
         this.type = boss ? 1:0;
-        let info = DB_zombie[id+""];
+        let info = Config_animals[id+""];
         if(id > 100)
         {
             id -= 100;
@@ -52,7 +52,6 @@ export default class Enemy extends BaseUI {
         this.hp = this.maxhp;
         this.money = Math.floor(info[3] * Utils.getRandom(0.8,1.2));
 
-        // console.log(this.type == 2?"boss":"e",this.maxhp,this.money,"====")
         this.node.position = HallScene.Instance.path[0];
         this.node.scale = this.type == 0 ? .8 : 1;
         AudioMgr.Instance().playSFX('chuxian')
@@ -69,7 +68,7 @@ export default class Enemy extends BaseUI {
     hit(plantlv:number,skilltype:number)
     {
         if(this.hp <= 0)return;
-        let info = DB_plant[plantlv-1];
+        let info = Config_chick[plantlv-1];
         let power = Number(info[2])
         let bbj = false;
         let isskill = false;
@@ -109,7 +108,7 @@ export default class Enemy extends BaseUI {
             this.GetGameObject("sp").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(.2,0),cc.callFunc(()=>{
                 this.node.removeFromParent(true);
             })))
-            if(Data.user.double_income_time > Utils.getServerTime())
+            if(ChickData.user.double_income_time > Utils.getServerTime())
             {
                 this.money *= 2;
             }
@@ -123,7 +122,7 @@ export default class Enemy extends BaseUI {
                 node.position = this.node.position.add(cc.v3(0,50,0));
                 node.zIndex = 1000;
                 node.scale = 0.5
-                Data.user.coin+=this.money;
+                ChickData.user.coin+=this.money;
                 node.runAction(cc.sequence(cc.spawn(cc.scaleTo(0.2,1.3),cc.moveBy(0.2,0,80)),cc.delayTime(.8),cc.spawn(cc.moveBy(0.5,50),cc.fadeTo(0.5,50)),cc.removeSelf()));
             }
 
@@ -209,7 +208,6 @@ export default class Enemy extends BaseUI {
 
             if(this.pathindex>=HallScene.Instance.path.length)
             {
-                console.log("逃过")
                 HallScene.Instance.removeenemy(this.node,true);
                 this.node.removeFromParent(true)
             }

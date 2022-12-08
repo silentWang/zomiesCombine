@@ -3,7 +3,7 @@
   "_name": "flower46_tex",
   "_objFlags": 0,
   "_native": "",
-  "_atlasJson": "{\"width\":512,\"imagePath\":\"flower46_tex.png\",\"name\":\"flower46\",\"SubTexture\":[{\"width\":116,\"y\":190,\"height\":42,\"name\":\"flower1/touying\",\"x\":1},{\"width\":113,\"y\":1,\"height\":187,\"name\":\"shenti\",\"x\":1},{\"width\":163,\"y\":1,\"height\":69,\"name\":\"wuqi\",\"x\":116},{\"frameY\":-1,\"y\":72,\"frameWidth\":66,\"frameHeight\":46,\"width\":63,\"height\":44,\"name\":\"qh2\",\"frameX\":-2,\"x\":116},{\"frameY\":-1,\"y\":118,\"frameWidth\":55,\"frameHeight\":31,\"width\":53,\"height\":29,\"name\":\"qh1\",\"frameX\":-1,\"x\":116}],\"height\":256}",
+  "_atlasJson": "{\"imagePath\":\"flower46_tex.png\",\"width\":512,\"height\":256,\"name\":\"flower46\",\"SubTexture\":[{\"width\":116,\"y\":190,\"height\":42,\"name\":\"flower1/touying\",\"x\":1},{\"width\":113,\"y\":1,\"height\":187,\"name\":\"shenti46\",\"x\":1},{\"width\":163,\"y\":1,\"height\":69,\"name\":\"wuqi\",\"x\":116},{\"frameY\":-1,\"y\":72,\"frameWidth\":66,\"frameHeight\":46,\"width\":63,\"height\":44,\"name\":\"qh2\",\"frameX\":-2,\"x\":116},{\"frameY\":-1,\"y\":118,\"frameWidth\":55,\"frameHeight\":31,\"width\":53,\"height\":29,\"name\":\"qh1\",\"frameX\":-1,\"x\":116}]}",
   "_texture": {
     "__uuid__": "24483f77-ef0f-4dd4-80de-259815689c10"
   },

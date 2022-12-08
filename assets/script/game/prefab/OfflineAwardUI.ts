@@ -1,7 +1,7 @@
 import BaseUI from "../../framwork/BaseUI";
-import MsgHints from "../../framwork/MsgHints";
+import MsgToast from "../../framwork/MsgToast";
 import AdCenter from "../../manager/AdCenter";
-import Data from "../../manager/Data";
+import ChickData from "../../manager/ChickData";
 import AudioMgr from "../../utils/AudioMgr";
 import BigNumber from "../../utils/BigNumber";
 import Utils from "../../utils/Utils";
@@ -35,7 +35,8 @@ export default class OfflineAwardUI extends BaseUI {
                     Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
                         if(b)
                         {
-                            Data.user.coin += coin
+                            ChickData.user.coin += coin
+                            ChickData.save();
                         }  
                     })
                 this.closeUI()
@@ -43,8 +44,9 @@ export default class OfflineAwardUI extends BaseUI {
             case "btn_normal":
                 AudioMgr.Instance().playSFX("coin");
                 Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
-                    if(b) Data.user.coin += this._data  
+                    if(b) ChickData.user.coin += this._data  
                 })
+                ChickData.save();
                 this.closeUI();
                 break
             case "btn_ad":
@@ -55,7 +57,8 @@ export default class OfflineAwardUI extends BaseUI {
                         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
                             if(b)
                             {
-                                Data.user.coin += coin 
+                                ChickData.user.coin += coin 
+                                ChickData.save();
                             }  
                         })
                         this.closeUI()

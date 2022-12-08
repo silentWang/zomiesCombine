@@ -25,7 +25,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
-var Data_1 = require("../../manager/Data");
+var ChickData_1 = require("../../manager/ChickData");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var BigNumber_1 = require("../../utils/BigNumber");
 var Utils_1 = require("../../utils/Utils");
@@ -62,7 +62,8 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                 AudioMgr_1.default.Instance().playSFX("coin");
                 Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                     if (b) {
-                        Data_1.default.user.coin += coin_1;
+                        ChickData_1.default.user.coin += coin_1;
+                        ChickData_1.default.save();
                     }
                 });
                 this.closeUI();
@@ -71,8 +72,9 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                 AudioMgr_1.default.Instance().playSFX("coin");
                 Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                     if (b)
-                        Data_1.default.user.coin += _this._data;
+                        ChickData_1.default.user.coin += _this._data;
                 });
+                ChickData_1.default.save();
                 this.closeUI();
                 break;
             case "btn_ad":
@@ -82,7 +84,8 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                         AudioMgr_1.default.Instance().playSFX("coin");
                         Utils_1.default.flyAnim(0, _this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                             if (b) {
-                                Data_1.default.user.coin += coin_2;
+                                ChickData_1.default.user.coin += coin_2;
+                                ChickData_1.default.save();
                             }
                         });
                         _this.closeUI();

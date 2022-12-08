@@ -1,5 +1,5 @@
 import BaseUI from "./framwork/BaseUI";
-import Data from "./manager/Data";
+import ChickData from "./manager/ChickData";
 import PoolMgr from "./manager/PoolMgr";
 import WxCenter from "./manager/WxCenter";
 import AudioMgr from "./utils/AudioMgr";
@@ -59,7 +59,7 @@ export default class Loading extends BaseUI {
 
     startLoginAction() {
         this.node.runAction(cc.sequence(cc.delayTime(.5), cc.callFunc(async () => {
-            Data.loadData()
+            ChickData.loadData()
             var p: number = 0;
             this.node.runAction(cc.sequence(cc.delayTime(0.01), cc.callFunc(async () => {
                 p += 0.018;

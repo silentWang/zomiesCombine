@@ -15,7 +15,6 @@ export default class PoolMgr {
     }
 
     loadPrefabs() {
-        console.log("loadPrefabs")
         cc.loader.loadRes("prefab/Coin", cc.Prefab, (err, ret) => {
             if (err) {
                 console.log(err);
@@ -34,7 +33,6 @@ export default class PoolMgr {
     }
 
     initPool(key: any, prefab: cc.Prefab, count: number) {
-        console.log("initPool")
         this.prefabs[key] = prefab;
         this.pools[key] = new cc.NodePool();
         for (var i = 0; i < count; ++i) {

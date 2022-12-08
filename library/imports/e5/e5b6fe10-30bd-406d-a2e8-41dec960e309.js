@@ -67,12 +67,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
-var Data_1 = require("../../manager/Data");
+var ChickData_1 = require("../../manager/ChickData");
 var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var BigNumber_1 = require("../../utils/BigNumber");
 var Utils_1 = require("../../utils/Utils");
-var DB_1 = require("../DB");
+var Config_1 = require("../Config");
 var HallScene_1 = require("../HallScene");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var CoinNotEnoughUI = /** @class */ (function (_super) {
@@ -99,8 +99,8 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                         this.GetGameObject('getCoin').active = type == 2;
                         str = '';
                         if (!(type == 1)) return [3 /*break*/, 3];
-                        str = Data_1.default.user.today_getchick_times + "/" + Data_1.default.user.today_getchick_total;
-                        lv = Data_1.default.user.GetMaxLv() - 1 > 0 ? Data_1.default.user.GetMaxLv() - 1 : 1;
+                        str = ChickData_1.default.user.today_getchick_times + "/" + ChickData_1.default.user.today_getchick_total;
+                        lv = ChickData_1.default.user.GetMaxLv() - 1 > 0 ? ChickData_1.default.user.GetMaxLv() - 1 : 1;
                         skpath = "spine:flower" + lv + "_ske";
                         atlaspath = "spine:flower" + lv + "_tex";
                         chick = this.GetDragonAmature('chick');
@@ -114,14 +114,14 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                         _b.dragonAtlasAsset = (_c.sent());
                         chick.armatureName = 'Armature';
                         chick.playAnimation('idleL', 0);
-                        this.lbl_chickname.string = "\u201C" + DB_1.DB_plant[lv - 1][7] + "\u201D";
+                        this.lbl_chickname.string = "\u201C" + Config_1.Config_chick[lv - 1][7] + "\u201D";
                         this.SetText('lbl_effect', 'x1');
                         return [3 /*break*/, 4];
                     case 3:
                         if (type == 2) {
-                            str = Data_1.default.user.today_getcoin_times + "/" + Data_1.default.user.today_getcoin_total;
-                            lv = Data_1.default.user.GetMaxLv() - 1 > 0 ? Data_1.default.user.GetMaxLv() - 1 : 1;
-                            coin = 0.5 * Data_1.default.user.BuyPrice(lv);
+                            str = ChickData_1.default.user.today_getcoin_times + "/" + ChickData_1.default.user.today_getcoin_total;
+                            lv = ChickData_1.default.user.GetMaxLv() - 1 > 0 ? ChickData_1.default.user.GetMaxLv() - 1 : 1;
+                            coin = 0.5 * ChickData_1.default.user.BuyPrice(lv);
                             this.SetText('lbl_effect', "+" + BigNumber_1.default.getLargeString(Utils_1.default.fixFloat(coin)));
                         }
                         _c.label = 4;
@@ -136,20 +136,20 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
     CoinNotEnoughUI.prototype.addValue = function () {
         var type = this.type;
         if (type == 1) {
-            Data_1.default.user.today_getchick_times++;
-            var lv = Data_1.default.user.GetMaxLv() - 1 > 0 ? Data_1.default.user.GetMaxLv() - 1 : 1;
+            ChickData_1.default.user.today_getchick_times++;
+            var lv = ChickData_1.default.user.GetMaxLv() - 1 > 0 ? ChickData_1.default.user.GetMaxLv() - 1 : 1;
             HallScene_1.default.Instance.tryBuyPlant(lv, 2);
-            Data_1.default.save();
+            ChickData_1.default.save();
             this.closeUI();
         }
         else if (type == 2) {
-            Data_1.default.user.today_getcoin_times++;
-            var coin_1 = 0.5 * Data_1.default.user.BuyPrice(Data_1.default.user.GetMaxLv());
+            ChickData_1.default.user.today_getcoin_times++;
+            var coin_1 = 0.5 * ChickData_1.default.user.BuyPrice(ChickData_1.default.user.GetMaxLv());
             AudioMgr_1.default.Instance().playSFX("coin");
             Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                 if (b)
-                    Data_1.default.user.coin += coin_1;
-                Data_1.default.save();
+                    ChickData_1.default.user.coin += coin_1;
+                ChickData_1.default.save();
             });
             this.closeUI();
         }

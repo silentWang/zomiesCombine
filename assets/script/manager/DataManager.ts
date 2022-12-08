@@ -1,4 +1,4 @@
-import Data from './Data';
+import ChickData from './ChickData';
 
 
 export type BOInfo =

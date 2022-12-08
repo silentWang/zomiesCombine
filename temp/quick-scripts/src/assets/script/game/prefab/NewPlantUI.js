@@ -61,10 +61,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
-var Data_1 = require("../../manager/Data");
+var ChickData_1 = require("../../manager/ChickData");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
-var DB_1 = require("../DB");
+var Config_1 = require("../Config");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var NewPlantUI = /** @class */ (function (_super) {
     __extends(NewPlantUI, _super);
@@ -79,9 +79,9 @@ var NewPlantUI = /** @class */ (function (_super) {
             return __generator(this, function (_c) {
                 switch (_c.label) {
                     case 0:
-                        lv = Data_1.default.user.GetMaxLv();
-                        coin = Data_1.default.user.BuyPrice(Math.max(1, lv - 3));
-                        this.SetText('lbl_name', DB_1.DB_plant[lv - 1][7] + '');
+                        lv = ChickData_1.default.user.GetMaxLv();
+                        coin = ChickData_1.default.user.BuyPrice(Math.max(1, lv - 3));
+                        this.SetText('lbl_name', Config_1.Config_chick[lv - 1][7] + '');
                         this.SetText("lbl_lv", "等级 " + lv);
                         AudioMgr_1.default.Instance().playSFX("unlock_plant");
                         this.coin = coin;
@@ -119,7 +119,7 @@ var NewPlantUI = /** @class */ (function (_super) {
                     AudioMgr_1.default.Instance().playSFX("coin");
                     Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                         if (b) {
-                            Data_1.default.user.coin += coin_1;
+                            ChickData_1.default.user.coin += coin_1;
                         }
                     });
                     this.closeUI();

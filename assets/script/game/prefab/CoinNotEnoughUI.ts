@@ -7,12 +7,12 @@
 
 import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
-import Data from "../../manager/Data";
+import ChickData from "../../manager/ChickData";
 import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import BigNumber from "../../utils/BigNumber";
 import Utils from "../../utils/Utils";
-import { DB_plant } from "../DB";
+import { Config_chick } from "../Config";
 import HallScene from "../HallScene";
 import UserModel from "../UserModel";
 
@@ -43,8 +43,8 @@ export default class CoinNotEnoughUI extends BaseUI {
         this.GetGameObject('getCoin').active = type == 2;
         let str = '';
         if(type == 1){
-            str = `${Data.user.today_getchick_times}/${Data.user.today_getchick_total}`;
-            let lv = Data.user.GetMaxLv() - 1 > 0 ? Data.user.GetMaxLv() - 1 : 1;
+            str = `${ChickData.user.today_getchick_times}/${ChickData.user.today_getchick_total}`;
+            let lv = ChickData.user.GetMaxLv() - 1 > 0 ? ChickData.user.GetMaxLv() - 1 : 1;
             let skpath = `spine:flower${lv}_ske`;
             let atlaspath = `spine:flower${lv}_tex`;
             let chick = this.GetDragonAmature('chick');
@@ -52,13 +52,13 @@ export default class CoinNotEnoughUI extends BaseUI {
             chick.dragonAtlasAsset = await Utils.loadRes(atlaspath,dragonBones.DragonBonesAtlasAsset) as dragonBones.DragonBonesAtlasAsset;
             chick.armatureName = 'Armature';
             chick.playAnimation('idleL',0);
-            this.lbl_chickname.string = `“${DB_plant[lv - 1][7]}”`;
+            this.lbl_chickname.string = `“${Config_chick[lv - 1][7]}”`;
             this.SetText('lbl_effect','x1');
         }
         else if(type == 2){
-            str = `${Data.user.today_getcoin_times}/${Data.user.today_getcoin_total}`;
-            let lv = Data.user.GetMaxLv() - 1 > 0 ? Data.user.GetMaxLv() - 1 : 1;
-            let coin = 0.5*Data.user.BuyPrice(lv);
+            str = `${ChickData.user.today_getcoin_times}/${ChickData.user.today_getcoin_total}`;
+            let lv = ChickData.user.GetMaxLv() - 1 > 0 ? ChickData.user.GetMaxLv() - 1 : 1;
+            let coin = 0.5*ChickData.user.BuyPrice(lv);
             this.SetText('lbl_effect',`+${BigNumber.getLargeString(Utils.fixFloat(coin))}`);
         }
         WxCenter.aldReport('LackShow','show');
@@ -68,19 +68,19 @@ export default class CoinNotEnoughUI extends BaseUI {
     private addValue(){
         let type = this.type;
         if(type == 1){
-            Data.user.today_getchick_times++;
-            let lv = Data.user.GetMaxLv() - 1 > 0 ? Data.user.GetMaxLv() - 1 : 1;
+            ChickData.user.today_getchick_times++;
+            let lv = ChickData.user.GetMaxLv() - 1 > 0 ? ChickData.user.GetMaxLv() - 1 : 1;
             HallScene.Instance.tryBuyPlant(lv,2);
-            Data.save();
+            ChickData.save();
             this.closeUI();
         }
         else if(type == 2){
-            Data.user.today_getcoin_times++;
-            let coin = 0.5*Data.user.BuyPrice(Data.user.GetMaxLv());
+            ChickData.user.today_getcoin_times++;
+            let coin = 0.5*ChickData.user.BuyPrice(ChickData.user.GetMaxLv());
             AudioMgr.Instance().playSFX("coin");
             Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
-                if(b) Data.user.coin += coin;
-                Data.save();
+                if(b) ChickData.user.coin += coin;
+                ChickData.save();
             })
             this.closeUI();
         }

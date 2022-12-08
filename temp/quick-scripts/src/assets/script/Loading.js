@@ -60,7 +60,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("./framwork/BaseUI");
-var Data_1 = require("./manager/Data");
+var ChickData_1 = require("./manager/ChickData");
 var PoolMgr_1 = require("./manager/PoolMgr");
 var WxCenter_1 = require("./manager/WxCenter");
 var AudioMgr_1 = require("./utils/AudioMgr");
@@ -122,7 +122,7 @@ var Loading = /** @class */ (function (_super) {
             var p;
             var _this = this;
             return __generator(this, function (_a) {
-                Data_1.default.loadData();
+                ChickData_1.default.loadData();
                 p = 0;
                 this.node.runAction(cc.sequence(cc.delayTime(0.01), cc.callFunc(function () { return __awaiter(_this, void 0, void 0, function () {
                     return __generator(this, function (_a) {

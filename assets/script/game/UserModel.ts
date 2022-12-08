@@ -1,8 +1,8 @@
 import GameEvent from "../event/GameEvent";
-import Data from "../manager/Data";
+import ChickData from "../manager/ChickData";
 import Utils from '../utils/Utils';
 import GameConst from './GameConst';
-import { DB_plant, DB_shopSort } from './DB';
+import { Config_chick, Config_shopsort } from './Config';
 import AudioMgr from '../utils/AudioMgr';
 let savepars = [];
 function save(target: any, propertyKey: string) {
@@ -55,7 +55,7 @@ export default class UserModel {
     T() {
 	// "20": [20, "U", "U", "G", "G", "M", "AD", "M", "M", "M"],
         let lv = this.GetMaxLv();
-        var t = DB_shopSort[lv+""]
+        var t = Config_shopsort[lv+""]
         for (var n = 1; n <= 8; ++n)
              if ("AD" == t[n]) 
                 return lv - n;
@@ -154,7 +154,7 @@ export default class UserModel {
 
     //购买花费
     public BuyPrice(lv: number): number {
-        var t:number = Number(DB_plant[lv-1][5]);
+        var t:number = Number(Config_chick[lv-1][5]);
         var n = this.plantBuyTimes[lv] || 0;
         return 1 == lv ? t * (1e4 * Math.pow(1.07, n)) / (1e4) : t * (1e4 * Math.pow(1.175, n)) / (1e4);
     }
@@ -188,7 +188,6 @@ export default class UserModel {
 
         if (!tmp2) return false;
         if (tmp1.lv != tmp2.lv) {
-            console.log(tmp1,tmp2)
             console.error("err")
             return false
         }
@@ -219,9 +218,8 @@ export default class UserModel {
         let tmplv2 = this.GetMaxLv();
         if(tmplv2 > tmplv && tmplv2 < 60)
         {
-            console.log("新植物     ")
             Utils.createUI("prefab/NewPlantUI")
-            GameEvent.Instance().dispatch(GameConst.NEW_PLANT,tmplv2);
+            GameEvent.Instance().dispatch(GameConst.NEW_CHICK,tmplv2);
         }
         AudioMgr.Instance().playSFX("merge_success")
         return true
@@ -240,8 +238,7 @@ export default class UserModel {
         }
         var tmp = { open: 1, index: index, lv: lv };
         this.ComPlants.push(tmp);
-        // console.log("buy",lv)
-        Data.save();
+        ChickData.save();
         return tmp;
     }
 
@@ -250,7 +247,7 @@ export default class UserModel {
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
                 var tmp = this.BuyPrice(this.ComPlants[i].lv)
-                Data.user.coin += Math.floor(tmp);
+                ChickData.user.coin += Math.floor(tmp);
                 // this.changeGameCoin(Math.floor(tmp))
                 cc.log("卖了换钱：" + tmp)
                 this.ComPlants.splice(i, 1);

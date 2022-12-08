@@ -94,8 +94,6 @@ var BaseUI = /** @class */ (function (_super) {
             Utils_1.default.addClickEvent(this.node, this.node, cc.js.getClassName(this), "onBtnClicked", this.node.getComponent(cc.Button).target);
         }
         this._addClickEvent(this.node);
-        // if (this.addClickEvent)
-        // console.log(this.node.name)
         this._create_time = Utils_1.default.getServerTime();
     };
     BaseUI.prototype._findInChildren = function (node, name) {
@@ -230,19 +228,10 @@ var BaseUI = /** @class */ (function (_super) {
     };
     BaseUI.prototype._isSkipNode = function (node) {
         if (this.node == node) {
-            // console.log("====", node.name)
             return false;
         }
         var b = node.getComponent(BaseUI_1);
-        // if (b) {
-        //     console.log("跳过", b.name)
-        // }
         return b != null;
-        // for (var i = 0; i < this.skipNode.length; ++i) {
-        //     if (node == this.skipNode[i])
-        //         return true;
-        // }
-        // return false;
     };
     BaseUI.prototype._addClickEvent = function (node) {
         if (this._isSkipNode(node))

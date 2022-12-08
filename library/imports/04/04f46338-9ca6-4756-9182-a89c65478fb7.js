@@ -18,7 +18,6 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Singleton_1 = require("./Singleton");
-var MsgHints_1 = require("../framwork/MsgHints");
 var Utils_1 = require("../utils/Utils");
 var WxCenter_1 = require("./WxCenter");
 var tt = window["tt"];
@@ -37,32 +36,32 @@ var AdCenter = /** @class */ (function (_super) {
             });
             _this.VideoAd.onError(function (res) {
                 console.log("onError", res);
-                MsgHints_1.default.show("广告加载错误");
+                // MsgToast.show("广告加载错误");
             });
             _this.VideoAd.onLoad(function () {
                 // console.log('广告加载成功');
             });
             _this.VideoAd.onClose(function (res) {
                 if (res && res.isEnded || res === undefined) {
-                    cc.log("正常播放结束，可以下发游戏奖励");
+                    // cc.log("正常播放结束，可以下发游戏奖励")
                     _this.callBack(true);
                 }
                 else {
-                    cc.log("播放中途退出，不下发游戏奖励");
+                    // cc.log("播放中途退出，不下发游戏奖励")
                     _this.callBack(false);
                 }
             });
-            if (tt.createInterstitialAd) {
-                _this.interstitialAd = tt.createInterstitialAd({
-                    adUnitId: '60jin0has9p2b8n774'
-                });
-            }
-            var _a = tt.getSystemInfoSync(), screenWidth = _a.screenWidth, screenHeight = _a.screenHeight;
-            _this.bannerAd = tt.createBannerAd({
-                adUnitId: '3a3ld4b071g57lnlji',
-                style: { width: screenWidth,
-                    top: screenHeight - 150 }
-            });
+            // if (tt.createInterstitialAd) {
+            //     this.interstitialAd = tt.createInterstitialAd({
+            //         adUnitId: '60jin0has9p2b8n774'
+            //     })
+            // }
+            // let { screenWidth, screenHeight } = tt.getSystemInfoSync()
+            // this.bannerAd = tt.createBannerAd({
+            //     adUnitId: '3a3ld4b071g57lnlji',
+            //     style: { width: screenWidth,
+            //         top:screenHeight - 150 }
+            // })
         }
         return _this;
     }
@@ -90,7 +89,6 @@ var AdCenter = /** @class */ (function (_super) {
             console.log("点击过于频繁");
             return;
         }
-        console.log("尝试播放广告");
         this._lasttryplaytime = Utils_1.default.getServerTime();
         this.callBack = callback;
         WxCenter_1.default.showRewardedVideoAd(callback);

@@ -4,7 +4,7 @@ cc._RF.push(module, '51ec5mQNrhCjJFzoCadnNBY', 'WxCenter');
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var MsgHints_1 = require("../framwork/MsgHints");
+var MsgToast_1 = require("../framwork/MsgToast");
 var WxCenter = /** @class */ (function () {
     function WxCenter() {
     }
@@ -66,7 +66,7 @@ var WxCenter = /** @class */ (function () {
     WxCenter.showRewardedVideoAd = function (callback) {
         if (callback === void 0) { callback = null; }
         if (!this.wx) {
-            MsgHints_1.default.show("看了一个广告");
+            MsgToast_1.default.show("看了一个广告");
             console.log('看了一个广告');
             callback && callback(true);
             return;
@@ -77,12 +77,23 @@ var WxCenter = /** @class */ (function () {
         if (!videoAd) {
             videoAd = wx.createRewardedVideoAd({ adUnitId: 'xxxx' });
             this.rewardVideo = videoAd;
+            videoAd.onError(function (err) {
+                console.log(err);
+                //重新拉取
+                videoAd.load().then(function () { return videoAd.show(); });
+            });
+            videoAd.onClose(function (res) {
+                // 用户点击了【关闭广告】按钮
+                // 小于 2.1.0 的基础库版本，res 是一个 undefined
+                if (res && res.isEnded || res === undefined) {
+                    // 正常播放结束，可以下发游戏奖励
+                    callback && callback(true);
+                }
+                else {
+                    // 播放中途退出，不下发游戏奖励
+                }
+            });
         }
-        videoAd.onError(function (err) {
-            console.log(err);
-            //重新拉取
-            videoAd.load().then(function () { return videoAd.show(); });
-        });
         videoAd.show().then(function (res) {
             // console.log('激励视频 广告显示')
             videoAd.load().then(function () { return videoAd.show(); }).catch(function (err) {
@@ -91,17 +102,6 @@ var WxCenter = /** @class */ (function () {
                     icon: 'none'
                 });
             });
-        });
-        videoAd.onClose(function (res) {
-            // 用户点击了【关闭广告】按钮
-            // 小于 2.1.0 的基础库版本，res 是一个 undefined
-            if (res && res.isEnded || res === undefined) {
-                // 正常播放结束，可以下发游戏奖励
-                callback && callback(true);
-            }
-            else {
-                // 播放中途退出，不下发游戏奖励
-            }
         });
     };
     WxCenter.videoAdErrHandle = function (err) {

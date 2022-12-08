@@ -25,7 +25,6 @@ var PoolMgr = /** @class */ (function () {
     };
     PoolMgr.prototype.loadPrefabs = function () {
         var _this = this;
-        console.log("loadPrefabs");
         cc.loader.loadRes("prefab/Coin", cc.Prefab, function (err, ret) {
             if (err) {
                 console.log(err);
@@ -42,7 +41,6 @@ var PoolMgr = /** @class */ (function () {
         });
     };
     PoolMgr.prototype.initPool = function (key, prefab, count) {
-        console.log("initPool");
         this.prefabs[key] = prefab;
         this.pools[key] = new cc.NodePool();
         for (var i = 0; i < count; ++i) {

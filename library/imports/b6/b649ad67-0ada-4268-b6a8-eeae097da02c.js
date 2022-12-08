@@ -60,22 +60,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../framwork/BaseUI");
-var MsgHints_1 = require("../framwork/MsgHints");
-var Data_1 = require("../manager/Data");
+var MsgToast_1 = require("../framwork/MsgToast");
+var ChickData_1 = require("../manager/ChickData");
 var WxCenter_1 = require("../manager/WxCenter");
 var AudioMgr_1 = require("../utils/AudioMgr");
 var Utils_1 = require("../utils/Utils");
-var DB_1 = require("./DB");
-var AdLayer_1 = require("./prefab/AdLayer");
-var ShareLayer_1 = require("./prefab/ShareLayer");
+var Config_1 = require("./Config");
+var CommonView_1 = require("./prefab/CommonView");
+var ShareView_1 = require("./prefab/ShareView");
 var Enemy_1 = require("./prefab/Enemy");
-var LoseUI_1 = require("./prefab/LoseUI");
-var LuPinResult_1 = require("./prefab/LuPinResult");
+var FailView_1 = require("./prefab/FailView");
+var RecordView_1 = require("./prefab/RecordView");
 var OfflineAwardUI_1 = require("./prefab/OfflineAwardUI");
-var ShopLayer_1 = require("./prefab/ShopLayer");
-var VictoryUI_1 = require("./prefab/VictoryUI");
-var SlotItem_1 = require("./SlotItem");
-var SoldierItem_1 = require("./SoldierItem");
+var ShopView_1 = require("./prefab/ShopView");
+var WinView_1 = require("./prefab/WinView");
+var GroundItem_1 = require("./GroundItem");
+var ChickItem_1 = require("./ChickItem");
 var CoinNotEnoughUI_1 = require("./prefab/CoinNotEnoughUI");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var HallScene = /** @class */ (function (_super) {
@@ -127,7 +127,6 @@ var HallScene = /** @class */ (function (_super) {
                 indexs.push(item.index);
             }
         }
-        // console.log(indexs);
         var slots = this.GetGameObject("slots"); //fx_ground_merge
         for (var i = 0; i < slots.children.length; ++i) {
             slots.children[i].getChildByName("fx_ground_merge").active = indexs.indexOf(i) >= 0;
@@ -136,7 +135,7 @@ var HallScene = /** @class */ (function (_super) {
     HallScene.prototype.update = function (dt) {
         if (dt > 1)
             dt = 1;
-        this.SetText("lbl_coin", Utils_1.default.formatNumber(Data_1.default.user.coin) + "");
+        this.SetText("lbl_coin", Utils_1.default.formatNumber(ChickData_1.default.user.coin) + "");
         if (this.recordertime != 0) {
             var s = Math.floor((Utils_1.default.getServerTime() - this.recordertime) / 1000);
             if (s > 0)
@@ -152,11 +151,11 @@ var HallScene = /** @class */ (function (_super) {
             this.enemylist[i].zIndex = i;
         }
         this._lastdroptime += dt;
-        if (this._lastdroptime > 25 * (Data_1.default.user.drop_plant_time > Utils_1.default.getServerTime() ? .3 : 1)) {
+        if (this._lastdroptime > 25 * (ChickData_1.default.user.drop_plant_time > Utils_1.default.getServerTime() ? .3 : 1)) {
             //普通花盆掉落
             if (this.item_drag.datacopy)
                 return;
-            var lv = Math.max(1, Data_1.default.user.GetMaxLv() - Utils_1.default.getRandomInt(6, 9));
+            var lv = Math.max(1, ChickData_1.default.user.GetMaxLv() - Utils_1.default.getRandomInt(6, 9));
             this.tryBuyPlant(lv, 3);
             this._lastdroptime = 0;
         }
@@ -199,38 +198,38 @@ var HallScene = /** @class */ (function (_super) {
         }
         if (this.createcomplete && this.enemylist.length == 0) {
             if (this.bFail) {
-                if (Data_1.default.user.wave >= this.wave_info[2]) {
-                    Data_1.default.user.wave = 1;
+                if (ChickData_1.default.user.wave >= this.wave_info[2]) {
+                    ChickData_1.default.user.wave = 1;
                     isStop = true;
                     var enemy_1 = node.getComponent(Enemy_1.default);
                     Utils_1.default.createUI("prefab/LoseUI").then(function (node) {
-                        node.getComponent(LoseUI_1.default).setInfo(enemy_1.getBossMoney());
+                        node.getComponent(FailView_1.default).setInfo(enemy_1.getBossMoney());
                     });
                 }
                 else {
-                    Data_1.default.user.wave = 1;
+                    ChickData_1.default.user.wave = 1;
                     this.showImage("texture/defeat");
                 }
             }
             else {
-                Data_1.default.user.wave++;
+                ChickData_1.default.user.wave++;
                 isChange = true;
-                if (Data_1.default.user.wave > this.wave_info[2]) {
+                if (ChickData_1.default.user.wave > this.wave_info[2]) {
                     var enemy = node.getComponent(Enemy_1.default);
                     var money_1 = enemy.getBossMoney();
                     this.node.runAction(cc.sequence(cc.delayTime(1.2), cc.callFunc(function () {
                         Utils_1.default.createUI("prefab/VictoryUI").then(function (node) {
-                            node.getComponent(VictoryUI_1.default).setInfo(money_1);
+                            node.getComponent(WinView_1.default).setInfo(money_1);
                         });
                     })));
                     isStop = true;
-                    Data_1.default.user.wave = 1;
-                    Data_1.default.user.lv++;
+                    ChickData_1.default.user.wave = 1;
+                    ChickData_1.default.user.lv++;
                     this.openNewSlot();
-                    Data_1.default.save(true);
-                    var key = Data_1.default.user.lv + "_" + Data_1.default.user.wave;
-                    this.wave_info = DB_1.DB_level[key];
-                    WxCenter_1.default.aldLevelReport(Data_1.default.user.lv);
+                    ChickData_1.default.save(true);
+                    var key = ChickData_1.default.user.lv + "_" + ChickData_1.default.user.wave;
+                    this.wave_info = Config_1.User_level[key];
+                    WxCenter_1.default.aldLevelReport(ChickData_1.default.user.lv);
                 }
                 else {
                     AudioMgr_1.default.Instance().playSFX("win_wave");
@@ -248,20 +247,20 @@ var HallScene = /** @class */ (function (_super) {
         if (isChange === void 0) { isChange = false; }
         this.bFail = false;
         this.createcomplete = false;
-        var key = Data_1.default.user.lv + "_" + Data_1.default.user.wave;
-        this.wave_info = DB_1.DB_level[key];
+        var key = ChickData_1.default.user.lv + "_" + ChickData_1.default.user.wave;
+        this.wave_info = Config_1.User_level[key];
         //通关后就一直读最后一关
         if (!this.wave_info) {
-            var key_1 = 60 + "_" + Data_1.default.user.wave;
-            this.wave_info = DB_1.DB_level[key_1];
+            var key_1 = 60 + "_" + ChickData_1.default.user.wave;
+            this.wave_info = Config_1.User_level[key_1];
         }
-        if (Data_1.default.user.wave == this.wave_info[2]) {
+        if (ChickData_1.default.user.wave == this.wave_info[2]) {
             AudioMgr_1.default.Instance().playBGM("bgBoss");
             this.node.runAction(cc.sequence(cc.delayTime(.8), cc.callFunc(function () {
                 Utils_1.default.createUI("prefab/BossCommingUI");
             })));
         }
-        else if (Data_1.default.user.wave == 1) {
+        else if (ChickData_1.default.user.wave == 1) {
             AudioMgr_1.default.Instance().playBGM("BGM1");
         }
         //创建怪物
@@ -288,16 +287,16 @@ var HallScene = /** @class */ (function (_super) {
             _loop_1(i);
         }
         //关卡信息
-        this.SetText("lbl_cur_lv", Data_1.default.user.lv + "");
-        this.SetText("lbl_waves", Data_1.default.user.wave + "/" + this.wave_info[2]);
-        this.SetText("lbl_pre_lv", (Data_1.default.user.lv - 1) + "");
-        this.SetText("lbl_nex_lv", (Data_1.default.user.lv + 1) + "");
+        this.SetText("lbl_cur_lv", ChickData_1.default.user.lv + "");
+        this.SetText("lbl_waves", ChickData_1.default.user.wave + "/" + this.wave_info[2]);
+        this.SetText("lbl_pre_lv", (ChickData_1.default.user.lv - 1) + "");
+        this.SetText("lbl_nex_lv", (ChickData_1.default.user.lv + 1) + "");
         if (isChange) {
             Utils_1.default.playBreath(this.GetGameObject('lbl_waves'), 1, 3, 0.5, false);
         }
     };
     HallScene.prototype.initComposeItems = function () {
-        var list = Data_1.default.user.ComPlants;
+        var list = ChickData_1.default.user.ComPlants;
         var m = {};
         for (var i = list.length - 1; i >= 0; i--) {
             if (list[i].lv > 60)
@@ -317,7 +316,7 @@ var HallScene = /** @class */ (function (_super) {
     HallScene.prototype.getItemByPos = function (pos) {
         for (var i = 0; i < this.items.length; ++i) {
             if (this.items[i].node.getBoundingBox().contains(pos)) {
-                return this.items[i].node.getComponent(SoldierItem_1.default);
+                return this.items[i].node.getComponent(ChickItem_1.default);
             }
         }
         return null;
@@ -329,7 +328,7 @@ var HallScene = /** @class */ (function (_super) {
     };
     HallScene.prototype.start = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var slots, i, _i, _a, slot, t, t, money, _b, _c, c, recorder;
+            var slots, i, _i, _a, slot, stime, t, t, money, _b, _c, c, recorder;
             var _this = this;
             return __generator(this, function (_d) {
                 switch (_d.label) {
@@ -342,7 +341,7 @@ var HallScene = /** @class */ (function (_super) {
                         i = 0;
                         for (_i = 0, _a = slots.children; _i < _a.length; _i++) {
                             slot = _a[_i];
-                            slot.getComponent(SlotItem_1.default).setIndex(++i);
+                            slot.getComponent(GroundItem_1.default).setIndex(++i);
                         }
                         return [4 /*yield*/, this.initView()];
                     case 1:
@@ -352,27 +351,28 @@ var HallScene = /** @class */ (function (_super) {
                             if (_this.item_drag.node.active)
                                 return;
                             // 小精灵掉落
-                            if (Data_1.default.user.DropGiftPts.length > 0) {
-                                var b = _this.tryBuyPlant(Data_1.default.user.DropGiftPts[0], 4);
+                            if (ChickData_1.default.user.DropGiftPts.length > 0) {
+                                var b = _this.tryBuyPlant(ChickData_1.default.user.DropGiftPts[0], 4);
                                 if (b)
-                                    Data_1.default.user.DropGiftPts.shift();
+                                    ChickData_1.default.user.DropGiftPts.shift();
                             }
                             //  广告购买成功，因为没有空位未成功添加
-                            if (Data_1.default.user.AdBuyNotDrop.length > 0) {
-                                var b = _this.tryBuyPlant(Data_1.default.user.AdBuyNotDrop[0], 2);
+                            if (ChickData_1.default.user.AdBuyNotDrop.length > 0) {
+                                var b = _this.tryBuyPlant(ChickData_1.default.user.AdBuyNotDrop[0], 2);
                                 if (b)
-                                    Data_1.default.user.AdBuyNotDrop.shift();
+                                    ChickData_1.default.user.AdBuyNotDrop.shift();
                             }
                         })).repeatForever());
-                        Data_1.default.user.auto_com_time = Math.max(0, Data_1.default.user.auto_com_time);
-                        Data_1.default.user.double_income_time = Math.max(0, Data_1.default.user.double_income_time);
-                        Data_1.default.user.drop_plant_time = Math.max(0, Data_1.default.user.drop_plant_time);
-                        Data_1.default.user.double_att_time = Math.max(0, Data_1.default.user.double_att_time);
+                        ChickData_1.default.user.auto_com_time = Math.max(0, ChickData_1.default.user.auto_com_time);
+                        ChickData_1.default.user.double_income_time = Math.max(0, ChickData_1.default.user.double_income_time);
+                        ChickData_1.default.user.drop_plant_time = Math.max(0, ChickData_1.default.user.drop_plant_time);
+                        ChickData_1.default.user.double_att_time = Math.max(0, ChickData_1.default.user.double_att_time);
                         this.updateBuyButton();
-                        t = (Utils_1.default.getServerTime() - Data_1.default.user.serverTime) / 1000;
-                        if (Data_1.default.user.serverTime != 0 && t > 3 * 60) {
+                        stime = ChickData_1.default.user.serverTime;
+                        t = (Utils_1.default.getServerTime() - stime) / 1000;
+                        if (stime != 0 && t > 3 * 60) {
                             t = Math.min(7200 * 3, t);
-                            money = Data_1.default.user.getOfflineEarning(t / 60);
+                            money = ChickData_1.default.user.getOfflineEarning(t / 60);
                             Utils_1.default.createUI('prefab/OfflineAwardUI', null, function (ui) {
                                 ui.getComponent(OfflineAwardUI_1.default).data = money;
                             });
@@ -386,32 +386,32 @@ var HallScene = /** @class */ (function (_super) {
                         })));
                         //更新各种时间
                         this.GetGameObject("bottom").runAction(cc.sequence(cc.callFunc(function () {
-                            var isX2In = Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > 0;
-                            var isInDb = Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > 0;
-                            var isDpIn = Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > 0;
+                            var isX2In = ChickData_1.default.user.double_att_time - Utils_1.default.getServerTime() > 0;
+                            var isInDb = ChickData_1.default.user.double_income_time - Utils_1.default.getServerTime() > 0;
+                            var isDpIn = ChickData_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > 0;
                             //校验时间
-                            if (Data_1.default.user.double_att_time - Utils_1.default.getServerTime() > AdLayer_1.MAX_DOUBLE_ATT_TIME * 60 * 1000) {
-                                Data_1.default.user.double_att_time = Utils_1.default.getServerTime();
+                            if (ChickData_1.default.user.double_att_time - Utils_1.default.getServerTime() > CommonView_1.MAX_DOUBLE_ATT_TIME * 60 * 1000) {
+                                ChickData_1.default.user.double_att_time = Utils_1.default.getServerTime();
                             }
-                            if (Data_1.default.user.double_income_time - Utils_1.default.getServerTime() > AdLayer_1.MAX_DOUBLE_INCOME_TIME * 60 * 1000) {
-                                Data_1.default.user.double_income_time = Utils_1.default.getServerTime();
+                            if (ChickData_1.default.user.double_income_time - Utils_1.default.getServerTime() > CommonView_1.MAX_DOUBLE_INCOME_TIME * 60 * 1000) {
+                                ChickData_1.default.user.double_income_time = Utils_1.default.getServerTime();
                             }
-                            if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > AdLayer_1.MAX_AUTO_COM_TIME * 60 * 1000) {
-                                Data_1.default.user.auto_com_time = Utils_1.default.getServerTime();
+                            if (ChickData_1.default.user.auto_com_time - Utils_1.default.getServerTime() > CommonView_1.MAX_AUTO_COM_TIME * 60 * 1000) {
+                                ChickData_1.default.user.auto_com_time = Utils_1.default.getServerTime();
                             }
-                            if (Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > AdLayer_1.MAX_DROP_PLANT_TIME * 60 * 1000) {
-                                Data_1.default.user.drop_plant_time = Utils_1.default.getServerTime();
+                            if (ChickData_1.default.user.drop_plant_time - Utils_1.default.getServerTime() > CommonView_1.MAX_DROP_PLANT_TIME * 60 * 1000) {
+                                ChickData_1.default.user.drop_plant_time = Utils_1.default.getServerTime();
                             }
                             _this.breathAngry(isX2In);
-                            _this.SetText("att_x2_time", isX2In ? Utils_1.default.getTimeStrByS((Data_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000) : '打鸡血');
-                            _this.SetText("rewardx2_time", isInDb ? Utils_1.default.getTimeStrByS((Data_1.default.user.double_income_time - Utils_1.default.getServerTime()) / 1000) : '双倍');
-                            if (Data_1.default.user.auto_com_time - Utils_1.default.getServerTime() > 0) {
-                                _this.SetText("auto_time", Utils_1.default.getTimeStrByS((Data_1.default.user.auto_com_time - Utils_1.default.getServerTime()) / 1000));
+                            _this.SetText("att_x2_time", isX2In ? Utils_1.default.getTimeStrByS((ChickData_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000) : '打鸡血');
+                            _this.SetText("rewardx2_time", isInDb ? Utils_1.default.getTimeStrByS((ChickData_1.default.user.double_income_time - Utils_1.default.getServerTime()) / 1000) : '双倍');
+                            if (ChickData_1.default.user.auto_com_time - Utils_1.default.getServerTime() > 0) {
+                                _this.SetText("auto_time", Utils_1.default.getTimeStrByS((ChickData_1.default.user.auto_com_time - Utils_1.default.getServerTime()) / 1000));
                             }
                             else {
                                 _this.SetText("auto_time", "自动合成");
                             }
-                            _this.SetText("lbl_drop_plant", isDpIn ? Utils_1.default.getTimeStrByS((Data_1.default.user.drop_plant_time - Utils_1.default.getServerTime()) / 1000) : '掉落');
+                            _this.SetText("lbl_drop_plant", isDpIn ? Utils_1.default.getTimeStrByS((ChickData_1.default.user.drop_plant_time - Utils_1.default.getServerTime()) / 1000) : '掉落');
                             _this.GetGameObject("fx_bt_angry").active = _this.GetGameObject("att_x2_time").active;
                             // if(Data.user.drop_plant_time - Utils.getServerTime()<0)
                             //     this.GetSprite("bt_fast_gen_process_item").fillRange = 0;
@@ -424,7 +424,7 @@ var HallScene = /** @class */ (function (_super) {
                             // Data.user.checkNewTody();
                         }), cc.delayTime(1)).repeatForever());
                         this.GetGameObject("btn_delete").opacity = 0;
-                        this.GetGameObject("guild_0").active = Data_1.default.user.guideIndex == 0;
+                        this.GetGameObject("guild_0").active = ChickData_1.default.user.guideIndex == 0;
                         // if (this.GetGameObject("supermarket"))
                         //     this.GetGameObject("supermarket").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(2)).repeatForever());
                         // if (this.GetGameObject("powerman"))
@@ -441,7 +441,7 @@ var HallScene = /** @class */ (function (_super) {
                                 _this.GetGameObject("btn_end").active = true;
                                 _this.GetGameObject("btn_Recorder").stopAllActions();
                                 _this.GetGameObject("btn_Recorder").runAction(cc.sequence(cc.scaleTo(0.5, .9), cc.scaleTo(0.5, 1)).repeatForever());
-                                console.log("tt录屏开始");
+                                //console.log("tt录屏开始");
                                 _this.recordertime = Utils_1.default.getServerTime();
                             });
                             recorder.onStop(function (res) {
@@ -451,16 +451,16 @@ var HallScene = /** @class */ (function (_super) {
                                 _this.GetGameObject("btn_Recorder").scale = 1;
                                 _this.GetGameObject("btn_VCR").active = true;
                                 _this.GetGameObject("btn_end").active = false;
-                                console.log("tt录屏结束");
-                                console.log(res.videoPath);
+                                // console.log("tt录屏结束");
+                                // console.log(res.videoPath);
                                 if (Utils_1.default.getServerTime() - _this.recordertime < 3000) {
-                                    MsgHints_1.default.show("录屏时间过短");
+                                    // MsgHints.show("录屏时间过短");
                                     _this.recordertime = 0;
                                     return;
                                 }
                                 _this.recordertime = 0;
                                 Utils_1.default.createUI("prefab/LuPinResult", null, function (node) {
-                                    node.getComponent(LuPinResult_1.default).setData(res);
+                                    node.getComponent(RecordView_1.default).setData(res);
                                 });
                             });
                         }
@@ -484,7 +484,7 @@ var HallScene = /** @class */ (function (_super) {
                 Utils_1.default.sharecallback(true);
             }
             else {
-                MsgHints_1.default.show("分享失败");
+                MsgToast_1.default.show("分享失败");
                 Utils_1.default.sharecallback(false);
             }
         }
@@ -492,19 +492,19 @@ var HallScene = /** @class */ (function (_super) {
         Utils_1.default.sharecallback = null;
     };
     HallScene.prototype.openNewSlot = function () {
-        var curopen = SlotItem_1.default.getCurOpen();
+        var curopen = GroundItem_1.default.getCurOpen();
         if (curopen < 0)
             return;
-        var lv = DB_1.DB_slot[curopen].price;
-        if (lv < Data_1.default.user.lv)
+        var lv = Config_1.Config_ground[curopen].price;
+        if (lv < ChickData_1.default.user.lv)
             return;
-        Data_1.default.user.slots[curopen] = 1;
-        Data_1.default.save();
+        ChickData_1.default.user.slots[curopen] = 1;
+        ChickData_1.default.save();
         var slots = this.GetGameObject("slots");
         var slot = slots.children[curopen];
         if (slot) {
-            slot.getComponent(SlotItem_1.default).setIndex(curopen);
-            MsgHints_1.default.show("成功解锁新位置");
+            slot.getComponent(GroundItem_1.default).setIndex(curopen);
+            MsgToast_1.default.show("成功解锁新位置");
         }
     };
     HallScene.prototype.breathAngry = function (isbool) {
@@ -539,7 +539,7 @@ var HallScene = /** @class */ (function (_super) {
                     node.parent = node_com;
                     node.position = this.GetGameObject("slots").children[i].position; // cc.v2(x, y);
                     node.name = "itme" + index;
-                    plant = node.getComponent(SoldierItem_1.default);
+                    plant = node.getComponent(ChickItem_1.default);
                     plant.index = index;
                     this.items.push(plant);
                     ++index;
@@ -548,7 +548,7 @@ var HallScene = /** @class */ (function (_super) {
                 node_drag.parent = node_com.parent;
                 node_drag.name = "item_drag";
                 node_drag.x = -1000;
-                this.item_drag = this.GetGameObject("item_drag").getComponent(SoldierItem_1.default);
+                this.item_drag = this.GetGameObject("item_drag").getComponent(ChickItem_1.default);
                 this.item_drag.node.active = false;
                 this.item_drag.bDrag = true;
                 this.initComposeItems();
@@ -620,7 +620,7 @@ var HallScene = /** @class */ (function (_super) {
         var _this = this;
         if (this.bPauseAutoCom || this.bInAutoCom)
             return;
-        if (Utils_1.default.getServerTime() < Data_1.default.user.auto_com_time && !this.bInAutoCom) {
+        if (Utils_1.default.getServerTime() < ChickData_1.default.user.auto_com_time && !this.bInAutoCom) {
             this.initComposeItems();
             var _loop_2 = function (i) {
                 if (!this_2.items[i] || !this_2.items[i].datacopy)
@@ -693,20 +693,20 @@ var HallScene = /** @class */ (function (_super) {
                         tmp++;
                 }
                 if (tmp <= 2) {
-                    MsgHints_1.default.show("植物数量过少不能删除");
+                    MsgToast_1.default.show("植物数量过少不能删除");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
                     return;
                 }
-                if (this.item_drag.datacopy.lv >= Data_1.default.user.GetMaxLv()) {
-                    MsgHints_1.default.show("最高等级植物就不删除了吧！");
+                if (this.item_drag.datacopy.lv >= ChickData_1.default.user.GetMaxLv()) {
+                    MsgToast_1.default.show("最高等级植物就不删除了吧！");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
                     return;
                 }
-                Data_1.default.user.DropWuJiang(this.item_drag.datacopy.index);
+                ChickData_1.default.user.DropWuJiang(this.item_drag.datacopy.index);
                 this.item_drag.linkItem.setItemData(null);
                 this.item_drag.linkItem = null;
                 // this.updateRecruitment();
@@ -717,7 +717,7 @@ var HallScene = /** @class */ (function (_super) {
             //合成 移动  交换
             pos = this.GetGameObject("node_com").convertToNodeSpaceAR(pos);
             var item = this.getItemByPos(pos);
-            if (item == null || Data_1.default.user.slots[item.index] == 0 || item == this.item_drag.linkItem || (item && item.droptype != 0)) {
+            if (item == null || ChickData_1.default.user.slots[item.index] == 0 || item == this.item_drag.linkItem || (item && item.droptype != 0)) {
                 //取消
                 if (this.item_drag.linkItem)
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
@@ -733,7 +733,7 @@ var HallScene = /** @class */ (function (_super) {
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
                 //移动
-                Data_1.default.user.CompMove(this.item_drag.linkItem.index, item.index);
+                ChickData_1.default.user.CompMove(this.item_drag.linkItem.index, item.index);
                 item.setItemData(this.item_drag.datacopy);
                 this.item_drag.linkItem.setItemData(null);
                 this.item_drag.linkItem = null;
@@ -748,7 +748,7 @@ var HallScene = /** @class */ (function (_super) {
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
                 //交换
-                Data_1.default.user.CompMove(this.item_drag.linkItem.index, item.index);
+                ChickData_1.default.user.CompMove(this.item_drag.linkItem.index, item.index);
                 var _tmp = JSON.parse(JSON.stringify(item.datacopy));
                 item.setItemData(this.item_drag.datacopy);
                 this.item_drag.linkItem.setItemData(_tmp);
@@ -761,15 +761,15 @@ var HallScene = /** @class */ (function (_super) {
         }
     };
     HallScene.prototype.comani = function (item) {
-        var b = Data_1.default.user.ComposePlant(item.index, this.item_drag.datacopy.index);
+        var b = ChickData_1.default.user.ComposePlant(item.index, this.item_drag.datacopy.index);
         this.GetGameObject("guild_1").active = false;
-        if (Data_1.default.user.guideIndex == 1) {
-            Data_1.default.user.guideIndex++;
-            Data_1.default.save();
+        if (ChickData_1.default.user.guideIndex == 1) {
+            ChickData_1.default.user.guideIndex++;
+            ChickData_1.default.save();
         }
         if (!b)
             return;
-        var nextGun = Data_1.default.user.getPlantInfo(item.index);
+        var nextGun = ChickData_1.default.user.getPlantInfo(item.index);
         item.setItemData(nextGun);
         this.GetGameObject("item_drag").active = false;
         this.item_drag.datacopy = null;
@@ -785,11 +785,11 @@ var HallScene = /** @class */ (function (_super) {
             return __generator(this, function (_c) {
                 switch (_c.label) {
                     case 0:
-                        lv = Data_1.default.user.GetMaxLv() - 3;
+                        lv = ChickData_1.default.user.GetMaxLv() - 3;
                         if (lv < 1)
                             lv = 1;
                         this.SetText("lbl_buy_lvl", 'LV.' + lv);
-                        this.SetText("lbl_buy_cost", Utils_1.default.formatNumber(Data_1.default.user.BuyPrice(lv)));
+                        this.SetText("lbl_buy_cost", Utils_1.default.formatNumber(ChickData_1.default.user.BuyPrice(lv)));
                         skpath = "spine:flower" + lv + "_ske";
                         atlaspath = "spine:flower" + lv + "_tex";
                         chick = this.GetDragonAmature('chickbuy');
@@ -812,7 +812,7 @@ var HallScene = /** @class */ (function (_super) {
     HallScene.prototype.tryBuyPlant = function (lv, buytype) {
         var item = null;
         for (var i = 0; i < 12; ++i) {
-            if (Data_1.default.user.slots[i] == 0)
+            if (ChickData_1.default.user.slots[i] == 0)
                 continue;
             if (!this.items[i].datacopy && this.autocomindexs[0] != i && this.autocomindexs[1] != i) {
                 item = this.items[i];
@@ -820,19 +820,19 @@ var HallScene = /** @class */ (function (_super) {
             }
         }
         if (!lv) {
-            lv = Data_1.default.user.GetMaxLv() - 3;
+            lv = ChickData_1.default.user.GetMaxLv() - 3;
             if (lv < 1)
                 lv = 1;
         }
         if (item) {
             if (buytype == 0) {
-                var cost = Data_1.default.user.BuyPrice(lv);
-                if (Data_1.default.user.BuyPrice(lv) > Data_1.default.user.coin) {
+                var cost = ChickData_1.default.user.BuyPrice(lv);
+                if (ChickData_1.default.user.BuyPrice(lv) > ChickData_1.default.user.coin) {
                     var type_1 = 0;
-                    if (Data_1.default.user.today_getchick_times < Data_1.default.user.today_getchick_total) {
+                    if (ChickData_1.default.user.today_getchick_times < ChickData_1.default.user.today_getchick_total) {
                         type_1 = 1;
                     }
-                    else if (Data_1.default.user.today_getcoin_times < Data_1.default.user.today_getcoin_total) {
+                    else if (ChickData_1.default.user.today_getcoin_times < ChickData_1.default.user.today_getcoin_total) {
                         type_1 = 2;
                     }
                     if (type_1 > 0) {
@@ -841,34 +841,34 @@ var HallScene = /** @class */ (function (_super) {
                         });
                     }
                     else {
-                        MsgHints_1.default.show("金币不足");
+                        MsgToast_1.default.show("金币不足");
                     }
                     return;
                 }
-                Data_1.default.user.coin -= cost;
+                ChickData_1.default.user.coin -= cost;
             }
             else if (buytype == 1) {
-                var gem = Math.min(5, Number(DB_1.DB_plant[lv - 1][6]));
-                if (gem > Data_1.default.user.gem) {
-                    MsgHints_1.default.show("钻石不足");
+                var gem = Math.min(5, Number(Config_1.Config_chick[lv - 1][6]));
+                if (gem > ChickData_1.default.user.gem) {
+                    // MsgToast.show("钻石不足");
                     return;
                 }
-                Data_1.default.user.gem -= gem;
+                ChickData_1.default.user.gem -= gem;
             }
             else if (buytype == 2) {
             }
             else if (buytype >= 3) {
-                console.log("花盆掉落");
+                // console.log("飞机掉落")
             }
             AudioMgr_1.default.Instance().playSFX("flower_pot_land");
             this.docomp(null);
-            item.setItemData(Data_1.default.user.BuyPlant(item.index, lv), buytype);
+            item.setItemData(ChickData_1.default.user.BuyPlant(item.index, lv), buytype);
             this.updateBuyButton();
             return true;
         }
         else {
             if (buytype <= 2) {
-                MsgHints_1.default.show("位置不够啦！");
+                MsgToast_1.default.show("位置不够啦！");
                 this.GetGameObject("btn_delete").stopAllActions();
                 this.GetGameObject("btn_delete").opacity = 255;
                 this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.25), cc.fadeTo(0.25, 0)));
@@ -918,46 +918,46 @@ var HallScene = /** @class */ (function (_super) {
             case "btn_buy":
                 this.tryBuyPlant(null, 0);
                 this.GetGameObject("guild_0").active = false;
-                if (Data_1.default.user.guideIndex == 0) {
-                    Data_1.default.user.guideIndex++;
-                    Data_1.default.save();
+                if (ChickData_1.default.user.guideIndex == 0) {
+                    ChickData_1.default.user.guideIndex++;
+                    ChickData_1.default.save();
                 }
-                if (Data_1.default.user.guideIndex == 1) {
+                if (ChickData_1.default.user.guideIndex == 1) {
                     this.mergetip();
                 }
                 break;
             case "bt_fast_gen":
                 Utils_1.default.createUI("prefab/AdLayer").then(function (node) {
-                    node.getComponent(AdLayer_1.default).setType(AdLayer_1.EADLAYER.DROP_PLANT);
+                    node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.DROP_PLANT);
                 });
                 break;
             case "btn_angry":
                 Utils_1.default.createUI("prefab/AdLayer").then(function (node) {
-                    node.getComponent(AdLayer_1.default).setType(AdLayer_1.EADLAYER.DOUBLE_ATT);
+                    node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.DOUBLE_ATT);
                 });
                 break;
             case "btn_double_coin":
                 Utils_1.default.createUI("prefab/AdLayer").then(function (node) {
-                    node.getComponent(AdLayer_1.default).setType(AdLayer_1.EADLAYER.DOUBLE_INCOME);
+                    node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.DOUBLE_INCOME);
                 });
                 break;
             case "bt_auto_merge":
                 Utils_1.default.createUI("prefab/AdLayer").then(function (node) {
-                    node.getComponent(AdLayer_1.default).setType(AdLayer_1.EADLAYER.AUTO_COM);
+                    node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.AUTO_COM);
                 });
                 break;
             case "btn_shop":
-                ShopLayer_1.default.show();
+                ShopView_1.default.show();
                 break;
             case "btn_delete":
                 if (this.GetGameObject("btn_delete").opacity == 255)
-                    MsgHints_1.default.show("拖动到这里卖出");
+                    MsgToast_1.default.show("拖动到这里卖出");
                 break;
             case "btn_inviate":
                 // WxCenter.shareAppMessage();
                 WxCenter_1.default.aldReport('InvitationClick', 'click');
                 Utils_1.default.createUI("prefab/ShareLayer").then(function (node) {
-                    node.getComponent(ShareLayer_1.default).setData();
+                    node.getComponent(ShareView_1.default).setData();
                 });
                 break;
             case "btn_Recorder":

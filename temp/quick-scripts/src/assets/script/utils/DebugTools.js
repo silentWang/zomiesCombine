@@ -23,8 +23,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var GameConst_1 = require("../game/GameConst");
-var Data_1 = require("../manager/Data");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var DebugTools = /** @class */ (function (_super) {
     __extends(DebugTools, _super);
@@ -32,27 +30,27 @@ var DebugTools = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     DebugTools.prototype.start = function () {
-        if (cc.sys.platform != cc.sys.DESKTOP_BROWSER) {
-            return;
-        }
-        this.addBtn("清除数据", function () {
-            localStorage.setItem(GameConst_1.default.local_data_key, "");
-        });
-        this.addBtn("金币+很多", function () {
-            Data_1.default.user.coin += 1000000000000000;
-        });
-        this.addBtn("钻石+很多", function () {
-            Data_1.default.user.gem += 100000;
-        });
-        this.addBtn("1倍数", function () {
-            cc.kSpeed(1);
-        });
-        this.addBtn("4倍数", function () {
-            cc.kSpeed(4);
-        });
-        this.addBtn("lv++", function () {
-            Data_1.default.user.lv++;
-        });
+        // if (cc.sys.platform != cc.sys.DESKTOP_BROWSER) {
+        //     return;
+        // }
+        // this.addBtn("清除数据", () => {
+        //     localStorage.setItem(GameConst.cache_chick_data_key, "");
+        // })
+        // this.addBtn("金币+很多", () => {
+        //     ChickData.user.coin += 1000000000000000
+        // })
+        // this.addBtn("钻石+很多", () => {
+        //     ChickData.user.gem += 100000
+        // })
+        // this.addBtn("1倍数",()=>{
+        //     cc.kSpeed(1);
+        // })
+        // this.addBtn("4倍数",()=>{
+        //     cc.kSpeed(4);
+        // })
+        // this.addBtn("lv++", () => {
+        //    ChickData.user.lv++;
+        // })
     };
     DebugTools.prototype.addBtn = function (name, callback) {
         var toolbar = document.getElementsByClassName("toolbar")[0];

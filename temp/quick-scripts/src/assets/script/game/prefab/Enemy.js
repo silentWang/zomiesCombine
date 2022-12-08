@@ -60,10 +60,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
-var Data_1 = require("../../manager/Data");
+var ChickData_1 = require("../../manager/ChickData");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
-var DB_1 = require("../DB");
+var Config_1 = require("../Config");
 var HallScene_1 = require("../HallScene");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Enemy = /** @class */ (function (_super) {
@@ -86,7 +86,7 @@ var Enemy = /** @class */ (function (_super) {
     Enemy_1 = Enemy;
     Enemy.prototype.getBossMoney = function () {
         if (this.type == 2) {
-            if (Data_1.default.user.double_income_time > Utils_1.default.getServerTime()) {
+            if (ChickData_1.default.user.double_income_time > Utils_1.default.getServerTime()) {
                 this.money *= 2;
             }
             return (this.maxhp - this.hp) / this.maxhp * this.money;
@@ -100,7 +100,7 @@ var Enemy = /** @class */ (function (_super) {
                 switch (_c.label) {
                     case 0:
                         this.type = boss ? 1 : 0;
-                        info = DB_1.DB_zombie[id + ""];
+                        info = Config_1.Config_animals[id + ""];
                         if (id > 100) {
                             id -= 100;
                             this.type = 2;
@@ -113,7 +113,6 @@ var Enemy = /** @class */ (function (_super) {
                         this.maxhp = info[1];
                         this.hp = this.maxhp;
                         this.money = Math.floor(info[3] * Utils_1.default.getRandom(0.8, 1.2));
-                        // console.log(this.type == 2?"boss":"e",this.maxhp,this.money,"====")
                         this.node.position = HallScene_1.default.Instance.path[0];
                         this.node.scale = this.type == 0 ? .8 : 1;
                         AudioMgr_1.default.Instance().playSFX('chuxian');
@@ -140,7 +139,7 @@ var Enemy = /** @class */ (function (_super) {
         var _this = this;
         if (this.hp <= 0)
             return;
-        var info = DB_1.DB_plant[plantlv - 1];
+        var info = Config_1.Config_chick[plantlv - 1];
         var power = Number(info[2]);
         var bbj = false;
         var isskill = false;
@@ -179,7 +178,7 @@ var Enemy = /** @class */ (function (_super) {
             this.GetGameObject("sp").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(.2, 0), cc.callFunc(function () {
                 _this.node.removeFromParent(true);
             })));
-            if (Data_1.default.user.double_income_time > Utils_1.default.getServerTime()) {
+            if (ChickData_1.default.user.double_income_time > Utils_1.default.getServerTime()) {
                 this.money *= 2;
             }
             //daboss界面加钱
@@ -190,7 +189,7 @@ var Enemy = /** @class */ (function (_super) {
                 node.position = this.node.position.add(cc.v3(0, 50, 0));
                 node.zIndex = 1000;
                 node.scale = 0.5;
-                Data_1.default.user.coin += this.money;
+                ChickData_1.default.user.coin += this.money;
                 node.runAction(cc.sequence(cc.spawn(cc.scaleTo(0.2, 1.3), cc.moveBy(0.2, 0, 80)), cc.delayTime(.8), cc.spawn(cc.moveBy(0.5, 50), cc.fadeTo(0.5, 50)), cc.removeSelf()));
             }
             // if(this.type == 2)
@@ -258,7 +257,6 @@ var Enemy = /** @class */ (function (_super) {
             if (this.pathindex == 3)
                 this.GetGameObject("sp").scaleX = -0.74;
             if (this.pathindex >= HallScene_1.default.Instance.path.length) {
-                console.log("逃过");
                 HallScene_1.default.Instance.removeenemy(this.node, true);
                 this.node.removeFromParent(true);
             }

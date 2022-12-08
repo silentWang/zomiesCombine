@@ -61,9 +61,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var ListItem_1 = require("../../framwork/ListItem");
-var MsgHints_1 = require("../../framwork/MsgHints");
+var MsgToast_1 = require("../../framwork/MsgToast");
 var AdCenter_1 = require("../../manager/AdCenter");
-var Data_1 = require("../../manager/Data");
+var ChickData_1 = require("../../manager/ChickData");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var GameConst_1 = require("../GameConst");
@@ -87,25 +87,25 @@ var ShopItem = /** @class */ (function (_super) {
     }
     //观看视频免费获得的枪械等级
     ShopItem.prototype.WatchAdBuy = function (id) {
-        var gunlv = Data_1.default.user.GetMaxLv();
+        var gunlv = ChickData_1.default.user.GetMaxLv();
         if (gunlv < 8)
             return false;
         return gunlv - 4 == id;
     };
     //不可指定购买只可查看的区间
     ShopItem.prototype.OnlyCheck = function (id) {
-        var gunlv = Data_1.default.user.GetMaxLv();
+        var gunlv = ChickData_1.default.user.GetMaxLv();
         if (gunlv - 2 <= id && id <= gunlv) {
             return true;
         }
         return false;
     };
     ShopItem.prototype.BuyGem = function (id) {
-        var gunlv = Data_1.default.user.GetMaxLv();
+        var gunlv = ChickData_1.default.user.GetMaxLv();
         return gunlv - 1 == id;
     };
     ShopItem.prototype.getBuyType = function (gun) {
-        var gunlv = Data_1.default.user.GetMaxLv();
+        var gunlv = ChickData_1.default.user.GetMaxLv();
         var type = 0;
         if (gun[0] <= gunlv - 2) {
             type |= GunBuyType.CAN_BUY;
@@ -199,9 +199,9 @@ var ShopItem = /** @class */ (function (_super) {
                         chick.playAnimation('idleL', 0);
                         _c.label = 3;
                     case 3:
-                        this.cost_coin = Data_1.default.user.BuyPrice(gun[0]);
+                        this.cost_coin = ChickData_1.default.user.BuyPrice(gun[0]);
                         this.SetText("lbl_buy_coin", Utils_1.default.formatNumber(this.cost_coin));
-                        this.GetButton("btn_yellow").interactable = Data_1.default.user.coin >= this.cost_coin;
+                        this.GetButton("btn_yellow").interactable = ChickData_1.default.user.coin >= this.cost_coin;
                         return [2 /*return*/];
                 }
             });
@@ -217,20 +217,20 @@ var ShopItem = /** @class */ (function (_super) {
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
                         if (HallScene_1.default.Instance.tryBuyPlant(_this.gun[0], 2)) {
-                            MsgHints_1.default.show("购买成功");
-                            _this.dispatch(GameConst_1.default.BUY_PLANT, _this.gun, _this.node.getComponent(ListItem_1.default).listId);
+                            MsgToast_1.default.show("购买成功");
+                            _this.dispatch(GameConst_1.default.BUY_CHICK, _this.gun, _this.node.getComponent(ListItem_1.default).listId);
                         }
                     }
                 });
                 break;
             case "btn_yellow":
-                if (Data_1.default.user.coin < this.cost_coin) {
-                    MsgHints_1.default.show("金币不足");
+                if (ChickData_1.default.user.coin < this.cost_coin) {
+                    MsgToast_1.default.show("金币不足");
                     return;
                 }
                 if (HallScene_1.default.Instance.tryBuyPlant(this.gun[0], 0)) {
-                    MsgHints_1.default.show("购买成功");
-                    this.dispatch(GameConst_1.default.BUY_PLANT, this.gun, this.node.getComponent(ListItem_1.default).listId);
+                    MsgToast_1.default.show("购买成功");
+                    this.dispatch(GameConst_1.default.BUY_CHICK, this.gun, this.node.getComponent(ListItem_1.default).listId);
                 }
                 break;
         }

@@ -1,5 +1,5 @@
 import Singleton from "./Singleton";
-import MsgHints from "../framwork/MsgHints";
+import MsgToast from "../framwork/MsgToast";
 
 import Utils from '../utils/Utils';
 import WxCenter from "./WxCenter";
@@ -14,14 +14,14 @@ export default class AdCenter extends Singleton {
     constructor() {
         super();
 
-        if (tt&& tt.createRewardedVideoAd) {
+        if (tt && tt.createRewardedVideoAd) {
             this.VideoAd = tt.createRewardedVideoAd({
                 adUnitId: '1r3lbfr4d9e6veouju'
             });
 
             this.VideoAd.onError((res) => {
                 console.log("onError", res);
-                MsgHints.show("广告加载错误");
+                // MsgToast.show("广告加载错误");
             });
 
             this.VideoAd.onLoad(() => {
@@ -30,27 +30,27 @@ export default class AdCenter extends Singleton {
 
             this.VideoAd.onClose(res => {
                 if (res && res.isEnded || res === undefined) {
-                    cc.log("正常播放结束，可以下发游戏奖励")
+                    // cc.log("正常播放结束，可以下发游戏奖励")
                     this.callBack(true);
                 }
                 else {
-                    cc.log("播放中途退出，不下发游戏奖励")
+                    // cc.log("播放中途退出，不下发游戏奖励")
                     this.callBack(false);
                 }
             })
 
-            if (tt.createInterstitialAd) {
-                this.interstitialAd = tt.createInterstitialAd({
-                    adUnitId: '60jin0has9p2b8n774'
-                })
-            }
+            // if (tt.createInterstitialAd) {
+            //     this.interstitialAd = tt.createInterstitialAd({
+            //         adUnitId: '60jin0has9p2b8n774'
+            //     })
+            // }
 
-            let { screenWidth, screenHeight } = tt.getSystemInfoSync()
-            this.bannerAd = tt.createBannerAd({
-                adUnitId: '3a3ld4b071g57lnlji',
-                style: { width: screenWidth,
-                    top:screenHeight - 150 }
-            })
+            // let { screenWidth, screenHeight } = tt.getSystemInfoSync()
+            // this.bannerAd = tt.createBannerAd({
+            //     adUnitId: '3a3ld4b071g57lnlji',
+            //     style: { width: screenWidth,
+            //         top:screenHeight - 150 }
+            // })
         }
     }
 
@@ -84,7 +84,6 @@ export default class AdCenter extends Singleton {
             console.log("点击过于频繁")
             return;
         }
-        console.log("尝试播放广告")
         this._lasttryplaytime = Utils.getServerTime();
         this.callBack = callback;
         WxCenter.showRewardedVideoAd(callback);

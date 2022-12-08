@@ -6,11 +6,7 @@ export default class ConfigManager extends Singleton {
 
     async loadConfig() {
         if (this.bInit) return;
-
-        //这个游戏配置放到 DB.ts里面的
-
         this.bInit = true;
-        console.log("配置加载完成")
     }
 }
 
@@ -57,7 +53,6 @@ var readConfig = async (filepath: string, c: any) => {
                     var item = new c();
                     for (var j = 0; j < datas.length; ++j) {
                         var value: any = datas[j];
-                        // console.log(i,j)
                         switch (template[j].value) {
                             case "number":
                                 value = Number(value);

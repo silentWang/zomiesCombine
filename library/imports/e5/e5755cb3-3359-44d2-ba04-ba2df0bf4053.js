@@ -11,10 +11,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var GameEvent_1 = require("../event/GameEvent");
-var Data_1 = require("../manager/Data");
+var ChickData_1 = require("../manager/ChickData");
 var Utils_1 = require("../utils/Utils");
 var GameConst_1 = require("./GameConst");
-var DB_1 = require("./DB");
+var Config_1 = require("./Config");
 var AudioMgr_1 = require("../utils/AudioMgr");
 var savepars = [];
 function save(target, propertyKey) {
@@ -56,7 +56,7 @@ var UserModel = /** @class */ (function () {
     UserModel.prototype.T = function () {
         // "20": [20, "U", "U", "G", "G", "M", "AD", "M", "M", "M"],
         var lv = this.GetMaxLv();
-        var t = DB_1.DB_shopSort[lv + ""];
+        var t = Config_1.Config_shopsort[lv + ""];
         for (var n = 1; n <= 8; ++n)
             if ("AD" == t[n])
                 return lv - n;
@@ -143,7 +143,7 @@ var UserModel = /** @class */ (function () {
     };
     //购买花费
     UserModel.prototype.BuyPrice = function (lv) {
-        var t = Number(DB_1.DB_plant[lv - 1][5]);
+        var t = Number(Config_1.Config_chick[lv - 1][5]);
         var n = this.plantBuyTimes[lv] || 0;
         return 1 == lv ? t * (1e4 * Math.pow(1.07, n)) / (1e4) : t * (1e4 * Math.pow(1.175, n)) / (1e4);
     };
@@ -176,7 +176,6 @@ var UserModel = /** @class */ (function () {
         if (!tmp2)
             return false;
         if (tmp1.lv != tmp2.lv) {
-            console.log(tmp1, tmp2);
             console.error("err");
             return false;
         }
@@ -202,9 +201,8 @@ var UserModel = /** @class */ (function () {
         this.todayComTimes++;
         var tmplv2 = this.GetMaxLv();
         if (tmplv2 > tmplv && tmplv2 < 60) {
-            console.log("新植物     ");
             Utils_1.default.createUI("prefab/NewPlantUI");
-            GameEvent_1.default.Instance().dispatch(GameConst_1.default.NEW_PLANT, tmplv2);
+            GameEvent_1.default.Instance().dispatch(GameConst_1.default.NEW_CHICK, tmplv2);
         }
         AudioMgr_1.default.Instance().playSFX("merge_success");
         return true;
@@ -222,8 +220,7 @@ var UserModel = /** @class */ (function () {
         }
         var tmp = { open: 1, index: index, lv: lv };
         this.ComPlants.push(tmp);
-        // console.log("buy",lv)
-        Data_1.default.save();
+        ChickData_1.default.save();
         return tmp;
     };
     //摧毁
@@ -231,7 +228,7 @@ var UserModel = /** @class */ (function () {
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
                 var tmp = this.BuyPrice(this.ComPlants[i].lv);
-                Data_1.default.user.coin += Math.floor(tmp);
+                ChickData_1.default.user.coin += Math.floor(tmp);
                 // this.changeGameCoin(Math.floor(tmp))
                 cc.log("卖了换钱：" + tmp);
                 this.ComPlants.splice(i, 1);

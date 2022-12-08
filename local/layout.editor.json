@@ -103,8 +103,7 @@
         "inspector",
         "cocos-services"
       ]
-    },
-    "window-1669977063151": {}
+    }
   },
   "panels": {
     "preferences": {
@@ -150,10 +149,10 @@
       "height": 816
     },
     "builder": {
-      "x": 1932,
-      "y": 60,
-      "width": 540,
-      "height": 768
+      "x": 1956,
+      "y": 76,
+      "width": 664,
+      "height": 700
     },
     "node-library": {
       "x": 608,

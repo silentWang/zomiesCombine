@@ -62,7 +62,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
-var DB_1 = require("../DB");
+var Config_1 = require("../Config");
 var Enemy_1 = require("./Enemy");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Bullet = /** @class */ (function (_super) {
@@ -76,12 +76,12 @@ var Bullet = /** @class */ (function (_super) {
         return _this;
     }
     Bullet.prototype.start = function () {
-        var bt = this.GetGameObject("trail2");
-        if (bt) {
-            bt.opacity = 0;
-            bt.runAction(cc.fadeTo(0.4, 255));
-        }
-        this.node.scale = 1.2;
+        // let bt = this.GetGameObject("trail2");
+        // if(bt){
+        //     bt.opacity = 0;
+        //     bt.runAction(cc.fadeTo(0.4,255));
+        // }
+        // this.node.scale = 1.2;
     };
     Bullet.prototype.update = function (dt) {
         if (dt > 1)
@@ -104,7 +104,7 @@ var Bullet = /** @class */ (function (_super) {
         }
     };
     Bullet.prototype.getBulletType = function () {
-        var info = DB_1.DB_plant[this.plantlv - 1];
+        var info = Config_1.Config_chick[this.plantlv - 1];
         var skill = String(info[3]).split("|");
         var skilltype = Number(skill[0]);
         var skillvalue = Number(skill[1]);
@@ -113,6 +113,7 @@ var Bullet = /** @class */ (function (_super) {
     };
     Bullet.prototype.setInfo = function (target, plantlv) {
         return __awaiter(this, void 0, void 0, function () {
+            var idx, bullet;
             return __generator(this, function (_a) {
                 plantlv = Math.min(plantlv, 60);
                 this.plantlv = plantlv;
@@ -130,9 +131,23 @@ var Bullet = /** @class */ (function (_super) {
                 else {
                     AudioMgr_1.default.Instance().playSFX('skill1');
                 }
+                this.resetBullet();
+                idx = Config_1.Config_chick[plantlv - 1][8];
+                idx = (!idx || idx > 5) ? 1 : idx;
+                bullet = this.GetDragonAmature('bsp' + idx);
+                this.GetGameObject('bsp' + idx).active = true;
+                bullet.armatureName = 'Armature';
+                bullet.playAnimation('bullet' + idx, 0);
                 return [2 /*return*/];
             });
         });
+    };
+    Bullet.prototype.resetBullet = function () {
+        this.GetGameObject('bsp1').active = false;
+        this.GetGameObject('bsp2').active = false;
+        this.GetGameObject('bsp3').active = false;
+        this.GetGameObject('bsp4').active = false;
+        this.GetGameObject('bsp5').active = false;
     };
     Bullet = __decorate([
         ccclass

@@ -28,7 +28,7 @@ var Utils = /** @class */ (function () {
                 var index = filepath.lastIndexOf("/");
                 var name = filepath.substr(index + 1, filepath.length - index);
                 if (parent.getComponentInChildren(name)) {
-                    console.log("重复UI跳过");
+                    // console.log("重复UI跳过")
                     return;
                 }
                 var tmp = cc.instantiate(ret);
@@ -109,7 +109,7 @@ var Utils = /** @class */ (function () {
                         callback(true);
                 },
                 fail: function (e) {
-                    console.log("分享失败");
+                    // console.log("分享失败");
                     // callback(false);
                 }
             });
@@ -209,7 +209,6 @@ var Utils = /** @class */ (function () {
                 resolve(ret);
                 return;
             }
-            // console.log(bundel,path);
             cc.assetManager.getBundle(bundel).load(path, type, function (err, ret) {
                 if (err) {
                     cc.error(path, err);
