@@ -101,7 +101,6 @@ var HallScene = /** @class */ (function (_super) {
         _this.bChoosed = false;
         _this.touchPos = cc.Vec2.ZERO;
         _this.touchendtime = 0;
-        _this.bFirstSubContex = true;
         return _this;
     }
     HallScene_1 = HallScene;
@@ -112,14 +111,14 @@ var HallScene = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
-    HallScene.prototype.hidemergetips = function () {
+    HallScene.prototype.hidComposeTips = function () {
         var slots = this.GetGameObject("slots"); //fx_ground_merge
         for (var _i = 0, _a = slots.children; _i < _a.length; _i++) {
             var slot = _a[_i];
             slot.getChildByName("fx_ground_merge").active = false;
         }
     };
-    HallScene.prototype.showmergetips = function (lv) {
+    HallScene.prototype.showComposetips = function (lv) {
         var indexs = [];
         for (var _i = 0, _a = this.items; _i < _a.length; _i++) {
             var item = _a[_i];
@@ -155,13 +154,13 @@ var HallScene = /** @class */ (function (_super) {
             //普通花盆掉落
             if (this.item_drag.datacopy)
                 return;
-            var lv = Math.max(1, ChickData_1.default.user.GetMaxLv() - Utils_1.default.getRandomInt(6, 9));
-            this.tryBuyPlant(lv, 3);
+            var lv = Math.max(1, ChickData_1.default.user.getLvlMax() - Utils_1.default.getRandomInt(6, 9));
+            this.buyChick(lv, 3);
             this._lastdroptime = 0;
         }
         //一段时间不操作，提示可以合成
         if (this.touchendtime != 0 && Utils_1.default.getServerTime() - this.touchendtime > 5000) {
-            this.mergetip();
+            this.composeTip();
         }
     };
     //中间显示图片
@@ -185,7 +184,7 @@ var HallScene = /** @class */ (function (_super) {
             });
         });
     };
-    HallScene.prototype.removeenemy = function (node, bFail) {
+    HallScene.prototype.enemyDie = function (node, bFail) {
         var isStop = false;
         var isChange = false;
         if (bFail)
@@ -225,24 +224,24 @@ var HallScene = /** @class */ (function (_super) {
                     isStop = true;
                     ChickData_1.default.user.wave = 1;
                     ChickData_1.default.user.lv++;
-                    this.openNewSlot();
+                    this.openNewGround();
                     ChickData_1.default.save(true);
                     var key = ChickData_1.default.user.lv + "_" + ChickData_1.default.user.wave;
                     this.wave_info = Config_1.User_level[key];
                     WxCenter_1.default.aldLevelReport(ChickData_1.default.user.lv);
                 }
                 else {
-                    AudioMgr_1.default.Instance().playSFX("win_wave");
+                    AudioMgr_1.default.Instance().playMX("win_wave");
                     // this.showImage("texture/success");
-                    this.playSkAni("spine:other/shengjichenggong", "effect", this.node, cc.v3(0, 150, 0), 2);
+                    this.playSkeAni("spine:other/shengjichenggong", "effect", this.node, cc.v3(0, 150, 0), 2);
                 }
             }
             if (isStop)
                 return;
-            this.createwave(isChange);
+            this.createEnemys(isChange);
         }
     };
-    HallScene.prototype.createwave = function (isChange) {
+    HallScene.prototype.createEnemys = function (isChange) {
         var _this = this;
         if (isChange === void 0) { isChange = false; }
         this.bFail = false;
@@ -255,13 +254,13 @@ var HallScene = /** @class */ (function (_super) {
             this.wave_info = Config_1.User_level[key_1];
         }
         if (ChickData_1.default.user.wave == this.wave_info[2]) {
-            AudioMgr_1.default.Instance().playBGM("bgBoss");
+            AudioMgr_1.default.Instance().playMusic("bgBoss");
             this.node.runAction(cc.sequence(cc.delayTime(.8), cc.callFunc(function () {
                 Utils_1.default.createUI("prefab/BossCommingUI");
             })));
         }
         else if (ChickData_1.default.user.wave == 1) {
-            AudioMgr_1.default.Instance().playBGM("BGM1");
+            AudioMgr_1.default.Instance().playMusic("BGM1");
         }
         //创建怪物
         var list = [];
@@ -295,7 +294,7 @@ var HallScene = /** @class */ (function (_super) {
             Utils_1.default.playBreath(this.GetGameObject('lbl_waves'), 1, 3, 0.5, false);
         }
     };
-    HallScene.prototype.initComposeItems = function () {
+    HallScene.prototype.initComposeChicks = function () {
         var list = ChickData_1.default.user.ComPlants;
         var m = {};
         for (var i = list.length - 1; i >= 0; i--) {
@@ -321,7 +320,7 @@ var HallScene = /** @class */ (function (_super) {
         }
         return null;
     };
-    HallScene.prototype.setdragitempos = function (pos) {
+    HallScene.prototype.setDragPos = function (pos) {
         pos = this.GetGameObject("node_com").convertToWorldSpaceAR(pos);
         pos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(pos);
         this.GetGameObject("item_drag").position = pos;
@@ -334,7 +333,7 @@ var HallScene = /** @class */ (function (_super) {
                 switch (_d.label) {
                     case 0:
                         WxCenter_1.default.aldReport('HomeShow', 'show');
-                        this.hidemergetips();
+                        this.hidComposeTips();
                         HallScene_1._instance = this;
                         WxCenter_1.default.init();
                         slots = this.GetGameObject("slots");
@@ -347,18 +346,18 @@ var HallScene = /** @class */ (function (_super) {
                     case 1:
                         _d.sent();
                         this.node.runAction(cc.sequence(cc.delayTime(0.5), cc.callFunc(function () {
-                            _this.tryAutocom();
+                            _this.startAutoCompose();
                             if (_this.item_drag.node.active)
                                 return;
                             // 小精灵掉落
                             if (ChickData_1.default.user.DropGiftPts.length > 0) {
-                                var b = _this.tryBuyPlant(ChickData_1.default.user.DropGiftPts[0], 4);
+                                var b = _this.buyChick(ChickData_1.default.user.DropGiftPts[0], 4);
                                 if (b)
                                     ChickData_1.default.user.DropGiftPts.shift();
                             }
                             //  广告购买成功，因为没有空位未成功添加
                             if (ChickData_1.default.user.AdBuyNotDrop.length > 0) {
-                                var b = _this.tryBuyPlant(ChickData_1.default.user.AdBuyNotDrop[0], 2);
+                                var b = _this.buyChick(ChickData_1.default.user.AdBuyNotDrop[0], 2);
                                 if (b)
                                     ChickData_1.default.user.AdBuyNotDrop.shift();
                             }
@@ -372,7 +371,7 @@ var HallScene = /** @class */ (function (_super) {
                         t = (Utils_1.default.getServerTime() - stime) / 1000;
                         if (stime != 0 && t > 3 * 60) {
                             t = Math.min(7200 * 3, t);
-                            money = ChickData_1.default.user.getOfflineEarning(t / 60);
+                            money = ChickData_1.default.user.getOfflineReward(t / 60);
                             Utils_1.default.createUI('prefab/OfflineAwardUI', null, function (ui) {
                                 ui.getComponent(OfflineAwardUI_1.default).data = money;
                             });
@@ -382,7 +381,7 @@ var HallScene = /** @class */ (function (_super) {
                             this.path.push(c.position);
                         }
                         this.node.runAction(cc.sequence(cc.delayTime(3), cc.callFunc(function () {
-                            _this.createwave();
+                            _this.createEnemys();
                         })));
                         //更新各种时间
                         this.GetGameObject("bottom").runAction(cc.sequence(cc.callFunc(function () {
@@ -491,8 +490,8 @@ var HallScene = /** @class */ (function (_super) {
         Utils_1.default.sharetime = 0;
         Utils_1.default.sharecallback = null;
     };
-    HallScene.prototype.openNewSlot = function () {
-        var curopen = GroundItem_1.default.getCurOpen();
+    HallScene.prototype.openNewGround = function () {
+        var curopen = GroundItem_1.default.getNeedOpen();
         if (curopen < 0)
             return;
         var lv = Config_1.Config_ground[curopen].price;
@@ -551,7 +550,7 @@ var HallScene = /** @class */ (function (_super) {
                 this.item_drag = this.GetGameObject("item_drag").getComponent(ChickItem_1.default);
                 this.item_drag.node.active = false;
                 this.item_drag.bDrag = true;
-                this.initComposeItems();
+                this.initComposeChicks();
                 node_com.on(cc.Node.EventType.TOUCH_START, function (e) {
                     _this.bPauseAutoCom = true;
                     _this.GetGameObject("node_com").stopAllActions();
@@ -578,11 +577,11 @@ var HallScene = /** @class */ (function (_super) {
                     if (item && item.datacopy && item.droptype == 0) {
                         _this.touchPos = pos;
                         _this.bChoosed = true;
-                        _this.setdragitempos(item.node.position);
+                        _this.setDragPos(item.node.position);
                         _this.item_drag.index = item.index;
                         _this.item_drag.setItemData(item.datacopy);
                         _this.item_drag.linkItem = item;
-                        _this.showmergetips(item.datacopy.lv);
+                        _this.showComposetips(item.datacopy.lv);
                     }
                     else {
                         _this.item_drag.node.active = false;
@@ -599,7 +598,7 @@ var HallScene = /** @class */ (function (_super) {
                         _this.GetGameObject("btn_delete").opacity = 255;
                         _this.item_drag.node.active = true;
                         _this.item_drag.linkItem.setItemData(null);
-                        _this.setdragitempos(pos);
+                        _this.setDragPos(pos);
                         var pos1 = _this.GetGameObject("btn_delete").position;
                         pos1 = _this.GetGameObject("btn_delete").parent.convertToWorldSpaceAR(pos1);
                         // if (e.getLocation().sub(cc.v2(pos1.x,pos1.y)).mag() < 100) {
@@ -610,18 +609,18 @@ var HallScene = /** @class */ (function (_super) {
                         // }
                     }
                 }, this);
-                node_com.on(cc.Node.EventType.TOUCH_END, this.docomp, this);
-                node_com.on(cc.Node.EventType.TOUCH_CANCEL, this.docomp, this);
+                node_com.on(cc.Node.EventType.TOUCH_END, this.composeHandle, this);
+                node_com.on(cc.Node.EventType.TOUCH_CANCEL, this.composeHandle, this);
                 return [2 /*return*/];
             });
         });
     };
-    HallScene.prototype.tryAutocom = function () {
+    HallScene.prototype.startAutoCompose = function () {
         var _this = this;
         if (this.bPauseAutoCom || this.bInAutoCom)
             return;
         if (Utils_1.default.getServerTime() < ChickData_1.default.user.auto_com_time && !this.bInAutoCom) {
-            this.initComposeItems();
+            this.initComposeChicks();
             var _loop_2 = function (i) {
                 if (!this_2.items[i] || !this_2.items[i].datacopy)
                     return "continue";
@@ -639,14 +638,14 @@ var HallScene = /** @class */ (function (_super) {
                         this_2.item_drag.node.active = true;
                         this_2.items[j].setItemData(null);
                         this_2.item_drag.node.position = this_2.items[j].node.position;
-                        this_2.setdragitempos(this_2.items[j].node);
+                        this_2.setDragPos(this_2.items[j].node);
                         targetpos = this_2.GetGameObject("node_com").convertToWorldSpaceAR(this_2.items[i].node.position);
                         targetpos = this_2.GetGameObject("item_drag").parent.convertToNodeSpaceAR(targetpos);
                         // cc.log("开始自动合成")
                         this_2.bInAutoCom = true;
                         this_2.item_drag.node.stopAllActions();
                         this_2.item_drag.node.runAction(cc.sequence(cc.moveTo(0.13, cc.v2(targetpos.x, targetpos.y)), cc.callFunc(function () {
-                            _this.comani(_this.items[i]);
+                            _this.showCompEff(_this.items[i]);
                             // cc.log("自动合成结束");
                             _this.bInAutoCom = false;
                         })));
@@ -662,10 +661,10 @@ var HallScene = /** @class */ (function (_super) {
             }
         }
     };
-    HallScene.prototype.docomp = function (e) {
+    HallScene.prototype.composeHandle = function (e) {
         var _this = this;
         this.touchendtime = Utils_1.default.getServerTime();
-        this.hidemergetips();
+        this.hidComposeTips();
         this.GetGameObject("btn_delete").stopAllActions();
         this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.25), cc.fadeTo(0.25, 0)));
         this.GetGameObject("node_com").runAction(cc.sequence(cc.delayTime(1), cc.callFunc(function () {
@@ -699,14 +698,14 @@ var HallScene = /** @class */ (function (_super) {
                     this.item_drag.node.active = false;
                     return;
                 }
-                if (this.item_drag.datacopy.lv >= ChickData_1.default.user.GetMaxLv()) {
+                if (this.item_drag.datacopy.lv >= ChickData_1.default.user.getLvlMax()) {
                     MsgToast_1.default.show("最高等级植物就不删除了吧！");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
                     return;
                 }
-                ChickData_1.default.user.DropWuJiang(this.item_drag.datacopy.index);
+                ChickData_1.default.user.updateSellChickCoin(this.item_drag.datacopy.index);
                 this.item_drag.linkItem.setItemData(null);
                 this.item_drag.linkItem = null;
                 // this.updateRecruitment();
@@ -733,7 +732,7 @@ var HallScene = /** @class */ (function (_super) {
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
                 //移动
-                ChickData_1.default.user.CompMove(this.item_drag.linkItem.index, item.index);
+                ChickData_1.default.user.moveEff(this.item_drag.linkItem.index, item.index);
                 item.setItemData(this.item_drag.datacopy);
                 this.item_drag.linkItem.setItemData(null);
                 this.item_drag.linkItem = null;
@@ -741,14 +740,14 @@ var HallScene = /** @class */ (function (_super) {
             }
             if (item.datacopy.open == this.item_drag.datacopy.open &&
                 item.datacopy.lv == this.item_drag.datacopy.lv && item.datacopy.index != this.item_drag.datacopy.index && item.droptype == 0 && item.datacopy.lv < 60) {
-                this.comani(item);
+                this.showCompEff(item);
             }
             else {
                 this.item_drag.node.active = false;
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
                 //交换
-                ChickData_1.default.user.CompMove(this.item_drag.linkItem.index, item.index);
+                ChickData_1.default.user.moveEff(this.item_drag.linkItem.index, item.index);
                 var _tmp = JSON.parse(JSON.stringify(item.datacopy));
                 item.setItemData(this.item_drag.datacopy);
                 this.item_drag.linkItem.setItemData(_tmp);
@@ -760,8 +759,8 @@ var HallScene = /** @class */ (function (_super) {
             this.item_drag.linkItem = null;
         }
     };
-    HallScene.prototype.comani = function (item) {
-        var b = ChickData_1.default.user.ComposePlant(item.index, this.item_drag.datacopy.index);
+    HallScene.prototype.showCompEff = function (item) {
+        var b = ChickData_1.default.user.composeChicks(item.index, this.item_drag.datacopy.index);
         this.GetGameObject("guild_1").active = false;
         if (ChickData_1.default.user.guideIndex == 1) {
             ChickData_1.default.user.guideIndex++;
@@ -769,7 +768,7 @@ var HallScene = /** @class */ (function (_super) {
         }
         if (!b)
             return;
-        var nextGun = ChickData_1.default.user.getPlantInfo(item.index);
+        var nextGun = ChickData_1.default.user.getChickInfo(item.index);
         item.setItemData(nextGun);
         this.GetGameObject("item_drag").active = false;
         this.item_drag.datacopy = null;
@@ -777,7 +776,7 @@ var HallScene = /** @class */ (function (_super) {
         this.autocomindexs = [-1, -1];
         var targetpos = this.GetGameObject("node_com").convertToWorldSpaceAR(item.node.position);
         targetpos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(targetpos);
-        this.playSkAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0, 20, 0)), 1);
+        this.playSkeAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0, 20, 0)), 1);
     };
     HallScene.prototype.updateBuyButton = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -785,11 +784,11 @@ var HallScene = /** @class */ (function (_super) {
             return __generator(this, function (_c) {
                 switch (_c.label) {
                     case 0:
-                        lv = ChickData_1.default.user.GetMaxLv() - 3;
+                        lv = ChickData_1.default.user.getLvlMax() - 3;
                         if (lv < 1)
                             lv = 1;
                         this.SetText("lbl_buy_lvl", 'LV.' + lv);
-                        this.SetText("lbl_buy_cost", Utils_1.default.formatNumber(ChickData_1.default.user.BuyPrice(lv)));
+                        this.SetText("lbl_buy_cost", Utils_1.default.formatNumber(ChickData_1.default.user.buyChickPrice(lv)));
                         skpath = "spine:flower" + lv + "_ske";
                         atlaspath = "spine:flower" + lv + "_tex";
                         chick = this.GetDragonAmature('chickbuy');
@@ -809,7 +808,7 @@ var HallScene = /** @class */ (function (_super) {
         });
     };
     //0 coin 1 gem 2 ad 3普通掉落 4小精灵掉落
-    HallScene.prototype.tryBuyPlant = function (lv, buytype) {
+    HallScene.prototype.buyChick = function (lv, buytype) {
         var item = null;
         for (var i = 0; i < 12; ++i) {
             if (ChickData_1.default.user.slots[i] == 0)
@@ -820,14 +819,14 @@ var HallScene = /** @class */ (function (_super) {
             }
         }
         if (!lv) {
-            lv = ChickData_1.default.user.GetMaxLv() - 3;
+            lv = ChickData_1.default.user.getLvlMax() - 3;
             if (lv < 1)
                 lv = 1;
         }
         if (item) {
             if (buytype == 0) {
-                var cost = ChickData_1.default.user.BuyPrice(lv);
-                if (ChickData_1.default.user.BuyPrice(lv) > ChickData_1.default.user.coin) {
+                var cost = ChickData_1.default.user.buyChickPrice(lv);
+                if (ChickData_1.default.user.buyChickPrice(lv) > ChickData_1.default.user.coin) {
                     var type_1 = 0;
                     if (ChickData_1.default.user.today_getchick_times < ChickData_1.default.user.today_getchick_total) {
                         type_1 = 1;
@@ -837,7 +836,7 @@ var HallScene = /** @class */ (function (_super) {
                     }
                     if (type_1 > 0) {
                         Utils_1.default.createUI("prefab/CoinNotEnough").then(function (node) {
-                            node.getComponent(CoinNotEnoughUI_1.default).setType(type_1);
+                            node.getComponent(CoinNotEnoughUI_1.default).setViewType(type_1);
                         });
                     }
                     else {
@@ -860,9 +859,9 @@ var HallScene = /** @class */ (function (_super) {
             else if (buytype >= 3) {
                 // console.log("飞机掉落")
             }
-            AudioMgr_1.default.Instance().playSFX("flower_pot_land");
-            this.docomp(null);
-            item.setItemData(ChickData_1.default.user.BuyPlant(item.index, lv), buytype);
+            AudioMgr_1.default.Instance().playMX("flower_pot_land");
+            this.composeHandle(null);
+            item.setItemData(ChickData_1.default.user.buyChick(item.index, lv), buytype);
             this.updateBuyButton();
             return true;
         }
@@ -876,7 +875,7 @@ var HallScene = /** @class */ (function (_super) {
             return false;
         }
     };
-    HallScene.prototype.mergetip = function () {
+    HallScene.prototype.composeTip = function () {
         this.touchendtime = Utils_1.default.getServerTime();
         if (this.bPauseAutoCom || this.bInAutoCom)
             return;
@@ -905,9 +904,9 @@ var HallScene = /** @class */ (function (_super) {
             }
         }
     };
-    HallScene.prototype.onBtnClicked = function (event, customEventData) {
+    HallScene.prototype.onUIClicked = function (event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr_1.default.Instance().playSFX("click");
+        AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_setting":
                 Utils_1.default.createUI("prefab/SettingUI");
@@ -916,14 +915,14 @@ var HallScene = /** @class */ (function (_super) {
                 Utils_1.default.createUI("prefab/SignUI");
                 break;
             case "btn_buy":
-                this.tryBuyPlant(null, 0);
+                this.buyChick(null, 0);
                 this.GetGameObject("guild_0").active = false;
                 if (ChickData_1.default.user.guideIndex == 0) {
                     ChickData_1.default.user.guideIndex++;
                     ChickData_1.default.save();
                 }
                 if (ChickData_1.default.user.guideIndex == 1) {
-                    this.mergetip();
+                    this.composeTip();
                 }
                 break;
             case "bt_fast_gen":

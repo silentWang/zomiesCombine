@@ -64,7 +64,7 @@ var CommonView = /** @class */ (function (_super) {
     CommonView.prototype.update = function (dt) {
         if (dt > 1)
             dt = 1;
-        var _a = this.getEndAndMaxTime(), end_time = _a.end_time, max = _a.max;
+        var _a = this.getEMTime(), end_time = _a.end_time, max = _a.max;
         if (end_time > Utils_1.default.getServerTime()) {
             var nLeft = end_time - Utils_1.default.getServerTime();
             // this.SetProgressBar("New ProgressBar",(nLeft/1000/60)/max);
@@ -75,7 +75,7 @@ var CommonView = /** @class */ (function (_super) {
             this.SetText("lbl_time", "");
         }
     };
-    CommonView.prototype.getEndAndMaxTime = function () {
+    CommonView.prototype.getEMTime = function () {
         var end_time = 0;
         var max = 0;
         if (this.type == EADLAYER.AUTO_COM) {
@@ -119,12 +119,12 @@ var CommonView = /** @class */ (function (_super) {
             this.SetText("lbl_effect", "+" + DROP_PLANT_TIME + "分钟");
             WxCenter_1.default.aldReport('DropShow', 'show');
         }
-        var _a = this.getEndAndMaxTime(), end_time = _a.end_time, max = _a.max;
+        var _a = this.getEMTime(), end_time = _a.end_time, max = _a.max;
         var isRunning = end_time > Utils_1.default.getServerTime();
         // this.GetGameObject('btn_ad').active = !isRunning;
         this.GetGameObject('btn_normal').active = !isRunning;
     };
-    CommonView.prototype.addvalue = function (double) {
+    CommonView.prototype.addCoin = function (double) {
         if (double === void 0) { double = 1; }
         var isUse = false;
         if (this.type == EADLAYER.AUTO_COM) {
@@ -179,10 +179,10 @@ var CommonView = /** @class */ (function (_super) {
             MsgToast_1.default.show('使用成功');
         }
     };
-    CommonView.prototype.onBtnClicked = function (event, customEventData) {
+    CommonView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
-        AudioMgr_1.default.Instance().playSFX("click");
+        AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
@@ -190,11 +190,11 @@ var CommonView = /** @class */ (function (_super) {
             case "btn_ad":
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b)
-                        _this.addvalue(2);
+                        _this.addCoin(2);
                 });
                 break;
             case "btn_normal":
-                this.addvalue(1);
+                this.addCoin(1);
                 this.GetGameObject('btn_normal').active = false;
                 break;
         }

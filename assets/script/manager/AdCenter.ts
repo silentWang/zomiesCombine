@@ -7,28 +7,28 @@ const tt = window["tt"];
 
 const { ccclass, property } = cc._decorator;
 export default class AdCenter extends Singleton {
-    VideoAd = null;
+    videoAdID = null;
 
-    bannerAd = null;
+    bannerAdID = null;
 
     constructor() {
         super();
 
         if (tt && tt.createRewardedVideoAd) {
-            this.VideoAd = tt.createRewardedVideoAd({
+            this.videoAdID = tt.createRewardedVideoAd({
                 adUnitId: '1r3lbfr4d9e6veouju'
             });
 
-            this.VideoAd.onError((res) => {
+            this.videoAdID.onError((res) => {
                 console.log("onError", res);
                 // MsgToast.show("广告加载错误");
             });
 
-            this.VideoAd.onLoad(() => {
+            this.videoAdID.onLoad(() => {
                 // console.log('广告加载成功');
             })
 
-            this.VideoAd.onClose(res => {
+            this.videoAdID.onClose(res => {
                 if (res && res.isEnded || res === undefined) {
                     // cc.log("正常播放结束，可以下发游戏奖励")
                     this.callBack(true);
@@ -55,12 +55,41 @@ export default class AdCenter extends Singleton {
     }
 
     interstitialAd = null
-    public showinterstitialAd() {
+    public showBigPicAd() {
         // 在适合的场景显示插屏广告
         if (this.interstitialAd) {
             this.interstitialAd.show().catch((err) => {
                 console.log(err);
             })
+        }
+    }
+
+    private callBack: Function;
+    private _lastPlayTime: number = 0;
+    public play(callback: Function, type:number = 0) {
+        if (Utils.getServerTime() - this._lastPlayTime < 1000) {
+            console.log("点击过于频繁")
+            return;
+        }
+        this._lastPlayTime = Utils.getServerTime();
+        this.callBack = callback;
+        WxCenter.showRewardedVideoAd(callback);
+        // this.playVideo();
+    }
+
+    private playVideo(){
+        if ( this.videoAdID) {
+            this.videoAdID.show().catch(() => {
+                this.videoAdID.load()
+                    .then(() => this.videoAdID.show())
+                    .catch(err => {
+                        cc.log('激励视频 广告显示失败');
+                        this.callBack(false);
+                    })
+            })
+        }
+        else {
+            this.callBack(true);
         }
     }
 
@@ -75,35 +104,6 @@ export default class AdCenter extends Singleton {
         // if (this.bannerAd)
         //     this.bannerAd.hide()
         WxCenter.hideBanner();
-    }
-
-    private callBack: Function;
-    private _lasttryplaytime: number = 0;
-    public play(callback: Function, type:number = 0) {
-        if (Utils.getServerTime() - this._lasttryplaytime < 1000) {
-            console.log("点击过于频繁")
-            return;
-        }
-        this._lasttryplaytime = Utils.getServerTime();
-        this.callBack = callback;
-        WxCenter.showRewardedVideoAd(callback);
-        // this.dyShowVideo();
-    }
-
-    private dyShowVideo(){
-        if ( this.VideoAd) {
-            this.VideoAd.show().catch(() => {
-                this.VideoAd.load()
-                    .then(() => this.VideoAd.show())
-                    .catch(err => {
-                        cc.log('激励视频 广告显示失败');
-                        this.callBack(false);
-                    })
-            })
-        }
-        else {
-            this.callBack(true);
-        }
     }
 
 }

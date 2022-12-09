@@ -120,16 +120,16 @@ var Bullet = /** @class */ (function (_super) {
                 this.target = target;
                 this.skillType = this.getBulletType();
                 if (this.skillType == 1) {
-                    AudioMgr_1.default.Instance().playSFX('skill5');
+                    AudioMgr_1.default.Instance().playMX('skill5');
                 }
                 else if (this.skillType == 2) {
-                    AudioMgr_1.default.Instance().playSFX('skill3');
+                    AudioMgr_1.default.Instance().playMX('skill3');
                 }
                 else if (this.skillType == 3) {
-                    AudioMgr_1.default.Instance().playSFX('skill2');
+                    AudioMgr_1.default.Instance().playMX('skill2');
                 }
                 else {
-                    AudioMgr_1.default.Instance().playSFX('skill1');
+                    AudioMgr_1.default.Instance().playMX('skill1');
                 }
                 this.resetBullet();
                 idx = Config_1.Config_chick[plantlv - 1][8];

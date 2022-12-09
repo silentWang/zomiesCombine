@@ -35,7 +35,7 @@ var GroundItem = /** @class */ (function (_super) {
         return _this;
     }
     GroundItem_1 = GroundItem;
-    GroundItem.getCurOpen = function () {
+    GroundItem.getNeedOpen = function () {
         var curopen = -1;
         for (var i = 1; i < 12; ++i) {
             if (ChickData_1.default.user.slots[i] == 0) {
@@ -45,7 +45,7 @@ var GroundItem = /** @class */ (function (_super) {
         }
         return curopen;
     };
-    GroundItem.prototype.onBtnClicked = function (event, customEventData) {
+    GroundItem.prototype.onUIClicked = function (event, customEventData) {
         // let curopen = SlotItem.getCurOpen();
         // if(curopen == -1)return;
         // if(this.index-1 > curopen )
@@ -88,7 +88,7 @@ var GroundItem = /** @class */ (function (_super) {
     GroundItem.prototype.setIndex = function (i) {
         this.index = i;
         this.SetText("lbl_index", i + "");
-        var curopen = GroundItem_1.getCurOpen();
+        var curopen = GroundItem_1.getNeedOpen();
         this.node.getComponent(cc.Button).interactable = this.index - 1 >= curopen && curopen != -1;
         // this.GetSkeleton("fx_slot").setAnimation(0,"buy",true)
         // this.GetGameObject("fx_slot").active = false;

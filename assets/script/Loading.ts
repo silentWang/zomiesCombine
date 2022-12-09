@@ -17,7 +17,7 @@ export default class Loading extends BaseUI {
     @property(cc.Node)
     loading_bar: cc.Node = null;
 
-    onBtnClicked(event, customEventData) {
+    onUIClicked(event, customEventData) {
         var btnName = event.target.name;
 
         switch (btnName) {
@@ -44,7 +44,7 @@ export default class Loading extends BaseUI {
         }
         
         PoolMgr.Instance().loadPrefabs()
-        this.startLoginAction();
+        this.startLGAction();
         let descs = ["初次加载时间可能会较长，请耐心等待...."];
         let index = 0;
         this.node.runAction(cc.sequence(cc.delayTime(2), cc.callFunc(() => {
@@ -57,7 +57,7 @@ export default class Loading extends BaseUI {
         this.GetGameObject("btn_rstart").active = false;
     }
 
-    startLoginAction() {
+    startLGAction() {
         this.node.runAction(cc.sequence(cc.delayTime(.5), cc.callFunc(async () => {
             ChickData.loadData()
             var p: number = 0;

@@ -115,7 +115,7 @@ var Enemy = /** @class */ (function (_super) {
                         this.money = Math.floor(info[3] * Utils_1.default.getRandom(0.8, 1.2));
                         this.node.position = HallScene_1.default.Instance.path[0];
                         this.node.scale = this.type == 0 ? .8 : 1;
-                        AudioMgr_1.default.Instance().playSFX('chuxian');
+                        AudioMgr_1.default.Instance().playMX('chuxian');
                         skpath = "spine:enemy" + id + "_ske";
                         atlaspath = "spine:enemy" + id + "_tex";
                         armature = this.GetDragonAmature("sp");
@@ -166,15 +166,15 @@ var Enemy = /** @class */ (function (_super) {
         this.GetGameObject("New ProgressBar").opacity = 255;
         this.GetGameObject("New ProgressBar").runAction(cc.sequence(cc.delayTime(1), cc.fadeTo(0.2, 0)));
         if (!isskill)
-            AudioMgr_1.default.Instance().playSFX('hit');
+            AudioMgr_1.default.Instance().playMX('hit');
         if (bbj) {
-            this.showWLBaoji(power, Utils_1.default.getRandom(0, 1) > 0.5);
+            this.showBJ(power, Utils_1.default.getRandom(0, 1) > 0.5);
         }
         else {
-            this.showFSHurt(power, Utils_1.default.getRandom(0, 1) > 0.5);
+            this.showHurt(power, Utils_1.default.getRandom(0, 1) > 0.5);
         }
         if (this.hp <= 0) {
-            HallScene_1.default.Instance.removeenemy(this.node, false);
+            HallScene_1.default.Instance.enemyDie(this.node, false);
             this.GetGameObject("sp").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(.2, 0), cc.callFunc(function () {
                 _this.node.removeFromParent(true);
             })));
@@ -195,20 +195,20 @@ var Enemy = /** @class */ (function (_super) {
             // if(this.type == 2)
             //     this.playSkAni("spine/other/death","animation",this.node,cc.v3(0,75,0),0.8)
             // else
-            this.playSkAni("spine:other/zhuoshao", "effect", this.node, cc.v3(0, 75, 0), 1).then(function (node) {
+            this.playSkeAni("spine:other/zhuoshao", "effect", this.node, cc.v3(0, 75, 0), 1).then(function (node) {
                 node.scale = 2;
             });
         }
         else {
             // this.GetGameObject("hit").getComponent(cc.Animation).play("hit");
-            this.playSkAni("spine:other/jizhong", "animation", this.node, cc.v3(0, 75, 0), 1);
+            this.playSkeAni("spine:other/jizhong", "animation", this.node, cc.v3(0, 75, 0), 1);
             this.redendtime = Utils_1.default.getServerTime() + 300;
         }
         // this.GetGameObject("hit").getComponent(cc.Animation).play("hit");
     };
     Enemy.prototype.slowdown = function () {
         var _this = this;
-        AudioMgr_1.default.Instance().playSFX("skill_slow");
+        AudioMgr_1.default.Instance().playMX("skill_slow");
         // this.GetSkeleton("sp").timeScale = 0.5;
         this.GetDragonAmature('sp').timeScale = 0.5;
         this.GetGameObject("jiansu").active = true;
@@ -222,7 +222,7 @@ var Enemy = /** @class */ (function (_super) {
     };
     Enemy.prototype.frozen = function () {
         var _this = this;
-        AudioMgr_1.default.Instance().playSFX("skill_freeze");
+        AudioMgr_1.default.Instance().playMX("skill_freeze");
         this.bfrozen = true;
         this.GetGameObject("fx_stun").stopAllActions();
         this.GetGameObject("fx_stun").active = true;
@@ -257,7 +257,7 @@ var Enemy = /** @class */ (function (_super) {
             if (this.pathindex == 3)
                 this.GetGameObject("sp").scaleX = -0.74;
             if (this.pathindex >= HallScene_1.default.Instance.path.length) {
-                HallScene_1.default.Instance.removeenemy(this.node, true);
+                HallScene_1.default.Instance.enemyDie(this.node, true);
                 this.node.removeFromParent(true);
             }
         }
@@ -266,7 +266,7 @@ var Enemy = /** @class */ (function (_super) {
             this.node.position = this.node.position.add(v);
         }
     };
-    Enemy.prototype.showFSHurt = function (num, forward) {
+    Enemy.prototype.showHurt = function (num, forward) {
         if (forward === void 0) { forward = false; }
         var node = cc.instantiate(this.GetGameObject("fs_hurt"));
         node.parent = this.node;
@@ -286,9 +286,9 @@ var Enemy = /** @class */ (function (_super) {
         // cc.fadeTo(1, 0),
         cc.scaleTo(1, 0.6), bezierForward), cc.removeSelf()));
     };
-    Enemy.prototype.showWLBaoji = function (num, forward) {
+    Enemy.prototype.showBJ = function (num, forward) {
         if (forward === void 0) { forward = false; }
-        AudioMgr_1.default.Instance().playSFX("skill_crit");
+        AudioMgr_1.default.Instance().playMX("skill_crit");
         var node = cc.instantiate(this.GetGameObject("wl_baoji"));
         node.parent = this.node;
         if (forward)

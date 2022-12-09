@@ -39,7 +39,7 @@ var WinView = /** @class */ (function (_super) {
         return _this;
     }
     WinView.prototype.start = function () {
-        AudioMgr_1.default.Instance().playSFX("win_stage");
+        AudioMgr_1.default.Instance().playMX("win_stage");
         this.GetSkeleton("fx_victory").setAnimation(0, "start", false);
         this.GetSkeleton("fx_victory").setAnimation(1, "idle", true);
         Utils_1.default.playBreath(this.GetGameObject('btn_get'));
@@ -67,24 +67,24 @@ var WinView = /** @class */ (function (_super) {
     };
     WinView.prototype.closeUI = function () {
         this.shutAnim();
-        HallScene_1.default.Instance.createwave();
+        HallScene_1.default.Instance.createEnemys();
     };
     WinView.prototype.getCoinReward = function (isdouble) {
         if (isdouble === void 0) { isdouble = false; }
         var coin = isdouble ? this.coin * Utils_1.default.getRandom(1.2, 2) : this.coin;
-        AudioMgr_1.default.Instance().playSFX("coin");
+        AudioMgr_1.default.Instance().playMX("coin");
         Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
             if (b) {
                 ChickData_1.default.user.coin += coin;
                 if (ChickData_1.default.user.lv >= 30)
-                    AdCenter_1.default.Instance().showinterstitialAd();
+                    AdCenter_1.default.Instance().showBigPicAd();
             }
         });
     };
-    WinView.prototype.onBtnClicked = function (event, customEventData) {
+    WinView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
-        AudioMgr_1.default.Instance().playSFX("click");
+        AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_get":
                 WxCenter_1.default.aldReport('PassClick', 'click');

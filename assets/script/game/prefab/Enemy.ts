@@ -54,7 +54,7 @@ export default class Enemy extends BaseUI {
 
         this.node.position = HallScene.Instance.path[0];
         this.node.scale = this.type == 0 ? .8 : 1;
-        AudioMgr.Instance().playSFX('chuxian')
+        AudioMgr.Instance().playMX('chuxian')
         let skpath = `spine:enemy${id}_ske`;
         let atlaspath = `spine:enemy${id}_tex`;
         let armature = this.GetDragonAmature("sp");
@@ -95,16 +95,16 @@ export default class Enemy extends BaseUI {
         this.GetGameObject("New ProgressBar").stopAllActions();
         this.GetGameObject("New ProgressBar").opacity = 255;
         this.GetGameObject("New ProgressBar").runAction(cc.sequence(cc.delayTime(1),cc.fadeTo(0.2,0)))
-        if(!isskill) AudioMgr.Instance().playSFX('hit');
+        if(!isskill) AudioMgr.Instance().playMX('hit');
         if(bbj){
-            this.showWLBaoji(power,Utils.getRandom(0,1)>0.5);
+            this.showBJ(power,Utils.getRandom(0,1)>0.5);
         }
         else{
-            this.showFSHurt(power,Utils.getRandom(0,1)>0.5);
+            this.showHurt(power,Utils.getRandom(0,1)>0.5);
         }
         if(this.hp <= 0)
         {
-            HallScene.Instance.removeenemy(this.node,false);
+            HallScene.Instance.enemyDie(this.node,false);
             this.GetGameObject("sp").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(.2,0),cc.callFunc(()=>{
                 this.node.removeFromParent(true);
             })))
@@ -129,14 +129,14 @@ export default class Enemy extends BaseUI {
             // if(this.type == 2)
             //     this.playSkAni("spine/other/death","animation",this.node,cc.v3(0,75,0),0.8)
             // else
-            this.playSkAni("spine:other/zhuoshao","effect",this.node,cc.v3(0,75,0),1).then((node)=>{
+            this.playSkeAni("spine:other/zhuoshao","effect",this.node,cc.v3(0,75,0),1).then((node)=>{
                 node.scale =2 ;
             });
         }
         else
         {
             // this.GetGameObject("hit").getComponent(cc.Animation).play("hit");
-            this.playSkAni("spine:other/jizhong","animation",this.node,cc.v3(0,75,0),1)
+            this.playSkeAni("spine:other/jizhong","animation",this.node,cc.v3(0,75,0),1)
             this.redendtime = Utils.getServerTime() + 300;
         }
         // this.GetGameObject("hit").getComponent(cc.Animation).play("hit");
@@ -144,7 +144,7 @@ export default class Enemy extends BaseUI {
 
     slowdown()
     {
-        AudioMgr.Instance().playSFX("skill_slow")
+        AudioMgr.Instance().playMX("skill_slow")
         // this.GetSkeleton("sp").timeScale = 0.5;
         this.GetDragonAmature('sp').timeScale = 0.5;
         this.GetGameObject("jiansu").active = true;
@@ -160,7 +160,7 @@ export default class Enemy extends BaseUI {
     bfrozen = false;
     frozen()
     {
-        AudioMgr.Instance().playSFX("skill_freeze")
+        AudioMgr.Instance().playMX("skill_freeze")
         this.bfrozen = true;
         this.GetGameObject("fx_stun").stopAllActions();
         this.GetGameObject("fx_stun").active = true;
@@ -208,7 +208,7 @@ export default class Enemy extends BaseUI {
 
             if(this.pathindex>=HallScene.Instance.path.length)
             {
-                HallScene.Instance.removeenemy(this.node,true);
+                HallScene.Instance.enemyDie(this.node,true);
                 this.node.removeFromParent(true)
             }
         }
@@ -219,7 +219,7 @@ export default class Enemy extends BaseUI {
         }
     }
 
-    showFSHurt(num: number, forward: boolean = false) {
+    showHurt(num: number, forward: boolean = false) {
         var node = cc.instantiate(this.GetGameObject("fs_hurt"));
         node.parent = this.node;
         if (forward) node.x *= -1;
@@ -242,8 +242,8 @@ export default class Enemy extends BaseUI {
         ));
     }
 
-    showWLBaoji(num: number, forward: boolean = false) {
-        AudioMgr.Instance().playSFX("skill_crit")
+    showBJ(num: number, forward: boolean = false) {
+        AudioMgr.Instance().playMX("skill_crit")
         var node = cc.instantiate(this.GetGameObject("wl_baoji"));
         node.parent = this.node;
         if (forward) node.x *= -1;

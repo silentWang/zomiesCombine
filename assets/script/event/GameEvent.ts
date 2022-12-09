@@ -21,6 +21,17 @@ export default class GameEvent extends Singleton {
         this.eventHash[type].push(event);
     };
 
+    
+    dispatch(type, ...data) {
+        var events = this.eventHash[type];
+        if (events && events.length > 0) {
+            for (var i in events) {
+                var event = events[i];
+                event.callback && (event.callback(...data));
+            }
+        }
+    };
+
     unregister(ower, type) {
         var events = this.eventHash[type];
         if (events && events.length > 0) {
@@ -30,15 +41,5 @@ export default class GameEvent extends Singleton {
                 }
             });
         };
-    };
-
-    dispatch(type, ...data) {
-        var events = this.eventHash[type];
-        if (events && events.length > 0) {
-            for (var i in events) {
-                var event = events[i];
-                event.callback && (event.callback(...data));
-            }
-        }
     };
 };

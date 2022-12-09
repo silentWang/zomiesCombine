@@ -24,17 +24,17 @@ enum GunBuyType {
 export default class ShopItem extends BaseUI {
 
     //观看视频免费获得的枪械等级
-    private WatchAdBuy(id:number):boolean
+    private ShowBuyAd(id:number):boolean
     {
-        var gunlv = ChickData.user.GetMaxLv();
+        var gunlv = ChickData.user.getLvlMax();
         if(gunlv < 8)return false;
         return gunlv - 4 == id;
     }
 
     //不可指定购买只可查看的区间
-    private OnlyCheck(id:number):boolean
+    private OnlyForCheck(id:number):boolean
     {
-        var gunlv = ChickData.user.GetMaxLv();
+        var gunlv = ChickData.user.getLvlMax();
         if(gunlv - 2 <= id && id <= gunlv )
         {
             return true;
@@ -42,29 +42,29 @@ export default class ShopItem extends BaseUI {
         return false;
     }
 
-    private BuyGem(id:number):boolean
+    private BuyDiamond(id:number):boolean
     {
-        var gunlv = ChickData.user.GetMaxLv();
+        var gunlv = ChickData.user.getLvlMax();
         return gunlv - 1 == id;
     }
 
-    private getBuyType(gun)
+    private getBuyCoinType(gun)
     {
-        var gunlv = ChickData.user.GetMaxLv()
+        var gunlv = ChickData.user.getLvlMax()
         var type:number = 0;
         if(gun[0] <= gunlv - 2)
         {
             type |= GunBuyType.CAN_BUY;
         }
-        if(this.WatchAdBuy(gun[0]))
+        if(this.ShowBuyAd(gun[0]))
         {
             type |= GunBuyType.CAN_AD_BUY;
         }
-        if(this.BuyGem(gun[0]))
+        if(this.BuyDiamond(gun[0]))
         {
             type |= GunBuyType.GEM_BUY;
         }
-        if(this.OnlyCheck(gun[0]))
+        if(this.OnlyForCheck(gun[0]))
         {
             type |= GunBuyType.ONLY_CHECK;
         }
@@ -72,15 +72,14 @@ export default class ShopItem extends BaseUI {
         return type;
     }
 
-
     private cost_coin:number = 0;
     gun:any = null;
-    async setItemData(gun:any)
+    async setShopItemData(gun:any)
     {   
         // ["level", "cd", "power", "skill", "offline", "price", "gem", "prefab", "shootPos", "steakColor", "head"]
         let node = null;
         let bhide = false;
-        let buytype = this.getBuyType(gun);
+        let buytype = this.getBuyCoinType(gun);
         this.gun = gun;
 
         this.GetGameObject("show").active = false;
@@ -159,22 +158,22 @@ export default class ShopItem extends BaseUI {
             chick.playAnimation('idleL',0);
         }
         
-        this.cost_coin = ChickData.user.BuyPrice(gun[0])
+        this.cost_coin = ChickData.user.buyChickPrice(gun[0])
         this.SetText("lbl_buy_coin",Utils.formatNumber( this.cost_coin));
         this.GetButton("btn_yellow").interactable = ChickData.user.coin >= this.cost_coin;
     }
     
-    onBtnClicked(event, customEventData) {
-        super.onBtnClicked(event,customEventData);
+    onUIClicked(event, customEventData) {
+        super.onUIClicked(event,customEventData);
         var btnName = event.target.name;
         
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_free":
                 AdCenter.Instance().play((b)=>{
                     if(b)
                     {
-                        if(HallScene.Instance.tryBuyPlant(this.gun[0],2))
+                        if(HallScene.Instance.buyChick(this.gun[0],2))
                         {
                            MsgToast.show("购买成功");
                            this.dispatch(GameConst.BUY_CHICK,this.gun,this.node.getComponent(ListItem).listId);
@@ -188,7 +187,7 @@ export default class ShopItem extends BaseUI {
                     MsgToast.show("金币不足")
                     return;
                 }
-                if(HallScene.Instance.tryBuyPlant(this.gun[0],0))
+                if(HallScene.Instance.buyChick(this.gun[0],0))
                 {
                     MsgToast.show("购买成功");
                     this.dispatch(GameConst.BUY_CHICK,this.gun,this.node.getComponent(ListItem).listId);

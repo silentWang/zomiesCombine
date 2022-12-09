@@ -35,16 +35,16 @@ export default class DebugTools extends cc.Component {
         // })
     }
 
-    addBtn(name: string, callback: Function) {
-        let toolbar = document.getElementsByClassName("toolbar")[0];
-        if (!toolbar) return;
-        let div = document.createElement("div");
-        div.className = "item";
-        div.innerHTML = "<button id='" + name + "'>" + name + "</button>";
-        toolbar.appendChild(div);
+    // addBtn(name: string, callback: Function) {
+    //     let toolbar = document.getElementsByClassName("toolbar")[0];
+    //     if (!toolbar) return;
+    //     let div = document.createElement("div");
+    //     div.className = "item";
+    //     div.innerHTML = "<button id='" + name + "'>" + name + "</button>";
+    //     toolbar.appendChild(div);
 
-        document.getElementById(name).onclick = () => {
-            callback()
-        };
-    }
+    //     document.getElementById(name).onclick = () => {
+    //         callback()
+    //     };
+    // }
 }

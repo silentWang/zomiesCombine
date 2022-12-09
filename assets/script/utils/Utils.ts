@@ -1,5 +1,5 @@
 import { Shake } from "./Shake";
-import BigNumber from "./BigNumber";
+import NumberUtils from "./NumberUtils";
 import PoolMgr from "../manager/PoolMgr";
 import { share_titles, share_urls } from "../game/GameConst";
 
@@ -37,31 +37,29 @@ export default class Utils {
         })
     }
 
-
+    public static getRandomInt(lower, upper): number {
+        return Math.floor(Math.random() * (upper - lower)) + lower;
+    };
 
     public static getRandom(lower, upper): number {
         return Math.random() * (upper - lower) + lower;
     };
 
-    public static getRandomInt(lower, upper): number {
-        return Math.floor(Math.random() * (upper - lower)) + lower;
-    };
-
-    public static seedRandomInt(lower, upper): number {
-        return Utils.getRandomInt(lower, upper);
-    }
-
-    public static formatNumber(num: number, afterdot: number = 1) {
-        num = Math.floor(num);
-        return BigNumber.getLargeString(num);
-    };
     public static getPowNum(p) {
         return Math.pow(10, p);
     };
-
+    
+    public static formatNumber(num: number, afterdot: number = 1) {
+        num = Math.floor(num);
+        return NumberUtils.getLargeString(num);
+    };
+    
     public static setServerTime(time: number) {
         Utils.timeOffset = time - new Date().getTime();
         cc.log("timeOffset:", Utils.timeOffset)
+    }
+    public static seedRandomInt(lower, upper): number {
+        return Utils.getRandomInt(lower, upper);
     }
 
     public static timeOffset: number = 0;
@@ -76,25 +74,6 @@ export default class Utils {
         camera.stopAllActions();
         camera.runAction(Shake.create(duration, strength_x, strength_y));
     }
-
-    public static addClickEvent(node, target, component, handler, customEventData) {
-        var eventHandler = new cc.Component.EventHandler();
-        eventHandler.target = target;
-        eventHandler.component = component;
-        eventHandler.handler = handler;
-        if (customEventData) eventHandler.customEventData = customEventData;
-
-        var clickEvents = node.getComponent(cc.Button).clickEvents;
-        if (clickEvents.length > 0) {
-            if (!CC_EDITOR)
-                cc.warn("按钮已经存在绑定，跳过自动绑定", node.name);
-            return;
-        }
-        // console.log(node.name,target.name,component)
-        clickEvents.push(eventHandler);
-    }
-
-
 
     public static sharetime:number = 0;
     public static sharecallback = null;
@@ -130,7 +109,22 @@ export default class Utils {
         }
     }
 
+    public static addClickEvent(node, target, component, handler, customEventData) {
+        var eventHandler = new cc.Component.EventHandler();
+        eventHandler.target = target;
+        eventHandler.component = component;
+        eventHandler.handler = handler;
+        if (customEventData) eventHandler.customEventData = customEventData;
 
+        var clickEvents = node.getComponent(cc.Button).clickEvents;
+        if (clickEvents.length > 0) {
+            if (!CC_EDITOR)
+                cc.warn("按钮已经存在绑定，跳过自动绑定", node.name);
+            return;
+        }
+        // console.log(node.name,target.name,component)
+        clickEvents.push(eventHandler);
+    }
 
     public static getTimeStrByS(second: number) {
         second = Math.floor(second);
@@ -173,25 +167,7 @@ export default class Utils {
         }
     }
 
-    public static formatCoin(num: number) {
-        num = Math.floor(num);
-        return BigNumber.getLargeString(num);
-    }
-
-    // public static loadRes(path: string, type: typeof cc.Asset) {
-    //     return new Promise((resolve, reject) => {
-    //         cc.loader.loadRes(path, type, (err, ret) => {
-    //             if (err) {
-    //                 cc.error(path, err);
-    //                 reject(null);
-    //             }
-    //             else {
-    //                 resolve(ret);
-    //             }
-    //         })
-    //     })
-    // }
-
+    
     public static loadBundler(name:string)
     {
         return new Promise((resolve,reject)=>{
@@ -202,7 +178,28 @@ export default class Utils {
         })
     }
 
+    public static formatCoin(num: number) {
+        num = Math.floor(num);
+        return NumberUtils.getLargeString(num);
+    }
 
+    public static weight(v: number[]): number {
+        var mTotalWeight = 0;
+        for (var i = 0; i < v.length; ++i) {
+            mTotalWeight += v[i];
+        }
+        if (mTotalWeight <= 0) return -1;
+        var randnum = Math.round(Math.random() * Number.MAX_VALUE) % mTotalWeight;
+        for (var i = 0; i < v.length; ++i) {
+            if (randnum < v[i]) {
+                return i;
+            }
+            else {
+                randnum -= v[i];
+            }
+        }
+        return -1;
+    }
     
     public static loadRes(path: string, type: typeof cc.Asset,callback:any=null) {
         return new Promise((resolve, reject) => {
@@ -236,31 +233,6 @@ export default class Utils {
                 }
             });
         })
-    }
-
-    public static weight(v: number[]): number {
-        var mTotalWeight = 0;
-        for (var i = 0; i < v.length; ++i) {
-            mTotalWeight += v[i];
-        }
-        if (mTotalWeight <= 0) return -1;
-        var randnum = Math.round(Math.random() * Number.MAX_VALUE) % mTotalWeight;
-        for (var i = 0; i < v.length; ++i) {
-            if (randnum < v[i]) {
-                return i;
-            }
-            else {
-                randnum -= v[i];
-            }
-        }
-        return -1;
-    }
-
-
-    //定点数
-    public static fixFloat(val: number, count: number = 2) {
-        var a = count * 100
-        return Math.floor(val * a) / a;
     }
 
     public static flyAnim(type:number , startNode: cc.Node, targetNodeName: string, count: number, radius: number, callback: Function) {
@@ -331,6 +303,12 @@ export default class Utils {
             );
             node.runAction(seq);
         }
+    }
+
+    //定点数
+    public static fixFloat(val: number, count: number = 2) {
+        var a = count * 100
+        return Math.floor(val * a) / a;
     }
 
     public static playBreath(target:cc.Node,sscale = 1,tscale = 1.12,duration = 0.8,loop:boolean = true){

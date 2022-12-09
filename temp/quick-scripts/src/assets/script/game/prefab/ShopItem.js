@@ -86,42 +86,64 @@ var ShopItem = /** @class */ (function (_super) {
         return _this;
     }
     //观看视频免费获得的枪械等级
-    ShopItem.prototype.WatchAdBuy = function (id) {
-        var gunlv = ChickData_1.default.user.GetMaxLv();
+    ShopItem.prototype.ShowBuyAd = function (id) {
+        var gunlv = ChickData_1.default.user.getLvlMax();
         if (gunlv < 8)
             return false;
         return gunlv - 4 == id;
     };
     //不可指定购买只可查看的区间
-    ShopItem.prototype.OnlyCheck = function (id) {
-        var gunlv = ChickData_1.default.user.GetMaxLv();
+    ShopItem.prototype.OnlyForCheck = function (id) {
+        var gunlv = ChickData_1.default.user.getLvlMax();
         if (gunlv - 2 <= id && id <= gunlv) {
             return true;
         }
         return false;
     };
-    ShopItem.prototype.BuyGem = function (id) {
-        var gunlv = ChickData_1.default.user.GetMaxLv();
+    ShopItem.prototype.BuyDiamond = function (id) {
+        var gunlv = ChickData_1.default.user.getLvlMax();
         return gunlv - 1 == id;
     };
-    ShopItem.prototype.getBuyType = function (gun) {
-        var gunlv = ChickData_1.default.user.GetMaxLv();
+    ShopItem.prototype.getBuyCoinType = function (gun) {
+        var gunlv = ChickData_1.default.user.getLvlMax();
         var type = 0;
         if (gun[0] <= gunlv - 2) {
             type |= GunBuyType.CAN_BUY;
         }
-        if (this.WatchAdBuy(gun[0])) {
+        if (this.ShowBuyAd(gun[0])) {
             type |= GunBuyType.CAN_AD_BUY;
         }
-        if (this.BuyGem(gun[0])) {
+        if (this.BuyDiamond(gun[0])) {
             type |= GunBuyType.GEM_BUY;
         }
-        if (this.OnlyCheck(gun[0])) {
+        if (this.OnlyForCheck(gun[0])) {
             type |= GunBuyType.ONLY_CHECK;
         }
         return type;
     };
-    ShopItem.prototype.setItemData = function (gun) {
+    // fdm
+    ShopItem.prototype.fdmtoTarget = function (target, props, duration, loop, ease, complete, delay, coverBefore, autoRecover) {
+        var _this = this;
+        if (loop === void 0) { loop = 0; }
+        var preProp = {};
+        for (var key in props) {
+            preProp[key] = target[key];
+        }
+        var tween = target.to(target, props, duration, ease, target.create(this, function () {
+            target.clear(tween);
+            tween = target.to(target, preProp, duration, ease, target.create(_this, function () {
+                target.clear(tween);
+                if (loop || loop == -1) {
+                    target.to(target, props, duration, loop - 1, ease, complete, delay, coverBefore, autoRecover);
+                }
+                else {
+                    if (complete)
+                        complete.run();
+                }
+            }), delay, coverBefore, autoRecover);
+        }), delay, coverBefore, autoRecover);
+    };
+    ShopItem.prototype.setShopItemData = function (gun) {
         return __awaiter(this, void 0, void 0, function () {
             var node, bhide, buytype, skill, skilltype, value, str, skpath, atlaspath, chick, _a, _b;
             return __generator(this, function (_c) {
@@ -129,7 +151,7 @@ var ShopItem = /** @class */ (function (_super) {
                     case 0:
                         node = null;
                         bhide = false;
-                        buytype = this.getBuyType(gun);
+                        buytype = this.getBuyCoinType(gun);
                         this.gun = gun;
                         this.GetGameObject("show").active = false;
                         this.GetGameObject("hide").active = false;
@@ -199,7 +221,7 @@ var ShopItem = /** @class */ (function (_super) {
                         chick.playAnimation('idleL', 0);
                         _c.label = 3;
                     case 3:
-                        this.cost_coin = ChickData_1.default.user.BuyPrice(gun[0]);
+                        this.cost_coin = ChickData_1.default.user.buyChickPrice(gun[0]);
                         this.SetText("lbl_buy_coin", Utils_1.default.formatNumber(this.cost_coin));
                         this.GetButton("btn_yellow").interactable = ChickData_1.default.user.coin >= this.cost_coin;
                         return [2 /*return*/];
@@ -207,16 +229,16 @@ var ShopItem = /** @class */ (function (_super) {
             });
         });
     };
-    ShopItem.prototype.onBtnClicked = function (event, customEventData) {
+    ShopItem.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
-        _super.prototype.onBtnClicked.call(this, event, customEventData);
+        _super.prototype.onUIClicked.call(this, event, customEventData);
         var btnName = event.target.name;
-        AudioMgr_1.default.Instance().playSFX("click");
+        AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_free":
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
-                        if (HallScene_1.default.Instance.tryBuyPlant(_this.gun[0], 2)) {
+                        if (HallScene_1.default.Instance.buyChick(_this.gun[0], 2)) {
                             MsgToast_1.default.show("购买成功");
                             _this.dispatch(GameConst_1.default.BUY_CHICK, _this.gun, _this.node.getComponent(ListItem_1.default).listId);
                         }
@@ -228,7 +250,7 @@ var ShopItem = /** @class */ (function (_super) {
                     MsgToast_1.default.show("金币不足");
                     return;
                 }
-                if (HallScene_1.default.Instance.tryBuyPlant(this.gun[0], 0)) {
+                if (HallScene_1.default.Instance.buyChick(this.gun[0], 0)) {
                     MsgToast_1.default.show("购买成功");
                     this.dispatch(GameConst_1.default.BUY_CHICK, this.gun, this.node.getComponent(ListItem_1.default).listId);
                 }

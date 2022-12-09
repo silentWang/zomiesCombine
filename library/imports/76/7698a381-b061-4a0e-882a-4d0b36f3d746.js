@@ -39,18 +39,6 @@ var GameEvent = /** @class */ (function (_super) {
         this.eventHash[type].push(event);
     };
     ;
-    GameEvent.prototype.unregister = function (ower, type) {
-        var events = this.eventHash[type];
-        if (events && events.length > 0) {
-            events.forEach(function (event, index) {
-                if (event.ower === ower && event.type === type) {
-                    events.splice(index, 1);
-                }
-            });
-        }
-        ;
-    };
-    ;
     GameEvent.prototype.dispatch = function (type) {
         var data = [];
         for (var _i = 1; _i < arguments.length; _i++) {
@@ -63,6 +51,18 @@ var GameEvent = /** @class */ (function (_super) {
                 event.callback && (event.callback.apply(event, data));
             }
         }
+    };
+    ;
+    GameEvent.prototype.unregister = function (ower, type) {
+        var events = this.eventHash[type];
+        if (events && events.length > 0) {
+            events.forEach(function (event, index) {
+                if (event.ower === ower && event.type === type) {
+                    events.splice(index, 1);
+                }
+            });
+        }
+        ;
     };
     ;
     return GameEvent;

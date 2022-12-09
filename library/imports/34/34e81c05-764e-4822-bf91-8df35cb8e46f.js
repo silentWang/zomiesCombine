@@ -19,7 +19,7 @@ var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var AchievementModel = /** @class */ (function () {
     function AchievementModel() {
     }
-    AchievementModel.prototype.getUploadData = function () {
+    AchievementModel.prototype.getReadyData = function () {
         var data = {};
         for (var i = 0; i < savepars.length; ++i) {
             data[savepars[i]] = this[savepars[i]];

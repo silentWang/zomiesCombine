@@ -54,7 +54,7 @@ export default class UserModel {
 
     T() {
 	// "20": [20, "U", "U", "G", "G", "M", "AD", "M", "M", "M"],
-        let lv = this.GetMaxLv();
+        let lv = this.getLvlMax();
         var t = Config_shopsort[lv+""]
         for (var n = 1; n <= 8; ++n)
              if ("AD" == t[n]) 
@@ -63,15 +63,15 @@ export default class UserModel {
         return lv - 4;
     }
 
-    public getOfflineEarning(t)//分钟
+    public getOfflineReward(t)//分钟
     {
         var n = null;
         var o = [ 50, 30, 20, 15, 10, 5, 3, 2 ]
         var a = Math.max(1, this.T());
-        var r = this.GetMaxLv()
+        var r = this.getLvlMax()
 
         for (var s = Math.max(1, a - 10); s <= a; ++s) {
-            var c = this.BuyPrice(s);
+            var c = this.buyChickPrice(s);
             if(!n || c > n)
                 n = c
         }
@@ -133,7 +133,7 @@ export default class UserModel {
     @save public todayComTimes = 0;
     @save public ComPlants: PlantInfo[] = [{ open: 1, index: 0, lv: 1 }];
 
-    public getPlantInfo(index: number): PlantInfo {
+    public getChickInfo(index: number): PlantInfo {
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
                 return this.ComPlants[i];
@@ -142,7 +142,7 @@ export default class UserModel {
         return null;
     }
 
-    public GetMaxLv(){
+    public getLvlMax(){
         let max = 0;
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].lv > max) {
@@ -153,15 +153,15 @@ export default class UserModel {
     }
 
     //购买花费
-    public BuyPrice(lv: number): number {
+    public buyChickPrice(lv: number): number {
         var t:number = Number(Config_chick[lv-1][5]);
         var n = this.plantBuyTimes[lv] || 0;
         return 1 == lv ? t * (1e4 * Math.pow(1.07, n)) / (1e4) : t * (1e4 * Math.pow(1.175, n)) / (1e4);
     }
 
-    public CompMove(i0: number, i1: number) {
-        var it0: PlantInfo = this.getPlantInfo(i0);
-        var it1: PlantInfo = this.getPlantInfo(i1);
+    public moveEff(i0: number, i1: number) {
+        var it0: PlantInfo = this.getChickInfo(i0);
+        var it1: PlantInfo = this.getChickInfo(i1);
         if (it0 && it1) {
             it0.index = i1;
             it1.index = i0;
@@ -177,7 +177,7 @@ export default class UserModel {
     }
 
     //合成
-    public ComposePlant(i0: number, i1: number) {
+    public composeChicks(i0: number, i1: number) {
         let tmp1 = this.ComPlants.find((wj) => {
             return wj.index == i0;
         })
@@ -192,8 +192,8 @@ export default class UserModel {
             return false
         }
 
-        let tmplv = this.GetMaxLv();
-        var tmpPre: PlantInfo = this.getPlantInfo(i0);
+        let tmplv = this.getLvlMax();
+        var tmpPre: PlantInfo = this.getChickInfo(i0);
         var lv = tmpPre.lv;
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == i0) {
@@ -215,18 +215,18 @@ export default class UserModel {
         this.ComPlants.push({ open: tmpPre.open, index: i0, lv: lv + 1 });
         this.todayComTimes++;
 
-        let tmplv2 = this.GetMaxLv();
+        let tmplv2 = this.getLvlMax();
         if(tmplv2 > tmplv && tmplv2 < 60)
         {
             Utils.createUI("prefab/NewPlantUI")
             GameEvent.Instance().dispatch(GameConst.NEW_CHICK,tmplv2);
         }
-        AudioMgr.Instance().playSFX("merge_success")
+        AudioMgr.Instance().playMX("merge_success")
         return true
     }
 
     //购买
-    public BuyPlant(index: number, lv: number) {
+    public buyChick(index: number, lv: number) {
         if(!this.plantBuyTimes[lv])this.plantBuyTimes[lv]=0;
         this.plantBuyTimes[lv]++;
         if(this.ComPlants.find((p)=>{
@@ -243,10 +243,10 @@ export default class UserModel {
     }
 
     //摧毁
-    public DropWuJiang(index: number) {
+    public updateSellChickCoin(index: number) {
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
-                var tmp = this.BuyPrice(this.ComPlants[i].lv)
+                var tmp = this.buyChickPrice(this.ComPlants[i].lv)
                 ChickData.user.coin += Math.floor(tmp);
                 // this.changeGameCoin(Math.floor(tmp))
                 cc.log("卖了换钱：" + tmp)
@@ -256,7 +256,7 @@ export default class UserModel {
         }
     }
   
-    public getUploadData(): object {
+    public getAllData(): object {
         var data = {}
         this.serverTime = Utils.getServerTime();
         for (var i = 0; i < savepars.length; ++i) {

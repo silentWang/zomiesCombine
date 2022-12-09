@@ -35,9 +35,9 @@ var SignView = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     SignView_1 = SignView;
-    SignView.reddot = function () {
+    SignView.redPoint = function () {
         if (ChickData_1.default.user.signinfo.sign_time != 0) {
-            if (SignView_1.checkIsTody(ChickData_1.default.user.signinfo.sign_time)) {
+            if (SignView_1.checkIsToday(ChickData_1.default.user.signinfo.sign_time)) {
                 if (ChickData_1.default.user.signinfo.sign_beisu == 1) {
                     return true;
                 }
@@ -51,35 +51,35 @@ var SignView = /** @class */ (function (_super) {
         }
         return true;
     };
-    SignView.checkShow = function () {
+    SignView.checkIsShow = function () {
         //新用户
         if (ChickData_1.default.user.signinfo.sign_index == 0) {
             return;
         }
         //已经签到
-        if (SignView_1.checkIsTody(ChickData_1.default.user.signinfo.sign_time)) {
+        if (SignView_1.checkIsToday(ChickData_1.default.user.signinfo.sign_time)) {
             return;
         }
         Utils_1.default.createUI("prefab/SignLayer");
     };
     //这里配置签到奖励
-    SignView.prototype.getSignValue = function (index) {
-        var lv = ChickData_1.default.user.GetMaxLv() - 3;
+    SignView.prototype.getSignInfo = function (index) {
+        var lv = ChickData_1.default.user.getLvlMax() - 3;
         if (lv < 1)
             lv = 1;
         var list = [
             //修改类型需要相应修改界面图标
-            { type: 0, value: ChickData_1.default.user.BuyPrice(lv) * 4 },
+            { type: 0, value: ChickData_1.default.user.buyChickPrice(lv) * 4 },
             { type: 1, value: 2 },
-            { type: 0, value: ChickData_1.default.user.BuyPrice(lv) * 8 },
-            { type: 0, value: ChickData_1.default.user.BuyPrice(lv) * 12 },
+            { type: 0, value: ChickData_1.default.user.buyChickPrice(lv) * 8 },
+            { type: 0, value: ChickData_1.default.user.buyChickPrice(lv) * 12 },
             { type: 1, value: 5 },
             { type: 1, value: 8 },
             { type: 1, value: 10 },
         ];
         return list[index];
     };
-    SignView.checkIsTody = function (time) {
+    SignView.checkIsToday = function (time) {
         var date = new Date(time);
         var dateNow = new Date(Utils_1.default.getServerTime());
         var bNewDay = false;
@@ -102,7 +102,7 @@ var SignView = /** @class */ (function (_super) {
         var item_days = this.GetGameObject("item_days");
         var bSignTody = false;
         if (ChickData_1.default.user.signinfo.sign_time != 0) {
-            if (SignView_1.checkIsTody(ChickData_1.default.user.signinfo.sign_time)) {
+            if (SignView_1.checkIsToday(ChickData_1.default.user.signinfo.sign_time)) {
                 bSignTody = true;
             }
         }
@@ -112,7 +112,7 @@ var SignView = /** @class */ (function (_super) {
         for (var i = 0; i < 7; ++i) {
             var node = item_days.children[i];
             node.getChildByName("sevenday_checked").active = i < sign_index;
-            var tmp = this.getSignValue(i);
+            var tmp = this.getSignInfo(i);
             if (tmp.type == 0) {
                 node.getComponentInChildren(cc.Label).string = Utils_1.default.formatNumber(tmp.value) + "";
             }
@@ -143,22 +143,22 @@ var SignView = /** @class */ (function (_super) {
             this.GetGameObject("btn_3times").active = true;
         }
     };
-    SignView.prototype.getTodySign = function () {
+    SignView.prototype.getTodaySign = function () {
         var bSignTody = false;
         if (ChickData_1.default.user.signinfo.sign_time != 0) {
-            if (SignView_1.checkIsTody(ChickData_1.default.user.signinfo.sign_time)) {
+            if (SignView_1.checkIsToday(ChickData_1.default.user.signinfo.sign_time)) {
                 bSignTody = true;
             }
         }
         var index = ChickData_1.default.user.signinfo.sign_index;
         if (bSignTody)
             index--;
-        return this.getSignValue(index % 7);
+        return this.getSignInfo(index % 7);
     };
     SignView.prototype.flayAnim = function (beishu) {
-        var tmp = this.getTodySign();
+        var tmp = this.getTodaySign();
         if (tmp.type == 0) {
-            AudioMgr_1.default.Instance().playSFX("coin");
+            AudioMgr_1.default.Instance().playMX("coin");
             Utils_1.default.flyAnim(0, this.node, "icon_coin", 5, 200, function (b) {
                 if (b) {
                     ChickData_1.default.user.coin += tmp.value * beishu;
@@ -166,7 +166,7 @@ var SignView = /** @class */ (function (_super) {
             });
         }
         else {
-            AudioMgr_1.default.Instance().playSFX("gem");
+            AudioMgr_1.default.Instance().playMX("gem");
             Utils_1.default.flyAnim(1, this.node, "icon_gem", 5, 200, function (b) {
                 if (b) {
                     ChickData_1.default.user.gem += tmp.value * beishu;
@@ -174,10 +174,10 @@ var SignView = /** @class */ (function (_super) {
             });
         }
     };
-    SignView.prototype.onBtnClicked = function (event, customEventData) {
+    SignView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
-        AudioMgr_1.default.Instance().playSFX("click");
+        AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
@@ -187,7 +187,7 @@ var SignView = /** @class */ (function (_super) {
                     if (b) {
                         ChickData_1.default.user.signinfo.sign_beisu = 2;
                         _this.flayAnim(2);
-                        if (!SignView_1.checkIsTody(ChickData_1.default.user.signinfo.sign_time)) {
+                        if (!SignView_1.checkIsToday(ChickData_1.default.user.signinfo.sign_time)) {
                             ChickData_1.default.user.signinfo.sign_index++;
                         }
                         ChickData_1.default.user.signinfo.sign_time = Utils_1.default.getServerTime();
@@ -200,7 +200,7 @@ var SignView = /** @class */ (function (_super) {
                     if (b) {
                         ChickData_1.default.user.signinfo.sign_beisu = 3;
                         _this.flayAnim(3);
-                        if (!SignView_1.checkIsTody(ChickData_1.default.user.signinfo.sign_time)) {
+                        if (!SignView_1.checkIsToday(ChickData_1.default.user.signinfo.sign_time)) {
                             ChickData_1.default.user.signinfo.sign_index++;
                         }
                         ChickData_1.default.user.signinfo.sign_time = Utils_1.default.getServerTime();
@@ -211,7 +211,7 @@ var SignView = /** @class */ (function (_super) {
             case "btn_sign":
                 ChickData_1.default.user.signinfo.sign_beisu = 1;
                 this.flayAnim(1);
-                if (!SignView_1.checkIsTody(ChickData_1.default.user.signinfo.sign_time)) {
+                if (!SignView_1.checkIsToday(ChickData_1.default.user.signinfo.sign_time)) {
                     ChickData_1.default.user.signinfo.sign_index++;
                 }
                 ChickData_1.default.user.signinfo.sign_time = Utils_1.default.getServerTime();

@@ -61,14 +61,11 @@ var AudioMgr = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.bgmVolume = 1;
         _this.sfxVolume = 1;
+        _this.bgm_url = "";
         _this.bgmAudioID = -1;
         _this.audioId = -1;
-        // getUrl(url: string): cc.AudioClip {
-        //     return cc.loader.getRes("sounds/" + url);
-        // }
-        _this.bgm_url = "";
-        _this.lastplaysfxtime = {};
-        _this.sfxcd = {
+        _this.lastplaytime = {};
+        _this.soundcd = {
             "huangshulang": 1500,
             "huli": 1500,
             "hit": 300,
@@ -87,10 +84,13 @@ var AudioMgr = /** @class */ (function (_super) {
         console.log("loadSounds", this.bgmVolume, this.sfxVolume);
         cc.log(this.bgmVolume, this.sfxVolume);
         cc.loader.loadResDir("sounds", function () {
-            _this.playBGM("BGM1");
+            _this.playMusic("BGM1");
         });
     };
-    AudioMgr.prototype.playBGM = function (url) {
+    // getUrl(url: string): cc.AudioClip {
+    //     return cc.loader.getRes("sounds/" + url);
+    // }
+    AudioMgr.prototype.playMusic = function (url) {
         return __awaiter(this, void 0, void 0, function () {
             var ischange, audioUrl;
             return __generator(this, function (_a) {
@@ -114,24 +114,33 @@ var AudioMgr = /** @class */ (function (_super) {
             });
         });
     };
-    AudioMgr.prototype.stopSFX = function (audioId) {
+    AudioMgr.prototype.setMXVolume = function (v, force) {
+        if (force === void 0) { force = false; }
+        if (this.sfxVolume != v || force) {
+            cc.sys.localStorage.setItem("sfxVolume", v);
+            this.sfxVolume = v;
+            //设置音效大小会同时设置背景音乐的声音，不设置音效大小，本地音效依然可以受控使用，暂未找到原因
+            // cc.audioEngine.setEffectsVolume(v);
+        }
+    };
+    AudioMgr.prototype.stopMX = function (audioId) {
         var ok = cc.audioEngine.stop(audioId);
         return ok;
     };
-    AudioMgr.prototype.playSFX = function (url) {
+    AudioMgr.prototype.playMX = function (url) {
         return __awaiter(this, void 0, void 0, function () {
             var cd, audioUrl;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         // if (GameManager.Instance.fps < 20) return;
-                        if (!this.lastplaysfxtime[url])
-                            this.lastplaysfxtime[url] = 0;
-                        cd = this.sfxcd[url] || 0;
-                        if (new Date().getTime() - this.lastplaysfxtime[url] < cd) {
+                        if (!this.lastplaytime[url])
+                            this.lastplaytime[url] = 0;
+                        cd = this.soundcd[url] || 0;
+                        if (new Date().getTime() - this.lastplaytime[url] < cd) {
                             return [2 /*return*/];
                         }
-                        this.lastplaysfxtime[url] = new Date().getTime();
+                        this.lastplaytime[url] = new Date().getTime();
                         return [4 /*yield*/, Utils_1.default.loadRes("sounds:" + url, cc.AudioClip)];
                     case 1:
                         audioUrl = _a.sent();
@@ -145,19 +154,7 @@ var AudioMgr = /** @class */ (function (_super) {
             });
         });
     };
-    AudioMgr.prototype.pauseBGM = function () {
-        if (this.bgmAudioID >= 0) {
-            cc.audioEngine.pause(this.bgmAudioID);
-            // cc.log("暂停bgm")
-        }
-    };
-    AudioMgr.prototype.resumBGM = function () {
-        if (this.bgmAudioID >= 0) {
-            cc.audioEngine.resume(this.bgmAudioID);
-            // cc.log("恢复bgm")
-        }
-    };
-    AudioMgr.prototype.setBGMVolume = function (v, force) {
+    AudioMgr.prototype.setMusicVolume = function (v, force) {
         if (force === void 0) { force = false; }
         if (this.bgmVolume != v || force) {
             cc.sys.localStorage.setItem("bgmVolume", v);
@@ -173,16 +170,19 @@ var AudioMgr = /** @class */ (function (_super) {
             }
         }
         else {
-            this.playBGM(this.bgm_url);
+            this.playMusic(this.bgm_url);
         }
     };
-    AudioMgr.prototype.setSFXVolume = function (v, force) {
-        if (force === void 0) { force = false; }
-        if (this.sfxVolume != v || force) {
-            cc.sys.localStorage.setItem("sfxVolume", v);
-            this.sfxVolume = v;
-            //设置音效大小会同时设置背景音乐的声音，不设置音效大小，本地音效依然可以受控使用，暂未找到原因
-            // cc.audioEngine.setEffectsVolume(v);
+    AudioMgr.prototype.resumMusic = function () {
+        if (this.bgmAudioID >= 0) {
+            cc.audioEngine.resume(this.bgmAudioID);
+            // cc.log("恢复bgm")
+        }
+    };
+    AudioMgr.prototype.pauseMusic = function () {
+        if (this.bgmAudioID >= 0) {
+            cc.audioEngine.pause(this.bgmAudioID);
+            // cc.log("暂停bgm")
         }
     };
     return AudioMgr;

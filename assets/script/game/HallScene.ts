@@ -37,7 +37,7 @@ export default class HallScene extends BaseUI {
     public enemylist:cc.Node[] = [];
     private wave_info:any = null;
 
-    hidemergetips()
+    hidComposeTips()
     {
         let slots = this.GetGameObject("slots");//fx_ground_merge
         for(var slot of slots.children)
@@ -46,7 +46,7 @@ export default class HallScene extends BaseUI {
         }
     }
 
-    showmergetips(lv:number)
+    showComposetips(lv:number)
     {
         let indexs = [];
         for(var item of this.items)
@@ -91,15 +91,15 @@ export default class HallScene extends BaseUI {
         {
             //普通花盆掉落
             if (this.item_drag.datacopy) return
-            let lv = Math.max(1, ChickData.user.GetMaxLv() - Utils.getRandomInt(6, 9));
-            this.tryBuyPlant(lv, 3)
+            let lv = Math.max(1, ChickData.user.getLvlMax() - Utils.getRandomInt(6, 9));
+            this.buyChick(lv, 3)
             this._lastdroptime = 0;
         }
 
         //一段时间不操作，提示可以合成
         if(this.touchendtime != 0 && Utils.getServerTime() - this.touchendtime > 5000)
         {
-            this.mergetip();
+            this.composeTip();
         }
     }
 
@@ -115,7 +115,7 @@ export default class HallScene extends BaseUI {
     }
 
     private bFail = false;
-    removeenemy(node:cc.Node,bFail:boolean)
+    enemyDie(node:cc.Node,bFail:boolean)
     {
         let isStop = false;
         let isChange = false;
@@ -163,7 +163,7 @@ export default class HallScene extends BaseUI {
                     isStop = true;
                     ChickData.user.wave = 1;
                     ChickData.user.lv++;
-                    this.openNewSlot();
+                    this.openNewGround();
                     ChickData.save(true);
                     let key = ChickData.user.lv + "_" + ChickData.user.wave;
                     this.wave_info = User_level[key];
@@ -171,18 +171,18 @@ export default class HallScene extends BaseUI {
                 }
                 else
                 {
-                    AudioMgr.Instance().playSFX("win_wave")
+                    AudioMgr.Instance().playMX("win_wave")
                     // this.showImage("texture/success");
-                    this.playSkAni("spine:other/shengjichenggong", "effect", this.node,cc.v3(0,150,0), 2);
+                    this.playSkeAni("spine:other/shengjichenggong", "effect", this.node,cc.v3(0,150,0), 2);
                 }
             }
             if(isStop) return;
-            this.createwave(isChange);
+            this.createEnemys(isChange);
         }
     }
 
     private createcomplete = false;
-    createwave(isChange:boolean = false)
+    createEnemys(isChange:boolean = false)
     {
         this.bFail = false;
         this.createcomplete = false;
@@ -199,14 +199,14 @@ export default class HallScene extends BaseUI {
 
         if(ChickData.user.wave == this.wave_info[2])
         {
-            AudioMgr.Instance().playBGM("bgBoss");
+            AudioMgr.Instance().playMusic("bgBoss");
             this.node.runAction(cc.sequence(cc.delayTime(.8),cc.callFunc(()=>{
                 Utils.createUI("prefab/BossCommingUI")
             })))
         }
         else if(ChickData.user.wave == 1)
         {
-            AudioMgr.Instance().playBGM("BGM1");
+            AudioMgr.Instance().playMusic("BGM1");
         }
 
         //创建怪物
@@ -250,7 +250,7 @@ export default class HallScene extends BaseUI {
 	autocomindexs: number[] = [-1, -1];
 
     private items: Array<ChickItem> = [];
-    initComposeItems() {
+    initComposeChicks() {
         var list = ChickData.user.ComPlants;
         
         let m = {};
@@ -282,7 +282,7 @@ export default class HallScene extends BaseUI {
         return null;
     }
 
-	setdragitempos(pos) {
+	setDragPos(pos) {
         pos = this.GetGameObject("node_com").convertToWorldSpaceAR(pos);
         pos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(pos);
         this.GetGameObject("item_drag").position = pos;
@@ -291,7 +291,7 @@ export default class HallScene extends BaseUI {
 	async start()
 	{
         WxCenter.aldReport('HomeShow','show');
-        this.hidemergetips();
+        this.hidComposeTips();
         HallScene._instance = this;
         WxCenter.init();
 		let slots = this.GetGameObject("slots");
@@ -302,19 +302,19 @@ export default class HallScene extends BaseUI {
         await this.initView();
 
 		this.node.runAction(cc.sequence(cc.delayTime(0.5), cc.callFunc(() => {
-            this.tryAutocom();
+            this.startAutoCompose();
             if (this.item_drag.node.active) return
             // 小精灵掉落
             if(ChickData.user.DropGiftPts.length>0)
             {
-               let b= this.tryBuyPlant(ChickData.user.DropGiftPts[0],4);
+               let b= this.buyChick(ChickData.user.DropGiftPts[0],4);
                if(b)
                    ChickData.user.DropGiftPts.shift();
             }
            //  广告购买成功，因为没有空位未成功添加
            if(ChickData.user.AdBuyNotDrop.length>0)
             {
-               let b= this.tryBuyPlant(ChickData.user.AdBuyNotDrop[0],2);
+               let b= this.buyChick(ChickData.user.AdBuyNotDrop[0],2);
                if(b)
                    ChickData.user.AdBuyNotDrop.shift();
             }
@@ -332,7 +332,7 @@ export default class HallScene extends BaseUI {
          var t = (Utils.getServerTime() - stime) / 1000;
          if (stime != 0 && t > 3*60) {
              var t = Math.min(7200 * 3, t);
-             var money = ChickData.user.getOfflineEarning(t/60);
+             var money = ChickData.user.getOfflineReward(t/60);
              Utils.createUI('prefab/OfflineAwardUI', null, (ui) => {
                  ui.getComponent(OfflineAwardUI).data = money;
              })
@@ -342,7 +342,7 @@ export default class HallScene extends BaseUI {
             this.path.push(c.position)
 
         this.node.runAction(cc.sequence(cc.delayTime(3),cc.callFunc(()=>{
-            this.createwave();
+            this.createEnemys();
         })))
 
 		//更新各种时间
@@ -466,8 +466,8 @@ export default class HallScene extends BaseUI {
         Utils.sharecallback = null;
     }
 
-    openNewSlot(){
-        let curopen = GroundItem.getCurOpen();
+    openNewGround(){
+        let curopen = GroundItem.getNeedOpen();
         if(curopen < 0) return;
         let lv = Config_ground[curopen].price;
         if(lv < ChickData.user.lv) return;
@@ -528,7 +528,7 @@ export default class HallScene extends BaseUI {
         this.item_drag.node.active = false;
         this.item_drag.bDrag = true;
 
-        this.initComposeItems();
+        this.initComposeChicks();
 
         node_com.on(cc.Node.EventType.TOUCH_START, (e: cc.Event.EventTouch) => {
             this.bPauseAutoCom = true;
@@ -563,12 +563,12 @@ export default class HallScene extends BaseUI {
             if (item && item.datacopy && item.droptype == 0 ) {
                 this.touchPos = pos;
                 this.bChoosed = true;
-                this.setdragitempos(item.node.position);
+                this.setDragPos(item.node.position);
                 this.item_drag.index = item.index;
                 this.item_drag.setItemData(item.datacopy);
                 this.item_drag.linkItem = item;
 
-                this.showmergetips(item.datacopy.lv)
+                this.showComposetips(item.datacopy.lv)
             }
             else {
                 this.item_drag.node.active = false;
@@ -587,7 +587,7 @@ export default class HallScene extends BaseUI {
 
                 this.item_drag.node.active = true;
                 this.item_drag.linkItem.setItemData(null);
-                this.setdragitempos(pos);
+                this.setDragPos(pos);
 
                 var pos1 = this.GetGameObject("btn_delete").position;
                 pos1 = this.GetGameObject("btn_delete").parent.convertToWorldSpaceAR(pos1);
@@ -600,17 +600,17 @@ export default class HallScene extends BaseUI {
             }
         }, this);
 
-        node_com.on(cc.Node.EventType.TOUCH_END, this.docomp, this);
-        node_com.on(cc.Node.EventType.TOUCH_CANCEL, this.docomp, this);
+        node_com.on(cc.Node.EventType.TOUCH_END, this.composeHandle, this);
+        node_com.on(cc.Node.EventType.TOUCH_CANCEL, this.composeHandle, this);
     }
 
 	bChoosed: boolean = false;
     touchPos: cc.Vec2 = cc.Vec2.ZERO;
 	
-    tryAutocom() {
+    startAutoCompose() {
         if (this.bPauseAutoCom || this.bInAutoCom) return;
         if (Utils.getServerTime() < ChickData.user.auto_com_time && !this.bInAutoCom) {
-            this.initComposeItems();
+            this.initComposeChicks();
 
             for (let i = 0; i < this.items.length ; ++i) {
                 if (!this.items[i] || !this.items[i].datacopy) continue;
@@ -628,7 +628,7 @@ export default class HallScene extends BaseUI {
                         this.item_drag.node.active = true;
                         this.items[j].setItemData(null);
                         this.item_drag.node.position = this.items[j].node.position;
-                        this.setdragitempos(this.items[j].node);
+                        this.setDragPos(this.items[j].node);
 
                         var targetpos = this.GetGameObject("node_com").convertToWorldSpaceAR(this.items[i].node.position);
                         targetpos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(targetpos);
@@ -637,7 +637,7 @@ export default class HallScene extends BaseUI {
                         this.bInAutoCom = true;
                         this.item_drag.node.stopAllActions();
                         this.item_drag.node.runAction(cc.sequence(cc.moveTo(0.13, cc.v2(targetpos.x,targetpos.y)), cc.callFunc(() => {
-                            this.comani(this.items[i]);
+                            this.showCompEff(this.items[i]);
                             // cc.log("自动合成结束");
                             this.bInAutoCom = false;
                         })))
@@ -647,12 +647,11 @@ export default class HallScene extends BaseUI {
             }
         }
     }
-    
-    
+
     private touchendtime = 0;
-    docomp(e: cc.Event.EventTouch) {
+    composeHandle(e: cc.Event.EventTouch) {
         this.touchendtime = Utils.getServerTime();
-        this.hidemergetips();
+        this.hidComposeTips();
         this.GetGameObject("btn_delete").stopAllActions();
         this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.25),cc.fadeTo(0.25,0)))
 
@@ -689,7 +688,7 @@ export default class HallScene extends BaseUI {
                     return;
                 }
 
-                if (this.item_drag.datacopy.lv >= ChickData.user.GetMaxLv()) {
+                if (this.item_drag.datacopy.lv >= ChickData.user.getLvlMax()) {
                     MsgToast.show("最高等级植物就不删除了吧！");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
@@ -697,7 +696,7 @@ export default class HallScene extends BaseUI {
                     return;
                 }
 
-                ChickData.user.DropWuJiang(this.item_drag.datacopy.index);
+                ChickData.user.updateSellChickCoin(this.item_drag.datacopy.index);
                 this.item_drag.linkItem.setItemData(null);
                 this.item_drag.linkItem = null;
 
@@ -729,7 +728,7 @@ export default class HallScene extends BaseUI {
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
                 //移动
-                ChickData.user.CompMove(this.item_drag.linkItem.index, item.index);
+                ChickData.user.moveEff(this.item_drag.linkItem.index, item.index);
                 item.setItemData(this.item_drag.datacopy);
                 this.item_drag.linkItem.setItemData(null);
                 this.item_drag.linkItem = null;
@@ -738,14 +737,14 @@ export default class HallScene extends BaseUI {
 
             if (item.datacopy.open == this.item_drag.datacopy.open &&
                 item.datacopy.lv == this.item_drag.datacopy.lv && item.datacopy.index != this.item_drag.datacopy.index && item.droptype == 0 && item.datacopy.lv<60) {
-                this.comani(item);
+                this.showCompEff(item);
             }
             else {
                 this.item_drag.node.active = false;
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
                 //交换
-                ChickData.user.CompMove(this.item_drag.linkItem.index, item.index);
+                ChickData.user.moveEff(this.item_drag.linkItem.index, item.index);
 
                 var _tmp: PlantInfo = JSON.parse(JSON.stringify(item.datacopy));
                 item.setItemData(this.item_drag.datacopy);
@@ -758,8 +757,8 @@ export default class HallScene extends BaseUI {
         }
     }
 	
-    comani(item: ChickItem) {
-        let b = ChickData.user.ComposePlant(item.index, this.item_drag.datacopy.index);
+    showCompEff(item: ChickItem) {
+        let b = ChickData.user.composeChicks(item.index, this.item_drag.datacopy.index);
         this.GetGameObject("guild_1").active = false;
         if(ChickData.user.guideIndex == 1)
         {
@@ -767,7 +766,7 @@ export default class HallScene extends BaseUI {
             ChickData.save();
         }
         if (!b) return;
-        let nextGun = ChickData.user.getPlantInfo(item.index);
+        let nextGun = ChickData.user.getChickInfo(item.index);
         item.setItemData(nextGun);
         this.GetGameObject("item_drag").active = false;
 
@@ -777,15 +776,15 @@ export default class HallScene extends BaseUI {
 
         var targetpos = this.GetGameObject("node_com").convertToWorldSpaceAR(item.node.position);
         targetpos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(targetpos);
-            this.playSkAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0,20,0)), 1);
+            this.playSkeAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0,20,0)), 1);
     }
 
     async updateBuyButton()
     {
-        let lv = ChickData.user.GetMaxLv() - 3;
+        let lv = ChickData.user.getLvlMax() - 3;
         if(lv<1)lv = 1;
         this.SetText("lbl_buy_lvl",'LV.' + lv);
-        this.SetText("lbl_buy_cost",Utils.formatNumber(ChickData.user.BuyPrice(lv)));
+        this.SetText("lbl_buy_cost",Utils.formatNumber(ChickData.user.buyChickPrice(lv)));
 
         let skpath = `spine:flower${lv}_ske`;
         let atlaspath = `spine:flower${lv}_tex`;
@@ -796,7 +795,7 @@ export default class HallScene extends BaseUI {
         chick.playAnimation('idleL',0);
     }
     //0 coin 1 gem 2 ad 3普通掉落 4小精灵掉落
-    public tryBuyPlant(lv:number,buytype:number) {
+    public buyChick(lv:number,buytype:number) {
         var item: ChickItem = null;
         for (var i = 0; i < 12; ++i) {
             if (ChickData.user.slots[i] == 0) continue;
@@ -806,14 +805,14 @@ export default class HallScene extends BaseUI {
             }
         }
         if (!lv) {
-            lv = ChickData.user.GetMaxLv() - 3;
+            lv = ChickData.user.getLvlMax() - 3;
             if(lv<1)lv = 1;
         }
 
         if (item) {
             if (buytype == 0) {
-                let cost = ChickData.user.BuyPrice(lv);
-                if (ChickData.user.BuyPrice(lv) > ChickData.user.coin) {
+                let cost = ChickData.user.buyChickPrice(lv);
+                if (ChickData.user.buyChickPrice(lv) > ChickData.user.coin) {
                     let type = 0;
                     if(ChickData.user.today_getchick_times < ChickData.user.today_getchick_total){
                         type = 1;
@@ -823,7 +822,7 @@ export default class HallScene extends BaseUI {
                     }
                     if(type > 0){
                         Utils.createUI("prefab/CoinNotEnough").then((node:cc.Node)=>{
-                            node.getComponent(CoinNotEnoughUI).setType(type);
+                            node.getComponent(CoinNotEnoughUI).setViewType(type);
                         });
                     }
                     else{
@@ -848,10 +847,10 @@ export default class HallScene extends BaseUI {
                 // console.log("飞机掉落")
             }
             
-            AudioMgr.Instance().playSFX("flower_pot_land")
+            AudioMgr.Instance().playMX("flower_pot_land")
 
-            this.docomp(null);
-            item.setItemData(ChickData.user.BuyPlant(item.index, lv) as PlantInfo,buytype);
+            this.composeHandle(null);
+            item.setItemData(ChickData.user.buyChick(item.index, lv) as PlantInfo,buytype);
             this.updateBuyButton();
             return true
         }
@@ -866,7 +865,7 @@ export default class HallScene extends BaseUI {
         }
     }
 
-    private mergetip(){
+    private composeTip(){
         this.touchendtime = Utils.getServerTime();
         if (this.bPauseAutoCom || this.bInAutoCom) return;
         if (!this.bInAutoCom) {
@@ -894,9 +893,9 @@ export default class HallScene extends BaseUI {
         }
     }
 
-	onBtnClicked(event, customEventData) {
+	onUIClicked(event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
 
         switch (btnName) {
 			case "btn_setting":
@@ -906,7 +905,7 @@ export default class HallScene extends BaseUI {
 				Utils.createUI("prefab/SignUI")
 				break;
 			case "btn_buy":
-                this.tryBuyPlant(null,0);
+                this.buyChick(null,0);
                 this.GetGameObject("guild_0").active = false;
                 if(ChickData.user.guideIndex == 0)
                 {
@@ -915,7 +914,7 @@ export default class HallScene extends BaseUI {
                 }
                 if(ChickData.user.guideIndex == 1)
                 {
-                    this.mergetip();
+                    this.composeTip();
                 }
 				break;
 			case "bt_fast_gen":
@@ -974,5 +973,4 @@ export default class HallScene extends BaseUI {
                 break;
         }
     }
-    private bFirstSubContex = true;
 }

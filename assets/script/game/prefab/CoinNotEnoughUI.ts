@@ -10,11 +10,10 @@ import AdCenter from "../../manager/AdCenter";
 import ChickData from "../../manager/ChickData";
 import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
-import BigNumber from "../../utils/BigNumber";
+import NumberUtils from "../../utils/NumberUtils";
 import Utils from "../../utils/Utils";
 import { Config_chick } from "../Config";
 import HallScene from "../HallScene";
-import UserModel from "../UserModel";
 
 const {ccclass, property} = cc._decorator;
 
@@ -37,14 +36,14 @@ export default class CoinNotEnoughUI extends BaseUI {
 
     // update (dt) {}
 
-    public async setType(type:number){
+    public async setViewType(type:number){
         this.type = type;
         this.GetGameObject('getChick').active = type == 1;
         this.GetGameObject('getCoin').active = type == 2;
         let str = '';
         if(type == 1){
             str = `${ChickData.user.today_getchick_times}/${ChickData.user.today_getchick_total}`;
-            let lv = ChickData.user.GetMaxLv() - 1 > 0 ? ChickData.user.GetMaxLv() - 1 : 1;
+            let lv = ChickData.user.getLvlMax() - 1 > 0 ? ChickData.user.getLvlMax() - 1 : 1;
             let skpath = `spine:flower${lv}_ske`;
             let atlaspath = `spine:flower${lv}_tex`;
             let chick = this.GetDragonAmature('chick');
@@ -57,27 +56,27 @@ export default class CoinNotEnoughUI extends BaseUI {
         }
         else if(type == 2){
             str = `${ChickData.user.today_getcoin_times}/${ChickData.user.today_getcoin_total}`;
-            let lv = ChickData.user.GetMaxLv() - 1 > 0 ? ChickData.user.GetMaxLv() - 1 : 1;
-            let coin = 0.5*ChickData.user.BuyPrice(lv);
-            this.SetText('lbl_effect',`+${BigNumber.getLargeString(Utils.fixFloat(coin))}`);
+            let lv = ChickData.user.getLvlMax() - 1 > 0 ? ChickData.user.getLvlMax() - 1 : 1;
+            let coin = 0.5*ChickData.user.buyChickPrice(lv);
+            this.SetText('lbl_effect',`+${NumberUtils.getLargeString(Utils.fixFloat(coin))}`);
         }
         WxCenter.aldReport('LackShow','show');
         this.lbl_times.string = `当日次数${str}`;
     }
 
-    private addValue(){
+    private addCoin(){
         let type = this.type;
         if(type == 1){
             ChickData.user.today_getchick_times++;
-            let lv = ChickData.user.GetMaxLv() - 1 > 0 ? ChickData.user.GetMaxLv() - 1 : 1;
-            HallScene.Instance.tryBuyPlant(lv,2);
+            let lv = ChickData.user.getLvlMax() - 1 > 0 ? ChickData.user.getLvlMax() - 1 : 1;
+            HallScene.Instance.buyChick(lv,2);
             ChickData.save();
             this.closeUI();
         }
         else if(type == 2){
             ChickData.user.today_getcoin_times++;
-            let coin = 0.5*ChickData.user.BuyPrice(ChickData.user.GetMaxLv());
-            AudioMgr.Instance().playSFX("coin");
+            let coin = 0.5*ChickData.user.buyChickPrice(ChickData.user.getLvlMax());
+            AudioMgr.Instance().playMX("coin");
             Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
                 if(b) ChickData.user.coin += coin;
                 ChickData.save();
@@ -86,9 +85,9 @@ export default class CoinNotEnoughUI extends BaseUI {
         }
     }
 
-    onBtnClicked(event, customEventData) {
+    onUIClicked(event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
             case "btn_normal":
@@ -97,7 +96,7 @@ export default class CoinNotEnoughUI extends BaseUI {
             case "btn_ad":
                 WxCenter.aldReport('LackClick','click');
                 AdCenter.Instance().play((b)=>{
-                    if(b) this.addValue();
+                    if(b) this.addCoin();
                 });
                 break;
         }

@@ -49,17 +49,17 @@ export default class ShopView extends BaseUI{
         let sview = this.GetGameObject("ScrollView");
         let list = sview.getComponent(List);
         list.numItems = this.list.length;
-        var index = Math.max(0,ChickData.user.GetMaxLv() - 5);
+        var index = Math.max(0,ChickData.user.getLvlMax() - 5);
         list.scrollTo(index,0.2);
     }
 
-    onBtnClicked(event,c)
+    onUIClicked(event,c)
     {
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
         this.node.active = false;
     }
     
     onListRender(item: cc.Node, idx: number) {
-        item.getComponent(ShopItem).setItemData(this.list[idx]);
+        item.getComponent(ShopItem).setShopItemData(this.list[idx]);
     }
 }

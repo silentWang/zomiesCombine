@@ -45,9 +45,9 @@ var RecordView = /** @class */ (function (_super) {
     RecordView.prototype.setData = function (res) {
         this.res = res;
     };
-    RecordView.prototype.onBtnClicked = function (event, customEventData) {
-        _super.prototype.onBtnClicked.call(this, event, customEventData);
-        AudioMgr_1.default.Instance().playSFX("click");
+    RecordView.prototype.onUIClicked = function (event, customEventData) {
+        _super.prototype.onUIClicked.call(this, event, customEventData);
+        AudioMgr_1.default.Instance().playMX("click");
         var btnName = event.target.name;
         switch (btnName) {
             case "btn_share":
@@ -61,7 +61,7 @@ var RecordView = /** @class */ (function (_super) {
                     },
                     success: function () {
                         // console.log('分享视频成功');
-                        AudioMgr_1.default.Instance().playSFX("gem");
+                        AudioMgr_1.default.Instance().playMX("gem");
                         Utils_1.default.flyAnim(1, cc.find("Canvas"), "icon_gem", Utils_1.default.getRandomInt(2, 3), 85, function (b) {
                             if (b)
                                 ChickData_1.default.user.gem += 2;
@@ -80,7 +80,7 @@ var RecordView = /** @class */ (function (_super) {
                         window["tt"].showToast({
                             title: '保存成功'
                         });
-                        AudioMgr_1.default.Instance().playSFX("gem");
+                        AudioMgr_1.default.Instance().playMX("gem");
                         Utils_1.default.flyAnim(1, cc.find("Canvas"), "icon_gem", Utils_1.default.getRandomInt(2, 3), 85, function (b) {
                             if (b)
                                 ChickData_1.default.user.gem += 2;

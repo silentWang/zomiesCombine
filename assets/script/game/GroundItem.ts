@@ -11,7 +11,7 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class GroundItem extends BaseUI {
 
-    static getCurOpen()
+    static getNeedOpen()
     {
         let curopen = -1
         for(var i = 1;i < 12;++i)
@@ -25,7 +25,7 @@ export default class GroundItem extends BaseUI {
         return curopen;
     }
 
-    onBtnClicked(event, customEventData) {
+    onUIClicked(event, customEventData) {
         // let curopen = SlotItem.getCurOpen();
         // if(curopen == -1)return;
         // if(this.index-1 > curopen )
@@ -68,13 +68,12 @@ export default class GroundItem extends BaseUI {
         // this.setIndex(this.index);
     }
 
-
     private index = 0;
     setIndex(i)
     {
         this.index = i;
         this.SetText("lbl_index",i+"");
-        let curopen = GroundItem.getCurOpen();
+        let curopen = GroundItem.getNeedOpen();
         this.node.getComponent(cc.Button).interactable = this.index-1>=curopen && curopen !=-1;
 
         // this.GetSkeleton("fx_slot").setAnimation(0,"buy",true)

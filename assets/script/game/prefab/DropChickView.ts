@@ -24,8 +24,8 @@ export default class DropChickView extends BaseUI {
         super.onDestroy();
     }
 
-    private getSuperPot(db:boolean = false){
-        var t =  ChickData.user.GetMaxLv();
+    private getBigPot(db:boolean = false){
+        var t =  ChickData.user.getLvlMax();
         var n = Config_dropAwwards[t+""][1];
         let len = db ? 8 : 4;
         let pots = [];
@@ -35,16 +35,16 @@ export default class DropChickView extends BaseUI {
         return pots;
     }
     
-    onBtnClicked(event, customEventData) {
+    onUIClicked(event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
                 break;
             case "btn_normal":
                 WxCenter.aldReport('AirdropClick','click');
-                let spt = this.getSuperPot();
+                let spt = this.getBigPot();
                 ChickData.user.DropGiftPts = ChickData.user.DropGiftPts.concat(spt);
                 this.closeUI();
                 break;
@@ -53,7 +53,7 @@ export default class DropChickView extends BaseUI {
                 AdCenter.Instance().play((b)=>{
                     if(b)
                     {
-                        let spt = this.getSuperPot(true);
+                        let spt = this.getBigPot(true);
                         ChickData.user.DropGiftPts = ChickData.user.DropGiftPts.concat(spt);
                         this.closeUI();
                     }

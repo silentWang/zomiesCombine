@@ -36,6 +36,12 @@ var Shake = /** @class */ (function (_super) {
         return _this;
     }
     Shake_1 = Shake;
+    Shake.prototype.initWithDuration = function (duration, strength_x, strength_y) {
+        cc.ActionInterval.prototype['initWithDuration'].apply(this, arguments);
+        this._strength_x = strength_x;
+        this._strength_y = strength_y;
+        return true;
+    };
     /**
      *  创建抖动动画
      * @param {number} duration     动画持续时长
@@ -48,25 +54,19 @@ var Shake = /** @class */ (function (_super) {
         act.initWithDuration(duration, strength_x, strength_y);
         return act;
     };
-    Shake.prototype.initWithDuration = function (duration, strength_x, strength_y) {
-        cc.ActionInterval.prototype['initWithDuration'].apply(this, arguments);
-        this._strength_x = strength_x;
-        this._strength_y = strength_y;
-        return true;
-    };
-    Shake.prototype.fgRangeRand = function (min, max) {
-        var rnd = Math.random();
-        return rnd * (max - min) + min;
+    Shake.prototype.startWithTarget = function (target) {
+        cc.ActionInterval.prototype['startWithTarget'].apply(this, arguments);
+        this._initial_x = target.x;
+        this._initial_y = target.y;
     };
     Shake.prototype.update = function (time) {
         var randx = this.fgRangeRand(-this._strength_x, this._strength_x);
         var randy = this.fgRangeRand(-this._strength_y, this._strength_y);
         this.getTarget().setPosition(randx + this._initial_x, randy + this._initial_y);
     };
-    Shake.prototype.startWithTarget = function (target) {
-        cc.ActionInterval.prototype['startWithTarget'].apply(this, arguments);
-        this._initial_x = target.x;
-        this._initial_y = target.y;
+    Shake.prototype.fgRangeRand = function (min, max) {
+        var rnd = Math.random();
+        return rnd * (max - min) + min;
     };
     Shake.prototype.stop = function () {
         this.getTarget().setPosition(new cc.Vec2(this._initial_x, this._initial_y));

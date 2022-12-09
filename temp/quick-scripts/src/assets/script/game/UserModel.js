@@ -55,20 +55,20 @@ var UserModel = /** @class */ (function () {
     }
     UserModel.prototype.T = function () {
         // "20": [20, "U", "U", "G", "G", "M", "AD", "M", "M", "M"],
-        var lv = this.GetMaxLv();
+        var lv = this.getLvlMax();
         var t = Config_1.Config_shopsort[lv + ""];
         for (var n = 1; n <= 8; ++n)
             if ("AD" == t[n])
                 return lv - n;
         return lv - 4;
     };
-    UserModel.prototype.getOfflineEarning = function (t) {
+    UserModel.prototype.getOfflineReward = function (t) {
         var n = null;
         var o = [50, 30, 20, 15, 10, 5, 3, 2];
         var a = Math.max(1, this.T());
-        var r = this.GetMaxLv();
+        var r = this.getLvlMax();
         for (var s = Math.max(1, a - 10); s <= a; ++s) {
-            var c = this.BuyPrice(s);
+            var c = this.buyChickPrice(s);
             if (!n || c > n)
                 n = c;
         }
@@ -124,7 +124,7 @@ var UserModel = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    UserModel.prototype.getPlantInfo = function (index) {
+    UserModel.prototype.getChickInfo = function (index) {
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
                 return this.ComPlants[i];
@@ -132,7 +132,7 @@ var UserModel = /** @class */ (function () {
         }
         return null;
     };
-    UserModel.prototype.GetMaxLv = function () {
+    UserModel.prototype.getLvlMax = function () {
         var max = 0;
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].lv > max) {
@@ -142,14 +142,14 @@ var UserModel = /** @class */ (function () {
         return max;
     };
     //购买花费
-    UserModel.prototype.BuyPrice = function (lv) {
+    UserModel.prototype.buyChickPrice = function (lv) {
         var t = Number(Config_1.Config_chick[lv - 1][5]);
         var n = this.plantBuyTimes[lv] || 0;
         return 1 == lv ? t * (1e4 * Math.pow(1.07, n)) / (1e4) : t * (1e4 * Math.pow(1.175, n)) / (1e4);
     };
-    UserModel.prototype.CompMove = function (i0, i1) {
-        var it0 = this.getPlantInfo(i0);
-        var it1 = this.getPlantInfo(i1);
+    UserModel.prototype.moveEff = function (i0, i1) {
+        var it0 = this.getChickInfo(i0);
+        var it1 = this.getChickInfo(i1);
         if (it0 && it1) {
             it0.index = i1;
             it1.index = i0;
@@ -164,7 +164,7 @@ var UserModel = /** @class */ (function () {
         }
     };
     //合成
-    UserModel.prototype.ComposePlant = function (i0, i1) {
+    UserModel.prototype.composeChicks = function (i0, i1) {
         var tmp1 = this.ComPlants.find(function (wj) {
             return wj.index == i0;
         });
@@ -179,8 +179,8 @@ var UserModel = /** @class */ (function () {
             console.error("err");
             return false;
         }
-        var tmplv = this.GetMaxLv();
-        var tmpPre = this.getPlantInfo(i0);
+        var tmplv = this.getLvlMax();
+        var tmpPre = this.getChickInfo(i0);
         var lv = tmpPre.lv;
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == i0) {
@@ -199,16 +199,16 @@ var UserModel = /** @class */ (function () {
         // cc.log("创建", i0);
         this.ComPlants.push({ open: tmpPre.open, index: i0, lv: lv + 1 });
         this.todayComTimes++;
-        var tmplv2 = this.GetMaxLv();
+        var tmplv2 = this.getLvlMax();
         if (tmplv2 > tmplv && tmplv2 < 60) {
             Utils_1.default.createUI("prefab/NewPlantUI");
             GameEvent_1.default.Instance().dispatch(GameConst_1.default.NEW_CHICK, tmplv2);
         }
-        AudioMgr_1.default.Instance().playSFX("merge_success");
+        AudioMgr_1.default.Instance().playMX("merge_success");
         return true;
     };
     //购买
-    UserModel.prototype.BuyPlant = function (index, lv) {
+    UserModel.prototype.buyChick = function (index, lv) {
         if (!this.plantBuyTimes[lv])
             this.plantBuyTimes[lv] = 0;
         this.plantBuyTimes[lv]++;
@@ -224,10 +224,10 @@ var UserModel = /** @class */ (function () {
         return tmp;
     };
     //摧毁
-    UserModel.prototype.DropWuJiang = function (index) {
+    UserModel.prototype.updateSellChickCoin = function (index) {
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
-                var tmp = this.BuyPrice(this.ComPlants[i].lv);
+                var tmp = this.buyChickPrice(this.ComPlants[i].lv);
                 ChickData_1.default.user.coin += Math.floor(tmp);
                 // this.changeGameCoin(Math.floor(tmp))
                 cc.log("卖了换钱：" + tmp);
@@ -236,7 +236,7 @@ var UserModel = /** @class */ (function () {
             }
         }
     };
-    UserModel.prototype.getUploadData = function () {
+    UserModel.prototype.getAllData = function () {
         var data = {};
         this.serverTime = Utils_1.default.getServerTime();
         for (var i = 0; i < savepars.length; ++i) {

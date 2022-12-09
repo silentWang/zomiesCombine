@@ -68,15 +68,15 @@ var ShopView = /** @class */ (function (_super) {
         var sview = this.GetGameObject("ScrollView");
         var list = sview.getComponent(List_1.default);
         list.numItems = this.list.length;
-        var index = Math.max(0, ChickData_1.default.user.GetMaxLv() - 5);
+        var index = Math.max(0, ChickData_1.default.user.getLvlMax() - 5);
         list.scrollTo(index, 0.2);
     };
-    ShopView.prototype.onBtnClicked = function (event, c) {
-        AudioMgr_1.default.Instance().playSFX("click");
+    ShopView.prototype.onUIClicked = function (event, c) {
+        AudioMgr_1.default.Instance().playMX("click");
         this.node.active = false;
     };
     ShopView.prototype.onListRender = function (item, idx) {
-        item.getComponent(ShopItem_1.default).setItemData(this.list[idx]);
+        item.getComponent(ShopItem_1.default).setShopItemData(this.list[idx]);
     };
     var ShopView_1;
     ShopView._instance = null;

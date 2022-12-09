@@ -5,7 +5,7 @@ cc._RF.push(module, 'ff748PS7+hEIIiRCFvCwbSy', 'Utils');
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Shake_1 = require("./Shake");
-var BigNumber_1 = require("./BigNumber");
+var NumberUtils_1 = require("./NumberUtils");
 var PoolMgr_1 = require("../manager/PoolMgr");
 var GameConst_1 = require("../game/GameConst");
 var wx = window["wx"];
@@ -43,30 +43,30 @@ var Utils = /** @class */ (function () {
             });
         });
     };
-    Utils.getRandom = function (lower, upper) {
-        return Math.random() * (upper - lower) + lower;
-    };
-    ;
     Utils.getRandomInt = function (lower, upper) {
         return Math.floor(Math.random() * (upper - lower)) + lower;
     };
     ;
-    Utils.seedRandomInt = function (lower, upper) {
-        return Utils.getRandomInt(lower, upper);
-    };
-    Utils.formatNumber = function (num, afterdot) {
-        if (afterdot === void 0) { afterdot = 1; }
-        num = Math.floor(num);
-        return BigNumber_1.default.getLargeString(num);
+    Utils.getRandom = function (lower, upper) {
+        return Math.random() * (upper - lower) + lower;
     };
     ;
     Utils.getPowNum = function (p) {
         return Math.pow(10, p);
     };
     ;
+    Utils.formatNumber = function (num, afterdot) {
+        if (afterdot === void 0) { afterdot = 1; }
+        num = Math.floor(num);
+        return NumberUtils_1.default.getLargeString(num);
+    };
+    ;
     Utils.setServerTime = function (time) {
         Utils.timeOffset = time - new Date().getTime();
         cc.log("timeOffset:", Utils.timeOffset);
+    };
+    Utils.seedRandomInt = function (lower, upper) {
+        return Utils.getRandomInt(lower, upper);
     };
     Utils.getServerTime = function () {
         return new Date().getTime() + Utils.timeOffset;
@@ -77,22 +77,6 @@ var Utils = /** @class */ (function () {
         camera.y = 0;
         camera.stopAllActions();
         camera.runAction(Shake_1.Shake.create(duration, strength_x, strength_y));
-    };
-    Utils.addClickEvent = function (node, target, component, handler, customEventData) {
-        var eventHandler = new cc.Component.EventHandler();
-        eventHandler.target = target;
-        eventHandler.component = component;
-        eventHandler.handler = handler;
-        if (customEventData)
-            eventHandler.customEventData = customEventData;
-        var clickEvents = node.getComponent(cc.Button).clickEvents;
-        if (clickEvents.length > 0) {
-            if (!CC_EDITOR)
-                cc.warn("按钮已经存在绑定，跳过自动绑定", node.name);
-            return;
-        }
-        // console.log(node.name,target.name,component)
-        clickEvents.push(eventHandler);
     };
     Utils.wxShare = function (callback) {
         if (callback === void 0) { callback = null; }
@@ -123,6 +107,22 @@ var Utils = /** @class */ (function () {
                 });
             }
         }
+    };
+    Utils.addClickEvent = function (node, target, component, handler, customEventData) {
+        var eventHandler = new cc.Component.EventHandler();
+        eventHandler.target = target;
+        eventHandler.component = component;
+        eventHandler.handler = handler;
+        if (customEventData)
+            eventHandler.customEventData = customEventData;
+        var clickEvents = node.getComponent(cc.Button).clickEvents;
+        if (clickEvents.length > 0) {
+            if (!CC_EDITOR)
+                cc.warn("按钮已经存在绑定，跳过自动绑定", node.name);
+            return;
+        }
+        // console.log(node.name,target.name,component)
+        clickEvents.push(eventHandler);
     };
     Utils.getTimeStrByS = function (second) {
         second = Math.floor(second);
@@ -168,23 +168,6 @@ var Utils = /** @class */ (function () {
             }
         }
     };
-    Utils.formatCoin = function (num) {
-        num = Math.floor(num);
-        return BigNumber_1.default.getLargeString(num);
-    };
-    // public static loadRes(path: string, type: typeof cc.Asset) {
-    //     return new Promise((resolve, reject) => {
-    //         cc.loader.loadRes(path, type, (err, ret) => {
-    //             if (err) {
-    //                 cc.error(path, err);
-    //                 reject(null);
-    //             }
-    //             else {
-    //                 resolve(ret);
-    //             }
-    //         })
-    //     })
-    // }
     Utils.loadBundler = function (name) {
         return new Promise(function (resolve, reject) {
             cc.assetManager.loadBundle(name, function (err, ret) {
@@ -192,6 +175,28 @@ var Utils = /** @class */ (function () {
                 resolve(null);
             });
         });
+    };
+    Utils.formatCoin = function (num) {
+        num = Math.floor(num);
+        return NumberUtils_1.default.getLargeString(num);
+    };
+    Utils.weight = function (v) {
+        var mTotalWeight = 0;
+        for (var i = 0; i < v.length; ++i) {
+            mTotalWeight += v[i];
+        }
+        if (mTotalWeight <= 0)
+            return -1;
+        var randnum = Math.round(Math.random() * Number.MAX_VALUE) % mTotalWeight;
+        for (var i = 0; i < v.length; ++i) {
+            if (randnum < v[i]) {
+                return i;
+            }
+            else {
+                randnum -= v[i];
+            }
+        }
+        return -1;
     };
     Utils.loadRes = function (path, type, callback) {
         if (callback === void 0) { callback = null; }
@@ -222,30 +227,6 @@ var Utils = /** @class */ (function () {
                 }
             });
         });
-    };
-    Utils.weight = function (v) {
-        var mTotalWeight = 0;
-        for (var i = 0; i < v.length; ++i) {
-            mTotalWeight += v[i];
-        }
-        if (mTotalWeight <= 0)
-            return -1;
-        var randnum = Math.round(Math.random() * Number.MAX_VALUE) % mTotalWeight;
-        for (var i = 0; i < v.length; ++i) {
-            if (randnum < v[i]) {
-                return i;
-            }
-            else {
-                randnum -= v[i];
-            }
-        }
-        return -1;
-    };
-    //定点数
-    Utils.fixFloat = function (val, count) {
-        if (count === void 0) { count = 2; }
-        var a = count * 100;
-        return Math.floor(val * a) / a;
     };
     Utils.flyAnim = function (type, startNode, targetNodeName, count, radius, callback) {
         var getPoint = function (r, ox, oy, count) {
@@ -305,6 +286,12 @@ var Utils = /** @class */ (function () {
             }));
             node.runAction(seq);
         }
+    };
+    //定点数
+    Utils.fixFloat = function (val, count) {
+        if (count === void 0) { count = 2; }
+        var a = count * 100;
+        return Math.floor(val * a) / a;
     };
     Utils.playBreath = function (target, sscale, tscale, duration, loop) {
         var _this = this;

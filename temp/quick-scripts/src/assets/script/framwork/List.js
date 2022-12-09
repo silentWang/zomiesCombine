@@ -244,17 +244,6 @@ var List = /** @class */ (function (_super) {
     List.prototype.start = function () {
         this._init();
     };
-    List.prototype.onEnable = function () {
-        if (!CC_EDITOR) {
-            this._registerEvent();
-        }
-        this._init();
-    };
-    List.prototype.onDisable = function () {
-        if (!CC_EDITOR) {
-            this._unregisterEvent();
-        }
-    };
     //注册事件
     List.prototype._registerEvent = function () {
         var t = this;
@@ -272,6 +261,17 @@ var List = /** @class */ (function (_super) {
         t.node.off('scrolling', t._onScrolling, t, true);
     };
     //初始化各种..
+    List.prototype.onEnable = function () {
+        if (!CC_EDITOR) {
+            this._registerEvent();
+        }
+        this._init();
+    };
+    List.prototype.onDisable = function () {
+        if (!CC_EDITOR) {
+            this._unregisterEvent();
+        }
+    };
     List.prototype._init = function () {
         var t = this;
         if (t._inited)
@@ -362,6 +362,20 @@ var List = /** @class */ (function (_super) {
         t.content.removeAllChildren();
         t._inited = true;
     };
+    /**
+     * 检查是否初始化
+     * @param {Boolean} printLog 是否打印错误信息
+     * @returns
+     */
+    List.prototype.checkInited = function (printLog) {
+        var pL = printLog ? printLog : true;
+        if (!this._inited) {
+            if (pL)
+                cc.error('List initialization not completed!');
+            return false;
+        }
+        return true;
+    };
     //设置模板Item
     List.prototype.setTemplateItem = function (item) {
         if (!item)
@@ -418,20 +432,6 @@ var List = /** @class */ (function (_super) {
                 }
                 break;
         }
-    };
-    /**
-     * 检查是否初始化
-     * @param {Boolean} printLog 是否打印错误信息
-     * @returns
-     */
-    List.prototype.checkInited = function (printLog) {
-        var pL = printLog ? printLog : true;
-        if (!this._inited) {
-            if (pL)
-                cc.error('List initialization not completed!');
-            return false;
-        }
-        return true;
     };
     //禁用 Layout 组件，自行计算 Content Size
     List.prototype._resizeContent = function () {
@@ -639,44 +639,6 @@ var List = /** @class */ (function (_super) {
             this._calcNearestItem();
         }
     };
-    //计算可视范围
-    List.prototype._calcViewPos = function () {
-        var scrollPos = this.content.getPosition();
-        switch (this._alignCalcType) {
-            case 1: //单行HORIZONTAL（LEFT_TO_RIGHT）、网格VERTICAL（LEFT_TO_RIGHT）
-                this.elasticLeft = scrollPos.x > 0 ? scrollPos.x : 0;
-                this.viewLeft = (scrollPos.x < 0 ? -scrollPos.x : 0) - this.elasticLeft;
-                this.viewRight = this.viewLeft + this.node.width;
-                this.elasticRight = this.viewRight > this.content.width ? Math.abs(this.viewRight - this.content.width) : 0;
-                this.viewRight += this.elasticRight;
-                // cc.log(this.elasticLeft, this.elasticRight, this.viewLeft, this.viewRight);
-                break;
-            case 2: //单行HORIZONTAL（RIGHT_TO_LEFT）、网格VERTICAL（RIGHT_TO_LEFT）
-                this.elasticRight = scrollPos.x < 0 ? -scrollPos.x : 0;
-                this.viewRight = (scrollPos.x > 0 ? -scrollPos.x : 0) + this.elasticRight;
-                this.viewLeft = this.viewRight - this.node.width;
-                this.elasticLeft = this.viewLeft < -this.content.width ? Math.abs(this.viewLeft + this.content.width) : 0;
-                this.viewLeft -= this.elasticLeft;
-                // cc.log(this.elasticLeft, this.elasticRight, this.viewLeft, this.viewRight);
-                break;
-            case 3: //单列VERTICAL（TOP_TO_BOTTOM）、网格HORIZONTAL（TOP_TO_BOTTOM）
-                this.elasticTop = scrollPos.y < 0 ? Math.abs(scrollPos.y) : 0;
-                this.viewTop = (scrollPos.y > 0 ? -scrollPos.y : 0) + this.elasticTop;
-                this.viewBottom = this.viewTop - this.node.height;
-                this.elasticBottom = this.viewBottom < -this.content.height ? Math.abs(this.viewBottom + this.content.height) : 0;
-                this.viewBottom += this.elasticBottom;
-                // cc.log(this.elasticTop, this.elasticBottom, this.viewTop, this.viewBottom);
-                break;
-            case 4: //单列VERTICAL（BOTTOM_TO_TOP）、网格HORIZONTAL（BOTTOM_TO_TOP）
-                this.elasticBottom = scrollPos.y > 0 ? Math.abs(scrollPos.y) : 0;
-                this.viewBottom = (scrollPos.y < 0 ? -scrollPos.y : 0) - this.elasticBottom;
-                this.viewTop = this.viewBottom + this.node.height;
-                this.elasticTop = this.viewTop > this.content.height ? Math.abs(this.viewTop - this.content.height) : 0;
-                this.viewTop -= this.elasticTop;
-                // cc.log(this.elasticTop, this.elasticBottom, this.viewTop, this.viewBottom);
-                break;
-        }
-    };
     //计算位置 根据id
     List.prototype._calcItemPos = function (id) {
         var width, height, top, bottom, left, right, itemX, itemY;
@@ -874,6 +836,44 @@ var List = /** @class */ (function (_super) {
             }
         }
     };
+    //计算可视范围
+    List.prototype._calcViewPos = function () {
+        var scrollPos = this.content.getPosition();
+        switch (this._alignCalcType) {
+            case 1: //单行HORIZONTAL（LEFT_TO_RIGHT）、网格VERTICAL（LEFT_TO_RIGHT）
+                this.elasticLeft = scrollPos.x > 0 ? scrollPos.x : 0;
+                this.viewLeft = (scrollPos.x < 0 ? -scrollPos.x : 0) - this.elasticLeft;
+                this.viewRight = this.viewLeft + this.node.width;
+                this.elasticRight = this.viewRight > this.content.width ? Math.abs(this.viewRight - this.content.width) : 0;
+                this.viewRight += this.elasticRight;
+                // cc.log(this.elasticLeft, this.elasticRight, this.viewLeft, this.viewRight);
+                break;
+            case 2: //单行HORIZONTAL（RIGHT_TO_LEFT）、网格VERTICAL（RIGHT_TO_LEFT）
+                this.elasticRight = scrollPos.x < 0 ? -scrollPos.x : 0;
+                this.viewRight = (scrollPos.x > 0 ? -scrollPos.x : 0) + this.elasticRight;
+                this.viewLeft = this.viewRight - this.node.width;
+                this.elasticLeft = this.viewLeft < -this.content.width ? Math.abs(this.viewLeft + this.content.width) : 0;
+                this.viewLeft -= this.elasticLeft;
+                // cc.log(this.elasticLeft, this.elasticRight, this.viewLeft, this.viewRight);
+                break;
+            case 3: //单列VERTICAL（TOP_TO_BOTTOM）、网格HORIZONTAL（TOP_TO_BOTTOM）
+                this.elasticTop = scrollPos.y < 0 ? Math.abs(scrollPos.y) : 0;
+                this.viewTop = (scrollPos.y > 0 ? -scrollPos.y : 0) + this.elasticTop;
+                this.viewBottom = this.viewTop - this.node.height;
+                this.elasticBottom = this.viewBottom < -this.content.height ? Math.abs(this.viewBottom + this.content.height) : 0;
+                this.viewBottom += this.elasticBottom;
+                // cc.log(this.elasticTop, this.elasticBottom, this.viewTop, this.viewBottom);
+                break;
+            case 4: //单列VERTICAL（BOTTOM_TO_TOP）、网格HORIZONTAL（BOTTOM_TO_TOP）
+                this.elasticBottom = scrollPos.y > 0 ? Math.abs(scrollPos.y) : 0;
+                this.viewBottom = (scrollPos.y < 0 ? -scrollPos.y : 0) - this.elasticBottom;
+                this.viewTop = this.viewBottom + this.node.height;
+                this.elasticTop = this.viewTop > this.content.height ? Math.abs(this.viewTop - this.content.height) : 0;
+                this.viewTop -= this.elasticTop;
+                // cc.log(this.elasticTop, this.elasticBottom, this.viewTop, this.viewBottom);
+                break;
+        }
+    };
     //获取固定尺寸
     List.prototype._getFixedSize = function (listId) {
         if (!this.customSize)
@@ -892,10 +892,6 @@ var List = /** @class */ (function (_super) {
             val: fixed,
             count: count,
         };
-    };
-    //滚动结束时..
-    List.prototype._onScrollBegan = function () {
-        this._beganPos = this._sizeType ? this.viewTop : this.viewLeft;
     };
     //滚动结束时..
     List.prototype._onScrollEnded = function () {
@@ -922,6 +918,10 @@ var List = /** @class */ (function (_super) {
             }
         }
     };
+    //滚动结束时..
+    List.prototype._onScrollBegan = function () {
+        this._beganPos = this._sizeType ? this.viewTop : this.viewLeft;
+    };
     //触摸抬起时..
     List.prototype._onScrollTouchUp = function () {
         var t = this;
@@ -942,6 +942,17 @@ var List = /** @class */ (function (_super) {
                 t.adhere();
             }
         }
+    };
+    //粘附
+    List.prototype.adhere = function () {
+        var t = this;
+        if (t.elasticTop > 0 || t.elasticRight > 0 || t.elasticBottom > 0 || t.elasticLeft > 0)
+            return;
+        t.adhering = true;
+        t._calcNearestItem();
+        var offset = (t._sizeType ? t._topGap : t._leftGap) / (t._sizeType ? t.node.height : t.node.width);
+        var timeInSecond = .7;
+        t.scrollTo(t.nearestListId, timeInSecond, offset);
     };
     List.prototype._pageAdhere = function () {
         var t = this;
@@ -973,17 +984,6 @@ var List = /** @class */ (function (_super) {
             t.adhere();
         }
         t._beganPos = null;
-    };
-    //粘附
-    List.prototype.adhere = function () {
-        var t = this;
-        if (t.elasticTop > 0 || t.elasticRight > 0 || t.elasticBottom > 0 || t.elasticLeft > 0)
-            return;
-        t.adhering = true;
-        t._calcNearestItem();
-        var offset = (t._sizeType ? t._topGap : t._leftGap) / (t._sizeType ? t.node.height : t.node.width);
-        var timeInSecond = .7;
-        t.scrollTo(t.nearestListId, timeInSecond, offset);
     };
     //Update..
     List.prototype.update = function (dt) {
@@ -1028,6 +1028,20 @@ var List = /** @class */ (function (_super) {
             else {
                 this._updateDone = true;
                 this._calcNearestItem();
+            }
+        }
+    };
+    List.prototype._updateListItem = function (listItem) {
+        if (!listItem)
+            return;
+        if (this.selectedMode > SelectedType.NONE) {
+            switch (this.selectedMode) {
+                case SelectedType.SINGLE:
+                    listItem.selected = this.selectedId == listItem.listId;
+                    break;
+                case SelectedType.MULT:
+                    listItem.selected = this.multSelected.indexOf(listItem.listId) >= 0;
+                    break;
             }
         }
     };
@@ -1100,20 +1114,6 @@ var List = /** @class */ (function (_super) {
             this._lastDisplayData.push(listId);
         }
     };
-    List.prototype._updateListItem = function (listItem) {
-        if (!listItem)
-            return;
-        if (this.selectedMode > SelectedType.NONE) {
-            switch (this.selectedMode) {
-                case SelectedType.SINGLE:
-                    listItem.selected = this.selectedId == listItem.listId;
-                    break;
-                case SelectedType.MULT:
-                    listItem.selected = this.multSelected.indexOf(listItem.listId) >= 0;
-                    break;
-            }
-        }
-    };
     //仅虚拟列表用
     List.prototype._resetItemSize = function (item) {
         var listItem = item.getComponent(ListItem_1.default);
@@ -1127,6 +1127,23 @@ var List = /** @class */ (function (_super) {
         }
         else if (this._align == cc.Layout.Type.VERTICAL) {
             item.height = size;
+        }
+    };
+    /**
+     * 更新指定的Item
+     * @param {Array} args 单个listId，或者数组
+     * @returns
+     */
+    List.prototype.updateAppointed = function (args) {
+        if (!Array.isArray(args)) {
+            args = [args];
+        }
+        var len = args.length;
+        for (var n = 0; n < len; n++) {
+            var listId = args[n];
+            var item = this.getItemByListId(listId);
+            if (item)
+                cc.Component.EventHandler.emitEvents([this.renderEvent], item, listId);
         }
     };
     /**
@@ -1168,23 +1185,6 @@ var List = /** @class */ (function (_super) {
         t._onScrolling(null);
     };
     /**
-     * 更新指定的Item
-     * @param {Array} args 单个listId，或者数组
-     * @returns
-     */
-    List.prototype.updateAppointed = function (args) {
-        if (!Array.isArray(args)) {
-            args = [args];
-        }
-        var len = args.length;
-        for (var n = 0; n < len; n++) {
-            var listId = args[n];
-            var item = this.getItemByListId(listId);
-            if (item)
-                cc.Component.EventHandler.emitEvents([this.renderEvent], item, listId);
-        }
-    };
-    /**
      * 根据ListID获取Item
      * @param {Number} listId
      * @returns
@@ -1195,6 +1195,21 @@ var List = /** @class */ (function (_super) {
                 return this.content.children[n];
         }
         return null;
+    };
+    //删除显示区域以外的Item
+    List.prototype._delRedundantItem = function () {
+        if (this._virtual) {
+            var arr = this._getOutsideItem();
+            for (var n = arr.length - 1; n >= 0; n--) {
+                this._pool.put(arr[n]);
+            }
+            // cc.log('存入::', str, '    pool.length =', this._pool.length);
+        }
+        else {
+            while (this.content.childrenCount > this._numItems) {
+                this._delSingleItem(this.content.children[this.content.childrenCount - 1]);
+            }
+        }
     };
     /**
      * 获取在显示区域外的Item
@@ -1222,29 +1237,6 @@ var List = /** @class */ (function (_super) {
             }
         }
         return result;
-    };
-    //删除显示区域以外的Item
-    List.prototype._delRedundantItem = function () {
-        if (this._virtual) {
-            var arr = this._getOutsideItem();
-            for (var n = arr.length - 1; n >= 0; n--) {
-                this._pool.put(arr[n]);
-            }
-            // cc.log('存入::', str, '    pool.length =', this._pool.length);
-        }
-        else {
-            while (this.content.childrenCount > this._numItems) {
-                this._delSingleItem(this.content.children[this.content.childrenCount - 1]);
-            }
-        }
-    };
-    //删除单个Item
-    List.prototype._delSingleItem = function (item) {
-        // cc.log('DEL::', item.getComponent(ListItem).listId, item);
-        item.removeFromParent();
-        if (item.destroy)
-            item.destroy();
-        item = null;
     };
     /**
      * 动效删除Item（此方法只适用于虚拟列表，即_virtual=true）
@@ -1344,6 +1336,14 @@ var List = /** @class */ (function (_super) {
             }
         }, true);
     };
+    //删除单个Item
+    List.prototype._delSingleItem = function (item) {
+        // cc.log('DEL::', item.getComponent(ListItem).listId, item);
+        item.removeFromParent();
+        if (item.destroy)
+            item.destroy();
+        item = null;
+    };
     /**
      * 滚动到..
      * @param {Number} listId 索引（如果<0，则滚到首个Item位置，如果>=_numItems，则滚到最末Item位置）
@@ -1429,6 +1429,29 @@ var List = /** @class */ (function (_super) {
                 t._onScrolling(null);
             }
         }
+    };
+    //计算 CustomSize（比较复杂的Item结构不建议使用此方法来计算）
+    List.prototype.calcCustomSize = function (numItems) {
+        var t = this;
+        if (!t._itemTmp)
+            return cc.error('Unset template item!');
+        if (!t.renderEvent)
+            return cc.error('Unset Render-Event!');
+        t.customSize = {};
+        var temp = cc.instantiate(t._itemTmp);
+        t.content.addChild(temp);
+        for (var n = 0; n < numItems; n++) {
+            cc.Component.EventHandler.emitEvents([t.renderEvent], temp, n);
+            if (temp.height != t._itemSize.height || temp.width != t._itemSize.width) {
+                t.customSize[n] = t._sizeType ? temp.height : temp.width;
+            }
+        }
+        if (!Object.keys(t.customSize).length)
+            t.customSize = null;
+        temp.removeFromParent();
+        if (temp.destroy)
+            temp.destroy();
+        return t.customSize;
     };
     /**
      * 计算当前滚动窗最近的Item
@@ -1522,16 +1545,6 @@ var List = /** @class */ (function (_super) {
         }
         return data;
     };
-    //上一页
-    List.prototype.prePage = function (timeInSecond) {
-        if (timeInSecond === void 0) { timeInSecond = .5; }
-        this.skipPage(this.curPageNum - 1, timeInSecond);
-    };
-    //下一页
-    List.prototype.nextPage = function (timeInSecond) {
-        if (timeInSecond === void 0) { timeInSecond = .5; }
-        this.skipPage(this.curPageNum + 1, timeInSecond);
-    };
     //跳转到第几页
     List.prototype.skipPage = function (pageNum, timeInSecond) {
         var t = this;
@@ -1547,28 +1560,15 @@ var List = /** @class */ (function (_super) {
         }
         t.scrollTo(pageNum, timeInSecond);
     };
-    //计算 CustomSize（比较复杂的Item结构不建议使用此方法来计算）
-    List.prototype.calcCustomSize = function (numItems) {
-        var t = this;
-        if (!t._itemTmp)
-            return cc.error('Unset template item!');
-        if (!t.renderEvent)
-            return cc.error('Unset Render-Event!');
-        t.customSize = {};
-        var temp = cc.instantiate(t._itemTmp);
-        t.content.addChild(temp);
-        for (var n = 0; n < numItems; n++) {
-            cc.Component.EventHandler.emitEvents([t.renderEvent], temp, n);
-            if (temp.height != t._itemSize.height || temp.width != t._itemSize.width) {
-                t.customSize[n] = t._sizeType ? temp.height : temp.width;
-            }
-        }
-        if (!Object.keys(t.customSize).length)
-            t.customSize = null;
-        temp.removeFromParent();
-        if (temp.destroy)
-            temp.destroy();
-        return t.customSize;
+    //上一页
+    List.prototype.prePage = function (timeInSecond) {
+        if (timeInSecond === void 0) { timeInSecond = .5; }
+        this.skipPage(this.curPageNum - 1, timeInSecond);
+    };
+    //下一页
+    List.prototype.nextPage = function (timeInSecond) {
+        if (timeInSecond === void 0) { timeInSecond = .5; }
+        this.skipPage(this.curPageNum + 1, timeInSecond);
     };
     __decorate([
         property({ type: cc.Enum(TemplateType), tooltip: CC_DEV && '模板类型', })

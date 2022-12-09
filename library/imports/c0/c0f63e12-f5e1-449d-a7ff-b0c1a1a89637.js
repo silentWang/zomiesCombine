@@ -47,9 +47,9 @@ var DropChickView = /** @class */ (function (_super) {
         AdCenter_1.default.Instance().hideGridAd();
         _super.prototype.onDestroy.call(this);
     };
-    DropChickView.prototype.getSuperPot = function (db) {
+    DropChickView.prototype.getBigPot = function (db) {
         if (db === void 0) { db = false; }
-        var t = ChickData_1.default.user.GetMaxLv();
+        var t = ChickData_1.default.user.getLvlMax();
         var n = Config_1.Config_dropAwwards[t + ""][1];
         var len = db ? 8 : 4;
         var pots = [];
@@ -58,17 +58,17 @@ var DropChickView = /** @class */ (function (_super) {
         }
         return pots;
     };
-    DropChickView.prototype.onBtnClicked = function (event, customEventData) {
+    DropChickView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
-        AudioMgr_1.default.Instance().playSFX("click");
+        AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
                 break;
             case "btn_normal":
                 WxCenter_1.default.aldReport('AirdropClick', 'click');
-                var spt = this.getSuperPot();
+                var spt = this.getBigPot();
                 ChickData_1.default.user.DropGiftPts = ChickData_1.default.user.DropGiftPts.concat(spt);
                 this.closeUI();
                 break;
@@ -76,7 +76,7 @@ var DropChickView = /** @class */ (function (_super) {
                 WxCenter_1.default.aldReport('AirdropClick', 'click');
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
-                        var spt_1 = _this.getSuperPot(true);
+                        var spt_1 = _this.getBigPot(true);
                         ChickData_1.default.user.DropGiftPts = ChickData_1.default.user.DropGiftPts.concat(spt_1);
                         _this.closeUI();
                     }

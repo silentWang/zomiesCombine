@@ -64,16 +64,16 @@ export default class Bullet extends BaseUI {
         this.target = target;
         this.skillType = this.getBulletType();
         if(this.skillType == 1){
-            AudioMgr.Instance().playSFX('skill5');
+            AudioMgr.Instance().playMX('skill5');
         }
         else if(this.skillType == 2){
-            AudioMgr.Instance().playSFX('skill3');
+            AudioMgr.Instance().playMX('skill3');
         }
         else if(this.skillType == 3){
-            AudioMgr.Instance().playSFX('skill2');
+            AudioMgr.Instance().playMX('skill2');
         }
         else {
-            AudioMgr.Instance().playSFX('skill1');
+            AudioMgr.Instance().playMX('skill1');
         }
 
 

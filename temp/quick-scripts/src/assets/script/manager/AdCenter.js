@@ -26,22 +26,22 @@ var AdCenter = /** @class */ (function (_super) {
     __extends(AdCenter, _super);
     function AdCenter() {
         var _this = _super.call(this) || this;
-        _this.VideoAd = null;
-        _this.bannerAd = null;
+        _this.videoAdID = null;
+        _this.bannerAdID = null;
         _this.interstitialAd = null;
-        _this._lasttryplaytime = 0;
+        _this._lastPlayTime = 0;
         if (tt && tt.createRewardedVideoAd) {
-            _this.VideoAd = tt.createRewardedVideoAd({
+            _this.videoAdID = tt.createRewardedVideoAd({
                 adUnitId: '1r3lbfr4d9e6veouju'
             });
-            _this.VideoAd.onError(function (res) {
+            _this.videoAdID.onError(function (res) {
                 console.log("onError", res);
                 // MsgToast.show("广告加载错误");
             });
-            _this.VideoAd.onLoad(function () {
+            _this.videoAdID.onLoad(function () {
                 // console.log('广告加载成功');
             });
-            _this.VideoAd.onClose(function (res) {
+            _this.videoAdID.onClose(function (res) {
                 if (res && res.isEnded || res === undefined) {
                     // cc.log("正常播放结束，可以下发游戏奖励")
                     _this.callBack(true);
@@ -65,12 +65,39 @@ var AdCenter = /** @class */ (function (_super) {
         }
         return _this;
     }
-    AdCenter.prototype.showinterstitialAd = function () {
+    AdCenter.prototype.showBigPicAd = function () {
         // 在适合的场景显示插屏广告
         if (this.interstitialAd) {
             this.interstitialAd.show().catch(function (err) {
                 console.log(err);
             });
+        }
+    };
+    AdCenter.prototype.play = function (callback, type) {
+        if (type === void 0) { type = 0; }
+        if (Utils_1.default.getServerTime() - this._lastPlayTime < 1000) {
+            console.log("点击过于频繁");
+            return;
+        }
+        this._lastPlayTime = Utils_1.default.getServerTime();
+        this.callBack = callback;
+        WxCenter_1.default.showRewardedVideoAd(callback);
+        // this.playVideo();
+    };
+    AdCenter.prototype.playVideo = function () {
+        var _this = this;
+        if (this.videoAdID) {
+            this.videoAdID.show().catch(function () {
+                _this.videoAdID.load()
+                    .then(function () { return _this.videoAdID.show(); })
+                    .catch(function (err) {
+                    cc.log('激励视频 广告显示失败');
+                    _this.callBack(false);
+                });
+            });
+        }
+        else {
+            this.callBack(true);
         }
     };
     AdCenter.prototype.showGridAd = function () {
@@ -82,33 +109,6 @@ var AdCenter = /** @class */ (function (_super) {
         // if (this.bannerAd)
         //     this.bannerAd.hide()
         WxCenter_1.default.hideBanner();
-    };
-    AdCenter.prototype.play = function (callback, type) {
-        if (type === void 0) { type = 0; }
-        if (Utils_1.default.getServerTime() - this._lasttryplaytime < 1000) {
-            console.log("点击过于频繁");
-            return;
-        }
-        this._lasttryplaytime = Utils_1.default.getServerTime();
-        this.callBack = callback;
-        WxCenter_1.default.showRewardedVideoAd(callback);
-        // this.dyShowVideo();
-    };
-    AdCenter.prototype.dyShowVideo = function () {
-        var _this = this;
-        if (this.VideoAd) {
-            this.VideoAd.show().catch(function () {
-                _this.VideoAd.load()
-                    .then(function () { return _this.VideoAd.show(); })
-                    .catch(function (err) {
-                    cc.log('激励视频 广告显示失败');
-                    _this.callBack(false);
-                });
-            });
-        }
-        else {
-            this.callBack(true);
-        }
     };
     return AdCenter;
 }(Singleton_1.default));

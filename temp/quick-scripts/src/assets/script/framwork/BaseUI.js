@@ -79,7 +79,7 @@ var BaseUI = /** @class */ (function (_super) {
         return _this;
     }
     BaseUI_1 = BaseUI;
-    BaseUI.prototype.onBtnClicked = function (event, customEventData) {
+    BaseUI.prototype.onUIClicked = function (event, customEventData) {
         var btnName = event.target.name;
         switch (btnName) {
             case "btn_close":
@@ -91,10 +91,36 @@ var BaseUI = /** @class */ (function (_super) {
         this.events = [];
         // if (this.addClickEvent)
         if (this.node.getComponent(cc.Button)) {
-            Utils_1.default.addClickEvent(this.node, this.node, cc.js.getClassName(this), "onBtnClicked", this.node.getComponent(cc.Button).target);
+            Utils_1.default.addClickEvent(this.node, this.node, cc.js.getClassName(this), "onUIClicked", this.node.getComponent(cc.Button).target);
         }
         this._addClickEvent(this.node);
         this._create_time = Utils_1.default.getServerTime();
+    };
+    BaseUI.prototype.fixRedCoinForShow = function (coin, fixed, ratio) {
+        if (fixed === void 0) { fixed = 4; }
+        if (ratio === void 0) { ratio = 100; }
+        var v = coin / ratio;
+        if (v > 1.0)
+            fixed = 2;
+        var ret = v.toFixed(fixed);
+        if (fixed == 4) {
+            var len = ret.length;
+            var to_last_zero = len - 1;
+            for (var i = len - 1; i > len - 3; i--) {
+                var cur_char2num = parseInt(ret[i]);
+                if (cur_char2num == 0)
+                    to_last_zero = i;
+            }
+            ret = ret.substr(0, to_last_zero);
+        }
+        return ret;
+    };
+    BaseUI.prototype._isSkipNode = function (node) {
+        if (this.node == node) {
+            return false;
+        }
+        var b = node.getComponent(BaseUI_1);
+        return b != null;
     };
     BaseUI.prototype._findInChildren = function (node, name) {
         var x = node.getChildByName(name);
@@ -108,6 +134,24 @@ var BaseUI = /** @class */ (function (_super) {
                 return tmp;
         }
         return null;
+    };
+    BaseUI.prototype.SetSprite = function (name, filepath) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        var tmp = _this.GetSprite(name);
+                        if (tmp) {
+                            Utils_1.default.loadRes(filepath, cc.SpriteFrame).then(function (ret) {
+                                if (cc.isValid(_this.node)) {
+                                    tmp.spriteFrame = ret;
+                                    resolve(null);
+                                }
+                            });
+                        }
+                    })];
+            });
+        });
     };
     BaseUI.prototype.GetGameObject = function (name, refind) {
         if (refind === void 0) { refind = false; }
@@ -132,20 +176,20 @@ var BaseUI = /** @class */ (function (_super) {
             return tmp;
         }
     };
-    BaseUI.prototype.GetSkeleton = function (name) {
-        if (this.m_objects && this.m_objects.has(name))
-            return this.m_objects[name].getComponent(sp.Skeleton);
-        var tmp = this.GetGameObject(name);
-        if (tmp)
-            return tmp.getComponent(sp.Skeleton);
-        return null;
-    };
     BaseUI.prototype.GetDragonAmature = function (name) {
         if (this.m_objects && this.m_objects.has(name))
             return this.m_objects[name].getComponent(sp.Skeleton);
         var tmp = this.GetGameObject(name);
         if (tmp)
             return tmp.getComponent(dragonBones.ArmatureDisplay);
+        return null;
+    };
+    BaseUI.prototype.GetSkeleton = function (name) {
+        if (this.m_objects && this.m_objects.has(name))
+            return this.m_objects[name].getComponent(sp.Skeleton);
+        var tmp = this.GetGameObject(name);
+        if (tmp)
+            return tmp.getComponent(sp.Skeleton);
         return null;
     };
     BaseUI.prototype.GetSprite = function (name) {
@@ -155,24 +199,6 @@ var BaseUI = /** @class */ (function (_super) {
         if (tmp)
             return tmp.getComponent(cc.Sprite);
         return null;
-    };
-    BaseUI.prototype.SetSprite = function (name, filepath) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                return [2 /*return*/, new Promise(function (resolve, reject) {
-                        var tmp = _this.GetSprite(name);
-                        if (tmp) {
-                            Utils_1.default.loadRes(filepath, cc.SpriteFrame).then(function (ret) {
-                                if (cc.isValid(_this.node)) {
-                                    tmp.spriteFrame = ret;
-                                    resolve(null);
-                                }
-                            });
-                        }
-                    })];
-            });
-        });
     };
     BaseUI.prototype.GetText = function (name) {
         if (this.m_objects && this.m_objects.has(name))
@@ -206,6 +232,14 @@ var BaseUI = /** @class */ (function (_super) {
             return tmp.getComponent(cc.EditBox);
         return null;
     };
+    BaseUI.prototype.SetProgressBar = function (TextID, p) {
+        if (this.GetProgressBar(TextID))
+            this.GetProgressBar(TextID).progress = p;
+    };
+    BaseUI.prototype.SetText = function (TextID, content) {
+        if (this.GetText(TextID))
+            this.GetText(TextID).string = content;
+    };
     BaseUI.prototype.GetSlider = function (name) {
         if (this.m_objects && this.m_objects.has(name))
             return this.m_objects[name].getComponent(cc.Slider);
@@ -214,24 +248,12 @@ var BaseUI = /** @class */ (function (_super) {
             return tmp.getComponent(cc.Slider);
         return null;
     };
-    BaseUI.prototype.SetText = function (TextID, content) {
-        if (this.GetText(TextID))
-            this.GetText(TextID).string = content;
-    };
     BaseUI.prototype.SetInputText = function (TextID, content) {
         if (this.GetInputField(TextID))
             this.GetInputField(TextID).string = content;
     };
-    BaseUI.prototype.SetProgressBar = function (TextID, p) {
-        if (this.GetProgressBar(TextID))
-            this.GetProgressBar(TextID).progress = p;
-    };
-    BaseUI.prototype._isSkipNode = function (node) {
-        if (this.node == node) {
-            return false;
-        }
-        var b = node.getComponent(BaseUI_1);
-        return b != null;
+    BaseUI.prototype.getChildByName = function (path, node) {
+        return cc.find(path, node || this.node);
     };
     BaseUI.prototype._addClickEvent = function (node) {
         if (this._isSkipNode(node))
@@ -241,23 +263,9 @@ var BaseUI = /** @class */ (function (_super) {
             if (this._isSkipNode(tmp))
                 continue;
             if (tmp.getComponent(cc.Button)) {
-                Utils_1.default.addClickEvent(tmp, this.node, cc.js.getClassName(this), "onBtnClicked", tmp.getComponent(cc.Button).target);
+                Utils_1.default.addClickEvent(tmp, this.node, cc.js.getClassName(this), "onUIClicked", tmp.getComponent(cc.Button).target);
             }
             this._addClickEvent(tmp);
-        }
-    };
-    BaseUI.prototype.getChildByName = function (path, node) {
-        return cc.find(path, node || this.node);
-    };
-    BaseUI.prototype.startAnim = function () {
-        if (this.node) {
-            this.node.opacity = 0;
-            this.node.active = true;
-            this.node.setScale(0.8, 0.8);
-            var delay = cc.delayTime(0.1);
-            var actionIn = cc.fadeIn(0.1);
-            var scaleTo = cc.scaleTo(0.1, 1);
-            this.node.runAction(cc.spawn(delay.clone(), actionIn, delay.clone(), scaleTo));
         }
     };
     BaseUI.prototype.shutAnim = function () {
@@ -279,6 +287,17 @@ var BaseUI = /** @class */ (function (_super) {
             // ));
         }
     };
+    BaseUI.prototype.startAnim = function () {
+        if (this.node) {
+            this.node.opacity = 0;
+            this.node.active = true;
+            this.node.setScale(0.8, 0.8);
+            var delay = cc.delayTime(0.1);
+            var actionIn = cc.fadeIn(0.1);
+            var scaleTo = cc.scaleTo(0.1, 1);
+            this.node.runAction(cc.spawn(delay.clone(), actionIn, delay.clone(), scaleTo));
+        }
+    };
     BaseUI.prototype.closeUI = function () {
         this.shutAnim();
     };
@@ -286,22 +305,7 @@ var BaseUI = /** @class */ (function (_super) {
         for (var i = 0; i < this.events.length; ++i)
             GameEvent_1.default.Instance().unregister(this, this.events[i]);
     };
-    BaseUI.prototype.rigester = function (type, callFunc) {
-        this.events.push(type);
-        GameEvent_1.default.Instance().register(this, type, callFunc);
-    };
-    BaseUI.prototype.unregister = function (type) {
-        GameEvent_1.default.Instance().unregister(this, type);
-    };
-    BaseUI.prototype.dispatch = function (type) {
-        var _a;
-        var data = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            data[_i - 1] = arguments[_i];
-        }
-        (_a = GameEvent_1.default.Instance()).dispatch.apply(_a, __spreadArrays([type], data));
-    };
-    BaseUI.prototype.playSkAni = function (file, name, parent, pos, removetime) {
+    BaseUI.prototype.playSkeAni = function (file, name, parent, pos, removetime) {
         if (removetime === void 0) { removetime = -1; }
         return __awaiter(this, void 0, void 0, function () {
             var node, skd, data;
@@ -327,6 +331,21 @@ var BaseUI = /** @class */ (function (_super) {
                 }
             });
         });
+    };
+    BaseUI.prototype.rigester = function (type, callFunc) {
+        this.events.push(type);
+        GameEvent_1.default.Instance().register(this, type, callFunc);
+    };
+    BaseUI.prototype.unregister = function (type) {
+        GameEvent_1.default.Instance().unregister(this, type);
+    };
+    BaseUI.prototype.dispatch = function (type) {
+        var _a;
+        var data = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            data[_i - 1] = arguments[_i];
+        }
+        (_a = GameEvent_1.default.Instance()).dispatch.apply(_a, __spreadArrays([type], data));
     };
     var BaseUI_1;
     BaseUI = BaseUI_1 = __decorate([

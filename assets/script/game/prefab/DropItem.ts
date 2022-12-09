@@ -9,23 +9,24 @@ const {ccclass, property} = cc._decorator;
 export default class DropItem extends BaseUI {
     start() {
         this.node.runAction(cc.sequence(cc.delayTime(10), cc.callFunc(() => {
-            this.ChuXian();
+            this.Comming();
         })))
     }
-    ChuXian() {
+    Comming() {
         this.node.runAction(cc.sequence(cc.callFunc(() => {
             this.node.position = cc.v3(-cc.winSize.width / 2 - 200, cc.winSize.height / 4 - 100)
         }), cc.moveTo(20, cc.winSize.width / 2 + 200, cc.winSize.height / 4 - 100)).repeatForever())
     }
-    onBtnClicked(event, customEventData) {
+
+    onUIClicked(event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "FairyItem":
                 this.node.stopAllActions();
                 this.node.position = cc.v3(-cc.winSize.width / 2 - 200, cc.winSize.height / 4 - 100);
                 this.node.runAction(cc.sequence(cc.delayTime(40), cc.callFunc(() => {
-                    this.ChuXian();
+                    this.Comming();
                 })))
                 Utils.createUI("prefab/FairyBonusUI")
                 break;

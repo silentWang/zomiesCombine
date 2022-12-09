@@ -81,9 +81,9 @@ export default class SettingView extends BaseUI {
         });
     }
 
-    onBtnClicked(event, customEventData) {
+    onUIClicked(event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_back":
                 this.closeUI()
@@ -92,14 +92,14 @@ export default class SettingView extends BaseUI {
             case "btn_music_off":
                 this.btn_music.active = !this.btn_music.active;
                 this.btn_music_close.active = !this.btn_music_close.active;
-                AudioMgr.Instance().setBGMVolume(this.btn_music.active ? 1 : 0, true);
+                AudioMgr.Instance().setMusicVolume(this.btn_music.active ? 1 : 0, true);
                 // AudioMgr.Instance().setSFXVolume(this.btn_music.active ? 1 : 0, true);
                 break;
             case "btn_sound_on":
             case "btn_sound_off":
                 this.btn_sound.active = !this.btn_sound.active;
                 this.btn_sound_close.active = !this.btn_sound_close.active;
-                AudioMgr.Instance().setSFXVolume(this.btn_sound.active ? 1 : 0, true);
+                AudioMgr.Instance().setMXVolume(this.btn_sound.active ? 1 : 0, true);
                 // AudioMgr.Instance().setSFXVolume(this.btn_music.active ? 1 : 0, true);
                 break;
             case "btn_share":

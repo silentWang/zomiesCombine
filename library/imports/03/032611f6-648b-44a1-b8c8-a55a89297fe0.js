@@ -35,25 +35,25 @@ var DropItem = /** @class */ (function (_super) {
     DropItem.prototype.start = function () {
         var _this = this;
         this.node.runAction(cc.sequence(cc.delayTime(10), cc.callFunc(function () {
-            _this.ChuXian();
+            _this.Comming();
         })));
     };
-    DropItem.prototype.ChuXian = function () {
+    DropItem.prototype.Comming = function () {
         var _this = this;
         this.node.runAction(cc.sequence(cc.callFunc(function () {
             _this.node.position = cc.v3(-cc.winSize.width / 2 - 200, cc.winSize.height / 4 - 100);
         }), cc.moveTo(20, cc.winSize.width / 2 + 200, cc.winSize.height / 4 - 100)).repeatForever());
     };
-    DropItem.prototype.onBtnClicked = function (event, customEventData) {
+    DropItem.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
-        AudioMgr_1.default.Instance().playSFX("click");
+        AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "FairyItem":
                 this.node.stopAllActions();
                 this.node.position = cc.v3(-cc.winSize.width / 2 - 200, cc.winSize.height / 4 - 100);
                 this.node.runAction(cc.sequence(cc.delayTime(40), cc.callFunc(function () {
-                    _this.ChuXian();
+                    _this.Comming();
                 })));
                 Utils_1.default.createUI("prefab/FairyBonusUI");
                 break;

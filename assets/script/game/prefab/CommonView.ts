@@ -45,7 +45,7 @@ export default class CommonView extends BaseUI {
     update(dt)
     {
         if(dt > 1) dt = 1;
-        let {end_time,max} = this.getEndAndMaxTime();
+        let {end_time,max} = this.getEMTime();
         if(end_time > Utils.getServerTime())
         {
             let nLeft = end_time - Utils.getServerTime();
@@ -59,7 +59,7 @@ export default class CommonView extends BaseUI {
         }
     }
 
-    private getEndAndMaxTime(){
+    private getEMTime(){
         let end_time = 0;
         let max = 0;
         if (this.type == EADLAYER.AUTO_COM) {
@@ -107,13 +107,13 @@ export default class CommonView extends BaseUI {
             this.SetText("lbl_effect", "+" + DROP_PLANT_TIME + "分钟");
             WxCenter.aldReport('DropShow','show');
         }
-        let {end_time,max} = this.getEndAndMaxTime();
+        let {end_time,max} = this.getEMTime();
         let isRunning = end_time > Utils.getServerTime();
         // this.GetGameObject('btn_ad').active = !isRunning;
         this.GetGameObject('btn_normal').active = !isRunning;
     }
 
-    private addvalue(double:number = 1)
+    private addCoin(double:number = 1)
     {
         let isUse = false;
         if (this.type == EADLAYER.AUTO_COM) {
@@ -169,20 +169,20 @@ export default class CommonView extends BaseUI {
         }
     }
 
-    onBtnClicked(event, customEventData) {
+    onUIClicked(event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
                 break;
             case "btn_ad":
                 AdCenter.Instance().play((b)=>{
-                    if(b) this.addvalue(2);
+                    if(b) this.addCoin(2);
                 });
                 break;
             case "btn_normal":
-                this.addvalue(1);
+                this.addCoin(1);
                 this.GetGameObject('btn_normal').active = false;
                 break;
         }

@@ -9,7 +9,7 @@ import BaseUI from "../../framwork/BaseUI";
 import ChickData from "../../manager/ChickData";
 import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
-import BigNumber from "../../utils/BigNumber";
+import NumberUtils from "../../utils/NumberUtils";
 import Utils from "../../utils/Utils";
 
 const {ccclass, property} = cc._decorator;
@@ -30,17 +30,17 @@ export default class ShareView extends BaseUI {
     }
 
     setData(){
-        let lv = ChickData.user.GetMaxLv() - 1 > 0 ? ChickData.user.GetMaxLv() - 1 : 1;
-        this.coinVal = 0.5*ChickData.user.BuyPrice(lv);
-        let coin = BigNumber.getLargeString(Utils.fixFloat(this.coinVal));
+        let lv = ChickData.user.getLvlMax() - 1 > 0 ? ChickData.user.getLvlMax() - 1 : 1;
+        this.coinVal = 0.5*ChickData.user.buyChickPrice(lv);
+        let coin = NumberUtils.getLargeString(Utils.fixFloat(this.coinVal));
         let times = ChickData.user.share_times;
         this.SetText("lbl_coin",coin)
         this.SetText("lbl_times",`还可分享${times}次`);
     }
 
-    onBtnClicked(event, customEventData) {
+    onUIClicked(event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
@@ -49,7 +49,7 @@ export default class ShareView extends BaseUI {
                 WxCenter.shareAppMessage(()=>{
                     if(ChickData.user.share_times > 0){
                         ChickData.user.share_times--;
-                        AudioMgr.Instance().playSFX("coin");
+                        AudioMgr.Instance().playMX("coin");
                         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
                             if(b) ChickData.user.coin += this.coinVal;
                             ChickData.save();

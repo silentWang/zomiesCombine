@@ -47,7 +47,7 @@ export default class DataManager {
     @save public signinfo: SignInfo = { sign_index: 0, sign_time: 0, sign_beisu: 0 };
 
 
-    public getUploadData(): object {
+    public getAllSData(): object {
         var data = {}
         for (var i = 0; i < savepars.length; ++i) {
             data[savepars[i]] = this[savepars[i]];

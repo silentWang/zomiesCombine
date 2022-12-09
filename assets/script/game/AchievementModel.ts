@@ -8,7 +8,7 @@ function save(target: any, propertyKey: string) {
 const { ccclass, property } = cc._decorator;
 @ccclass
 export default class AchievementModel {
-    public getUploadData(): object {
+    public getReadyData(): object {
         var data = {}
         for (var i = 0; i < savepars.length; ++i) {
             data[savepars[i]] = this[savepars[i]];
@@ -16,6 +16,7 @@ export default class AchievementModel {
 
         return data;
     }
+
     public setData(data: any) {
         //初始化下数据       
         if (!data) {

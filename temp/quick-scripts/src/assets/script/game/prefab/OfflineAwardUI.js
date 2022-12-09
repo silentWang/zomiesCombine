@@ -27,7 +27,7 @@ var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
 var ChickData_1 = require("../../manager/ChickData");
 var AudioMgr_1 = require("../../utils/AudioMgr");
-var BigNumber_1 = require("../../utils/BigNumber");
+var NumberUtils_1 = require("../../utils/NumberUtils");
 var Utils_1 = require("../../utils/Utils");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var OfflineAwardUI = /** @class */ (function (_super) {
@@ -43,7 +43,7 @@ var OfflineAwardUI = /** @class */ (function (_super) {
         },
         set: function (value) {
             this._data = value;
-            this.GetText('lbl_coin').string = BigNumber_1.default.getLargeString(Utils_1.default.fixFloat(value));
+            this.GetText('lbl_coin').string = NumberUtils_1.default.getLargeString(Utils_1.default.fixFloat(value));
         },
         enumerable: false,
         configurable: true
@@ -52,14 +52,14 @@ var OfflineAwardUI = /** @class */ (function (_super) {
         this.node.zIndex = 99999;
         Utils_1.default.playBreath(this.GetGameObject('btn_ad'));
     };
-    OfflineAwardUI.prototype.onBtnClicked = function (event, customEventData) {
+    OfflineAwardUI.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
         switch (btnName) {
             case "btn_close":
-                AudioMgr_1.default.Instance().playSFX("click");
+                AudioMgr_1.default.Instance().playMX("click");
                 var coin_1 = this._data;
-                AudioMgr_1.default.Instance().playSFX("coin");
+                AudioMgr_1.default.Instance().playMX("coin");
                 Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                     if (b) {
                         ChickData_1.default.user.coin += coin_1;
@@ -69,7 +69,7 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_normal":
-                AudioMgr_1.default.Instance().playSFX("coin");
+                AudioMgr_1.default.Instance().playMX("coin");
                 Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                     if (b)
                         ChickData_1.default.user.coin += _this._data;
@@ -81,7 +81,7 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                 var func = function (b) {
                     if (b) {
                         var coin_2 = _this._data * 2;
-                        AudioMgr_1.default.Instance().playSFX("coin");
+                        AudioMgr_1.default.Instance().playMX("coin");
                         Utils_1.default.flyAnim(0, _this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                             if (b) {
                                 ChickData_1.default.user.coin += coin_2;

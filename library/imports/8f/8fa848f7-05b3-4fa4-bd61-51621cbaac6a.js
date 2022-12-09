@@ -31,7 +31,7 @@ var DataManager = /** @class */ (function () {
         }
         return DataManager.instance;
     };
-    DataManager.prototype.getUploadData = function () {
+    DataManager.prototype.getAllSData = function () {
         var data = {};
         for (var i = 0; i < savepars.length; ++i) {
             data[savepars[i]] = this[savepars[i]];

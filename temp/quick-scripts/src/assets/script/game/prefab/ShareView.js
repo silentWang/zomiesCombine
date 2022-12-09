@@ -33,7 +33,7 @@ var BaseUI_1 = require("../../framwork/BaseUI");
 var ChickData_1 = require("../../manager/ChickData");
 var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
-var BigNumber_1 = require("../../utils/BigNumber");
+var NumberUtils_1 = require("../../utils/NumberUtils");
 var Utils_1 = require("../../utils/Utils");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var ShareView = /** @class */ (function (_super) {
@@ -48,17 +48,17 @@ var ShareView = /** @class */ (function (_super) {
         _super.prototype.onDestroy.call(this);
     };
     ShareView.prototype.setData = function () {
-        var lv = ChickData_1.default.user.GetMaxLv() - 1 > 0 ? ChickData_1.default.user.GetMaxLv() - 1 : 1;
-        this.coinVal = 0.5 * ChickData_1.default.user.BuyPrice(lv);
-        var coin = BigNumber_1.default.getLargeString(Utils_1.default.fixFloat(this.coinVal));
+        var lv = ChickData_1.default.user.getLvlMax() - 1 > 0 ? ChickData_1.default.user.getLvlMax() - 1 : 1;
+        this.coinVal = 0.5 * ChickData_1.default.user.buyChickPrice(lv);
+        var coin = NumberUtils_1.default.getLargeString(Utils_1.default.fixFloat(this.coinVal));
         var times = ChickData_1.default.user.share_times;
         this.SetText("lbl_coin", coin);
         this.SetText("lbl_times", "\u8FD8\u53EF\u5206\u4EAB" + times + "\u6B21");
     };
-    ShareView.prototype.onBtnClicked = function (event, customEventData) {
+    ShareView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
-        AudioMgr_1.default.Instance().playSFX("click");
+        AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
@@ -67,7 +67,7 @@ var ShareView = /** @class */ (function (_super) {
                 WxCenter_1.default.shareAppMessage(function () {
                     if (ChickData_1.default.user.share_times > 0) {
                         ChickData_1.default.user.share_times--;
-                        AudioMgr_1.default.Instance().playSFX("coin");
+                        AudioMgr_1.default.Instance().playMX("coin");
                         Utils_1.default.flyAnim(0, _this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                             if (b)
                                 ChickData_1.default.user.coin += _this.coinVal;

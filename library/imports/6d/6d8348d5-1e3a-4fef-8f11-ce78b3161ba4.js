@@ -41,7 +41,7 @@ var FailView = /** @class */ (function (_super) {
     FailView.prototype.start = function () {
         this.GetGameObject("lbl_coin").opacity = 0;
         this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(1, 255)));
-        AudioMgr_1.default.Instance().playSFX("fail");
+        AudioMgr_1.default.Instance().playMX("fail");
         Utils_1.default.playBreath(this.GetGameObject('btn_get'));
         WxCenter_1.default.aldReport('FailShow', 'show');
     };
@@ -67,20 +67,20 @@ var FailView = /** @class */ (function (_super) {
     };
     FailView.prototype.closeUI = function () {
         this.shutAnim();
-        HallScene_1.default.Instance.createwave();
+        HallScene_1.default.Instance.createEnemys();
     };
     FailView.prototype.getCoinReward = function () {
         var coin = this.coin;
-        AudioMgr_1.default.Instance().playSFX("coin");
+        AudioMgr_1.default.Instance().playMX("coin");
         Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
             if (b)
                 ChickData_1.default.user.coin += coin;
         });
     };
-    FailView.prototype.onBtnClicked = function (event, customEventData) {
+    FailView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
-        AudioMgr_1.default.Instance().playSFX("click");
+        AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_get":
                 WxCenter_1.default.aldReport('FailClick', 'click');

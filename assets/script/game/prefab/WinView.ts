@@ -12,7 +12,7 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class WinView extends BaseUI {
     start () {
-        AudioMgr.Instance().playSFX("win_stage")
+        AudioMgr.Instance().playMX("win_stage")
         this.GetSkeleton("fx_victory").setAnimation(0,"start",false);
         this.GetSkeleton("fx_victory").setAnimation(1,"idle",true);
         Utils.playBreath(this.GetGameObject('btn_get'))
@@ -44,25 +44,25 @@ export default class WinView extends BaseUI {
 
     closeUI() {
         this.shutAnim();
-        HallScene.Instance.createwave();
+        HallScene.Instance.createEnemys();
     }
 
     private getCoinReward(isdouble = false){
         let coin = isdouble ? this.coin * Utils.getRandom(1.2,2) : this.coin;
-        AudioMgr.Instance().playSFX("coin");
+        AudioMgr.Instance().playMX("coin");
         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
             if(b)
             {
                 ChickData.user.coin += coin;
                 if(ChickData.user.lv >= 30)
-                    AdCenter.Instance().showinterstitialAd();
+                    AdCenter.Instance().showBigPicAd();
             }  
         })
     }
 
-    onBtnClicked(event, customEventData) {
+    onUIClicked(event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_get":
                 WxCenter.aldReport('PassClick','click');

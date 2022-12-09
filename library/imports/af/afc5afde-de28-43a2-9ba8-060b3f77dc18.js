@@ -52,18 +52,6 @@ var DebugTools = /** @class */ (function (_super) {
         //    ChickData.user.lv++;
         // })
     };
-    DebugTools.prototype.addBtn = function (name, callback) {
-        var toolbar = document.getElementsByClassName("toolbar")[0];
-        if (!toolbar)
-            return;
-        var div = document.createElement("div");
-        div.className = "item";
-        div.innerHTML = "<button id='" + name + "'>" + name + "</button>";
-        toolbar.appendChild(div);
-        document.getElementById(name).onclick = function () {
-            callback();
-        };
-    };
     DebugTools = __decorate([
         ccclass
     ], DebugTools);

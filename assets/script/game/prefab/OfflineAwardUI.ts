@@ -3,7 +3,7 @@ import MsgToast from "../../framwork/MsgToast";
 import AdCenter from "../../manager/AdCenter";
 import ChickData from "../../manager/ChickData";
 import AudioMgr from "../../utils/AudioMgr";
-import BigNumber from "../../utils/BigNumber";
+import NumberUtils from "../../utils/NumberUtils";
 import Utils from "../../utils/Utils";
 
 
@@ -18,20 +18,21 @@ export default class OfflineAwardUI extends BaseUI {
     }
     public set data(value: number) {
         this._data = value;
-        this.GetText('lbl_coin').string = BigNumber.getLargeString(Utils.fixFloat(value))
+        this.GetText('lbl_coin').string = NumberUtils.getLargeString(Utils.fixFloat(value))
     }
 
     start() {
         this.node.zIndex = 99999;
         Utils.playBreath(this.GetGameObject('btn_ad'))
     }
-    onBtnClicked(event, customEventData) {
+
+    onUIClicked(event, customEventData) {
         var btnName = event.target.name;
         switch (btnName) {
             case "btn_close":
-                AudioMgr.Instance().playSFX("click");
+                AudioMgr.Instance().playMX("click");
                 let coin = this._data 
-                    AudioMgr.Instance().playSFX("coin");
+                    AudioMgr.Instance().playMX("coin");
                     Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
                         if(b)
                         {
@@ -42,7 +43,7 @@ export default class OfflineAwardUI extends BaseUI {
                 this.closeUI()
                 break;
             case "btn_normal":
-                AudioMgr.Instance().playSFX("coin");
+                AudioMgr.Instance().playMX("coin");
                 Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
                     if(b) ChickData.user.coin += this._data  
                 })
@@ -53,7 +54,7 @@ export default class OfflineAwardUI extends BaseUI {
                 let func = (b)=>{
                     if (b) {
                         let coin = this._data * 2
-                        AudioMgr.Instance().playSFX("coin");
+                        AudioMgr.Instance().playMX("coin");
                         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
                             if(b)
                             {

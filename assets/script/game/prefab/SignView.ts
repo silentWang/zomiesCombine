@@ -9,9 +9,9 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class SignView extends BaseUI {
-    static reddot() {
+    static redPoint() {
         if (ChickData.user.signinfo.sign_time != 0) {
-            if (SignView.checkIsTody(ChickData.user.signinfo.sign_time)) {
+            if (SignView.checkIsToday(ChickData.user.signinfo.sign_time)) {
                 if (ChickData.user.signinfo.sign_beisu == 1) {
                     return true;
                 }
@@ -26,29 +26,29 @@ export default class SignView extends BaseUI {
         return true;
     }
 
-    static checkShow() {
+    static checkIsShow() {
         //新用户
         if (ChickData.user.signinfo.sign_index == 0) {
             return;
         }
 
         //已经签到
-        if (SignView.checkIsTody(ChickData.user.signinfo.sign_time)) {
+        if (SignView.checkIsToday(ChickData.user.signinfo.sign_time)) {
             return;
         }
         Utils.createUI("prefab/SignLayer");
     }
 
     //这里配置签到奖励
-    getSignValue(index: number) {
-        let lv = ChickData.user.GetMaxLv() - 3;
+    getSignInfo(index: number) {
+        let lv = ChickData.user.getLvlMax() - 3;
         if (lv < 1) lv = 1;
         let list = [
             //修改类型需要相应修改界面图标
-            { type: 0, value: ChickData.user.BuyPrice(lv) * 4},
+            { type: 0, value: ChickData.user.buyChickPrice(lv) * 4},
             { type: 1, value: 2 },
-            { type: 0, value: ChickData.user.BuyPrice(lv) * 8 },
-            { type: 0, value: ChickData.user.BuyPrice(lv) * 12 },
+            { type: 0, value: ChickData.user.buyChickPrice(lv) * 8 },
+            { type: 0, value: ChickData.user.buyChickPrice(lv) * 12 },
             { type: 1, value: 5 },
             { type: 1, value: 8 },
             { type: 1, value: 10 },
@@ -56,7 +56,7 @@ export default class SignView extends BaseUI {
         return list[index];
     }
 
-    static checkIsTody(time): boolean {
+    static checkIsToday(time): boolean {
         var date = new Date(time);
         var dateNow = new Date(Utils.getServerTime());
         let bNewDay = false;
@@ -86,7 +86,7 @@ export default class SignView extends BaseUI {
 
         let bSignTody = false;
         if (ChickData.user.signinfo.sign_time != 0) {
-            if (SignView.checkIsTody(ChickData.user.signinfo.sign_time)) {
+            if (SignView.checkIsToday(ChickData.user.signinfo.sign_time)) {
                 bSignTody = true;
             }
         }
@@ -100,7 +100,7 @@ export default class SignView extends BaseUI {
             let node: cc.Node = item_days.children[i];
             node.getChildByName("sevenday_checked").active = i < sign_index;
 
-            let tmp = this.getSignValue(i);
+            let tmp = this.getSignInfo(i);
 
             if (tmp.type == 0) {
                 node.getComponentInChildren(cc.Label).string = Utils.formatNumber(tmp.value) + "";
@@ -136,10 +136,10 @@ export default class SignView extends BaseUI {
         }
     }
 
-    private getTodySign() {
+    private getTodaySign() {
         let bSignTody = false;
         if (ChickData.user.signinfo.sign_time != 0) {
-            if (SignView.checkIsTody(ChickData.user.signinfo.sign_time)) {
+            if (SignView.checkIsToday(ChickData.user.signinfo.sign_time)) {
                 bSignTody = true;
             }
         }
@@ -147,14 +147,14 @@ export default class SignView extends BaseUI {
         let index = ChickData.user.signinfo.sign_index;
         if (bSignTody)
             index--;
-        return this.getSignValue(index % 7);
+        return this.getSignInfo(index % 7);
     }
 
     flayAnim(beishu: number) {
-        let tmp = this.getTodySign();
+        let tmp = this.getTodaySign();
         if (tmp.type == 0) {
 
-            AudioMgr.Instance().playSFX("coin");
+            AudioMgr.Instance().playMX("coin");
             Utils.flyAnim(0, this.node, "icon_coin", 5, 200, (b) => {
                 if (b) {
                     ChickData.user.coin += tmp.value * beishu;
@@ -163,7 +163,7 @@ export default class SignView extends BaseUI {
         }
         else {
 
-            AudioMgr.Instance().playSFX("gem");
+            AudioMgr.Instance().playMX("gem");
             Utils.flyAnim(1, this.node, "icon_gem", 5, 200, (b) => {
                 if (b) {
                     ChickData.user.gem += tmp.value * beishu;
@@ -172,9 +172,9 @@ export default class SignView extends BaseUI {
         }
     }
 
-    onBtnClicked(event, customEventData) {
+    onUIClicked(event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
@@ -184,7 +184,7 @@ export default class SignView extends BaseUI {
                     if (b) {
                         ChickData.user.signinfo.sign_beisu = 2;
                         this.flayAnim(2);
-                        if (!SignView.checkIsTody(ChickData.user.signinfo.sign_time)) {
+                        if (!SignView.checkIsToday(ChickData.user.signinfo.sign_time)) {
                             ChickData.user.signinfo.sign_index++;
                         }
                         ChickData.user.signinfo.sign_time = Utils.getServerTime();
@@ -197,7 +197,7 @@ export default class SignView extends BaseUI {
                     if (b) {
                         ChickData.user.signinfo.sign_beisu = 3;
                         this.flayAnim(3);
-                        if (!SignView.checkIsTody(ChickData.user.signinfo.sign_time)) {
+                        if (!SignView.checkIsToday(ChickData.user.signinfo.sign_time)) {
                             ChickData.user.signinfo.sign_index++;
                         }
                         ChickData.user.signinfo.sign_time = Utils.getServerTime();
@@ -208,7 +208,7 @@ export default class SignView extends BaseUI {
             case "btn_sign":
                 ChickData.user.signinfo.sign_beisu = 1;
                 this.flayAnim(1);
-                if (!SignView.checkIsTody(ChickData.user.signinfo.sign_time)) {
+                if (!SignView.checkIsToday(ChickData.user.signinfo.sign_time)) {
                     ChickData.user.signinfo.sign_index++;
                 }
                 ChickData.user.signinfo.sign_time = Utils.getServerTime();

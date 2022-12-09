@@ -136,9 +136,9 @@ var SettingView = /** @class */ (function (_super) {
             _this.closeUI();
         });
     };
-    SettingView.prototype.onBtnClicked = function (event, customEventData) {
+    SettingView.prototype.onUIClicked = function (event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr_1.default.Instance().playSFX("click");
+        AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_back":
                 this.closeUI();
@@ -147,14 +147,14 @@ var SettingView = /** @class */ (function (_super) {
             case "btn_music_off":
                 this.btn_music.active = !this.btn_music.active;
                 this.btn_music_close.active = !this.btn_music_close.active;
-                AudioMgr_1.default.Instance().setBGMVolume(this.btn_music.active ? 1 : 0, true);
+                AudioMgr_1.default.Instance().setMusicVolume(this.btn_music.active ? 1 : 0, true);
                 // AudioMgr.Instance().setSFXVolume(this.btn_music.active ? 1 : 0, true);
                 break;
             case "btn_sound_on":
             case "btn_sound_off":
                 this.btn_sound.active = !this.btn_sound.active;
                 this.btn_sound_close.active = !this.btn_sound_close.active;
-                AudioMgr_1.default.Instance().setSFXVolume(this.btn_sound.active ? 1 : 0, true);
+                AudioMgr_1.default.Instance().setMXVolume(this.btn_sound.active ? 1 : 0, true);
                 // AudioMgr.Instance().setSFXVolume(this.btn_music.active ? 1 : 0, true);
                 break;
             case "btn_share":

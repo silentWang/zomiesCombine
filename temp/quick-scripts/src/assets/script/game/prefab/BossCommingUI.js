@@ -33,7 +33,7 @@ var BossCommingUI = /** @class */ (function (_super) {
     }
     BossCommingUI.prototype.start = function () {
         var _this = this;
-        AudioMgr_1.default.Instance().playSFX("Arlam");
+        AudioMgr_1.default.Instance().playMX("Arlam");
         this.node.runAction(cc.sequence(cc.delayTime(3), cc.callFunc(function () {
             _this.closeUI();
         })));

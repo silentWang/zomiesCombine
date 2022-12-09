@@ -70,7 +70,7 @@ var AdCenter_1 = require("../../manager/AdCenter");
 var ChickData_1 = require("../../manager/ChickData");
 var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
-var BigNumber_1 = require("../../utils/BigNumber");
+var NumberUtils_1 = require("../../utils/NumberUtils");
 var Utils_1 = require("../../utils/Utils");
 var Config_1 = require("../Config");
 var HallScene_1 = require("../HallScene");
@@ -88,7 +88,7 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
         Utils_1.default.playBreath(this.GetGameObject('btn_ad'));
     };
     // update (dt) {}
-    CoinNotEnoughUI.prototype.setType = function (type) {
+    CoinNotEnoughUI.prototype.setViewType = function (type) {
         return __awaiter(this, void 0, void 0, function () {
             var str, lv, skpath, atlaspath, chick, _a, _b, lv, coin;
             return __generator(this, function (_c) {
@@ -100,7 +100,7 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                         str = '';
                         if (!(type == 1)) return [3 /*break*/, 3];
                         str = ChickData_1.default.user.today_getchick_times + "/" + ChickData_1.default.user.today_getchick_total;
-                        lv = ChickData_1.default.user.GetMaxLv() - 1 > 0 ? ChickData_1.default.user.GetMaxLv() - 1 : 1;
+                        lv = ChickData_1.default.user.getLvlMax() - 1 > 0 ? ChickData_1.default.user.getLvlMax() - 1 : 1;
                         skpath = "spine:flower" + lv + "_ske";
                         atlaspath = "spine:flower" + lv + "_tex";
                         chick = this.GetDragonAmature('chick');
@@ -120,9 +120,9 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                     case 3:
                         if (type == 2) {
                             str = ChickData_1.default.user.today_getcoin_times + "/" + ChickData_1.default.user.today_getcoin_total;
-                            lv = ChickData_1.default.user.GetMaxLv() - 1 > 0 ? ChickData_1.default.user.GetMaxLv() - 1 : 1;
-                            coin = 0.5 * ChickData_1.default.user.BuyPrice(lv);
-                            this.SetText('lbl_effect', "+" + BigNumber_1.default.getLargeString(Utils_1.default.fixFloat(coin)));
+                            lv = ChickData_1.default.user.getLvlMax() - 1 > 0 ? ChickData_1.default.user.getLvlMax() - 1 : 1;
+                            coin = 0.5 * ChickData_1.default.user.buyChickPrice(lv);
+                            this.SetText('lbl_effect', "+" + NumberUtils_1.default.getLargeString(Utils_1.default.fixFloat(coin)));
                         }
                         _c.label = 4;
                     case 4:
@@ -133,19 +133,19 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
             });
         });
     };
-    CoinNotEnoughUI.prototype.addValue = function () {
+    CoinNotEnoughUI.prototype.addCoin = function () {
         var type = this.type;
         if (type == 1) {
             ChickData_1.default.user.today_getchick_times++;
-            var lv = ChickData_1.default.user.GetMaxLv() - 1 > 0 ? ChickData_1.default.user.GetMaxLv() - 1 : 1;
-            HallScene_1.default.Instance.tryBuyPlant(lv, 2);
+            var lv = ChickData_1.default.user.getLvlMax() - 1 > 0 ? ChickData_1.default.user.getLvlMax() - 1 : 1;
+            HallScene_1.default.Instance.buyChick(lv, 2);
             ChickData_1.default.save();
             this.closeUI();
         }
         else if (type == 2) {
             ChickData_1.default.user.today_getcoin_times++;
-            var coin_1 = 0.5 * ChickData_1.default.user.BuyPrice(ChickData_1.default.user.GetMaxLv());
-            AudioMgr_1.default.Instance().playSFX("coin");
+            var coin_1 = 0.5 * ChickData_1.default.user.buyChickPrice(ChickData_1.default.user.getLvlMax());
+            AudioMgr_1.default.Instance().playMX("coin");
             Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                 if (b)
                     ChickData_1.default.user.coin += coin_1;
@@ -154,10 +154,10 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
             this.closeUI();
         }
     };
-    CoinNotEnoughUI.prototype.onBtnClicked = function (event, customEventData) {
+    CoinNotEnoughUI.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
-        AudioMgr_1.default.Instance().playSFX("click");
+        AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
             case "btn_normal":
@@ -167,7 +167,7 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                 WxCenter_1.default.aldReport('LackClick', 'click');
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b)
-                        _this.addValue();
+                        _this.addCoin();
                 });
                 break;
         }

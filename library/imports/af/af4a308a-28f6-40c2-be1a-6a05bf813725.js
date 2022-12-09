@@ -76,7 +76,7 @@ var Loading = /** @class */ (function (_super) {
         _this.progress = 0;
         return _this;
     }
-    Loading.prototype.onBtnClicked = function (event, customEventData) {
+    Loading.prototype.onUIClicked = function (event, customEventData) {
         var btnName = event.target.name;
         switch (btnName) {
             case "btn_rstart":
@@ -102,7 +102,7 @@ var Loading = /** @class */ (function (_super) {
                     wx.setKeepScreenOn({ keepScreenOn: true });
                 }
                 PoolMgr_1.default.Instance().loadPrefabs();
-                this.startLoginAction();
+                this.startLGAction();
                 descs = ["初次加载时间可能会较长，请耐心等待...."];
                 index = 0;
                 this.node.runAction(cc.sequence(cc.delayTime(2), cc.callFunc(function () {
@@ -116,7 +116,7 @@ var Loading = /** @class */ (function (_super) {
             });
         });
     };
-    Loading.prototype.startLoginAction = function () {
+    Loading.prototype.startLGAction = function () {
         var _this = this;
         this.node.runAction(cc.sequence(cc.delayTime(.5), cc.callFunc(function () { return __awaiter(_this, void 0, void 0, function () {
             var p;

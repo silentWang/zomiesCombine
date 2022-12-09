@@ -17,13 +17,14 @@ export default class RecordView extends BaseUI {
         })))
     }
     res: any = null;
+
     setData(res) {
         this.res = res;
     }
 
-    onBtnClicked(event: cc.Event, customEventData) {
-        super.onBtnClicked(event, customEventData);
-        AudioMgr.Instance().playSFX("click");
+    onUIClicked(event: cc.Event, customEventData) {
+        super.onUIClicked(event, customEventData);
+        AudioMgr.Instance().playMX("click");
         var btnName = event.target.name;
         switch (btnName) {
             case "btn_share":
@@ -37,7 +38,7 @@ export default class RecordView extends BaseUI {
                     },
                     success() {
                         // console.log('分享视频成功');
-                        AudioMgr.Instance().playSFX("gem");
+                        AudioMgr.Instance().playMX("gem");
                         Utils.flyAnim(1, cc.find("Canvas"),"icon_gem",Utils.getRandomInt(2,3),85,(b)=>{
                             if(b)
                                 ChickData.user.gem += 2;
@@ -58,7 +59,7 @@ export default class RecordView extends BaseUI {
                         window["tt"].showToast({
                             title: '保存成功'
                         })
-                        AudioMgr.Instance().playSFX("gem");
+                        AudioMgr.Instance().playMX("gem");
                         Utils.flyAnim(1, cc.find("Canvas"),"icon_gem",Utils.getRandomInt(2,3),85,(b)=>{
                             if(b)
                                 ChickData.user.gem += 2;

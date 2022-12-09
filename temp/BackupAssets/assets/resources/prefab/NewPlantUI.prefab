@@ -695,7 +695,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 71.71,
+      "width": 2,
       "height": 49.88
     },
     "_anchorPoint": {
@@ -1718,7 +1718,7 @@
     "sync": false
   },
   {
-    "__type__": "46e3e5iTx5BT7fDRmzqw2qW",
+    "__type__": "03d56pGmRJDcJ6Q4cidnntP",
     "_name": "",
     "_objFlags": 0,
     "node": {

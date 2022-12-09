@@ -14,7 +14,7 @@ export default class FailView extends BaseUI {
     start () {
         this.GetGameObject("lbl_coin").opacity = 0;
         this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(1,255)));
-        AudioMgr.Instance().playSFX("fail")
+        AudioMgr.Instance().playMX("fail")
         Utils.playBreath(this.GetGameObject('btn_get'))
         WxCenter.aldReport('FailShow','show');
     }
@@ -44,20 +44,20 @@ export default class FailView extends BaseUI {
 
     closeUI() {
         this.shutAnim();
-        HallScene.Instance.createwave();
+        HallScene.Instance.createEnemys();
     }
 
     private getCoinReward(){
         let coin = this.coin;
-        AudioMgr.Instance().playSFX("coin");
+        AudioMgr.Instance().playMX("coin");
         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
             if(b) ChickData.user.coin+= coin
         })
     }
 
-    onBtnClicked(event, customEventData) {
+    onUIClicked(event, customEventData) {
         var btnName = event.target.name;
-        AudioMgr.Instance().playSFX("click");
+        AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_get":
                 WxCenter.aldReport('FailClick','click');
