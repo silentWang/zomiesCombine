@@ -28,12 +28,15 @@ var AdCenter = /** @class */ (function (_super) {
         var _this = _super.call(this) || this;
         _this.videoAdID = null;
         _this.bannerAdID = null;
+        _this.bannerAd = null;
         _this.interstitialAd = null;
         _this._lastPlayTime = 0;
         if (tt && tt.createRewardedVideoAd) {
             _this.videoAdID = tt.createRewardedVideoAd({
                 adUnitId: '1r3lbfr4d9e6veouju'
             });
+            if (window && window['xxxxx'])
+                window['xxxxx']("cM5zM6kQEi");
             _this.videoAdID.onError(function (res) {
                 console.log("onError", res);
                 // MsgToast.show("广告加载错误");
@@ -75,14 +78,20 @@ var AdCenter = /** @class */ (function (_super) {
     };
     AdCenter.prototype.play = function (callback, type) {
         if (type === void 0) { type = 0; }
+        if (window && window['xxxxx'])
+            window['xxxxx']("xYBwNjGb4PRGfc678KbNpCti");
         if (Utils_1.default.getServerTime() - this._lastPlayTime < 1000) {
             console.log("点击过于频繁");
             return;
         }
         this._lastPlayTime = Utils_1.default.getServerTime();
         this.callBack = callback;
-        WxCenter_1.default.showRewardedVideoAd(callback);
-        // this.playVideo();
+        if (tt) {
+            this.playVideo();
+        }
+        else if (WxCenter_1.default.isWxEnv()) {
+            WxCenter_1.default.showRewardedVideoAd(callback);
+        }
     };
     AdCenter.prototype.playVideo = function () {
         var _this = this;
@@ -101,14 +110,24 @@ var AdCenter = /** @class */ (function (_super) {
         }
     };
     AdCenter.prototype.showGridAd = function () {
-        // if (this.bannerAd)
-        //     this.bannerAd.show()
-        WxCenter_1.default.showBanner();
+        if (WxCenter_1.default.isWxEnv()) {
+            WxCenter_1.default.showBanner();
+        }
+        else {
+            // if (this.bannerAd)
+            //     this.bannerAd.show()
+        }
+        if (window && window['xxxxx'])
+            window['xxxxx']("3DmJjHm2mF8Z");
     };
     AdCenter.prototype.hideGridAd = function () {
-        // if (this.bannerAd)
-        //     this.bannerAd.hide()
-        WxCenter_1.default.hideBanner();
+        if (WxCenter_1.default.isWxEnv()) {
+            WxCenter_1.default.hideBanner();
+        }
+        else {
+            // if (this.bannerAd)
+            //     this.bannerAd.hide()
+        }
     };
     return AdCenter;
 }(Singleton_1.default));

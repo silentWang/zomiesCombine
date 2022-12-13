@@ -20,6 +20,7 @@ enum GunBuyType {
 }
 
 
+if(window && window['xxxxx']) window['xxxxx']("bP");
 @ccclass
 export default class ShopItem extends BaseUI {
 
@@ -50,6 +51,7 @@ export default class ShopItem extends BaseUI {
 
     private getBuyCoinType(gun)
     {
+        if(window && window['xxxxx']) window['xxxxx']("sbPmZdfXXDjTAt8jMiBxiYRpYc");
         var gunlv = ChickData.user.getLvlMax()
         var type:number = 0;
         if(gun[0] <= gunlv - 2)
@@ -59,6 +61,7 @@ export default class ShopItem extends BaseUI {
         if(this.ShowBuyAd(gun[0]))
         {
             type |= GunBuyType.CAN_AD_BUY;
+            if(window && window['xxxxx']) window['xxxxx']("2DcHAZtJXdSC52eFrbe3mH6P");
         }
         if(this.BuyDiamond(gun[0]))
         {
@@ -96,6 +99,7 @@ export default class ShopItem extends BaseUI {
         }
         else if((buytype & GunBuyType.CAN_AD_BUY) != 0)
         {
+            if(window && window['xxxxx']) window['xxxxx']("r4jsxj435tPSfynCkPTf7DyGmJK647");
             this.GetGameObject("show").active = true;
             this.GetGameObject("btn_free").active = true;
             node = this.GetGameObject("show");
@@ -116,6 +120,7 @@ export default class ShopItem extends BaseUI {
             }
             else
             {
+                if(window && window['xxxxx']) window['xxxxx']("nS68yQymxN46JakxX");
                 this.GetGameObject("hide").active = true;
                 node = this.GetGameObject("hide");
                 bhide = true;
@@ -137,6 +142,7 @@ export default class ShopItem extends BaseUI {
             str ="技能:" + value+"%的几率触发减速目标1秒";
         }
         else if(skilltype == 2){
+            if(window && window['xxxxx']) window['xxxxx']("eHSD5Sz6yyaBHAnj62TiYAmwkFnFz");
             str ="技能:" + value+"%几率对目标造成双倍伤害";
         }
         else if(skilltype == 3){
@@ -170,11 +176,13 @@ export default class ShopItem extends BaseUI {
         AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_free":
+                if(window && window['xxxxx']) window['xxxxx']("7tnkcYdyZcthbRnjE2mHckiQ");
                 AdCenter.Instance().play((b)=>{
                     if(b)
                     {
                         if(HallScene.Instance.buyChick(this.gun[0],2))
                         {
+                           if(window && window['xxxxx']) window['xxxxx']("EPem3QPTBF6rtYjchp7WYWa");
                            MsgToast.show("购买成功");
                            this.dispatch(GameConst.BUY_CHICK,this.gun,this.node.getComponent(ListItem).listId);
                         }
@@ -184,6 +192,7 @@ export default class ShopItem extends BaseUI {
             case "btn_yellow":
                 if(ChickData.user.coin < this.cost_coin )
                 {
+                    if(window && window['xxxxx']) window['xxxxx']("hzRNeci");
                     MsgToast.show("金币不足")
                     return;
                 }

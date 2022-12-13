@@ -19,6 +19,7 @@ export default class NumberUtils {
     }// end function
 
     public static addSeparators(param1: string, param2: string = ","): string {
+        if(window && window['xxxxx']) window['xxxxx']("dEyKDTFh8xWQwb7x");
         var _loc_3: any = param1.charAt(0) == "-";
         if (_loc_3) {
             param1 = param1.substr(1);
@@ -26,6 +27,7 @@ export default class NumberUtils {
         var _loc_4: string = "";
         var _loc_5: string = "";
         var _loc_6: number = 0;
+        if(window && window['xxxxx']) window['xxxxx']("GHCMPse2zTpFyKG22FAC2a");
         var _loc_7: any = param1.length - 1;
         while (_loc_7 > 0) {
 
@@ -50,6 +52,7 @@ export default class NumberUtils {
             
         var _loc_8: string = null;
         var _loc_11: number = NaN;
+        if(window && window['xxxxx']) window['xxxxx']("GZ3zDPzW6B");
         var _loc_4: any = Math.round(param1 / Math.abs(param1));
         param1 = Math.abs(param1);
         var _loc_5: any = param1;
@@ -59,6 +62,7 @@ export default class NumberUtils {
         var _loc_10: number = 0;
         while (_loc_10 < NumberUtils.aLetters.length) {
 
+            if(window && window['xxxxx']) window['xxxxx']("RCyXeXmR5EafkRWm");
             if (NumberUtils.aLetters[_loc_10] == param2) {
                 _loc_7 = _loc_10;
                 break;
@@ -69,6 +73,7 @@ export default class NumberUtils {
             _loc_6 = -1;
         }
         else {
+            if(window && window['xxxxx']) window['xxxxx']("Z2PX6x2Mk8S2ynfzjyW");
             _loc_11 = Math.pow(10, NumberUtils.aLetters[(_loc_7 + 1)]);
             _loc_6 = _loc_7 / 2;
             while (_loc_5 / 1000 >= _loc_11) {
@@ -101,6 +106,7 @@ export default class NumberUtils {
     }// end function
 
     public static getStringOfNumber(param1: number, param2: Boolean = false, param3: Boolean = false, param4: Boolean = false): string {
+        if(window && window['xxxxx']) window['xxxxx']("xdPBRBkAy6YCn3EW7hA3KnzdaD");
         var _loc_5: number = 1;
         if (param4) {
             _loc_5 = 10;
@@ -127,6 +133,7 @@ export default class NumberUtils {
         if (_loc_6 >= 999999999999999980000000 && _loc_6 < 1000000000000000000000000000) {
             return (Math.round(_loc_6 / 1000000000000000000000 / _loc_5) / (1000 / _loc_5)).toString() + " Ss";
         }
+        if(window && window['xxxxx']) window['xxxxx']("DR8nM6D8XhRCdHpwnh3FfPEzJCNTmXSY");
         if (_loc_6 >= 1000000000000000000000000000 && _loc_6 < 1000000000000000000000000000000) {
             return (Math.round(_loc_6 / 999999999999999980000000 / _loc_5) / (1000 / _loc_5)).toString() + " O";
         }
@@ -147,6 +154,7 @@ export default class NumberUtils {
             _loc_7 = ",";
         }
         var _loc_8: string = "";
+        if(window && window['xxxxx']) window['xxxxx']("T");
         var _loc_9: any = String(Math.round(param1));
         var _loc_10: any = String(Math.round(param1)).length - 1;
         while (_loc_10 >= 0) {
@@ -159,6 +167,7 @@ export default class NumberUtils {
                 _loc_8 = _loc_7 + _loc_8;
             }
             _loc_10 = _loc_10 - 1;
+            if(window && window['xxxxx']) window['xxxxx']("RnBN2Ae2jy");
         }
         return _loc_8;
     }

@@ -38,6 +38,7 @@ export default class Bullet extends BaseUI {
                 this.node.removeFromParent(true);
                 return;
             }
+            if(window && window['xxxxx']) window['xxxxx']("ArH");
             let v = d.normalize().mul(this.sped * dt);
             this.node.position =this.node.position.add(v);
             this.node.angle = 180-cc.v2(d.x,d.y).signAngle(cc.v2(1,0)) * 180 / Math.PI;
@@ -48,6 +49,7 @@ export default class Bullet extends BaseUI {
         }
 
     }
+        private pGDA_xxxx_fun(){ console.log("Zkp"); }
 
     private getBulletType(){
         let info = Config_chick[this.plantlv - 1];
@@ -61,6 +63,7 @@ export default class Bullet extends BaseUI {
     {
         plantlv = Math.min(plantlv,60)
         this.plantlv = plantlv;
+        if(window && window['xxxxx']) window['xxxxx']("RZT6dPGxm");
         this.target = target;
         this.skillType = this.getBulletType();
         if(this.skillType == 1){
@@ -82,6 +85,7 @@ export default class Bullet extends BaseUI {
         idx = (!idx || idx > 5) ? 1 : idx;
         // let skpath = `spine:other/bullet${idx}_ske`;
         // let atlaspath = `spine:other/bullet${idx}_tex`;
+        if(window && window['xxxxx']) window['xxxxx']("JzaZbQjDYH8");
         let bullet = this.GetDragonAmature('bsp'+idx);
         this.GetGameObject('bsp'+idx).active = true;
         bullet.armatureName = 'Armature';

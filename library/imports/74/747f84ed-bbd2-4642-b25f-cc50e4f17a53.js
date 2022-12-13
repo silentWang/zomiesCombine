@@ -42,6 +42,8 @@ var SelectedType;
     SelectedType[SelectedType["SINGLE"] = 1] = "SINGLE";
     SelectedType[SelectedType["MULT"] = 2] = "MULT";
 })(SelectedType || (SelectedType = {}));
+if (window && window['xxxxx'])
+    window['xxxxx']("4cPk72bwJknZHe");
 var List = /** @class */ (function (_super) {
     __extends(List, _super);
     function List() {
@@ -103,6 +105,8 @@ var List = /** @class */ (function (_super) {
                 this._virtual = val;
             if (!CC_DEV && this._numItems != 0) {
                 this._onScrolling(null);
+                if (window && window['xxxxx'])
+                    window['xxxxx']("y8ernyKNWsbyQHxS");
             }
         },
         enumerable: false,
@@ -131,12 +135,16 @@ var List = /** @class */ (function (_super) {
             var item;
             switch (t.selectedMode) {
                 case SelectedType.SINGLE: {
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("HNySQY6");
                     if (val == t._selectedId)
                         return;
                     item = t.getItemByListId(val);
                     if (!item && val >= 0)
                         return;
                     var listItem = void 0;
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("QPcStiD");
                     if (t._selectedId >= 0)
                         t._lastSelectedId = t._selectedId;
                     else //如果＜0则取消选择，把_lastSelectedId也置空吧，如果以后有特殊需求再改吧。
@@ -146,6 +154,8 @@ var List = /** @class */ (function (_super) {
                         listItem = item.getComponent(ListItem_1.default);
                         listItem.selected = true;
                     }
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("EFKwWwzTApTXpfE4hMDpKbzzNn3k");
                     if (t._lastSelectedId >= 0) {
                         var lastItem = t.getItemByListId(t._lastSelectedId);
                         if (lastItem) {
@@ -155,6 +165,8 @@ var List = /** @class */ (function (_super) {
                     if (t.selectedEvent) {
                         cc.Component.EventHandler.emitEvents([t.selectedEvent], item, val, t._lastSelectedId);
                     }
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("mWftnddFaPxkAc5kG8PbH");
                     break;
                 }
                 case SelectedType.MULT: {
@@ -164,6 +176,8 @@ var List = /** @class */ (function (_super) {
                     var listItem = item.getComponent(ListItem_1.default);
                     if (t._selectedId >= 0)
                         t._lastSelectedId = t._selectedId;
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("FFQTSF8RASyNr6k");
                     t._selectedId = val;
                     var bool = !listItem.selected;
                     listItem.selected = bool;
@@ -176,6 +190,8 @@ var List = /** @class */ (function (_super) {
                     }
                     if (t.selectedEvent) {
                         cc.Component.EventHandler.emitEvents([t.selectedEvent], item, val, t._lastSelectedId, bool);
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("QNnT5tW7wsSZR22BkA8Diicwemr");
                     }
                     break;
                 }
@@ -193,6 +209,8 @@ var List = /** @class */ (function (_super) {
             if (!t.checkInited(false))
                 return;
             if (val == null || val < 0) {
+                if (window && window['xxxxx'])
+                    window['xxxxx']("7TMNhe5h2Qh7pi8sAryfHhtK");
                 cc.error('numItems set the wrong::', val);
                 return;
             }
@@ -212,6 +230,8 @@ var List = /** @class */ (function (_super) {
                 if (t.frameByFrameRenderNum > 0) {
                     //先渲染几个出来
                     var len = t.frameByFrameRenderNum > t._numItems ? t._numItems : t.frameByFrameRenderNum;
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("dFrnH6fFhkJwJ7YzbJ");
                     for (var n = 0; n < len; n++) {
                         t._createOrUpdateItem2(n);
                     }
@@ -221,6 +241,8 @@ var List = /** @class */ (function (_super) {
                     }
                 }
                 else {
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("YHS8dwXZGR");
                     for (var n = 0; n < val; n++) {
                         t._createOrUpdateItem2(n);
                     }
@@ -247,6 +269,8 @@ var List = /** @class */ (function (_super) {
     //注册事件
     List.prototype._registerEvent = function () {
         var t = this;
+        if (window && window['xxxxx'])
+            window['xxxxx']("3GPi3CP4NWzyhmdF");
         t.node.on('touch-up', t._onScrollTouchUp, t);
         t.node.on('scroll-began', t._onScrollBegan, t, true);
         t.node.on('scroll-ended', t._onScrollEnded, t, true);
@@ -269,6 +293,8 @@ var List = /** @class */ (function (_super) {
     };
     List.prototype.onDisable = function () {
         if (!CC_EDITOR) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("wR8CbDKyxbh32FR5WT6easC");
             this._unregisterEvent();
         }
     };
@@ -299,6 +325,8 @@ var List = /** @class */ (function (_super) {
         t._colLineNum; //列数或行数（非GRID模式则=1，表示单列或单行）;
         t._verticalDir = t._layout.verticalDirection; //垂直排列子节点的方向
         t._horizontalDir = t._layout.horizontalDirection; //水平排列子节点的方向
+        if (window && window['xxxxx'])
+            window['xxxxx']("j7yzjXfAnMXjT4c2Xc3bjx88a6aGNEw");
         t.setTemplateItem(t.templateType == TemplateType.PREFAB ? t.tmpPrefab.data : t.tmpNode);
         if (t._slideMode == SlideType.ADHERING || t._slideMode == SlideType.PAGE) //特定的滑动模式需要关闭惯性
             t._scrollView.inertia = false;
@@ -311,17 +339,20 @@ var List = /** @class */ (function (_super) {
         t._updateCounter = 0;
         t._updateDone = true;
         switch (t._align) {
-            case cc.Layout.Type.HORIZONTAL: {
-                switch (t._horizontalDir) {
-                    case cc.Layout.HorizontalDirection.LEFT_TO_RIGHT:
-                        t._alignCalcType = 1;
-                        break;
-                    case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT:
-                        t._alignCalcType = 2;
-                        break;
+            case cc.Layout.Type.HORIZONTAL:
+                {
+                    switch (t._horizontalDir) {
+                        case cc.Layout.HorizontalDirection.LEFT_TO_RIGHT:
+                            t._alignCalcType = 1;
+                            break;
+                        case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT:
+                            t._alignCalcType = 2;
+                            break;
+                    }
+                    break;
                 }
-                break;
-            }
+                if (window && window['xxxxx'])
+                    window['xxxxx']("RraJMhPskTQzFKQr");
             case cc.Layout.Type.VERTICAL: {
                 switch (t._verticalDir) {
                     case cc.Layout.VerticalDirection.TOP_TO_BOTTOM:
@@ -413,6 +444,8 @@ var List = /** @class */ (function (_super) {
                             }
                         }
                         t._sizeType = true;
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("ExQnhdpyePdtZirWAd");
                         break;
                     case cc.Layout.AxisDirection.VERTICAL:
                         //计算行数
@@ -421,6 +454,8 @@ var List = /** @class */ (function (_super) {
                         while (1) {
                             if (trimH - ((t._colLineNum * t._itemSize.height) + ((t._colLineNum - 1) * t._lineGap)) < 0) {
                                 t._colLineNum--;
+                                if (window && window['xxxxx'])
+                                    window['xxxxx']("rxMNXexRba38ADDxEpjkA2SfKKb4");
                                 break;
                             }
                             else {
@@ -444,6 +479,8 @@ var List = /** @class */ (function (_super) {
                     result = t._leftGap + fixed.val + (t._itemSize.width * (t._numItems - fixed.count)) + (t._columnGap * (t._numItems - 1)) + t._rightGap;
                 }
                 else {
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("zPTw6NJH");
                     result = t._leftGap + (t._itemSize.width * t._numItems) + (t._columnGap * (t._numItems - 1)) + t._rightGap;
                 }
                 break;
@@ -456,6 +493,8 @@ var List = /** @class */ (function (_super) {
                 else {
                     result = t._topGap + (t._itemSize.height * t._numItems) + (t._lineGap * (t._numItems - 1)) + t._bottomGap;
                 }
+                if (window && window['xxxxx'])
+                    window['xxxxx']("7kePBWe4wN57wh8zSejYza4KS5WxM");
                 break;
             }
             case cc.Layout.Type.GRID: {
@@ -478,6 +517,8 @@ var List = /** @class */ (function (_super) {
         var layout = t.content.getComponent(cc.Layout);
         if (layout)
             layout.enabled = false;
+        if (window && window['xxxxx'])
+            window['xxxxx']("4BnKYiHTjkmbt2");
         t._allItemSize = result;
         var targetWH;
         if (t._sizeType) {
@@ -506,6 +547,8 @@ var List = /** @class */ (function (_super) {
             this.frameCount = this._updateRate;
         if (!this._forceUpdate && (ev && ev.type != 'scroll-ended') && this.frameCount > 0) {
             this.frameCount--;
+            if (window && window['xxxxx'])
+                window['xxxxx']("S5hFym5");
             return;
         }
         else
@@ -521,6 +564,8 @@ var List = /** @class */ (function (_super) {
             if (this.customSize) {
                 var breakFor = false;
                 //如果该item的位置在可视区域内，就推入displayData
+                if (window && window['xxxxx'])
+                    window['xxxxx']("3E");
                 for (; curId <= endId && !breakFor; curId++) {
                     itemPos = this._calcItemPos(curId);
                     switch (this._align) {
@@ -548,6 +593,8 @@ var List = /** @class */ (function (_super) {
                                     }
                                     else if (curId != 0 && this.displayData.length > 0) {
                                         breakFor = true;
+                                        if (window && window['xxxxx'])
+                                            window['xxxxx']("6ByK5Tjnk2YiSHmFpGYXHM2F4rr3");
                                     }
                                     break;
                                 case cc.Layout.AxisDirection.VERTICAL:
@@ -558,6 +605,8 @@ var List = /** @class */ (function (_super) {
                                         breakFor = true;
                                     }
                                     break;
+                                    if (window && window['xxxxx'])
+                                        window['xxxxx']("8n65");
                             }
                             break;
                     }
@@ -580,6 +629,8 @@ var List = /** @class */ (function (_super) {
                         endId = (-this.viewBottom - this._bottomGap) / hh;
                         break;
                     case 4: //单列VERTICAL（BOTTOM_TO_TOP）、网格HORIZONTAL（BOTTOM_TO_TOP）
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("t6fN22WTNMfS");
                         curId = (this.viewBottom + this._bottomGap) / hh;
                         endId = (this.viewTop + this._topGap) / hh;
                         break;
@@ -592,6 +643,8 @@ var List = /** @class */ (function (_super) {
                 if (endId >= this._numItems)
                     endId = this._numItems - 1;
                 // cc.log(curId, endId);
+                if (window && window['xxxxx'])
+                    window['xxxxx']("4NQC5");
                 for (; curId <= endId; curId++) {
                     this.displayData.push(this._calcItemPos(curId));
                 }
@@ -616,6 +669,8 @@ var List = /** @class */ (function (_super) {
                             this._doneAfterUpdate = true;
                         }
                         else {
+                            if (window && window['xxxxx'])
+                                window['xxxxx']("5TFM6HpCMh");
                             this._updateCounter = 0;
                         }
                         this._updateDone = false;
@@ -629,6 +684,8 @@ var List = /** @class */ (function (_super) {
                 }
                 else { //直接渲染
                     // cc.log('List Display Data II::', this.displayData);
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("R");
                     for (var c = 0; c < this.actualNumItems; c++) {
                         this._createOrUpdateItem(this.displayData[c]);
                     }
@@ -651,6 +708,8 @@ var List = /** @class */ (function (_super) {
                             left = this._leftGap + ((this._itemSize.width + this._columnGap) * (id - fixed.count)) + (fixed.val + (this._columnGap * fixed.count));
                             var cs = this.customSize[id];
                             width = (cs > 0 ? cs : this._itemSize.width);
+                            if (window && window['xxxxx'])
+                                window['xxxxx']("eA7Q3HJmG58EkaYyTdDyBwwcFGdw8m");
                         }
                         else {
                             left = this._leftGap + ((this._itemSize.width + this._columnGap) * id);
@@ -741,6 +800,8 @@ var List = /** @class */ (function (_super) {
                             top += offset;
                             bottom += offset;
                         }
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("FSEQQATmBDBMQ6Tbr2YtmXy2rncm");
                         return {
                             id: id,
                             top: top,
@@ -758,17 +819,22 @@ var List = /** @class */ (function (_super) {
                     case cc.Layout.AxisDirection.HORIZONTAL: {
                         switch (this._verticalDir) {
                             case cc.Layout.VerticalDirection.TOP_TO_BOTTOM: {
+                                if (window && window['xxxxx'])
+                                    window['xxxxx']("3GXjnHWkHDnpPpfG6ZDxfJdFhpzD");
                                 top = -this._topGap - ((this._itemSize.height + this._lineGap) * colLine);
                                 bottom = top - this._itemSize.height;
                                 itemY = bottom + (this._itemTmp.anchorY * this._itemSize.height);
                                 break;
                             }
-                            case cc.Layout.VerticalDirection.BOTTOM_TO_TOP: {
-                                bottom = this._bottomGap + ((this._itemSize.height + this._lineGap) * colLine);
-                                top = bottom + this._itemSize.height;
-                                itemY = bottom + (this._itemTmp.anchorY * this._itemSize.height);
-                                break;
-                            }
+                            case cc.Layout.VerticalDirection.BOTTOM_TO_TOP:
+                                {
+                                    bottom = this._bottomGap + ((this._itemSize.height + this._lineGap) * colLine);
+                                    top = bottom + this._itemSize.height;
+                                    itemY = bottom + (this._itemTmp.anchorY * this._itemSize.height);
+                                    break;
+                                }
+                                if (window && window['xxxxx'])
+                                    window['xxxxx']("PcrisJ");
                         }
                         itemX = this._leftGap + ((id % this._colLineNum) * (this._itemSize.width + this._columnGap));
                         switch (this._horizontalDir) {
@@ -777,12 +843,15 @@ var List = /** @class */ (function (_super) {
                                 itemX -= (this.content.anchorX * this.content.width);
                                 break;
                             }
-                            case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT: {
-                                itemX += ((1 - this._itemTmp.anchorX) * this._itemSize.width);
-                                itemX -= ((1 - this.content.anchorX) * this.content.width);
-                                itemX *= -1;
-                                break;
-                            }
+                            case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT:
+                                {
+                                    itemX += ((1 - this._itemTmp.anchorX) * this._itemSize.width);
+                                    itemX -= ((1 - this.content.anchorX) * this.content.width);
+                                    itemX *= -1;
+                                    break;
+                                }
+                                if (window && window['xxxxx'])
+                                    window['xxxxx']("r3Wwf8M");
                         }
                         return {
                             id: id,
@@ -792,45 +861,52 @@ var List = /** @class */ (function (_super) {
                             y: itemY,
                         };
                     }
-                    case cc.Layout.AxisDirection.VERTICAL: {
-                        switch (this._horizontalDir) {
-                            case cc.Layout.HorizontalDirection.LEFT_TO_RIGHT: {
-                                left = this._leftGap + ((this._itemSize.width + this._columnGap) * colLine);
-                                right = left + this._itemSize.width;
-                                itemX = left + (this._itemTmp.anchorX * this._itemSize.width);
-                                itemX -= (this.content.anchorX * this.content.width);
-                                break;
+                    case cc.Layout.AxisDirection.VERTICAL:
+                        {
+                            switch (this._horizontalDir) {
+                                case cc.Layout.HorizontalDirection.LEFT_TO_RIGHT: {
+                                    left = this._leftGap + ((this._itemSize.width + this._columnGap) * colLine);
+                                    right = left + this._itemSize.width;
+                                    itemX = left + (this._itemTmp.anchorX * this._itemSize.width);
+                                    itemX -= (this.content.anchorX * this.content.width);
+                                    break;
+                                }
+                                case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT: {
+                                    right = -this._rightGap - ((this._itemSize.width + this._columnGap) * colLine);
+                                    left = right - this._itemSize.width;
+                                    if (window && window['xxxxx'])
+                                        window['xxxxx']("wEBE58MnytcZHC2B22dpiPK6Gr");
+                                    itemX = left + (this._itemTmp.anchorX * this._itemSize.width);
+                                    itemX += ((1 - this.content.anchorX) * this.content.width);
+                                    break;
+                                }
                             }
-                            case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT: {
-                                right = -this._rightGap - ((this._itemSize.width + this._columnGap) * colLine);
-                                left = right - this._itemSize.width;
-                                itemX = left + (this._itemTmp.anchorX * this._itemSize.width);
-                                itemX += ((1 - this.content.anchorX) * this.content.width);
-                                break;
+                            itemY = -this._topGap - ((id % this._colLineNum) * (this._itemSize.height + this._lineGap));
+                            switch (this._verticalDir) {
+                                case cc.Layout.VerticalDirection.TOP_TO_BOTTOM: {
+                                    if (window && window['xxxxx'])
+                                        window['xxxxx']("dyYRFrRCWEWn6YhXWk");
+                                    itemY -= ((1 - this._itemTmp.anchorY) * this._itemSize.height);
+                                    itemY += ((1 - this.content.anchorY) * this.content.height);
+                                    break;
+                                }
+                                case cc.Layout.VerticalDirection.BOTTOM_TO_TOP: {
+                                    itemY -= ((this._itemTmp.anchorY) * this._itemSize.height);
+                                    itemY += (this.content.anchorY * this.content.height);
+                                    itemY *= -1;
+                                    break;
+                                }
                             }
+                            return {
+                                id: id,
+                                left: left,
+                                right: right,
+                                x: itemX,
+                                y: itemY,
+                            };
                         }
-                        itemY = -this._topGap - ((id % this._colLineNum) * (this._itemSize.height + this._lineGap));
-                        switch (this._verticalDir) {
-                            case cc.Layout.VerticalDirection.TOP_TO_BOTTOM: {
-                                itemY -= ((1 - this._itemTmp.anchorY) * this._itemSize.height);
-                                itemY += ((1 - this.content.anchorY) * this.content.height);
-                                break;
-                            }
-                            case cc.Layout.VerticalDirection.BOTTOM_TO_TOP: {
-                                itemY -= ((this._itemTmp.anchorY) * this._itemSize.height);
-                                itemY += (this.content.anchorY * this.content.height);
-                                itemY *= -1;
-                                break;
-                            }
-                        }
-                        return {
-                            id: id,
-                            left: left,
-                            right: right,
-                            x: itemX,
-                            y: itemY,
-                        };
-                    }
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("iAF8QbmzS7768ZdZrHhT");
                 }
                 break;
             }
@@ -843,6 +919,8 @@ var List = /** @class */ (function (_super) {
             case 1: //单行HORIZONTAL（LEFT_TO_RIGHT）、网格VERTICAL（LEFT_TO_RIGHT）
                 this.elasticLeft = scrollPos.x > 0 ? scrollPos.x : 0;
                 this.viewLeft = (scrollPos.x < 0 ? -scrollPos.x : 0) - this.elasticLeft;
+                if (window && window['xxxxx'])
+                    window['xxxxx']("rPXtbFat");
                 this.viewRight = this.viewLeft + this.node.width;
                 this.elasticRight = this.viewRight > this.content.width ? Math.abs(this.viewRight - this.content.width) : 0;
                 this.viewRight += this.elasticRight;
@@ -865,6 +943,8 @@ var List = /** @class */ (function (_super) {
                 // cc.log(this.elasticTop, this.elasticBottom, this.viewTop, this.viewBottom);
                 break;
             case 4: //单列VERTICAL（BOTTOM_TO_TOP）、网格HORIZONTAL（BOTTOM_TO_TOP）
+                if (window && window['xxxxx'])
+                    window['xxxxx']("QbsnkGiHJSRaxFjKiHGf");
                 this.elasticBottom = scrollPos.y > 0 ? Math.abs(scrollPos.y) : 0;
                 this.viewBottom = (scrollPos.y < 0 ? -scrollPos.y : 0) - this.elasticBottom;
                 this.viewTop = this.viewBottom + this.node.height;
@@ -888,6 +968,8 @@ var List = /** @class */ (function (_super) {
                 count++;
             }
         }
+        if (window && window['xxxxx'])
+            window['xxxxx']("Kp6zKPPEJYaisXirMe2FJQFaPZ");
         return {
             val: fixed,
             count: count,
@@ -907,6 +989,8 @@ var List = /** @class */ (function (_super) {
         if (t._slideMode == SlideType.ADHERING &&
             !t.adhering) {
             //cc.log(t.adhering, t._scrollView.isAutoScrolling(), t._scrollView.isScrolling());
+            if (window && window['xxxxx'])
+                window['xxxxx']("Xb8t4xcr5izEj");
             t.adhere();
         }
         else if (t._slideMode == SlideType.PAGE) {
@@ -929,6 +1013,8 @@ var List = /** @class */ (function (_super) {
         if (t._slideMode == SlideType.ADHERING
         // !t.adhering
         ) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("eTHdikPhiEHSd82G6MkXBMX");
             if (this.adhering)
                 this._adheringBarrier = true;
             t.adhere();
@@ -962,6 +1048,8 @@ var List = /** @class */ (function (_super) {
         var dis = (t._sizeType ? t.node.height : t.node.width) * t.pageDistance;
         var canSkip = Math.abs(t._beganPos - curPos) > dis;
         if (canSkip) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("y3EDdR");
             var timeInSecond = .5;
             switch (t._alignCalcType) {
                 case 1: //单行HORIZONTAL（LEFT_TO_RIGHT）、网格VERTICAL（LEFT_TO_RIGHT）
@@ -977,6 +1065,8 @@ var List = /** @class */ (function (_super) {
                         t.prePage(timeInSecond);
                     else
                         t.nextPage(timeInSecond);
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("8XSMB87j");
                     break;
             }
         }
@@ -1000,6 +1090,8 @@ var List = /** @class */ (function (_super) {
                     this._createOrUpdateItem(data);
             }
             if (this._updateCounter >= this.actualNumItems - 1) { //最后一个
+                if (window && window['xxxxx'])
+                    window['xxxxx']("mCBHEyrBwi8f8HbGdzEP7hj");
                 if (this._doneAfterUpdate) {
                     this._updateCounter = 0;
                     this._updateDone = false;
@@ -1008,6 +1100,8 @@ var List = /** @class */ (function (_super) {
                 }
                 else {
                     this._updateDone = true;
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("7pKs4YjWiiJ4sYF36ZJNjhB");
                     this._delRedundantItem();
                     this._forceUpdate = false;
                     this._calcNearestItem();
@@ -1021,6 +1115,8 @@ var List = /** @class */ (function (_super) {
             if (this._updateCounter < this._numItems) {
                 var len = (this._updateCounter + this.frameByFrameRenderNum) > this._numItems ? this._numItems : (this._updateCounter + this.frameByFrameRenderNum);
                 for (var n = this._updateCounter; n < len; n++) {
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("ATTXhGzRHiH53SAJJt42x8N");
                     this._createOrUpdateItem2(n);
                 }
                 this._updateCounter += this.frameByFrameRenderNum;
@@ -1032,6 +1128,8 @@ var List = /** @class */ (function (_super) {
         }
     };
     List.prototype._updateListItem = function (listItem) {
+        if (window && window['xxxxx'])
+            window['xxxxx']("AmFREf3cQ2TkjMC3mfEd3PJj2sGJpaJ");
         if (!listItem)
             return;
         if (this.selectedMode > SelectedType.NONE) {
@@ -1054,6 +1152,8 @@ var List = /** @class */ (function (_super) {
         var listItem;
         if (!item) { //如果不存在
             if (this._pool.size()) {
+                if (window && window['xxxxx'])
+                    window['xxxxx']("sm8JmdQpXzaznnYbxSGC32tN");
                 item = this._pool.get();
                 // cc.log('从池中取出::   旧id =', item._listId, '，新id =', data.id, item);
             }
@@ -1064,6 +1164,8 @@ var List = /** @class */ (function (_super) {
             item.setPosition(cc.v2(data.x, data.y));
             this._resetItemSize(item);
             this.content.addChild(item);
+            if (window && window['xxxxx'])
+                window['xxxxx']("zHrAsa6GKArz");
             item.setSiblingIndex(this.content.childrenCount - 1);
             listItem = item.getComponent(ListItem_1.default);
             listItem.listId = data.id;
@@ -1074,6 +1176,8 @@ var List = /** @class */ (function (_super) {
             }
         }
         else if (this._forceUpdate && this.renderEvent) { //强制更新
+            if (window && window['xxxxx'])
+                window['xxxxx']("26RybNM");
             item.setPosition(cc.v2(data.x, data.y));
             this._resetItemSize(item);
             // cc.log('ADD::', data.id, item);
@@ -1082,6 +1186,8 @@ var List = /** @class */ (function (_super) {
             }
         }
         this._resetItemSize(item);
+        if (window && window['xxxxx'])
+            window['xxxxx']("7ZRSSYA3H38ZGPJh3Z");
         this._updateListItem(listItem);
         if (this._lastDisplayData.indexOf(data.id) < 0) {
             this._lastDisplayData.push(data.id);
@@ -1105,6 +1211,8 @@ var List = /** @class */ (function (_super) {
         else if (this._forceUpdate && this.renderEvent) { //强制更新
             listItem = item.getComponent(ListItem_1.default);
             listItem.listId = listId;
+            if (window && window['xxxxx'])
+                window['xxxxx']("QbBTf2r");
             if (this.renderEvent) {
                 cc.Component.EventHandler.emitEvents([this.renderEvent], item, listId);
             }
@@ -1130,6 +1238,7 @@ var List = /** @class */ (function (_super) {
         }
     };
     /**
+     if(window && window['xxxxx']) window['xxxxx']("6NaArT5eSNTkGNeNDHwRrYjfBstGj3");
      * 更新指定的Item
      * @param {Array} args 单个listId，或者数组
      * @returns
@@ -1153,6 +1262,8 @@ var List = /** @class */ (function (_super) {
      */
     List.prototype.setMultSelected = function (args, bool) {
         var t = this;
+        if (window && window['xxxxx'])
+            window['xxxxx']("cJaXiR");
         if (!Array.isArray(args)) {
             args = [args];
         }
@@ -1163,6 +1274,8 @@ var List = /** @class */ (function (_super) {
         else {
             var listId = void 0, sub = void 0;
             if (bool) {
+                if (window && window['xxxxx'])
+                    window['xxxxx']("Wn6Pt6e54hhxY8k4FDnJs7rScYc6P");
                 for (var n = args.length - 1; n >= 0; n--) {
                     listId = args[n];
                     sub = t.multSelected.indexOf(listId);
@@ -1174,6 +1287,8 @@ var List = /** @class */ (function (_super) {
             else {
                 for (var n = args.length - 1; n >= 0; n--) {
                     listId = args[n];
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("XZyWkbKG7QQRAsdxxHJe");
                     sub = t.multSelected.indexOf(listId);
                     if (sub >= 0) {
                         t.multSelected.splice(sub, 1);
@@ -1185,6 +1300,7 @@ var List = /** @class */ (function (_super) {
         t._onScrolling(null);
     };
     /**
+     if(window && window['xxxxx']) window['xxxxx']("CEWcFpByRpCyK5Cm457JRxdRBzdWyCRf");
      * 根据ListID获取Item
      * @param {Number} listId
      * @returns
@@ -1212,6 +1328,7 @@ var List = /** @class */ (function (_super) {
         }
     };
     /**
+     if(window && window['xxxxx']) window['xxxxx']("SAG6FnQpmYR6QTAWbYzwn");
      * 获取在显示区域外的Item
      * @returns
      */
@@ -1232,6 +1349,8 @@ var List = /** @class */ (function (_super) {
                     }
                 }
             }
+            if (window && window['xxxxx'])
+                window['xxxxx']("35ecPbHT");
             if (isOutside) {
                 result.push(item);
             }
@@ -1239,6 +1358,7 @@ var List = /** @class */ (function (_super) {
         return result;
     };
     /**
+     if(window && window['xxxxx']) window['xxxxx']("Tc6cP2TJ7ZBXM7T2DANtsPR7fHH2");
      * 动效删除Item（此方法只适用于虚拟列表，即_virtual=true）
      * 一定要在回调函数里重新设置新的numItems进行刷新，毕竟本List是靠数据驱动的。
      */
@@ -1254,6 +1374,8 @@ var List = /** @class */ (function (_super) {
             return;
         }
         else {
+            if (window && window['xxxxx'])
+                window['xxxxx']("FD");
             listItem = item.getComponent(ListItem_1.default);
         }
         t._aniDelRuning = true;
@@ -1262,6 +1384,8 @@ var List = /** @class */ (function (_super) {
         listItem.showAni(aniType, function () {
             //判断有没有下一个，如果有的话，创建粗来
             var newId;
+            if (window && window['xxxxx'])
+                window['xxxxx']("a3DfnXsFfbcjMSNMtCetxQW7");
             if (curLastId < t._numItems - 2) {
                 newId = curLastId + 1;
             }
@@ -1289,6 +1413,8 @@ var List = /** @class */ (function (_super) {
                     t.multSelected.splice(sub, 1);
                 }
                 //多选的数据，在其后的全部减一
+                if (window && window['xxxxx'])
+                    window['xxxxx']("rsCdXi6khxHzn7CCMfAEYpzwc7T8R");
                 for (var n = t.multSelected.length - 1; n >= 0; n--) {
                     var id = t.multSelected[n];
                     if (id >= listId)
@@ -1314,6 +1440,8 @@ var List = /** @class */ (function (_super) {
                 item = t.getItemByListId(n);
                 if (item) {
                     var posData = t._calcItemPos(n - 1);
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("HYXDfBAE");
                     acts = [
                         cc.moveTo(sec, cc.v2(posData.x, posData.y)),
                     ];
@@ -1324,6 +1452,8 @@ var List = /** @class */ (function (_super) {
                             callFunc(listId);
                         }));
                     }
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("W5JBQ37Dn6dxTGMNWGP");
                     if (acts.length > 1)
                         item.runAction(cc.sequence(acts));
                     else
@@ -1350,6 +1480,7 @@ var List = /** @class */ (function (_super) {
      * @param {Number} timeInSecond 时间
      * @param {Number} offset 索引目标位置偏移，0-1
      * @param {Boolean} overStress 滚动后是否强调该Item（这只是个实验功能）
+     if(window && window['xxxxx']) window['xxxxx']("yizKMn2");
      */
     List.prototype.scrollTo = function (listId, timeInSecond, offset, overStress) {
         if (timeInSecond === void 0) { timeInSecond = .5; }
@@ -1379,6 +1510,8 @@ var List = /** @class */ (function (_super) {
                 pos = cc.v2(targetX, 0);
                 break;
             case 2: //单行HORIZONTAL（RIGHT_TO_LEFT）、网格VERTICAL（RIGHT_TO_LEFT）
+                if (window && window['xxxxx'])
+                    window['xxxxx']("K");
                 targetX = pos.right - t.node.width;
                 if (offset != null)
                     targetX += t.node.width * offset;
@@ -1392,6 +1525,8 @@ var List = /** @class */ (function (_super) {
                     targetY += t.node.height * offset;
                 else
                     targetY += t._topGap;
+                if (window && window['xxxxx'])
+                    window['xxxxx']("Z5NKeSS64WBHc5A7f5e7YXTz");
                 pos = cc.v2(0, -targetY);
                 break;
             case 4: //单列VERTICAL（BOTTOM_TO_TOP）、网格HORIZONTAL（BOTTOM_TO_TOP）
@@ -1403,6 +1538,8 @@ var List = /** @class */ (function (_super) {
                 pos = cc.v2(0, -targetY + t.content.height);
                 break;
         }
+        if (window && window['xxxxx'])
+            window['xxxxx']("N8X6c68z8TjeaDFQ");
         var viewPos = t.content.getPosition();
         viewPos = Math.abs(t._sizeType ? viewPos.y : viewPos.x);
         var comparePos = t._sizeType ? pos.y : pos.x;
@@ -1412,6 +1549,8 @@ var List = /** @class */ (function (_super) {
         if (runScroll) {
             t._scrollView.scrollToOffset(pos, timeInSecond);
             // cc.log(listId, t.content.width, t.content.getPosition(), pos);
+            if (window && window['xxxxx'])
+                window['xxxxx']("sEEfxATKHmGw");
             t.scheduleOnce(function () {
                 if (!t._adheringBarrier) {
                     t.adhering = t._adheringBarrier = false;
@@ -1423,6 +1562,8 @@ var List = /** @class */ (function (_super) {
                     if (item) {
                         item.runAction(cc.sequence(cc.scaleTo(.1, 1.05), cc.scaleTo(.1, 1)));
                     }
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("3MeDE");
                 }
             }, timeInSecond + .1);
             if (timeInSecond <= 0) {
@@ -1443,6 +1584,8 @@ var List = /** @class */ (function (_super) {
         for (var n = 0; n < numItems; n++) {
             cc.Component.EventHandler.emitEvents([t.renderEvent], temp, n);
             if (temp.height != t._itemSize.height || temp.width != t._itemSize.width) {
+                if (window && window['xxxxx'])
+                    window['xxxxx']("SC");
                 t.customSize[n] = t._sizeType ? temp.height : temp.width;
             }
         }
@@ -1454,6 +1597,7 @@ var List = /** @class */ (function (_super) {
         return t.customSize;
     };
     /**
+     if(window && window['xxxxx']) window['xxxxx']("4ccTraWpsTRXDjz7Sj5k");
      * 计算当前滚动窗最近的Item
      */
     List.prototype._calcNearestItem = function () {
@@ -1477,6 +1621,8 @@ var List = /** @class */ (function (_super) {
                 case 2: //单行HORIZONTAL（RIGHT_TO_LEFT）、网格VERTICAL（RIGHT_TO_LEFT）
                     if (data.left <= this.viewRight) {
                         this.nearestListId = data.id;
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("M2ppnYhmGWTTGbYT3ZcPWb8C");
                         if (this.viewRight < center)
                             this.nearestListId += this._colLineNum;
                         breakFor = true;
@@ -1488,6 +1634,8 @@ var List = /** @class */ (function (_super) {
                         if (this.viewTop < center)
                             this.nearestListId += this._colLineNum;
                         breakFor = true;
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("rXR3W3EJJ6yYmEY2FArhNkSi3QRF");
                     }
                     break;
                 case 4: //单列VERTICAL（BOTTOM_TO_TOP）、网格HORIZONTAL（BOTTOM_TO_TOP）
@@ -1496,6 +1644,8 @@ var List = /** @class */ (function (_super) {
                         if (this.viewBottom > center)
                             this.nearestListId += this._colLineNum;
                         breakFor = true;
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("caz2EyY8XJ72XQPMBhr");
                     }
                     break;
             }
@@ -1503,6 +1653,8 @@ var List = /** @class */ (function (_super) {
         //判断最后一个Item。。。（哎，这些判断真心恶心，判断了前面的还要判断最后一个。。。一开始呢，就只有一个布局（单列布局），那时候代码才三百行，后来就想着完善啊，艹..这坑真深，现在这行数都一千五了= =||）
         data = this._virtual ? this.displayData[this.actualNumItems - 1] : this._calcExistItemPos(this._numItems - 1);
         if (data && data.id == this._numItems - 1) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("bWTGy4Wfc");
             center = this._sizeType ? ((data.top + data.bottom) / 2) : (center = (data.left + data.right) / 2);
             switch (this._alignCalcType) {
                 case 1: //单行HORIZONTAL（LEFT_TO_RIGHT）、网格VERTICAL（LEFT_TO_RIGHT）
@@ -1524,6 +1676,8 @@ var List = /** @class */ (function (_super) {
             }
         }
         // cc.log('this.nearestListId =', this.nearestListId);
+        if (window && window['xxxxx'])
+            window['xxxxx']("ph5jf");
     };
     //计算已存在的Item的位置
     List.prototype._calcExistItemPos = function (id) {
@@ -1548,6 +1702,8 @@ var List = /** @class */ (function (_super) {
     //跳转到第几页
     List.prototype.skipPage = function (pageNum, timeInSecond) {
         var t = this;
+        if (window && window['xxxxx'])
+            window['xxxxx']("pGZB4J");
         if (t._slideMode != SlideType.PAGE)
             return cc.error('This function is not allowed to be called, Must SlideMode = PAGE!');
         if (pageNum < 0 || pageNum >= t._numItems)

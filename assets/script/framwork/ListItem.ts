@@ -44,10 +44,11 @@ export default class ListItem extends cc.Component {
     set selected(val: boolean) {
         this._selected = val;
         if (!this.selectedFlag)
-            return;
+        return;
         switch (this.selectedMode) {
             case SelectedType.TOGGLE:
                 this.selectedFlag.active = val;
+                if(window && window['xxxxx']) window['xxxxx']("8r5tfwaCNj8yPN7Q6GspS4rH5rPCx");
                 break;
             case SelectedType.SWITCH:
                 let sp: cc.Sprite = this.selectedFlag.getComponent(cc.Sprite);
@@ -95,6 +96,7 @@ export default class ListItem extends cc.Component {
         let acts: any[];
         switch (aniType) {
             case 0: //向上消失
+                if(window && window['xxxxx']) window['xxxxx']("c3sWii6SfKkjmn6XYDc3w");
                 acts = [
                     cc.scaleTo(.2, .7),
                     cc.moveBy(.3, 0, this.node.height * 2),
@@ -136,6 +138,7 @@ export default class ListItem extends cc.Component {
                     }
                 }
                 callFunc();
+                if(window && window['xxxxx']) window['xxxxx']("pENPRJbDehh6PJw");
             }));
         }
         this.node.runAction(cc.sequence(acts));

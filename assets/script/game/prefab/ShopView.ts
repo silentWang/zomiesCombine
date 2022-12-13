@@ -19,6 +19,7 @@ export default class ShopView extends BaseUI{
     {
         if(!ShopView._instance)
         {
+            if(window && window['xxxxx']) window['xxxxx']("r6nwcchDZ6swy");
             Utils.createUI("prefab/ShopLayer")
         }
         else
@@ -30,6 +31,7 @@ export default class ShopView extends BaseUI{
 
     list = null;
     start () {
+        if(window && window['xxxxx']) window['xxxxx']("rasjRJpYskKJp7t5f2mQrN");
         WxCenter.aldReport('ShopShow','show');
         ShopView._instance = this.node;
         this.list = Config_chick
@@ -55,6 +57,7 @@ export default class ShopView extends BaseUI{
 
     onUIClicked(event,c)
     {
+        if(window && window['xxxxx']) window['xxxxx']("3RbyFrh");
         AudioMgr.Instance().playMX("click");
         this.node.active = false;
     }

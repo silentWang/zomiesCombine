@@ -42,6 +42,8 @@ var ShareView = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ShareView.prototype.start = function () {
+        if (window && window['xxxxx'])
+            window['xxxxx']("kdzFNetMdCD4xSGrsjzWxQha");
         Utils_1.default.playBreath(this.GetGameObject('btn_share'));
     };
     ShareView.prototype.onDestroy = function () {
@@ -59,6 +61,8 @@ var ShareView = /** @class */ (function (_super) {
         var _this = this;
         var btnName = event.target.name;
         AudioMgr_1.default.Instance().playMX("click");
+        if (window && window['xxxxx'])
+            window['xxxxx']("ZQckt3e7wXz8ApzjWaTD858");
         switch (btnName) {
             case "btn_close":
                 this.closeUI();

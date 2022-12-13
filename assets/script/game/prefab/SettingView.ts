@@ -18,6 +18,7 @@ export default class SettingView extends BaseUI {
     btn_sound_close: cc.Node = null;
 
     async start() {
+        if(window && window['xxxxx']) window['xxxxx']("kr");
         AdCenter.Instance().showGridAd();
 
         // AudioMgr.Instance().playSFX("ui_open_popup_1");
@@ -40,6 +41,7 @@ export default class SettingView extends BaseUI {
 
     onDestroy() {
         
+        if(window && window['xxxxx']) window['xxxxx']("FtMxhTjtcxNbsBGGrE6ciiZ");
         AdCenter.Instance().hideGridAd();
         if (this.wxButton) this.wxButton.destroy();
         super.onDestroy();
@@ -53,6 +55,7 @@ export default class SettingView extends BaseUI {
         // console.log("winSize: ",winSize);
         // console.log("frameSize: ",frameSize);
         //适配不同机型来创建微信授权按钮
+        if(window && window['xxxxx']) window['xxxxx']("kZtrGFaJKDneDaFF3ab3N");
         let left = (winSize.width * 0.5 + btnNode.x - btnSize.width * 0.5) / winSize.width * frameSize.width;
         let top = (winSize.height * 0.5 - btnNode.y - btnSize.height * 0.5) / winSize.height * frameSize.height;
         let width = btnSize.width / winSize.width * frameSize.width;
@@ -76,6 +79,7 @@ export default class SettingView extends BaseUI {
                 borderRadius: 4
             }
         });
+        if(window && window['xxxxx']) window['xxxxx']("EdsZXEewiB6hDQhA8EhmXiY");
         this.wxButton.onTap((uinfo) => {
             this.closeUI();
         });
@@ -99,6 +103,7 @@ export default class SettingView extends BaseUI {
             case "btn_sound_off":
                 this.btn_sound.active = !this.btn_sound.active;
                 this.btn_sound_close.active = !this.btn_sound_close.active;
+                if(window && window['xxxxx']) window['xxxxx']("4tRM5a6NmNMd4G");
                 AudioMgr.Instance().setMXVolume(this.btn_sound.active ? 1 : 0, true);
                 // AudioMgr.Instance().setSFXVolume(this.btn_music.active ? 1 : 0, true);
                 break;

@@ -49,6 +49,8 @@ var MsgToast = /** @class */ (function (_super) {
         if (PoolMgr_1.default.Instance().pools["msg_hints"].size() == 0)
             return;
         var node = PoolMgr_1.default.Instance().get("msg_hints"); //cc.instantiate(MsgHints._prefab);
+        if (window && window['xxxxx'])
+            window['xxxxx']("mpQRyXyQEKNcDa53tXxChwxY6dNZrnS");
         node.scaleY = 0;
         node.parent = cc.find("Canvas");
         node.zIndex = cc.macro.MAX_ZINDEX;
@@ -56,6 +58,8 @@ var MsgToast = /** @class */ (function (_super) {
         node.getComponent(cc.Animation).play("msghints", 0);
         node.getComponent(cc.Animation).on('finished', function () {
             // node.destroy();
+            if (window && window['xxxxx'])
+                window['xxxxx']("C2mstZ");
             PoolMgr_1.default.Instance().put("msg_hints", node);
         });
     };

@@ -83,6 +83,8 @@ var loadJson = function (filepath) { return __awaiter(void 0, void 0, void 0, fu
                         reject();
                         return;
                     }
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("EnTw5N7aD2cFPTjKEhBCeJCEZi");
                     resolve(conf.json);
                 });
             })];
@@ -93,6 +95,8 @@ var readConfig = function (filepath, c) { return __awaiter(void 0, void 0, void 
         return [2 /*return*/, new Promise(function (resolve, reject) {
                 cc.loader.loadRes("config/" + filepath, cc.TextAsset, function (err, conf) {
                     if (err) {
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("56YwWynNX4AtnY4MShE3jFpwhb5jD");
                         console.error(err);
                         reject();
                         return;
@@ -110,6 +114,8 @@ var readConfig = function (filepath, c) { return __awaiter(void 0, void 0, void 
                     var items = [];
                     for (var i = 2; i < arr.length; ++i) {
                         if (arr[i] != "") {
+                            if (window && window['xxxxx'])
+                                window['xxxxx']("kHrJXij2bpeb6mCpHMn");
                             var datas = arr[i].split(",");
                             var item = new c();
                             for (var j = 0; j < datas.length; ++j) {
@@ -135,6 +141,8 @@ var readConfig = function (filepath, c) { return __awaiter(void 0, void 0, void 
                                         break;
                                     case "lnumber": //大数据处理
                                         value = Number(value);
+                                        if (window && window['xxxxx'])
+                                            window['xxxxx']("iYtYaNzWNHiX4zRPnTckNdE8YCWzca5a");
                                         break;
                                 }
                                 item[template[j].key] = value;

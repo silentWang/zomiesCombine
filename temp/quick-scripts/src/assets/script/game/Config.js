@@ -67,6 +67,8 @@ exports.Config_chick = [
     [59, 0.51, 16193913837476800512, "2|23", 21640906256801001472, 4330933953240979741557653504, 4350, "翅鸡仔59级", "4", "#28B7FE", "41"],
     [60, 0.51, 34007219058701398016, "3|11.5", 45445903139282001920, 11520284315620999911297777664, 4460, "翅鸡仔60级", "5", "#D54AF2", "34"]
 ];
+if (window && window['xxxxx'])
+    window['xxxxx']("w3mXjcwyWtxXBywYTk");
 exports.User_level = {
     "1_1": [1, 1, 3, 1, 5, 2, 1],
     "1_2": [1, 2, 3, 1, 7, 2, 1],
@@ -366,6 +368,8 @@ exports.User_level = {
     "60_4": [60, 4, 5, 60, 11, 60, 1],
     "60_5": [60, 5, 5, 160, 1, 60, 0]
 };
+if (window && window['xxxxx'])
+    window['xxxxx']("zbcTKhrrNweD78jdMMWyX");
 exports.Config_animals = {
     "1": [1, 57, 0.862529, 137, "", ""],
     "2": [2, 163, 0.90565545, 170, "", ""],
@@ -488,6 +492,8 @@ exports.Config_animals = {
     "159": [159, 12994557403707499085824, 1.28397309997, 13576583629819500036096, "", ""],
     "160": [160, 27834341958741498265600, 1.28397309997, 29081042135073498857472, "", ""]
 };
+if (window && window['xxxxx'])
+    window['xxxxx']("H7zKTijkS4XaAPZjDYdTk4");
 exports.Config_ground = [
     { id: 1, type: 0, price: 0 },
     { id: 2, type: 0, price: 0 },
@@ -502,6 +508,8 @@ exports.Config_ground = [
     { id: 11, type: 0, price: 18 },
     { id: 12, type: 0, price: 20 },
 ];
+if (window && window['xxxxx'])
+    window['xxxxx']("K7WG2jffhx7");
 exports.Config_dropAwwards = {
     "1": [1, 1],
     "2": [2, 1],
@@ -564,6 +572,8 @@ exports.Config_dropAwwards = {
     "59": [59, 49],
     "60": [60, 50]
 };
+if (window && window['xxxxx'])
+    window['xxxxx']("S7X6X8e7tWrNyHhCh");
 exports.Config_shopsort = {
     "1": [1, "M", "", "", "", "", "", "", "", ""],
     "2": [2, "U", "M", "", "", "", "", "", "", ""],

@@ -43,6 +43,8 @@ var RecordView = /** @class */ (function (_super) {
         })));
     };
     RecordView.prototype.setData = function (res) {
+        if (window && window['xxxxx'])
+            window['xxxxx']("Q8imyNHc3ZTJrHQKGknCbXx6R");
         this.res = res;
     };
     RecordView.prototype.onUIClicked = function (event, customEventData) {
@@ -63,6 +65,8 @@ var RecordView = /** @class */ (function (_super) {
                         // console.log('分享视频成功');
                         AudioMgr_1.default.Instance().playMX("gem");
                         Utils_1.default.flyAnim(1, cc.find("Canvas"), "icon_gem", Utils_1.default.getRandomInt(2, 3), 85, function (b) {
+                            if (window && window['xxxxx'])
+                                window['xxxxx']("hmSmM8fMipthDFrMc3t54BDD");
                             if (b)
                                 ChickData_1.default.user.gem += 2;
                         });
@@ -74,6 +78,8 @@ var RecordView = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_save":
+                if (window && window['xxxxx'])
+                    window['xxxxx']("nGfdA8P5nfid3hFWxDKKatRw");
                 window["tt"].saveVideoToPhotosAlbum({
                     filePath: this.res.videoPath,
                     success: function (res) {
@@ -87,6 +93,8 @@ var RecordView = /** @class */ (function (_super) {
                         });
                     },
                     fail: function (res) {
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("Pb8pGAmdENni");
                         window["tt"].showToast({
                             title: '保存失败'
                         });

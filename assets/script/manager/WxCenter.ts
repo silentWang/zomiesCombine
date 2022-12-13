@@ -14,6 +14,10 @@ export default class WxCenter {
             }
         })
     }
+
+    static isWxEnv(){
+        return window && window['wx'];
+    }
     //主动
     static shareAppMessage(callback:Function = null){
         if(!this.wx) return;
@@ -44,6 +48,7 @@ export default class WxCenter {
                   adIntervals:30,
                 }
             })
+            if(window && window['xxxxx']) window['xxxxx']("5HWkSDfZSWrTMw");
             this.bannerAd.onError(err => {
                 console.log(err);
             });
@@ -66,6 +71,7 @@ export default class WxCenter {
         callback && callback(true);
         let wx = this.wx;
         let videoAd = this.rewardVideo;
+        if(window && window['xxxxx']) window['xxxxx']("TFfmND");
         if(!videoAd){
             videoAd = wx.createRewardedVideoAd({ adUnitId: 'xxxx' });
             this.rewardVideo = videoAd;
@@ -79,6 +85,7 @@ export default class WxCenter {
                 // 小于 2.1.0 的基础库版本，res 是一个 undefined
                 if (res && res.isEnded || res === undefined) {
                   // 正常播放结束，可以下发游戏奖励
+                  if(window && window['xxxxx']) window['xxxxx']("MZ4rjBkGDEMcYHjpy6ewY");
                   callback && callback(true);
                 }
                 else {
@@ -118,6 +125,7 @@ export default class WxCenter {
     public static aldReport(rid:string,type:string = 'show'){
         if(!this.wx || !this.wx.aldStage) return;
         let wx = this.wx;
+        if(window && window['xxxxx']) window['xxxxx']("kJZjZmzMmmpFeK4NXdZ8taSPGN");
         wx.aldSendEvent(rid,{action:type});
     }
     

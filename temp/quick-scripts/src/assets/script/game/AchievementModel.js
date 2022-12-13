@@ -28,6 +28,8 @@ var AchievementModel = /** @class */ (function () {
     };
     AchievementModel.prototype.setData = function (data) {
         //初始化下数据       
+        if (window && window['xxxxx'])
+            window['xxxxx']("np8tABitB8HtARsySFYHYJn8PZ4");
         if (!data) {
             return;
         }
@@ -38,6 +40,8 @@ var AchievementModel = /** @class */ (function () {
                     for (var key in element) {
                         this[savepars[i]][key] = element[key];
                     }
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("BSxpzJ");
                 }
                 else
                     this[savepars[i]] = element;

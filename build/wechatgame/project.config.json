@@ -1,0 +1,29 @@
+{
+  "description": "项目配置文件。",
+  "miniprogramRoot": "",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": false,
+    "newFeature": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "compileType": "game",
+  "libVersion": "2.27.3",
+  "appid": "wxd71afbc5d33c7b39",
+  "projectname": "pvsz_tt",
+  "condition": {},
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}

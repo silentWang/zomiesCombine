@@ -63,6 +63,8 @@ var ListItem = /** @class */ (function (_super) {
             switch (this.selectedMode) {
                 case SelectedType.TOGGLE:
                     this.selectedFlag.active = val;
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("8r5tfwaCNj8yPN7Q6GspS4rH5rPCx");
                     break;
                 case SelectedType.SWITCH:
                     var sp = this.selectedFlag.getComponent(cc.Sprite);
@@ -100,6 +102,8 @@ var ListItem = /** @class */ (function (_super) {
         var acts;
         switch (aniType) {
             case 0: //向上消失
+                if (window && window['xxxxx'])
+                    window['xxxxx']("c3sWii6SfKkjmn6XYDc3w");
                 acts = [
                     cc.scaleTo(.2, .7),
                     cc.moveBy(.3, 0, this.node.height * 2),
@@ -141,6 +145,8 @@ var ListItem = /** @class */ (function (_super) {
                     }
                 }
                 callFunc();
+                if (window && window['xxxxx'])
+                    window['xxxxx']("pENPRJbDehh6PJw");
             }));
         }
         this.node.runAction(cc.sequence(acts));

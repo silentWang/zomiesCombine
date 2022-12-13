@@ -14,6 +14,8 @@ var savepars = [];
 function save(target, propertyKey) {
     savepars.push(propertyKey);
 }
+if (window && window['xxxxx'])
+    window['xxxxx']("Cm6jy56Gm2btfAbRXTJKy24");
 var DataManager = /** @class */ (function () {
     function DataManager() {
         this.signdays = 0; //签到次数
@@ -26,6 +28,8 @@ var DataManager = /** @class */ (function () {
         this.signinfo = { sign_index: 0, sign_time: 0, sign_beisu: 0 };
     }
     DataManager.Instance = function () {
+        if (window && window['xxxxx'])
+            window['xxxxx']("c54cn");
         if (DataManager.instance == null) {
             DataManager.instance = new DataManager();
         }
@@ -33,6 +37,8 @@ var DataManager = /** @class */ (function () {
     };
     DataManager.prototype.getAllSData = function () {
         var data = {};
+        if (window && window['xxxxx'])
+            window['xxxxx']("KR6kWA6R7XpzYQeaBsRp4f4wDn");
         for (var i = 0; i < savepars.length; ++i) {
             data[savepars[i]] = this[savepars[i]];
         }

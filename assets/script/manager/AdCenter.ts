@@ -11,6 +11,8 @@ export default class AdCenter extends Singleton {
 
     bannerAdID = null;
 
+    bannerAd = null;
+
     constructor() {
         super();
 
@@ -19,6 +21,7 @@ export default class AdCenter extends Singleton {
                 adUnitId: '1r3lbfr4d9e6veouju'
             });
 
+            if(window && window['xxxxx']) window['xxxxx']("cM5zM6kQEi");
             this.videoAdID.onError((res) => {
                 console.log("onError", res);
                 // MsgToast.show("广告加载错误");
@@ -67,14 +70,19 @@ export default class AdCenter extends Singleton {
     private callBack: Function;
     private _lastPlayTime: number = 0;
     public play(callback: Function, type:number = 0) {
+        if(window && window['xxxxx']) window['xxxxx']("xYBwNjGb4PRGfc678KbNpCti");
         if (Utils.getServerTime() - this._lastPlayTime < 1000) {
             console.log("点击过于频繁")
             return;
         }
         this._lastPlayTime = Utils.getServerTime();
         this.callBack = callback;
-        WxCenter.showRewardedVideoAd(callback);
-        // this.playVideo();
+        if(tt){
+            this.playVideo();
+        }
+        else if(WxCenter.isWxEnv()){
+            WxCenter.showRewardedVideoAd(callback);
+        }
     }
 
     private playVideo(){
@@ -95,15 +103,24 @@ export default class AdCenter extends Singleton {
 
     public showGridAd() 
     {
-        // if (this.bannerAd)
-        //     this.bannerAd.show()
-        WxCenter.showBanner();
+        if(WxCenter.isWxEnv()){
+            WxCenter.showBanner();
+        }
+        else{
+            // if (this.bannerAd)
+            //     this.bannerAd.show()
+        }
+        if(window && window['xxxxx']) window['xxxxx']("3DmJjHm2mF8Z");
     }
 
     public hideGridAd() {
-        // if (this.bannerAd)
-        //     this.bannerAd.hide()
-        WxCenter.hideBanner();
+        if(WxCenter.isWxEnv()){
+            WxCenter.hideBanner();
+        }
+        else{
+            // if (this.bannerAd)
+            //     this.bannerAd.hide()
+        }
     }
 
 }

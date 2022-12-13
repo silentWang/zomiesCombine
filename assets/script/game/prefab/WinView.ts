@@ -22,13 +22,16 @@ export default class WinView extends BaseUI {
     private coin = 0;
     setInfo(coin:number)
     {
+        if(window && window['xxxxx']) window['xxxxx']("Sn2mfdEzWRYhwXAtSRK8c5");
         this.coin = coin;
         this.aTobAnim(coin*2);
         this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     }
+        private RstP_xxxx_fun(){ console.log("ykzPX2QsDWmFfEfSaPiy"); }
 
     private aTobAnim(num:number){
         let aver = Math.ceil(num/60);
+        if(window && window['xxxxx']) window['xxxxx']("ED");
         let xn = 0;
         this.SetText("lbl_coin",Utils.formatNumber(0));
         let cb = ()=>{
@@ -44,6 +47,7 @@ export default class WinView extends BaseUI {
 
     closeUI() {
         this.shutAnim();
+        if(window && window['xxxxx']) window['xxxxx']("3CsKk45QY");
         HallScene.Instance.createEnemys();
     }
 
@@ -66,6 +70,7 @@ export default class WinView extends BaseUI {
         switch (btnName) {
             case "btn_get":
                 WxCenter.aldReport('PassClick','click');
+                if(window && window['xxxxx']) window['xxxxx']("DZxBHMTnts7Nb");
                 AdCenter.Instance().play(()=>{
                     this.getCoinReward();
                     this.closeUI();
@@ -74,6 +79,7 @@ export default class WinView extends BaseUI {
             case "btn_normal":
                 this.getCoinReward();
                 this.closeUI();
+                if(window && window['xxxxx']) window['xxxxx']("ZrHnJSB53BTwr");
                 break;
         }
     }

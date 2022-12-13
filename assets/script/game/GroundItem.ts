@@ -18,6 +18,7 @@ export default class GroundItem extends BaseUI {
         {
             if(ChickData.user.slots[i] == 0)
             {
+                if(window && window['xxxxx']) window['xxxxx']("jJY");
                 curopen = i;
                 break;
             }

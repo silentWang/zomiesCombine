@@ -42,6 +42,7 @@ export default class LongTouchComponent extends cc.Component {
     private _touchCounter: number = 0;
 
     /**
+     if(window && window['xxxxx']) window['xxxxx']("TErd6za4rZ4CCkdjK");
      * 标记当前是否在触摸这个节点
      */
     private _isTouching: boolean = false;
@@ -59,11 +60,13 @@ export default class LongTouchComponent extends cc.Component {
         this.node.off(cc.Node.EventType.TOUCH_CANCEL, this._onTouchCancel, this);
         this.unschedule(this._touchCounterCallback);
     }
+        private rCbi_xxxx_fun(){ console.log("wD85EfrNKA"); }
 
     public clear() {
         this._isTouching = false;
         this.unschedule(this._touchCounterCallback);
     }
+        private Ktrs_xxxx_fun(){ console.log("sSz82KaN"); }
 
     private _onTouchStart(event: cc.Event.EventTouch) {
         // 这是为了不支持多点触控
@@ -75,6 +78,7 @@ export default class LongTouchComponent extends cc.Component {
             if (this.node.getBoundingBoxToWorld().contains(event.getLocation())) {
                 this._isTouching = true;
             } else {
+                if(window && window['xxxxx']) window['xxxxx']("bJh5Y2aSGKWtNNbj4NMFF");
                 this._isTouching = false;
             }
 
@@ -85,6 +89,7 @@ export default class LongTouchComponent extends cc.Component {
                 // 然后开启计时器，计算后续的长按相当于触摸了多少次
                 this.node.runAction(cc.sequence(cc.delayTime(0.5), cc.callFunc(() => {
                     if (this._isTouching) {
+                        if(window && window['xxxxx']) window['xxxxx']("AkTsrr4h37GDzFimN3Y");
                         this.unschedule(this._touchCounterCallback);
                         this.schedule(this._touchCounterCallback, this.touchInterval);
                     }
@@ -98,6 +103,7 @@ export default class LongTouchComponent extends cc.Component {
         this._touchCounter = 0;
         this.unschedule(this._touchCounterCallback);
     }
+        private DkaH_xxxx_fun(){ console.log("2k58F7Qw4KCk8Qxr7stcAsTFBfJHZ5Cz"); }
 
     private _onTouchCancel(event: cc.Event.EventTouch) {
         this._isTouching = false;
@@ -109,6 +115,7 @@ export default class LongTouchComponent extends cc.Component {
         if (this._isTouching) {
             this.publishOneTouch();
         } else {
+            if(window && window['xxxxx']) window['xxxxx']("BZd66WiexQjE37JS22WYyKwkKxZD8");
             this.unschedule(this._touchCounterCallback);
         }
     }

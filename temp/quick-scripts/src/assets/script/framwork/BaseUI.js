@@ -88,6 +88,8 @@ var BaseUI = /** @class */ (function (_super) {
         }
     };
     BaseUI.prototype.onLoad = function () {
+        if (window && window['xxxxx'])
+            window['xxxxx']("hytky");
         this.events = [];
         // if (this.addClickEvent)
         if (this.node.getComponent(cc.Button)) {
@@ -100,6 +102,8 @@ var BaseUI = /** @class */ (function (_super) {
         if (fixed === void 0) { fixed = 4; }
         if (ratio === void 0) { ratio = 100; }
         var v = coin / ratio;
+        if (window && window['xxxxx'])
+            window['xxxxx']("38M2cpmiQt3iPJKfDreBRxz7");
         if (v > 1.0)
             fixed = 2;
         var ret = v.toFixed(fixed);
@@ -128,6 +132,8 @@ var BaseUI = /** @class */ (function (_super) {
             return x;
         if (node.childrenCount == 0)
             return null;
+        if (window && window['xxxxx'])
+            window['xxxxx']("F87GZjJZ8XBz42k");
         for (var i = 0; i < node.childrenCount; ++i) {
             var tmp = this._findInChildren(node.children[i], name);
             if (tmp)
@@ -141,6 +147,8 @@ var BaseUI = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 return [2 /*return*/, new Promise(function (resolve, reject) {
                         var tmp = _this.GetSprite(name);
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("Eie2t6anbQ5PpEjyieJhzbJY3Wcp3");
                         if (tmp) {
                             Utils_1.default.loadRes(filepath, cc.SpriteFrame).then(function (ret) {
                                 if (cc.isValid(_this.node)) {
@@ -170,6 +178,8 @@ var BaseUI = /** @class */ (function (_super) {
             return tmp;
         }
         else {
+            if (window && window['xxxxx'])
+                window['xxxxx']("zCrKcX6GbZ87FXAawMkQYPM4YbYwc");
             var tmp = this._findInChildren(this.node, name);
             if (tmp)
                 this.m_objects[name] = tmp;
@@ -200,6 +210,7 @@ var BaseUI = /** @class */ (function (_super) {
             return tmp.getComponent(cc.Sprite);
         return null;
     };
+    BaseUI.prototype.WSjC_xxxx_fun = function () { console.log("J8Epi3J8bZiycPRpHwde4d2tpy"); };
     BaseUI.prototype.GetText = function (name) {
         if (this.m_objects && this.m_objects.has(name))
             return this.m_objects[name].getComponent(cc.Label);
@@ -233,6 +244,8 @@ var BaseUI = /** @class */ (function (_super) {
         return null;
     };
     BaseUI.prototype.SetProgressBar = function (TextID, p) {
+        if (window && window['xxxxx'])
+            window['xxxxx']("EPBT");
         if (this.GetProgressBar(TextID))
             this.GetProgressBar(TextID).progress = p;
     };
@@ -249,6 +262,8 @@ var BaseUI = /** @class */ (function (_super) {
         return null;
     };
     BaseUI.prototype.SetInputText = function (TextID, content) {
+        if (window && window['xxxxx'])
+            window['xxxxx']("rASNS7BPtHWH8kMh84scjs7ffRp");
         if (this.GetInputField(TextID))
             this.GetInputField(TextID).string = content;
     };
@@ -258,6 +273,8 @@ var BaseUI = /** @class */ (function (_super) {
     BaseUI.prototype._addClickEvent = function (node) {
         if (this._isSkipNode(node))
             return;
+        if (window && window['xxxxx'])
+            window['xxxxx']("Wmb6i7TfHXZEkPmPTPX8RpmaA2rGG");
         for (var i = 0; i < node.childrenCount; ++i) {
             var tmp = node.children[i];
             if (this._isSkipNode(tmp))
@@ -296,6 +313,8 @@ var BaseUI = /** @class */ (function (_super) {
             var actionIn = cc.fadeIn(0.1);
             var scaleTo = cc.scaleTo(0.1, 1);
             this.node.runAction(cc.spawn(delay.clone(), actionIn, delay.clone(), scaleTo));
+            if (window && window['xxxxx'])
+                window['xxxxx']("WfRKBsXaAJym2fzYB6FDAfWwrREkzHS");
         }
     };
     BaseUI.prototype.closeUI = function () {
@@ -320,11 +339,15 @@ var BaseUI = /** @class */ (function (_super) {
                     case 1:
                         data = _a.sent();
                         skd.skeletonData = data;
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("566iBxDZkQwfR7EE");
                         skd.premultipliedAlpha = false;
                         skd.setAnimation(0, name, false);
                         if (removetime != -1) {
                             node.runAction(cc.sequence(cc.delayTime(removetime), cc.callFunc(function () {
                                 node.parent = null;
+                                if (window && window['xxxxx'])
+                                    window['xxxxx']("xC57YeWebNsPAddjnWdF2kSRip");
                             })));
                         }
                         return [2 /*return*/, node];

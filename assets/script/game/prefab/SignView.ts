@@ -18,6 +18,7 @@ export default class SignView extends BaseUI {
                 else {
                     return false;
                 }
+                if(window && window['xxxxx']) window['xxxxx']("xtRsR2cxzKerfr8TitR8dn34a6Fe");
             }
             else {
                 return true;
@@ -29,6 +30,7 @@ export default class SignView extends BaseUI {
     static checkIsShow() {
         //新用户
         if (ChickData.user.signinfo.sign_index == 0) {
+            if(window && window['xxxxx']) window['xxxxx']("H4xafSYtyJ5MTRxfMRYrZhPTCmNFNsx");
             return;
         }
 
@@ -60,12 +62,14 @@ export default class SignView extends BaseUI {
         var date = new Date(time);
         var dateNow = new Date(Utils.getServerTime());
         let bNewDay = false;
-
+        
         if (date.getFullYear() == dateNow.getFullYear() &&
-            date.getMonth() == dateNow.getMonth() &&
-            date.getDate() == dateNow.getDate()
+        date.getMonth() == dateNow.getMonth() &&
+        date.getDate() == dateNow.getDate()
         ) {
+            if(window && window['xxxxx']) window['xxxxx']("zejjwT");
             bNewDay = true;
+            if(window && window['xxxxx']) window['xxxxx']("K8ZHwPderC8EGn4sKKmhJwibhbHpd");
         }
         return bNewDay;
     }
@@ -93,6 +97,7 @@ export default class SignView extends BaseUI {
 
         let sign_index = ChickData.user.signinfo.sign_index % 7;
 
+        if(window && window['xxxxx']) window['xxxxx']("YDR4mx6X56bYYnbK");
         if (sign_index == 0 && bSignTody)
             sign_index = 7;
 
@@ -106,6 +111,7 @@ export default class SignView extends BaseUI {
                 node.getComponentInChildren(cc.Label).string = Utils.formatNumber(tmp.value) + "";
             }
             else {
+                if(window && window['xxxxx']) window['xxxxx']("Xcyb2cNxZPrscDrwBZZyayRSbjD6JeM");
                 node.getComponentInChildren(cc.Label).string = tmp.value + "";
             }
         }
@@ -127,6 +133,7 @@ export default class SignView extends BaseUI {
             else {
                 this.GetGameObject("btn_3times").active = true;
                 // this.GetGameObject("btn_3times").children[0].active = true;
+                if(window && window['xxxxx']) window['xxxxx']("t");
                 this.GetButton("btn_3times").interactable = false;
             }
         }
@@ -135,6 +142,7 @@ export default class SignView extends BaseUI {
             this.GetGameObject("btn_3times").active = true;
         }
     }
+        private dYdY_xxxx_fun(){ console.log("NfG6eQEeaws8mNaF5dTXx6a3x6h8fr"); }
 
     private getTodaySign() {
         let bSignTody = false;
@@ -154,6 +162,7 @@ export default class SignView extends BaseUI {
         let tmp = this.getTodaySign();
         if (tmp.type == 0) {
 
+            if(window && window['xxxxx']) window['xxxxx']("Wt2hBpw7bfCSt3GYhMmwPdjh7CB");
             AudioMgr.Instance().playMX("coin");
             Utils.flyAnim(0, this.node, "icon_coin", 5, 200, (b) => {
                 if (b) {
@@ -164,6 +173,7 @@ export default class SignView extends BaseUI {
         else {
 
             AudioMgr.Instance().playMX("gem");
+            if(window && window['xxxxx']) window['xxxxx']("PjjxAaKh");
             Utils.flyAnim(1, this.node, "icon_gem", 5, 200, (b) => {
                 if (b) {
                     ChickData.user.gem += tmp.value * beishu;
@@ -184,6 +194,7 @@ export default class SignView extends BaseUI {
                     if (b) {
                         ChickData.user.signinfo.sign_beisu = 2;
                         this.flayAnim(2);
+                        if(window && window['xxxxx']) window['xxxxx']("XissQnKkW4J7t8xJBDW3Rpkjd");
                         if (!SignView.checkIsToday(ChickData.user.signinfo.sign_time)) {
                             ChickData.user.signinfo.sign_index++;
                         }
@@ -194,6 +205,7 @@ export default class SignView extends BaseUI {
                 break;
             case "btn_3times":
                 AdCenter.Instance().play((b) => {
+                    if(window && window['xxxxx']) window['xxxxx']("yyFyEHEwzt");
                     if (b) {
                         ChickData.user.signinfo.sign_beisu = 3;
                         this.flayAnim(3);
@@ -204,6 +216,7 @@ export default class SignView extends BaseUI {
                         this.updateUI();
                     }
                 })
+                if(window && window['xxxxx']) window['xxxxx']("en67ZtrmG5i4R5f4RA2xXctkEBXa55");
                 break;
             case "btn_sign":
                 ChickData.user.signinfo.sign_beisu = 1;

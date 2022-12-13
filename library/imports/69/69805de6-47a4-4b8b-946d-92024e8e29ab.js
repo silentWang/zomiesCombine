@@ -39,6 +39,8 @@ var GroundItem = /** @class */ (function (_super) {
         var curopen = -1;
         for (var i = 1; i < 12; ++i) {
             if (ChickData_1.default.user.slots[i] == 0) {
+                if (window && window['xxxxx'])
+                    window['xxxxx']("jJY");
                 curopen = i;
                 break;
             }

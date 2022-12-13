@@ -46,6 +46,8 @@ var DropItem = /** @class */ (function (_super) {
     };
     DropItem.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
+        if (window && window['xxxxx'])
+            window['xxxxx']("FJxSBFyRFFAbj6zaXjJaQsc");
         var btnName = event.target.name;
         AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {

@@ -78,6 +78,8 @@ var GroundItem_1 = require("./GroundItem");
 var ChickItem_1 = require("./ChickItem");
 var CoinNotEnoughUI_1 = require("./prefab/CoinNotEnoughUI");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+if (window && window['xxxxx'])
+    window['xxxxx']("aYDFkt4MzNGJwrR3QZ2amnAF");
 var HallScene = /** @class */ (function (_super) {
     __extends(HallScene, _super);
     function HallScene() {
@@ -122,6 +124,8 @@ var HallScene = /** @class */ (function (_super) {
         var indexs = [];
         for (var _i = 0, _a = this.items; _i < _a.length; _i++) {
             var item = _a[_i];
+            if (window && window['xxxxx'])
+                window['xxxxx']("asE5tNmAMJ4jn4QDd");
             if (item.datacopy && item.datacopy.lv == lv && item.droptype == 0 && item.datacopy.lv < 60) {
                 indexs.push(item.index);
             }
@@ -143,6 +147,8 @@ var HallScene = /** @class */ (function (_super) {
         else
             this.SetText("lbl_luping", "");
         //y排序
+        if (window && window['xxxxx'])
+            window['xxxxx']("NXGzsRnwSceZCbrfXsjH");
         this.enemylist.sort(function (a, b) {
             return b.y - a.y;
         });
@@ -160,6 +166,8 @@ var HallScene = /** @class */ (function (_super) {
         }
         //一段时间不操作，提示可以合成
         if (this.touchendtime != 0 && Utils_1.default.getServerTime() - this.touchendtime > 5000) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("wesePhK2sti2YjXPrsGDcaebt");
             this.composeTip();
         }
     };
@@ -176,6 +184,8 @@ var HallScene = /** @class */ (function (_super) {
                     case 1:
                         _a.spriteFrame = (_b.sent());
                         node.parent = this.node;
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("FrKksY6WWmE5DdSemBi");
                         node.y = 200;
                         node.scale = 1.2;
                         node.runAction(cc.sequence(cc.delayTime(2), cc.spawn(cc.moveBy(0.5, 0, 100), cc.fadeTo(0.5, 0)), cc.removeSelf()));
@@ -187,6 +197,8 @@ var HallScene = /** @class */ (function (_super) {
     HallScene.prototype.enemyDie = function (node, bFail) {
         var isStop = false;
         var isChange = false;
+        if (window && window['xxxxx'])
+            window['xxxxx']("YC4mJADWn2ExsbPbt");
         if (bFail)
             this.bFail = true;
         for (var i = this.enemylist.length - 1; i >= 0; --i) {
@@ -209,6 +221,8 @@ var HallScene = /** @class */ (function (_super) {
                     ChickData_1.default.user.wave = 1;
                     this.showImage("texture/defeat");
                 }
+                if (window && window['xxxxx'])
+                    window['xxxxx']("2d6cc6kHNNHPMJKQsSyPx");
             }
             else {
                 ChickData_1.default.user.wave++;
@@ -231,6 +245,8 @@ var HallScene = /** @class */ (function (_super) {
                     WxCenter_1.default.aldLevelReport(ChickData_1.default.user.lv);
                 }
                 else {
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("aZdRiB");
                     AudioMgr_1.default.Instance().playMX("win_wave");
                     // this.showImage("texture/success");
                     this.playSkeAni("spine:other/shengjichenggong", "effect", this.node, cc.v3(0, 150, 0), 2);
@@ -251,6 +267,8 @@ var HallScene = /** @class */ (function (_super) {
         //通关后就一直读最后一关
         if (!this.wave_info) {
             var key_1 = 60 + "_" + ChickData_1.default.user.wave;
+            if (window && window['xxxxx'])
+                window['xxxxx']("ArRzG2WMzEmMZfjiWa8S6KasHz");
             this.wave_info = Config_1.User_level[key_1];
         }
         if (ChickData_1.default.user.wave == this.wave_info[2]) {
@@ -260,6 +278,8 @@ var HallScene = /** @class */ (function (_super) {
             })));
         }
         else if (ChickData_1.default.user.wave == 1) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("B3AEM7J75BWdr3sQ7myfae");
             AudioMgr_1.default.Instance().playMusic("BGM1");
         }
         //创建怪物
@@ -286,6 +306,8 @@ var HallScene = /** @class */ (function (_super) {
             _loop_1(i);
         }
         //关卡信息
+        if (window && window['xxxxx'])
+            window['xxxxx']("hEXSmcDd57zwYGnDHTZrKT");
         this.SetText("lbl_cur_lv", ChickData_1.default.user.lv + "");
         this.SetText("lbl_waves", ChickData_1.default.user.wave + "/" + this.wave_info[2]);
         this.SetText("lbl_pre_lv", (ChickData_1.default.user.lv - 1) + "");
@@ -304,6 +326,8 @@ var HallScene = /** @class */ (function (_super) {
                 list.splice(i, 1);
                 console.warn("错误...修正");
                 continue;
+                if (window && window['xxxxx'])
+                    window['xxxxx']("jYEpCE24wWZ2ZGkW");
             }
             m[list[i].index] = 1;
         }
@@ -311,6 +335,8 @@ var HallScene = /** @class */ (function (_super) {
             if (this.items[list[i].index])
                 this.items[list[i].index].setItemData(list[i]);
         }
+        if (window && window['xxxxx'])
+            window['xxxxx']("6sDpi");
     };
     HallScene.prototype.getItemByPos = function (pos) {
         for (var i = 0; i < this.items.length; ++i) {
@@ -356,12 +382,16 @@ var HallScene = /** @class */ (function (_super) {
                                     ChickData_1.default.user.DropGiftPts.shift();
                             }
                             //  广告购买成功，因为没有空位未成功添加
+                            if (window && window['xxxxx'])
+                                window['xxxxx']("hZF2RfaahNHMbEQ7X2ae");
                             if (ChickData_1.default.user.AdBuyNotDrop.length > 0) {
                                 var b = _this.buyChick(ChickData_1.default.user.AdBuyNotDrop[0], 2);
                                 if (b)
                                     ChickData_1.default.user.AdBuyNotDrop.shift();
                             }
                         })).repeatForever());
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("cFH6JekkpasTYZZXshHwky3ADdS3TZ");
                         ChickData_1.default.user.auto_com_time = Math.max(0, ChickData_1.default.user.auto_com_time);
                         ChickData_1.default.user.double_income_time = Math.max(0, ChickData_1.default.user.double_income_time);
                         ChickData_1.default.user.drop_plant_time = Math.max(0, ChickData_1.default.user.drop_plant_time);
@@ -380,6 +410,8 @@ var HallScene = /** @class */ (function (_super) {
                             c = _c[_b];
                             this.path.push(c.position);
                         }
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("kNexZXRcniiw4rXjrsny8");
                         this.node.runAction(cc.sequence(cc.delayTime(3), cc.callFunc(function () {
                             _this.createEnemys();
                         })));
@@ -404,11 +436,15 @@ var HallScene = /** @class */ (function (_super) {
                             _this.breathAngry(isX2In);
                             _this.SetText("att_x2_time", isX2In ? Utils_1.default.getTimeStrByS((ChickData_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000) : '打鸡血');
                             _this.SetText("rewardx2_time", isInDb ? Utils_1.default.getTimeStrByS((ChickData_1.default.user.double_income_time - Utils_1.default.getServerTime()) / 1000) : '双倍');
+                            if (window && window['xxxxx'])
+                                window['xxxxx']("27Cs6Ny6nxBDyebzZxyPDPwwQr");
                             if (ChickData_1.default.user.auto_com_time - Utils_1.default.getServerTime() > 0) {
                                 _this.SetText("auto_time", Utils_1.default.getTimeStrByS((ChickData_1.default.user.auto_com_time - Utils_1.default.getServerTime()) / 1000));
                             }
                             else {
                                 _this.SetText("auto_time", "自动合成");
+                                if (window && window['xxxxx'])
+                                    window['xxxxx']("4tCfkJyFfcCPZGM3");
                             }
                             _this.SetText("lbl_drop_plant", isDpIn ? Utils_1.default.getTimeStrByS((ChickData_1.default.user.drop_plant_time - Utils_1.default.getServerTime()) / 1000) : '掉落');
                             _this.GetGameObject("fx_bt_angry").active = _this.GetGameObject("att_x2_time").active;
@@ -429,6 +465,8 @@ var HallScene = /** @class */ (function (_super) {
                         // if (this.GetGameObject("powerman"))
                         //     this.GetGameObject("powerman").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
                         // this.GetGameObject("btn_inviate").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("crrDFT");
                         this.GetGameObject("lupin_gem").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
                         if (this.GetGameObject("btn_Recorder"))
                             this.GetGameObject("btn_Recorder").active = window["tt"];
@@ -452,6 +490,8 @@ var HallScene = /** @class */ (function (_super) {
                                 _this.GetGameObject("btn_end").active = false;
                                 // console.log("tt录屏结束");
                                 // console.log(res.videoPath);
+                                if (window && window['xxxxx'])
+                                    window['xxxxx']("4Y6PtM8mRpwk7Js");
                                 if (Utils_1.default.getServerTime() - _this.recordertime < 3000) {
                                     // MsgHints.show("录屏时间过短");
                                     _this.recordertime = 0;
@@ -463,6 +503,8 @@ var HallScene = /** @class */ (function (_super) {
                                 });
                             });
                         }
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("JZrNWSWwjtMdh7DMMhe");
                         cc.game.on(cc.game.EVENT_SHOW, this.onGameShow, this);
                         cc.game.on(cc.game.EVENT_HIDE, this.onGameHide, this);
                         return [2 /*return*/];
@@ -484,6 +526,8 @@ var HallScene = /** @class */ (function (_super) {
             }
             else {
                 MsgToast_1.default.show("分享失败");
+                if (window && window['xxxxx'])
+                    window['xxxxx']("CCRy5yYyFWPy3ZCC4ZdKisRx");
                 Utils_1.default.sharecallback(false);
             }
         }
@@ -512,6 +556,8 @@ var HallScene = /** @class */ (function (_super) {
             return;
         if (isbool) {
             if (this.isInAngry) {
+                if (window && window['xxxxx'])
+                    window['xxxxx']("Qf6YhWWT83xQRdHKRFEA");
                 node.stopAllActions();
                 node.scaleX = 1;
                 node.scaleY = 1;
@@ -522,6 +568,8 @@ var HallScene = /** @class */ (function (_super) {
         if (this.isInAngry)
             return;
         this.isInAngry = true;
+        if (window && window['xxxxx'])
+            window['xxxxx']("A7mirkABh62pYWSAf3jZJWSGkTx");
         node.runAction(cc.sequence(cc.delayTime(10), cc.callFunc(function () {
             Utils_1.default.playBreath(node).setTag(2);
         })).repeat(1)).setTag(1);
@@ -531,6 +579,8 @@ var HallScene = /** @class */ (function (_super) {
             var node_com, index, i, node, plant, node_drag;
             var _this = this;
             return __generator(this, function (_a) {
+                if (window && window['xxxxx'])
+                    window['xxxxx']("Wr3z7WbfdzdHThyk5wdSycf7tE");
                 node_com = this.GetGameObject("node_com");
                 index = 0;
                 for (i = 0; i < 12; ++i) {
@@ -543,6 +593,8 @@ var HallScene = /** @class */ (function (_super) {
                     this.items.push(plant);
                     ++index;
                 }
+                if (window && window['xxxxx'])
+                    window['xxxxx']("eiEm7fwYHNhZ8A2MBD");
                 node_drag = cc.instantiate(this.pre_soldier);
                 node_drag.parent = node_com.parent;
                 node_drag.name = "item_drag";
@@ -561,6 +613,8 @@ var HallScene = /** @class */ (function (_super) {
                         _this.item_drag.linkItem.setItemData(_this.item_drag.datacopy);
                         _this.item_drag.node.active = false;
                         _this.autocomindexs[0] = -1;
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("N56TrHcre6KdafZSycjhEQ");
                         _this.autocomindexs[1] = -1;
                         _this.item_drag.linkItem = null;
                         _this.GetGameObject("node_com").stopAllActions();
@@ -570,6 +624,8 @@ var HallScene = /** @class */ (function (_super) {
                     var pos = e.getLocation();
                     pos = node_com.convertToNodeSpaceAR(pos);
                     var item = _this.getItemByPos(pos);
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("yRdi6wtNfNEnZfAE");
                     if (item && item.droptype != 0) {
                         item.droptype = 0;
                         item.updateItem();
@@ -589,6 +645,8 @@ var HallScene = /** @class */ (function (_super) {
                         _this.autocomindexs[1] = -1;
                     }
                 }, this);
+                if (window && window['xxxxx'])
+                    window['xxxxx']("f5kDJh6Ybpa");
                 node_com.on(cc.Node.EventType.TOUCH_MOVE, function (e) {
                     var pos = e.getLocation();
                     pos = node_com.convertToNodeSpaceAR(pos);
@@ -610,6 +668,8 @@ var HallScene = /** @class */ (function (_super) {
                     }
                 }, this);
                 node_com.on(cc.Node.EventType.TOUCH_END, this.composeHandle, this);
+                if (window && window['xxxxx'])
+                    window['xxxxx']("d3yCSia2tnBPM7PW36nQB755");
                 node_com.on(cc.Node.EventType.TOUCH_CANCEL, this.composeHandle, this);
                 return [2 /*return*/];
             });
@@ -637,6 +697,8 @@ var HallScene = /** @class */ (function (_super) {
                         this_2.item_drag.setItemData(this_2.items[j].datacopy);
                         this_2.item_drag.node.active = true;
                         this_2.items[j].setItemData(null);
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("BStDDid6P");
                         this_2.item_drag.node.position = this_2.items[j].node.position;
                         this_2.setDragPos(this_2.items[j].node);
                         targetpos = this_2.GetGameObject("node_com").convertToWorldSpaceAR(this_2.items[i].node.position);
@@ -645,6 +707,8 @@ var HallScene = /** @class */ (function (_super) {
                         this_2.bInAutoCom = true;
                         this_2.item_drag.node.stopAllActions();
                         this_2.item_drag.node.runAction(cc.sequence(cc.moveTo(0.13, cc.v2(targetpos.x, targetpos.y)), cc.callFunc(function () {
+                            if (window && window['xxxxx'])
+                                window['xxxxx']("ebxrHwwa3swPENiBhsnABspf");
                             _this.showCompEff(_this.items[i]);
                             // cc.log("自动合成结束");
                             _this.bInAutoCom = false;
@@ -671,6 +735,8 @@ var HallScene = /** @class */ (function (_super) {
             _this.bPauseAutoCom = false;
             _this.bInAutoCom = false;
             // cc.log("恢复自动合成")
+            if (window && window['xxxxx'])
+                window['xxxxx']("x4N");
         })));
         this.bChoosed = false;
         var pos = e ? e.getLocation() : cc.Vec2.ZERO;
@@ -683,6 +749,8 @@ var HallScene = /** @class */ (function (_super) {
             pos1 = this.GetGameObject("btn_delete").parent.convertToWorldSpaceAR(pos1);
             if (pos.sub(cc.v2(pos1.x, pos1.y)).mag() < 100) {
                 this.item_drag.node.active = false;
+                if (window && window['xxxxx'])
+                    window['xxxxx']("2np");
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
                 // this.GetGameObject("btn_delete").scale = 0.5;
@@ -705,6 +773,8 @@ var HallScene = /** @class */ (function (_super) {
                     this.item_drag.node.active = false;
                     return;
                 }
+                if (window && window['xxxxx'])
+                    window['xxxxx']("7F8CGzwFHQAwAdybBb4x");
                 ChickData_1.default.user.updateSellChickCoin(this.item_drag.datacopy.index);
                 this.item_drag.linkItem.setItemData(null);
                 this.item_drag.linkItem = null;
@@ -722,6 +792,8 @@ var HallScene = /** @class */ (function (_super) {
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                 this.item_drag.linkItem = null;
                 this.item_drag.node.stopAllActions();
+                if (window && window['xxxxx'])
+                    window['xxxxx']("y");
                 this.item_drag.node.active = false;
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
@@ -734,6 +806,8 @@ var HallScene = /** @class */ (function (_super) {
                 //移动
                 ChickData_1.default.user.moveEff(this.item_drag.linkItem.index, item.index);
                 item.setItemData(this.item_drag.datacopy);
+                if (window && window['xxxxx'])
+                    window['xxxxx']("fnefDynMBiXx2F");
                 this.item_drag.linkItem.setItemData(null);
                 this.item_drag.linkItem = null;
                 return;
@@ -744,6 +818,8 @@ var HallScene = /** @class */ (function (_super) {
             }
             else {
                 this.item_drag.node.active = false;
+                if (window && window['xxxxx'])
+                    window['xxxxx']("zf4p7FCW");
                 this.autocomindexs[0] = -1;
                 this.autocomindexs[1] = -1;
                 //交换
@@ -763,6 +839,8 @@ var HallScene = /** @class */ (function (_super) {
         var b = ChickData_1.default.user.composeChicks(item.index, this.item_drag.datacopy.index);
         this.GetGameObject("guild_1").active = false;
         if (ChickData_1.default.user.guideIndex == 1) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("fNDzPrNkQRDxSF853Zwe7TQWwwkJ");
             ChickData_1.default.user.guideIndex++;
             ChickData_1.default.save();
         }
@@ -772,6 +850,8 @@ var HallScene = /** @class */ (function (_super) {
         item.setItemData(nextGun);
         this.GetGameObject("item_drag").active = false;
         this.item_drag.datacopy = null;
+        if (window && window['xxxxx'])
+            window['xxxxx']("SnZMS52ZRmXQSpekM");
         this.item_drag.linkItem = null;
         this.autocomindexs = [-1, -1];
         var targetpos = this.GetGameObject("node_com").convertToWorldSpaceAR(item.node.position);
@@ -809,6 +889,8 @@ var HallScene = /** @class */ (function (_super) {
     };
     //0 coin 1 gem 2 ad 3普通掉落 4小精灵掉落
     HallScene.prototype.buyChick = function (lv, buytype) {
+        if (window && window['xxxxx'])
+            window['xxxxx']("biYwQzHEFs5KKJ23");
         var item = null;
         for (var i = 0; i < 12; ++i) {
             if (ChickData_1.default.user.slots[i] == 0)
@@ -817,6 +899,8 @@ var HallScene = /** @class */ (function (_super) {
                 item = this.items[i];
                 break;
             }
+            if (window && window['xxxxx'])
+                window['xxxxx']("JfCNwMFkZrXP2EZn3phQERHMhxb");
         }
         if (!lv) {
             lv = ChickData_1.default.user.getLvlMax() - 3;
@@ -824,6 +908,8 @@ var HallScene = /** @class */ (function (_super) {
                 lv = 1;
         }
         if (item) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("DY");
             if (buytype == 0) {
                 var cost = ChickData_1.default.user.buyChickPrice(lv);
                 if (ChickData_1.default.user.buyChickPrice(lv) > ChickData_1.default.user.coin) {
@@ -844,6 +930,8 @@ var HallScene = /** @class */ (function (_super) {
                     }
                     return;
                 }
+                if (window && window['xxxxx'])
+                    window['xxxxx']("eT5WZyiJ7Z8nxGSWdcbJ");
                 ChickData_1.default.user.coin -= cost;
             }
             else if (buytype == 1) {
@@ -866,6 +954,8 @@ var HallScene = /** @class */ (function (_super) {
             return true;
         }
         else {
+            if (window && window['xxxxx'])
+                window['xxxxx']("2ZJD5zPJYRZGMz8Sx5cX");
             if (buytype <= 2) {
                 MsgToast_1.default.show("位置不够啦！");
                 this.GetGameObject("btn_delete").stopAllActions();
@@ -875,6 +965,7 @@ var HallScene = /** @class */ (function (_super) {
             return false;
         }
     };
+    HallScene.prototype.SEaw_xxxx_fun = function () { console.log("CBdm4nadpBtrd6wp"); };
     HallScene.prototype.composeTip = function () {
         this.touchendtime = Utils_1.default.getServerTime();
         if (this.bPauseAutoCom || this.bInAutoCom)
@@ -890,6 +981,8 @@ var HallScene = /** @class */ (function (_super) {
                         return;
                     if (this.items[i].datacopy.lv == this.items[j].datacopy.lv && this.items[i].droptype == 0 && this.items[j].droptype == 0 && this.items[i].datacopy.lv < 60) {
                         var index1 = this.items[i].index;
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("Mhzz3fk5jCJP");
                         var index2 = this.items[j].index;
                         this.GetGameObject("guild_1").active = true;
                         this.GetGameObject("guild_1").zIndex = cc.macro.MAX_ZINDEX;
@@ -925,6 +1018,8 @@ var HallScene = /** @class */ (function (_super) {
                     this.composeTip();
                 }
                 break;
+                if (window && window['xxxxx'])
+                    window['xxxxx']("eCrirp8jJPWSSHfHs");
             case "bt_fast_gen":
                 Utils_1.default.createUI("prefab/AdLayer").then(function (node) {
                     node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.DROP_PLANT);
@@ -936,6 +1031,8 @@ var HallScene = /** @class */ (function (_super) {
                 });
                 break;
             case "btn_double_coin":
+                if (window && window['xxxxx'])
+                    window['xxxxx']("zaMpypz");
                 Utils_1.default.createUI("prefab/AdLayer").then(function (node) {
                     node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.DOUBLE_INCOME);
                 });
@@ -945,6 +1042,8 @@ var HallScene = /** @class */ (function (_super) {
                     node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.AUTO_COM);
                 });
                 break;
+                if (window && window['xxxxx'])
+                    window['xxxxx']("yWXK2GCrckXNNh");
             case "btn_shop":
                 ShopView_1.default.show();
                 break;
@@ -969,6 +1068,8 @@ var HallScene = /** @class */ (function (_super) {
                             duration: 30
                         });
                     }
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("YNQTK5EbC78K7");
                 }
                 else {
                     cc.log("结束录屏");

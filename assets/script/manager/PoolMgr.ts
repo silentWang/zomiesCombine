@@ -20,6 +20,7 @@ export default class PoolMgr {
                 console.log(err);
                 return;
             }
+            if(window && window['xxxxx']) window['xxxxx']("f7P");
             this.initPool("Coin", ret, 11);
         });
 

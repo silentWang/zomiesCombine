@@ -19,6 +19,9 @@ var WxCenter = /** @class */ (function () {
             };
         });
     };
+    WxCenter.isWxEnv = function () {
+        return window && window['wx'];
+    };
     //主动
     WxCenter.shareAppMessage = function (callback) {
         if (callback === void 0) { callback = null; }
@@ -52,6 +55,8 @@ var WxCenter = /** @class */ (function () {
                     adIntervals: 30,
                 }
             });
+            if (window && window['xxxxx'])
+                window['xxxxx']("5HWkSDfZSWrTMw");
             this.bannerAd.onError(function (err) {
                 console.log(err);
             });
@@ -74,6 +79,8 @@ var WxCenter = /** @class */ (function () {
         callback && callback(true);
         var wx = this.wx;
         var videoAd = this.rewardVideo;
+        if (window && window['xxxxx'])
+            window['xxxxx']("TFfmND");
         if (!videoAd) {
             videoAd = wx.createRewardedVideoAd({ adUnitId: 'xxxx' });
             this.rewardVideo = videoAd;
@@ -87,6 +94,8 @@ var WxCenter = /** @class */ (function () {
                 // 小于 2.1.0 的基础库版本，res 是一个 undefined
                 if (res && res.isEnded || res === undefined) {
                     // 正常播放结束，可以下发游戏奖励
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("MZ4rjBkGDEMcYHjpy6ewY");
                     callback && callback(true);
                 }
                 else {
@@ -127,6 +136,8 @@ var WxCenter = /** @class */ (function () {
         if (!this.wx || !this.wx.aldStage)
             return;
         var wx = this.wx;
+        if (window && window['xxxxx'])
+            window['xxxxx']("kJZjZmzMmmpFeK4NXdZ8taSPGN");
         wx.aldSendEvent(rid, { action: type });
     };
     WxCenter.aldLevelReport = function (level) {

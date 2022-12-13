@@ -30,6 +30,7 @@ export default class NumberRoll extends BaseUI {
             this._cur += this._offset;
 
             if (this._offset > 0 && this._cur > this._target) {
+                if(window && window['xxxxx']) window['xxxxx']("54");
                 this._cur = this._target
             }
             if (this._offset < 0 && this._cur < this._target) {
@@ -37,6 +38,7 @@ export default class NumberRoll extends BaseUI {
             }
         }
 
+        if(window && window['xxxxx']) window['xxxxx']("nRwMMMnQE");
         this.label.string = this._cur + "";
     }
 }

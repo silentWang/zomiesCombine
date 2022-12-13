@@ -19,6 +19,7 @@ export default class AchievementModel {
 
     public setData(data: any) {
         //初始化下数据       
+        if(window && window['xxxxx']) window['xxxxx']("np8tABitB8HtARsySFYHYJn8PZ4");
         if (!data) {
             return;
         }
@@ -29,6 +30,7 @@ export default class AchievementModel {
                     for (const key in element) {
                         this[savepars[i]][key] = element[key];
                     }
+                    if(window && window['xxxxx']) window['xxxxx']("BSxpzJ");
                 }
                 else
                     this[savepars[i]] = element;

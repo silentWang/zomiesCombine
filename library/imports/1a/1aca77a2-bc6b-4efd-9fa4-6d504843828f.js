@@ -44,6 +44,8 @@ var SignView = /** @class */ (function (_super) {
                 else {
                     return false;
                 }
+                if (window && window['xxxxx'])
+                    window['xxxxx']("xtRsR2cxzKerfr8TitR8dn34a6Fe");
             }
             else {
                 return true;
@@ -54,6 +56,8 @@ var SignView = /** @class */ (function (_super) {
     SignView.checkIsShow = function () {
         //新用户
         if (ChickData_1.default.user.signinfo.sign_index == 0) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("H4xafSYtyJ5MTRxfMRYrZhPTCmNFNsx");
             return;
         }
         //已经签到
@@ -86,7 +90,11 @@ var SignView = /** @class */ (function (_super) {
         if (date.getFullYear() == dateNow.getFullYear() &&
             date.getMonth() == dateNow.getMonth() &&
             date.getDate() == dateNow.getDate()) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("zejjwT");
             bNewDay = true;
+            if (window && window['xxxxx'])
+                window['xxxxx']("K8ZHwPderC8EGn4sKKmhJwibhbHpd");
         }
         return bNewDay;
     };
@@ -107,6 +115,8 @@ var SignView = /** @class */ (function (_super) {
             }
         }
         var sign_index = ChickData_1.default.user.signinfo.sign_index % 7;
+        if (window && window['xxxxx'])
+            window['xxxxx']("YDR4mx6X56bYYnbK");
         if (sign_index == 0 && bSignTody)
             sign_index = 7;
         for (var i = 0; i < 7; ++i) {
@@ -117,6 +127,8 @@ var SignView = /** @class */ (function (_super) {
                 node.getComponentInChildren(cc.Label).string = Utils_1.default.formatNumber(tmp.value) + "";
             }
             else {
+                if (window && window['xxxxx'])
+                    window['xxxxx']("Xcyb2cNxZPrscDrwBZZyayRSbjD6JeM");
                 node.getComponentInChildren(cc.Label).string = tmp.value + "";
             }
         }
@@ -135,6 +147,8 @@ var SignView = /** @class */ (function (_super) {
             else {
                 this.GetGameObject("btn_3times").active = true;
                 // this.GetGameObject("btn_3times").children[0].active = true;
+                if (window && window['xxxxx'])
+                    window['xxxxx']("t");
                 this.GetButton("btn_3times").interactable = false;
             }
         }
@@ -143,6 +157,7 @@ var SignView = /** @class */ (function (_super) {
             this.GetGameObject("btn_3times").active = true;
         }
     };
+    SignView.prototype.dYdY_xxxx_fun = function () { console.log("NfG6eQEeaws8mNaF5dTXx6a3x6h8fr"); };
     SignView.prototype.getTodaySign = function () {
         var bSignTody = false;
         if (ChickData_1.default.user.signinfo.sign_time != 0) {
@@ -158,6 +173,8 @@ var SignView = /** @class */ (function (_super) {
     SignView.prototype.flayAnim = function (beishu) {
         var tmp = this.getTodaySign();
         if (tmp.type == 0) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("Wt2hBpw7bfCSt3GYhMmwPdjh7CB");
             AudioMgr_1.default.Instance().playMX("coin");
             Utils_1.default.flyAnim(0, this.node, "icon_coin", 5, 200, function (b) {
                 if (b) {
@@ -167,6 +184,8 @@ var SignView = /** @class */ (function (_super) {
         }
         else {
             AudioMgr_1.default.Instance().playMX("gem");
+            if (window && window['xxxxx'])
+                window['xxxxx']("PjjxAaKh");
             Utils_1.default.flyAnim(1, this.node, "icon_gem", 5, 200, function (b) {
                 if (b) {
                     ChickData_1.default.user.gem += tmp.value * beishu;
@@ -187,6 +206,8 @@ var SignView = /** @class */ (function (_super) {
                     if (b) {
                         ChickData_1.default.user.signinfo.sign_beisu = 2;
                         _this.flayAnim(2);
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("XissQnKkW4J7t8xJBDW3Rpkjd");
                         if (!SignView_1.checkIsToday(ChickData_1.default.user.signinfo.sign_time)) {
                             ChickData_1.default.user.signinfo.sign_index++;
                         }
@@ -197,6 +218,8 @@ var SignView = /** @class */ (function (_super) {
                 break;
             case "btn_3times":
                 AdCenter_1.default.Instance().play(function (b) {
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("yyFyEHEwzt");
                     if (b) {
                         ChickData_1.default.user.signinfo.sign_beisu = 3;
                         _this.flayAnim(3);
@@ -207,6 +230,8 @@ var SignView = /** @class */ (function (_super) {
                         _this.updateUI();
                     }
                 });
+                if (window && window['xxxxx'])
+                    window['xxxxx']("en67ZtrmG5i4R5f4RA2xXctkEBXa55");
                 break;
             case "btn_sign":
                 ChickData_1.default.user.signinfo.sign_beisu = 1;

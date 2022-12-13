@@ -46,13 +46,18 @@ var WinView = /** @class */ (function (_super) {
         WxCenter_1.default.aldReport('PassShow', 'show');
     };
     WinView.prototype.setInfo = function (coin) {
+        if (window && window['xxxxx'])
+            window['xxxxx']("Sn2mfdEzWRYhwXAtSRK8c5");
         this.coin = coin;
         this.aTobAnim(coin * 2);
         this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
     };
+    WinView.prototype.RstP_xxxx_fun = function () { console.log("ykzPX2QsDWmFfEfSaPiy"); };
     WinView.prototype.aTobAnim = function (num) {
         var _this = this;
         var aver = Math.ceil(num / 60);
+        if (window && window['xxxxx'])
+            window['xxxxx']("ED");
         var xn = 0;
         this.SetText("lbl_coin", Utils_1.default.formatNumber(0));
         var cb = function () {
@@ -67,6 +72,8 @@ var WinView = /** @class */ (function (_super) {
     };
     WinView.prototype.closeUI = function () {
         this.shutAnim();
+        if (window && window['xxxxx'])
+            window['xxxxx']("3CsKk45QY");
         HallScene_1.default.Instance.createEnemys();
     };
     WinView.prototype.getCoinReward = function (isdouble) {
@@ -88,6 +95,8 @@ var WinView = /** @class */ (function (_super) {
         switch (btnName) {
             case "btn_get":
                 WxCenter_1.default.aldReport('PassClick', 'click');
+                if (window && window['xxxxx'])
+                    window['xxxxx']("DZxBHMTnts7Nb");
                 AdCenter_1.default.Instance().play(function () {
                     _this.getCoinReward();
                     _this.closeUI();
@@ -96,6 +105,8 @@ var WinView = /** @class */ (function (_super) {
             case "btn_normal":
                 this.getCoinReward();
                 this.closeUI();
+                if (window && window['xxxxx'])
+                    window['xxxxx']("ZrHnJSB53BTwr");
                 break;
         }
     };

@@ -97,6 +97,8 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                         this.type = type;
                         this.GetGameObject('getChick').active = type == 1;
                         this.GetGameObject('getCoin').active = type == 2;
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("WhHx2e3xMxjaTZCPwCrY8aTz");
                         str = '';
                         if (!(type == 1)) return [3 /*break*/, 3];
                         str = ChickData_1.default.user.today_getchick_times + "/" + ChickData_1.default.user.today_getchick_total;
@@ -116,6 +118,8 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                         chick.playAnimation('idleL', 0);
                         this.lbl_chickname.string = "\u201C" + Config_1.Config_chick[lv - 1][7] + "\u201D";
                         this.SetText('lbl_effect', 'x1');
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("FHhfYXkGXEbaYj2y8DR7YCiYirJB");
                         return [3 /*break*/, 4];
                     case 3:
                         if (type == 2) {
@@ -146,6 +150,8 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
             ChickData_1.default.user.today_getcoin_times++;
             var coin_1 = 0.5 * ChickData_1.default.user.buyChickPrice(ChickData_1.default.user.getLvlMax());
             AudioMgr_1.default.Instance().playMX("coin");
+            if (window && window['xxxxx'])
+                window['xxxxx']("ks2GdwWt25ZacDwkGyJptDRnXeN");
             Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                 if (b)
                     ChickData_1.default.user.coin += coin_1;

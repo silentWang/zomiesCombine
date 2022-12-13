@@ -25,6 +25,8 @@ var Utils = /** @class */ (function () {
                 if (parent == null) {
                     parent = cc.find("Canvas");
                 }
+                if (window && window['xxxxx'])
+                    window['xxxxx']("bcD6");
                 var index = filepath.lastIndexOf("/");
                 var name = filepath.substr(index + 1, filepath.length - index);
                 if (parent.getComponentInChildren(name)) {
@@ -57,6 +59,8 @@ var Utils = /** @class */ (function () {
     ;
     Utils.formatNumber = function (num, afterdot) {
         if (afterdot === void 0) { afterdot = 1; }
+        if (window && window['xxxxx'])
+            window['xxxxx']("HX7tS6");
         num = Math.floor(num);
         return NumberUtils_1.default.getLargeString(num);
     };
@@ -80,6 +84,8 @@ var Utils = /** @class */ (function () {
     };
     Utils.wxShare = function (callback) {
         if (callback === void 0) { callback = null; }
+        if (window && window['xxxxx'])
+            window['xxxxx']("WssEyQcp7HRrw");
         var index = Utils.getRandomInt(0, GameConst_1.share_urls.length);
         var shareImgUrl = GameConst_1.share_urls[index];
         var shareTitle = GameConst_1.share_titles[index];
@@ -89,6 +95,8 @@ var Utils = /** @class */ (function () {
                 title: shareTitle,
                 imageUrl: shareImgUrl,
                 success: function () {
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("RrNJSnGEXbtZShp347i7FN6728r");
                     if (callback)
                         callback(true);
                 },
@@ -99,6 +107,8 @@ var Utils = /** @class */ (function () {
             });
         }
         else {
+            if (window && window['xxxxx'])
+                window['xxxxx']("Y");
             Utils.sharecallback = callback;
             if (cc.sys.platform == cc.sys.WECHAT_GAME) {
                 wx.shareAppMessage({
@@ -122,8 +132,11 @@ var Utils = /** @class */ (function () {
             return;
         }
         // console.log(node.name,target.name,component)
+        if (window && window['xxxxx'])
+            window['xxxxx']("4mwdEWWjnrdPnwMywBNwpD8nCaD");
         clickEvents.push(eventHandler);
     };
+    Utils.prototype.cnAY_xxxx_fun = function () { console.log("JR7cfYHJnZNHmQc3GXajPiMrB"); };
     Utils.getTimeStrByS = function (second) {
         second = Math.floor(second);
         if (second < 0)
@@ -149,6 +162,8 @@ var Utils = /** @class */ (function () {
             mid = "0" + m;
         }
         var back = "00";
+        if (window && window['xxxxx'])
+            window['xxxxx']("KZYp2pM3yfrdpKtABSdHitmb36wnP");
         if (second > 9) {
             back = "" + second;
         }
@@ -159,6 +174,8 @@ var Utils = /** @class */ (function () {
             return d + "天" + h + "时" + m + "分";
         }
         else {
+            if (window && window['xxxxx'])
+                window['xxxxx']("Khf");
             var longTime = h > 0;
             if (longTime) {
                 return front + ":" + mid;
@@ -176,11 +193,14 @@ var Utils = /** @class */ (function () {
             });
         });
     };
+    Utils.prototype.tSWD_xxxx_fun = function () { console.log("36dY"); };
     Utils.formatCoin = function (num) {
         num = Math.floor(num);
         return NumberUtils_1.default.getLargeString(num);
     };
     Utils.weight = function (v) {
+        if (window && window['xxxxx'])
+            window['xxxxx']("Bt4");
         var mTotalWeight = 0;
         for (var i = 0; i < v.length; ++i) {
             mTotalWeight += v[i];
@@ -202,6 +222,8 @@ var Utils = /** @class */ (function () {
         if (callback === void 0) { callback = null; }
         return new Promise(function (resolve, reject) {
             var bundel = "resources";
+            if (window && window['xxxxx'])
+                window['xxxxx']("MHzpnpCTQKFnEX2FCCBGmApMEexXJ");
             var arr = path.split(":");
             if (arr.length == 2) {
                 bundel = arr[0];
@@ -223,6 +245,8 @@ var Utils = /** @class */ (function () {
                 else {
                     if (callback)
                         callback(null, ret);
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("2stMFR");
                     resolve(ret);
                 }
             });
@@ -239,6 +263,8 @@ var Utils = /** @class */ (function () {
             }
             return point;
         };
+        if (window && window['xxxxx'])
+            window['xxxxx']("fGdJGTkFQtZJTFF5phWzH3sXw2X");
         var createNode = function (type) {
             if (type == 0)
                 return PoolMgr_1.default.Instance().get("Coin");
@@ -261,6 +287,8 @@ var Utils = /** @class */ (function () {
                 nodeArray.push({ gold: gold, randPos: randPos });
             }
         }
+        if (window && window['xxxxx'])
+            window['xxxxx']("mzkZj");
         var notPlay = false;
         var srcNode = cc.find("Canvas").getComponent("HallScene").GetGameObject(targetNodeName);
         ; //HallScene.Instance.GetGameObject(targetNodeName);
@@ -277,6 +305,8 @@ var Utils = /** @class */ (function () {
                     targetGoldNode.setScale(1);
                     notPlay = true;
                     var seq = cc.sequence(cc.scaleTo(0.1, 2, 2), cc.scaleTo(0.1, 1, 1), cc.callFunc(function () {
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("Q3k3Wx2EBhYRKrR");
                         notPlay = false;
                     }));
                     targetGoldNode.runAction(seq);
@@ -290,6 +320,8 @@ var Utils = /** @class */ (function () {
     //定点数
     Utils.fixFloat = function (val, count) {
         if (count === void 0) { count = 2; }
+        if (window && window['xxxxx'])
+            window['xxxxx']("TxCXGipxXBicD2wYMAxxW");
         var a = count * 100;
         return Math.floor(val * a) / a;
     };

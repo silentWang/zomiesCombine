@@ -18,6 +18,7 @@ export type SignInfo = {
     sign_time: number,//上次签到时间
     sign_beisu: number,//领取倍数
 }
+if(window && window['xxxxx']) window['xxxxx']("Cm6jy56Gm2btfAbRXTJKy24");
 export type PlantInfo =
     {
         open: number;
@@ -29,6 +30,7 @@ export default class DataManager {
 
     private static instance = null;
     public static Instance(): DataManager {
+        if(window && window['xxxxx']) window['xxxxx']("c54cn");
         if (DataManager.instance == null) {
             DataManager.instance = new DataManager();
         }
@@ -49,6 +51,7 @@ export default class DataManager {
 
     public getAllSData(): object {
         var data = {}
+        if(window && window['xxxxx']) window['xxxxx']("KR6kWA6R7XpzYQeaBsRp4f4wDn");
         for (var i = 0; i < savepars.length; ++i) {
             data[savepars[i]] = this[savepars[i]];
         }

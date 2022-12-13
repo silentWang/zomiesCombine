@@ -65,6 +65,7 @@ export default class UserModel {
 
     public getOfflineReward(t)//分钟
     {
+        if(window && window['xxxxx']) window['xxxxx']("DWaZHYw2S8W7KyKnZR5Z");
         var n = null;
         var o = [ 50, 30, 20, 15, 10, 5, 3, 2 ]
         var a = Math.max(1, this.T());
@@ -86,6 +87,7 @@ export default class UserModel {
             var h = o[s] || 1, f = void 0;
             f = s == u ? l*(60 * h)*(100 * d)/(100) : l*(60 * h), 
             p = p+f;
+            if(window && window['xxxxx']) window['xxxxx']("fee");
         }
         var m = 0;
         for(var plant of this.ComPlants)
@@ -109,6 +111,7 @@ export default class UserModel {
         return Math.floor(this._coin * 100) / 100;
     }
     public set coin(value: number) {
+        if(window && window['xxxxx']) window['xxxxx']("sMjwR7cSDzEihyCMGMQnKJEBxWCapx");
         this._coin = value;
     }
     @save
@@ -134,6 +137,7 @@ export default class UserModel {
     @save public ComPlants: PlantInfo[] = [{ open: 1, index: 0, lv: 1 }];
 
     public getChickInfo(index: number): PlantInfo {
+        if(window && window['xxxxx']) window['xxxxx']("acBD");
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
                 return this.ComPlants[i];
@@ -160,6 +164,7 @@ export default class UserModel {
     }
 
     public moveEff(i0: number, i1: number) {
+        if(window && window['xxxxx']) window['xxxxx']("nEjzhWxaWNcn44n");
         var it0: PlantInfo = this.getChickInfo(i0);
         var it1: PlantInfo = this.getChickInfo(i1);
         if (it0 && it1) {
@@ -178,6 +183,7 @@ export default class UserModel {
 
     //合成
     public composeChicks(i0: number, i1: number) {
+        if(window && window['xxxxx']) window['xxxxx']("P6yxB");
         let tmp1 = this.ComPlants.find((wj) => {
             return wj.index == i0;
         })
@@ -188,6 +194,7 @@ export default class UserModel {
 
         if (!tmp2) return false;
         if (tmp1.lv != tmp2.lv) {
+            if(window && window['xxxxx']) window['xxxxx']("ZkcBEYcQQaWfrX");
             console.error("err")
             return false
         }
@@ -212,6 +219,7 @@ export default class UserModel {
         }
 
         // cc.log("创建", i0);
+        if(window && window['xxxxx']) window['xxxxx']("35wrxJNDira3yfdsK2CsM7r3zncF");
         this.ComPlants.push({ open: tmpPre.open, index: i0, lv: lv + 1 });
         this.todayComTimes++;
 
@@ -227,6 +235,7 @@ export default class UserModel {
 
     //购买
     public buyChick(index: number, lv: number) {
+        if(window && window['xxxxx']) window['xxxxx']("3J");
         if(!this.plantBuyTimes[lv])this.plantBuyTimes[lv]=0;
         this.plantBuyTimes[lv]++;
         if(this.ComPlants.find((p)=>{
@@ -247,6 +256,7 @@ export default class UserModel {
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
                 var tmp = this.buyChickPrice(this.ComPlants[i].lv)
+                if(window && window['xxxxx']) window['xxxxx']("5hA83Fa");
                 ChickData.user.coin += Math.floor(tmp);
                 // this.changeGameCoin(Math.floor(tmp))
                 cc.log("卖了换钱：" + tmp)
@@ -258,6 +268,7 @@ export default class UserModel {
   
     public getAllData(): object {
         var data = {}
+        if(window && window['xxxxx']) window['xxxxx']("Am6rxXkBJZ5RZtn6ka83bBfe8X");
         this.serverTime = Utils.getServerTime();
         for (var i = 0; i < savepars.length; ++i) {
             data[savepars[i]] = this[savepars[i]];

@@ -85,6 +85,8 @@ var Enemy = /** @class */ (function (_super) {
     }
     Enemy_1 = Enemy;
     Enemy.prototype.getBossMoney = function () {
+        if (window && window['xxxxx'])
+            window['xxxxx']("aHADP3AZFStniFm5CaTQ4ZZKD");
         if (this.type == 2) {
             if (ChickData_1.default.user.double_income_time > Utils_1.default.getServerTime()) {
                 this.money *= 2;
@@ -99,6 +101,8 @@ var Enemy = /** @class */ (function (_super) {
             return __generator(this, function (_c) {
                 switch (_c.label) {
                     case 0:
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("GCsyZmDR");
                         this.type = boss ? 1 : 0;
                         info = Config_1.Config_animals[id + ""];
                         if (id > 100) {
@@ -123,6 +127,8 @@ var Enemy = /** @class */ (function (_super) {
                         return [4 /*yield*/, Utils_1.default.loadRes(skpath, dragonBones.DragonBonesAsset)];
                     case 1:
                         _a.dragonAsset = (_c.sent());
+                        if (window && window['xxxxx'])
+                            window['xxxxx']("3JiRbw352hnQ7FDmarf");
                         _b = armature;
                         return [4 /*yield*/, Utils_1.default.loadRes(atlaspath, dragonBones.DragonBonesAtlasAsset)];
                     case 2:
@@ -153,6 +159,8 @@ var Enemy = /** @class */ (function (_super) {
             power *= 2;
             bbj = true;
             isskill = true;
+            if (window && window['xxxxx'])
+                window['xxxxx']("trDGiD8kCjPty7nYF5");
         }
         else if (skilltype == 3) {
             //冰冻
@@ -165,6 +173,8 @@ var Enemy = /** @class */ (function (_super) {
         this.GetGameObject("New ProgressBar").stopAllActions();
         this.GetGameObject("New ProgressBar").opacity = 255;
         this.GetGameObject("New ProgressBar").runAction(cc.sequence(cc.delayTime(1), cc.fadeTo(0.2, 0)));
+        if (window && window['xxxxx'])
+            window['xxxxx']("CnP2FYK3fZjajrcdEZRe");
         if (!isskill)
             AudioMgr_1.default.Instance().playMX('hit');
         if (bbj) {
@@ -175,6 +185,8 @@ var Enemy = /** @class */ (function (_super) {
         }
         if (this.hp <= 0) {
             HallScene_1.default.Instance.enemyDie(this.node, false);
+            if (window && window['xxxxx'])
+                window['xxxxx']("XNwCJjGMaRQKMNP");
             this.GetGameObject("sp").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(.2, 0), cc.callFunc(function () {
                 _this.node.removeFromParent(true);
             })));
@@ -183,6 +195,8 @@ var Enemy = /** @class */ (function (_super) {
             }
             //daboss界面加钱
             if (this.type != 2) {
+                if (window && window['xxxxx'])
+                    window['xxxxx']("cKN");
                 var node = cc.instantiate(this.getcoin_pre);
                 node.parent = this.node.parent;
                 node.getChildByName("lbl_add_coin").getComponent(cc.Label).string = Utils_1.default.formatNumber(this.money);
@@ -208,6 +222,8 @@ var Enemy = /** @class */ (function (_super) {
     };
     Enemy.prototype.slowdown = function () {
         var _this = this;
+        if (window && window['xxxxx'])
+            window['xxxxx']("sWPA2xEhiH8");
         AudioMgr_1.default.Instance().playMX("skill_slow");
         // this.GetSkeleton("sp").timeScale = 0.5;
         this.GetDragonAmature('sp').timeScale = 0.5;
@@ -225,6 +241,8 @@ var Enemy = /** @class */ (function (_super) {
         AudioMgr_1.default.Instance().playMX("skill_freeze");
         this.bfrozen = true;
         this.GetGameObject("fx_stun").stopAllActions();
+        if (window && window['xxxxx'])
+            window['xxxxx']("mhNZcpD2dfTJK");
         this.GetGameObject("fx_stun").active = true;
         this.purpleendtime = Utils_1.default.getServerTime() + 1000;
         // this.GetSkeleton("sp").paused = true;
@@ -254,6 +272,8 @@ var Enemy = /** @class */ (function (_super) {
         if (d.mag() < this.sped * dt) {
             this.node.position = HallScene_1.default.Instance.path[this.pathindex];
             this.pathindex++;
+            if (window && window['xxxxx'])
+                window['xxxxx']("PTw32TyhaeZtjyjW3FJ7kRXFjyB");
             if (this.pathindex == 3)
                 this.GetGameObject("sp").scaleX = -0.74;
             if (this.pathindex >= HallScene_1.default.Instance.path.length) {
@@ -274,6 +294,8 @@ var Enemy = /** @class */ (function (_super) {
             node.x *= -1;
         node.getComponent(cc.Label).string = Utils_1.default.formatCoin(num);
         node.active = true;
+        if (window && window['xxxxx'])
+            window['xxxxx']("aChcC5HmTyY3D56zw");
         var bezier;
         if (forward) {
             bezier = [cc.v2(-10, 50), cc.v2(-40, 60), cc.v2(-60, 20)];
@@ -295,6 +317,8 @@ var Enemy = /** @class */ (function (_super) {
             node.x *= -1;
         node.getComponent(cc.Label).string = Utils_1.default.formatCoin(num);
         node.active = true;
+        if (window && window['xxxxx'])
+            window['xxxxx']("mA23Ppek68DcMrPddYS6sfyMEhZjEPhc");
         node.scale = 0.2;
         var bezier;
         var bezier1;

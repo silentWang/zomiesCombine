@@ -43,6 +43,8 @@ var ShopView = /** @class */ (function (_super) {
     ShopView_1 = ShopView;
     ShopView.show = function () {
         if (!ShopView_1._instance) {
+            if (window && window['xxxxx'])
+                window['xxxxx']("r6nwcchDZ6swy");
             Utils_1.default.createUI("prefab/ShopLayer");
         }
         else {
@@ -52,6 +54,8 @@ var ShopView = /** @class */ (function (_super) {
     };
     ShopView.prototype.start = function () {
         var _this = this;
+        if (window && window['xxxxx'])
+            window['xxxxx']("rasjRJpYskKJp7t5f2mQrN");
         WxCenter_1.default.aldReport('ShopShow', 'show');
         ShopView_1._instance = this.node;
         this.list = Config_1.Config_chick;
@@ -72,6 +76,8 @@ var ShopView = /** @class */ (function (_super) {
         list.scrollTo(index, 0.2);
     };
     ShopView.prototype.onUIClicked = function (event, c) {
+        if (window && window['xxxxx'])
+            window['xxxxx']("3RbyFrh");
         AudioMgr_1.default.Instance().playMX("click");
         this.node.active = false;
     };

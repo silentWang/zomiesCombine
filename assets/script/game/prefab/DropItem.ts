@@ -19,6 +19,7 @@ export default class DropItem extends BaseUI {
     }
 
     onUIClicked(event, customEventData) {
+        if(window && window['xxxxx']) window['xxxxx']("FJxSBFyRFFAbj6zaXjJaQsc");
         var btnName = event.target.name;
         AudioMgr.Instance().playMX("click");
         switch (btnName) {

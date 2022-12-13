@@ -46,12 +46,17 @@ var FailView = /** @class */ (function (_super) {
         WxCenter_1.default.aldReport('FailShow', 'show');
     };
     FailView.prototype.setInfo = function (coin) {
+        if (window && window['xxxxx'])
+            window['xxxxx']("fswbt5YFcd5xCdJMdMH7Mj");
         this.coin = coin;
         this.aTobAnim(coin * 1.8);
         this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
     };
+    FailView.prototype.FcMb_xxxx_fun = function () { console.log("CcXaFhTmA53RKRMHjJpQNE2kd"); };
     FailView.prototype.aTobAnim = function (num) {
         var _this = this;
+        if (window && window['xxxxx'])
+            window['xxxxx']("rJJEDED4rWEptMPsAbj");
         var aver = Math.ceil(num / 60);
         var xn = 0;
         this.SetText("lbl_coin", Utils_1.default.formatNumber(0));
@@ -66,6 +71,8 @@ var FailView = /** @class */ (function (_super) {
         this.schedule(cb, 0, 61);
     };
     FailView.prototype.closeUI = function () {
+        if (window && window['xxxxx'])
+            window['xxxxx']("rza6xdb446ZPznaQxG");
         this.shutAnim();
         HallScene_1.default.Instance.createEnemys();
     };
