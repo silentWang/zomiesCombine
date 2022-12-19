@@ -187,7 +187,7 @@ export default class CommonView extends BaseUI {
             case "btn_ad":
                 AdCenter.Instance().play((b)=>{
                     if(b) this.addCoin(2);
-                });
+                },2);
                 if(window && window['xxxxx']) window['xxxxx']("RdfKGMXYZPH3P7YBnN");
                 break;
             case "btn_normal":

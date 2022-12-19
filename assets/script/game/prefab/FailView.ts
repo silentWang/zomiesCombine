@@ -68,7 +68,7 @@ export default class FailView extends BaseUI {
                 AdCenter.Instance().play(()=>{
                     this.getCoinReward();
                     this.closeUI();
-                });
+                },1);
                 break;
             case 'btn_normal':
                 this.getCoinReward();

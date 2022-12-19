@@ -1,8 +1,8 @@
 {
-  "appid": "tt15ee63538ad1f59b01",
+  "appid": "ttf8788ec56747068302",
   "orientation": "portrait",
   "separate_engine": false,
-  "REMOTE_SERVER_ROOT": "http://www.huadcx.com/",
+  "REMOTE_SERVER_ROOT": "https://www.huadcx.com/",
   "subContext": "",
   "startSceneAssetBundle": false
 }

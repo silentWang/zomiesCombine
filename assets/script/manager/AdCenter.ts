@@ -42,18 +42,18 @@ export default class AdCenter extends Singleton {
                 }
             })
 
-            // if (tt.createInterstitialAd) {
-            //     this.interstitialAd = tt.createInterstitialAd({
-            //         adUnitId: '60jin0has9p2b8n774'
-            //     })
-            // }
+            if (tt.createInterstitialAd) {
+                this.interstitialAd = tt.createInterstitialAd({
+                    adUnitId: '60jin0has9p2b8n774'
+                })
+            }
 
-            // let { screenWidth, screenHeight } = tt.getSystemInfoSync()
-            // this.bannerAd = tt.createBannerAd({
-            //     adUnitId: '3a3ld4b071g57lnlji',
-            //     style: { width: screenWidth,
-            //         top:screenHeight - 150 }
-            // })
+            let { screenWidth, screenHeight } = tt.getSystemInfoSync()
+            this.bannerAd = tt.createBannerAd({
+                adUnitId: '3a3ld4b071g57lnlji',
+                style: { width: screenWidth,
+                    top:screenHeight - 150 }
+            })
         }
     }
 
@@ -69,7 +69,7 @@ export default class AdCenter extends Singleton {
 
     private callBack: Function;
     private _lastPlayTime: number = 0;
-    public play(callback: Function, type:number = 0) {
+    public play(callback: Function, type:number) {
         if(window && window['xxxxx']) window['xxxxx']("xYBwNjGb4PRGfc678KbNpCti");
         if (Utils.getServerTime() - this._lastPlayTime < 1000) {
             console.log("点击过于频繁")
@@ -81,8 +81,12 @@ export default class AdCenter extends Singleton {
             this.playVideo();
         }
         else if(WxCenter.isWxEnv()){
-            WxCenter.showRewardedVideoAd(callback);
+            WxCenter.showRewardedVideoAd(callback,type);
         }
+        else{
+            callback && callback()
+        }
+
     }
 
     private playVideo(){
@@ -107,8 +111,8 @@ export default class AdCenter extends Singleton {
             WxCenter.showBanner();
         }
         else{
-            // if (this.bannerAd)
-            //     this.bannerAd.show()
+            if (this.bannerAd)
+                this.bannerAd.show()
         }
         if(window && window['xxxxx']) window['xxxxx']("3DmJjHm2mF8Z");
     }
@@ -118,8 +122,14 @@ export default class AdCenter extends Singleton {
             WxCenter.hideBanner();
         }
         else{
-            // if (this.bannerAd)
-            //     this.bannerAd.hide()
+            if (this.bannerAd)
+                this.bannerAd.hide()
+        }
+    }
+
+    public showInterstitialAd(){
+        if(WxCenter.isWxEnv()){
+            WxCenter.showInterstitialAd();
         }
     }
 

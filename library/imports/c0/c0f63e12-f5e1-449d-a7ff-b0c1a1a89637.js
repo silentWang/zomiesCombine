@@ -84,7 +84,7 @@ var DropChickView = /** @class */ (function (_super) {
                         ChickData_1.default.user.DropGiftPts = ChickData_1.default.user.DropGiftPts.concat(spt_1);
                         _this.closeUI();
                     }
-                });
+                }, 1);
                 break;
         }
     };

@@ -3,7 +3,6 @@ import MsgToast from "../framwork/MsgToast";
 export default class WxCenter {
     private static wx:any;
     private static bannerAd:any;
-    private static rewardVideo:any;
     static init(){
         this.wx = window && window['wx'];
         if(!this.wx) return;
@@ -61,47 +60,89 @@ export default class WxCenter {
         this.bannerAd.hide();
     }
 
-    static showRewardedVideoAd(callback:Function = null){
-        if(!this.wx) {
-            MsgToast.show("看了一个广告");
-            console.log('看了一个广告')
-            callback && callback(true);
-            return;
-        }
-        callback && callback(true);
+    static showInterstitialAd(){
+        // 定义插屏广告
         let wx = this.wx;
-        let videoAd = this.rewardVideo;
-        if(window && window['xxxxx']) window['xxxxx']("TFfmND");
-        if(!videoAd){
-            videoAd = wx.createRewardedVideoAd({ adUnitId: 'xxxx' });
-            this.rewardVideo = videoAd;
-            videoAd.onError(err => {
-                console.log(err);
-                //重新拉取
-                videoAd.load().then(() => videoAd.show())
-            });
-            videoAd.onClose(res => {
-                // 用户点击了【关闭广告】按钮
-                // 小于 2.1.0 的基础库版本，res 是一个 undefined
-                if (res && res.isEnded || res === undefined) {
-                  // 正常播放结束，可以下发游戏奖励
-                  if(window && window['xxxxx']) window['xxxxx']("MZ4rjBkGDEMcYHjpy6ewY");
-                  callback && callback(true);
-                }
-                else {
-                    // 播放中途退出，不下发游戏奖励
-                }
+        if(!wx) return;
+        let interstitialAd = null
+        // 创建插屏广告实例，提前初始化
+        if (wx.createInterstitialAd){
+            interstitialAd = wx.createInterstitialAd({
+                adUnitId: 'adunit-c64814b155af73e6'
             })
         }
+        // 在适合的场景显示插屏广告
+        if (interstitialAd) {
+            interstitialAd.show().then().catch((err) => {
+                console.error('插屏 广告失败:',err)
+            })
+            interstitialAd.onClose(res => {
+                console.log('插屏 广告关闭')
+            })
+            interstitialAd.onLoad(() => {
+                console.log('插屏 广告加载成功')
+            })
+        }
+    }
+
+    static showRewardedVideoAd(callback:Function,type:number){
+        if(!this.wx) {
+            // MsgToast.show("看了一个广告");
+            // callback && callback(true);
+            return;
+        }
+        let wx = this.wx;
+        if(window && window['xxxxx']) window['xxxxx']("TFfmND");
+        let adUnitId = ''
+        if(type == 1){
+            adUnitId = 'adunit-e482dfb01207d492'
+        }
+        else if(type == 2){
+            adUnitId = 'adunit-422d6afe8dcddd39'
+        }
+        if(!adUnitId) return;
+        wx.showLoading({title:'视频加载中...',mask:true});
+        setTimeout(() => {
+            wx.hideLoading()
+        }, 3000);
+        let videoAd = wx.createRewardedVideoAd({ adUnitId });
+        videoAd.onClose(res => {
+            // 用户点击了【关闭广告】按钮
+            // 小于 2.1.0 的基础库版本，res 是一个 undefined
+            wx.hideLoading()
+            if (res && res.isEnded || res === undefined) {
+                // 正常播放结束，可以下发游戏奖励
+                if(window && window['xxxxx']) window['xxxxx']("MZ4rjBkGDEMcYHjpy6ewY");
+                callback && callback(true);
+            }
+            else {
+                // 播放中途退出，不下发游戏奖励
+            }
+        })
+        videoAd.onError(error=>{
+            console.log(error)
+            wx.hideLoading()
+            wx.showToast('视频获取失败');
+        });
+        
         videoAd.show().then(res=>{
             // console.log('激励视频 广告显示')
             videoAd.load().then(() => videoAd.show()).catch(err => {
-                wx.showToast({
-                    title: WxCenter.videoAdErrHandle(err),
-                    icon: 'none'
-                })
+                console.log(err)
+                wx.hideLoading()
+                wx.showToast('视频获取失败');
             })
         })
+        // 上报
+        if(videoAd.reportShareBehavior){
+            videoAd.reportShareBehavior({
+                operation: 2, // 1-曝光 2-点击 3-关闭 4-操作成功 5-操作失败
+                currentShow: 0, // 0-广告 1-分享，当 operation 为 1-5 时必填
+                strategy: 1, // 0-业务 1-微信策略
+                adunit:adUnitId, //当前点位的adunit
+                sceneID:type //当前点位的sceneID
+            });
+        }
     }
 
     private static videoAdErrHandle(err){

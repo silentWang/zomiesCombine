@@ -100,7 +100,7 @@ export default class CoinNotEnoughUI extends BaseUI {
                 WxCenter.aldReport('LackClick','click');
                 AdCenter.Instance().play((b)=>{
                     if(b) this.addCoin();
-                });
+                },1);
                 break;
         }
     }

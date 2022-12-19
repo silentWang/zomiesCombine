@@ -1,4 +1,5 @@
 import BaseUI from "./framwork/BaseUI";
+import AdCenter from "./manager/AdCenter";
 import ChickData from "./manager/ChickData";
 import PoolMgr from "./manager/PoolMgr";
 import WxCenter from "./manager/WxCenter";
@@ -31,6 +32,7 @@ export default class Loading extends BaseUI {
 
     start(){
         WxCenter.aldReport('LoadingShow','show');
+        AdCenter.Instance().showInterstitialAd();
     }
 
     async onLoad() {

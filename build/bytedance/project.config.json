@@ -1,1 +1,27 @@
-{"setting":{"urlCheck":true,"es6":true,"postcss":true,"minified":true,"newFeature":true},"appid":"tt15ee63538ad1f59b01","projectname":"pvsz_tt"}
+{
+    "setting": {
+        "urlCheck": true,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "newFeature": true
+    },
+    "appid": "ttf8788ec56747068302",
+    "projectname": "pvsz_tt",
+    "condition": {
+        "game": {
+            "current": -1,
+            "list": [
+                {
+                    "id": 1671008422599,
+                    "name": "",
+                    "pathName": "",
+                    "query": "",
+                    "scene": "",
+                    "launchFrom": "",
+                    "location": ""
+                }
+            ]
+        }
+    }
+}

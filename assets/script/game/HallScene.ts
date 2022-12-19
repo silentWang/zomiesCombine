@@ -70,13 +70,14 @@ export default class HallScene extends BaseUI {
 	{
         if(dt>1)dt=1;
 		this.SetText("lbl_coin",Utils.formatNumber(ChickData.user.coin)+"");
-        if(this.recordertime != 0)
-        {
-            let s = Math.floor((Utils.getServerTime() - this.recordertime)/1000);
-            if(s>0)this.SetText("lbl_luping",s+"s");
-        }
-        else
-            this.SetText("lbl_luping","");
+        // if(this.recordertime != 0)
+        // {
+        //     let s = Math.floor((Utils.getServerTime() - this.recordertime)/1000);
+        //     if(s>0)this.SetText("lbl_luping",s+"s");
+        // }
+        // else{
+        //     this.SetText("lbl_luping","");
+        // }
 
         //y排序
         if(window && window['xxxxx']) window['xxxxx']("NXGzsRnwSceZCbrfXsjH");
@@ -420,42 +421,42 @@ export default class HallScene extends BaseUI {
         if(window && window['xxxxx']) window['xxxxx']("crrDFT");
         this.GetGameObject("lupin_gem").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
         
-        if (this.GetGameObject("btn_Recorder")) this.GetGameObject("btn_Recorder").active = window["tt"];
-        if (window["tt"]) {
-            const recorder = window["tt"].getGameRecorderManager();
-            recorder.onStart(res => {
-                this.GetGameObject("lupin_gem").active = false;
-                this.GetGameObject("btn_VCR").active = false;
-                this.GetGameObject("btn_end").active = true;
-                this.GetGameObject("btn_Recorder").stopAllActions();
-                this.GetGameObject("btn_Recorder").runAction(cc.sequence(cc.scaleTo(0.5, .9), cc.scaleTo(0.5, 1)).repeatForever());
-                //console.log("tt录屏开始");
-                this.recordertime = Utils.getServerTime();
-            });
+        // if (this.GetGameObject("btn_Recorder")) this.GetGameObject("btn_Recorder").active = window["tt"];
+        // if (window["tt"]) {
+        //     const recorder = window["tt"].getGameRecorderManager();
+        //     recorder.onStart(res => {
+        //         this.GetGameObject("lupin_gem").active = false;
+        //         this.GetGameObject("btn_VCR").active = false;
+        //         this.GetGameObject("btn_end").active = true;
+        //         this.GetGameObject("btn_Recorder").stopAllActions();
+        //         this.GetGameObject("btn_Recorder").runAction(cc.sequence(cc.scaleTo(0.5, .9), cc.scaleTo(0.5, 1)).repeatForever());
+        //         //console.log("tt录屏开始");
+        //         this.recordertime = Utils.getServerTime();
+        //     });
 
-            recorder.onStop(res => {
-                this.bRecorder = false;
-                this.GetGameObject("btn_Recorder").stopAllActions();
-                this.GetGameObject("lupin_gem").active = true;
-                this.GetGameObject("btn_Recorder").scale = 1;
-                this.GetGameObject("btn_VCR").active = true;
-                this.GetGameObject("btn_end").active = false;
-                // console.log("tt录屏结束");
-                // console.log(res.videoPath);
+        //     recorder.onStop(res => {
+        //         this.bRecorder = false;
+        //         this.GetGameObject("btn_Recorder").stopAllActions();
+        //         this.GetGameObject("lupin_gem").active = true;
+        //         this.GetGameObject("btn_Recorder").scale = 1;
+        //         this.GetGameObject("btn_VCR").active = true;
+        //         this.GetGameObject("btn_end").active = false;
+        //         // console.log("tt录屏结束");
+        //         // console.log(res.videoPath);
                 
-                if(window && window['xxxxx']) window['xxxxx']("4Y6PtM8mRpwk7Js");
-                if (Utils.getServerTime() - this.recordertime < 3000) {
-                    // MsgHints.show("录屏时间过短");
-                    this.recordertime = 0
-                    return;
-                }
+        //         if(window && window['xxxxx']) window['xxxxx']("4Y6PtM8mRpwk7Js");
+        //         if (Utils.getServerTime() - this.recordertime < 3000) {
+        //             // MsgHints.show("录屏时间过短");
+        //             this.recordertime = 0
+        //             return;
+        //         }
 
-                this.recordertime = 0
-                Utils.createUI("prefab/LuPinResult", null, (node: cc.Node) => {
-                    node.getComponent(RecordView).setData(res);
-                })
-            });
-        }
+        //         this.recordertime = 0
+        //         Utils.createUI("prefab/LuPinResult", null, (node: cc.Node) => {
+        //             node.getComponent(RecordView).setData(res);
+        //         })
+        //     });
+        // }
         if(window && window['xxxxx']) window['xxxxx']("JZrNWSWwjtMdh7DMMhe");
         cc.game.on(cc.game.EVENT_SHOW, this.onGameShow, this);
         cc.game.on(cc.game.EVENT_HIDE, this.onGameHide, this);

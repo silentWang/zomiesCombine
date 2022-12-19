@@ -206,7 +206,7 @@ var CommonView = /** @class */ (function (_super) {
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b)
                         _this.addCoin(2);
-                });
+                }, 2);
                 if (window && window['xxxxx'])
                     window['xxxxx']("RdfKGMXYZPH3P7YBnN");
                 break;

@@ -54,17 +54,17 @@ var AdCenter = /** @class */ (function (_super) {
                     _this.callBack(false);
                 }
             });
-            // if (tt.createInterstitialAd) {
-            //     this.interstitialAd = tt.createInterstitialAd({
-            //         adUnitId: '60jin0has9p2b8n774'
-            //     })
-            // }
-            // let { screenWidth, screenHeight } = tt.getSystemInfoSync()
-            // this.bannerAd = tt.createBannerAd({
-            //     adUnitId: '3a3ld4b071g57lnlji',
-            //     style: { width: screenWidth,
-            //         top:screenHeight - 150 }
-            // })
+            if (tt.createInterstitialAd) {
+                _this.interstitialAd = tt.createInterstitialAd({
+                    adUnitId: '60jin0has9p2b8n774'
+                });
+            }
+            var _a = tt.getSystemInfoSync(), screenWidth = _a.screenWidth, screenHeight = _a.screenHeight;
+            _this.bannerAd = tt.createBannerAd({
+                adUnitId: '3a3ld4b071g57lnlji',
+                style: { width: screenWidth,
+                    top: screenHeight - 150 }
+            });
         }
         return _this;
     }
@@ -77,7 +77,6 @@ var AdCenter = /** @class */ (function (_super) {
         }
     };
     AdCenter.prototype.play = function (callback, type) {
-        if (type === void 0) { type = 0; }
         if (window && window['xxxxx'])
             window['xxxxx']("xYBwNjGb4PRGfc678KbNpCti");
         if (Utils_1.default.getServerTime() - this._lastPlayTime < 1000) {
@@ -90,7 +89,10 @@ var AdCenter = /** @class */ (function (_super) {
             this.playVideo();
         }
         else if (WxCenter_1.default.isWxEnv()) {
-            WxCenter_1.default.showRewardedVideoAd(callback);
+            WxCenter_1.default.showRewardedVideoAd(callback, type);
+        }
+        else {
+            callback && callback();
         }
     };
     AdCenter.prototype.playVideo = function () {
@@ -114,8 +116,8 @@ var AdCenter = /** @class */ (function (_super) {
             WxCenter_1.default.showBanner();
         }
         else {
-            // if (this.bannerAd)
-            //     this.bannerAd.show()
+            if (this.bannerAd)
+                this.bannerAd.show();
         }
         if (window && window['xxxxx'])
             window['xxxxx']("3DmJjHm2mF8Z");
@@ -125,8 +127,13 @@ var AdCenter = /** @class */ (function (_super) {
             WxCenter_1.default.hideBanner();
         }
         else {
-            // if (this.bannerAd)
-            //     this.bannerAd.hide()
+            if (this.bannerAd)
+                this.bannerAd.hide();
+        }
+    };
+    AdCenter.prototype.showInterstitialAd = function () {
+        if (WxCenter_1.default.isWxEnv()) {
+            WxCenter_1.default.showInterstitialAd();
         }
     };
     return AdCenter;
