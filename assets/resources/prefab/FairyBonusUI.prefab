@@ -1478,7 +1478,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 124,
+      "width": 184,
       "height": 54.4
     },
     "_anchorPoint": {
@@ -1530,8 +1530,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "直接领取",
-    "_N$string": "直接领取",
+    "_string": "领取一倍奖励",
+    "_N$string": "领取一倍奖励",
     "_fontSize": 30,
     "_lineHeight": 40,
     "_enableWrapText": true,

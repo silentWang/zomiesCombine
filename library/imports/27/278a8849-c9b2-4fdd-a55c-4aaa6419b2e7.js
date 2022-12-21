@@ -15,8 +15,8 @@ var GameConst = /** @class */ (function () {
     return GameConst;
 }());
 exports.default = GameConst;
-exports.share_titles = [];
-exports.share_urls = [];
-exports.GAME_NAME = "PVSZ";
+exports.share_titles = ["爽！鸡你太美", "新游上线，一枪一个."];
+exports.share_urls = ['https://www.huadcx.com/h5/resources/share_img.jpg'];
+exports.GAME_NAME = "CJXD";
 
 cc._RF.pop();

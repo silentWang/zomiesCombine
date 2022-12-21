@@ -70,6 +70,7 @@ var CommonView_1 = require("./prefab/CommonView");
 var ShareView_1 = require("./prefab/ShareView");
 var Enemy_1 = require("./prefab/Enemy");
 var FailView_1 = require("./prefab/FailView");
+var RecordView_1 = require("./prefab/RecordView");
 var OfflineAwardUI_1 = require("./prefab/OfflineAwardUI");
 var ShopView_1 = require("./prefab/ShopView");
 var WinView_1 = require("./prefab/WinView");
@@ -138,14 +139,14 @@ var HallScene = /** @class */ (function (_super) {
         if (dt > 1)
             dt = 1;
         this.SetText("lbl_coin", Utils_1.default.formatNumber(ChickData_1.default.user.coin) + "");
-        // if(this.recordertime != 0)
-        // {
-        //     let s = Math.floor((Utils.getServerTime() - this.recordertime)/1000);
-        //     if(s>0)this.SetText("lbl_luping",s+"s");
-        // }
-        // else{
-        //     this.SetText("lbl_luping","");
-        // }
+        if (this.recordertime != 0) {
+            var s = Math.floor((Utils_1.default.getServerTime() - this.recordertime) / 1000);
+            if (s > 0)
+                this.SetText("lbl_luping", s + "s");
+        }
+        else {
+            this.SetText("lbl_luping", "");
+        }
         //y排序
         if (window && window['xxxxx'])
             window['xxxxx']("NXGzsRnwSceZCbrfXsjH");
@@ -353,7 +354,7 @@ var HallScene = /** @class */ (function (_super) {
     };
     HallScene.prototype.start = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var slots, i, _i, _a, slot, stime, t, t, money, _b, _c, c;
+            var slots, i, _i, _a, slot, stime, t, t, money, _b, _c, c, recorder;
             var _this = this;
             return __generator(this, function (_d) {
                 switch (_d.label) {
@@ -468,39 +469,41 @@ var HallScene = /** @class */ (function (_super) {
                         if (window && window['xxxxx'])
                             window['xxxxx']("crrDFT");
                         this.GetGameObject("lupin_gem").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
-                        // if (this.GetGameObject("btn_Recorder")) this.GetGameObject("btn_Recorder").active = window["tt"];
-                        // if (window["tt"]) {
-                        //     const recorder = window["tt"].getGameRecorderManager();
-                        //     recorder.onStart(res => {
-                        //         this.GetGameObject("lupin_gem").active = false;
-                        //         this.GetGameObject("btn_VCR").active = false;
-                        //         this.GetGameObject("btn_end").active = true;
-                        //         this.GetGameObject("btn_Recorder").stopAllActions();
-                        //         this.GetGameObject("btn_Recorder").runAction(cc.sequence(cc.scaleTo(0.5, .9), cc.scaleTo(0.5, 1)).repeatForever());
-                        //         //console.log("tt录屏开始");
-                        //         this.recordertime = Utils.getServerTime();
-                        //     });
-                        //     recorder.onStop(res => {
-                        //         this.bRecorder = false;
-                        //         this.GetGameObject("btn_Recorder").stopAllActions();
-                        //         this.GetGameObject("lupin_gem").active = true;
-                        //         this.GetGameObject("btn_Recorder").scale = 1;
-                        //         this.GetGameObject("btn_VCR").active = true;
-                        //         this.GetGameObject("btn_end").active = false;
-                        //         // console.log("tt录屏结束");
-                        //         // console.log(res.videoPath);
-                        //         if(window && window['xxxxx']) window['xxxxx']("4Y6PtM8mRpwk7Js");
-                        //         if (Utils.getServerTime() - this.recordertime < 3000) {
-                        //             // MsgHints.show("录屏时间过短");
-                        //             this.recordertime = 0
-                        //             return;
-                        //         }
-                        //         this.recordertime = 0
-                        //         Utils.createUI("prefab/LuPinResult", null, (node: cc.Node) => {
-                        //             node.getComponent(RecordView).setData(res);
-                        //         })
-                        //     });
-                        // }
+                        if (this.GetGameObject("btn_Recorder"))
+                            this.GetGameObject("btn_Recorder").active = window["tt"];
+                        if (window["tt"]) {
+                            recorder = window["tt"].getGameRecorderManager();
+                            recorder.onStart(function (res) {
+                                _this.GetGameObject("lupin_gem").active = false;
+                                _this.GetGameObject("btn_VCR").active = false;
+                                _this.GetGameObject("btn_end").active = true;
+                                _this.GetGameObject("btn_Recorder").stopAllActions();
+                                _this.GetGameObject("btn_Recorder").runAction(cc.sequence(cc.scaleTo(0.5, .9), cc.scaleTo(0.5, 1)).repeatForever());
+                                //console.log("tt录屏开始");
+                                _this.recordertime = Utils_1.default.getServerTime();
+                            });
+                            recorder.onStop(function (res) {
+                                _this.bRecorder = false;
+                                _this.GetGameObject("btn_Recorder").stopAllActions();
+                                _this.GetGameObject("lupin_gem").active = true;
+                                _this.GetGameObject("btn_Recorder").scale = 1;
+                                _this.GetGameObject("btn_VCR").active = true;
+                                _this.GetGameObject("btn_end").active = false;
+                                // console.log("tt录屏结束");
+                                // console.log(res.videoPath);
+                                if (window && window['xxxxx'])
+                                    window['xxxxx']("4Y6PtM8mRpwk7Js");
+                                if (Utils_1.default.getServerTime() - _this.recordertime < 3000) {
+                                    // MsgHints.show("录屏时间过短");
+                                    _this.recordertime = 0;
+                                    return;
+                                }
+                                _this.recordertime = 0;
+                                Utils_1.default.createUI("prefab/LuPinResult", null, function (node) {
+                                    node.getComponent(RecordView_1.default).setData(res);
+                                });
+                            });
+                        }
                         if (window && window['xxxxx'])
                             window['xxxxx']("JZrNWSWwjtMdh7DMMhe");
                         cc.game.on(cc.game.EVENT_SHOW, this.onGameShow, this);

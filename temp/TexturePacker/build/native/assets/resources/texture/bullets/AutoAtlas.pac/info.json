@@ -1,6 +1,6 @@
 {
   "projectPath": "D:\\mySpace\\ZomiesCombine",
-  "actualPlatform": "wechatgame",
+  "actualPlatform": "bytedance",
   "mtimes": {
     "7f45b442-aea3-47ce-a13e-5bdebb08c39d": {
       "assetMtime": 1662370951864,
@@ -518,7 +518,7 @@
             "name": "52",
             "uuid": "b85033e8-fbe4-4afb-ba9f-c0424eb9449a",
             "textureUuid": "0bed7f6f-7a7b-4f2e-a8f2-91e72834c345",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571310_image_39.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_39.png",
             "trim": {
               "x": 3,
               "y": 3,
@@ -541,7 +541,7 @@
             "name": "15",
             "uuid": "47f1a604-583d-4642-8f41-389fc1526e5c",
             "textureUuid": "5440a699-aa7c-4ba8-a334-020715bf37c6",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_13.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_13.png",
             "trim": {
               "x": 109,
               "y": 3,
@@ -565,7 +565,7 @@
             "name": "43",
             "uuid": "e22ebf8c-9402-4be8-83b4-70c28759f708",
             "textureUuid": "ec0caf8c-665a-4f80-b79d-f201f5228d81",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_55.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462927_image_55.png",
             "trim": {
               "x": 3,
               "y": 27,
@@ -588,7 +588,7 @@
             "name": "18",
             "uuid": "c6dd7879-d933-4b77-9438-7b92b1caa4a3",
             "textureUuid": "daf3d7b1-3194-4f41-963c-62c5556d9186",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571310_image_41.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_41.png",
             "trim": {
               "x": 94,
               "y": 41,
@@ -612,7 +612,7 @@
             "name": "45",
             "uuid": "ce2479fc-031a-45db-85bf-0151fb11a3dc",
             "textureUuid": "c0c22bb5-9f1a-4b9c-b0b0-fe864842ae7a",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571310_image_43.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_43.png",
             "trim": {
               "x": 94,
               "y": 87,
@@ -636,7 +636,7 @@
             "name": "46",
             "uuid": "92a57abc-6c6d-46fb-8610-6fdcd209ce59",
             "textureUuid": "e921a85f-a3b5-4adf-a1c2-473ff0683355",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571309_image_31.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_31.png",
             "trim": {
               "x": 3,
               "y": 106,
@@ -659,7 +659,7 @@
             "name": "38",
             "uuid": "eccb2ff5-634c-4264-b90a-5c68a9af0cf1",
             "textureUuid": "f762ad6f-1925-491a-b793-bc008934aec6",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_57.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462928_image_57.png",
             "trim": {
               "x": 71,
               "y": 133,
@@ -682,7 +682,7 @@
             "name": "47",
             "uuid": "407745f2-c34a-43c1-8b1a-5529b12f3f4f",
             "textureUuid": "27e7483f-e257-40c4-ae52-f1d64027ef1f",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_9.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_9.png",
             "trim": {
               "x": 71,
               "y": 106,
@@ -706,7 +706,7 @@
             "name": "56",
             "uuid": "ab123d3a-8c91-421f-8ed9-0138dc1d84b6",
             "textureUuid": "85f1f655-3eb6-47e5-9be0-0d66721746ed",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571310_image_36.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_36.png",
             "trim": {
               "x": 3,
               "y": 154,
@@ -729,7 +729,7 @@
             "name": "40",
             "uuid": "0ea5d36b-5c8e-400c-8570-e0361cb5bbc2",
             "textureUuid": "e4994319-8cf9-4558-aa50-d92e85663198",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_4.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_4.png",
             "trim": {
               "x": 67,
               "y": 163,
@@ -752,7 +752,7 @@
             "name": "25",
             "uuid": "06ca1180-c757-4ec7-9f39-b6e173934031",
             "textureUuid": "3571c18c-4938-44b6-ae89-69eb85dc4296",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571306_image_1.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462923_image_1.png",
             "trim": {
               "x": 3,
               "y": 202,
@@ -775,7 +775,7 @@
             "name": "37",
             "uuid": "d0148f85-93d8-4423-befb-fc720aee1a4a",
             "textureUuid": "e35a5459-cb8b-404b-bc68-f56b4d0b6629",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_44.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_44.png",
             "trim": {
               "x": 57,
               "y": 205,
@@ -798,7 +798,7 @@
             "name": "26",
             "uuid": "92c7c666-e58e-4002-a6f8-57e55285a6c5",
             "textureUuid": "acf7d633-4cbf-46b3-aebc-5ce01d9e2d20",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571309_image_32.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_32.png",
             "trim": {
               "x": 109,
               "y": 205,
@@ -822,7 +822,7 @@
             "name": "53",
             "uuid": "731fd361-acfa-45d8-98b0-c315dfdf1ddc",
             "textureUuid": "e4bb032d-3bc7-4bc8-9e63-a341beacf19b",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571308_image_21.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_21.png",
             "trim": {
               "x": 109,
               "y": 239,
@@ -846,7 +846,7 @@
             "name": "42",
             "uuid": "d1618442-2269-48d6-b140-2f34d6d58d5a",
             "textureUuid": "f5fd1ff5-227c-48b4-a040-93f01dfd1b2b",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_45.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_45.png",
             "trim": {
               "x": 3,
               "y": 236,
@@ -869,7 +869,7 @@
             "name": "16",
             "uuid": "dd73847b-d23d-4cbf-ac88-90bb3fa860d3",
             "textureUuid": "6bde2fff-4ef1-4006-b32e-c78e338483af",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_51.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462927_image_51.png",
             "trim": {
               "x": 55,
               "y": 243,
@@ -892,7 +892,7 @@
             "name": "48",
             "uuid": "918e554b-3c38-4dce-a673-a840cda37350",
             "textureUuid": "5ebc3aa4-9bca-4db0-9170-d5f29d912a63",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571309_image_30.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_30.png",
             "trim": {
               "x": 3,
               "y": 264,
@@ -915,7 +915,7 @@
             "name": "58",
             "uuid": "dc3ea2ab-69c4-4887-9b13-e1d346072f86",
             "textureUuid": "1ba320f0-d507-4319-8816-f66618085e17",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_50.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_50.png",
             "trim": {
               "x": 51,
               "y": 270,
@@ -939,7 +939,7 @@
             "name": "31",
             "uuid": "c998ec55-6013-45f2-80e7-3ac2c6f794b8",
             "textureUuid": "7414ff1c-84f7-4c5a-9ee3-2a125e95e2fd",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571310_image_42.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_42.png",
             "trim": {
               "x": 99,
               "y": 271,
@@ -962,7 +962,7 @@
             "name": "39",
             "uuid": "04f21fb6-46a9-447d-aaf8-aa1d337a5c70",
             "textureUuid": "830ddec5-06e9-4dcb-8536-622a0aeba396",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571304_image_0.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462922_image_0.png",
             "trim": {
               "x": 99,
               "y": 303,
@@ -985,7 +985,7 @@
             "name": "32",
             "uuid": "22a8b499-fed7-4fc7-9e7c-f5d8d144a7ab",
             "textureUuid": "f8382a02-760c-4b77-9285-5c5eb3ee39b0",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_7.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_7.png",
             "trim": {
               "x": 3,
               "y": 312,
@@ -1009,7 +1009,7 @@
             "name": "41",
             "uuid": "e22939ac-65de-4f12-bbc0-b58eaf573142",
             "textureUuid": "f18dd1af-9788-4292-9062-869b5c81ef4a",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_54.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462927_image_54.png",
             "trim": {
               "x": 49,
               "y": 316,
@@ -1032,7 +1032,7 @@
             "name": "50",
             "uuid": "e18ca23b-e098-47f3-a0b8-5f44ad9b4043",
             "textureUuid": "379f21c5-44a4-47ed-93a5-0bf842d17023",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_52.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462927_image_52.png",
             "trim": {
               "x": 93,
               "y": 333,
@@ -1056,7 +1056,7 @@
             "name": "28",
             "uuid": "e1fe94b0-b39a-45f6-914f-bb058a075837",
             "textureUuid": "76cfff60-2b71-4028-ad0c-fdea3bca6865",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_53.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462927_image_53.png",
             "trim": {
               "x": 3,
               "y": 354,
@@ -1079,7 +1079,7 @@
             "name": "30",
             "uuid": "79855a97-3d72-46bb-8e0d-111606b0d541",
             "textureUuid": "eec1299b-03c9-43d3-8f76-cfb8eb02e470",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571308_image_24.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_24.png",
             "trim": {
               "x": 45,
               "y": 354,
@@ -1103,7 +1103,7 @@
             "name": "27",
             "uuid": "d8cf3fa3-2606-4c8f-afbb-8f1981b6a010",
             "textureUuid": "195da113-a2d9-4fd3-96c1-c35ac59858a5",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_48.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_48.png",
             "trim": {
               "x": 87,
               "y": 373,
@@ -1126,7 +1126,7 @@
             "name": "21",
             "uuid": "6c0d47aa-9b77-423e-83fa-55412eb5d7c8",
             "textureUuid": "18264abe-037f-4d2c-b4d1-00a4a41acf19",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571308_image_18.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_18.png",
             "trim": {
               "x": 45,
               "y": 394,
@@ -1149,7 +1149,7 @@
             "name": "10",
             "uuid": "c6047742-7258-4af4-9201-7134fb3f5f5a",
             "textureUuid": "580cdda7-c8b9-4462-90e1-843545a746e4",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571310_image_40.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_40.png",
             "trim": {
               "x": 3,
               "y": 396,
@@ -1172,7 +1172,7 @@
             "name": "35",
             "uuid": "a078362e-5c70-47b2-8f5c-ad46d518b3e7",
             "textureUuid": "a2dc704f-d5db-4ec6-b925-2aa4f4e9b085",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571309_image_33.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_33.png",
             "trim": {
               "x": 3,
               "y": 422,
@@ -1195,7 +1195,7 @@
             "name": "51",
             "uuid": "13199c8e-951c-41d2-b0c5-3bd94468c457",
             "textureUuid": "5ea83649-1412-4651-a19e-e0d61d0d2a04",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_5.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_5.png",
             "trim": {
               "x": 85,
               "y": 401,
@@ -1218,7 +1218,7 @@
             "name": "33",
             "uuid": "a6a3bc92-6611-4e1e-bf36-8d1196f00a2a",
             "textureUuid": "af3e7b72-f0e4-4d10-9694-9fa6215c2c35",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571310_image_35.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_35.png",
             "trim": {
               "x": 43,
               "y": 424,
@@ -1241,7 +1241,7 @@
             "name": "13",
             "uuid": "41e6f7d3-58dc-47d6-af4a-588dcdba0f90",
             "textureUuid": "6d73a861-231f-423a-b4b3-a208c9cb38bc",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_11.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_11.png",
             "trim": {
               "x": 3,
               "y": 446,
@@ -1264,7 +1264,7 @@
             "name": "12",
             "uuid": "6e2e687a-95e2-4fa0-ba42-25610b8aae3d",
             "textureUuid": "3077280a-5b78-41f4-9046-4c08f21ca11c",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571308_image_19.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_19.png",
             "trim": {
               "x": 77,
               "y": 434,
@@ -1287,7 +1287,7 @@
             "name": "36",
             "uuid": "dc0cd463-d31b-42b2-b585-c67f88188793",
             "textureUuid": "360655ed-46fe-44fb-9d2f-61ca4401129e",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_49.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_49.png",
             "trim": {
               "x": 109,
               "y": 434,
@@ -1311,7 +1311,7 @@
             "name": "49",
             "uuid": "895cf6a7-2604-4f6b-8ac2-6aa3b54f83bb",
             "textureUuid": "02e44986-ea56-40ee-aa7c-ce2a2dda8e24",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571309_image_28.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_28.png",
             "trim": {
               "x": 37,
               "y": 450,
@@ -1334,7 +1334,7 @@
             "name": "54",
             "uuid": "aba66ee0-85f5-472b-bca5-e64e728af659",
             "textureUuid": "757522ec-1961-4f10-aee6-b3440faebb7a",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571310_image_37.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_37.png",
             "trim": {
               "x": 3,
               "y": 466,
@@ -1357,7 +1357,7 @@
             "name": "55",
             "uuid": "e7a02771-82ab-4e79-b1ed-46a2862f5a04",
             "textureUuid": "c5ac3756-c2ee-4286-ae63-2c34356e0f54",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_56.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462927_image_56.png",
             "trim": {
               "x": 67,
               "y": 458,
@@ -1380,7 +1380,7 @@
             "name": "59",
             "uuid": "b1ed8153-58b9-429a-bb5c-1409389d7dac",
             "textureUuid": "abbe5a40-a21d-44bd-b2f9-92502f992a3e",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571310_image_38.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_38.png",
             "trim": {
               "x": 33,
               "y": 480,
@@ -1403,7 +1403,7 @@
             "name": "24",
             "uuid": "27a768bb-aa5e-4ecb-8e09-c04bd54994c1",
             "textureUuid": "40469697-0d8f-4251-904f-c472bb096625",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_8.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_8.png",
             "trim": {
               "x": 3,
               "y": 492,
@@ -1426,7 +1426,7 @@
             "name": "57",
             "uuid": "5f1d9bb5-7cee-4aaf-b614-f3171cae0d62",
             "textureUuid": "99bc6f4d-23d8-40ac-bbe7-f31ddb80bbb5",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_15.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_15.png",
             "trim": {
               "x": 97,
               "y": 464,
@@ -1449,7 +1449,7 @@
             "name": "7",
             "uuid": "1c89b8fe-b990-4062-abab-93bfa9e85e57",
             "textureUuid": "3b646bde-e9e7-4800-9fa8-47fad753b945",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_6.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_6.png",
             "trim": {
               "x": 63,
               "y": 484,
@@ -1472,7 +1472,7 @@
             "name": "19",
             "uuid": "08779d5f-3198-47f1-b69c-a596b8bc6fd9",
             "textureUuid": "aeddf96e-4daf-4150-9124-9c7e3fbc6e85",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571306_image_2.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_2.png",
             "trim": {
               "x": 33,
               "y": 505,
@@ -1495,7 +1495,7 @@
             "name": "9",
             "uuid": "4106ec01-3a8f-49ba-b9e4-d7cc5a35a3a4",
             "textureUuid": "c1fd8402-7aea-4672-a0d1-38b0bf74462f",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_10.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_10.png",
             "trim": {
               "x": 3,
               "y": 512,
@@ -1518,7 +1518,7 @@
             "name": "22",
             "uuid": "653355bc-2ef2-4681-afc1-c31046198001",
             "textureUuid": "ce5fce78-58eb-428a-ae35-840a5e7e28d3",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571308_image_16.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_16.png",
             "trim": {
               "x": 90,
               "y": 490,
@@ -1541,7 +1541,7 @@
             "name": "2",
             "uuid": "69d3c96f-3877-4758-8d20-ae7ca934b8a2",
             "textureUuid": "9fbcf87b-2de8-4676-973a-3f9c8447fdc7",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571308_image_17.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_17.png",
             "trim": {
               "x": 59,
               "y": 508,
@@ -1564,7 +1564,7 @@
             "name": "3",
             "uuid": "6ff7d6bf-d919-4860-ab98-63dffab67d50",
             "textureUuid": "f770c3e7-6c9e-46ca-bfc1-913f1d9240b7",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571308_image_20.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_20.png",
             "trim": {
               "x": 29,
               "y": 527,
@@ -1587,7 +1587,7 @@
             "name": "11",
             "uuid": "7413150a-2524-4cd6-8e08-54f85c1707e9",
             "textureUuid": "cbddc089-8623-482c-b8d3-356ab931a434",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571308_image_22.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_22.png",
             "trim": {
               "x": 3,
               "y": 534,
@@ -1610,7 +1610,7 @@
             "name": "5",
             "uuid": "77b9eace-e612-4e8e-9f72-0f750efc4ba0",
             "textureUuid": "4a0c1273-0d96-4b26-ae65-a8ae450afde7",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571308_image_23.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_23.png",
             "trim": {
               "x": 85,
               "y": 512,
@@ -1633,7 +1633,7 @@
             "name": "14",
             "uuid": "568102e4-a2cc-46d1-bf80-a2c7d1610344",
             "textureUuid": "4b7b4b4a-00f5-4631-85bb-c0884a6ebb67",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_14.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_14.png",
             "trim": {
               "x": 111,
               "y": 512,
@@ -1657,7 +1657,7 @@
             "name": "34",
             "uuid": "840b4cfd-902d-45bc-b9a4-dca7175ee823",
             "textureUuid": "921b764c-d55e-4a8c-a2ee-23cc998e61e1",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571309_image_26.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_26.png",
             "trim": {
               "x": 55,
               "y": 530,
@@ -1680,7 +1680,7 @@
             "name": "17",
             "uuid": "86967fcf-b7db-464a-ab72-8705b0e461f0",
             "textureUuid": "0aac32c9-7a8a-47d2-91f8-e53419d456f6",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571309_image_27.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_27.png",
             "trim": {
               "x": 29,
               "y": 549,
@@ -1703,7 +1703,7 @@
             "name": "1",
             "uuid": "8dce57e2-c016-4565-9686-7cae70f4c1a4",
             "textureUuid": "d91ae922-e3b8-4b5f-86b2-a6129eb68768",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571309_image_29.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_29.png",
             "trim": {
               "x": 3,
               "y": 556,
@@ -1726,7 +1726,7 @@
             "name": "8",
             "uuid": "f8d24913-be6f-43d2-89b5-28a30b8e8dae",
             "textureUuid": "3b39e8b8-09f5-4a07-a4a7-05aecb8fea16",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571312_image_59.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462928_image_59.png",
             "trim": {
               "x": 3,
               "y": 578,
@@ -1750,7 +1750,7 @@
             "name": "23",
             "uuid": "0b524eb6-2a21-4cf9-9c3a-c833fab37412",
             "textureUuid": "3848146b-9417-4a6c-a6a6-28095b85de7e",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_3.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_3.png",
             "trim": {
               "x": 25,
               "y": 578,
@@ -1774,7 +1774,7 @@
             "name": "29",
             "uuid": "d6d6ddd9-b0c5-40b3-9b50-49cf4e4dc0bb",
             "textureUuid": "4b4bea0a-f8af-4450-9364-1894f17fbfb7",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_47.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_47.png",
             "trim": {
               "x": 81,
               "y": 534,
@@ -1797,7 +1797,7 @@
             "name": "0",
             "uuid": "f8c2af18-ab7b-413a-b107-c539ec842af5",
             "textureUuid": "b6a6405e-cdf3-4700-a726-7c29f0f9dfbd",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571312_image_58.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462928_image_58.png",
             "trim": {
               "x": 55,
               "y": 552,
@@ -1820,7 +1820,7 @@
             "name": "6",
             "uuid": "82e1b974-95b8-4920-a2e5-9fe537ed2734",
             "textureUuid": "ba8a7ddc-9257-45c9-a778-3f75491efc68",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571308_image_25.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462925_image_25.png",
             "trim": {
               "x": 107,
               "y": 538,
@@ -1843,7 +1843,7 @@
             "name": "4",
             "uuid": "d66bcf93-9c07-40e1-87f0-73641905d4cb",
             "textureUuid": "48a5de56-afb6-404e-83fe-b0812eaa71ea",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571311_image_46.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_46.png",
             "trim": {
               "x": 45,
               "y": 574,
@@ -1867,7 +1867,7 @@
             "name": "20",
             "uuid": "a36a018f-c58d-4407-a7df-8590e6c3969d",
             "textureUuid": "a4c74ac1-f3dd-4038-a68b-e8be88a87d48",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571309_image_34.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462926_image_34.png",
             "trim": {
               "x": 66,
               "y": 574,
@@ -1891,7 +1891,7 @@
             "name": "44",
             "uuid": "444c8279-e368-4a44-ae2a-134ca3aa1960",
             "textureUuid": "93c2dc2c-3e2b-4f2e-a0ca-d4e5c9f1429b",
-            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671369571307_image_12.png",
+            "path": "D:\\mySpace\\ZomiesCombine\\temp\\trimImages\\spritesheet_js_1671619462924_image_12.png",
             "trim": {
               "x": 81,
               "y": 556,
