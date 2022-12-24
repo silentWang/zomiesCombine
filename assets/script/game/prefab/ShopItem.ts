@@ -187,7 +187,7 @@ export default class ShopItem extends BaseUI {
                            this.dispatch(GameConst.BUY_CHICK,this.gun,this.node.getComponent(ListItem).listId);
                         }
                     }
-                })
+                },1)
                 break
             case "btn_yellow":
                 if(ChickData.user.coin < this.cost_coin )

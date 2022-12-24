@@ -468,15 +468,13 @@ var HallScene = /** @class */ (function (_super) {
                         // this.GetGameObject("btn_inviate").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
                         if (window && window['xxxxx'])
                             window['xxxxx']("crrDFT");
-                        this.GetGameObject("lupin_gem").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
                         if (this.GetGameObject("btn_Recorder"))
                             this.GetGameObject("btn_Recorder").active = window["tt"];
                         if (window["tt"]) {
                             recorder = window["tt"].getGameRecorderManager();
                             recorder.onStart(function (res) {
-                                _this.GetGameObject("lupin_gem").active = false;
-                                _this.GetGameObject("btn_VCR").active = false;
-                                _this.GetGameObject("btn_end").active = true;
+                                // this.GetGameObject("btn_VCR").active = false;
+                                // this.GetGameObject("btn_end").active = true;
                                 _this.GetGameObject("btn_Recorder").stopAllActions();
                                 _this.GetGameObject("btn_Recorder").runAction(cc.sequence(cc.scaleTo(0.5, .9), cc.scaleTo(0.5, 1)).repeatForever());
                                 //console.log("tt录屏开始");
@@ -485,10 +483,9 @@ var HallScene = /** @class */ (function (_super) {
                             recorder.onStop(function (res) {
                                 _this.bRecorder = false;
                                 _this.GetGameObject("btn_Recorder").stopAllActions();
-                                _this.GetGameObject("lupin_gem").active = true;
                                 _this.GetGameObject("btn_Recorder").scale = 1;
-                                _this.GetGameObject("btn_VCR").active = true;
-                                _this.GetGameObject("btn_end").active = false;
+                                // this.GetGameObject("btn_VCR").active = true;
+                                // this.GetGameObject("btn_end").active = false;
                                 // console.log("tt录屏结束");
                                 // console.log(res.videoPath);
                                 if (window && window['xxxxx'])

@@ -419,15 +419,13 @@ export default class HallScene extends BaseUI {
 
             // this.GetGameObject("btn_inviate").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
         if(window && window['xxxxx']) window['xxxxx']("crrDFT");
-        this.GetGameObject("lupin_gem").runAction(cc.sequence(cc.rotateTo(0.3, 20), cc.rotateTo(0.3, -10), cc.rotateTo(0.2, 0), cc.delayTime(3)).repeatForever());
         
         if (this.GetGameObject("btn_Recorder")) this.GetGameObject("btn_Recorder").active = window["tt"];
         if (window["tt"]) {
             const recorder = window["tt"].getGameRecorderManager();
             recorder.onStart(res => {
-                this.GetGameObject("lupin_gem").active = false;
-                this.GetGameObject("btn_VCR").active = false;
-                this.GetGameObject("btn_end").active = true;
+                // this.GetGameObject("btn_VCR").active = false;
+                // this.GetGameObject("btn_end").active = true;
                 this.GetGameObject("btn_Recorder").stopAllActions();
                 this.GetGameObject("btn_Recorder").runAction(cc.sequence(cc.scaleTo(0.5, .9), cc.scaleTo(0.5, 1)).repeatForever());
                 //console.log("tt录屏开始");
@@ -437,10 +435,9 @@ export default class HallScene extends BaseUI {
             recorder.onStop(res => {
                 this.bRecorder = false;
                 this.GetGameObject("btn_Recorder").stopAllActions();
-                this.GetGameObject("lupin_gem").active = true;
                 this.GetGameObject("btn_Recorder").scale = 1;
-                this.GetGameObject("btn_VCR").active = true;
-                this.GetGameObject("btn_end").active = false;
+                // this.GetGameObject("btn_VCR").active = true;
+                // this.GetGameObject("btn_end").active = false;
                 // console.log("tt录屏结束");
                 // console.log(res.videoPath);
                 

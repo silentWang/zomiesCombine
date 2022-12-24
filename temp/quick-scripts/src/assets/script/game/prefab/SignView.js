@@ -214,7 +214,7 @@ var SignView = /** @class */ (function (_super) {
                         ChickData_1.default.user.signinfo.sign_time = Utils_1.default.getServerTime();
                         _this.updateUI();
                     }
-                });
+                }, 1);
                 break;
             case "btn_3times":
                 AdCenter_1.default.Instance().play(function (b) {
@@ -229,7 +229,7 @@ var SignView = /** @class */ (function (_super) {
                         ChickData_1.default.user.signinfo.sign_time = Utils_1.default.getServerTime();
                         _this.updateUI();
                     }
-                });
+                }, 1);
                 if (window && window['xxxxx'])
                     window['xxxxx']("en67ZtrmG5i4R5f4RA2xXctkEBXa55");
                 break;

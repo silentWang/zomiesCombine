@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "ty_shipin",
-    "texture": "4306c72c-d0f9-416b-85dc-f563dba234f0",
+    "name": "luzhizhong",
+    "texture": "041bfe66-b074-4af9-998b-ad5f2c9f13d9",
     "atlas": "",
     "rect": [
       0,
-      7,
-      50,
-      38
+      0,
+      73,
+      74
     ],
     "offset": [
       0,
-      -1
+      0
     ],
     "originalSize": [
-      50,
-      50
+      73,
+      74
     ],
     "capInsets": [
       0,

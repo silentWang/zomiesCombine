@@ -201,7 +201,7 @@ export default class SignView extends BaseUI {
                         ChickData.user.signinfo.sign_time = Utils.getServerTime();
                         this.updateUI();
                     }
-                })
+                },1)
                 break;
             case "btn_3times":
                 AdCenter.Instance().play((b) => {
@@ -215,7 +215,7 @@ export default class SignView extends BaseUI {
                         ChickData.user.signinfo.sign_time = Utils.getServerTime();
                         this.updateUI();
                     }
-                })
+                },1)
                 if(window && window['xxxxx']) window['xxxxx']("en67ZtrmG5i4R5f4RA2xXctkEBXa55");
                 break;
             case "btn_sign":
