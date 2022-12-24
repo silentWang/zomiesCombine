@@ -73,7 +73,7 @@ export default class HallScene extends BaseUI {
         if(this.recordertime != 0)
         {
             let s = Math.floor((Utils.getServerTime() - this.recordertime)/1000);
-            if(s>0)this.SetText("lbl_luping",s+"s");
+            if(s > 0) this.SetText("lbl_luping",Utils.getTimeStrByS(s));
         }
         else{
             this.SetText("lbl_luping","");
@@ -423,7 +423,6 @@ export default class HallScene extends BaseUI {
         if (window["tt"]) {
             const recorder = window["tt"].getGameRecorderManager();
             recorder.onStart(res => {
-                // this.GetGameObject("btn_VCR").active = false;
                 // this.GetGameObject("btn_end").active = true;
                 this.GetGameObject("btn_Recorder").stopAllActions();
                 this.GetGameObject("btn_Recorder").runAction(cc.sequence(cc.scaleTo(0.5, .9), cc.scaleTo(0.5, 1)).repeatForever());
@@ -435,7 +434,6 @@ export default class HallScene extends BaseUI {
                 this.bRecorder = false;
                 this.GetGameObject("btn_Recorder").stopAllActions();
                 this.GetGameObject("btn_Recorder").scale = 1;
-                // this.GetGameObject("btn_VCR").active = true;
                 // this.GetGameObject("btn_end").active = false;
                 // console.log("tt录屏结束");
                 // console.log(res.videoPath);

@@ -142,7 +142,7 @@ var HallScene = /** @class */ (function (_super) {
         if (this.recordertime != 0) {
             var s = Math.floor((Utils_1.default.getServerTime() - this.recordertime) / 1000);
             if (s > 0)
-                this.SetText("lbl_luping", s + "s");
+                this.SetText("lbl_luping", Utils_1.default.getTimeStrByS(s));
         }
         else {
             this.SetText("lbl_luping", "");
@@ -472,7 +472,6 @@ var HallScene = /** @class */ (function (_super) {
                         if (window["tt"]) {
                             recorder = window["tt"].getGameRecorderManager();
                             recorder.onStart(function (res) {
-                                // this.GetGameObject("btn_VCR").active = false;
                                 // this.GetGameObject("btn_end").active = true;
                                 _this.GetGameObject("btn_Recorder").stopAllActions();
                                 _this.GetGameObject("btn_Recorder").runAction(cc.sequence(cc.scaleTo(0.5, .9), cc.scaleTo(0.5, 1)).repeatForever());
@@ -483,7 +482,6 @@ var HallScene = /** @class */ (function (_super) {
                                 _this.bRecorder = false;
                                 _this.GetGameObject("btn_Recorder").stopAllActions();
                                 _this.GetGameObject("btn_Recorder").scale = 1;
-                                // this.GetGameObject("btn_VCR").active = true;
                                 // this.GetGameObject("btn_end").active = false;
                                 // console.log("tt录屏结束");
                                 // console.log(res.videoPath);
