@@ -307,7 +307,6 @@ export default class HallScene extends BaseUI {
         WxCenter.aldReport('HomeShow','show');
         this.hidComposeTips();
         HallScene._instance = this;
-        WxCenter.init();
 		let slots = this.GetGameObject("slots");
 		let i = 0;
 		for(var slot of slots.children){
@@ -713,7 +712,7 @@ export default class HallScene extends BaseUI {
                 }
 
                 if (tmp <= 2) {
-                    MsgToast.show("植物数量过少不能删除");
+                    MsgToast.show("小鸡数量过少不能删除");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
@@ -721,7 +720,7 @@ export default class HallScene extends BaseUI {
                 }
 
                 if (this.item_drag.datacopy.lv >= ChickData.user.getLvlMax()) {
-                    MsgToast.show("最高等级植物就不删除了吧！");
+                    MsgToast.show("最高等级小鸡就不删除了吧！");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;

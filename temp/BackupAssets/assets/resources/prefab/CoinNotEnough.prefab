@@ -911,7 +911,7 @@
       "__id__": 17
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 22
@@ -2043,7 +2043,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -177.966,
+        -200,
         0,
         0,
         0,
@@ -2094,8 +2094,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 45,
-      "height": 46
+      "width": 49,
+      "height": 49
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",

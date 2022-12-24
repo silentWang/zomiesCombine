@@ -975,8 +975,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "x4",
-    "_N$string": "x4",
+    "_string": "x8",
+    "_N$string": "x8",
     "_fontSize": 50,
     "_lineHeight": 50,
     "_enableWrapText": true,
@@ -1072,7 +1072,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -186.044,
+        -200,
         0,
         0,
         0,
@@ -1123,8 +1123,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 45,
-      "height": 46
+      "width": 49,
+      "height": 49
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1285,8 +1285,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "双倍领取",
-    "_N$string": "双倍领取",
+    "_string": "立即领取",
+    "_N$string": "立即领取",
     "_fontSize": 48,
     "_lineHeight": 48,
     "_enableWrapText": true,
@@ -1453,7 +1453,7 @@
       "__id__": 9
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 39

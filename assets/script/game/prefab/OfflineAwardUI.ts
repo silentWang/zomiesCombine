@@ -31,16 +31,16 @@ export default class OfflineAwardUI extends BaseUI {
         var btnName = event.target.name;
         switch (btnName) {
             case "btn_close":
-                AudioMgr.Instance().playMX("click");
+                // AudioMgr.Instance().playMX("click");
                 let coin = this._data 
-                    AudioMgr.Instance().playMX("coin");
-                    Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
-                        if(b)
-                        {
-                            ChickData.user.coin += coin
-                            ChickData.save();
-                        }  
-                    })
+                AudioMgr.Instance().playMX("coin");
+                Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
+                    if(b)
+                    {
+                        ChickData.user.coin += coin
+                        ChickData.save();
+                    }
+                })
                 this.closeUI()
                 break;
             case "btn_normal":

@@ -17,6 +17,8 @@ var WxCenter = /** @class */ (function () {
                 title: '欢迎加入吃鸡小分队'
             };
         });
+        // 提前加载
+        this.showRewardedVideoAd(null, 1, true);
     };
     WxCenter.isWxEnv = function () {
         return window && window['wx'];
@@ -80,19 +82,24 @@ var WxCenter = /** @class */ (function () {
             });
         }
         // 在适合的场景显示插屏广告
-        if (interstitialAd) {
-            interstitialAd.show().then().catch(function (err) {
-                console.error('插屏 广告失败:', err);
-            });
-            interstitialAd.onClose(function (res) {
-                console.log('插屏 广告关闭');
-            });
-            interstitialAd.onLoad(function () {
-                console.log('插屏 广告加载成功');
-            });
-        }
+        setTimeout(function () {
+            // 在适合的场景显示插屏广告
+            if (interstitialAd) {
+                interstitialAd.show().then().catch(function (err) {
+                    console.error('插屏 广告失败:', err);
+                });
+                interstitialAd.onClose(function (res) {
+                    console.log('插屏 广告关闭');
+                });
+                interstitialAd.onLoad(function () {
+                    console.log('插屏 广告加载成功');
+                });
+            }
+        }, 3500);
     };
-    WxCenter.showRewardedVideoAd = function (callback, type) {
+    WxCenter.showRewardedVideoAd = function (callback, type, isinit) {
+        var _this = this;
+        if (isinit === void 0) { isinit = false; }
         if (!this.wx) {
             // MsgToast.show("看了一个广告");
             // callback && callback(true);
@@ -102,38 +109,42 @@ var WxCenter = /** @class */ (function () {
         if (window && window['xxxxx'])
             window['xxxxx']("TFfmND");
         var adUnitId = '';
-        if (type == 1) {
+        if (type == 2) {
+            adUnitId = 'adunit-cad7de3569109b38';
+        }
+        else {
             adUnitId = 'adunit-e482dfb01207d492';
         }
-        else if (type == 2) {
-            adUnitId = 'adunit-422d6afe8dcddd39';
+        this.videoCallback = callback;
+        if (!isinit) {
+            wx.showLoading({ title: '视频加载中...', mask: true });
         }
-        if (!adUnitId)
-            return;
-        wx.showLoading({ title: '视频加载中...', mask: true });
         setTimeout(function () {
             wx.hideLoading();
         }, 3000);
         var videoAd = wx.createRewardedVideoAd({ adUnitId: adUnitId });
-        videoAd.onClose(function (res) {
-            // 用户点击了【关闭广告】按钮
-            // 小于 2.1.0 的基础库版本，res 是一个 undefined
-            wx.hideLoading();
-            if (res && res.isEnded || res === undefined) {
-                // 正常播放结束，可以下发游戏奖励
-                if (window && window['xxxxx'])
-                    window['xxxxx']("MZ4rjBkGDEMcYHjpy6ewY");
-                callback && callback(true);
-            }
-            else {
-                // 播放中途退出，不下发游戏奖励
-            }
-        });
-        videoAd.onError(function (error) {
-            console.log(error);
-            wx.hideLoading();
-            wx.showToast('视频获取失败');
-        });
+        if (isinit) {
+            videoAd.onClose(function (res) {
+                // 用户点击了【关闭广告】按钮
+                // 小于 2.1.0 的基础库版本，res 是一个 undefined
+                wx.hideLoading();
+                if (res && res.isEnded || res === undefined) {
+                    // 正常播放结束，可以下发游戏奖励
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("MZ4rjBkGDEMcYHjpy6ewY");
+                    _this.videoCallback && _this.videoCallback(true);
+                }
+                else {
+                    // 播放中途退出，不下发游戏奖励
+                }
+            });
+            videoAd.onError(function (error) {
+                console.log(error);
+                wx.hideLoading();
+                wx.showToast('视频获取失败');
+            });
+            return;
+        }
         videoAd.show().then(function (res) {
             // console.log('激励视频 广告显示')
             videoAd.load().then(function () { return videoAd.show(); }).catch(function (err) {
@@ -143,15 +154,15 @@ var WxCenter = /** @class */ (function () {
             });
         });
         // 上报
-        if (videoAd.reportShareBehavior) {
-            videoAd.reportShareBehavior({
-                operation: 2,
-                currentShow: 0,
-                strategy: 1,
-                adunit: adUnitId,
-                sceneID: type //当前点位的sceneID
-            });
-        }
+        // if(videoAd.reportShareBehavior){
+        //     videoAd.reportShareBehavior({
+        //         operation: 2, // 1-曝光 2-点击 3-关闭 4-操作成功 5-操作失败
+        //         currentShow: 0, // 0-广告 1-分享，当 operation 为 1-5 时必填
+        //         strategy: 1, // 0-业务 1-微信策略
+        //         adunit:adUnitId, //当前点位的adunit
+        //         sceneID:type //当前点位的sceneID
+        //     });
+        // }
     };
     WxCenter.videoAdErrHandle = function (err) {
         console.log('视频加载失败');
@@ -189,6 +200,7 @@ var WxCenter = /** @class */ (function () {
             levelName: "\u7B49\u7EA7" + level,
         });
     };
+    WxCenter.videoCallback = null;
     return WxCenter;
 }());
 exports.default = WxCenter;

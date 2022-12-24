@@ -5104,6 +5104,71 @@
     "meta": 1671869582834,
     "relativePath": "script\\Loading.ts"
   },
+  "4306c72c-d0f9-416b-85dc-f563dba234f0": {
+    "asset": 1671855059603,
+    "meta": 1671855441179,
+    "relativePath": "resources\\newtexture\\ty_shipin.png"
+  },
+  "46eefa94-69fb-4cf6-982f-6b1f1dd1fbe3": {
+    "asset": 1671855985034,
+    "meta": 1671856094095,
+    "relativePath": "resources\\prefab\\ShopItem.prefab"
+  },
+  "6d8348d5-1e3a-4fef-8f11-ce78b3161ba4": {
+    "asset": 1671856531600,
+    "meta": 1671856574581,
+    "relativePath": "script\\game\\prefab\\FailView.ts"
+  },
+  "ffa08ef8-e8c7-4d55-ba9e-099646e0f3bc": {
+    "asset": 1671856562584,
+    "meta": 1671856574612,
+    "relativePath": "script\\game\\prefab\\WinView.ts"
+  },
+  "04f46338-9ca6-4756-9182-a89c65478fb7": {
+    "asset": 1671856984061,
+    "meta": 1671856988815,
+    "relativePath": "script\\manager\\AdCenter.ts"
+  },
+  "7f64f3d7-f786-42e5-923b-fdf904cb68cc": {
+    "asset": 1671868941500,
+    "meta": 1671868941505,
+    "relativePath": "resources\\prefab\\AdLayer.prefab"
+  },
+  "b649ad67-0ada-4268-b6a8-eeae097da02c": {
+    "asset": 1671857431538,
+    "meta": 1671857492907,
+    "relativePath": "script\\game\\HallScene.ts"
+  },
+  "e9babb2a-f7d3-4002-af7c-cbec28e91585": {
+    "asset": 1671857487589,
+    "meta": 1671857492968,
+    "relativePath": "resources\\scene\\hall.fire"
+  },
+  "ff7483d2-efe8-4420-8891-085bc2c1b4b2": {
+    "asset": 1671859063009,
+    "meta": 1671859066577,
+    "relativePath": "script\\utils\\Utils.ts"
+  },
+  "4750996f-37ae-40dd-8b54-c614bc4777d4": {
+    "asset": 1671859574941,
+    "meta": 1671859577455,
+    "relativePath": "script\\game\\prefab\\OfflineAwardUI.ts"
+  },
+  "e6b027be-f294-4367-ab68-755f0a525351": {
+    "asset": 1671861375387,
+    "meta": 1671861440793,
+    "relativePath": "script\\game\\prefab\\ShopItem.ts"
+  },
+  "1aca77a2-bc6b-4efd-9fa4-6d504843828f": {
+    "asset": 1671861366691,
+    "meta": 1671861440890,
+    "relativePath": "script\\game\\prefab\\SignView.ts"
+  },
+  "039eb635-670f-44ea-a2b6-b7b215556fcd": {
+    "asset": 1671862480057,
+    "meta": 1671862482349,
+    "relativePath": "script\\game\\prefab\\CommonView.ts"
+  },
   "51ec5990-36b8-428c-9173-a0269d9cd058": {
     "asset": 1671869550461,
     "meta": 1671869582913,

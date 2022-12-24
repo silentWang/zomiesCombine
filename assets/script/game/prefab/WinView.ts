@@ -68,6 +68,10 @@ export default class WinView extends BaseUI {
         var btnName = event.target.name;
         AudioMgr.Instance().playMX("click");
         switch (btnName) {
+            case "btn_close":
+                this.getCoinReward();
+                this.closeUI();
+                break;
             case "btn_get":
                 WxCenter.aldReport('PassClick','click');
                 if(window && window['xxxxx']) window['xxxxx']("DZxBHMTnts7Nb");

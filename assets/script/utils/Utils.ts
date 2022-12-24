@@ -269,14 +269,20 @@ export default class Utils {
         }
 
         let nodeArray = [];
-        if(startNode.parent){
+        if(startNode && startNode.parent){
             let start = startNode.parent.convertToWorldSpaceAR(startNode.position);
             start = cc.find("Canvas").convertToNodeSpaceAR(start);
             var array = getPoint(radius, start.x, start.y, count);
-            if(!array) return;
+            if(!array) {
+                callback(1)
+                return;
+            }
             for (var i = 0; i < array.length; i++) {
                 var gold = createNode(type);
-                if(!gold) return;
+                if(!gold) {
+                    callback(1)
+                    return;
+                }
                 gold.parent = cc.find("Canvas")
                 var randPos = cc.v2(array[i].x + Utils.getRandomInt(0, 50), array[i].y + Utils.getRandomInt(0, 50));
                 gold.setPosition(start);

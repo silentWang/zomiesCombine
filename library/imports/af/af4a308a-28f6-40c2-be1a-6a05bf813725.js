@@ -88,6 +88,7 @@ var Loading = /** @class */ (function (_super) {
         }
     };
     Loading.prototype.start = function () {
+        WxCenter_1.default.init();
         WxCenter_1.default.aldReport('LoadingShow', 'show');
         AdCenter_1.default.Instance().showInterstitialAd();
     };

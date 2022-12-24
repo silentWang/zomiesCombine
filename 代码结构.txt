@@ -15,7 +15,7 @@ script
 		GameConst.ts 		游戏中定义的常量全局变量
 		HallScene.ts		游戏主要逻辑
 		SlotItem.ts			土地块
-		SoldierItem.ts		植物
+		SoldierItem.ts		小鸡
 		UserModel.ts		游戏数据模型
 	k-cocos		一个对 CocosCreator API 的 JS 轻量扩展库。(A lightweight JavaScript extension library for cocoscreater by kuokuo.) 仓库地址： https://github.com/KuoKuo666/k-cocos
 	manager 	配置加载/对象池管理/广告管理等简单封装
@@ -30,24 +30,24 @@ script
 	hall场景 HallScene.ts
 		node_path(场景中节点),敌人移动路线
 		start	更据本地数据进行界面初始化
-				注册植物拖动事件TOUCH_START	TOUCH_MOVE	TOUCH_END
+				注册小鸡拖动事件TOUCH_START	TOUCH_MOVE	TOUCH_END
 		createwave	更据关卡创建敌人
 		removeenemy	移除敌人(死亡/失败)
-		tryBuyPlant	购买植物逻辑
-		mergetip	合并植物提升
+		tryBuyPlant	购买小鸡逻辑
+		mergetip	合并小鸡提升
 		tryAutocom	主动合成
 
 		onBtnClicked	界面上按钮点击回调该方法通过按钮名字区分点中那个按钮
 			btn_setting		设置界面SettingUI
 			btn_sign 		签到SignUI
-			btn_buy 		购买植物
+			btn_buy 		购买小鸡
 			bt_fast_gen		购买buff DROP_PLANT
 			btn_double_coin		购买buff DOUBLE_INCOME
 			bt_auto_merge	购买buff AUTO_COM
-			btn_shop		植物商店ShopLayer		因为商店列表比较长，每次打开卡，这里特殊处理，打开后就不销毁
+			btn_shop		小鸡商店ShopLayer		因为商店列表比较长，每次打开卡，这里特殊处理，打开后就不销毁
 
-	SoldierItem 植物
-		setItemData		设置植物数据
+	SoldierItem 小鸡
+		setItemData		设置小鸡数据
 		getTarget		查询攻击目标
 		update		更据配置发射炸弹Bullet
 

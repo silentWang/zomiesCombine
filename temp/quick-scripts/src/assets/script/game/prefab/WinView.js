@@ -93,6 +93,10 @@ var WinView = /** @class */ (function (_super) {
         var btnName = event.target.name;
         AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
+            case "btn_close":
+                this.getCoinReward();
+                this.closeUI();
+                break;
             case "btn_get":
                 WxCenter_1.default.aldReport('PassClick', 'click');
                 if (window && window['xxxxx'])

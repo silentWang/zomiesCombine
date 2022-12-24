@@ -84,7 +84,7 @@ export default class AdCenter extends Singleton {
             WxCenter.showRewardedVideoAd(callback,type);
         }
         else{
-            callback && callback()
+            callback && callback(1)
         }
 
     }

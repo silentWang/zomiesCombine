@@ -362,7 +362,6 @@ var HallScene = /** @class */ (function (_super) {
                         WxCenter_1.default.aldReport('HomeShow', 'show');
                         this.hidComposeTips();
                         HallScene_1._instance = this;
-                        WxCenter_1.default.init();
                         slots = this.GetGameObject("slots");
                         i = 0;
                         for (_i = 0, _a = slots.children; _i < _a.length; _i++) {
@@ -758,14 +757,14 @@ var HallScene = /** @class */ (function (_super) {
                         tmp++;
                 }
                 if (tmp <= 2) {
-                    MsgToast_1.default.show("植物数量过少不能删除");
+                    MsgToast_1.default.show("小鸡数量过少不能删除");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
                     return;
                 }
                 if (this.item_drag.datacopy.lv >= ChickData_1.default.user.getLvlMax()) {
-                    MsgToast_1.default.show("最高等级植物就不删除了吧！");
+                    MsgToast_1.default.show("最高等级小鸡就不删除了吧！");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
