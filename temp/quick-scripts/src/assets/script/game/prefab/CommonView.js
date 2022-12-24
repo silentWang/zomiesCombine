@@ -131,7 +131,7 @@ var CommonView = /** @class */ (function (_super) {
         var _a = this.getEMTime(), end_time = _a.end_time, max = _a.max;
         var isRunning = end_time > Utils_1.default.getServerTime();
         // this.GetGameObject('btn_ad').active = !isRunning;
-        this.GetGameObject('btn_normal').active = !isRunning;
+        // this.GetGameObject('btn_normal').active = !isRunning;
     };
     CommonView.prototype.addCoin = function (double) {
         if (double === void 0) { double = 1; }
@@ -200,6 +200,7 @@ var CommonView = /** @class */ (function (_super) {
         AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
+                // this.addCoin(1);
                 this.closeUI();
                 break;
             case "btn_ad":

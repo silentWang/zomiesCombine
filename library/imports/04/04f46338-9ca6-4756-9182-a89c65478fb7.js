@@ -92,7 +92,7 @@ var AdCenter = /** @class */ (function (_super) {
             WxCenter_1.default.showRewardedVideoAd(callback, type);
         }
         else {
-            callback && callback();
+            callback && callback(1);
         }
     };
     AdCenter.prototype.playVideo = function () {

@@ -115,7 +115,7 @@ export default class CommonView extends BaseUI {
         let {end_time,max} = this.getEMTime();
         let isRunning = end_time > Utils.getServerTime();
         // this.GetGameObject('btn_ad').active = !isRunning;
-        this.GetGameObject('btn_normal').active = !isRunning;
+        // this.GetGameObject('btn_normal').active = !isRunning;
     }
 
     private addCoin(double:number = 1)
@@ -182,6 +182,7 @@ export default class CommonView extends BaseUI {
         AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_close":
+                // this.addCoin(1);
                 this.closeUI();
                 break;
             case "btn_ad":

@@ -59,7 +59,7 @@ var OfflineAwardUI = /** @class */ (function (_super) {
         var btnName = event.target.name;
         switch (btnName) {
             case "btn_close":
-                AudioMgr_1.default.Instance().playMX("click");
+                // AudioMgr.Instance().playMX("click");
                 var coin_1 = this._data;
                 AudioMgr_1.default.Instance().playMX("coin");
                 Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {

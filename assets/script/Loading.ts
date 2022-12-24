@@ -31,6 +31,7 @@ export default class Loading extends BaseUI {
     }
 
     start(){
+        WxCenter.init();
         WxCenter.aldReport('LoadingShow','show');
         AdCenter.Instance().showInterstitialAd();
     }

@@ -80,17 +80,20 @@ var WxCenter = /** @class */ (function () {
             });
         }
         // 在适合的场景显示插屏广告
-        if (interstitialAd) {
-            interstitialAd.show().then().catch(function (err) {
-                console.error('插屏 广告失败:', err);
-            });
-            interstitialAd.onClose(function (res) {
-                console.log('插屏 广告关闭');
-            });
-            interstitialAd.onLoad(function () {
-                console.log('插屏 广告加载成功');
-            });
-        }
+        setTimeout(function () {
+            // 在适合的场景显示插屏广告
+            if (interstitialAd) {
+                interstitialAd.show().then().catch(function (err) {
+                    console.error('插屏 广告失败:', err);
+                });
+                interstitialAd.onClose(function (res) {
+                    console.log('插屏 广告关闭');
+                });
+                interstitialAd.onLoad(function () {
+                    console.log('插屏 广告加载成功');
+                });
+            }
+        }, 3000);
     };
     WxCenter.showRewardedVideoAd = function (callback, type) {
         if (!this.wx) {
@@ -143,15 +146,15 @@ var WxCenter = /** @class */ (function () {
             });
         });
         // 上报
-        if (videoAd.reportShareBehavior) {
-            videoAd.reportShareBehavior({
-                operation: 2,
-                currentShow: 0,
-                strategy: 1,
-                adunit: adUnitId,
-                sceneID: type //当前点位的sceneID
-            });
-        }
+        // if(videoAd.reportShareBehavior){
+        //     videoAd.reportShareBehavior({
+        //         operation: 2, // 1-曝光 2-点击 3-关闭 4-操作成功 5-操作失败
+        //         currentShow: 0, // 0-广告 1-分享，当 operation 为 1-5 时必填
+        //         strategy: 1, // 0-业务 1-微信策略
+        //         adunit:adUnitId, //当前点位的adunit
+        //         sceneID:type //当前点位的sceneID
+        //     });
+        // }
     };
     WxCenter.videoAdErrHandle = function (err) {
         console.log('视频加载失败');
