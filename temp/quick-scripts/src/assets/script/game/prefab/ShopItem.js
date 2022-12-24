@@ -237,7 +237,7 @@ var ShopItem = /** @class */ (function (_super) {
                             _this.dispatch(GameConst_1.default.BUY_CHICK, _this.gun, _this.node.getComponent(ListItem_1.default).listId);
                         }
                     }
-                });
+                }, 1);
                 break;
             case "btn_yellow":
                 if (ChickData_1.default.user.coin < this.cost_coin) {

@@ -3,6 +3,8 @@ import MsgToast from "../framwork/MsgToast";
 export default class WxCenter {
     private static wx:any;
     private static bannerAd:any;
+    private static videoAd:any;
+    private static videoCallback:Function = null;
     static init(){
         this.wx = window && window['wx'];
         if(!this.wx) return;
@@ -12,6 +14,8 @@ export default class WxCenter {
               title: '欢迎加入吃鸡小分队'
             }
         })
+        // 提前加载
+        this.showRewardedVideoAd(null,1,true)
     }
 
     static isWxEnv(){
@@ -85,10 +89,10 @@ export default class WxCenter {
                     console.log('插屏 广告加载成功')
                 })
             }
-        }, 3000);
+        }, 3500);
     }
 
-    static showRewardedVideoAd(callback:Function,type:number){
+    static showRewardedVideoAd(callback:Function,type:number,isinit = false){
         if(!this.wx) {
             // MsgToast.show("看了一个广告");
             // callback && callback(true);
@@ -97,37 +101,41 @@ export default class WxCenter {
         let wx = this.wx;
         if(window && window['xxxxx']) window['xxxxx']("TFfmND");
         let adUnitId = ''
-        if(type == 1){
+        if(type == 2){
+            adUnitId = 'adunit-cad7de3569109b38'
+        }
+        else{
             adUnitId = 'adunit-e482dfb01207d492'
         }
-        else if(type == 2){
-            adUnitId = 'adunit-422d6afe8dcddd39'
+        this.videoCallback = callback;
+        if(!isinit){
+            wx.showLoading({title:'视频加载中...',mask:true});
         }
-        if(!adUnitId) return;
-        wx.showLoading({title:'视频加载中...',mask:true});
         setTimeout(() => {
             wx.hideLoading()
         }, 3000);
         let videoAd = wx.createRewardedVideoAd({ adUnitId });
-        videoAd.onClose(res => {
-            // 用户点击了【关闭广告】按钮
-            // 小于 2.1.0 的基础库版本，res 是一个 undefined
-            wx.hideLoading()
-            if (res && res.isEnded || res === undefined) {
-                // 正常播放结束，可以下发游戏奖励
-                if(window && window['xxxxx']) window['xxxxx']("MZ4rjBkGDEMcYHjpy6ewY");
-                callback && callback(true);
-            }
-            else {
-                // 播放中途退出，不下发游戏奖励
-            }
-        })
-        videoAd.onError(error=>{
-            console.log(error)
-            wx.hideLoading()
-            wx.showToast('视频获取失败');
-        });
-        
+        if(isinit){
+            videoAd.onClose(res => {
+                // 用户点击了【关闭广告】按钮
+                // 小于 2.1.0 的基础库版本，res 是一个 undefined
+                wx.hideLoading()
+                if (res && res.isEnded || res === undefined) {
+                    // 正常播放结束，可以下发游戏奖励
+                    if(window && window['xxxxx']) window['xxxxx']("MZ4rjBkGDEMcYHjpy6ewY");
+                    this.videoCallback && this.videoCallback(true);
+                }
+                else {
+                    // 播放中途退出，不下发游戏奖励
+                }
+            })
+            videoAd.onError(error=>{
+                console.log(error)
+                wx.hideLoading()
+                wx.showToast('视频获取失败');
+            });
+            return;
+        }
         videoAd.show().then(res=>{
             // console.log('激励视频 广告显示')
             videoAd.load().then(() => videoAd.show()).catch(err => {
