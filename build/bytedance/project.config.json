@@ -7,5 +7,21 @@
         "newFeature": true
     },
     "appid": "ttf8788ec56747068302",
-    "projectname": "pvsz_tt"
+    "projectname": "pvsz_tt",
+    "condition": {
+        "game": {
+            "current": 1672022720860,
+            "list": [
+                {
+                    "id": 1672022720860,
+                    "name": "",
+                    "pathName": "",
+                    "query": "",
+                    "scene": "",
+                    "launchFrom": "",
+                    "location": ""
+                }
+            ]
+        }
+    }
 }

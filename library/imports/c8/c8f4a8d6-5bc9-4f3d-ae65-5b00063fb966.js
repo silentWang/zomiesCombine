@@ -31,7 +31,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var ChickData_1 = require("../../manager/ChickData");
-var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var NumberUtils_1 = require("../../utils/NumberUtils");
 var Utils_1 = require("../../utils/Utils");
@@ -68,7 +67,7 @@ var ShareView = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_share":
-                WxCenter_1.default.shareAppMessage(function () {
+                Utils_1.default.wxShare(function () {
                     if (ChickData_1.default.user.share_times > 0) {
                         ChickData_1.default.user.share_times--;
                         AudioMgr_1.default.Instance().playMX("coin");
@@ -80,6 +79,17 @@ var ShareView = /** @class */ (function (_super) {
                     }
                     _this.closeUI();
                 });
+                // WxCenter.shareAppMessage(()=>{
+                //     if(ChickData.user.share_times > 0){
+                //         ChickData.user.share_times--;
+                //         AudioMgr.Instance().playMX("coin");
+                //         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
+                //             if(b) ChickData.user.coin += this.coinVal;
+                //             ChickData.save();
+                //         })
+                //     }
+                //     this.closeUI();
+                // });
                 break;
         }
     };

@@ -48,7 +48,7 @@ export default class ShareView extends BaseUI {
                 this.closeUI();
                 break;
             case "btn_share":
-                WxCenter.shareAppMessage(()=>{
+                Utils.wxShare(()=>{
                     if(ChickData.user.share_times > 0){
                         ChickData.user.share_times--;
                         AudioMgr.Instance().playMX("coin");
@@ -59,6 +59,17 @@ export default class ShareView extends BaseUI {
                     }
                     this.closeUI();
                 });
+                // WxCenter.shareAppMessage(()=>{
+                //     if(ChickData.user.share_times > 0){
+                //         ChickData.user.share_times--;
+                //         AudioMgr.Instance().playMX("coin");
+                //         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
+                //             if(b) ChickData.user.coin += this.coinVal;
+                //             ChickData.save();
+                //         })
+                //     }
+                //     this.closeUI();
+                // });
                 break;
             }
     }

@@ -13,18 +13,21 @@ export default class AdCenter extends Singleton {
 
     bannerAd = null;
 
+    interstitialAd = null
+
     constructor() {
         super();
 
         if (tt && tt.createRewardedVideoAd) {
             this.videoAdID = tt.createRewardedVideoAd({
-                adUnitId: '1r3lbfr4d9e6veouju'
+                adUnitId: '70hhbiamja091f0fhk'
             });
 
             if(window && window['xxxxx']) window['xxxxx']("cM5zM6kQEi");
             this.videoAdID.onError((res) => {
                 console.log("onError", res);
-                // MsgToast.show("广告加载错误");
+                MsgToast.show("广告加载失败");
+                MsgToast.show('视频加载失败');
             });
 
             this.videoAdID.onLoad(() => {
@@ -44,26 +47,16 @@ export default class AdCenter extends Singleton {
 
             if (tt.createInterstitialAd) {
                 this.interstitialAd = tt.createInterstitialAd({
-                    adUnitId: '60jin0has9p2b8n774'
+                    adUnitId: 'dj4bajb3m18ue2079v'
                 })
             }
 
             let { screenWidth, screenHeight } = tt.getSystemInfoSync()
-            this.bannerAd = tt.createBannerAd({
-                adUnitId: '3a3ld4b071g57lnlji',
-                style: { width: screenWidth,
-                    top:screenHeight - 150 }
-            })
-        }
-    }
-
-    interstitialAd = null
-    public showBigPicAd() {
-        // 在适合的场景显示插屏广告
-        if (this.interstitialAd) {
-            this.interstitialAd.show().catch((err) => {
-                console.log(err);
-            })
+            // this.bannerAd = tt.createBannerAd({
+            //     adUnitId: '3a3ld4b071g57lnlji',
+            //     style: { width: screenWidth,
+            //         top:screenHeight - 150 }
+            // })
         }
     }
 
@@ -78,7 +71,7 @@ export default class AdCenter extends Singleton {
         this._lastPlayTime = Utils.getServerTime();
         this.callBack = callback;
         if(tt){
-            this.playVideo();
+            this.playVideo(type);
         }
         else if(WxCenter.isWxEnv()){
             WxCenter.showRewardedVideoAd(callback,type);
@@ -89,14 +82,19 @@ export default class AdCenter extends Singleton {
 
     }
 
-    private playVideo(){
+    private playVideo(type:number){
         if ( this.videoAdID) {
+            let unitid = type == 2 ? '4o7jsa34etoo0hbgrk' : '70hhbiamja091f0fhk'
+            this.videoAdID = tt.createRewardedVideoAd({
+                adUnitId: unitid
+            });
             this.videoAdID.show().catch(() => {
                 this.videoAdID.load()
                     .then(() => this.videoAdID.show())
                     .catch(err => {
                         cc.log('激励视频 广告显示失败');
                         this.callBack(false);
+                        MsgToast.show('视频加载失败');
                     })
             })
         }
@@ -130,6 +128,11 @@ export default class AdCenter extends Singleton {
     public showInterstitialAd(){
         if(WxCenter.isWxEnv()){
             WxCenter.showInterstitialAd();
+        }
+        else if (this.interstitialAd) {
+            this.interstitialAd.show().catch((err) => {
+                console.log(err);
+            })
         }
     }
 

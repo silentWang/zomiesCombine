@@ -25,7 +25,7 @@ export default class WinView extends BaseUI {
         if(window && window['xxxxx']) window['xxxxx']("Sn2mfdEzWRYhwXAtSRK8c5");
         this.coin = coin;
         this.aTobAnim(coin*2);
-        this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
+        // this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     }
         private RstP_xxxx_fun(){ console.log("ykzPX2QsDWmFfEfSaPiy"); }
 
@@ -59,7 +59,7 @@ export default class WinView extends BaseUI {
             {
                 ChickData.user.coin += coin;
                 if(ChickData.user.lv >= 30)
-                    AdCenter.Instance().showBigPicAd();
+                    AdCenter.Instance().showInterstitialAd();
             }  
         })
     }

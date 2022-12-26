@@ -5,7 +5,7 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1536,
+      "x": 0,
       "y": 0,
       "width": 1536,
       "height": 816,
@@ -18,7 +18,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 424.125,
+                "height": 425.125,
                 "type": "panel",
                 "width": 234.0625
               },
@@ -27,7 +27,7 @@
                 "children": [
                   "assets"
                 ],
-                "height": 273.07501220703125,
+                "height": 272.07501220703125,
                 "type": "panel",
                 "width": 234.0625
               }
@@ -45,7 +45,7 @@
                     "children": [
                       "scene"
                     ],
-                    "height": 430.125,
+                    "height": 430.7375183105469,
                     "type": "panel",
                     "width": 709.1749877929688
                   },
@@ -54,12 +54,12 @@
                     "children": [
                       "node-library"
                     ],
-                    "height": 430.125,
+                    "height": 430.7375183105469,
                     "type": "panel",
                     "width": 266.0625
                   }
                 ],
-                "height": 430.125,
+                "height": 430.7375183105469,
                 "type": "dock-h",
                 "width": 978.25
               },
@@ -70,7 +70,7 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 267.07501220703125,
+                "height": 266.4624938964844,
                 "type": "panel",
                 "width": 978.25
               }
@@ -131,10 +131,10 @@
       "height": 641
     },
     "sprite-editor": {
-      "x": 2096,
-      "y": 196,
-      "width": 540,
-      "height": 564
+      "x": -8,
+      "y": -8,
+      "width": 1552,
+      "height": 832
     },
     "game-window": {
       "x": 448,
@@ -151,7 +151,7 @@
     "builder": {
       "x": 312,
       "y": 0,
-      "width": 895,
+      "width": 896,
       "height": 824
     },
     "node-library": {

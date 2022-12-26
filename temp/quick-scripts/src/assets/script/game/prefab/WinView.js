@@ -50,7 +50,7 @@ var WinView = /** @class */ (function (_super) {
             window['xxxxx']("Sn2mfdEzWRYhwXAtSRK8c5");
         this.coin = coin;
         this.aTobAnim(coin * 2);
-        this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
+        // this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     };
     WinView.prototype.RstP_xxxx_fun = function () { console.log("ykzPX2QsDWmFfEfSaPiy"); };
     WinView.prototype.aTobAnim = function (num) {
@@ -84,7 +84,7 @@ var WinView = /** @class */ (function (_super) {
             if (b) {
                 ChickData_1.default.user.coin += coin;
                 if (ChickData_1.default.user.lv >= 30)
-                    AdCenter_1.default.Instance().showBigPicAd();
+                    AdCenter_1.default.Instance().showInterstitialAd();
             }
         });
     };

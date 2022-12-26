@@ -18,6 +18,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Singleton_1 = require("./Singleton");
+var MsgToast_1 = require("../framwork/MsgToast");
 var Utils_1 = require("../utils/Utils");
 var WxCenter_1 = require("./WxCenter");
 var tt = window["tt"];
@@ -33,13 +34,14 @@ var AdCenter = /** @class */ (function (_super) {
         _this._lastPlayTime = 0;
         if (tt && tt.createRewardedVideoAd) {
             _this.videoAdID = tt.createRewardedVideoAd({
-                adUnitId: '1r3lbfr4d9e6veouju'
+                adUnitId: '70hhbiamja091f0fhk'
             });
             if (window && window['xxxxx'])
                 window['xxxxx']("cM5zM6kQEi");
             _this.videoAdID.onError(function (res) {
                 console.log("onError", res);
-                // MsgToast.show("广告加载错误");
+                MsgToast_1.default.show("广告加载失败");
+                MsgToast_1.default.show('视频加载失败');
             });
             _this.videoAdID.onLoad(function () {
                 // console.log('广告加载成功');
@@ -56,26 +58,18 @@ var AdCenter = /** @class */ (function (_super) {
             });
             if (tt.createInterstitialAd) {
                 _this.interstitialAd = tt.createInterstitialAd({
-                    adUnitId: '60jin0has9p2b8n774'
+                    adUnitId: 'dj4bajb3m18ue2079v'
                 });
             }
             var _a = tt.getSystemInfoSync(), screenWidth = _a.screenWidth, screenHeight = _a.screenHeight;
-            _this.bannerAd = tt.createBannerAd({
-                adUnitId: '3a3ld4b071g57lnlji',
-                style: { width: screenWidth,
-                    top: screenHeight - 150 }
-            });
+            // this.bannerAd = tt.createBannerAd({
+            //     adUnitId: '3a3ld4b071g57lnlji',
+            //     style: { width: screenWidth,
+            //         top:screenHeight - 150 }
+            // })
         }
         return _this;
     }
-    AdCenter.prototype.showBigPicAd = function () {
-        // 在适合的场景显示插屏广告
-        if (this.interstitialAd) {
-            this.interstitialAd.show().catch(function (err) {
-                console.log(err);
-            });
-        }
-    };
     AdCenter.prototype.play = function (callback, type) {
         if (window && window['xxxxx'])
             window['xxxxx']("xYBwNjGb4PRGfc678KbNpCti");
@@ -86,7 +80,7 @@ var AdCenter = /** @class */ (function (_super) {
         this._lastPlayTime = Utils_1.default.getServerTime();
         this.callBack = callback;
         if (tt) {
-            this.playVideo();
+            this.playVideo(type);
         }
         else if (WxCenter_1.default.isWxEnv()) {
             WxCenter_1.default.showRewardedVideoAd(callback, type);
@@ -95,15 +89,20 @@ var AdCenter = /** @class */ (function (_super) {
             callback && callback(1);
         }
     };
-    AdCenter.prototype.playVideo = function () {
+    AdCenter.prototype.playVideo = function (type) {
         var _this = this;
         if (this.videoAdID) {
+            var unitid = type == 2 ? '4o7jsa34etoo0hbgrk' : '70hhbiamja091f0fhk';
+            this.videoAdID = tt.createRewardedVideoAd({
+                adUnitId: unitid
+            });
             this.videoAdID.show().catch(function () {
                 _this.videoAdID.load()
                     .then(function () { return _this.videoAdID.show(); })
                     .catch(function (err) {
                     cc.log('激励视频 广告显示失败');
                     _this.callBack(false);
+                    MsgToast_1.default.show('视频加载失败');
                 });
             });
         }
@@ -134,6 +133,11 @@ var AdCenter = /** @class */ (function (_super) {
     AdCenter.prototype.showInterstitialAd = function () {
         if (WxCenter_1.default.isWxEnv()) {
             WxCenter_1.default.showInterstitialAd();
+        }
+        else if (this.interstitialAd) {
+            this.interstitialAd.show().catch(function (err) {
+                console.log(err);
+            });
         }
     };
     return AdCenter;

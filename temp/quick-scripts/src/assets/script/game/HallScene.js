@@ -488,7 +488,7 @@ var HallScene = /** @class */ (function (_super) {
                                 if (window && window['xxxxx'])
                                     window['xxxxx']("4Y6PtM8mRpwk7Js");
                                 if (Utils_1.default.getServerTime() - _this.recordertime < 3000) {
-                                    // MsgHints.show("录屏时间过短");
+                                    MsgToast_1.default.show("录屏时间过短");
                                     _this.recordertime = 0;
                                     return;
                                 }
@@ -1012,9 +1012,9 @@ var HallScene = /** @class */ (function (_super) {
                 if (ChickData_1.default.user.guideIndex == 1) {
                     this.composeTip();
                 }
-                break;
                 if (window && window['xxxxx'])
                     window['xxxxx']("eCrirp8jJPWSSHfHs");
+                break;
             case "bt_fast_gen":
                 Utils_1.default.createUI("prefab/AdLayer").then(function (node) {
                     node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.DROP_PLANT);
@@ -1054,7 +1054,7 @@ var HallScene = /** @class */ (function (_super) {
                 });
                 break;
             case "btn_Recorder":
-                if (this.bRecorder == false) {
+                if (!this.bRecorder) {
                     cc.log("开始录屏");
                     this.bRecorder = true;
                     if (window["tt"]) {
