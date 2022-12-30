@@ -1178,7 +1178,7 @@
       "__id__": 26
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 28
@@ -1341,8 +1341,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        189,
-        152,
+        86.109,
+        149.983,
         0,
         0,
         0,
@@ -2094,8 +2094,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 49,
-      "height": 49
+      "width": 50,
+      "height": 38
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2216,7 +2216,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        18.759,
+        22,
         7.878,
         0,
         0,

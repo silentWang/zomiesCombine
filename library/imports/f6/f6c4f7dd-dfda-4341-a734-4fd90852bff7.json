@@ -1333,8 +1333,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 49,
-      "height": 49
+      "width": 50,
+      "height": 38
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1455,7 +1455,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        20.809,
+        25,
         5.442,
         0,
         0,
@@ -1495,8 +1495,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "金币翻倍",
-    "_N$string": "金币翻倍",
+    "_string": "立即领取",
+    "_N$string": "立即领取",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,

@@ -34,7 +34,7 @@ var AdCenter = /** @class */ (function (_super) {
         _this._lastPlayTime = 0;
         if (tt && tt.createRewardedVideoAd) {
             _this.videoAdID = tt.createRewardedVideoAd({
-                adUnitId: '70hhbiamja091f0fhk'
+                adUnitId: '73ejb9hf3j84rs5p9b'
             });
             if (window && window['xxxxx'])
                 window['xxxxx']("cM5zM6kQEi");
@@ -81,6 +81,7 @@ var AdCenter = /** @class */ (function (_super) {
         this.callBack = callback;
         if (tt) {
             this.playVideo(type);
+            // callback && callback(1)
         }
         else if (WxCenter_1.default.isWxEnv()) {
             WxCenter_1.default.showRewardedVideoAd(callback, type);
@@ -92,7 +93,7 @@ var AdCenter = /** @class */ (function (_super) {
     AdCenter.prototype.playVideo = function (type) {
         var _this = this;
         if (this.videoAdID) {
-            var unitid = type == 2 ? '4o7jsa34etoo0hbgrk' : '70hhbiamja091f0fhk';
+            var unitid = type == 2 ? '73ejb9hf3j84rs5p9b' : '73ejb9hf3j84rs5p9b';
             this.videoAdID = tt.createRewardedVideoAd({
                 adUnitId: unitid
             });

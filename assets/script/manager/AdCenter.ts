@@ -20,13 +20,12 @@ export default class AdCenter extends Singleton {
 
         if (tt && tt.createRewardedVideoAd) {
             this.videoAdID = tt.createRewardedVideoAd({
-                adUnitId: '70hhbiamja091f0fhk'
+                adUnitId: '73ejb9hf3j84rs5p9b'
             });
 
             if(window && window['xxxxx']) window['xxxxx']("cM5zM6kQEi");
             this.videoAdID.onError((res) => {
                 console.log("onError", res);
-                MsgToast.show("广告加载失败");
                 MsgToast.show('视频加载失败');
             });
 
@@ -72,6 +71,7 @@ export default class AdCenter extends Singleton {
         this.callBack = callback;
         if(tt){
             this.playVideo(type);
+            // callback && callback(1)
         }
         else if(WxCenter.isWxEnv()){
             WxCenter.showRewardedVideoAd(callback,type);
@@ -84,7 +84,7 @@ export default class AdCenter extends Singleton {
 
     private playVideo(type:number){
         if ( this.videoAdID) {
-            let unitid = type == 2 ? '4o7jsa34etoo0hbgrk' : '70hhbiamja091f0fhk'
+            let unitid = type == 2 ? '73ejb9hf3j84rs5p9b' : '73ejb9hf3j84rs5p9b'
             this.videoAdID = tt.createRewardedVideoAd({
                 adUnitId: unitid
             });

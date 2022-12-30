@@ -2272,8 +2272,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 49,
-      "height": 49
+      "width": 50,
+      "height": 38
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2383,7 +2383,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 74,
-      "height": 33.5
+      "height": 47.36
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2394,7 +2394,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        27.849,
+        25,
         0.224,
         0,
         0,
@@ -2437,7 +2437,7 @@
     "_string": "免费",
     "_N$string": "免费",
     "_fontSize": 36,
-    "_lineHeight": 25,
+    "_lineHeight": 36,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
