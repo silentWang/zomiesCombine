@@ -102,7 +102,7 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                         str = '';
                         if (!(type == 1)) return [3 /*break*/, 3];
                         str = ChickData_1.default.user.today_getchick_times + "/" + ChickData_1.default.user.today_getchick_total;
-                        lv = ChickData_1.default.user.getLvlMax() - 1 > 0 ? ChickData_1.default.user.getLvlMax() - 1 : 1;
+                        lv = ChickData_1.default.user.getLvlMax() - 3 > 0 ? ChickData_1.default.user.getLvlMax() - 3 : 1;
                         skpath = "spine:flower" + lv + "_ske";
                         atlaspath = "spine:flower" + lv + "_tex";
                         chick = this.GetDragonAmature('chick');
@@ -141,7 +141,7 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
         var type = this.type;
         if (type == 1) {
             ChickData_1.default.user.today_getchick_times++;
-            var lv = ChickData_1.default.user.getLvlMax() - 1 > 0 ? ChickData_1.default.user.getLvlMax() - 1 : 1;
+            var lv = ChickData_1.default.user.getLvlMax() - 3 > 0 ? ChickData_1.default.user.getLvlMax() - 3 : 1;
             HallScene_1.default.Instance.buyChick(lv, 2);
             ChickData_1.default.save();
             this.closeUI();

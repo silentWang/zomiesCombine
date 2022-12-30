@@ -44,7 +44,7 @@ export default class CoinNotEnoughUI extends BaseUI {
         let str = '';
         if(type == 1){
             str = `${ChickData.user.today_getchick_times}/${ChickData.user.today_getchick_total}`;
-            let lv = ChickData.user.getLvlMax() - 1 > 0 ? ChickData.user.getLvlMax() - 1 : 1;
+            let lv = ChickData.user.getLvlMax() - 3 > 0 ? ChickData.user.getLvlMax() - 3 : 1;
             let skpath = `spine:flower${lv}_ske`;
             let atlaspath = `spine:flower${lv}_tex`;
             let chick = this.GetDragonAmature('chick');
@@ -70,7 +70,7 @@ export default class CoinNotEnoughUI extends BaseUI {
         let type = this.type;
         if(type == 1){
             ChickData.user.today_getchick_times++;
-            let lv = ChickData.user.getLvlMax() - 1 > 0 ? ChickData.user.getLvlMax() - 1 : 1;
+            let lv = ChickData.user.getLvlMax() - 3 > 0 ? ChickData.user.getLvlMax() - 3 : 1;
             HallScene.Instance.buyChick(lv,2);
             ChickData.save();
             this.closeUI();
