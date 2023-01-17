@@ -180,13 +180,15 @@ export default class Utils {
     public static loadBundler(name:string)
     {
         return new Promise((resolve,reject)=>{
+            console.log('----bbbbbbbbb---',name)
             cc.assetManager.loadBundle(name,(err,ret)=>{
+                console.log('----eeeeeee---',name)
                 console.log(ret)
                 resolve(null);
             })
         })
     }
-        private tSWD_xxxx_fun(){ console.log("36dY"); }
+    private tSWD_xxxx_fun(){ console.log("36dY"); }
 
     public static formatCoin(num: number) {
         num = Math.floor(num);

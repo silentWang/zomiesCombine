@@ -187,7 +187,9 @@ var Utils = /** @class */ (function () {
     };
     Utils.loadBundler = function (name) {
         return new Promise(function (resolve, reject) {
+            console.log('----bbbbbbbbb---', name);
             cc.assetManager.loadBundle(name, function (err, ret) {
+                console.log('----eeeeeee---', name);
                 console.log(ret);
                 resolve(null);
             });

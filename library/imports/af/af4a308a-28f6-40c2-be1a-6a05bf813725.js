@@ -100,10 +100,10 @@ var Loading = /** @class */ (function (_super) {
                 cc.debug.setDisplayStats(false);
                 cc.game.setFrameRate(60);
                 _super.prototype.onLoad.call(this);
-                if (wx) {
-                    wx.setPreferredFramesPerSecond(60);
-                    wx.setKeepScreenOn({ keepScreenOn: true });
-                }
+                // if(wx) {
+                //     wx.setPreferredFramesPerSecond(60);
+                //     wx.setKeepScreenOn({ keepScreenOn: true });
+                // }
                 PoolMgr_1.default.Instance().loadPrefabs();
                 this.startLGAction();
                 descs = ["初次加载时间可能会较长，请耐心等待...."];
@@ -121,6 +121,7 @@ var Loading = /** @class */ (function (_super) {
     };
     Loading.prototype.startLGAction = function () {
         var _this = this;
+        console.log('---aaaaaaaa----');
         this.node.runAction(cc.sequence(cc.delayTime(.5), cc.callFunc(function () { return __awaiter(_this, void 0, void 0, function () {
             var p;
             var _this = this;
@@ -134,13 +135,17 @@ var Loading = /** @class */ (function (_super) {
                                 p += 0.018;
                                 this.SetProgressBar("ProgressBar", p);
                                 if (!(p >= 1)) return [3 /*break*/, 2];
+                                console.log('---bbbbbb----');
                                 this.node.stopAllActions();
                                 return [4 /*yield*/, Utils_1.default.loadBundler("spine")];
                             case 1:
                                 _a.sent();
+                                console.log('---cccccc----');
                                 Utils_1.default.loadBundler("sounds").then(function () {
                                     AudioMgr_1.default.Instance().loadSounds();
+                                    console.log('---eeeee----');
                                 });
+                                console.log('---dddddd----');
                                 cc.director.loadScene("hall");
                                 p = 1;
                                 _a.label = 2;

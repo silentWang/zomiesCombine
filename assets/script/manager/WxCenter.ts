@@ -79,15 +79,15 @@ export default class WxCenter {
         setTimeout(function () {
             // 在适合的场景显示插屏广告
             if (interstitialAd) {
-                interstitialAd.show().then().catch((err) => {
-                    console.error('插屏 广告失败:',err)
-                })
-                interstitialAd.onClose(res => {
-                    console.log('插屏 广告关闭')
-                })
-                interstitialAd.onLoad(() => {
-                    console.log('插屏 广告加载成功')
-                })
+                // interstitialAd.show().then().catch((err) => {
+                //     console.error('插屏 展示广告失败:',err)
+                // })
+                // interstitialAd.onClose(res => {
+                //     console.log('插屏 广告关闭')
+                // })
+                // interstitialAd.onLoad(() => {
+                //     console.log('插屏 广告加载成功')
+                // })
             }
         }, 3500);
     }

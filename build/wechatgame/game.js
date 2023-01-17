@@ -1,3 +1,4 @@
+require('./kwaiadapter.js');
 "use strict";
 
 require('adapter-min.js');

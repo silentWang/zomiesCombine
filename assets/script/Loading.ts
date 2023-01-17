@@ -39,12 +39,11 @@ export default class Loading extends BaseUI {
     async onLoad() {
         cc.debug.setDisplayStats(false);
         cc.game.setFrameRate(60);
-
         super.onLoad();
-        if(wx) {
-            wx.setPreferredFramesPerSecond(60);
-            wx.setKeepScreenOn({ keepScreenOn: true });
-        }
+        // if(wx) {
+        //     wx.setPreferredFramesPerSecond(60);
+        //     wx.setKeepScreenOn({ keepScreenOn: true });
+        // }
         
         PoolMgr.Instance().loadPrefabs()
         this.startLGAction();
@@ -61,6 +60,7 @@ export default class Loading extends BaseUI {
     }
 
     startLGAction() {
+        console.log('---aaaaaaaa----')
         this.node.runAction(cc.sequence(cc.delayTime(.5), cc.callFunc(async () => {
             ChickData.loadData()
             var p: number = 0;
@@ -68,11 +68,15 @@ export default class Loading extends BaseUI {
                 p += 0.018;
                 this.SetProgressBar("ProgressBar", p);
                 if (p >= 1) {
+                    console.log('---bbbbbb----')
                     this.node.stopAllActions();
                     await Utils.loadBundler("spine");
+                    console.log('---cccccc----')
                     Utils.loadBundler("sounds").then(()=>{
                         AudioMgr.Instance().loadSounds();
+                        console.log('---eeeee----')
                     });
+                    console.log('---dddddd----')
                     cc.director.loadScene("hall");
                     p = 1;
                 }

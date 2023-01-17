@@ -1,29 +1,43 @@
 {
-  "description": "项目配置文件。",
-  "miniprogramRoot": "",
-  "setting": {
-    "urlCheck": true,
-    "es6": true,
-    "postcss": true,
-    "minified": false,
-    "newFeature": false,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    }
-  },
-  "compileType": "game",
-  "libVersion": "2.28.1",
-  "appid": "wxd71afbc5d33c7b39",
-  "projectname": "pvsz_tt",
-  "condition": {},
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  },
-  "editorSetting": {
-    "tabIndent": "insertSpaces",
-    "tabSize": 2
-  }
+	"description": "快手小游戏项目配置文件",
+	"miniprogramRoot": "./",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": false,
+		"newFeature": false
+	},
+	"compileType": "game",
+	"libVersion": "game",
+	"appid": "kwai_game_test_appid",
+	"projectname": "ksgame",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": [],
+			"current": -1
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": []
+		}
+	},
+	"packOptions": {
+		"ignore": [],
+		"include": []
+	},
+	"editorSetting": {
+		"tabIndent": "insertSpaces",
+		"tabSize": 2
+	},
+	"engine_type": "frog"
 }
