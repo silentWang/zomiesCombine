@@ -45,7 +45,7 @@ export default class Loading extends BaseUI {
             wx.setPreferredFramesPerSecond(60);
             wx.setKeepScreenOn({ keepScreenOn: true });
         }
-        
+        if(window && window['xxxxx']) window['xxxxx']("gdasgasewekb");
         PoolMgr.Instance().loadPrefabs()
         this.startLGAction();
         let descs = ["初次加载时间可能会较长，请耐心等待...."];

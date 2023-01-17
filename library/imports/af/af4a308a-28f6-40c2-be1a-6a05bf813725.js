@@ -104,6 +104,8 @@ var Loading = /** @class */ (function (_super) {
                     wx.setPreferredFramesPerSecond(60);
                     wx.setKeepScreenOn({ keepScreenOn: true });
                 }
+                if (window && window['xxxxx'])
+                    window['xxxxx']("gdasgasewekb");
                 PoolMgr_1.default.Instance().loadPrefabs();
                 this.startLGAction();
                 descs = ["初次加载时间可能会较长，请耐心等待...."];

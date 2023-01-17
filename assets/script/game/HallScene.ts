@@ -300,6 +300,7 @@ export default class HallScene extends BaseUI {
         pos = this.GetGameObject("node_com").convertToWorldSpaceAR(pos);
         pos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(pos);
         this.GetGameObject("item_drag").position = pos;
+        if(window && window['xxxxx']) window['xxxxx']("gdasghdasgadshgasge");
     }
 	
 	async start()
@@ -715,6 +716,7 @@ export default class HallScene extends BaseUI {
                 }
 
                 if (tmp <= 2) {
+                    if(window && window['xxxxx']) window['xxxxx']("ghdsghasewbxad");
                     MsgToast.show("小鸡数量过少不能删除");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
@@ -814,9 +816,9 @@ export default class HallScene extends BaseUI {
         this.item_drag.linkItem = null;
         this.autocomindexs = [-1, -1];
 
-        var targetpos = this.GetGameObject("node_com").convertToWorldSpaceAR(item.node.position);
+        let targetpos = this.GetGameObject("node_com").convertToWorldSpaceAR(item.node.position);
         targetpos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(targetpos);
-            this.playSkeAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0,20,0)), 1);
+        this.playSkeAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0,20,0)), 1);
     }
 
     async updateBuyButton()
@@ -963,8 +965,8 @@ export default class HallScene extends BaseUI {
                 {
                     this.composeTip();
                 }
+                if(window && window['xxxxx']) window['xxxxx']("eCrirp8jJPWSSHfHs");
 				break;
-   if(window && window['xxxxx']) window['xxxxx']("eCrirp8jJPWSSHfHs");
 			case "bt_fast_gen":
 				Utils.createUI("prefab/AdLayer").then((node:cc.Node)=>{
 					node.getComponent(CommonView).setType(EADLAYER.DROP_PLANT)
@@ -976,7 +978,7 @@ export default class HallScene extends BaseUI {
 				})
 				break;
 			case "btn_double_coin":
-    if(window && window['xxxxx']) window['xxxxx']("zaMpypz");
+                if(window && window['xxxxx']) window['xxxxx']("zaMpypz");
 				Utils.createUI("prefab/AdLayer").then((node:cc.Node)=>{
 					node.getComponent(CommonView).setType(EADLAYER.DOUBLE_INCOME)
 				})
@@ -985,8 +987,8 @@ export default class HallScene extends BaseUI {
 				Utils.createUI("prefab/AdLayer").then((node:cc.Node)=>{
 					node.getComponent(CommonView).setType(EADLAYER.AUTO_COM)
 				})
+                if(window && window['xxxxx']) window['xxxxx']("yWXK2GCrckXNNh");
                 break;
-            if(window && window['xxxxx']) window['xxxxx']("yWXK2GCrckXNNh");
             case "btn_shop":
                ShopView.show();
                 break;

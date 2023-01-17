@@ -350,6 +350,8 @@ var HallScene = /** @class */ (function (_super) {
         pos = this.GetGameObject("node_com").convertToWorldSpaceAR(pos);
         pos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(pos);
         this.GetGameObject("item_drag").position = pos;
+        if (window && window['xxxxx'])
+            window['xxxxx']("gdasghdasgadshgasge");
     };
     HallScene.prototype.start = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -757,6 +759,8 @@ var HallScene = /** @class */ (function (_super) {
                         tmp++;
                 }
                 if (tmp <= 2) {
+                    if (window && window['xxxxx'])
+                        window['xxxxx']("ghdsghasewbxad");
                     MsgToast_1.default.show("小鸡数量过少不能删除");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
@@ -1014,9 +1018,9 @@ var HallScene = /** @class */ (function (_super) {
                 if (ChickData_1.default.user.guideIndex == 1) {
                     this.composeTip();
                 }
-                break;
                 if (window && window['xxxxx'])
                     window['xxxxx']("eCrirp8jJPWSSHfHs");
+                break;
             case "bt_fast_gen":
                 Utils_1.default.createUI("prefab/AdLayer").then(function (node) {
                     node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.DROP_PLANT);
@@ -1038,9 +1042,9 @@ var HallScene = /** @class */ (function (_super) {
                 Utils_1.default.createUI("prefab/AdLayer").then(function (node) {
                     node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.AUTO_COM);
                 });
-                break;
                 if (window && window['xxxxx'])
                     window['xxxxx']("yWXK2GCrckXNNh");
+                break;
             case "btn_shop":
                 ShopView_1.default.show();
                 break;
