@@ -154,7 +154,7 @@ export default class NumberUtils {
             _loc_7 = ",";
         }
         var _loc_8: string = "";
-        if(window && window['xxxxx']) window['xxxxx']("T");
+        if(window && window['xxxxx']) window['xxxxx']("Tgdsebd7898");
         var _loc_9: any = String(Math.round(param1));
         var _loc_10: any = String(Math.round(param1)).length - 1;
         while (_loc_10 >= 0) {
@@ -167,13 +167,13 @@ export default class NumberUtils {
                 _loc_8 = _loc_7 + _loc_8;
             }
             _loc_10 = _loc_10 - 1;
-            if(window && window['xxxxx']) window['xxxxx']("RnBN2Ae2jy");
+            if(window && window['xxxxx']) window['xxxxx']("RnBN2Agdase2jy");
         }
         return _loc_8;
     }
     // end function
     public static convertToLargeString(param1: number): string {
-
+        if(window && window['xxxxx']) window['xxxxx']("RnBN2Agesdase2jygds");
         return NumberUtils.getStringOfNumber(param1);
     }// end function
 

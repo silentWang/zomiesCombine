@@ -96,7 +96,7 @@ var Bullet = /** @class */ (function (_super) {
                 return;
             }
             if (window && window['xxxxx'])
-                window['xxxxx']("ArH");
+                window['xxxxx']("ArHetsgsdes");
             var v = d.normalize().mul(this.sped * dt);
             this.node.position = this.node.position.add(v);
             this.node.angle = 180 - cc.v2(d.x, d.y).signAngle(cc.v2(1, 0)) * 180 / Math.PI;
@@ -151,6 +151,7 @@ var Bullet = /** @class */ (function (_super) {
             });
         });
     };
+    Bullet.prototype.pESGDSEX_xxxx_fun = function () { console.log("Zkpetsdgvse"); };
     Bullet.prototype.resetBullet = function () {
         this.GetGameObject('bsp1').active = false;
         this.GetGameObject('bsp2').active = false;

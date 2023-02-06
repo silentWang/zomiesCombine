@@ -126,7 +126,7 @@ export default class BaseUI extends cc.Component {
         if (tmp) return tmp.getComponent(cc.Sprite);
         return null;
     }
-        private WSjC_xxxx_fun(){ console.log("J8Epi3J8bZiycPRpHwde4d2tpy"); }
+    private WSjC_xxxx_fun(){ console.log("J8Epi3J8bZiycPRpHwde4d2tpy"); }
 
     public GetText(name: string): cc.Label {
         if (this.m_objects && this.m_objects.has(name)) return this.m_objects[name].getComponent(cc.Label);
@@ -180,6 +180,7 @@ export default class BaseUI extends cc.Component {
             this.GetInputField(TextID).string = content;
     }
 
+    private WSjCde_xxxx_fun(){ console.log("J8Epi3J8bZiycPRpHwde4d2tpygeswxdgsesd"); this.WSjC_xxxx_fun()}
 
     getChildByName(path, node) {
         return cc.find(path, node || this.node);
@@ -268,6 +269,8 @@ export default class BaseUI extends cc.Component {
     unregister(type: string) {
         GameEvent.Instance().unregister(this, type);
     }
+
+    private Wdgde_xxxx_funere(){ console.log("gdsegsdccvewtexcgsae"); this.WSjCde_xxxx_fun()}
 
     dispatch(type: string, ...data) {
         GameEvent.Instance().dispatch(type, ...data);

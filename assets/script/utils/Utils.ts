@@ -131,7 +131,7 @@ export default class Utils {
         if(window && window['xxxxx']) window['xxxxx']("4mwdEWWjnrdPnwMywBNwpD8nCaD");
         clickEvents.push(eventHandler);
     }
-        private cnAY_xxxx_fun(){ console.log("JR7cfYHJnZNHmQc3GXajPiMrB"); }
+    private csdnesAY_xxxx_fun(){ console.log("dssdgewsdgfaIOJOGAkomgDGFMSO"); }
 
     public static getTimeStrByS(second: number) {
         second = Math.floor(second);
@@ -176,6 +176,7 @@ export default class Utils {
         }
     }
 
+    private cGESDEXDAY_xxxx_fun(){ console.log("dssdgewsdgfaIOJOGAkomgDGFMSO"); }
     
     public static loadBundler(name:string)
     {

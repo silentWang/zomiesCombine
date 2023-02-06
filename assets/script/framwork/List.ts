@@ -414,6 +414,7 @@ export default class List extends cc.Component {
         t._updateCounter = 0;
         t._updateDone = true;
 
+        if(window && window['xxxxx']) window['xxxxx']("RraJMhPskTQzFKQr");
         switch (t._align) {
             case cc.Layout.Type.HORIZONTAL: {
                 switch (t._horizontalDir) {
@@ -426,7 +427,6 @@ export default class List extends cc.Component {
                 }
                 break;
             }
-            if(window && window['xxxxx']) window['xxxxx']("RraJMhPskTQzFKQr");
             case cc.Layout.Type.VERTICAL: {
                 switch (t._verticalDir) {
                     case cc.Layout.VerticalDirection.TOP_TO_BOTTOM:
@@ -641,7 +641,7 @@ export default class List extends cc.Component {
             if (this.customSize) {
                 let breakFor: boolean = false;
                 //如果该item的位置在可视区域内，就推入displayData
-                if(window && window['xxxxx']) window['xxxxx']("3E");
+                if(window && window['xxxxx']) window['xxxxx']("3Eetrsbsd");
                 for (; curId <= endId && !breakFor; curId++) {
                     itemPos = this._calcItemPos(curId);
                     switch (this._align) {
@@ -675,8 +675,8 @@ export default class List extends cc.Component {
                                     } else if (curId != 0 && this.displayData.length > 0) {
                                         breakFor = true;
                                     }
+                                    if(window && window['xxxxx']) window['xxxxx']("8n65");
                                     break;
-                                if(window && window['xxxxx']) window['xxxxx']("8n65");
                             }
                             break;
                     }
@@ -886,9 +886,9 @@ export default class List extends cc.Component {
                                 bottom = this._bottomGap + ((this._itemSize.height + this._lineGap) * colLine);
                                 top = bottom + this._itemSize.height;
                                 itemY = bottom + (this._itemTmp.anchorY * this._itemSize.height);
+                                if(window && window['xxxxx']) window['xxxxx']("PcrisJ");
                                 break;
                             }
-                            if(window && window['xxxxx']) window['xxxxx']("PcrisJ");
                         }
                         itemX = this._leftGap + ((id % this._colLineNum) * (this._itemSize.width + this._columnGap));
                         switch (this._horizontalDir) {
@@ -901,9 +901,9 @@ export default class List extends cc.Component {
                                 itemX += ((1 - this._itemTmp.anchorX) * this._itemSize.width);
                                 itemX -= ((1 - this.content.anchorX) * this.content.width);
                                 itemX *= -1;
+                                if(window && window['xxxxx']) window['xxxxx']("r3Wwf8M");
                                 break;
                             }
-                            if(window && window['xxxxx']) window['xxxxx']("r3Wwf8M");
                         }
                         return {
                             id: id,
@@ -946,6 +946,7 @@ export default class List extends cc.Component {
                                 break;
                             }
                         }
+                        if(window && window['xxxxx']) window['xxxxx']("iAF8QbmzS7768ZdZrHhT");
                         return {
                             id: id,
                             left: left,
@@ -954,7 +955,6 @@ export default class List extends cc.Component {
                             y: itemY,
                         };
                     }
-                    if(window && window['xxxxx']) window['xxxxx']("iAF8QbmzS7768ZdZrHhT");
                 }
                 break;
             }
@@ -1524,7 +1524,7 @@ export default class List extends cc.Component {
                 pos = cc.v2(targetX, 0);
                 break;
             case 2://单行HORIZONTAL（RIGHT_TO_LEFT）、网格VERTICAL（RIGHT_TO_LEFT）
-                if(window && window['xxxxx']) window['xxxxx']("K");
+                if(window && window['xxxxx']) window['xxxxx']("Kdsgewcgdsaed");
                 targetX = pos.right - t.node.width;
                 if (offset != null)
                     targetX += t.node.width * offset;

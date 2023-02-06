@@ -52,7 +52,7 @@ var WinView = /** @class */ (function (_super) {
         this.aTobAnim(coin * 2);
         this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
     };
-    WinView.prototype.RstP_xxxx_fun = function () { console.log("ykzPX2QsDWmFfEfSaPiy"); };
+    WinView.prototype.RstgesP_xxxx_fun = function () { console.log("ykzPX2QsgdsDWgemFfEfSaPiy"); };
     WinView.prototype.aTobAnim = function (num) {
         var _this = this;
         var aver = Math.ceil(num / 60);

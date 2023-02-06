@@ -30,7 +30,7 @@ export default class AchievementModel {
                     for (const key in element) {
                         this[savepars[i]][key] = element[key];
                     }
-                    if(window && window['xxxxx']) window['xxxxx']("BSxpzJ");
+                    if(window && window['xxxxx']) window['xxxxx']("BSxpzXDSDGJ");
                 }
                 else
                     this[savepars[i]] = element;

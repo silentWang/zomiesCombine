@@ -136,7 +136,7 @@ var Utils = /** @class */ (function () {
             window['xxxxx']("4mwdEWWjnrdPnwMywBNwpD8nCaD");
         clickEvents.push(eventHandler);
     };
-    Utils.prototype.cnAY_xxxx_fun = function () { console.log("JR7cfYHJnZNHmQc3GXajPiMrB"); };
+    Utils.prototype.csdnesAY_xxxx_fun = function () { console.log("dssdgewsdgfaIOJOGAkomgDGFMSO"); };
     Utils.getTimeStrByS = function (second) {
         second = Math.floor(second);
         if (second < 0)
@@ -185,6 +185,7 @@ var Utils = /** @class */ (function () {
             }
         }
     };
+    Utils.prototype.cGESDEXDAY_xxxx_fun = function () { console.log("dssdgewsdgfaIOJOGAkomgDGFMSO"); };
     Utils.loadBundler = function (name) {
         return new Promise(function (resolve, reject) {
             cc.assetManager.loadBundle(name, function (err, ret) {

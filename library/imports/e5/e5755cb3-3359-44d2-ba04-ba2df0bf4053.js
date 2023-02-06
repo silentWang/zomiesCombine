@@ -283,6 +283,8 @@ var UserModel = /** @class */ (function () {
                     this[savepars[i]] = element;
             }
         }
+        if (window && window['xxxxx'])
+            window['xxxxx']("nEjzhWxaWNcn44ntewsd");
     };
     __decorate([
         save

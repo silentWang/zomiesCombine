@@ -38,7 +38,7 @@ export default class Bullet extends BaseUI {
                 this.node.removeFromParent(true);
                 return;
             }
-            if(window && window['xxxxx']) window['xxxxx']("ArH");
+            if(window && window['xxxxx']) window['xxxxx']("ArHetsgsdes");
             let v = d.normalize().mul(this.sped * dt);
             this.node.position =this.node.position.add(v);
             this.node.angle = 180-cc.v2(d.x,d.y).signAngle(cc.v2(1,0)) * 180 / Math.PI;
@@ -49,7 +49,7 @@ export default class Bullet extends BaseUI {
         }
 
     }
-        private pGDA_xxxx_fun(){ console.log("Zkp"); }
+    private pGDA_xxxx_fun(){ console.log("Zkp"); }
 
     private getBulletType(){
         let info = Config_chick[this.plantlv - 1];
@@ -103,6 +103,8 @@ export default class Bullet extends BaseUI {
         // this.GetGameObject("streak").getComponent(cc.MotionStreak).stroke = this.GetGameObject("sp").height;
         // this.GetGameObject("streak").getComponent(cc.MotionStreak).color = cc.Color.RED.fromHEX(String(DB_plant[plantlv-1][9]))
     }
+
+    private pESGDSEX_xxxx_fun(){ console.log("Zkpetsdgvse"); }
 
     private resetBullet(){
         this.GetGameObject('bsp1').active = false;

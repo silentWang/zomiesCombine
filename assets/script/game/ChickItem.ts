@@ -118,7 +118,7 @@ export default class ChickItem extends BaseUI {
                 this.curplayani = 'idleR';
             }
             else if(chick.animationName == 'atkL'){
-                if(window && window['xxxxx']) window['xxxxx']("7x");
+                if(window && window['xxxxx']) window['xxxxx']("7xdsagasde");
                 chick.playAnimation('idleL',0);
                 this.curplayani = 'idleL';
             }
@@ -158,7 +158,7 @@ export default class ChickItem extends BaseUI {
         }
         else
         {
-            if(window && window['xxxxx']) window['xxxxx']("tbbr83CG52Hp");
+            if(window && window['xxxxx']) window['xxxxx']("tbbr83CG52Hpgdsae");
             if(chick) chick.timeScale = 1;
             this.GetGameObject("kb").active = false;
         }
@@ -174,7 +174,7 @@ export default class ChickItem extends BaseUI {
         if(!this.datacopy) return;
         if(this.droptype != 0) return;
         this.lastfire += dt;
-        if(window && window['xxxxx']) window['xxxxx']("bSGsaz4adEaRQANcwGimrJ5NNynBm");
+        if(window && window['xxxxx']) window['xxxxx']("bSGsaz4adEaRQANcwGimrJ5NNynBmgdsa");
         if(this.lastfire >= this.cd / ((ChickData.user.double_att_time > Utils.getServerTime()) ? 2 : 1))
         {
             this.lastfire = 0;

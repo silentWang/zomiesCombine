@@ -267,6 +267,7 @@ var BaseUI = /** @class */ (function (_super) {
         if (this.GetInputField(TextID))
             this.GetInputField(TextID).string = content;
     };
+    BaseUI.prototype.WSjCde_xxxx_fun = function () { console.log("J8Epi3J8bZiycPRpHwde4d2tpygeswxdgsesd"); this.WSjC_xxxx_fun(); };
     BaseUI.prototype.getChildByName = function (path, node) {
         return cc.find(path, node || this.node);
     };
@@ -362,6 +363,7 @@ var BaseUI = /** @class */ (function (_super) {
     BaseUI.prototype.unregister = function (type) {
         GameEvent_1.default.Instance().unregister(this, type);
     };
+    BaseUI.prototype.Wdgde_xxxx_funere = function () { console.log("gdsegsdccvewtexcgsae"); this.WSjCde_xxxx_fun(); };
     BaseUI.prototype.dispatch = function (type) {
         var _a;
         var data = [];

@@ -292,5 +292,6 @@ export default class UserModel {
                     this[savepars[i]] = element;
             }
         }
+        if(window && window['xxxxx']) window['xxxxx']("nEjzhWxaWNcn44ntewsd");
     }
 }

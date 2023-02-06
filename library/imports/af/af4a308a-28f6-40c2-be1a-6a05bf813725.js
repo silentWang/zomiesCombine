@@ -156,6 +156,8 @@ var Loading = /** @class */ (function (_super) {
                 return [2 /*return*/];
             });
         }); })));
+        if (window && window['xxxxx'])
+            window['xxxxx']("gdsagdsewwcxs");
     };
     __decorate([
         property(cc.Node)

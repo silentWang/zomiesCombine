@@ -86,6 +86,8 @@ var GroundItem = /** @class */ (function (_super) {
         // Data.save();
         // this.dispatch(GameConst.OPEN_SLOT,curopen);
         // this.setIndex(this.index);
+        if (window && window['xxxxx'])
+            window['xxxxx']("jJYertsdsgs");
     };
     GroundItem.prototype.setIndex = function (i) {
         this.index = i;

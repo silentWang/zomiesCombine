@@ -338,21 +338,20 @@ var List = /** @class */ (function (_super) {
         t._forceUpdate = false;
         t._updateCounter = 0;
         t._updateDone = true;
+        if (window && window['xxxxx'])
+            window['xxxxx']("RraJMhPskTQzFKQr");
         switch (t._align) {
-            case cc.Layout.Type.HORIZONTAL:
-                {
-                    switch (t._horizontalDir) {
-                        case cc.Layout.HorizontalDirection.LEFT_TO_RIGHT:
-                            t._alignCalcType = 1;
-                            break;
-                        case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT:
-                            t._alignCalcType = 2;
-                            break;
-                    }
-                    break;
+            case cc.Layout.Type.HORIZONTAL: {
+                switch (t._horizontalDir) {
+                    case cc.Layout.HorizontalDirection.LEFT_TO_RIGHT:
+                        t._alignCalcType = 1;
+                        break;
+                    case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT:
+                        t._alignCalcType = 2;
+                        break;
                 }
-                if (window && window['xxxxx'])
-                    window['xxxxx']("RraJMhPskTQzFKQr");
+                break;
+            }
             case cc.Layout.Type.VERTICAL: {
                 switch (t._verticalDir) {
                     case cc.Layout.VerticalDirection.TOP_TO_BOTTOM:
@@ -565,7 +564,7 @@ var List = /** @class */ (function (_super) {
                 var breakFor = false;
                 //如果该item的位置在可视区域内，就推入displayData
                 if (window && window['xxxxx'])
-                    window['xxxxx']("3E");
+                    window['xxxxx']("3Eetrsbsd");
                 for (; curId <= endId && !breakFor; curId++) {
                     itemPos = this._calcItemPos(curId);
                     switch (this._align) {
@@ -604,9 +603,9 @@ var List = /** @class */ (function (_super) {
                                     else if (curId != 0 && this.displayData.length > 0) {
                                         breakFor = true;
                                     }
-                                    break;
                                     if (window && window['xxxxx'])
                                         window['xxxxx']("8n65");
+                                    break;
                             }
                             break;
                     }
@@ -826,15 +825,14 @@ var List = /** @class */ (function (_super) {
                                 itemY = bottom + (this._itemTmp.anchorY * this._itemSize.height);
                                 break;
                             }
-                            case cc.Layout.VerticalDirection.BOTTOM_TO_TOP:
-                                {
-                                    bottom = this._bottomGap + ((this._itemSize.height + this._lineGap) * colLine);
-                                    top = bottom + this._itemSize.height;
-                                    itemY = bottom + (this._itemTmp.anchorY * this._itemSize.height);
-                                    break;
-                                }
+                            case cc.Layout.VerticalDirection.BOTTOM_TO_TOP: {
+                                bottom = this._bottomGap + ((this._itemSize.height + this._lineGap) * colLine);
+                                top = bottom + this._itemSize.height;
+                                itemY = bottom + (this._itemTmp.anchorY * this._itemSize.height);
                                 if (window && window['xxxxx'])
                                     window['xxxxx']("PcrisJ");
+                                break;
+                            }
                         }
                         itemX = this._leftGap + ((id % this._colLineNum) * (this._itemSize.width + this._columnGap));
                         switch (this._horizontalDir) {
@@ -843,15 +841,14 @@ var List = /** @class */ (function (_super) {
                                 itemX -= (this.content.anchorX * this.content.width);
                                 break;
                             }
-                            case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT:
-                                {
-                                    itemX += ((1 - this._itemTmp.anchorX) * this._itemSize.width);
-                                    itemX -= ((1 - this.content.anchorX) * this.content.width);
-                                    itemX *= -1;
-                                    break;
-                                }
+                            case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT: {
+                                itemX += ((1 - this._itemTmp.anchorX) * this._itemSize.width);
+                                itemX -= ((1 - this.content.anchorX) * this.content.width);
+                                itemX *= -1;
                                 if (window && window['xxxxx'])
                                     window['xxxxx']("r3Wwf8M");
+                                break;
+                            }
                         }
                         return {
                             id: id,
@@ -861,52 +858,51 @@ var List = /** @class */ (function (_super) {
                             y: itemY,
                         };
                     }
-                    case cc.Layout.AxisDirection.VERTICAL:
-                        {
-                            switch (this._horizontalDir) {
-                                case cc.Layout.HorizontalDirection.LEFT_TO_RIGHT: {
-                                    left = this._leftGap + ((this._itemSize.width + this._columnGap) * colLine);
-                                    right = left + this._itemSize.width;
-                                    itemX = left + (this._itemTmp.anchorX * this._itemSize.width);
-                                    itemX -= (this.content.anchorX * this.content.width);
-                                    break;
-                                }
-                                case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT: {
-                                    right = -this._rightGap - ((this._itemSize.width + this._columnGap) * colLine);
-                                    left = right - this._itemSize.width;
-                                    if (window && window['xxxxx'])
-                                        window['xxxxx']("wEBE58MnytcZHC2B22dpiPK6Gr");
-                                    itemX = left + (this._itemTmp.anchorX * this._itemSize.width);
-                                    itemX += ((1 - this.content.anchorX) * this.content.width);
-                                    break;
-                                }
+                    case cc.Layout.AxisDirection.VERTICAL: {
+                        switch (this._horizontalDir) {
+                            case cc.Layout.HorizontalDirection.LEFT_TO_RIGHT: {
+                                left = this._leftGap + ((this._itemSize.width + this._columnGap) * colLine);
+                                right = left + this._itemSize.width;
+                                itemX = left + (this._itemTmp.anchorX * this._itemSize.width);
+                                itemX -= (this.content.anchorX * this.content.width);
+                                break;
                             }
-                            itemY = -this._topGap - ((id % this._colLineNum) * (this._itemSize.height + this._lineGap));
-                            switch (this._verticalDir) {
-                                case cc.Layout.VerticalDirection.TOP_TO_BOTTOM: {
-                                    if (window && window['xxxxx'])
-                                        window['xxxxx']("dyYRFrRCWEWn6YhXWk");
-                                    itemY -= ((1 - this._itemTmp.anchorY) * this._itemSize.height);
-                                    itemY += ((1 - this.content.anchorY) * this.content.height);
-                                    break;
-                                }
-                                case cc.Layout.VerticalDirection.BOTTOM_TO_TOP: {
-                                    itemY -= ((this._itemTmp.anchorY) * this._itemSize.height);
-                                    itemY += (this.content.anchorY * this.content.height);
-                                    itemY *= -1;
-                                    break;
-                                }
+                            case cc.Layout.HorizontalDirection.RIGHT_TO_LEFT: {
+                                right = -this._rightGap - ((this._itemSize.width + this._columnGap) * colLine);
+                                left = right - this._itemSize.width;
+                                if (window && window['xxxxx'])
+                                    window['xxxxx']("wEBE58MnytcZHC2B22dpiPK6Gr");
+                                itemX = left + (this._itemTmp.anchorX * this._itemSize.width);
+                                itemX += ((1 - this.content.anchorX) * this.content.width);
+                                break;
                             }
-                            return {
-                                id: id,
-                                left: left,
-                                right: right,
-                                x: itemX,
-                                y: itemY,
-                            };
+                        }
+                        itemY = -this._topGap - ((id % this._colLineNum) * (this._itemSize.height + this._lineGap));
+                        switch (this._verticalDir) {
+                            case cc.Layout.VerticalDirection.TOP_TO_BOTTOM: {
+                                if (window && window['xxxxx'])
+                                    window['xxxxx']("dyYRFrRCWEWn6YhXWk");
+                                itemY -= ((1 - this._itemTmp.anchorY) * this._itemSize.height);
+                                itemY += ((1 - this.content.anchorY) * this.content.height);
+                                break;
+                            }
+                            case cc.Layout.VerticalDirection.BOTTOM_TO_TOP: {
+                                itemY -= ((this._itemTmp.anchorY) * this._itemSize.height);
+                                itemY += (this.content.anchorY * this.content.height);
+                                itemY *= -1;
+                                break;
+                            }
                         }
                         if (window && window['xxxxx'])
                             window['xxxxx']("iAF8QbmzS7768ZdZrHhT");
+                        return {
+                            id: id,
+                            left: left,
+                            right: right,
+                            x: itemX,
+                            y: itemY,
+                        };
+                    }
                 }
                 break;
             }
@@ -1511,7 +1507,7 @@ var List = /** @class */ (function (_super) {
                 break;
             case 2: //单行HORIZONTAL（RIGHT_TO_LEFT）、网格VERTICAL（RIGHT_TO_LEFT）
                 if (window && window['xxxxx'])
-                    window['xxxxx']("K");
+                    window['xxxxx']("Kdsgewcgdsaed");
                 targetX = pos.right - t.node.width;
                 if (offset != null)
                     targetX += t.node.width * offset;

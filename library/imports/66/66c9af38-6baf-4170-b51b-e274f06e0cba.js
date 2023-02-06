@@ -152,6 +152,8 @@ var ListItem = /** @class */ (function (_super) {
         this.node.runAction(cc.sequence(acts));
     };
     ListItem.prototype.onClickThis = function () {
+        if (window && window['xxxxx'])
+            window['xxxxx']("gdasetweuhnoibasd45415");
         this.list.selectedId = this.listId;
     };
     __decorate([

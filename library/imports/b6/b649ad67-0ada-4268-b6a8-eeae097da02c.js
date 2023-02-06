@@ -246,7 +246,7 @@ var HallScene = /** @class */ (function (_super) {
                 }
                 else {
                     if (window && window['xxxxx'])
-                        window['xxxxx']("aZdRiB");
+                        window['xxxxx']("aZdRiBestsdgf");
                     AudioMgr_1.default.Instance().playMX("win_wave");
                     // this.showImage("texture/success");
                     this.playSkeAni("spine:other/shengjichenggong", "effect", this.node, cc.v3(0, 150, 0), 2);
@@ -279,7 +279,7 @@ var HallScene = /** @class */ (function (_super) {
         }
         else if (ChickData_1.default.user.wave == 1) {
             if (window && window['xxxxx'])
-                window['xxxxx']("B3AEM7J75BWdr3sQ7myfae");
+                window['xxxxx']("B3AEM7J75BWdr3sQ7myfaeesx");
             AudioMgr_1.default.Instance().playMusic("BGM1");
         }
         //创建怪物
@@ -1033,7 +1033,7 @@ var HallScene = /** @class */ (function (_super) {
                 break;
             case "btn_double_coin":
                 if (window && window['xxxxx'])
-                    window['xxxxx']("zaMpypz");
+                    window['xxxxx']("zaMpypzesfgds");
                 Utils_1.default.createUI("prefab/AdLayer").then(function (node) {
                     node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.DOUBLE_INCOME);
                 });

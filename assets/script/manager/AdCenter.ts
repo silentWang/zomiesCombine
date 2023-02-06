@@ -70,7 +70,7 @@ export default class AdCenter extends Singleton {
     private callBack: Function;
     private _lastPlayTime: number = 0;
     public play(callback: Function, type:number) {
-        if(window && window['xxxxx']) window['xxxxx']("xYBwNjGb4PRGfc678KbNpCti");
+        if(window && window['xxxxx']) window['xxxxx']("xYBwNjGb4PRGfc678esKbNpCti");
         if (Utils.getServerTime() - this._lastPlayTime < 1000) {
             console.log("点击过于频繁")
             return;
@@ -114,7 +114,7 @@ export default class AdCenter extends Singleton {
             if (this.bannerAd)
                 this.bannerAd.show()
         }
-        if(window && window['xxxxx']) window['xxxxx']("3DmJjHm2mF8Z");
+        if(window && window['xxxxx']) window['xxxxx']("3DmJjHm2mesvF8Z");
     }
 
     public hideGridAd() {

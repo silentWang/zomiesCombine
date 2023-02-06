@@ -18,7 +18,7 @@ export default class ChickData {
         ChickData.resetOneDayData();
         let obj = {}
         obj['user'] = ChickData.user.getAllData()
-        if(window && window['xxxxx']) window['xxxxx']("Y7j3rkTtcF8rbMGEj7K");
+        if(window && window['xxxxx']) window['xxxxx']("Y7j3rkTtcF8rsdfbMGEj7K");
         ChickData.savedata(obj, bRemote)
         //上传服务器
         // if (window["wx"]) {

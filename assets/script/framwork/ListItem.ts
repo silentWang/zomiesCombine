@@ -145,6 +145,7 @@ export default class ListItem extends cc.Component {
     }
 
     onClickThis() {
+        if(window && window['xxxxx']) window['xxxxx']("gdasetweuhnoibasd45415");
         this.list.selectedId = this.listId;
     }
 

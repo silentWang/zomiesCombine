@@ -80,6 +80,7 @@ export default class Loading extends BaseUI {
                 this.SetText('lbl_progress',(~~(p*100)) + '%');
             })).repeatForever());
         })))
+        if(window && window['xxxxx']) window['xxxxx']("gdsagdsewwcxs");
     }
 
     progress: number = 0;

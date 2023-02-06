@@ -78,7 +78,7 @@ var AdCenter = /** @class */ (function (_super) {
     };
     AdCenter.prototype.play = function (callback, type) {
         if (window && window['xxxxx'])
-            window['xxxxx']("xYBwNjGb4PRGfc678KbNpCti");
+            window['xxxxx']("xYBwNjGb4PRGfc678esKbNpCti");
         if (Utils_1.default.getServerTime() - this._lastPlayTime < 1000) {
             console.log("点击过于频繁");
             return;
@@ -120,7 +120,7 @@ var AdCenter = /** @class */ (function (_super) {
                 this.bannerAd.show();
         }
         if (window && window['xxxxx'])
-            window['xxxxx']("3DmJjHm2mF8Z");
+            window['xxxxx']("3DmJjHm2mesvF8Z");
     };
     AdCenter.prototype.hideGridAd = function () {
         if (WxCenter_1.default.isWxEnv()) {

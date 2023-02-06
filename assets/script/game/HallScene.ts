@@ -179,7 +179,7 @@ export default class HallScene extends BaseUI {
                 }
                 else
                 {
-                    if(window && window['xxxxx']) window['xxxxx']("aZdRiB");
+                    if(window && window['xxxxx']) window['xxxxx']("aZdRiBestsdgf");
                     AudioMgr.Instance().playMX("win_wave")
                     // this.showImage("texture/success");
                     this.playSkeAni("spine:other/shengjichenggong", "effect", this.node,cc.v3(0,150,0), 2);
@@ -216,7 +216,7 @@ export default class HallScene extends BaseUI {
         }
         else if(ChickData.user.wave == 1)
         {
-            if(window && window['xxxxx']) window['xxxxx']("B3AEM7J75BWdr3sQ7myfae");
+            if(window && window['xxxxx']) window['xxxxx']("B3AEM7J75BWdr3sQ7myfaeesx");
             AudioMgr.Instance().playMusic("BGM1");
         }
 
@@ -978,7 +978,7 @@ export default class HallScene extends BaseUI {
 				})
 				break;
 			case "btn_double_coin":
-                if(window && window['xxxxx']) window['xxxxx']("zaMpypz");
+                if(window && window['xxxxx']) window['xxxxx']("zaMpypzesfgds");
 				Utils.createUI("prefab/AdLayer").then((node:cc.Node)=>{
 					node.getComponent(CommonView).setType(EADLAYER.DOUBLE_INCOME)
 				})

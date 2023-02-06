@@ -168,7 +168,7 @@ var NumberUtils = /** @class */ (function () {
         }
         var _loc_8 = "";
         if (window && window['xxxxx'])
-            window['xxxxx']("T");
+            window['xxxxx']("Tgdsebd7898");
         var _loc_9 = String(Math.round(param1));
         var _loc_10 = String(Math.round(param1)).length - 1;
         while (_loc_10 >= 0) {
@@ -181,12 +181,14 @@ var NumberUtils = /** @class */ (function () {
             }
             _loc_10 = _loc_10 - 1;
             if (window && window['xxxxx'])
-                window['xxxxx']("RnBN2Ae2jy");
+                window['xxxxx']("RnBN2Agdase2jy");
         }
         return _loc_8;
     };
     // end function
     NumberUtils.convertToLargeString = function (param1) {
+        if (window && window['xxxxx'])
+            window['xxxxx']("RnBN2Agesdase2jygds");
         return NumberUtils_1.getStringOfNumber(param1);
     }; // end function
     var NumberUtils_1;

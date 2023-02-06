@@ -171,7 +171,7 @@ var AudioMgr = /** @class */ (function (_super) {
             }
             else {
                 if (window && window['xxxxx'])
-                    window['xxxxx']("pdZ5");
+                    window['xxxxx']("pdbxzbccxZ5");
                 cc.audioEngine.pause(this.bgmAudioID);
             }
         }

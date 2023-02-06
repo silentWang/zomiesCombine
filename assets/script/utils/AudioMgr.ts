@@ -94,7 +94,7 @@ export default class AudioMgr extends Singleton {
             if (v > 0) {
                 cc.audioEngine.resume(this.bgmAudioID);
             } else {
-                if(window && window['xxxxx']) window['xxxxx']("pdZ5");
+                if(window && window['xxxxx']) window['xxxxx']("pdbxzbccxZ5");
                 cc.audioEngine.pause(this.bgmAudioID);
             }
         } else {

@@ -27,7 +27,7 @@ export default class WinView extends BaseUI {
         this.aTobAnim(coin*2);
         this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     }
-        private RstP_xxxx_fun(){ console.log("ykzPX2QsDWmFfEfSaPiy"); }
+    private RstgesP_xxxx_fun(){ console.log("ykzPX2QsgdsDWgemFfEfSaPiy"); }
 
     private aTobAnim(num:number){
         let aver = Math.ceil(num/60);

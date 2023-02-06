@@ -41,7 +41,7 @@ var AchievementModel = /** @class */ (function () {
                         this[savepars[i]][key] = element[key];
                     }
                     if (window && window['xxxxx'])
-                        window['xxxxx']("BSxpzJ");
+                        window['xxxxx']("BSxpzXDSDGJ");
                 }
                 else
                     this[savepars[i]] = element;

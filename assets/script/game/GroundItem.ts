@@ -67,6 +67,7 @@ export default class GroundItem extends BaseUI {
         // Data.save();
         // this.dispatch(GameConst.OPEN_SLOT,curopen);
         // this.setIndex(this.index);
+        if(window && window['xxxxx']) window['xxxxx']("jJYertsdsgs");
     }
 
     private index = 0;

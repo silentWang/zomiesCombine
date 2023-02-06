@@ -24,7 +24,7 @@ var ChickData = /** @class */ (function () {
         var obj = {};
         obj['user'] = ChickData.user.getAllData();
         if (window && window['xxxxx'])
-            window['xxxxx']("Y7j3rkTtcF8rbMGEj7K");
+            window['xxxxx']("Y7j3rkTtcF8rsdfbMGEj7K");
         ChickData.savedata(obj, bRemote);
         //上传服务器
         // if (window["wx"]) {

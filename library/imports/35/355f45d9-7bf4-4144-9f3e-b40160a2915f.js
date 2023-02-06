@@ -206,7 +206,7 @@ var ChickItem = /** @class */ (function (_super) {
             }
             else if (chick.animationName == 'atkL') {
                 if (window && window['xxxxx'])
-                    window['xxxxx']("7x");
+                    window['xxxxx']("7xdsagasde");
                 chick.playAnimation('idleL', 0);
                 this.curplayani = 'idleL';
             }
@@ -241,7 +241,7 @@ var ChickItem = /** @class */ (function (_super) {
         }
         else {
             if (window && window['xxxxx'])
-                window['xxxxx']("tbbr83CG52Hp");
+                window['xxxxx']("tbbr83CG52Hpgdsae");
             if (chick)
                 chick.timeScale = 1;
             this.GetGameObject("kb").active = false;
@@ -260,7 +260,7 @@ var ChickItem = /** @class */ (function (_super) {
             return;
         this.lastfire += dt;
         if (window && window['xxxxx'])
-            window['xxxxx']("bSGsaz4adEaRQANcwGimrJ5NNynBm");
+            window['xxxxx']("bSGsaz4adEaRQANcwGimrJ5NNynBmgdsa");
         if (this.lastfire >= this.cd / ((ChickData_1.default.user.double_att_time > Utils_1.default.getServerTime()) ? 2 : 1)) {
             this.lastfire = 0;
             var target_1 = this.getTarget();
