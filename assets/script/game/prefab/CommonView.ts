@@ -59,7 +59,7 @@ export default class CommonView extends BaseUI {
             this.SetText("lbl_time","");
         }
     }
-        private MTZa_xxxx_fun(){ console.log("t87Fj7Bpwx"); }
+    private MTZa_xxxx_fun(){ console.log("t87Fj7Bpwx"); }
 
     private getEMTime(){
         let end_time = 0;

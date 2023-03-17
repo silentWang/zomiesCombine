@@ -40,7 +40,6 @@ var AdCenter = /** @class */ (function (_super) {
                 window['xxxxx']("cM5zM6kQEi");
             _this.videoAdID.onError(function (res) {
                 console.log("onError", res);
-                MsgToast_1.default.show("广告加载失败");
                 MsgToast_1.default.show('视频加载失败');
             });
             _this.videoAdID.onLoad(function () {
