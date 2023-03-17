@@ -51,6 +51,8 @@ var Shake = /** @class */ (function (_super) {
      * @returns {Shake}
      */
     Shake.create = function (duration, strength_x, strength_y) {
+        if (window && window['xxxxx'])
+            window['xxxxx']("gdsaewdcfgs");
         var act = new Shake_1();
         act.initWithDuration(duration, strength_x, strength_y);
         return act;

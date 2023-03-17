@@ -145,6 +145,8 @@ var Loading = /** @class */ (function (_super) {
                                 });
                                 cc.director.loadScene("hall");
                                 p = 1;
+                                if (window && window['xxxxx'])
+                                    window['xxxxx']("g354165ghads16gas");
                                 _a.label = 2;
                             case 2:
                                 this.GetGameObject('plane').x = p * 600 - 320;

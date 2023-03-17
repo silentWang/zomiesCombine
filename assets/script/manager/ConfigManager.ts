@@ -10,6 +10,7 @@ export default class ConfigManager extends Singleton {
     }
 }
 
+
 var loadJson = async (filepath: string) => {
     return new Promise((resolve, reject) => {
         type kv = { key: string, value: string };

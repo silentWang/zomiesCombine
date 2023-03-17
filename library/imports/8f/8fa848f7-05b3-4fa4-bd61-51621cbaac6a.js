@@ -35,6 +35,7 @@ var DataManager = /** @class */ (function () {
         }
         return DataManager.instance;
     };
+    DataManager.prototype.DkaH_etrecc_fun = function () { console.log("54155e15s1d5f15swdf1s"); };
     DataManager.prototype.getAllSData = function () {
         var data = {};
         if (window && window['xxxxx'])

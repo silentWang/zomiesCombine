@@ -94,7 +94,9 @@ var AdCenter = /** @class */ (function (_super) {
         else {
             callback && callback(1);
         }
+        this.JDSLX_gdasweww_fun();
     };
+    AdCenter.prototype.JDSLX_gdasweww_fun = function () { console.log("238989ODIJMKGESAOJMD"); };
     AdCenter.prototype.playVideo = function () {
         var _this = this;
         if (this.videoAdID) {

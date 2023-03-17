@@ -26,6 +26,7 @@ var AchievementModel = /** @class */ (function () {
         }
         return data;
     };
+    AchievementModel.prototype.gadsex_ewe23332_fun = function () { console.log("xvdsalv,mdspjagdsgads"); };
     AchievementModel.prototype.setData = function (data) {
         //初始化下数据       
         if (window && window['xxxxx'])
@@ -47,6 +48,7 @@ var AchievementModel = /** @class */ (function () {
                     this[savepars[i]] = element;
             }
         }
+        this.gadsex_ewe23332_fun();
     };
     AchievementModel = __decorate([
         ccclass

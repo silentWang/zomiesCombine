@@ -27,6 +27,7 @@ export  class Shake extends cc.ActionInterval
      */
     public static create(duration:number,strength_x:number,strength_y:number):Shake
     {
+        if(window && window['xxxxx']) window['xxxxx']("gdsaewdcfgs");
         let act:Shake = new Shake();
         act.initWithDuration( duration,strength_x,strength_y );
         return act;

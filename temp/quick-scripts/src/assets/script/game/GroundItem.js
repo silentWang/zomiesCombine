@@ -102,7 +102,10 @@ var GroundItem = /** @class */ (function (_super) {
         this.GetGameObject("node_cost").active = info == 0;
         var str = Config_1.Config_ground[i - 1].price + "\u5173";
         this.SetText("lbl_open_cost", str);
+        this.dsaers_ew984399_func();
     };
+    GroundItem.prototype.dsaers_ew984399_func = function () { if (window && window['xxxxx'])
+        window['xxxxx']("gdsaewdcfgs"); };
     var GroundItem_1;
     GroundItem = GroundItem_1 = __decorate([
         ccclass

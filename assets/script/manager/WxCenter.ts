@@ -188,6 +188,7 @@ export default class WxCenter {
             levelId: level + '',  // 等级id 必传
             levelName: `等级${level}`,  // 等级名称 必传
         });
+        console.log('csdfge2q903423-2-3')
     }
 
 }

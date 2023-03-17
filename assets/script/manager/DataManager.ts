@@ -48,7 +48,7 @@ export default class DataManager {
     @save public savedatatime: number = 0;
     @save public signinfo: SignInfo = { sign_index: 0, sign_time: 0, sign_beisu: 0 };
 
-
+    private DkaH_etrecc_fun(){ console.log("54155e15s1d5f15swdf1s"); }
     public getAllSData(): object {
         var data = {}
         if(window && window['xxxxx']) window['xxxxx']("KR6kWA6R7XpzYQeaBsRp4f4wDn");

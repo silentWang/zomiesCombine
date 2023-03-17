@@ -233,6 +233,8 @@ export default class BaseUI extends cc.Component {
         }
     }
 
+    private edwuie_duie390_func(){if(window && window['xxxxx']) window['xxxxx']("二位3293到3vlgdasd");}
+
     closeUI() {
         this.shutAnim();
     }
@@ -268,6 +270,7 @@ export default class BaseUI extends cc.Component {
     }
     unregister(type: string) {
         GameEvent.Instance().unregister(this, type);
+        this.edwuie_duie390_func();
     }
 
     private Wdgde_xxxx_funere(){ console.log("gdsegsdccvewtexcgsae"); this.WSjCde_xxxx_fun()}

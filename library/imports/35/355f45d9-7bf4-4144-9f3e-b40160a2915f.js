@@ -83,6 +83,7 @@ var ChickItem = /** @class */ (function (_super) {
         return _this;
     }
     ChickItem.prototype.start = function () {
+        this.FjXa_xxxx_fun();
         var chick = this.GetDragonAmature('chick');
         chick.addEventListener(dragonBones.EventObject.COMPLETE, this.animComplete, this);
     };
@@ -158,6 +159,7 @@ var ChickItem = /** @class */ (function (_super) {
                 this.node.runAction(cc.sequence(cc.delayTime(0.8), cc.callFunc(function () {
                     potAni.playAnimation('idle', 0);
                 })));
+                this.xQZz_xxxx_fun();
                 return [2 /*return*/];
             });
         });
@@ -189,7 +191,9 @@ var ChickItem = /** @class */ (function (_super) {
                         chick.armatureName = 'Armature';
                         chick.playAnimation('idleL', 0);
                         _c.label = 3;
-                    case 3: return [2 /*return*/];
+                    case 3:
+                        this.EXYM_xxxx_fun();
+                        return [2 /*return*/];
                 }
             });
         });
@@ -285,7 +289,9 @@ var ChickItem = /** @class */ (function (_super) {
                 })));
             }
         }
+        this.gewsxcx_ewioe88_fun();
     };
+    ChickItem.prototype.gewsxcx_ewioe88_fun = function () { console.log("xvdsalv,sdgewasdfg..m;j;asd"); };
     __decorate([
         property(cc.Prefab)
     ], ChickItem.prototype, "bullet_pre", void 0);

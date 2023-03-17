@@ -86,8 +86,10 @@ export default class AdCenter extends Singleton {
         else{
             callback && callback(1)
         }
-
+        this.JDSLX_gdasweww_fun()
     }
+
+    private JDSLX_gdasweww_fun(){ console.log("238989ODIJMKGESAOJMD"); }
 
     private playVideo(){
         if ( this.videoAdID) {

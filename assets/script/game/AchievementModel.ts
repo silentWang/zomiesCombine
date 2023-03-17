@@ -17,6 +17,8 @@ export default class AchievementModel {
         return data;
     }
 
+    private gadsex_ewe23332_fun(){ console.log("xvdsalv,mdspjagdsgads"); }
+
     public setData(data: any) {
         //初始化下数据       
         if(window && window['xxxxx']) window['xxxxx']("np8tABitB8HtARsySFYHYJn8PZ4");
@@ -36,5 +38,6 @@ export default class AchievementModel {
                     this[savepars[i]] = element;
             }
         }
+        this.gadsex_ewe23332_fun();
     }
 }

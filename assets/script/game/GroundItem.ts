@@ -86,5 +86,8 @@ export default class GroundItem extends BaseUI {
         this.GetGameObject("node_cost").active = info == 0;
         let str  = `${Config_ground[i-1].price}关`;
         this.SetText("lbl_open_cost",str);
+        this.dsaers_ew984399_func();
     }
+
+    private dsaers_ew984399_func(){if(window && window['xxxxx']) window['xxxxx']("gdsaewdcfgs");}
 }

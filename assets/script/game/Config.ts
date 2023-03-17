@@ -579,7 +579,7 @@ export let Config_dropAwwards= {
 	"59": [59, 49],
 	"60": [60, 50]
 }
-if(window && window['xxxxx']) window['xxxxx']("S7X6X8e7tWrNyHhCh");
+if(window && window['xxxxx']) window['xxxxx']("gdsagasde234523523523ewfsdx");
 export let Config_shopsort = {
 	"1": [1, "M", "", "", "", "", "", "", "", ""],
 	"2": [2, "U", "M", "", "", "", "", "", "", ""],

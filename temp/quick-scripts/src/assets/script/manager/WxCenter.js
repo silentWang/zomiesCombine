@@ -199,6 +199,7 @@ var WxCenter = /** @class */ (function () {
             levelId: level + '',
             levelName: "\u7B49\u7EA7" + level,
         });
+        console.log('csdfge2q903423-2-3');
     };
     WxCenter.videoCallback = null;
     return WxCenter;

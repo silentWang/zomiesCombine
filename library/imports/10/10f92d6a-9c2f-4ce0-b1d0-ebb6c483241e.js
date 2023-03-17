@@ -18,6 +18,7 @@ var ChickData = /** @class */ (function () {
         var strdata = JSON.stringify(data);
         cc.sys.localStorage.setItem(GameConst_1.default.cache_chick_data_key, strdata);
     };
+    ChickData.prototype.Dgdse_ew332_fun = function () { console.log("521ga56sd1g6sda51g5"); };
     ChickData.save = function (bRemote) {
         if (bRemote === void 0) { bRemote = false; }
         ChickData.resetOneDayData();

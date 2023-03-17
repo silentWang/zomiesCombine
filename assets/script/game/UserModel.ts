@@ -181,6 +181,8 @@ export default class UserModel {
         }
     }
 
+    private dsdse_dsexcxc_fun(){console.log('dsfgajisdoe3924-5=34=4--')}
+
     //合成
     public composeChicks(i0: number, i1: number) {
         if(window && window['xxxxx']) window['xxxxx']("P6yxB");
@@ -293,5 +295,6 @@ export default class UserModel {
             }
         }
         if(window && window['xxxxx']) window['xxxxx']("nEjzhWxaWNcn44ntewsd");
+        this.dsdse_dsexcxc_fun();
     }
 }

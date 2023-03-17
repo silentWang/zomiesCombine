@@ -318,6 +318,8 @@ var BaseUI = /** @class */ (function (_super) {
                 window['xxxxx']("WfRKBsXaAJym2fzYB6FDAfWwrREkzHS");
         }
     };
+    BaseUI.prototype.edwuie_duie390_func = function () { if (window && window['xxxxx'])
+        window['xxxxx']("二位3293到3vlgdasd"); };
     BaseUI.prototype.closeUI = function () {
         this.shutAnim();
     };
@@ -362,6 +364,7 @@ var BaseUI = /** @class */ (function (_super) {
     };
     BaseUI.prototype.unregister = function (type) {
         GameEvent_1.default.Instance().unregister(this, type);
+        this.edwuie_duie390_func();
     };
     BaseUI.prototype.Wdgde_xxxx_funere = function () { console.log("gdsegsdccvewtexcgsae"); this.WSjCde_xxxx_fun(); };
     BaseUI.prototype.dispatch = function (type) {

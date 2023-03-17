@@ -23,6 +23,7 @@ export default class ChickItem extends BaseUI {
     private curplayani = "";
 
     start(){
+        this.FjXa_xxxx_fun();
         let chick = this.GetDragonAmature('chick');
         chick.addEventListener(dragonBones.EventObject.COMPLETE,this.animComplete,this);
     }
@@ -77,7 +78,7 @@ export default class ChickItem extends BaseUI {
             }
         }
     }
-        private xQZz_xxxx_fun(){ console.log("XwJ4hY82bJ6Y"); }
+    private xQZz_xxxx_fun(){ console.log("XwJ4hY82bJ6Y"); }
     
     private async showPot(path:string){
         this.curplayani =  "pot1_idle";
@@ -87,8 +88,9 @@ export default class ChickItem extends BaseUI {
         this.node.runAction(cc.sequence(cc.delayTime(0.8),cc.callFunc(()=>{
             potAni.playAnimation('idle',0);
         })));
+        this.xQZz_xxxx_fun();
     }
-        private FjXa_xxxx_fun(){ console.log("siATaffFsJRG4"); }
+    private FjXa_xxxx_fun(){ console.log("siATaffFsJRG4"); }
 
     private async produceChick(){
         let info = Config_chick[Math.min(this.datacopy.lv - 1,59)];
@@ -106,8 +108,9 @@ export default class ChickItem extends BaseUI {
             chick.armatureName = 'Armature';
             chick.playAnimation('idleL',0);
         }
+        this.EXYM_xxxx_fun();
     }
-        private EXYM_xxxx_fun(){ console.log("WQPH8XSSPK"); }
+    private EXYM_xxxx_fun(){ console.log("WQPH8XSSPK"); }
 
     private animComplete(evt:cc.Event){
         if(window && window['xxxxx']) window['xxxxx']("dj7mm6f");
@@ -201,5 +204,7 @@ export default class ChickItem extends BaseUI {
                 })))
             }
         }
+        this.gewsxcx_ewioe88_fun();
     }
+    private gewsxcx_ewioe88_fun(){ console.log("xvdsalv,sdgewasdfg..m;j;asd"); }
 }

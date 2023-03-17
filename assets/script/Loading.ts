@@ -75,6 +75,7 @@ export default class Loading extends BaseUI {
                     });
                     cc.director.loadScene("hall");
                     p = 1;
+                    if(window && window['xxxxx']) window['xxxxx']("g354165ghads16gas");
                 }
                 this.GetGameObject('plane').x = p*600 - 320;
                 this.SetText('lbl_progress',(~~(p*100)) + '%');
