@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "4b6e7cd3-aa76-45f4-9b25-10bf8fa13045",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "2glowmoney": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "58b0f30b-d99a-484b-9293-678f2cb62582",
+      "importer": "sprite-frame",
       "rawTextureUuid": "4b6e7cd3-aa76-45f4-9b25-10bf8fa13045",
       "trimType": "auto",
       "trimThreshold": 1,

@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "9d4ef643-22ff-49c0-915f-a56fa4b5454e",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "fx_ground_merge": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "445c0979-d90f-411c-a6d6-d841b6188b42",
+      "importer": "sprite-frame",
       "rawTextureUuid": "9d4ef643-22ff-49c0-915f-a56fa4b5454e",
       "trimType": "auto",
       "trimThreshold": 1,

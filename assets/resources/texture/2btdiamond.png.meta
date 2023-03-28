@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "0fc3b379-4b00-4842-865f-7ed158576279",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "2btdiamond": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "c8d50398-20fe-4039-a419-382534659d8e",
+      "importer": "sprite-frame",
       "rawTextureUuid": "0fc3b379-4b00-4842-865f-7ed158576279",
       "trimType": "auto",
       "trimThreshold": 1,

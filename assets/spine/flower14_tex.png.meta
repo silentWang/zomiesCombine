@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "3dc37348-bd89-4b0e-9630-d22775de98a2",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "flower14_tex": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "e30d42e0-7aaf-4279-9348-1e2de7a46e6b",
+      "importer": "sprite-frame",
       "rawTextureUuid": "3dc37348-bd89-4b0e-9630-d22775de98a2",
       "trimType": "auto",
       "trimThreshold": 1,

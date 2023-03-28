@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "0f8e76d0-7bb4-4778-9758-5a2cd20deb77",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "ty_icon_dengji": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "3fddd632-a6d9-440f-8e71-c0d6b86c1995",
+      "importer": "sprite-frame",
       "rawTextureUuid": "0f8e76d0-7bb4-4778-9758-5a2cd20deb77",
       "trimType": "auto",
       "trimThreshold": 1,

@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "4d96207a-0047-4050-a426-75c0064f0505",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "img_weizhi": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "a7101a35-6a8b-443b-bb81-4d995bda5b97",
+      "importer": "sprite-frame",
       "rawTextureUuid": "4d96207a-0047-4050-a426-75c0064f0505",
       "trimType": "auto",
       "trimThreshold": 1,

@@ -1,6 +1,6 @@
 {
-  "platform": "mini-game",
-  "actualPlatform": "wechatgame",
+  "platform": "ios",
+  "actualPlatform": "ios",
   "template": "link",
   "buildPath": "./build",
   "debug": false,

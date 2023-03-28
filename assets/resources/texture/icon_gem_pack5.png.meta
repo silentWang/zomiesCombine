@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "03805e05-175d-4080-82b1-7fb584944eeb",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "icon_gem_pack5": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "8877fa50-ef20-4736-8783-cec39a09ba40",
+      "importer": "sprite-frame",
       "rawTextureUuid": "03805e05-175d-4080-82b1-7fb584944eeb",
       "trimType": "auto",
       "trimThreshold": 1,

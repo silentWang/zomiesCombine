@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "fba5909f-e277-4372-9ae5-da3e7fa1af64",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "shangdian_hsk": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "f6908d52-8d52-41d4-8303-650209d7fa89",
+      "importer": "sprite-frame",
       "rawTextureUuid": "fba5909f-e277-4372-9ae5-da3e7fa1af64",
       "trimType": "auto",
       "trimThreshold": 1,
