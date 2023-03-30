@@ -31,7 +31,7 @@
 #import "SDKWrapper.h"
 #import "platform/ios/CCEAGLView-ios.h"
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
-#import <AnyThinkSDK/AnyThinkSDK.h>
+//#import <AnyThinkSDK/AnyThinkSDK.h>
 
 
 using namespace cocos2d;
@@ -50,7 +50,7 @@ Application* app = nullptr;
     float scale = [[UIScreen mainScreen] scale];
     CGRect bounds = [[UIScreen mainScreen] bounds];
     window = [[UIWindow alloc] initWithFrame: bounds];
-    [self initTopOnSDK];
+//    [self initTopOnSDK];
     // cocos2d application instance
     app = new AppDelegate(bounds.size.width * scale, bounds.size.height * scale);
     app->setMultitouch(true);
@@ -86,15 +86,15 @@ Application* app = nullptr;
     return YES;
 }
 -(void)initTopOnSDK{
-    if (@available(iOS 14, *)) {
-        //iOS 14
-        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-            [[ATAPI sharedInstance] startWithAppID:HW_topOnAd_APPID appKey:HW_topOnAd_APPkey error:nil];
-            //to do something，like preloading
-        }];
-    } else {
-        [[ATAPI sharedInstance] startWithAppID:HW_topOnAd_APPID appKey:HW_topOnAd_APPkey error:nil];
-    }
+//    if (@available(iOS 14, *)) {
+//        //iOS 14
+//        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+//            [[ATAPI sharedInstance] startWithAppID:HW_topOnAd_APPID appKey:HW_topOnAd_APPkey error:nil];
+//            //to do something，like preloading
+//        }];
+//    } else {
+//        [[ATAPI sharedInstance] startWithAppID:HW_topOnAd_APPID appKey:HW_topOnAd_APPkey error:nil];
+//    }
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*

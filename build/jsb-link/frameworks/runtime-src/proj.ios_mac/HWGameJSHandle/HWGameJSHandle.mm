@@ -7,7 +7,7 @@
 
 #import "HWGameJSHandle.h"
 #import "cocos2d.h"
-#import "cocos/scripting/js-bindings/jswrapper/SeApi.h"
+#include "cocos/scripting/js-bindings/jswrapper/SeApi.h"
 
 
 @implementation HWGameJSHandle
