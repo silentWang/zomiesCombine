@@ -5,7 +5,7 @@ export class Native {
             callback && callback(res);
             window[callfunc] = null;
         }
-        let json = params ? '' : JSON.stringify(params) + ':';
+        let json = !params ? '' : JSON.stringify(params) + ':';
         let methodstr = `${methodName}:${json}`;
         jsb.reflection.callStaticMethod('HWGameJSHandle',methodstr,callfunc)
     }
