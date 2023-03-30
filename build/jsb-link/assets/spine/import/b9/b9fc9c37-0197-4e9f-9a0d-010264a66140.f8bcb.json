@@ -1,0 +1,1 @@
+[1,0,0,[["cc.TextAsset",["_name","text"],1]],[[0,0,1,3]],[[0,"fx_stun.atlas","\nfx_stun.png\nsize: 312,104\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nShape 1\n  rotate: true\n  xy: 226, 16\n  size: 85, 83\n  orig: 95, 91\n  offset: 5, 4\n  index: -1\nring\n  rotate: false\n  xy: 2, 2\n  size: 222, 99\n  orig: 224, 101\n  offset: 1, 1\n  index: -1\n"]],0,0,[],[],[]]

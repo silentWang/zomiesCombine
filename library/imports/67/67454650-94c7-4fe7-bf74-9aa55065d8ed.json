@@ -4,7 +4,7 @@
   "_objFlags": 0,
   "_native": ".bin",
   "_skeletonJson": null,
-  "_atlasText": "\r\nfx_stun.png\r\nsize: 312,104\r\nformat: RGBA8888\r\nfilter: Linear,Linear\r\nrepeat: none\r\nShape 1\r\n  rotate: true\r\n  xy: 226, 16\r\n  size: 85, 83\r\n  orig: 95, 91\r\n  offset: 5, 4\r\n  index: -1\r\nring\r\n  rotate: false\r\n  xy: 2, 2\r\n  size: 222, 99\r\n  orig: 224, 101\r\n  offset: 1, 1\r\n  index: -1\r\n",
+  "_atlasText": "\nfx_stun.png\nsize: 312,104\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nShape 1\n  rotate: true\n  xy: 226, 16\n  size: 85, 83\n  orig: 95, 91\n  offset: 5, 4\n  index: -1\nring\n  rotate: false\n  xy: 2, 2\n  size: 222, 99\n  orig: 224, 101\n  offset: 1, 1\n  index: -1\n",
   "textures": [
     {
       "__uuid__": "ce82381a-b0f9-49dd-a96c-0e34d99cccb6"

@@ -1,5 +1,6 @@
 {
-  "ver": "1.0.1",
+  "ver": "1.0.3",
   "uuid": "848ca5af-94d1-438f-a990-35fadb0e0fb7",
+  "importer": "dragonbones-atlas",
   "subMetas": {}
 }

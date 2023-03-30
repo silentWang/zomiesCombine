@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "d8d7384c-3912-4f8e-ad94-11b42081b512",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "codizone_icon_default": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "e1edb237-d12e-4a3e-b63f-31a3901a8919",
+      "importer": "sprite-frame",
       "rawTextureUuid": "d8d7384c-3912-4f8e-ad94-11b42081b512",
       "trimType": "auto",
       "trimThreshold": 1,

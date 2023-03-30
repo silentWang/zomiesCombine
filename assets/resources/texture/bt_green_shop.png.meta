@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "455e0553-5a3f-4996-9fb4-f3855b695fce",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "bt_green_shop": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "931d780c-26b6-4e75-89da-1fd35e14ce5d",
+      "importer": "sprite-frame",
       "rawTextureUuid": "455e0553-5a3f-4996-9fb4-f3855b695fce",
       "trimType": "auto",
       "trimThreshold": 1,

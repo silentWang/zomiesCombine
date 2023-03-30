@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "dd2ff764-bb37-4137-9be4-488fbcfa0010",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "thanhmauden": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "41bc680a-dfb1-4eed-9046-b91c29ff9403",
+      "importer": "sprite-frame",
       "rawTextureUuid": "dd2ff764-bb37-4137-9be4-488fbcfa0010",
       "trimType": "auto",
       "trimThreshold": 1,

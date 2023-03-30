@@ -1,6 +1,7 @@
 {
-  "ver": "1.1.2",
+  "ver": "1.1.3",
   "uuid": "679d5931-075c-4949-91cf-e98f02ba40cf",
+  "importer": "folder",
   "isBundle": true,
   "bundleName": "spine",
   "priority": "9",

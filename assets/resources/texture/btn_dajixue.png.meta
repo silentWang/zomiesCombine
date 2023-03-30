@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "04a2f3e2-53b2-41cf-ae5e-6ad72346ba1c",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "btn_dajixue": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "8d6770e2-9044-46d9-84f8-8a3a5ec14f37",
+      "importer": "sprite-frame",
       "rawTextureUuid": "04a2f3e2-53b2-41cf-ae5e-6ad72346ba1c",
       "trimType": "auto",
       "trimThreshold": 1,

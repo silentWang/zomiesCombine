@@ -1,5 +1,5 @@
 {
-  "last-module-event-record-time": 1679043925308,
+  "last-module-event-record-time": 1679975387549,
   "group-list": [
     "default"
   ],
@@ -44,5 +44,8 @@
     "live": {
       "enable": false
     }
-  }
+  },
+  "migrate-history": [
+    "cloud-function"
+  ]
 }

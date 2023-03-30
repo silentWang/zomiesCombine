@@ -5,92 +5,92 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1536,
-      "y": 0,
+      "x": -15,
+      "y": 503,
       "width": 1536,
       "height": 816,
       "layout": {
+        "type": "dock-h",
         "children": [
           {
+            "width": 206,
+            "height": 729,
+            "type": "dock-v",
             "children": [
               {
+                "width": 206,
+                "height": 300,
+                "type": "panel",
                 "active": 0,
                 "children": [
                   "hierarchy"
-                ],
-                "height": 356.5874938964844,
-                "type": "panel",
-                "width": 205.8874969482422
+                ]
               },
               {
+                "width": 206,
+                "height": 426,
+                "type": "panel",
                 "active": 0,
                 "children": [
                   "assets"
-                ],
-                "height": 352.5,
-                "type": "panel",
-                "width": 205.8874969482422
+                ]
               }
-            ],
-            "height": 712.1000366210938,
-            "type": "dock-v",
-            "width": 205.8874969482422
+            ]
           },
           {
+            "width": 938,
+            "height": 729,
+            "type": "dock-v",
             "children": [
               {
+                "width": 938,
+                "height": 449,
+                "type": "dock-h",
                 "children": [
                   {
+                    "width": 606,
+                    "height": 449,
+                    "type": "panel",
                     "active": 0,
                     "children": [
                       "scene"
-                    ],
-                    "height": 438.4750061035156,
-                    "type": "panel",
-                    "width": 606.2000122070312
+                    ]
                   },
                   {
+                    "width": 329,
+                    "height": 449,
+                    "type": "panel",
                     "active": 0,
                     "children": [
                       "node-library"
-                    ],
-                    "height": 438.4750061035156,
-                    "type": "panel",
-                    "width": 329.375
+                    ]
                   }
-                ],
-                "height": 438.4750061035156,
-                "type": "dock-h",
-                "width": 938.5875244140625
+                ]
               },
               {
+                "width": 938,
+                "height": 277,
+                "type": "panel",
                 "active": 0,
                 "children": [
                   "console",
                   "timeline",
                   "game-window"
-                ],
-                "height": 270.6125183105469,
-                "type": "panel",
-                "width": 938.5875244140625
+                ]
               }
-            ],
-            "height": 712.1000366210938,
-            "type": "dock-v",
-            "width": 938.5875244140625
+            ]
           },
           {
+            "width": 386,
+            "height": 729,
+            "type": "panel",
             "active": 0,
             "children": [
               "inspector",
               "cocos-services"
-            ],
-            "height": 712.1000366210938,
-            "type": "panel",
-            "width": 385.5249938964844
+            ]
           }
-        ],
-        "type": "dock-h"
+        ]
       },
       "panels": [
         "hierarchy",
@@ -103,7 +103,10 @@
         "inspector",
         "cocos-services"
       ]
-    }
+    },
+    " common-asset-worker-worker": {},
+    "window-1679975354287": {},
+    " build-worker-worker": {}
   },
   "panels": {
     "preferences": {
@@ -149,10 +152,10 @@
       "height": 816
     },
     "builder": {
-      "x": 1772,
-      "y": 52,
-      "width": 740,
-      "height": 832
+      "x": 592,
+      "y": 126,
+      "width": 736,
+      "height": 828
     },
     "node-library": {
       "x": 608,

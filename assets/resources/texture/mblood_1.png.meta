@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "7cfdd2ae-a0e6-4654-87fd-740798a7b9e1",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "mblood_1": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "0025d333-7861-4e01-a967-3f230d30075e",
+      "importer": "sprite-frame",
       "rawTextureUuid": "7cfdd2ae-a0e6-4654-87fd-740798a7b9e1",
       "trimType": "auto",
       "trimThreshold": 1,

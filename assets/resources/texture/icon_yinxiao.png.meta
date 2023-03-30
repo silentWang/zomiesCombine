@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "f9b56424-a1c9-4d80-a041-ebffcba0c503",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "icon_yinxiao": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "048f2007-4384-4b7f-a332-14ae5a1331e2",
+      "importer": "sprite-frame",
       "rawTextureUuid": "f9b56424-a1c9-4d80-a041-ebffcba0c503",
       "trimType": "auto",
       "trimThreshold": 1,

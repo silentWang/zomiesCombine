@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "b2260f08-92d1-418e-ad71-24e782ac306a",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "bt_gold_store": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "bfec4631-b36a-4581-8d22-0d0cbe77975f",
+      "importer": "sprite-frame",
       "rawTextureUuid": "b2260f08-92d1-418e-ad71-24e782ac306a",
       "trimType": "auto",
       "trimThreshold": 1,

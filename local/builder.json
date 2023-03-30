@@ -1,6 +1,6 @@
 {
-  "platform": "android",
-  "actualPlatform": "android",
+  "platform": "ios",
+  "actualPlatform": "ios",
   "template": "link",
   "buildPath": "./build",
   "debug": false,

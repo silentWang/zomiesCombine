@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "835087dd-4697-4d9b-8be2-a2a28efc69a0",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "2btcoin": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "3913c4cb-8f0f-4b46-aecb-d6f1ef912577",
+      "importer": "sprite-frame",
       "rawTextureUuid": "835087dd-4697-4d9b-8be2-a2a28efc69a0",
       "trimType": "auto",
       "trimThreshold": 1,

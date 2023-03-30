@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "97d8e98a-dbc4-4060-b8f7-c2274e24fbd1",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "icon_gem_video_ads": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "a1376888-eaa2-493a-b041-d1abc3a86b59",
+      "importer": "sprite-frame",
       "rawTextureUuid": "97d8e98a-dbc4-4060-b8f7-c2274e24fbd1",
       "trimType": "auto",
       "trimThreshold": 1,

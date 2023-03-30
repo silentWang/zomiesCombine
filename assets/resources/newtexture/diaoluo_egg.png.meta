@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "c71c9199-d06a-4415-a188-d3bf2d438ef7",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "diaoluo_egg": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "805aaeb9-0fa3-4068-b622-8a86ff110b7a",
+      "importer": "sprite-frame",
       "rawTextureUuid": "c71c9199-d06a-4415-a188-d3bf2d438ef7",
       "trimType": "auto",
       "trimThreshold": 1,
