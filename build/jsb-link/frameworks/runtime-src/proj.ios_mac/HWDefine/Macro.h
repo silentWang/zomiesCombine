@@ -12,4 +12,6 @@
 #define HW_topOnAd_APPkey @"48512db29762ce894edfa9e279614e30"
 
 
+#define NSLog(msg,...) if(ENABLELOG > 0) NSLog(@" 🌹🌹🌹🌹 %@",[NSString stringWithFormat:msg,##__VA_ARGS__]);
+
 #endif /* Macro_h */
