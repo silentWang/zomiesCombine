@@ -89,11 +89,11 @@ Application* app = nullptr;
     if (@available(iOS 14, *)) {
         //iOS 14
         [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-            [[ATAPI sharedInstance] startWithAppID:@"a5b0e8491845b3" appKey:@"7eae0567827cfe2b22874061763f30c9" error:nil];
+            [[ATAPI sharedInstance] startWithAppID:HW_topOnAd_APPID appKey:HW_topOnAd_APPkey error:nil];
             //to do something，like preloading
         }];
     } else {
-        [[ATAPI sharedInstance] startWithAppID:@"a5b0e8491845b3" appKey:@"7eae0567827cfe2b22874061763f30c9" error:nil];
+        [[ATAPI sharedInstance] startWithAppID:HW_topOnAd_APPID appKey:HW_topOnAd_APPkey error:nil];
     }
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
