@@ -30,7 +30,8 @@
 #import "RootViewController.h"
 #import "SDKWrapper.h"
 #import "platform/ios/CCEAGLView-ios.h"
-
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+#import <AnyThinkSDK/AnyThinkSDK.h>
 
 
 using namespace cocos2d;
@@ -49,7 +50,7 @@ Application* app = nullptr;
     float scale = [[UIScreen mainScreen] scale];
     CGRect bounds = [[UIScreen mainScreen] bounds];
     window = [[UIWindow alloc] initWithFrame: bounds];
-    
+    [self initTopOnSDK];
     // cocos2d application instance
     app = new AppDelegate(bounds.size.width * scale, bounds.size.height * scale);
     app->setMultitouch(true);
@@ -84,7 +85,17 @@ Application* app = nullptr;
     
     return YES;
 }
-
+-(void)initTopOnSDK{
+    if (@available(iOS 14, *)) {
+        //iOS 14
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+            [[ATAPI sharedInstance] startWithAppID:@"a5b0e8491845b3" appKey:@"7eae0567827cfe2b22874061763f30c9" error:nil];
+            //to do something，like preloading
+        }];
+    } else {
+        [[ATAPI sharedInstance] startWithAppID:@"a5b0e8491845b3" appKey:@"7eae0567827cfe2b22874061763f30c9" error:nil];
+    }
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

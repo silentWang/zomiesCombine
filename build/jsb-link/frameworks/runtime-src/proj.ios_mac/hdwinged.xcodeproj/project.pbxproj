@@ -21,6 +21,7 @@
 		1AFFCD7E1F7A5D5400628F2C /* LaunchScreenBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFFCD7B1F7A5D4F00628F2C /* LaunchScreenBackground.png */; };
 		1AFFCD7F1F7A5D5400628F2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ABC56911F7A005D00826282 /* Images.xcassets */; };
 		22CC757121BA5B5C00FBF2F7 /* SDKWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC756D21BA5B5C00FBF2F7 /* SDKWrapper.m */; };
+		281EF08D834B78AFF990F0DA /* Pods_hdwinged_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1198592E72F4ECDD80979C08 /* Pods_hdwinged_mobile.framework */; };
 		286B0E9524075FE000095E1A /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 28A34C0F225B462E00926306 /* assets */; };
 		28A34C10225B462E00926306 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 28A34C0F225B462E00926306 /* assets */; };
 		294D7D801D0D668F002CE7B7 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294D7D7F1D0D668F002CE7B7 /* CoreText.framework */; };
@@ -50,6 +51,8 @@
 		509D4AE717EBB81800697056 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509D4AE617EBB81800697056 /* OpenGL.framework */; };
 		509D4AE917EBB82000697056 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509D4AE817EBB82000697056 /* AppKit.framework */; };
 		509D4AEB17EBB82600697056 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509D4AEA17EBB82600697056 /* IOKit.framework */; };
+		516CBDD029D57538002DA30E /* libswiftCore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 516CBDCF29D57538002DA30E /* libswiftCore.tbd */; };
+		516CBDD229D576A9002DA30E /* HWBridging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CBDD129D57652002DA30E /* HWBridging.swift */; };
 		A92275421517C094001B78AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275411517C094001B78AA /* QuartzCore.framework */; };
 		A92275441517C094001B78AA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275431517C094001B78AA /* OpenGLES.framework */; };
 		A92275461517C094001B78AA /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275451517C094001B78AA /* OpenAL.framework */; };
@@ -113,6 +116,7 @@
 		051C018521E32AF000D4A347 /* UserConfigMac.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UserConfigMac.release.xcconfig; sourceTree = "<group>"; };
 		051C018621E32AF100D4A347 /* UserConfigMac.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UserConfigMac.debug.xcconfig; sourceTree = "<group>"; };
 		05A8AD8A2449A9F900A65D12 /* NativeConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeConfig.h; sourceTree = "<group>"; };
+		1198592E72F4ECDD80979C08 /* Pods_hdwinged_mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hdwinged_mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1A081B18C9DF05005C6854 /* project.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = project.json; path = ../../../project.json; sourceTree = "<group>"; };
 		1A37E9D9200DEF110078AF72 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		1A37E9DB200DEF190078AF72 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -155,6 +159,11 @@
 		509D4AE617EBB81800697056 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		509D4AE817EBB82000697056 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		509D4AEA17EBB82600697056 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		516CBDCE29D57349002DA30E /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		516CBDCF29D57538002DA30E /* libswiftCore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCore.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk/usr/lib/swift/libswiftCore.tbd; sourceTree = DEVELOPER_DIR; };
+		516CBDD129D57652002DA30E /* HWBridging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWBridging.swift; sourceTree = "<group>"; };
+		8C0F77D323E003FF757DD38F /* Pods-hdwinged-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hdwinged-mobile.release.xcconfig"; path = "Target Support Files/Pods-hdwinged-mobile/Pods-hdwinged-mobile.release.xcconfig"; sourceTree = "<group>"; };
+		9D1A0D8B2EBB54A0F0573A22 /* Pods-hdwinged-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hdwinged-mobile.debug.xcconfig"; path = "Target Support Files/Pods-hdwinged-mobile/Pods-hdwinged-mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		A922753D1517C094001B78AA /* hdwinged-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hdwinged-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92275411517C094001B78AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A92275431517C094001B78AA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -215,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				516CBDD029D57538002DA30E /* libswiftCore.tbd in Frameworks */,
 				467AF615232881EB00770112 /* CoreMedia.framework in Frameworks */,
 				467AF613232881E400770112 /* AVKit.framework in Frameworks */,
 				467AF6082321FBED00770112 /* WebKit.framework in Frameworks */,
@@ -242,6 +252,7 @@
 				A922754E1517C094001B78AA /* Foundation.framework in Frameworks */,
 				A92275501517C094001B78AA /* CoreGraphics.framework in Frameworks */,
 				ED6D5265263544C8003A20DD /* CoreVideo.framework in Frameworks */,
+				281EF08D834B78AFF990F0DA /* Pods_hdwinged_mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +303,14 @@
 			path = mac;
 			sourceTree = "<group>";
 		};
+		516CBDCD29D57349002DA30E /* HWDefine */ = {
+			isa = PBXGroup;
+			children = (
+				516CBDCE29D57349002DA30E /* Macro.h */,
+			);
+			path = HWDefine;
+			sourceTree = "<group>";
+		};
 		A92275321517C094001B78AA = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +322,7 @@
 				509D4ACA17EBB2BE00697056 /* mac */,
 				A922753E1517C094001B78AA /* Products */,
 				15628F5B15F0F5C2000CF24B /* Resources */,
+				E630B02132D2E7370750CDBE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -318,6 +338,7 @@
 		A92275401517C094001B78AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				516CBDCF29D57538002DA30E /* libswiftCore.tbd */,
 				467AF614232881EB00770112 /* CoreMedia.framework */,
 				467AF612232881E400770112 /* AVKit.framework */,
 				467AF6072321FBED00770112 /* WebKit.framework */,
@@ -358,6 +379,7 @@
 				A922754D1517C094001B78AA /* Foundation.framework */,
 				A922754F1517C094001B78AA /* CoreGraphics.framework */,
 				ED6D5264263544C8003A20DD /* CoreVideo.framework */,
+				1198592E72F4ECDD80979C08 /* Pods_hdwinged_mobile.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -365,21 +387,23 @@
 		D45446CC156DE73F00887EB5 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				051C018221E32AE400D4A347 /* UserConfigIOS.debug.xcconfig */,
-				051C018121E32AE400D4A347 /* UserConfigIOS.release.xcconfig */,
-				22CC756E21BA5B5C00FBF2F7 /* service */,
-				4011F9D1212BD6750091CC5B /* LaunchScreen.storyboard */,
-				1AFFCD7B1F7A5D4F00628F2C /* LaunchScreenBackground.png */,
-				1ABC56911F7A005D00826282 /* Images.xcassets */,
+				516CBDCD29D57349002DA30E /* HWDefine */,
 				509D4AAB17EBB2AB00697056 /* AppController.h */,
 				509D4AAC17EBB2AB00697056 /* AppController.mm */,
+				1ABC56911F7A005D00826282 /* Images.xcassets */,
 				509D4AB717EBB2AB00697056 /* Info.plist */,
+				4011F9D1212BD6750091CC5B /* LaunchScreen.storyboard */,
+				1AFFCD7B1F7A5D4F00628F2C /* LaunchScreenBackground.png */,
 				509D4AB817EBB2AB00697056 /* main.m */,
 				509D4AB917EBB2AB00697056 /* Prefix.pch */,
 				509D4ABA17EBB2AB00697056 /* RootViewController.h */,
 				509D4ABB17EBB2AB00697056 /* RootViewController.mm */,
 				22CC757021BA5B5C00FBF2F7 /* SDKWrapper.h */,
 				22CC756D21BA5B5C00FBF2F7 /* SDKWrapper.m */,
+				22CC756E21BA5B5C00FBF2F7 /* service */,
+				051C018221E32AE400D4A347 /* UserConfigIOS.debug.xcconfig */,
+				051C018121E32AE400D4A347 /* UserConfigIOS.release.xcconfig */,
+				516CBDD129D57652002DA30E /* HWBridging.swift */,
 			);
 			name = ios;
 			sourceTree = "<group>";
@@ -393,6 +417,15 @@
 			);
 			name = Classes;
 			path = ../Classes;
+			sourceTree = "<group>";
+		};
+		E630B02132D2E7370750CDBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D1A0D8B2EBB54A0F0573A22 /* Pods-hdwinged-mobile.debug.xcconfig */,
+				8C0F77D323E003FF757DD38F /* Pods-hdwinged-mobile.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,9 +453,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A92277001517C097001B78AA /* Build configuration list for PBXNativeTarget "hdwinged-mobile" */;
 			buildPhases = (
+				19FD26412A1D18E3E9CE9381 /* [CP] Check Pods Manifest.lock */,
 				A92275391517C094001B78AA /* Sources */,
 				A922753A1517C094001B78AA /* Frameworks */,
 				A922753B1517C094001B78AA /* Resources */,
+				719107852A3CC3A07B37908C /* [CP] Embed Pods Frameworks */,
+				B8B55731B758E655CF590F60 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -524,6 +560,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19FD26412A1D18E3E9CE9381 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hdwinged-mobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		719107852A3CC3A07B37908C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hdwinged-mobile/Pods-hdwinged-mobile-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PersonalizedAdConsent.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hdwinged-mobile/Pods-hdwinged-mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8B55731B758E655CF590F60 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hdwinged-mobile/Pods-hdwinged-mobile-resources.sh",
+				"${PODS_ROOT}/AnyThinkiOS/AnyThinkiOS/LICENSE",
+				"${PODS_ROOT}/AnyThinkiOS/AnyThinkiOS/AnyThinkSDK.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LICENSE",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AnyThinkSDK.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hdwinged-mobile/Pods-hdwinged-mobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		509D4A8017EBB24E00697056 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -540,6 +645,7 @@
 			files = (
 				509D4AC917EBB2AB00697056 /* RootViewController.mm in Sources */,
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
+				516CBDD229D576A9002DA30E /* HWBridging.swift in Sources */,
 				509D4AC817EBB2AB00697056 /* main.m in Sources */,
 				22CC757121BA5B5C00FBF2F7 /* SDKWrapper.m in Sources */,
 				509D4ABC17EBB2AB00697056 /* AppController.mm in Sources */,
@@ -686,7 +792,7 @@
 		};
 		A92277011517C097001B78AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 051C018221E32AE400D4A347 /* UserConfigIOS.debug.xcconfig */;
+			baseConfigurationReference = 9D1A0D8B2EBB54A0F0573A22 /* Pods-hdwinged-mobile.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -708,7 +814,10 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LIBRARY_SEARCH_PATHS = "/Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/external/ios/libs";
+				LIBRARY_SEARCH_PATHS = (
+					"/Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/external/ios/libs",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
@@ -718,6 +827,7 @@
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.feiyou.fszx";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) /Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/ios /Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/plugin/jsbindings/auto /Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/plugin/jsbindings/manual /Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/external/ios/include /Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/external/ios/include/spidermonkey";
 			};
@@ -725,7 +835,7 @@
 		};
 		A92277021517C097001B78AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 051C018121E32AE400D4A347 /* UserConfigIOS.release.xcconfig */;
+			baseConfigurationReference = 8C0F77D323E003FF757DD38F /* Pods-hdwinged-mobile.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -746,7 +856,10 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LIBRARY_SEARCH_PATHS = "/Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/external/ios/libs";
+				LIBRARY_SEARCH_PATHS = (
+					"/Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/external/ios/libs",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
@@ -756,6 +869,7 @@
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.feiyou.fszx";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) /Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/cocos/platform/ios /Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/plugin/jsbindings/auto /Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/plugin/jsbindings/manual /Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/external/ios/include /Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/external/ios/include/spidermonkey";
 			};
