@@ -51,5 +51,7 @@
     "skipRecord": false
   },
   "appBundle": false,
-  "agreements": {}
+  "agreements": {},
+  "includeSDKBox": null,
+  "includeAnySDK": false
 }

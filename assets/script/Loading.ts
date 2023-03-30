@@ -4,6 +4,7 @@ import ChickData from "./manager/ChickData";
 import PoolMgr from "./manager/PoolMgr";
 import WxCenter from "./manager/WxCenter";
 import AudioMgr from "./utils/AudioMgr";
+import { Native } from "./utils/Native";
 import Utils from "./utils/Utils";
 
 const wx = window["wx"] || window["tt"];
@@ -56,6 +57,8 @@ export default class Loading extends BaseUI {
             if (index > descs.length - 1)
                 index = 0;
         })).repeatForever())
+        
+        Native.getAppVersion();
 
         this.GetGameObject("btn_rstart").active = false;
     }

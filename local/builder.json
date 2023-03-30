@@ -1,6 +1,6 @@
 {
-  "platform": "mini-game",
-  "actualPlatform": "wechatgame",
+  "platform": "android",
+  "actualPlatform": "android",
   "template": "link",
   "buildPath": "./build",
   "debug": false,
@@ -15,6 +15,6 @@
   "keystoreAliasPassword": "",
   "apiLevel": "",
   "appABIs": [],
-  "vsVersion": "auto",
+  "vsVersion": "2017",
   "buildScriptsOnly": false
 }
