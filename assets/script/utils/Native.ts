@@ -1,5 +1,6 @@
 export class Native {
     static callAppMethod(methodName:string,params:any = '',callback:Function = null){
+        if(cc.sys.os !== cc.sys.OS_IOS) return;
         let callfunc = 'callBackFunc_' + new Date().getTime();
         window[callfunc] = (res)=>{
             callback && callback(res);
@@ -8,6 +9,10 @@ export class Native {
         let json = !params ? '' : `:${JSON.stringify(params)}`;
         let methodstr = `${methodName}${json}`;
         console.log(`----HWGameJSHandle:${methodName}---${methodstr}`)
+        if(!jsb || !jsb.reflection || !jsb.reflection.callStaticMethod) {
+            console.log('HWGameJSHandle:找不到jsb')
+            return;
+        }
         jsb.reflection.callStaticMethod('HWGameJSHandle',methodstr,callfunc)
     }
 
