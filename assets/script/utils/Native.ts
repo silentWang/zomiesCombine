@@ -6,14 +6,15 @@ export class Native {
             callback && callback(res);
             window[callfunc] = null;
         }
-        let json = !params ? '' : `:${JSON.stringify(params)}`;
+        let obj = {method:callfunc,params};
+        let json = JSON.stringify(obj);
         let methodstr = `${methodName}${json}`;
         console.log(`----HWGameJSHandle:${methodName}---${methodstr}`)
         if(!jsb || !jsb.reflection || !jsb.reflection.callStaticMethod) {
             console.log('HWGameJSHandle:找不到jsb')
             return;
         }
-        jsb.reflection.callStaticMethod('HWGameJSHandle',methodstr,callfunc)
+        jsb.reflection.callStaticMethod('HWGameJSHandle',`${methodName}:`,json)
     }
 
     static getAppVersion(){
