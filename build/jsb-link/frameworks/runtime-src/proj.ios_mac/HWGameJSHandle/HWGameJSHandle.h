@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HWGameJSHandle : NSObject
 
+//
++(void)callJsEngineCallBack:(NSString*) funcNameStr Content:(NSString*) contentStr;
+
 @end
 
 NS_ASSUME_NONNULL_END

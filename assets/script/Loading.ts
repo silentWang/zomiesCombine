@@ -41,6 +41,8 @@ export default class Loading extends BaseUI {
         cc.debug.setDisplayStats(false);
         cc.game.setFrameRate(60);
 
+      console.log(`----HWGameJSHandleHWGameJSHandleHWGameJSHandleHWGameJSHandle`)
+
         super.onLoad();
         if(wx) {
             wx.setPreferredFramesPerSecond(60);
