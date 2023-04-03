@@ -3,6 +3,7 @@ import MsgToast from "../framwork/MsgToast";
 
 import Utils from '../utils/Utils';
 import WxCenter from "./WxCenter";
+import { Native } from "../utils/Native";
 const tt = window["tt"];
 
 const { ccclass, property } = cc._decorator;
@@ -69,41 +70,18 @@ export default class AdCenter extends Singleton {
 
     private callBack: Function;
     private _lastPlayTime: number = 0;
-    public play(callback: Function, type:number) {
-        if(window && window['xxxxx']) window['xxxxx']("xYBwNjGb4PRGfc678esKbNpCti");
+    public play(callback: Function, adunitId:string) {
         if (Utils.getServerTime() - this._lastPlayTime < 1000) {
             console.log("点击过于频繁")
             return;
         }
         this._lastPlayTime = Utils.getServerTime();
         this.callBack = callback;
-        if(tt){
-            this.playVideo();
-        }
-        else if(WxCenter.isWxEnv()){
-            WxCenter.showRewardedVideoAd(callback,type);
+        if(cc.sys.os === cc.sys.OS_IOS){
+            Native.playVideoAd(callback,adunitId);
         }
         else{
             callback && callback(1)
-        }
-        this.JDSLX_gdasweww_fun()
-    }
-
-    private JDSLX_gdasweww_fun(){ console.log("238989ODIJMKGESAOJMD"); }
-
-    private playVideo(){
-        if ( this.videoAdID) {
-            this.videoAdID.show().catch(() => {
-                this.videoAdID.load()
-                    .then(() => this.videoAdID.show())
-                    .catch(err => {
-                        cc.log('激励视频 广告显示失败');
-                        this.callBack(false);
-                    })
-            })
-        }
-        else {
-            this.callBack(true);
         }
     }
 
@@ -116,7 +94,6 @@ export default class AdCenter extends Singleton {
             if (this.bannerAd)
                 this.bannerAd.show()
         }
-        if(window && window['xxxxx']) window['xxxxx']("3DmJjHm2mesvF8Z");
     }
 
     public hideGridAd() {
@@ -129,10 +106,8 @@ export default class AdCenter extends Singleton {
         }
     }
 
-    public showInterstitialAd(){
-        if(WxCenter.isWxEnv()){
-            WxCenter.showInterstitialAd();
-        }
+    public showInterstitialAd(adunit:string){
+        Native.showInterstitialAd(null,adunit)
     }
 
 }

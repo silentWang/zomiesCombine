@@ -3,6 +3,7 @@ export class Native {
         if(cc.sys.os !== cc.sys.OS_IOS) return;
         let callfunc = 'callBackFunc_' + new Date().getTime();
         window[callfunc] = (res)=>{
+            console.log(`---ios callback---${methodName}`,res)
             callback && callback(res);
             window[callfunc] = null;
         }
@@ -20,6 +21,18 @@ export class Native {
     static getAppVersion(){
         this.callAppMethod('getAppVersion',{x:1,y:'25222'},(res)=>{
             console.log('getAppVersion ios 回调',res)
+        });
+    }
+    /**视频广告 */
+    static playVideoAd(callback:Function,adUnitId:string){
+        this.callAppMethod('loadTopOnRewardAd',{adUnitId},(res)=>{
+            callback && callback();
+        });
+    }
+    /**插屏广告 */
+    static showInterstitialAd(adUnitId:string,callback:Function = null){
+        this.callAppMethod('loadTopOnInterstitialAd',{adUnitId},(res)=>{
+            callback && callback();
         });
     }
 
