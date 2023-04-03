@@ -24,8 +24,6 @@ var ChickData = /** @class */ (function () {
         ChickData.resetOneDayData();
         var obj = {};
         obj['user'] = ChickData.user.getAllData();
-        if (window && window['xxxxx'])
-            window['xxxxx']("Y7j3rkTtcF8rsdfbMGEj7K");
         ChickData.savedata(obj, bRemote);
         //上传服务器
         // if (window["wx"]) {
@@ -49,8 +47,6 @@ var ChickData = /** @class */ (function () {
     };
     ChickData.prototype.KGXM_xxxx_fun = function () { console.log("D7G"); };
     ChickData.loadData = function () {
-        if (window && window['xxxxx'])
-            window['xxxxx']("B3fxQr3P");
         var localdata = cc.sys.localStorage.getItem(GameConst_1.default.cache_chick_data_key);
         if (localdata) {
             localdata = JSON.parse(localdata);
@@ -60,8 +56,6 @@ var ChickData = /** @class */ (function () {
         }
         else {
             //没有档案重置下音乐开关
-            if (window && window['xxxxx'])
-                window['xxxxx']("TXeAr");
             cc.sys.localStorage.setItem("bgmVolume", 1);
             cc.sys.localStorage.setItem("sfxVolume", 1);
             AudioMgr_1.default.Instance().sfxVolume = 1;

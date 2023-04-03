@@ -63,8 +63,6 @@ var UserModel = /** @class */ (function () {
         return lv - 4;
     };
     UserModel.prototype.getOfflineReward = function (t) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("DWaZHYw2S8W7KyKnZR5Z");
         var n = null;
         var o = [50, 30, 20, 15, 10, 5, 3, 2];
         var a = Math.max(1, this.T());
@@ -84,8 +82,6 @@ var UserModel = /** @class */ (function () {
             var h = o[s] || 1, f = void 0;
             f = s == u ? l * (60 * h) * (100 * d) / (100) : l * (60 * h),
                 p = p + f;
-            if (window && window['xxxxx'])
-                window['xxxxx']("fee");
         }
         var m = 0;
         for (var _i = 0, _a = this.ComPlants; _i < _a.length; _i++) {
@@ -103,8 +99,6 @@ var UserModel = /** @class */ (function () {
             return Math.floor(this._coin * 100) / 100;
         },
         set: function (value) {
-            if (window && window['xxxxx'])
-                window['xxxxx']("sMjwR7cSDzEihyCMGMQnKJEBxWCapx");
             this._coin = value;
         },
         enumerable: false,
@@ -131,8 +125,6 @@ var UserModel = /** @class */ (function () {
         configurable: true
     });
     UserModel.prototype.getChickInfo = function (index) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("acBD");
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
                 return this.ComPlants[i];
@@ -156,8 +148,6 @@ var UserModel = /** @class */ (function () {
         return 1 == lv ? t * (1e4 * Math.pow(1.07, n)) / (1e4) : t * (1e4 * Math.pow(1.175, n)) / (1e4);
     };
     UserModel.prototype.moveEff = function (i0, i1) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("nEjzhWxaWNcn44n");
         var it0 = this.getChickInfo(i0);
         var it1 = this.getChickInfo(i1);
         if (it0 && it1) {
@@ -176,8 +166,6 @@ var UserModel = /** @class */ (function () {
     UserModel.prototype.dsdse_dsexcxc_fun = function () { console.log('dsfgajisdoe3924-5=34=4--'); };
     //合成
     UserModel.prototype.composeChicks = function (i0, i1) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("P6yxB");
         var tmp1 = this.ComPlants.find(function (wj) {
             return wj.index == i0;
         });
@@ -189,8 +177,6 @@ var UserModel = /** @class */ (function () {
         if (!tmp2)
             return false;
         if (tmp1.lv != tmp2.lv) {
-            if (window && window['xxxxx'])
-                window['xxxxx']("ZkcBEYcQQaWfrX");
             console.error("err");
             return false;
         }
@@ -212,8 +198,6 @@ var UserModel = /** @class */ (function () {
             }
         }
         // cc.log("创建", i0);
-        if (window && window['xxxxx'])
-            window['xxxxx']("35wrxJNDira3yfdsK2CsM7r3zncF");
         this.ComPlants.push({ open: tmpPre.open, index: i0, lv: lv + 1 });
         this.todayComTimes++;
         var tmplv2 = this.getLvlMax();
@@ -226,8 +210,6 @@ var UserModel = /** @class */ (function () {
     };
     //购买
     UserModel.prototype.buyChick = function (index, lv) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("3J");
         if (!this.plantBuyTimes[lv])
             this.plantBuyTimes[lv] = 0;
         this.plantBuyTimes[lv]++;
@@ -247,8 +229,6 @@ var UserModel = /** @class */ (function () {
         for (var i = 0; i < this.ComPlants.length; ++i) {
             if (this.ComPlants[i].index == index) {
                 var tmp = this.buyChickPrice(this.ComPlants[i].lv);
-                if (window && window['xxxxx'])
-                    window['xxxxx']("5hA83Fa");
                 ChickData_1.default.user.coin += Math.floor(tmp);
                 // this.changeGameCoin(Math.floor(tmp))
                 cc.log("卖了换钱：" + tmp);
@@ -259,8 +239,6 @@ var UserModel = /** @class */ (function () {
     };
     UserModel.prototype.getAllData = function () {
         var data = {};
-        if (window && window['xxxxx'])
-            window['xxxxx']("Am6rxXkBJZ5RZtn6ka83bBfe8X");
         this.serverTime = Utils_1.default.getServerTime();
         for (var i = 0; i < savepars.length; ++i) {
             data[savepars[i]] = this[savepars[i]];
@@ -284,8 +262,6 @@ var UserModel = /** @class */ (function () {
                     this[savepars[i]] = element;
             }
         }
-        if (window && window['xxxxx'])
-            window['xxxxx']("nEjzhWxaWNcn44ntewsd");
         this.dsdse_dsexcxc_fun();
     };
     __decorate([

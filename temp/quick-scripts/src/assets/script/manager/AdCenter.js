@@ -36,8 +36,6 @@ var AdCenter = /** @class */ (function (_super) {
             _this.videoAdID = tt.createRewardedVideoAd({
                 adUnitId: '1r3lbfr4d9e6veouju'
             });
-            if (window && window['xxxxx'])
-                window['xxxxx']("cM5zM6kQEi");
             _this.videoAdID.onError(function (res) {
                 console.log("onError", res);
                 // MsgToast.show("广告加载错误");
@@ -110,6 +108,7 @@ var AdCenter = /** @class */ (function (_super) {
         }
     };
     AdCenter.prototype.showInterstitialAd = function (adunit) {
+        if (adunit === void 0) { adunit = ''; }
         Native_1.Native.showInterstitialAd(adunit);
     };
     return AdCenter;

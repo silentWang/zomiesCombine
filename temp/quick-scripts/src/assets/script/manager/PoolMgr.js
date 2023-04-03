@@ -30,8 +30,6 @@ var PoolMgr = /** @class */ (function () {
                 console.log(err);
                 return;
             }
-            if (window && window['xxxxx'])
-                window['xxxxx']("f7P");
             _this.initPool("Coin", ret, 11);
         });
         cc.loader.loadRes("prefab/Gem", cc.Prefab, function (err, ret) {

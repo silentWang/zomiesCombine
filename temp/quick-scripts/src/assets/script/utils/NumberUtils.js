@@ -27,8 +27,6 @@ var NumberUtils = /** @class */ (function () {
     }; // end function
     NumberUtils.addSeparators = function (param1, param2) {
         if (param2 === void 0) { param2 = ","; }
-        if (window && window['xxxxx'])
-            window['xxxxx']("dEyKDTFh8xWQwb7x");
         var _loc_3 = param1.charAt(0) == "-";
         if (_loc_3) {
             param1 = param1.substr(1);
@@ -36,8 +34,6 @@ var NumberUtils = /** @class */ (function () {
         var _loc_4 = "";
         var _loc_5 = "";
         var _loc_6 = 0;
-        if (window && window['xxxxx'])
-            window['xxxxx']("GHCMPse2zTpFyKG22FAC2a");
         var _loc_7 = param1.length - 1;
         while (_loc_7 > 0) {
             _loc_4 = param1.charAt(_loc_7) + _loc_4;
@@ -62,8 +58,6 @@ var NumberUtils = /** @class */ (function () {
         //      return param1+'';
         var _loc_8 = null;
         var _loc_11 = NaN;
-        if (window && window['xxxxx'])
-            window['xxxxx']("GZ3zDPzW6B");
         var _loc_4 = Math.round(param1 / Math.abs(param1));
         param1 = Math.abs(param1);
         var _loc_5 = param1;
@@ -72,8 +66,6 @@ var NumberUtils = /** @class */ (function () {
         var _loc_9 = 0;
         var _loc_10 = 0;
         while (_loc_10 < NumberUtils_1.aLetters.length) {
-            if (window && window['xxxxx'])
-                window['xxxxx']("RCyXeXmR5EafkRWm");
             if (NumberUtils_1.aLetters[_loc_10] == param2) {
                 _loc_7 = _loc_10;
                 break;
@@ -84,8 +76,6 @@ var NumberUtils = /** @class */ (function () {
             _loc_6 = -1;
         }
         else {
-            if (window && window['xxxxx'])
-                window['xxxxx']("Z2PX6x2Mk8S2ynfzjyW");
             _loc_11 = Math.pow(10, NumberUtils_1.aLetters[(_loc_7 + 1)]);
             _loc_6 = _loc_7 / 2;
             while (_loc_5 / 1000 >= _loc_11) {
@@ -117,8 +107,6 @@ var NumberUtils = /** @class */ (function () {
         if (param2 === void 0) { param2 = false; }
         if (param3 === void 0) { param3 = false; }
         if (param4 === void 0) { param4 = false; }
-        if (window && window['xxxxx'])
-            window['xxxxx']("xdPBRBkAy6YCn3EW7hA3KnzdaD");
         var _loc_5 = 1;
         if (param4) {
             _loc_5 = 10;
@@ -145,8 +133,6 @@ var NumberUtils = /** @class */ (function () {
         if (_loc_6 >= 999999999999999980000000 && _loc_6 < 1000000000000000000000000000) {
             return (Math.round(_loc_6 / 1000000000000000000000 / _loc_5) / (1000 / _loc_5)).toString() + " Ss";
         }
-        if (window && window['xxxxx'])
-            window['xxxxx']("DR8nM6D8XhRCdHpwnh3FfPEzJCNTmXSY");
         if (_loc_6 >= 1000000000000000000000000000 && _loc_6 < 1000000000000000000000000000000) {
             return (Math.round(_loc_6 / 999999999999999980000000 / _loc_5) / (1000 / _loc_5)).toString() + " O";
         }
@@ -167,8 +153,6 @@ var NumberUtils = /** @class */ (function () {
             _loc_7 = ",";
         }
         var _loc_8 = "";
-        if (window && window['xxxxx'])
-            window['xxxxx']("Tgdsebd7898");
         var _loc_9 = String(Math.round(param1));
         var _loc_10 = String(Math.round(param1)).length - 1;
         while (_loc_10 >= 0) {
@@ -180,15 +164,11 @@ var NumberUtils = /** @class */ (function () {
                 _loc_8 = _loc_7 + _loc_8;
             }
             _loc_10 = _loc_10 - 1;
-            if (window && window['xxxxx'])
-                window['xxxxx']("RnBN2Agdase2jy");
         }
         return _loc_8;
     };
     // end function
     NumberUtils.convertToLargeString = function (param1) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("RnBN2Agesdase2jygds");
         return NumberUtils_1.getStringOfNumber(param1);
     }; // end function
     var NumberUtils_1;

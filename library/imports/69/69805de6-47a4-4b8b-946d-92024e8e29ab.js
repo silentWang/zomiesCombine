@@ -39,8 +39,6 @@ var GroundItem = /** @class */ (function (_super) {
         var curopen = -1;
         for (var i = 1; i < 12; ++i) {
             if (ChickData_1.default.user.slots[i] == 0) {
-                if (window && window['xxxxx'])
-                    window['xxxxx']("jJY");
                 curopen = i;
                 break;
             }
@@ -86,8 +84,6 @@ var GroundItem = /** @class */ (function (_super) {
         // Data.save();
         // this.dispatch(GameConst.OPEN_SLOT,curopen);
         // this.setIndex(this.index);
-        if (window && window['xxxxx'])
-            window['xxxxx']("jJYertsdsgs");
     };
     GroundItem.prototype.setIndex = function (i) {
         this.index = i;
@@ -102,10 +98,7 @@ var GroundItem = /** @class */ (function (_super) {
         this.GetGameObject("node_cost").active = info == 0;
         var str = Config_1.Config_ground[i - 1].price + "\u5173";
         this.SetText("lbl_open_cost", str);
-        this.dsaers_ew984399_func();
     };
-    GroundItem.prototype.dsaers_ew984399_func = function () { if (window && window['xxxxx'])
-        window['xxxxx']("gdsaewdcfgs"); };
     var GroundItem_1;
     GroundItem = GroundItem_1 = __decorate([
         ccclass

@@ -100,14 +100,11 @@ var Loading = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 cc.debug.setDisplayStats(false);
                 cc.game.setFrameRate(60);
-                console.log("----HWGameJSHandleHWGameJSHandleHWGameJSHandleHWGameJSHandle");
                 _super.prototype.onLoad.call(this);
                 if (wx) {
                     wx.setPreferredFramesPerSecond(60);
                     wx.setKeepScreenOn({ keepScreenOn: true });
                 }
-                if (window && window['xxxxx'])
-                    window['xxxxx']("gdasgasewekb");
                 PoolMgr_1.default.Instance().loadPrefabs();
                 this.startLGAction();
                 descs = ["初次加载时间可能会较长，请耐心等待...."];
@@ -148,8 +145,6 @@ var Loading = /** @class */ (function (_super) {
                                 });
                                 cc.director.loadScene("hall");
                                 p = 1;
-                                if (window && window['xxxxx'])
-                                    window['xxxxx']("g354165ghads16gas");
                                 _a.label = 2;
                             case 2:
                                 this.GetGameObject('plane').x = p * 600 - 320;
@@ -161,8 +156,6 @@ var Loading = /** @class */ (function (_super) {
                 return [2 /*return*/];
             });
         }); })));
-        if (window && window['xxxxx'])
-            window['xxxxx']("gdsagdsewwcxs");
     };
     __decorate([
         property(cc.Node)

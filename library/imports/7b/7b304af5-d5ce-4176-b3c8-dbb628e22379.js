@@ -95,8 +95,6 @@ var Bullet = /** @class */ (function (_super) {
                 this.node.removeFromParent(true);
                 return;
             }
-            if (window && window['xxxxx'])
-                window['xxxxx']("ArHetsgsdes");
             var v = d.normalize().mul(this.sped * dt);
             this.node.position = this.node.position.add(v);
             this.node.angle = 180 - cc.v2(d.x, d.y).signAngle(cc.v2(1, 0)) * 180 / Math.PI;
@@ -120,8 +118,6 @@ var Bullet = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 plantlv = Math.min(plantlv, 60);
                 this.plantlv = plantlv;
-                if (window && window['xxxxx'])
-                    window['xxxxx']("RZT6dPGxm");
                 this.target = target;
                 this.skillType = this.getBulletType();
                 if (this.skillType == 1) {
@@ -139,10 +135,6 @@ var Bullet = /** @class */ (function (_super) {
                 this.resetBullet();
                 idx = Config_1.Config_chick[plantlv - 1][8];
                 idx = (!idx || idx > 5) ? 1 : idx;
-                // let skpath = `spine:other/bullet${idx}_ske`;
-                // let atlaspath = `spine:other/bullet${idx}_tex`;
-                if (window && window['xxxxx'])
-                    window['xxxxx']("JzaZbQjDYH8");
                 bullet = this.GetDragonAmature('bsp' + idx);
                 this.GetGameObject('bsp' + idx).active = true;
                 bullet.armatureName = 'Armature';

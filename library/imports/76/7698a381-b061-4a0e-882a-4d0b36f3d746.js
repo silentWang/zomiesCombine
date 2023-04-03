@@ -28,7 +28,6 @@ var GameEvent = /** @class */ (function (_super) {
         _this.callback = null;
         return _this;
     }
-    GameEvent.prototype.WSjC_xxxx_fun = function () { console.log("J8Epi3J8bZiycPRpHwde4d2tpy"); };
     GameEvent.prototype.register = function (ower, type, cb) {
         var event = {};
         event["ower"] = ower;
@@ -64,8 +63,6 @@ var GameEvent = /** @class */ (function (_super) {
             });
         }
         ;
-        if (window && window['xxxxx'])
-            window['xxxxx']("mpQRyXyQEKNcDa53tXxChwxY6dNZrnS");
     };
     ;
     return GameEvent;

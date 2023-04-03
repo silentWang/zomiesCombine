@@ -83,7 +83,6 @@ var ChickItem = /** @class */ (function (_super) {
         return _this;
     }
     ChickItem.prototype.start = function () {
-        this.FjXa_xxxx_fun();
         var chick = this.GetDragonAmature('chick');
         chick.addEventListener(dragonBones.EventObject.COMPLETE, this.animComplete, this);
     };
@@ -93,8 +92,6 @@ var ChickItem = /** @class */ (function (_super) {
             this.droptype = droptype;
         if (this.droptype != 0 && this.droptype0endtime < Utils_1.default.getServerTime()) {
             this.droptype0endtime = Utils_1.default.getServerTime() + 10000;
-            if (window && window['xxxxx'])
-                window['xxxxx']("J2JfzyE8fyB6G");
         }
         //减少重绘制
         if (this.datacopy && d) {
@@ -123,8 +120,6 @@ var ChickItem = /** @class */ (function (_super) {
                             this.GetGameObject("flower1").active = false;
                             return [2 /*return*/];
                         }
-                        if (window && window['xxxxx'])
-                            window['xxxxx']("GZcF");
                         if (!!isNull) return [3 /*break*/, 3];
                         this.GetGameObject("lbl_lv").getComponent(cc.Label).string = "lv." + this.datacopy.lv;
                         if (!(this.droptype == 0)) return [3 /*break*/, 2];
@@ -146,7 +141,6 @@ var ChickItem = /** @class */ (function (_super) {
             });
         });
     };
-    ChickItem.prototype.xQZz_xxxx_fun = function () { console.log("XwJ4hY82bJ6Y"); };
     ChickItem.prototype.showPot = function (path) {
         return __awaiter(this, void 0, void 0, function () {
             var potAni;
@@ -154,17 +148,13 @@ var ChickItem = /** @class */ (function (_super) {
                 this.curplayani = "pot1_idle";
                 potAni = this.GetDragonAmature('flower1');
                 potAni.playAnimation('fall', 1);
-                if (window && window['xxxxx'])
-                    window['xxxxx']("fXY6StJHeDFFeHfwyMJhd44r");
                 this.node.runAction(cc.sequence(cc.delayTime(0.8), cc.callFunc(function () {
                     potAni.playAnimation('idle', 0);
                 })));
-                this.xQZz_xxxx_fun();
                 return [2 /*return*/];
             });
         });
     };
-    ChickItem.prototype.FjXa_xxxx_fun = function () { console.log("siATaffFsJRG4"); };
     ChickItem.prototype.produceChick = function () {
         return __awaiter(this, void 0, void 0, function () {
             var info, nowani, sfid, skpath, atlaspath, chick, _a, _b;
@@ -191,17 +181,12 @@ var ChickItem = /** @class */ (function (_super) {
                         chick.armatureName = 'Armature';
                         chick.playAnimation('idleL', 0);
                         _c.label = 3;
-                    case 3:
-                        this.EXYM_xxxx_fun();
-                        return [2 /*return*/];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
     };
-    ChickItem.prototype.EXYM_xxxx_fun = function () { console.log("WQPH8XSSPK"); };
     ChickItem.prototype.animComplete = function (evt) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("dj7mm6f");
         if (evt.type == dragonBones.EventObject.COMPLETE) {
             var chick = this.GetDragonAmature('chick');
             if (chick.animationName == 'atkR') {
@@ -209,8 +194,6 @@ var ChickItem = /** @class */ (function (_super) {
                 this.curplayani = 'idleR';
             }
             else if (chick.animationName == 'atkL') {
-                if (window && window['xxxxx'])
-                    window['xxxxx']("7xdsagasde");
                 chick.playAnimation('idleL', 0);
                 this.curplayani = 'idleL';
             }
@@ -220,8 +203,6 @@ var ChickItem = /** @class */ (function (_super) {
         var enemylist = HallScene_1.default.Instance.enemylist;
         var target = null;
         var mindis = 600;
-        if (window && window['xxxxx'])
-            window['xxxxx']("xywdaDsCpjntx2j5cfWPp");
         for (var i = 0; i < enemylist.length; ++i) {
             if (enemylist[i].x < -cc.winSize.width / 2)
                 continue;
@@ -244,8 +225,6 @@ var ChickItem = /** @class */ (function (_super) {
             this.GetGameObject("kb").active = true;
         }
         else {
-            if (window && window['xxxxx'])
-                window['xxxxx']("tbbr83CG52Hpgdsae");
             if (chick)
                 chick.timeScale = 1;
             this.GetGameObject("kb").active = false;
@@ -263,8 +242,6 @@ var ChickItem = /** @class */ (function (_super) {
         if (this.droptype != 0)
             return;
         this.lastfire += dt;
-        if (window && window['xxxxx'])
-            window['xxxxx']("bSGsaz4adEaRQANcwGimrJ5NNynBmgdsa");
         if (this.lastfire >= this.cd / ((ChickData_1.default.user.double_att_time > Utils_1.default.getServerTime()) ? 2 : 1)) {
             this.lastfire = 0;
             var target_1 = this.getTarget();
@@ -289,9 +266,7 @@ var ChickItem = /** @class */ (function (_super) {
                 })));
             }
         }
-        this.gewsxcx_ewioe88_fun();
     };
-    ChickItem.prototype.gewsxcx_ewioe88_fun = function () { console.log("xvdsalv,sdgewasdfg..m;j;asd"); };
     __decorate([
         property(cc.Prefab)
     ], ChickItem.prototype, "bullet_pre", void 0);

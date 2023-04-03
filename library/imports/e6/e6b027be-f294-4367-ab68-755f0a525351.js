@@ -77,8 +77,6 @@ var GunBuyType;
     // CNNOT_SEE= 8,
     GunBuyType[GunBuyType["GEM_BUY"] = 16] = "GEM_BUY";
 })(GunBuyType || (GunBuyType = {}));
-if (window && window['xxxxx'])
-    window['xxxxx']("bP");
 var ShopItem = /** @class */ (function (_super) {
     __extends(ShopItem, _super);
     function ShopItem() {
@@ -107,8 +105,6 @@ var ShopItem = /** @class */ (function (_super) {
         return gunlv - 1 == id;
     };
     ShopItem.prototype.getBuyCoinType = function (gun) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("sbPmZdfXXDjTAt8jMiBxiYRpYc");
         var gunlv = ChickData_1.default.user.getLvlMax();
         var type = 0;
         if (gun[0] <= gunlv - 2) {
@@ -116,8 +112,6 @@ var ShopItem = /** @class */ (function (_super) {
         }
         if (this.ShowBuyAd(gun[0])) {
             type |= GunBuyType.CAN_AD_BUY;
-            if (window && window['xxxxx'])
-                window['xxxxx']("2DcHAZtJXdSC52eFrbe3mH6P");
         }
         if (this.BuyDiamond(gun[0])) {
             type |= GunBuyType.GEM_BUY;
@@ -147,8 +141,6 @@ var ShopItem = /** @class */ (function (_super) {
                             node = this.GetGameObject("show");
                         }
                         else if ((buytype & GunBuyType.CAN_AD_BUY) != 0) {
-                            if (window && window['xxxxx'])
-                                window['xxxxx']("r4jsxj435tPSfynCkPTf7DyGmJK647");
                             this.GetGameObject("show").active = true;
                             this.GetGameObject("btn_free").active = true;
                             node = this.GetGameObject("show");
@@ -165,8 +157,6 @@ var ShopItem = /** @class */ (function (_super) {
                                 node = this.GetGameObject("show");
                             }
                             else {
-                                if (window && window['xxxxx'])
-                                    window['xxxxx']("nS68yQymxN46JakxX");
                                 this.GetGameObject("hide").active = true;
                                 node = this.GetGameObject("hide");
                                 bhide = true;
@@ -184,8 +174,6 @@ var ShopItem = /** @class */ (function (_super) {
                             str = "技能:" + value + "%的几率触发减速目标1秒";
                         }
                         else if (skilltype == 2) {
-                            if (window && window['xxxxx'])
-                                window['xxxxx']("eHSD5Sz6yyaBHAnj62TiYAmwkFnFz");
                             str = "技能:" + value + "%几率对目标造成双倍伤害";
                         }
                         else if (skilltype == 3) {
@@ -226,13 +214,9 @@ var ShopItem = /** @class */ (function (_super) {
         AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_free":
-                if (window && window['xxxxx'])
-                    window['xxxxx']("7tnkcYdyZcthbRnjE2mHckiQ");
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
                         if (HallScene_1.default.Instance.buyChick(_this.gun[0], 2)) {
-                            if (window && window['xxxxx'])
-                                window['xxxxx']("EPem3QPTBF6rtYjchp7WYWa");
                             MsgToast_1.default.show("购买成功");
                             _this.dispatch(GameConst_1.default.BUY_CHICK, _this.gun, _this.node.getComponent(ListItem_1.default).listId);
                         }
@@ -241,8 +225,6 @@ var ShopItem = /** @class */ (function (_super) {
                 break;
             case "btn_yellow":
                 if (ChickData_1.default.user.coin < this.cost_coin) {
-                    if (window && window['xxxxx'])
-                        window['xxxxx']("hzRNeci");
                     MsgToast_1.default.show("金币不足");
                     return;
                 }

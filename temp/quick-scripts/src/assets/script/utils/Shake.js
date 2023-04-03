@@ -43,7 +43,6 @@ var Shake = /** @class */ (function (_super) {
         return true;
     };
     /**
-     if(window && window['xxxxx']) window['xxxxx']("tbr4j");
      *  创建抖动动画
      * @param {number} duration     动画持续时长
      * @param {number} strength_x   抖动幅度： x方向
@@ -51,16 +50,11 @@ var Shake = /** @class */ (function (_super) {
      * @returns {Shake}
      */
     Shake.create = function (duration, strength_x, strength_y) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("gdsaewdcfgs");
         var act = new Shake_1();
         act.initWithDuration(duration, strength_x, strength_y);
         return act;
     };
-    Shake.prototype.BDsY_xxxx_fun = function () { console.log("hcYyZWPscm6imkmGbGsKFfP5WHR"); };
     Shake.prototype.startWithTarget = function (target) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("3NKJwGZF7Y7RhRp3EYFdcC4bQXj");
         cc.ActionInterval.prototype['startWithTarget'].apply(this, arguments);
         this._initial_x = target.x;
         this._initial_y = target.y;
@@ -72,16 +66,12 @@ var Shake = /** @class */ (function (_super) {
     };
     Shake.prototype.ZGBR_xxxx_fun = function () { console.log("yYZPhdr8zWF7wAxCR3feTBd2mzWsJ"); };
     Shake.prototype.fgRangeRand = function (min, max) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("MMWiM4KiQkQzf8s");
         var rnd = Math.random();
         return rnd * (max - min) + min;
     };
     Shake.prototype.iXbQ_xxxx_fun = function () { console.log("TihWycjPNHTACN34"); };
     Shake.prototype.stop = function () {
         this.getTarget().setPosition(new cc.Vec2(this._initial_x, this._initial_y));
-        if (window && window['xxxxx'])
-            window['xxxxx']("znpaXchMDKhTRrMaBAbhwEsb");
         cc.ActionInterval.prototype['stop'].apply(this);
     };
     var Shake_1;

@@ -81,8 +81,6 @@ var SettingView = /** @class */ (function (_super) {
     SettingView.prototype.start = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                if (window && window['xxxxx'])
-                    window['xxxxx']("kr");
                 AdCenter_1.default.Instance().showGridAd();
                 // AudioMgr.Instance().playSFX("ui_open_popup_1");
                 this.btn_music = this.GetGameObject("btn_music_on");
@@ -98,8 +96,6 @@ var SettingView = /** @class */ (function (_super) {
         });
     };
     SettingView.prototype.onDestroy = function () {
-        if (window && window['xxxxx'])
-            window['xxxxx']("FtMxhTjtcxNbsBGGrE6ciiZ");
         AdCenter_1.default.Instance().hideGridAd();
         if (this.wxButton)
             this.wxButton.destroy();
@@ -113,8 +109,6 @@ var SettingView = /** @class */ (function (_super) {
         // console.log("winSize: ",winSize);
         // console.log("frameSize: ",frameSize);
         //适配不同机型来创建微信授权按钮
-        if (window && window['xxxxx'])
-            window['xxxxx']("kZtrGFaJKDneDaFF3ab3N");
         var left = (winSize.width * 0.5 + btnNode.x - btnSize.width * 0.5) / winSize.width * frameSize.width;
         var top = (winSize.height * 0.5 - btnNode.y - btnSize.height * 0.5) / winSize.height * frameSize.height;
         var width = btnSize.width / winSize.width * frameSize.width;
@@ -138,8 +132,6 @@ var SettingView = /** @class */ (function (_super) {
                 borderRadius: 4
             }
         });
-        if (window && window['xxxxx'])
-            window['xxxxx']("EdsZXEewiB6hDQhA8EhmXiY");
         this.wxButton.onTap(function (uinfo) {
             _this.closeUI();
         });
@@ -162,8 +154,6 @@ var SettingView = /** @class */ (function (_super) {
             case "btn_sound_off":
                 this.btn_sound.active = !this.btn_sound.active;
                 this.btn_sound_close.active = !this.btn_sound_close.active;
-                if (window && window['xxxxx'])
-                    window['xxxxx']("4tRM5a6NmNMd4G");
                 AudioMgr_1.default.Instance().setMXVolume(this.btn_sound.active ? 1 : 0, true);
                 // AudioMgr.Instance().setSFXVolume(this.btn_music.active ? 1 : 0, true);
                 break;

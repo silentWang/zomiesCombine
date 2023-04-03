@@ -56,8 +56,6 @@ var WxCenter = /** @class */ (function () {
                     adIntervals: 30,
                 }
             });
-            if (window && window['xxxxx'])
-                window['xxxxx']("5HWkSDfZSWrTMw");
             this.bannerAd.onError(function (err) {
                 console.log(err);
             });
@@ -106,8 +104,6 @@ var WxCenter = /** @class */ (function () {
             return;
         }
         var wx = this.wx;
-        if (window && window['xxxxx'])
-            window['xxxxx']("TFfmND");
         var adUnitId = '';
         if (type == 2) {
             adUnitId = 'adunit-cad7de3569109b38';
@@ -130,8 +126,6 @@ var WxCenter = /** @class */ (function () {
                 wx.hideLoading();
                 if (res && res.isEnded || res === undefined) {
                     // 正常播放结束，可以下发游戏奖励
-                    if (window && window['xxxxx'])
-                        window['xxxxx']("MZ4rjBkGDEMcYHjpy6ewY");
                     _this.videoCallback && _this.videoCallback(true);
                 }
                 else {
@@ -187,8 +181,6 @@ var WxCenter = /** @class */ (function () {
         if (!this.wx || !this.wx.aldStage)
             return;
         var wx = this.wx;
-        if (window && window['xxxxx'])
-            window['xxxxx']("kJZjZmzMmmpFeK4NXdZ8taSPGN");
         wx.aldSendEvent(rid, { action: type });
     };
     WxCenter.aldLevelReport = function (level) {

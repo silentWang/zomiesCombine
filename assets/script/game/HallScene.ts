@@ -897,7 +897,8 @@ export default class HallScene extends BaseUI {
 
         switch (btnName) {
 			case "btn_setting":
-				Utils.createUI("prefab/SettingUI")
+				// Utils.createUI("prefab/SettingUI")
+				Utils.createUI("prefab/MonthCardUI")
 				break;
 			case "btn_sign":
 				Utils.createUI("prefab/SignUI")

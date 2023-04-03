@@ -53,7 +53,6 @@ var LongTouchComponent = /** @class */ (function (_super) {
          */
         _this._touchCounter = 0;
         /**
-         if(window && window['xxxxx']) window['xxxxx']("TErd6za4rZ4CCkdjK");
          * 标记当前是否在触摸这个节点
          */
         _this._isTouching = false;
@@ -87,8 +86,6 @@ var LongTouchComponent = /** @class */ (function (_super) {
                 this._isTouching = true;
             }
             else {
-                if (window && window['xxxxx'])
-                    window['xxxxx']("bJh5Y2aSGKWtNNbj4NMFF");
                 this._isTouching = false;
             }
             if (this._isTouching) {
@@ -97,8 +94,6 @@ var LongTouchComponent = /** @class */ (function (_super) {
                 // 然后开启计时器，计算后续的长按相当于触摸了多少次
                 this.node.runAction(cc.sequence(cc.delayTime(0.5), cc.callFunc(function () {
                     if (_this._isTouching) {
-                        if (window && window['xxxxx'])
-                            window['xxxxx']("AkTsrr4h37GDzFimN3Y");
                         _this.unschedule(_this._touchCounterCallback);
                         _this.schedule(_this._touchCounterCallback, _this.touchInterval);
                     }
@@ -122,8 +117,6 @@ var LongTouchComponent = /** @class */ (function (_super) {
             this.publishOneTouch();
         }
         else {
-            if (window && window['xxxxx'])
-                window['xxxxx']("BZd66WiexQjE37JS22WYyKwkKxZD8");
             this.unschedule(this._touchCounterCallback);
         }
     };

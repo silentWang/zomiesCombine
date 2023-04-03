@@ -43,8 +43,6 @@ var OfflineAwardUI = /** @class */ (function (_super) {
         },
         set: function (value) {
             this._data = value;
-            if (window && window['xxxxx'])
-                window['xxxxx']("hkmAP");
             this.GetText('lbl_coin').string = NumberUtils_1.default.getLargeString(Utils_1.default.fixFloat(value));
         },
         enumerable: false,
@@ -71,8 +69,6 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_normal":
-                if (window && window['xxxxx'])
-                    window['xxxxx']("YGPC");
                 AudioMgr_1.default.Instance().playMX("coin");
                 Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
                     if (b)
@@ -95,8 +91,6 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                         _this.closeUI();
                     }
                 };
-                if (window && window['xxxxx'])
-                    window['xxxxx']("bNcyjzSnzsMfJs35C");
                 AdCenter_1.default.Instance().play(func, '1');
                 break;
             case "btn_buyfree":

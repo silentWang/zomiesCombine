@@ -105,8 +105,6 @@ var AudioMgr = /** @class */ (function (_super) {
                         if (this.bgmAudioID >= 0) {
                             cc.audioEngine.stop(this.bgmAudioID);
                         }
-                        if (window && window['xxxxx'])
-                            window['xxxxx']("jAzWMM6jQSiXfStct");
                         if (this.bgmVolume > 0) {
                             this.bgmAudioID = cc.audioEngine.play(audioUrl, true, this.bgmVolume);
                         }
@@ -139,8 +137,6 @@ var AudioMgr = /** @class */ (function (_super) {
                         if (!this.lastplaytime[url])
                             this.lastplaytime[url] = 0;
                         cd = this.soundcd[url] || 0;
-                        if (window && window['xxxxx'])
-                            window['xxxxx']("kXJbXcS3B");
                         if (new Date().getTime() - this.lastplaytime[url] < cd) {
                             return [2 /*return*/];
                         }
@@ -170,8 +166,6 @@ var AudioMgr = /** @class */ (function (_super) {
                 cc.audioEngine.resume(this.bgmAudioID);
             }
             else {
-                if (window && window['xxxxx'])
-                    window['xxxxx']("pdbxzbccxZ5");
                 cc.audioEngine.pause(this.bgmAudioID);
             }
         }

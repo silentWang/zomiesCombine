@@ -4904,55 +4904,10 @@
     "meta": 1680489530664,
     "relativePath": "script\\game\\prefab\\BossCommingUI.ts"
   },
-  "7abb6370-eb08-42e4-8ada-f373c83602e3": {
-    "asset": 1679896451154,
-    "meta": 1680489530785,
-    "relativePath": "script\\game\\prefab\\Enemy.ts"
-  },
-  "03d56a46-9912-4370-9e90-e1c89d9e7b4f": {
-    "asset": 1679896451156,
-    "meta": 1680489530808,
-    "relativePath": "script\\game\\prefab\\NewChickUI.ts"
-  },
-  "d9bb0667-075c-4947-a569-ded893b5e930": {
-    "asset": 1679896451157,
-    "meta": 1680489530830,
-    "relativePath": "script\\game\\prefab\\RecordView.ts"
-  },
-  "0907e869-ad65-4874-be76-8d7eae201f3c": {
-    "asset": 1679896451158,
-    "meta": 1680489530845,
-    "relativePath": "script\\game\\prefab\\SettingView.ts"
-  },
-  "c8f4a8d6-5bc9-4f3d-ae65-5b00063fb966": {
-    "asset": 1679896451159,
-    "meta": 1680489530854,
-    "relativePath": "script\\game\\prefab\\ShareView.ts"
-  },
-  "7698a381-b061-4a0e-882a-4d0b36f3d746": {
-    "asset": 1670589074078,
-    "meta": 1680489528392,
-    "relativePath": "script\\event\\GameEvent.ts"
-  },
-  "d27987b1-8321-41c1-b13f-8ef32cf36c7d": {
-    "asset": 1679896451160,
-    "meta": 1680489530894,
-    "relativePath": "script\\game\\prefab\\ShopView.ts"
-  },
   "afc5afde-de28-43a2-9ba8-060b3f77dc18": {
     "asset": 1670587787412,
     "meta": 1680489530179,
     "relativePath": "script\\utils\\DebugTools.ts"
-  },
-  "7afd2bdd-a61b-428c-a5a2-f9c7c1be6a16": {
-    "asset": 1670587843103,
-    "meta": 1680489530217,
-    "relativePath": "script\\utils\\NumberRoll.ts"
-  },
-  "96c22419-4282-44ce-bb1d-7d2b65b0cd44": {
-    "asset": 1670587719424,
-    "meta": 1680489530136,
-    "relativePath": "script\\manager\\PoolMgr.ts"
   },
   "4306c72c-d0f9-416b-85dc-f563dba234f0": {
     "asset": 1679043346152,
@@ -4974,135 +4929,15 @@
     "meta": 1680489527989,
     "relativePath": "resources\\scene\\hall.fire"
   },
-  "e6b027be-f294-4367-ab68-755f0a525351": {
-    "asset": 1679896451159,
-    "meta": 1680489530880,
-    "relativePath": "script\\game\\prefab\\ShopItem.ts"
-  },
-  "1aca77a2-bc6b-4efd-9fa4-6d504843828f": {
-    "asset": 1679896451161,
-    "meta": 1680489530919,
-    "relativePath": "script\\game\\prefab\\SignView.ts"
-  },
-  "747f84ed-bbd2-4642-b25f-cc50e4f17a53": {
-    "asset": 1679896451149,
-    "meta": 1680489528796,
-    "relativePath": "script\\framwork\\List.ts"
-  },
-  "66c9af38-6baf-4170-b51b-e274f06e0cba": {
-    "asset": 1679896451149,
-    "meta": 1680489528824,
-    "relativePath": "script\\framwork\\ListItem.ts"
-  },
-  "7b304af5-d5ce-4176-b3c8-dbb628e22379": {
-    "asset": 1679896451152,
-    "meta": 1680489530678,
-    "relativePath": "script\\game\\prefab\\Bullet.ts"
-  },
-  "032611f6-648b-44a1-b8c8-a55a89297fe0": {
-    "asset": 1679896451154,
-    "meta": 1680489530738,
-    "relativePath": "script\\game\\prefab\\DropItem.ts"
-  },
-  "c4310a8e-3ac2-4b69-9b8d-01e4da40d80e": {
-    "asset": 1679043346176,
-    "meta": 1680489530172,
-    "relativePath": "script\\utils\\AudioMgr.ts"
-  },
-  "2b93dfc1-17fa-429d-9b3f-1436b89ed22f": {
-    "asset": 1679043346177,
-    "meta": 1680489530251,
-    "relativePath": "script\\utils\\NumberUtils.ts"
-  },
-  "ff7483d2-efe8-4420-8891-085bc2c1b4b2": {
-    "asset": 1679043346177,
-    "meta": 1680489530315,
-    "relativePath": "script\\utils\\Utils.ts"
-  },
-  "da6dd47c-9b31-42b4-8d7d-98cc0ac4144f": {
-    "asset": 1679896451148,
-    "meta": 1680489528486,
-    "relativePath": "script\\framwork\\BaseUI.ts"
-  },
-  "9114d0bd-da0e-411a-b9c9-b9ce61dcfe86": {
-    "asset": 1679896451150,
-    "meta": 1680489528837,
-    "relativePath": "script\\framwork\\MsgToast.ts"
-  },
-  "34e81c05-764e-4822-bf91-8df35cb8e46f": {
-    "asset": 1679043537717,
-    "meta": 1680489528848,
-    "relativePath": "script\\game\\AchievementModel.ts"
-  },
-  "355f45d9-7bf4-4144-9f3e-b40160a2915f": {
-    "asset": 1679043635390,
-    "meta": 1680489528898,
-    "relativePath": "script\\game\\ChickItem.ts"
-  },
-  "6d0f61bb-a7fb-496a-9053-83fb0db20cda": {
-    "asset": 1679043786750,
-    "meta": 1680489529022,
-    "relativePath": "script\\game\\Config.ts"
-  },
-  "69805de6-47a4-4b8b-946d-92024e8e29ab": {
-    "asset": 1679043773179,
-    "meta": 1680489529037,
-    "relativePath": "script\\game\\GroundItem.ts"
-  },
-  "b649ad67-0ada-4268-b6a8-eeae097da02c": {
-    "asset": 1679043546989,
-    "meta": 1680489530034,
-    "relativePath": "script\\game\\HallScene.ts"
-  },
-  "e5755cb3-3359-44d2-ba04-ba2df0bf4053": {
-    "asset": 1679043697037,
-    "meta": 1680489530074,
-    "relativePath": "script\\game\\UserModel.ts"
-  },
-  "10f92d6a-9c2f-4ce0-b1d0-ebb6c483241e": {
-    "asset": 1679043472805,
-    "meta": 1680489530096,
-    "relativePath": "script\\manager\\ChickData.ts"
-  },
-  "9780c2ee-4745-4aca-9417-65ec9c77a42a": {
-    "asset": 1679043447182,
-    "meta": 1680489530113,
-    "relativePath": "script\\manager\\ConfigManager.ts"
-  },
-  "8fa848f7-05b3-4fa4-bd61-51621cbaac6a": {
-    "asset": 1679043439354,
-    "meta": 1680489530126,
-    "relativePath": "script\\manager\\DataManager.ts"
-  },
   "b352477b-cc7f-4f8a-ac56-0d19de2ef7fc": {
     "asset": 1679043714120,
     "meta": 1680489530139,
     "relativePath": "script\\manager\\Singleton.ts"
   },
-  "51ec5990-36b8-428c-9173-a0269d9cd058": {
-    "asset": 1679043712010,
-    "meta": 1680489530156,
-    "relativePath": "script\\manager\\WxCenter.ts"
-  },
-  "e00b9380-51d5-4985-b4b4-05423b339a71": {
-    "asset": 1679043425709,
-    "meta": 1680489530198,
-    "relativePath": "script\\utils\\LongTouchComponent.ts"
-  },
-  "77685eb2-3748-4350-9f6d-a511340262c9": {
-    "asset": 1679043734740,
-    "meta": 1680489530262,
-    "relativePath": "script\\utils\\Shake.ts"
-  },
   "b37b94da-848b-4bd3-aaed-0098e2923d1a": {
     "asset": 1680486641246,
     "meta": 1680489530207,
     "relativePath": "script\\utils\\Native.ts"
-  },
-  "af4a308a-28f6-40c2-be1a-6a05bf813725": {
-    "asset": 1680489176075,
-    "meta": 1680489526666,
-    "relativePath": "script\\Loading.ts"
   },
   "e5d86e20-5695-4ebe-9032-6ac3d555868a": {
     "asset": 1680459528000,
@@ -5145,48 +4980,213 @@
     "relativePath": "resources\\newtexture\\symgg_an.png"
   },
   "a1fad87c-6ff8-4f79-a72c-e95ef9eef07f": {
-    "asset": 1680502614162,
-    "meta": 1680502614166,
-    "relativePath": "resources\\prefab\\MonthCard.prefab"
+    "asset": 1680505714447,
+    "meta": 1680505714450,
+    "relativePath": "resources\\prefab\\MonthCardUI.prefab"
+  },
+  "7698a381-b061-4a0e-882a-4d0b36f3d746": {
+    "asset": 1680502931327,
+    "meta": 1680504453141,
+    "relativePath": "script\\event\\GameEvent.ts"
+  },
+  "da6dd47c-9b31-42b4-8d7d-98cc0ac4144f": {
+    "asset": 1680502992952,
+    "meta": 1680504453203,
+    "relativePath": "script\\framwork\\BaseUI.ts"
+  },
+  "747f84ed-bbd2-4642-b25f-cc50e4f17a53": {
+    "asset": 1680503368959,
+    "meta": 1680504453418,
+    "relativePath": "script\\framwork\\List.ts"
+  },
+  "66c9af38-6baf-4170-b51b-e274f06e0cba": {
+    "asset": 1680503368035,
+    "meta": 1680504453437,
+    "relativePath": "script\\framwork\\ListItem.ts"
+  },
+  "9114d0bd-da0e-411a-b9c9-b9ce61dcfe86": {
+    "asset": 1680503367309,
+    "meta": 1680504453450,
+    "relativePath": "script\\framwork\\MsgToast.ts"
+  },
+  "34e81c05-764e-4822-bf91-8df35cb8e46f": {
+    "asset": 1680503366511,
+    "meta": 1680504453460,
+    "relativePath": "script\\game\\AchievementModel.ts"
+  },
+  "355f45d9-7bf4-4144-9f3e-b40160a2915f": {
+    "asset": 1680502762954,
+    "meta": 1680504453484,
+    "relativePath": "script\\game\\ChickItem.ts"
+  },
+  "6d0f61bb-a7fb-496a-9053-83fb0db20cda": {
+    "asset": 1680503365108,
+    "meta": 1680504453583,
+    "relativePath": "script\\game\\Config.ts"
+  },
+  "69805de6-47a4-4b8b-946d-92024e8e29ab": {
+    "asset": 1680503460317,
+    "meta": 1680504453595,
+    "relativePath": "script\\game\\GroundItem.ts"
+  },
+  "7b304af5-d5ce-4176-b3c8-dbb628e22379": {
+    "asset": 1680504159968,
+    "meta": 1680504453745,
+    "relativePath": "script\\game\\prefab\\Bullet.ts"
   },
   "e5b6fe10-30bd-406d-a2e8-41dec960e309": {
-    "asset": 1680501907670,
-    "meta": 1680501952414,
+    "asset": 1680504150939,
+    "meta": 1680504453761,
     "relativePath": "script\\game\\prefab\\CoinNotEnoughUI.ts"
   },
   "039eb635-670f-44ea-a2b6-b7b215556fcd": {
-    "asset": 1680501756623,
-    "meta": 1680501952457,
+    "asset": 1680504149148,
+    "meta": 1680504453783,
     "relativePath": "script\\game\\prefab\\CommonView.ts"
   },
-  "6d8348d5-1e3a-4fef-8f11-ce78b3161ba4": {
-    "asset": 1680501852878,
-    "meta": 1680501952479,
-    "relativePath": "script\\game\\prefab\\FailView.ts"
-  },
-  "ffa08ef8-e8c7-4d55-ba9e-099646e0f3bc": {
-    "asset": 1680501879529,
-    "meta": 1680501952513,
-    "relativePath": "script\\game\\prefab\\WinView.ts"
-  },
-  "04f46338-9ca6-4756-9182-a89c65478fb7": {
-    "asset": 1680501827714,
-    "meta": 1680501952531,
-    "relativePath": "script\\manager\\AdCenter.ts"
-  },
   "c0f63e12-f5e1-449d-a7ff-b0c1a1a89637": {
-    "asset": 1680501975628,
-    "meta": 1680501976370,
+    "asset": 1680504147515,
+    "meta": 1680504453794,
     "relativePath": "script\\game\\prefab\\DropChickView.ts"
   },
-  "f46106c4-102c-49a8-a3d8-af7c4631a40f": {
-    "asset": 1680502601072,
-    "meta": 1680502601552,
-    "relativePath": "script\\game\\prefab\\MonthUI.ts"
+  "032611f6-648b-44a1-b8c8-a55a89297fe0": {
+    "asset": 1680504145716,
+    "meta": 1680504453807,
+    "relativePath": "script\\game\\prefab\\DropItem.ts"
+  },
+  "7abb6370-eb08-42e4-8ada-f373c83602e3": {
+    "asset": 1680504144300,
+    "meta": 1680504453847,
+    "relativePath": "script\\game\\prefab\\Enemy.ts"
+  },
+  "6d8348d5-1e3a-4fef-8f11-ce78b3161ba4": {
+    "asset": 1680504142301,
+    "meta": 1680504453857,
+    "relativePath": "script\\game\\prefab\\FailView.ts"
+  },
+  "03d56a46-9912-4370-9e90-e1c89d9e7b4f": {
+    "asset": 1680504140900,
+    "meta": 1680504453868,
+    "relativePath": "script\\game\\prefab\\NewChickUI.ts"
   },
   "4750996f-37ae-40dd-8b54-c614bc4777d4": {
-    "asset": 1680502665300,
-    "meta": 1680502667324,
+    "asset": 1680504139583,
+    "meta": 1680504453880,
     "relativePath": "script\\game\\prefab\\OfflineAwardUI.ts"
+  },
+  "d9bb0667-075c-4947-a569-ded893b5e930": {
+    "asset": 1680504138443,
+    "meta": 1680504453891,
+    "relativePath": "script\\game\\prefab\\RecordView.ts"
+  },
+  "0907e869-ad65-4874-be76-8d7eae201f3c": {
+    "asset": 1680504137040,
+    "meta": 1680504453904,
+    "relativePath": "script\\game\\prefab\\SettingView.ts"
+  },
+  "c8f4a8d6-5bc9-4f3d-ae65-5b00063fb966": {
+    "asset": 1680504135760,
+    "meta": 1680504453913,
+    "relativePath": "script\\game\\prefab\\ShareView.ts"
+  },
+  "e6b027be-f294-4367-ab68-755f0a525351": {
+    "asset": 1680504134184,
+    "meta": 1680504453936,
+    "relativePath": "script\\game\\prefab\\ShopItem.ts"
+  },
+  "d27987b1-8321-41c1-b13f-8ef32cf36c7d": {
+    "asset": 1680504132850,
+    "meta": 1680504453949,
+    "relativePath": "script\\game\\prefab\\ShopView.ts"
+  },
+  "1aca77a2-bc6b-4efd-9fa4-6d504843828f": {
+    "asset": 1680504131386,
+    "meta": 1680504453978,
+    "relativePath": "script\\game\\prefab\\SignView.ts"
+  },
+  "ffa08ef8-e8c7-4d55-ba9e-099646e0f3bc": {
+    "asset": 1680504130001,
+    "meta": 1680504453990,
+    "relativePath": "script\\game\\prefab\\WinView.ts"
+  },
+  "e5755cb3-3359-44d2-ba04-ba2df0bf4053": {
+    "asset": 1680504161479,
+    "meta": 1680504454022,
+    "relativePath": "script\\game\\UserModel.ts"
+  },
+  "af4a308a-28f6-40c2-be1a-6a05bf813725": {
+    "asset": 1680502920063,
+    "meta": 1680504454036,
+    "relativePath": "script\\Loading.ts"
+  },
+  "04f46338-9ca6-4756-9182-a89c65478fb7": {
+    "asset": 1680504128137,
+    "meta": 1680504454046,
+    "relativePath": "script\\manager\\AdCenter.ts"
+  },
+  "10f92d6a-9c2f-4ce0-b1d0-ebb6c483241e": {
+    "asset": 1680504126976,
+    "meta": 1680504454054,
+    "relativePath": "script\\manager\\ChickData.ts"
+  },
+  "9780c2ee-4745-4aca-9417-65ec9c77a42a": {
+    "asset": 1680504125362,
+    "meta": 1680504454068,
+    "relativePath": "script\\manager\\ConfigManager.ts"
+  },
+  "8fa848f7-05b3-4fa4-bd61-51621cbaac6a": {
+    "asset": 1680504124121,
+    "meta": 1680504454077,
+    "relativePath": "script\\manager\\DataManager.ts"
+  },
+  "96c22419-4282-44ce-bb1d-7d2b65b0cd44": {
+    "asset": 1680504121892,
+    "meta": 1680504454089,
+    "relativePath": "script\\manager\\PoolMgr.ts"
+  },
+  "51ec5990-36b8-428c-9173-a0269d9cd058": {
+    "asset": 1680504120532,
+    "meta": 1680504454106,
+    "relativePath": "script\\manager\\WxCenter.ts"
+  },
+  "c4310a8e-3ac2-4b69-9b8d-01e4da40d80e": {
+    "asset": 1680504119358,
+    "meta": 1680504454119,
+    "relativePath": "script\\utils\\AudioMgr.ts"
+  },
+  "e00b9380-51d5-4985-b4b4-05423b339a71": {
+    "asset": 1680504118007,
+    "meta": 1680504454135,
+    "relativePath": "script\\utils\\LongTouchComponent.ts"
+  },
+  "7afd2bdd-a61b-428c-a5a2-f9c7c1be6a16": {
+    "asset": 1680504116685,
+    "meta": 1680504454143,
+    "relativePath": "script\\utils\\NumberRoll.ts"
+  },
+  "2b93dfc1-17fa-429d-9b3f-1436b89ed22f": {
+    "asset": 1680504115591,
+    "meta": 1680504454165,
+    "relativePath": "script\\utils\\NumberUtils.ts"
+  },
+  "77685eb2-3748-4350-9f6d-a511340262c9": {
+    "asset": 1680504114309,
+    "meta": 1680504454175,
+    "relativePath": "script\\utils\\Shake.ts"
+  },
+  "ff7483d2-efe8-4420-8891-085bc2c1b4b2": {
+    "asset": 1680504112341,
+    "meta": 1680504454214,
+    "relativePath": "script\\utils\\Utils.ts"
+  },
+  "b649ad67-0ada-4268-b6a8-eeae097da02c": {
+    "asset": 1680505386388,
+    "meta": 1680505387024,
+    "relativePath": "script\\game\\HallScene.ts"
+  },
+  "36af0b69-94cc-4b66-806e-d7388a74e49d": {
+    "asset": 1680505852309,
+    "meta": 1680505853244,
+    "relativePath": "script\\game\\prefab\\MonthView.ts"
   }
 }

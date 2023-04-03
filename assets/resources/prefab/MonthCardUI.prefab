@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "MonthCard",
+    "_name": "MonthCardUI",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -2950,7 +2950,7 @@
     "sync": false
   },
   {
-    "__type__": "f4610bEECxJqKPYr3xGMaQP",
+    "__type__": "36af0tplMxLZoBu1ziKdOSd",
     "_name": "",
     "_objFlags": 0,
     "node": {

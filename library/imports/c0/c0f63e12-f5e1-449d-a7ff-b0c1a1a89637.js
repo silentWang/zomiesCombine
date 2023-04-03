@@ -66,8 +66,6 @@ var DropChickView = /** @class */ (function (_super) {
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
-                if (window && window['xxxxx'])
-                    window['xxxxx']("Xz6RrzthM5cwYhHKxWJ6c2yf6wGyN");
                 break;
             case "btn_normal":
                 WxCenter_1.default.aldReport('AirdropClick', 'click');
@@ -79,8 +77,6 @@ var DropChickView = /** @class */ (function (_super) {
                 WxCenter_1.default.aldReport('AirdropClick', 'click');
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
-                        if (window && window['xxxxx'])
-                            window['xxxxx']("CZ7iK8EJpYXZEFDSnc5Tb4yZFia5");
                         var spt_1 = _this.getBigPot(true);
                         ChickData_1.default.user.DropGiftPts = ChickData_1.default.user.DropGiftPts.concat(spt_1);
                         _this.closeUI();

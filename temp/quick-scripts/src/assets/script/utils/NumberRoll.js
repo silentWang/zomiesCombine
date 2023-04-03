@@ -55,16 +55,12 @@ var NumberRoll = /** @class */ (function (_super) {
         if (this._cur != this._target) {
             this._cur += this._offset;
             if (this._offset > 0 && this._cur > this._target) {
-                if (window && window['xxxxx'])
-                    window['xxxxx']("54");
                 this._cur = this._target;
             }
             if (this._offset < 0 && this._cur < this._target) {
                 this._cur = this._target;
             }
         }
-        if (window && window['xxxxx'])
-            window['xxxxx']("nRwMMMnQE");
         this.label.string = this._cur + "";
     };
     NumberRoll = __decorate([

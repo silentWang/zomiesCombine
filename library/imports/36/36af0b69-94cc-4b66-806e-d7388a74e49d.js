@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'f4610bEECxJqKPYr3xGMaQP', 'MonthUI');
-// script/game/prefab/MonthUI.ts
+cc._RF.push(module, '36af0tplMxLZoBu1ziKdOSd', 'MonthView');
+// script/game/prefab/MonthView.ts
 
 "use strict";
 // Learn TypeScript:
@@ -32,23 +32,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var MonthUI = /** @class */ (function (_super) {
-    __extends(MonthUI, _super);
-    function MonthUI() {
+var MonthView = /** @class */ (function (_super) {
+    __extends(MonthView, _super);
+    function MonthView() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     // LIFE-CYCLE CALLBACKS:
     // onLoad () {}
-    MonthUI.prototype.start = function () {
+    MonthView.prototype.start = function () {
         this.SetText('txtPrice', '12');
     };
     // update (dt) {}
-    MonthUI.prototype.onUIClicked = function (event, customEventData) {
+    MonthView.prototype.onUIClicked = function (event, customEventData) {
+        _super.prototype.onUIClicked.call(this, event, customEventData);
         var btnName = event.target.name;
         AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btnBuy":
                 // to do
+                cc.log('cccccccc');
                 break;
             case "btnRecover":
                 break;
@@ -58,11 +60,11 @@ var MonthUI = /** @class */ (function (_super) {
                 break;
         }
     };
-    MonthUI = __decorate([
+    MonthView = __decorate([
         ccclass
-    ], MonthUI);
-    return MonthUI;
+    ], MonthView);
+    return MonthView;
 }(BaseUI_1.default));
-exports.default = MonthUI;
+exports.default = MonthView;
 
 cc._RF.pop();

@@ -84,8 +84,6 @@ var NewChickUI = /** @class */ (function (_super) {
                         this.SetText('lbl_name', Config_1.Config_chick[lv - 1][7] + '');
                         this.SetText("lbl_lv", "等级 " + lv);
                         AudioMgr_1.default.Instance().playMX("unlock_plant");
-                        if (window && window['xxxxx'])
-                            window['xxxxx']("6bMHQBCbYCJGQ7BywC35NNZC7wAn");
                         this.coin = coin;
                         this.SetText("lbl_coin", Utils_1.default.formatNumber(coin));
                         skpath = "spine:flower" + lv + "_ske";
@@ -100,8 +98,6 @@ var NewChickUI = /** @class */ (function (_super) {
                     case 2:
                         _b.dragonAtlasAsset = (_c.sent());
                         armature.armatureName = "Armature";
-                        if (window && window['xxxxx'])
-                            window['xxxxx']("8DhnaiYYTn7j5YTf");
                         armature.playAnimation('idleL', 0);
                         AdCenter_1.default.Instance().showGridAd();
                         return [2 /*return*/];
@@ -127,8 +123,6 @@ var NewChickUI = /** @class */ (function (_super) {
                         }
                     });
                     this.closeUI();
-                    if (window && window['xxxxx'])
-                        window['xxxxx']("DrCwzHYNxBCX7SdzaaZh5255");
                 }
                 break;
         }
