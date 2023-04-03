@@ -24,19 +24,28 @@
     return _instance;
 }
 
-+(void)getAppVersion:(NSDictionary *)par{
++(void)getAppVersion:(NSString *)par{
     NSLog(@"sssssssssss");
+}
+
+//topOn 激励视频广告
++(void)loadTopOnRewardAd:(NSString *)json{
+    
+}
+
+//topOn 插屏广告
++(void)loadTopOnInterstitialAd:(NSString *)json{
+    
 }
 
 
 
-+(void)callJsEngineCallBack:(NSString*) funcNameStr withCmd:(NSString*) cmdStr withContent:(NSString*) contentStr
+
++(void)callJsEngineCallBack:(NSString*) funcNameStr Content:(NSString*) contentStr
 {
-    NSLog(@"callJsEngineCallBack...");
     std::string funcName = [funcNameStr UTF8String];
-    std::string param001 = [cmdStr UTF8String];
     std::string param002 = [contentStr UTF8String];
-    std::string jsCallStr = cocos2d::StringUtils::format("%s(\"%s\",\"%s\");",funcName.c_str(), param001.c_str(),param002.c_str());
+    std::string jsCallStr = cocos2d::StringUtils::format("%s(%s);",funcName.c_str(),param002.c_str());
     NSLog(@"jsCallStr = %s", jsCallStr.c_str());
     se::ScriptEngine::getInstance()->evalString(jsCallStr.c_str());
 }

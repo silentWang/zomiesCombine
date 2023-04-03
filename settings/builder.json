@@ -4,9 +4,9 @@
   "startScene": "339a09db-d191-4161-9d7e-0b4bdfaa0194",
   "excludeScenes": [],
   "orientation": {
-    "landscapeLeft": true,
-    "landscapeRight": true,
-    "portrait": false,
+    "landscapeLeft": false,
+    "landscapeRight": false,
+    "portrait": true,
     "upsideDown": false
   },
   "webOrientation": "auto",

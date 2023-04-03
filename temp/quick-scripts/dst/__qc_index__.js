@@ -50,6 +50,7 @@ require('./assets/script/manager/WxCenter');
 require('./assets/script/utils/AudioMgr');
 require('./assets/script/utils/DebugTools');
 require('./assets/script/utils/LongTouchComponent');
+require('./assets/script/utils/Native');
 require('./assets/script/utils/NumberRoll');
 require('./assets/script/utils/NumberUtils');
 require('./assets/script/utils/Shake');
