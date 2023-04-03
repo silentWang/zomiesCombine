@@ -107,7 +107,7 @@ export default class AdCenter extends Singleton {
     }
 
     public showInterstitialAd(adunit:string){
-        Native.showInterstitialAd(null,adunit)
+        Native.showInterstitialAd(adunit)
     }
 
 }
