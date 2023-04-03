@@ -44,7 +44,6 @@
 		509D4A8E17EBB24E00697056 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275491517C094001B78AA /* AVFoundation.framework */; };
 		509D4A9017EBB24E00697056 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A922754D1517C094001B78AA /* Foundation.framework */; };
 		509D4A9117EBB24E00697056 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A922754F1517C094001B78AA /* CoreGraphics.framework */; };
-		509D4ABC17EBB2AB00697056 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 509D4AAC17EBB2AB00697056 /* AppController.mm */; };
 		509D4AC817EBB2AB00697056 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 509D4AB817EBB2AB00697056 /* main.m */; };
 		509D4AC917EBB2AB00697056 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 509D4ABB17EBB2AB00697056 /* RootViewController.mm */; };
 		509D4ACF17EBB2BE00697056 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 509D4ACB17EBB2BE00697056 /* Icon.icns */; };
@@ -53,6 +52,14 @@
 		509D4AEB17EBB82600697056 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509D4AEA17EBB82600697056 /* IOKit.framework */; };
 		516CBDD029D57538002DA30E /* libswiftCore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 516CBDCF29D57538002DA30E /* libswiftCore.tbd */; };
 		516CBDD229D576A9002DA30E /* HWBridging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CBDD129D57652002DA30E /* HWBridging.swift */; };
+		51C05D1829DA9EFB004BE458 /* HWRewardVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D1629DA9EFA004BE458 /* HWRewardVideoVC.m */; };
+		51C05D1E29DAA4D7004BE458 /* LSMBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D1B29DAA4D7004BE458 /* LSMBProgressHUD.m */; };
+		51C05D1F29DAA4D7004BE458 /* LCProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D1C29DAA4D7004BE458 /* LCProgressHUD.m */; };
+		51C05D2829DAA71B004BE458 /* HWSimpleHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D2729DAA71B004BE458 /* HWSimpleHUD.m */; };
+		51C05D2B29DAAC3F004BE458 /* HWAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D2A29DAAC3F004BE458 /* HWAppDelegate.mm */; };
+		51C05D3529DAC6B7004BE458 /* HWCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D3429DAC6B7004BE458 /* HWCommonTools.m */; };
+		51C05D3B29DAC819004BE458 /* HWTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D3A29DAC819004BE458 /* HWTools.m */; };
+		51C05D3E29DACC31004BE458 /* HWInterstitialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D3D29DACC31004BE458 /* HWInterstitialVC.m */; };
 		51C06F7229D57DF800616872 /* HWGameJSHandle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 51C06F7129D57DF800616872 /* HWGameJSHandle.mm */; };
 		A92275421517C094001B78AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275411517C094001B78AA /* QuartzCore.framework */; };
 		A92275441517C094001B78AA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275431517C094001B78AA /* OpenGLES.framework */; };
@@ -147,8 +154,6 @@
 		4D697BDC1CBD303100A5AF29 /* libjs_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjs_static.a; path = "/Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/external/mac/libs/libjs_static.a"; sourceTree = "<absolute>"; };
 		502380DB17EBB88200990C9B /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		509D4AAA17EBB24E00697056 /* hdwinged-desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hdwinged-desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		509D4AAB17EBB2AB00697056 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = "<group>"; };
-		509D4AAC17EBB2AB00697056 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppController.mm; path = ios/AppController.mm; sourceTree = "<group>"; };
 		509D4AB717EBB2AB00697056 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ios/Info.plist; sourceTree = "<group>"; };
 		509D4AB817EBB2AB00697056 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ios/main.m; sourceTree = "<group>"; };
 		509D4AB917EBB2AB00697056 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = ios/Prefix.pch; sourceTree = "<group>"; };
@@ -163,6 +168,22 @@
 		516CBDCE29D57349002DA30E /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		516CBDCF29D57538002DA30E /* libswiftCore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCore.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk/usr/lib/swift/libswiftCore.tbd; sourceTree = DEVELOPER_DIR; };
 		516CBDD129D57652002DA30E /* HWBridging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWBridging.swift; sourceTree = "<group>"; };
+		51C05D1629DA9EFA004BE458 /* HWRewardVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWRewardVideoVC.m; sourceTree = "<group>"; };
+		51C05D1729DA9EFB004BE458 /* HWRewardVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWRewardVideoVC.h; sourceTree = "<group>"; };
+		51C05D1A29DAA4D7004BE458 /* LCProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCProgressHUD.h; sourceTree = "<group>"; };
+		51C05D1B29DAA4D7004BE458 /* LSMBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMBProgressHUD.m; sourceTree = "<group>"; };
+		51C05D1C29DAA4D7004BE458 /* LCProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCProgressHUD.m; sourceTree = "<group>"; };
+		51C05D1D29DAA4D7004BE458 /* LSMBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMBProgressHUD.h; sourceTree = "<group>"; };
+		51C05D2629DAA71B004BE458 /* HWSimpleHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWSimpleHUD.h; sourceTree = "<group>"; };
+		51C05D2729DAA71B004BE458 /* HWSimpleHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWSimpleHUD.m; sourceTree = "<group>"; };
+		51C05D2929DAAC3F004BE458 /* HWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWAppDelegate.h; sourceTree = "<group>"; };
+		51C05D2A29DAAC3F004BE458 /* HWAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HWAppDelegate.mm; sourceTree = "<group>"; };
+		51C05D3329DAC6B7004BE458 /* HWCommonTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWCommonTools.h; sourceTree = "<group>"; };
+		51C05D3429DAC6B7004BE458 /* HWCommonTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWCommonTools.m; sourceTree = "<group>"; };
+		51C05D3929DAC819004BE458 /* HWTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWTools.h; sourceTree = "<group>"; };
+		51C05D3A29DAC819004BE458 /* HWTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWTools.m; sourceTree = "<group>"; };
+		51C05D3C29DACC31004BE458 /* HWInterstitialVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWInterstitialVC.h; sourceTree = "<group>"; };
+		51C05D3D29DACC31004BE458 /* HWInterstitialVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWInterstitialVC.m; sourceTree = "<group>"; };
 		51C06F7029D57DF800616872 /* HWGameJSHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWGameJSHandle.h; sourceTree = "<group>"; };
 		51C06F7129D57DF800616872 /* HWGameJSHandle.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HWGameJSHandle.mm; sourceTree = "<group>"; };
 		51C06F7429D595AD00616872 /* HWProdcut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWProdcut.h; sourceTree = "<group>"; };
@@ -316,6 +337,54 @@
 			path = HWDefine;
 			sourceTree = "<group>";
 		};
+		51891BCA29DA7C3700B2AE76 /* HWAD */ = {
+			isa = PBXGroup;
+			children = (
+				51C05D1729DA9EFB004BE458 /* HWRewardVideoVC.h */,
+				51C05D1629DA9EFA004BE458 /* HWRewardVideoVC.m */,
+				51C05D3C29DACC31004BE458 /* HWInterstitialVC.h */,
+				51C05D3D29DACC31004BE458 /* HWInterstitialVC.m */,
+			);
+			path = HWAD;
+			sourceTree = "<group>";
+		};
+		51C05D1929DAA4D7004BE458 /* LCProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				51C05D1A29DAA4D7004BE458 /* LCProgressHUD.h */,
+				51C05D1C29DAA4D7004BE458 /* LCProgressHUD.m */,
+				51C05D1D29DAA4D7004BE458 /* LSMBProgressHUD.h */,
+				51C05D1B29DAA4D7004BE458 /* LSMBProgressHUD.m */,
+			);
+			path = LCProgressHUD;
+			sourceTree = "<group>";
+		};
+		51C05D2429DAA65A004BE458 /* HWThirdSDK */ = {
+			isa = PBXGroup;
+			children = (
+				51C05D1929DAA4D7004BE458 /* LCProgressHUD */,
+			);
+			path = HWThirdSDK;
+			sourceTree = "<group>";
+		};
+		51C05D2529DAA6E5004BE458 /* HWHUD */ = {
+			isa = PBXGroup;
+			children = (
+				51C05D2629DAA71B004BE458 /* HWSimpleHUD.h */,
+				51C05D2729DAA71B004BE458 /* HWSimpleHUD.m */,
+			);
+			path = HWHUD;
+			sourceTree = "<group>";
+		};
+		51C05D3229DAC693004BE458 /* HWCommonTools */ = {
+			isa = PBXGroup;
+			children = (
+				51C05D3329DAC6B7004BE458 /* HWCommonTools.h */,
+				51C05D3429DAC6B7004BE458 /* HWCommonTools.m */,
+			);
+			path = HWCommonTools;
+			sourceTree = "<group>";
+		};
 		51C06F6F29D57DC300616872 /* HWGameJSHandle */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +392,17 @@
 				51C06F7129D57DF800616872 /* HWGameJSHandle.mm */,
 			);
 			path = HWGameJSHandle;
+			sourceTree = "<group>";
+		};
+		51DAEFA529D6DD800006CCD9 /* HWTools */ = {
+			isa = PBXGroup;
+			children = (
+				51C05D3229DAC693004BE458 /* HWCommonTools */,
+				51C05D2529DAA6E5004BE458 /* HWHUD */,
+				51C05D3929DAC819004BE458 /* HWTools.h */,
+				51C05D3A29DAC819004BE458 /* HWTools.m */,
+			);
+			path = HWTools;
 			sourceTree = "<group>";
 		};
 		A92275321517C094001B78AA = {
@@ -401,10 +481,13 @@
 		D45446CC156DE73F00887EB5 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				51891BCA29DA7C3700B2AE76 /* HWAD */,
+				51DAEFA529D6DD800006CCD9 /* HWTools */,
 				51C06F6F29D57DC300616872 /* HWGameJSHandle */,
 				516CBDCD29D57349002DA30E /* HWDefine */,
-				509D4AAB17EBB2AB00697056 /* AppController.h */,
-				509D4AAC17EBB2AB00697056 /* AppController.mm */,
+				51C05D2429DAA65A004BE458 /* HWThirdSDK */,
+				51C05D2929DAAC3F004BE458 /* HWAppDelegate.h */,
+				51C05D2A29DAAC3F004BE458 /* HWAppDelegate.mm */,
 				1ABC56911F7A005D00826282 /* Images.xcassets */,
 				509D4AB717EBB2AB00697056 /* Info.plist */,
 				4011F9D1212BD6750091CC5B /* LaunchScreen.storyboard */,
@@ -606,6 +689,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-hdwinged-mobile/Pods-hdwinged-mobile-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -613,6 +697,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PersonalizedAdConsent.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -658,13 +743,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51C05D1829DA9EFB004BE458 /* HWRewardVideoVC.m in Sources */,
+				51C05D3E29DACC31004BE458 /* HWInterstitialVC.m in Sources */,
+				51C05D1F29DAA4D7004BE458 /* LCProgressHUD.m in Sources */,
+				51C05D1E29DAA4D7004BE458 /* LSMBProgressHUD.m in Sources */,
+				51C05D3529DAC6B7004BE458 /* HWCommonTools.m in Sources */,
 				509D4AC917EBB2AB00697056 /* RootViewController.mm in Sources */,
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
+				51C05D2B29DAAC3F004BE458 /* HWAppDelegate.mm in Sources */,
 				516CBDD229D576A9002DA30E /* HWBridging.swift in Sources */,
 				509D4AC817EBB2AB00697056 /* main.m in Sources */,
+				51C05D3B29DAC819004BE458 /* HWTools.m in Sources */,
 				51C06F7229D57DF800616872 /* HWGameJSHandle.mm in Sources */,
 				22CC757121BA5B5C00FBF2F7 /* SDKWrapper.m in Sources */,
-				509D4ABC17EBB2AB00697056 /* AppController.mm in Sources */,
+				51C05D2829DAA71B004BE458 /* HWSimpleHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,12 +904,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = RS4SQW5MN4;
 				ENABLE_BITCODE = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -827,10 +921,11 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
 					"/Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/external/ios/libs",
 					"$(SDKROOT)/usr/lib/swift",
 				);
@@ -855,12 +950,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = RS4SQW5MN4;
 				ENABLE_BITCODE = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
@@ -869,10 +966,11 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
 					"/Applications/Creator/2.4.8/CocosCreator.app/Contents/Resources/cocos2d-x/external/ios/libs",
 					"$(SDKROOT)/usr/lib/swift",
 				);
