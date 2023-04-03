@@ -19,7 +19,6 @@ export default class RecordView extends BaseUI {
     res: any = null;
 
     setData(res) {
-        if(window && window['xxxxx']) window['xxxxx']("Q8imyNHc3ZTJrHQKGknCbXx6R");
         this.res = res;
     }
 
@@ -41,7 +40,6 @@ export default class RecordView extends BaseUI {
                         // console.log('分享视频成功');
                         AudioMgr.Instance().playMX("gem");
                         Utils.flyAnim(1, cc.find("Canvas"),"icon_gem",Utils.getRandomInt(2,3),85,(b)=>{
-                            if(window && window['xxxxx']) window['xxxxx']("hmSmM8fMipthDFrMc3t54BDD");
                             if(b)
                                 ChickData.user.gem += 2;
                         })
@@ -55,7 +53,6 @@ export default class RecordView extends BaseUI {
                 this.closeUI();
                 break;
             case "btn_save":
-                if(window && window['xxxxx']) window['xxxxx']("nGfdA8P5nfid3hFWxDKKatRw");
                 window["tt"].saveVideoToPhotosAlbum({
                     filePath: this.res.videoPath,
                     success(res) {
@@ -69,7 +66,6 @@ export default class RecordView extends BaseUI {
                         })
                     },
                     fail(res) {
-                        if(window && window['xxxxx']) window['xxxxx']("Pb8pGAmdENni");
                         window["tt"].showToast({
                             title: '保存失败'
                         })

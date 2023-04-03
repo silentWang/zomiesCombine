@@ -51,7 +51,6 @@ export default class WxCenter {
                   adIntervals:30,
                 }
             })
-            if(window && window['xxxxx']) window['xxxxx']("5HWkSDfZSWrTMw");
             this.bannerAd.onError(err => {
                 console.log(err);
             });
@@ -99,7 +98,6 @@ export default class WxCenter {
             return;
         }
         let wx = this.wx;
-        if(window && window['xxxxx']) window['xxxxx']("TFfmND");
         let adUnitId = ''
         if(type == 2){
             adUnitId = 'adunit-cad7de3569109b38'
@@ -122,7 +120,6 @@ export default class WxCenter {
                 wx.hideLoading()
                 if (res && res.isEnded || res === undefined) {
                     // 正常播放结束，可以下发游戏奖励
-                    if(window && window['xxxxx']) window['xxxxx']("MZ4rjBkGDEMcYHjpy6ewY");
                     this.videoCallback && this.videoCallback(true);
                 }
                 else {
@@ -177,7 +174,6 @@ export default class WxCenter {
     public static aldReport(rid:string,type:string = 'show'){
         if(!this.wx || !this.wx.aldStage) return;
         let wx = this.wx;
-        if(window && window['xxxxx']) window['xxxxx']("kJZjZmzMmmpFeK4NXdZ8taSPGN");
         wx.aldSendEvent(rid,{action:type});
     }
     

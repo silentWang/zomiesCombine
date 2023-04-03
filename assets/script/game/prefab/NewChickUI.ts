@@ -18,7 +18,6 @@ export default class NewChickUI extends BaseUI {
         this.SetText('lbl_name',Config_chick[lv - 1][7] + '');
         this.SetText("lbl_lv","等级 "+lv);
         AudioMgr.Instance().playMX("unlock_plant")
-        if(window && window['xxxxx']) window['xxxxx']("6bMHQBCbYCJGQ7BywC35NNZC7wAn");
         this.coin = coin;
         this.SetText("lbl_coin",Utils.formatNumber(coin));
         let skpath = `spine:flower${lv}_ske`;
@@ -27,7 +26,6 @@ export default class NewChickUI extends BaseUI {
         armature.dragonAsset = await Utils.loadRes(skpath,dragonBones.DragonBonesAsset) as dragonBones.DragonBonesAsset;
         armature.dragonAtlasAsset = await Utils.loadRes(atlaspath,dragonBones.DragonBonesAtlasAsset) as dragonBones.DragonBonesAtlasAsset;
         armature.armatureName = "Armature";
-        if(window && window['xxxxx']) window['xxxxx']("8DhnaiYYTn7j5YTf");
         armature.playAnimation('idleL',0);
         AdCenter.Instance().showGridAd();
     }
@@ -53,7 +51,6 @@ export default class NewChickUI extends BaseUI {
                         }  
                     })
                     this.closeUI();
-                    if(window && window['xxxxx']) window['xxxxx']("DrCwzHYNxBCX7SdzaaZh5255");
                 }
                 break;
         }

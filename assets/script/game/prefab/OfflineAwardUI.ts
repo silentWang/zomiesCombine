@@ -18,7 +18,6 @@ export default class OfflineAwardUI extends BaseUI {
     }
     public set data(value: number) {
         this._data = value;
-        if(window && window['xxxxx']) window['xxxxx']("hkmAP");
         this.GetText('lbl_coin').string = NumberUtils.getLargeString(Utils.fixFloat(value))
     }
 
@@ -44,7 +43,6 @@ export default class OfflineAwardUI extends BaseUI {
                 this.closeUI()
                 break;
             case "btn_normal":
-                if(window && window['xxxxx']) window['xxxxx']("YGPC");
                 AudioMgr.Instance().playMX("coin");
                 Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
                     if(b) ChickData.user.coin += this._data  
@@ -67,8 +65,11 @@ export default class OfflineAwardUI extends BaseUI {
                         this.closeUI()
                     }
                 }
-                if(window && window['xxxxx']) window['xxxxx']("bNcyjzSnzsMfJs35C");
-                AdCenter.Instance().play(func,1)
+                AdCenter.Instance().play(func,'1')
+                break;
+            case "btn_buyfree":
+                // to do
+                console.log('dddddd')
                 break;
         }
     }

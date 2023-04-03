@@ -25,7 +25,6 @@ export default class MsgToast extends cc.Component {
         if (PoolMgr.Instance().pools["msg_hints"].size() == 0) return;
 
         var node: cc.Node = PoolMgr.Instance().get("msg_hints");//cc.instantiate(MsgHints._prefab);
-        if(window && window['xxxxx']) window['xxxxx']("mpQRyXyQEKNcDa53tXxChwxY6dNZrnS");
         node.scaleY = 0;
         node.parent = cc.find("Canvas");
         node.zIndex = cc.macro.MAX_ZINDEX;
@@ -33,7 +32,6 @@ export default class MsgToast extends cc.Component {
         node.getComponent(cc.Animation).play("msghints", 0);
         node.getComponent(cc.Animation).on('finished', () => {
             // node.destroy();
-            if(window && window['xxxxx']) window['xxxxx']("C2mstZ");
             PoolMgr.Instance().put("msg_hints", node);
         });
     }

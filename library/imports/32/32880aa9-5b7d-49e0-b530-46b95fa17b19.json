@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mgg_banner",
+    "texture": "b14abf5c-a65d-4f32-a36a-7b90a8df6090",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      524,
+      206
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      525,
+      207
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -215,6 +215,9 @@ var CommonView = /** @class */ (function (_super) {
                 this.addCoin(1);
                 this.GetGameObject('btn_normal').active = false;
                 break;
+            case "btn_buyfree":
+                // to do
+                break;
         }
     };
     CommonView = __decorate([

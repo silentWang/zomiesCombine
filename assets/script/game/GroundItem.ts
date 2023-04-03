@@ -18,7 +18,6 @@ export default class GroundItem extends BaseUI {
         {
             if(ChickData.user.slots[i] == 0)
             {
-                if(window && window['xxxxx']) window['xxxxx']("jJY");
                 curopen = i;
                 break;
             }
@@ -67,7 +66,6 @@ export default class GroundItem extends BaseUI {
         // Data.save();
         // this.dispatch(GameConst.OPEN_SLOT,curopen);
         // this.setIndex(this.index);
-        if(window && window['xxxxx']) window['xxxxx']("jJYertsdsgs");
     }
 
     private index = 0;
@@ -86,8 +84,5 @@ export default class GroundItem extends BaseUI {
         this.GetGameObject("node_cost").active = info == 0;
         let str  = `${Config_ground[i-1].price}关`;
         this.SetText("lbl_open_cost",str);
-        this.dsaers_ew984399_func();
     }
-
-    private dsaers_ew984399_func(){if(window && window['xxxxx']) window['xxxxx']("gdsaewdcfgs");}
 }

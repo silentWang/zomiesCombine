@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mgg_xzk",
+    "texture": "2a673647-aaca-4a10-ab1b-8795b1b7a6d1",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      214,
+      296
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      215,
+      296
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

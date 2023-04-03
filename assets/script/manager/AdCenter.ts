@@ -22,7 +22,6 @@ export default class AdCenter extends Singleton {
                 adUnitId: '1r3lbfr4d9e6veouju'
             });
 
-            if(window && window['xxxxx']) window['xxxxx']("cM5zM6kQEi");
             this.videoAdID.onError((res) => {
                 console.log("onError", res);
                 // MsgToast.show("广告加载错误");
@@ -106,7 +105,7 @@ export default class AdCenter extends Singleton {
         }
     }
 
-    public showInterstitialAd(adunit:string){
+    public showInterstitialAd(adunit:string = ''){
         Native.showInterstitialAd(adunit)
     }
 

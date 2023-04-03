@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "symgg_an",
+    "texture": "25f6aac0-dbc9-49cd-8dbd-a8bf99c3eb93",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      324,
+      56
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      324,
+      58
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

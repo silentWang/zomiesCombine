@@ -40,7 +40,6 @@ export default class CoinNotEnoughUI extends BaseUI {
         this.type = type;
         this.GetGameObject('getChick').active = type == 1;
         this.GetGameObject('getCoin').active = type == 2;
-        if(window && window['xxxxx']) window['xxxxx']("WhHx2e3xMxjaTZCPwCrY8aTz");
         let str = '';
         if(type == 1){
             str = `${ChickData.user.today_getchick_times}/${ChickData.user.today_getchick_total}`;
@@ -54,7 +53,6 @@ export default class CoinNotEnoughUI extends BaseUI {
             chick.playAnimation('idleL',0);
             this.lbl_chickname.string = `“${Config_chick[lv - 1][7]}”`;
             this.SetText('lbl_effect','x1');
-            if(window && window['xxxxx']) window['xxxxx']("FHhfYXkGXEbaYj2y8DR7YCiYirJB");
         }
         else if(type == 2){
             str = `${ChickData.user.today_getcoin_times}/${ChickData.user.today_getcoin_total}`;
@@ -79,7 +77,6 @@ export default class CoinNotEnoughUI extends BaseUI {
             ChickData.user.today_getcoin_times++;
             let coin = 0.5*ChickData.user.buyChickPrice(ChickData.user.getLvlMax());
             AudioMgr.Instance().playMX("coin");
-            if(window && window['xxxxx']) window['xxxxx']("ks2GdwWt25ZacDwkGyJptDRnXeN");
             Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
                 if(b) ChickData.user.coin += coin;
                 ChickData.save();
@@ -100,7 +97,10 @@ export default class CoinNotEnoughUI extends BaseUI {
                 WxCenter.aldReport('LackClick','click');
                 AdCenter.Instance().play((b)=>{
                     if(b) this.addCoin();
-                },1);
+                },'1');
+                break;
+            case "btn_buyfree":
+                // to do
                 break;
         }
     }

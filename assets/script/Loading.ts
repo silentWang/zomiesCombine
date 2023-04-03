@@ -40,15 +40,11 @@ export default class Loading extends BaseUI {
     async onLoad() {
         cc.debug.setDisplayStats(false);
         cc.game.setFrameRate(60);
-
-      console.log(`----HWGameJSHandleHWGameJSHandleHWGameJSHandleHWGameJSHandle`)
-
         super.onLoad();
         if(wx) {
             wx.setPreferredFramesPerSecond(60);
             wx.setKeepScreenOn({ keepScreenOn: true });
         }
-        if(window && window['xxxxx']) window['xxxxx']("gdasgasewekb");
         PoolMgr.Instance().loadPrefabs()
         this.startLGAction();
         let descs = ["初次加载时间可能会较长，请耐心等待...."];
@@ -80,13 +76,11 @@ export default class Loading extends BaseUI {
                     });
                     cc.director.loadScene("hall");
                     p = 1;
-                    if(window && window['xxxxx']) window['xxxxx']("g354165ghads16gas");
                 }
                 this.GetGameObject('plane').x = p*600 - 320;
                 this.SetText('lbl_progress',(~~(p*100)) + '%');
             })).repeatForever());
         })))
-        if(window && window['xxxxx']) window['xxxxx']("gdsagdsewwcxs");
     }
 
     progress: number = 0;

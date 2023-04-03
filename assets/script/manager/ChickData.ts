@@ -20,7 +20,6 @@ export default class ChickData {
         ChickData.resetOneDayData();
         let obj = {}
         obj['user'] = ChickData.user.getAllData()
-        if(window && window['xxxxx']) window['xxxxx']("Y7j3rkTtcF8rsdfbMGEj7K");
         ChickData.savedata(obj, bRemote)
         //上传服务器
         // if (window["wx"]) {
@@ -46,7 +45,6 @@ export default class ChickData {
     private KGXM_xxxx_fun(){ console.log("D7G"); }
 
     public static loadData() {
-        if(window && window['xxxxx']) window['xxxxx']("B3fxQr3P");
         var localdata = cc.sys.localStorage.getItem(GameConst.cache_chick_data_key);
         if (localdata) {
             localdata = JSON.parse(localdata);
@@ -56,7 +54,6 @@ export default class ChickData {
         }
         else {
             //没有档案重置下音乐开关
-            if(window && window['xxxxx']) window['xxxxx']("TXeAr");
             cc.sys.localStorage.setItem("bgmVolume", 1);
             cc.sys.localStorage.setItem("sfxVolume", 1);
             AudioMgr.Instance().sfxVolume = 1;

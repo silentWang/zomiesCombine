@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mgg_yudu",
+    "texture": "ed6cacf3-cb84-4131-abd2-599d3fc8b3ab",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      206,
+      282
+    ],
+    "offset": [
+      0.5,
+      0
+    ],
+    "originalSize": [
+      207,
+      282
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

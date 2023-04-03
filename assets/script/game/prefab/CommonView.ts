@@ -18,7 +18,6 @@ enum EADLAYER {
 
 const AUTO_COM_TIME = 2;
 const DOUBLE_INCOME_TIME = 2;
-if(window && window['xxxxx']) window['xxxxx']("GrXNmdMYN4ZcCXBk2n");
 const DROP_PLANT_TIME = 10;
 const DOUBLE_ATT_TIME = 0.5;
 
@@ -67,7 +66,6 @@ export default class CommonView extends BaseUI {
         if (this.type == EADLAYER.AUTO_COM) {
             end_time = ChickData.user.auto_com_time;
             max = MAX_AUTO_COM_TIME;
-            if(window && window['xxxxx']) window['xxxxx']("KNyBRTdFZGm84SBrZef7iJe");
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
             end_time = ChickData.user.double_att_time;
@@ -90,7 +88,6 @@ export default class CommonView extends BaseUI {
         this.GetGameObject("icon_fast").active = e == EADLAYER.DROP_PLANT;
         this.GetGameObject("icon_auto_merge").active = e == EADLAYER.AUTO_COM;
         this.GetGameObject("icon_income").active = e == EADLAYER.DOUBLE_INCOME;
-        if(window && window['xxxxx']) window['xxxxx']("xMp6QZhPYfaGtBP3bKwdrZxix4sSEHJC");
         this.GetGameObject("icon_angre").active = e == EADLAYER.DOUBLE_ATT;
 
         if (this.type == EADLAYER.AUTO_COM) {
@@ -104,7 +101,6 @@ export default class CommonView extends BaseUI {
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
             this.SetText("lbl_effect", "+" + MAX_DOUBLE_INCOME_TIME + "分钟");
-            if(window && window['xxxxx']) window['xxxxx']("5XByGB");
             WxCenter.aldReport('DoubleShow','show');
         }
         else if(this.type == EADLAYER.DROP_PLANT)
@@ -130,7 +126,6 @@ export default class CommonView extends BaseUI {
             // if (ChickData.user.auto_com_time < Utils.getServerTime())
             ChickData.user.auto_com_time = Utils.getServerTime();
             ChickData.user.auto_com_time += AUTO_COM_TIME * 60 * 1000 * double;
-            if(window && window['xxxxx']) window['xxxxx']("wYwWsnNE2epJD7E5Kjj3zfA2ap2x");
             isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
@@ -141,7 +136,6 @@ export default class CommonView extends BaseUI {
             // }
             // if (ChickData.user.double_att_time < Utils.getServerTime())
             ChickData.user.double_att_time = Utils.getServerTime();
-            if(window && window['xxxxx']) window['xxxxx']("QYScQbrp8MHTEsrRZwX7bFhbBXpnT6");
             ChickData.user.double_att_time += DOUBLE_ATT_TIME * 60 * 1000 * double;
             isUse = true;
         }
@@ -166,7 +160,6 @@ export default class CommonView extends BaseUI {
             // }
             // if (ChickData.user.drop_plant_time < Utils.getServerTime())
             ChickData.user.drop_plant_time = Utils.getServerTime();
-            if(window && window['xxxxx']) window['xxxxx']("6rMK85kkR2d2pjfFDSztDrjMXJC5cBc");
             ChickData.user.drop_plant_time += DROP_PLANT_TIME * 60 * 1000 * double;
             isUse = true;
         }
@@ -189,11 +182,13 @@ export default class CommonView extends BaseUI {
                 AdCenter.Instance().play((b)=>{
                     if(b) this.addCoin(2);
                 },2);
-                if(window && window['xxxxx']) window['xxxxx']("RdfKGMXYZPH3P7YBnN");
                 break;
             case "btn_normal":
                 this.addCoin(1);
                 this.GetGameObject('btn_normal').active = false;
+                break;
+            case "btn_buyfree":
+                // to do
                 break;
         }
     }

@@ -52,7 +52,6 @@ var WinView = /** @class */ (function (_super) {
         this.aTobAnim(coin * 2);
         this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
     };
-    WinView.prototype.RstgesP_xxxx_fun = function () { console.log("ykzPX2QsgdsDWgemFfEfSaPiy"); };
     WinView.prototype.aTobAnim = function (num) {
         var _this = this;
         var aver = Math.ceil(num / 60);
@@ -72,8 +71,6 @@ var WinView = /** @class */ (function (_super) {
     };
     WinView.prototype.closeUI = function () {
         this.shutAnim();
-        if (window && window['xxxxx'])
-            window['xxxxx']("3CsKk45QY");
         HallScene_1.default.Instance.createEnemys();
     };
     WinView.prototype.getCoinReward = function (isdouble) {
@@ -104,13 +101,16 @@ var WinView = /** @class */ (function (_super) {
                 AdCenter_1.default.Instance().play(function () {
                     _this.getCoinReward();
                     _this.closeUI();
-                }, 1);
+                }, '1');
                 break;
             case "btn_normal":
                 this.getCoinReward();
                 this.closeUI();
                 if (window && window['xxxxx'])
                     window['xxxxx']("ZrHnJSB53BTwr");
+                break;
+            case "btn_buyfree":
+                // to do
                 break;
         }
     };

@@ -20,6 +20,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Singleton_1 = require("./Singleton");
 var Utils_1 = require("../utils/Utils");
 var WxCenter_1 = require("./WxCenter");
+var Native_1 = require("../utils/Native");
 var tt = window["tt"];
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var AdCenter = /** @class */ (function (_super) {
@@ -76,41 +77,18 @@ var AdCenter = /** @class */ (function (_super) {
             });
         }
     };
-    AdCenter.prototype.play = function (callback, type) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("xYBwNjGb4PRGfc678esKbNpCti");
+    AdCenter.prototype.play = function (callback, adunitId) {
         if (Utils_1.default.getServerTime() - this._lastPlayTime < 1000) {
             console.log("点击过于频繁");
             return;
         }
         this._lastPlayTime = Utils_1.default.getServerTime();
         this.callBack = callback;
-        if (tt) {
-            this.playVideo();
-        }
-        else if (WxCenter_1.default.isWxEnv()) {
-            WxCenter_1.default.showRewardedVideoAd(callback, type);
+        if (cc.sys.os === cc.sys.OS_IOS) {
+            Native_1.Native.playVideoAd(callback, adunitId);
         }
         else {
             callback && callback(1);
-        }
-        this.JDSLX_gdasweww_fun();
-    };
-    AdCenter.prototype.JDSLX_gdasweww_fun = function () { console.log("238989ODIJMKGESAOJMD"); };
-    AdCenter.prototype.playVideo = function () {
-        var _this = this;
-        if (this.videoAdID) {
-            this.videoAdID.show().catch(function () {
-                _this.videoAdID.load()
-                    .then(function () { return _this.videoAdID.show(); })
-                    .catch(function (err) {
-                    cc.log('激励视频 广告显示失败');
-                    _this.callBack(false);
-                });
-            });
-        }
-        else {
-            this.callBack(true);
         }
     };
     AdCenter.prototype.showGridAd = function () {
@@ -121,8 +99,6 @@ var AdCenter = /** @class */ (function (_super) {
             if (this.bannerAd)
                 this.bannerAd.show();
         }
-        if (window && window['xxxxx'])
-            window['xxxxx']("3DmJjHm2mesvF8Z");
     };
     AdCenter.prototype.hideGridAd = function () {
         if (WxCenter_1.default.isWxEnv()) {
@@ -133,10 +109,8 @@ var AdCenter = /** @class */ (function (_super) {
                 this.bannerAd.hide();
         }
     };
-    AdCenter.prototype.showInterstitialAd = function () {
-        if (WxCenter_1.default.isWxEnv()) {
-            WxCenter_1.default.showInterstitialAd();
-        }
+    AdCenter.prototype.showInterstitialAd = function (adunit) {
+        Native_1.Native.showInterstitialAd(adunit);
     };
     return AdCenter;
 }(Singleton_1.default));

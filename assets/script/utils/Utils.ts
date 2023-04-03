@@ -19,7 +19,6 @@ export default class Utils {
                     parent = cc.find("Canvas")
                 }
 
-                if(window && window['xxxxx']) window['xxxxx']("bcD6");
                 let index = filepath.lastIndexOf("/");
                 let name = filepath.substr(index + 1, filepath.length - index);
                 if (parent.getComponentInChildren(name)) {
@@ -51,7 +50,6 @@ export default class Utils {
     };
     
     public static formatNumber(num: number, afterdot: number = 1) {
-        if(window && window['xxxxx']) window['xxxxx']("HX7tS6");
         num = Math.floor(num);
         return NumberUtils.getLargeString(num);
     };
@@ -80,7 +78,6 @@ export default class Utils {
     public static sharetime:number = 0;
     public static sharecallback = null;
     public static wxShare(callback: Function = null) {
-        if(window && window['xxxxx']) window['xxxxx']("WssEyQcp7HRrw");
         let index = Utils.getRandomInt(0, share_urls.length)
         var shareImgUrl = share_urls[index]
         var shareTitle = share_titles[index];
@@ -92,7 +89,6 @@ export default class Utils {
                 title: shareTitle,
                 imageUrl: shareImgUrl,
                 success() {
-                    if(window && window['xxxxx']) window['xxxxx']("RrNJSnGEXbtZShp347i7FN6728r");
                     if (callback) callback(true);
                 },
                 fail(e) {
@@ -102,8 +98,6 @@ export default class Utils {
             });
         }
         else {
-            
-            if(window && window['xxxxx']) window['xxxxx']("Y");
             Utils.sharecallback = callback;
             if (cc.sys.platform == cc.sys.WECHAT_GAME) {
                 wx.shareAppMessage({
@@ -128,10 +122,8 @@ export default class Utils {
             return;
         }
         // console.log(node.name,target.name,component)
-        if(window && window['xxxxx']) window['xxxxx']("4mwdEWWjnrdPnwMywBNwpD8nCaD");
         clickEvents.push(eventHandler);
     }
-    private csdnesAY_xxxx_fun(){ console.log("dssdgewsdgfaIOJOGAkomgDGFMSO"); }
 
     public static getTimeStrByS(second: number) {
         second = Math.floor(second);
@@ -155,7 +147,6 @@ export default class Utils {
             mid = "0" + m;
         }
         var back = "00";
-        if(window && window['xxxxx']) window['xxxxx']("KZYp2pM3yfrdpKtABSdHitmb36wnP");
         if (second > 9) {
             back = "" + second;
         } else {
@@ -166,7 +157,6 @@ export default class Utils {
             return d + "天" + h + "时" + m + "分";
         }
         else {
-            if(window && window['xxxxx']) window['xxxxx']("Khf");
             var longTime = h > 0;
             if (longTime) {
                 return front + ":" + mid ;
@@ -195,7 +185,6 @@ export default class Utils {
     }
 
     public static weight(v: number[]): number {
-        if(window && window['xxxxx']) window['xxxxx']("Bt4");
         var mTotalWeight = 0;
         for (var i = 0; i < v.length; ++i) {
             mTotalWeight += v[i];
@@ -216,7 +205,6 @@ export default class Utils {
     public static loadRes(path: string, type: typeof cc.Asset,callback:any=null) {
         return new Promise((resolve, reject) => {
             let bundel = "resources";
-            if(window && window['xxxxx']) window['xxxxx']("MHzpnpCTQKFnEX2FCCBGmApMEexXJ");
             let arr = path.split(":")
             if(arr.length == 2)
             {
@@ -242,7 +230,6 @@ export default class Utils {
                 else {
                     if(callback)
                         callback(null,ret);
-                    if(window && window['xxxxx']) window['xxxxx']("2stMFR");
                     resolve(ret);
                 }
             });
@@ -263,7 +250,6 @@ export default class Utils {
             return point;
         }
 
-        if(window && window['xxxxx']) window['xxxxx']("fGdJGTkFQtZJTFF5phWzH3sXw2X");
         let createNode = (type) => {
             if(type == 0) return PoolMgr.Instance().get("Coin");
             return null;
@@ -291,7 +277,6 @@ export default class Utils {
             }
         }
 
-        if(window && window['xxxxx']) window['xxxxx']("mzkZj");
         var notPlay = false;
         let srcNode = cc.find("Canvas").getComponent("HallScene").GetGameObject(targetNodeName); ;//HallScene.Instance.GetGameObject(targetNodeName);
         let dstPos = srcNode.parent.convertToWorldSpaceAR(srcNode.position); 
@@ -314,7 +299,6 @@ export default class Utils {
                             cc.scaleTo(0.1, 2, 2),
                             cc.scaleTo(0.1, 1, 1),
                             cc.callFunc(() => {
-                                if(window && window['xxxxx']) window['xxxxx']("Q3k3Wx2EBhYRKrR");
                                 notPlay = false;
                             }),
                         );
@@ -330,7 +314,6 @@ export default class Utils {
 
     //定点数
     public static fixFloat(val: number, count: number = 2) {
-        if(window && window['xxxxx']) window['xxxxx']("TxCXGipxXBicD2wYMAxxW");
         var a = count * 100
         return Math.floor(val * a) / a;
     }

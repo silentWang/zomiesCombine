@@ -43,7 +43,6 @@ export default class DropChickView extends BaseUI {
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
-                if(window && window['xxxxx']) window['xxxxx']("Xz6RrzthM5cwYhHKxWJ6c2yf6wGyN");
                 break;
             case "btn_normal":
                 WxCenter.aldReport('AirdropClick','click');
@@ -56,12 +55,14 @@ export default class DropChickView extends BaseUI {
                 AdCenter.Instance().play((b)=>{
                     if(b)
                     {
-                        if(window && window['xxxxx']) window['xxxxx']("CZ7iK8EJpYXZEFDSnc5Tb4yZFia5");
                         let spt = this.getBigPot(true);
                         ChickData.user.DropGiftPts = ChickData.user.DropGiftPts.concat(spt);
                         this.closeUI();
                     }
-                },1);
+                },'1');
+                break;
+            case "btn_buyfree":
+                // to do
                 break;
         }
     }

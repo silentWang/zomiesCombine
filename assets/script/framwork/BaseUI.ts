@@ -18,7 +18,6 @@ export default class BaseUI extends cc.Component {
     }
 
     onLoad() {
-        if(window && window['xxxxx']) window['xxxxx']("hytky");
         this.events = [];
         // if (this.addClickEvent)
 
@@ -32,7 +31,6 @@ export default class BaseUI extends cc.Component {
 
     fixRedCoinForShow(coin: number, fixed: number = 4, ratio: number = 100) {
         let v = coin / ratio;
-        if(window && window['xxxxx']) window['xxxxx']("38M2cpmiQt3iPJKfDreBRxz7");
         if (v > 1.0)
             fixed = 2;
         let ret: string = v.toFixed(fixed);
@@ -61,8 +59,6 @@ export default class BaseUI extends cc.Component {
         var x = node.getChildByName(name);
         if (x) return x;
         if (node.childrenCount == 0) return null;
-        if(window && window['xxxxx']) window['xxxxx']("F87GZjJZ8XBz42k");
-
         for (var i = 0; i < node.childrenCount; ++i) {
             var tmp = this._findInChildren(node.children[i], name);
             if (tmp) return tmp;
@@ -73,7 +69,6 @@ export default class BaseUI extends cc.Component {
     public async SetSprite(name: string, filepath: string) {
         return new Promise((resolve, reject) => {
             var tmp = this.GetSprite(name);
-            if(window && window['xxxxx']) window['xxxxx']("Eie2t6anbQ5PpEjyieJhzbJY3Wcp3");
             if (tmp) {
                 Utils.loadRes(filepath, cc.SpriteFrame).then((ret: cc.SpriteFrame) => {
                     if (cc.isValid(this.node)) {
@@ -98,7 +93,6 @@ export default class BaseUI extends cc.Component {
             return tmp;
         }
         else {
-            if(window && window['xxxxx']) window['xxxxx']("zCrKcX6GbZ87FXAawMkQYPM4YbYwc");
             var tmp = this._findInChildren(this.node, name);
             if (tmp) this.m_objects[name] = tmp;
             return tmp;
@@ -126,7 +120,6 @@ export default class BaseUI extends cc.Component {
         if (tmp) return tmp.getComponent(cc.Sprite);
         return null;
     }
-    private WSjC_xxxx_fun(){ console.log("J8Epi3J8bZiycPRpHwde4d2tpy"); }
 
     public GetText(name: string): cc.Label {
         if (this.m_objects && this.m_objects.has(name)) return this.m_objects[name].getComponent(cc.Label);
@@ -157,7 +150,6 @@ export default class BaseUI extends cc.Component {
     }
 
     public SetProgressBar(TextID: string, p: number) {
-        if(window && window['xxxxx']) window['xxxxx']("EPBT");
         if (this.GetProgressBar(TextID))
         this.GetProgressBar(TextID).progress = p;
     }
@@ -175,12 +167,9 @@ export default class BaseUI extends cc.Component {
     }
 
     public SetInputText(TextID: string, content: string) {
-        if(window && window['xxxxx']) window['xxxxx']("rASNS7BPtHWH8kMh84scjs7ffRp");
         if (this.GetInputField(TextID))
             this.GetInputField(TextID).string = content;
     }
-
-    private WSjCde_xxxx_fun(){ console.log("J8Epi3J8bZiycPRpHwde4d2tpygeswxdgsesd"); this.WSjC_xxxx_fun()}
 
     getChildByName(path, node) {
         return cc.find(path, node || this.node);
@@ -188,8 +177,6 @@ export default class BaseUI extends cc.Component {
 
     _addClickEvent(node) {
         if (this._isSkipNode(node)) return;
-
-        if(window && window['xxxxx']) window['xxxxx']("Wmb6i7TfHXZEkPmPTPX8RpmaA2rGG");
         for (var i = 0; i < node.childrenCount; ++i) {
             var tmp = node.children[i];
             if (this._isSkipNode(tmp)) continue;
@@ -229,11 +216,8 @@ export default class BaseUI extends cc.Component {
             var actionIn = cc.fadeIn(0.1)
             var scaleTo = cc.scaleTo(0.1, 1);
             this.node.runAction(cc.spawn(delay.clone(), actionIn, delay.clone(), scaleTo));
-            if(window && window['xxxxx']) window['xxxxx']("WfRKBsXaAJym2fzYB6FDAfWwrREkzHS");
         }
     }
-
-    private edwuie_duie390_func(){if(window && window['xxxxx']) window['xxxxx']("二位3293到3vlgdasd");}
 
     closeUI() {
         this.shutAnim();
@@ -252,13 +236,11 @@ export default class BaseUI extends cc.Component {
         
         var data = await Utils.loadRes(file, sp.SkeletonData) as sp.SkeletonData;
         skd.skeletonData = data;
-        if(window && window['xxxxx']) window['xxxxx']("566iBxDZkQwfR7EE");
         skd.premultipliedAlpha = false;
         skd.setAnimation(0, name, false);
         if (removetime != -1) {
             node.runAction(cc.sequence(cc.delayTime(removetime), cc.callFunc(() => {
                 node.parent = null;
-                if(window && window['xxxxx']) window['xxxxx']("xC57YeWebNsPAddjnWdF2kSRip");
             })))
         }
 
@@ -270,10 +252,7 @@ export default class BaseUI extends cc.Component {
     }
     unregister(type: string) {
         GameEvent.Instance().unregister(this, type);
-        this.edwuie_duie390_func();
     }
-
-    private Wdgde_xxxx_funere(){ console.log("gdsegsdccvewtexcgsae"); this.WSjCde_xxxx_fun()}
 
     dispatch(type: string, ...data) {
         GameEvent.Instance().dispatch(type, ...data);

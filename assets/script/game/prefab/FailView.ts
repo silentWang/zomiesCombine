@@ -22,7 +22,6 @@ export default class FailView extends BaseUI {
     private coin = 0;
     setInfo(coin:number)
     {
-        if(window && window['xxxxx']) window['xxxxx']("fswbt5YFcd5xCdJMdMH7Mj");
         this.coin = coin;
         this.aTobAnim(coin*1.8);
         this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
@@ -30,7 +29,6 @@ export default class FailView extends BaseUI {
         private FcMb_xxxx_fun(){ console.log("CcXaFhTmA53RKRMHjJpQNE2kd"); }
 
     private aTobAnim(num:number){
-        if(window && window['xxxxx']) window['xxxxx']("rJJEDED4rWEptMPsAbj");
         let aver = Math.ceil(num/60);
         let xn = 0;
         this.SetText("lbl_coin",Utils.formatNumber(0));
@@ -46,7 +44,6 @@ export default class FailView extends BaseUI {
     }
 
     closeUI() {
-        if(window && window['xxxxx']) window['xxxxx']("rza6xdb446ZPznaQxG");
         this.shutAnim();
         HallScene.Instance.createEnemys();
     }
@@ -72,11 +69,14 @@ export default class FailView extends BaseUI {
                 AdCenter.Instance().play(()=>{
                     this.getCoinReward();
                     this.closeUI();
-                },1);
+                },'1');
                 break;
             case 'btn_normal':
                 this.getCoinReward();
                 this.closeUI();
+                break;
+            case "btn_buyfree":
+                // to do
                 break;    
         }
     }

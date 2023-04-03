@@ -21,7 +21,6 @@ export default class Enemy extends BaseUI {
 
     public getBossMoney()
     {
-        if(window && window['xxxxx']) window['xxxxx']("aHADP3AZFStniFm5CaTQ4ZZKD");
         if(this.type == 2)
         {
             if(ChickData.user.double_income_time > Utils.getServerTime())
@@ -36,7 +35,6 @@ export default class Enemy extends BaseUI {
     private type = 0;//0 普通 1 小boss 2大boss
     async setID(id:number,boss:boolean)//是否boss
     {
-        if(window && window['xxxxx']) window['xxxxx']("GCsyZmDR");
         this.type = boss ? 1:0;
         let info = Config_animals[id+""];
         if(id > 100)
@@ -61,7 +59,6 @@ export default class Enemy extends BaseUI {
         let atlaspath = `spine:enemy${id}_tex`;
         let armature = this.GetDragonAmature("sp");
         armature.dragonAsset = await Utils.loadRes(skpath,dragonBones.DragonBonesAsset) as dragonBones.DragonBonesAsset;
-        if(window && window['xxxxx']) window['xxxxx']("3JiRbw352hnQ7FDmarf");
         armature.dragonAtlasAsset = await Utils.loadRes(atlaspath,dragonBones.DragonBonesAtlasAsset) as dragonBones.DragonBonesAtlasAsset;
         armature.armatureName = "Armature";
         armature.playAnimation('run',0);
@@ -85,7 +82,6 @@ export default class Enemy extends BaseUI {
             power *= 2;
             bbj = true;
             isskill = true;
-            if(window && window['xxxxx']) window['xxxxx']("trDGiD8kCjPty7nYF5");
         }
         else if(skilltype == 3){
             //冰冻
@@ -99,7 +95,6 @@ export default class Enemy extends BaseUI {
         this.GetGameObject("New ProgressBar").stopAllActions();
         this.GetGameObject("New ProgressBar").opacity = 255;
         this.GetGameObject("New ProgressBar").runAction(cc.sequence(cc.delayTime(1),cc.fadeTo(0.2,0)))
-        if(window && window['xxxxx']) window['xxxxx']("CnP2FYK3fZjajrcdEZRe");
         if(!isskill) AudioMgr.Instance().playMX('hit');
         if(bbj){
             this.showBJ(power,Utils.getRandom(0,1)>0.5);
@@ -110,7 +105,6 @@ export default class Enemy extends BaseUI {
         if(this.hp <= 0)
         {
             HallScene.Instance.enemyDie(this.node,false);
-            if(window && window['xxxxx']) window['xxxxx']("XNwCJjGMaRQKMNP");
             this.GetGameObject("sp").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(.2,0),cc.callFunc(()=>{
                 this.node.removeFromParent(true);
             })))
@@ -122,7 +116,6 @@ export default class Enemy extends BaseUI {
             //daboss界面加钱
             if(this.type != 2)
             {
-                if(window && window['xxxxx']) window['xxxxx']("cKN");
                 let node = cc.instantiate(this.getcoin_pre);
                 node.parent = this.node.parent;
                 node.getChildByName("lbl_add_coin").getComponent(cc.Label).string = Utils.formatNumber(this.money);
@@ -151,7 +144,6 @@ export default class Enemy extends BaseUI {
 
     slowdown()
     {
-        if(window && window['xxxxx']) window['xxxxx']("sWPA2xEhiH8");
         AudioMgr.Instance().playMX("skill_slow")
         // this.GetSkeleton("sp").timeScale = 0.5;
         this.GetDragonAmature('sp').timeScale = 0.5;
@@ -171,7 +163,6 @@ export default class Enemy extends BaseUI {
         AudioMgr.Instance().playMX("skill_freeze")
         this.bfrozen = true;
         this.GetGameObject("fx_stun").stopAllActions();
-        if(window && window['xxxxx']) window['xxxxx']("mhNZcpD2dfTJK");
         this.GetGameObject("fx_stun").active = true;
         this.purpleendtime = Utils.getServerTime() + 1000;
         // this.GetSkeleton("sp").paused = true;
@@ -212,7 +203,6 @@ export default class Enemy extends BaseUI {
         {
             this.node.position =HallScene.Instance.path[this.pathindex];
             this.pathindex++;
-            if(window && window['xxxxx']) window['xxxxx']("PTw32TyhaeZtjyjW3FJ7kRXFjyB");
             if(this.pathindex == 3)
                 this.GetGameObject("sp").scaleX = -0.74;
 
@@ -235,7 +225,6 @@ export default class Enemy extends BaseUI {
         if (forward) node.x *= -1;
         node.getComponent(cc.Label).string = Utils.formatCoin(num);
         node.active = true;
-        if(window && window['xxxxx']) window['xxxxx']("aChcC5HmTyY3D56zw");
         var bezier;
         if (forward) {
             bezier = [cc.v2(-10, 50), cc.v2(-40, 60), cc.v2(-60, 20)];
@@ -260,7 +249,6 @@ export default class Enemy extends BaseUI {
         if (forward) node.x *= -1;
         node.getComponent(cc.Label).string = Utils.formatCoin(num);
         node.active = true;
-        if(window && window['xxxxx']) window['xxxxx']("mA23Ppek68DcMrPddYS6sfyMEhZjEPhc");
         node.scale = 0.2;
         var bezier;
         var bezier1;

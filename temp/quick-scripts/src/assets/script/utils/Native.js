@@ -15,6 +15,7 @@ var Native = /** @class */ (function () {
             return;
         var callfunc = 'callBackFunc_' + new Date().getTime();
         window[callfunc] = function (res) {
+            console.log("---ios callback---" + methodName, res);
             callback && callback(res);
             window[callfunc] = null;
         };
@@ -31,6 +32,19 @@ var Native = /** @class */ (function () {
     Native.getAppVersion = function () {
         this.callAppMethod('getAppVersion', { x: 1, y: '25222' }, function (res) {
             console.log('getAppVersion ios 回调', res);
+        });
+    };
+    /**视频广告 */
+    Native.playVideoAd = function (callback, adUnitId) {
+        this.callAppMethod('loadTopOnRewardAd', { adUnitId: adUnitId }, function (res) {
+            callback && callback();
+        });
+    };
+    /**插屏广告 */
+    Native.showInterstitialAd = function (adUnitId, callback) {
+        if (callback === void 0) { callback = null; }
+        this.callAppMethod('loadTopOnInterstitialAd', { adUnitId: adUnitId }, function (res) {
+            callback && callback();
         });
     };
     return Native;

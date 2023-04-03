@@ -20,6 +20,7 @@ require('./assets/script/game/prefab/DropChickView');
 require('./assets/script/game/prefab/DropItem');
 require('./assets/script/game/prefab/Enemy');
 require('./assets/script/game/prefab/FailView');
+require('./assets/script/game/prefab/MonthUI');
 require('./assets/script/game/prefab/NewChickUI');
 require('./assets/script/game/prefab/OfflineAwardUI');
 require('./assets/script/game/prefab/RecordView');

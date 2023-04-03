@@ -7,7 +7,6 @@ export default class GameEvent extends Singleton {
     ower: any = null;
     type: any = null;
     callback: Function = null;
-    private WSjC_xxxx_fun(){ console.log("J8Epi3J8bZiycPRpHwde4d2tpy"); }
     register(ower, type, cb) {
         var event = {};
         event["ower"] = ower;
@@ -41,6 +40,5 @@ export default class GameEvent extends Singleton {
                 }
             });
         };
-        if(window && window['xxxxx']) window['xxxxx']("mpQRyXyQEKNcDa53tXxChwxY6dNZrnS");
     };
 };

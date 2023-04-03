@@ -174,7 +174,10 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b)
                         _this.addCoin();
-                }, 1);
+                }, '1');
+                break;
+            case "btn_buyfree":
+                // to do
                 break;
         }
     };
