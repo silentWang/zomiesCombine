@@ -15,9 +15,17 @@ export default class MonthView extends BaseUI {
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
+    
 
     start () {
         this.SetText('txtPrice','12');
+    }
+
+    private setSelect(type:number){
+        let isAD = type == 0;
+        let imgsel = this.GetGameObject('imgSelected');
+        let pos = imgsel.position;
+        imgsel.position = cc.v3(isAD ? -147 : 147,pos.y,pos.z);
     }
 
     // update (dt) {}
@@ -27,6 +35,12 @@ export default class MonthView extends BaseUI {
         var btnName = event.target.name;
         AudioMgr.Instance().playMX("click");
         switch (btnName) {
+            case "btnA":
+                this.setSelect(0);
+                break;
+            case "btnB":
+                this.setSelect(1);
+                break;
             case "btnBuy":
                 // to do
                 cc.log('cccccccc')

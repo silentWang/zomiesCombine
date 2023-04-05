@@ -91,7 +91,7 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                         _this.closeUI();
                     }
                 };
-                AdCenter_1.default.Instance().play(func, '1');
+                AdCenter_1.default.Instance().play(func);
                 break;
             case "btn_buyfree":
                 // to do

@@ -54,8 +54,6 @@ export default class WinView extends BaseUI {
             if(b)
             {
                 ChickData.user.coin += coin;
-                if(ChickData.user.lv >= 30)
-                    AdCenter.Instance().showBigPicAd();
             }  
         })
     }
@@ -73,7 +71,7 @@ export default class WinView extends BaseUI {
                 AdCenter.Instance().play(()=>{
                     this.getCoinReward();
                     this.closeUI();
-                },'1');
+                });
                 break;
             case "btn_normal":
                 this.getCoinReward();

@@ -85,6 +85,7 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
     }
     // onLoad () {}
     CoinNotEnoughUI.prototype.start = function () {
+        AdCenter_1.default.Instance().showGridAd();
         Utils_1.default.playBreath(this.GetGameObject('btn_ad'));
     };
     // update (dt) {}
@@ -168,12 +169,16 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b)
                         _this.addCoin();
-                }, '1');
+                });
                 break;
             case "btn_buyfree":
                 // to do
                 break;
         }
+    };
+    CoinNotEnoughUI.prototype.onDestroy = function () {
+        AdCenter_1.default.Instance().hideGridAd();
+        _super.prototype.onDestroy.call(this);
     };
     __decorate([
         property(cc.Label)

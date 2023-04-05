@@ -31,6 +31,7 @@ export default class CoinNotEnoughUI extends BaseUI {
     // onLoad () {}
 
     start () {
+        AdCenter.Instance().showGridAd();
         Utils.playBreath(this.GetGameObject('btn_ad'))
     }
 
@@ -97,11 +98,17 @@ export default class CoinNotEnoughUI extends BaseUI {
                 WxCenter.aldReport('LackClick','click');
                 AdCenter.Instance().play((b)=>{
                     if(b) this.addCoin();
-                },'1');
+                });
                 break;
             case "btn_buyfree":
                 // to do
                 break;
         }
+    }
+
+    onDestroy()
+    {
+        AdCenter.Instance().hideGridAd();
+        super.onDestroy();
     }
 }

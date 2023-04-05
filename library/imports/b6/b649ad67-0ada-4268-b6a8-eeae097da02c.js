@@ -908,8 +908,7 @@ var HallScene = /** @class */ (function (_super) {
         AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_setting":
-                // Utils.createUI("prefab/SettingUI")
-                Utils_1.default.createUI("prefab/MonthCardUI");
+                Utils_1.default.createUI("prefab/SettingUI");
                 break;
             case "btn_sign":
                 Utils_1.default.createUI("prefab/SignUI");
@@ -958,6 +957,9 @@ var HallScene = /** @class */ (function (_super) {
                 Utils_1.default.createUI("prefab/ShareLayer").then(function (node) {
                     node.getComponent(ShareView_1.default).setData();
                 });
+                break;
+            case 'btnFreeAd':
+                Utils_1.default.createUI("prefab/MonthCardUI");
                 break;
             case "btn_Recorder":
                 if (this.bRecorder == false) {

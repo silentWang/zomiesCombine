@@ -18,70 +18,26 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Singleton_1 = require("./Singleton");
+// import MsgToast from "../framwork/MsgToast";
 var Utils_1 = require("../utils/Utils");
-var WxCenter_1 = require("./WxCenter");
+// import WxCenter from "./WxCenter";
 var Native_1 = require("../utils/Native");
 var tt = window["tt"];
-var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+// const { ccclass, property } = cc._decorator;
 var AdCenter = /** @class */ (function (_super) {
     __extends(AdCenter, _super);
     function AdCenter() {
         var _this = _super.call(this) || this;
-        _this.videoAdID = null;
-        _this.bannerAdID = null;
-        _this.bannerAd = null;
-        _this.interstitialAd = null;
         _this._lastPlayTime = 0;
-        if (tt && tt.createRewardedVideoAd) {
-            _this.videoAdID = tt.createRewardedVideoAd({
-                adUnitId: '1r3lbfr4d9e6veouju'
-            });
-            _this.videoAdID.onError(function (res) {
-                console.log("onError", res);
-                // MsgToast.show("广告加载错误");
-            });
-            _this.videoAdID.onLoad(function () {
-                // console.log('广告加载成功');
-            });
-            _this.videoAdID.onClose(function (res) {
-                if (res && res.isEnded || res === undefined) {
-                    // cc.log("正常播放结束，可以下发游戏奖励")
-                    _this.callBack(true);
-                }
-                else {
-                    // cc.log("播放中途退出，不下发游戏奖励")
-                    _this.callBack(false);
-                }
-            });
-            if (tt.createInterstitialAd) {
-                _this.interstitialAd = tt.createInterstitialAd({
-                    adUnitId: '60jin0has9p2b8n774'
-                });
-            }
-            var _a = tt.getSystemInfoSync(), screenWidth = _a.screenWidth, screenHeight = _a.screenHeight;
-            _this.bannerAd = tt.createBannerAd({
-                adUnitId: '3a3ld4b071g57lnlji',
-                style: { width: screenWidth,
-                    top: screenHeight - 150 }
-            });
-        }
         return _this;
     }
-    AdCenter.prototype.showBigPicAd = function () {
-        // 在适合的场景显示插屏广告
-        if (this.interstitialAd) {
-            this.interstitialAd.show().catch(function (err) {
-                console.log(err);
-            });
-        }
-    };
     AdCenter.prototype.play = function (callback, adunitId) {
+        if (adunitId === void 0) { adunitId = 'b64242a9655d0f'; }
         if (Utils_1.default.getServerTime() - this._lastPlayTime < 1000) {
             console.log("点击过于频繁");
             return;
         }
         this._lastPlayTime = Utils_1.default.getServerTime();
-        this.callBack = callback;
         if (cc.sys.os === cc.sys.OS_IOS) {
             Native_1.Native.playVideoAd(callback, adunitId);
         }
@@ -90,25 +46,13 @@ var AdCenter = /** @class */ (function (_super) {
         }
     };
     AdCenter.prototype.showGridAd = function () {
-        if (WxCenter_1.default.isWxEnv()) {
-            WxCenter_1.default.showBanner();
-        }
-        else {
-            if (this.bannerAd)
-                this.bannerAd.show();
-        }
+        Native_1.Native.showBannerAd('b64242ab164d72');
     };
     AdCenter.prototype.hideGridAd = function () {
-        if (WxCenter_1.default.isWxEnv()) {
-            WxCenter_1.default.hideBanner();
-        }
-        else {
-            if (this.bannerAd)
-                this.bannerAd.hide();
-        }
+        Native_1.Native.hideBannerAd();
     };
     AdCenter.prototype.showInterstitialAd = function (adunit) {
-        if (adunit === void 0) { adunit = ''; }
+        if (adunit === void 0) { adunit = 'b64242a8c01cdc'; }
         Native_1.Native.showInterstitialAd(adunit);
     };
     return AdCenter;

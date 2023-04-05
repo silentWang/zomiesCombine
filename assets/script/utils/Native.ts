@@ -35,5 +35,16 @@ export class Native {
             callback && callback();
         });
     }
+    /**banner广告 */
+    static showBannerAd(adUnitId:string,callback:Function = null){
+        this.callAppMethod('loadBannerAd',{adUnitId},(res)=>{
+            callback && callback();
+        });
+    }
+    
+    static hideBannerAd(){
+        this.callAppMethod('hideBannerAd');
+    }
+    
 
 }

@@ -42,12 +42,24 @@ var MonthView = /** @class */ (function (_super) {
     MonthView.prototype.start = function () {
         this.SetText('txtPrice', '12');
     };
+    MonthView.prototype.setSelect = function (type) {
+        var isAD = type == 0;
+        var imgsel = this.GetGameObject('imgSelected');
+        var pos = imgsel.position;
+        imgsel.position = cc.v3(isAD ? -147 : 147, pos.y, pos.z);
+    };
     // update (dt) {}
     MonthView.prototype.onUIClicked = function (event, customEventData) {
         _super.prototype.onUIClicked.call(this, event, customEventData);
         var btnName = event.target.name;
         AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
+            case "btnA":
+                this.setSelect(0);
+                break;
+            case "btnB":
+                this.setSelect(1);
+                break;
             case "btnBuy":
                 // to do
                 cc.log('cccccccc');

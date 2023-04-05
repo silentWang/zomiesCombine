@@ -92,7 +92,7 @@ var FailView = /** @class */ (function (_super) {
                 AdCenter_1.default.Instance().play(function () {
                     _this.getCoinReward();
                     _this.closeUI();
-                }, '1');
+                });
                 break;
             case 'btn_normal':
                 this.getCoinReward();

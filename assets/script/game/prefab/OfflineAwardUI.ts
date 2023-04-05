@@ -65,7 +65,7 @@ export default class OfflineAwardUI extends BaseUI {
                         this.closeUI()
                     }
                 }
-                AdCenter.Instance().play(func,'1')
+                AdCenter.Instance().play(func)
                 break;
             case "btn_buyfree":
                 // to do

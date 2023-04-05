@@ -76,8 +76,6 @@ var WinView = /** @class */ (function (_super) {
         Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
             if (b) {
                 ChickData_1.default.user.coin += coin;
-                if (ChickData_1.default.user.lv >= 30)
-                    AdCenter_1.default.Instance().showBigPicAd();
             }
         });
     };
@@ -95,7 +93,7 @@ var WinView = /** @class */ (function (_super) {
                 AdCenter_1.default.Instance().play(function () {
                     _this.getCoinReward();
                     _this.closeUI();
-                }, '1');
+                });
                 break;
             case "btn_normal":
                 this.getCoinReward();

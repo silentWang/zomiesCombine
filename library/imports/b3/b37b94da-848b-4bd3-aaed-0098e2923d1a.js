@@ -47,6 +47,16 @@ var Native = /** @class */ (function () {
             callback && callback();
         });
     };
+    /**banner广告 */
+    Native.showBannerAd = function (adUnitId, callback) {
+        if (callback === void 0) { callback = null; }
+        this.callAppMethod('loadBannerAd', { adUnitId: adUnitId }, function (res) {
+            callback && callback();
+        });
+    };
+    Native.hideBannerAd = function () {
+        this.callAppMethod('hideBannerAd');
+    };
     return Native;
 }());
 exports.Native = Native;

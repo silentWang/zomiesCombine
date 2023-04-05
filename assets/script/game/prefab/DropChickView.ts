@@ -59,7 +59,7 @@ export default class DropChickView extends BaseUI {
                         ChickData.user.DropGiftPts = ChickData.user.DropGiftPts.concat(spt);
                         this.closeUI();
                     }
-                },'1');
+                });
                 break;
             case "btn_buyfree":
                 // to do

@@ -897,8 +897,7 @@ export default class HallScene extends BaseUI {
 
         switch (btnName) {
 			case "btn_setting":
-				// Utils.createUI("prefab/SettingUI")
-				Utils.createUI("prefab/MonthCardUI")
+				Utils.createUI("prefab/SettingUI")
 				break;
 			case "btn_sign":
 				Utils.createUI("prefab/SignUI")
@@ -949,6 +948,9 @@ export default class HallScene extends BaseUI {
                 Utils.createUI("prefab/ShareLayer").then((node:cc.Node)=>{
                     node.getComponent(ShareLayer).setData();
                 })
+                break;
+            case 'btnFreeAd':
+                Utils.createUI("prefab/MonthCardUI")
                 break;
             case "btn_Recorder":
                 if (this.bRecorder == false) {

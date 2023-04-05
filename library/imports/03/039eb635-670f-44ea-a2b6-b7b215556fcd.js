@@ -193,7 +193,7 @@ var CommonView = /** @class */ (function (_super) {
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b)
                         _this.addCoin(2);
-                }, 2);
+                });
                 break;
             case "btn_normal":
                 this.addCoin(1);

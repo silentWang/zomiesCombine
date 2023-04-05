@@ -520,8 +520,8 @@
     "relativePath": "resources\\loading"
   },
   "a25e2197-3784-4ef5-9d91-8f0f264490ff": {
-    "asset": 1680230358950,
-    "meta": 1680489526625,
+    "asset": 1680505361625,
+    "meta": 1680662099922,
     "relativePath": "resources\\prefab"
   },
   "126cef12-50bf-4e0c-abfe-b1cc2e8a0c7e": {
@@ -1175,8 +1175,8 @@
     "relativePath": "script\\game"
   },
   "3ae6d840-ccae-46c7-aaf1-5b47e90ace64": {
-    "asset": 1680230359054,
-    "meta": 1680489530036,
+    "asset": 1680505660744,
+    "meta": 1680662099938,
     "relativePath": "script\\game\\prefab"
   },
   "0e4e85f7-e5fd-4ee6-bd09-7fda0c2b0b90": {
@@ -1221,7 +1221,7 @@
   },
   "db879b2d-6d17-422a-9a03-c1054f110582": {
     "asset": 1662370951713,
-    "meta": 1680489530960,
+    "meta": 1680663332038,
     "relativePath": "spine\\bt_auto_merge.skel"
   },
   "c8698461-ca29-4fb6-815e-5ac636a6748b": {
@@ -1236,7 +1236,7 @@
   },
   "9ce8871b-0451-42d1-a1ad-1080ce1082e6": {
     "asset": 1662370951424,
-    "meta": 1680489530960,
+    "meta": 1680663332048,
     "relativePath": "spine\\bt_double_coin.skel"
   },
   "b9a2825d-984b-4f0b-bdb0-03e9d6e26057": {
@@ -1251,7 +1251,7 @@
   },
   "3e35fbe3-6770-4250-b52b-e1bf083a0ceb": {
     "asset": 1662370951492,
-    "meta": 1680489530962,
+    "meta": 1680663332038,
     "relativePath": "spine\\bt_free_gems.skel"
   },
   "32350220-066d-4ee4-a550-a2329a1ca866": {
@@ -1266,7 +1266,7 @@
   },
   "08fb8750-f3cb-4228-8eca-2466541914c4": {
     "asset": 1662370951515,
-    "meta": 1680489530964,
+    "meta": 1680663332038,
     "relativePath": "spine\\bt_starter_boost.skel"
   },
   "119f238c-96c4-462b-b7f0-5157ede7ddae": {
@@ -1286,7 +1286,7 @@
   },
   "cba8aa4c-4b2f-44cf-9ad9-562f465b3bdb": {
     "asset": 1662370951555,
-    "meta": 1680489530965,
+    "meta": 1680663332038,
     "relativePath": "spine\\bt_trash.skel"
   },
   "5347e9bb-29fd-4797-bf6c-72a952d4e31c": {
@@ -1296,7 +1296,7 @@
   },
   "9407a815-061b-4e0d-8593-07ddcb156c48": {
     "asset": 1662370951408,
-    "meta": 1680489531033,
+    "meta": 1680663332048,
     "relativePath": "spine\\fairy.skel"
   },
   "320a5c9d-5c77-4678-aa70-0e8423dab0d5": {
@@ -1311,7 +1311,7 @@
   },
   "718a78cb-34f7-4cbd-929e-5a866c5ee97e": {
     "asset": 1662370951188,
-    "meta": 1680489531101,
+    "meta": 1680663332048,
     "relativePath": "spine\\fx_arrow.skel"
   },
   "c6956a8f-c3dd-42d0-9419-6961b8315c5f": {
@@ -1326,7 +1326,7 @@
   },
   "c61ec591-66a9-4958-8afc-bad24ed231eb": {
     "asset": 1662370951632,
-    "meta": 1680489531104,
+    "meta": 1680663332048,
     "relativePath": "spine\\fx_bt_angry.skel"
   },
   "11447f6c-d972-4640-82cf-ce0ab6ed75dd": {
@@ -1341,7 +1341,7 @@
   },
   "5881c8d7-81b2-4b57-8188-a466c43112a4": {
     "asset": 1662370950975,
-    "meta": 1680489531104,
+    "meta": 1680663332048,
     "relativePath": "spine\\fx_ground_merge.skel"
   },
   "1c63b418-27bb-496e-8836-d72b3c72db8e": {
@@ -1351,7 +1351,7 @@
   },
   "10147467-3a70-4101-8654-fe8232f3d8d0": {
     "asset": 1662370951547,
-    "meta": 1680489531105,
+    "meta": 1680663332048,
     "relativePath": "spine\\fx_lose.skel"
   },
   "081c8d8a-7221-42f7-a138-6bcecf64923b": {
@@ -1366,7 +1366,7 @@
   },
   "fd24a75b-73b9-408a-8849-cd0b95b1b7ef": {
     "asset": 1662370951581,
-    "meta": 1680489531106,
+    "meta": 1680663332048,
     "relativePath": "spine\\fx_slot.skel"
   },
   "b9fc9c37-0197-4e9f-9a0d-010264a66140": {
@@ -1386,7 +1386,7 @@
   },
   "67454650-94c7-4fe7-bf74-9aa55065d8ed": {
     "asset": 1662370950979,
-    "meta": 1680489531109,
+    "meta": 1680663332048,
     "relativePath": "spine\\fx_stun.skel"
   },
   "f0b818f7-64df-449a-a0df-09d990af2710": {
@@ -1396,7 +1396,7 @@
   },
   "0315b880-5035-4920-8c3a-e315838ce339": {
     "asset": 1662370951639,
-    "meta": 1680489531110,
+    "meta": 1680663332048,
     "relativePath": "spine\\fx_victory.skel"
   },
   "bfcceb5e-764d-4c24-82f4-8533d8fb20a4": {
@@ -1410,8 +1410,8 @@
     "relativePath": "spine\\fx_victory.png"
   },
   "5cff1f55-2ce7-49cf-b515-c794c1f82d08": {
-    "asset": 1680230359274,
-    "meta": 1680489527729,
+    "asset": 1680662099438,
+    "meta": 1680662099922,
     "relativePath": "spine\\other"
   },
   "9aa1b096-f322-4fc3-bc72-2f1e528ec477": {
@@ -1571,7 +1571,7 @@
   },
   "58bbf297-868b-4b9b-b882-3f7c738496e8": {
     "asset": 1662370951435,
-    "meta": 1680489531111,
+    "meta": 1680663332048,
     "relativePath": "spine\\pot2.skel"
   },
   "418aeb22-7dd0-4efc-bd5c-45360421f6a2": {
@@ -1586,7 +1586,7 @@
   },
   "e992277e-09f3-4633-95a4-5c882df2f6dd": {
     "asset": 1662370951560,
-    "meta": 1680489531113,
+    "meta": 1680663332048,
     "relativePath": "spine\\pot3.skel"
   },
   "ba26022c-3119-4dc8-9e33-cf9b6a836efe": {
@@ -1601,7 +1601,7 @@
   },
   "84a97586-0098-4e4c-8a4b-ddc611e13321": {
     "asset": 1662370951650,
-    "meta": 1680489531113,
+    "meta": 1680663332048,
     "relativePath": "spine\\pot4.skel"
   },
   "4a34618c-0398-47f8-b3a2-0e87fdd7d07e": {
@@ -1616,7 +1616,7 @@
   },
   "f2b29f12-002f-4458-a460-8a6badb9fe9c": {
     "asset": 1662370951122,
-    "meta": 1680489531114,
+    "meta": 1680663332048,
     "relativePath": "spine\\tut_hand.skel"
   },
   "b077577a-6c8c-435f-a950-bb064ad3bce1": {
@@ -4925,19 +4925,14 @@
     "relativePath": "resources\\prefab\\AdLayer.prefab"
   },
   "e9babb2a-f7d3-4002-af7c-cbec28e91585": {
-    "asset": 1679043346163,
-    "meta": 1680489527989,
+    "asset": 1680662410890,
+    "meta": 1680662410898,
     "relativePath": "resources\\scene\\hall.fire"
   },
   "b352477b-cc7f-4f8a-ac56-0d19de2ef7fc": {
     "asset": 1679043714120,
     "meta": 1680489530139,
     "relativePath": "script\\manager\\Singleton.ts"
-  },
-  "b37b94da-848b-4bd3-aaed-0098e2923d1a": {
-    "asset": 1680486641246,
-    "meta": 1680489530207,
-    "relativePath": "script\\utils\\Native.ts"
   },
   "e5d86e20-5695-4ebe-9032-6ac3d555868a": {
     "asset": 1680459528000,
@@ -4980,8 +4975,8 @@
     "relativePath": "resources\\newtexture\\symgg_an.png"
   },
   "a1fad87c-6ff8-4f79-a72c-e95ef9eef07f": {
-    "asset": 1680505714447,
-    "meta": 1680505714450,
+    "asset": 1680663851047,
+    "meta": 1680663851057,
     "relativePath": "resources\\prefab\\MonthCardUI.prefab"
   },
   "7698a381-b061-4a0e-882a-4d0b36f3d746": {
@@ -5034,21 +5029,6 @@
     "meta": 1680504453745,
     "relativePath": "script\\game\\prefab\\Bullet.ts"
   },
-  "e5b6fe10-30bd-406d-a2e8-41dec960e309": {
-    "asset": 1680504150939,
-    "meta": 1680504453761,
-    "relativePath": "script\\game\\prefab\\CoinNotEnoughUI.ts"
-  },
-  "039eb635-670f-44ea-a2b6-b7b215556fcd": {
-    "asset": 1680504149148,
-    "meta": 1680504453783,
-    "relativePath": "script\\game\\prefab\\CommonView.ts"
-  },
-  "c0f63e12-f5e1-449d-a7ff-b0c1a1a89637": {
-    "asset": 1680504147515,
-    "meta": 1680504453794,
-    "relativePath": "script\\game\\prefab\\DropChickView.ts"
-  },
   "032611f6-648b-44a1-b8c8-a55a89297fe0": {
     "asset": 1680504145716,
     "meta": 1680504453807,
@@ -5059,20 +5039,10 @@
     "meta": 1680504453847,
     "relativePath": "script\\game\\prefab\\Enemy.ts"
   },
-  "6d8348d5-1e3a-4fef-8f11-ce78b3161ba4": {
-    "asset": 1680504142301,
-    "meta": 1680504453857,
-    "relativePath": "script\\game\\prefab\\FailView.ts"
-  },
   "03d56a46-9912-4370-9e90-e1c89d9e7b4f": {
     "asset": 1680504140900,
     "meta": 1680504453868,
     "relativePath": "script\\game\\prefab\\NewChickUI.ts"
-  },
-  "4750996f-37ae-40dd-8b54-c614bc4777d4": {
-    "asset": 1680504139583,
-    "meta": 1680504453880,
-    "relativePath": "script\\game\\prefab\\OfflineAwardUI.ts"
   },
   "d9bb0667-075c-4947-a569-ded893b5e930": {
     "asset": 1680504138443,
@@ -5089,25 +5059,10 @@
     "meta": 1680504453913,
     "relativePath": "script\\game\\prefab\\ShareView.ts"
   },
-  "e6b027be-f294-4367-ab68-755f0a525351": {
-    "asset": 1680504134184,
-    "meta": 1680504453936,
-    "relativePath": "script\\game\\prefab\\ShopItem.ts"
-  },
   "d27987b1-8321-41c1-b13f-8ef32cf36c7d": {
     "asset": 1680504132850,
     "meta": 1680504453949,
     "relativePath": "script\\game\\prefab\\ShopView.ts"
-  },
-  "1aca77a2-bc6b-4efd-9fa4-6d504843828f": {
-    "asset": 1680504131386,
-    "meta": 1680504453978,
-    "relativePath": "script\\game\\prefab\\SignView.ts"
-  },
-  "ffa08ef8-e8c7-4d55-ba9e-099646e0f3bc": {
-    "asset": 1680504130001,
-    "meta": 1680504453990,
-    "relativePath": "script\\game\\prefab\\WinView.ts"
   },
   "e5755cb3-3359-44d2-ba04-ba2df0bf4053": {
     "asset": 1680504161479,
@@ -5118,11 +5073,6 @@
     "asset": 1680502920063,
     "meta": 1680504454036,
     "relativePath": "script\\Loading.ts"
-  },
-  "04f46338-9ca6-4756-9182-a89c65478fb7": {
-    "asset": 1680504128137,
-    "meta": 1680504454046,
-    "relativePath": "script\\manager\\AdCenter.ts"
   },
   "10f92d6a-9c2f-4ce0-b1d0-ebb6c483241e": {
     "asset": 1680504126976,
@@ -5179,14 +5129,79 @@
     "meta": 1680504454214,
     "relativePath": "script\\utils\\Utils.ts"
   },
+  "a4e60de0-96e9-4e5b-ab2d-552e4ac6f74f": {
+    "asset": 1680535950000,
+    "meta": 1680662099954,
+    "relativePath": "spine\\other\\mianguanggao_ske.json"
+  },
+  "c878a323-921b-4be4-8ced-86fc159ff116": {
+    "asset": 1680535950000,
+    "meta": 1680662099954,
+    "relativePath": "spine\\other\\mianguanggao_tex.png"
+  },
+  "71143e1c-b7bf-4316-9165-45d6d5174686": {
+    "asset": 1680535950000,
+    "meta": 1680662099969,
+    "relativePath": "spine\\other\\mianguanggao_tex.json"
+  },
   "b649ad67-0ada-4268-b6a8-eeae097da02c": {
-    "asset": 1680505386388,
-    "meta": 1680505387024,
+    "asset": 1680662464656,
+    "meta": 1680662465610,
     "relativePath": "script\\game\\HallScene.ts"
   },
+  "e5b6fe10-30bd-406d-a2e8-41dec960e309": {
+    "asset": 1680663194039,
+    "meta": 1680663195221,
+    "relativePath": "script\\game\\prefab\\CoinNotEnoughUI.ts"
+  },
+  "039eb635-670f-44ea-a2b6-b7b215556fcd": {
+    "asset": 1680662610473,
+    "meta": 1680663195252,
+    "relativePath": "script\\game\\prefab\\CommonView.ts"
+  },
+  "c0f63e12-f5e1-449d-a7ff-b0c1a1a89637": {
+    "asset": 1680662617111,
+    "meta": 1680663195268,
+    "relativePath": "script\\game\\prefab\\DropChickView.ts"
+  },
+  "6d8348d5-1e3a-4fef-8f11-ce78b3161ba4": {
+    "asset": 1680662623990,
+    "meta": 1680663195284,
+    "relativePath": "script\\game\\prefab\\FailView.ts"
+  },
+  "4750996f-37ae-40dd-8b54-c614bc4777d4": {
+    "asset": 1680662630032,
+    "meta": 1680663195299,
+    "relativePath": "script\\game\\prefab\\OfflineAwardUI.ts"
+  },
+  "e6b027be-f294-4367-ab68-755f0a525351": {
+    "asset": 1680662636313,
+    "meta": 1680663195331,
+    "relativePath": "script\\game\\prefab\\ShopItem.ts"
+  },
+  "1aca77a2-bc6b-4efd-9fa4-6d504843828f": {
+    "asset": 1680662646880,
+    "meta": 1680663195362,
+    "relativePath": "script\\game\\prefab\\SignView.ts"
+  },
+  "ffa08ef8-e8c7-4d55-ba9e-099646e0f3bc": {
+    "asset": 1680662973575,
+    "meta": 1680663195377,
+    "relativePath": "script\\game\\prefab\\WinView.ts"
+  },
+  "04f46338-9ca6-4756-9182-a89c65478fb7": {
+    "asset": 1680663099868,
+    "meta": 1680663195393,
+    "relativePath": "script\\manager\\AdCenter.ts"
+  },
+  "b37b94da-848b-4bd3-aaed-0098e2923d1a": {
+    "asset": 1680662924631,
+    "meta": 1680663195409,
+    "relativePath": "script\\utils\\Native.ts"
+  },
   "36af0b69-94cc-4b66-806e-d7388a74e49d": {
-    "asset": 1680505852309,
-    "meta": 1680505853244,
+    "asset": 1680663912335,
+    "meta": 1680663914670,
     "relativePath": "script\\game\\prefab\\MonthView.ts"
   }
 }

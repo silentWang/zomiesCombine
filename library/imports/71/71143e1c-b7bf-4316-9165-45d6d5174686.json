@@ -1,0 +1,14 @@
+{
+  "__type__": "dragonBones.DragonBonesAtlasAsset",
+  "_name": "mianguanggao_tex",
+  "_objFlags": 0,
+  "_native": "",
+  "_atlasJson": "{\"SubTexture\":[{\"width\":90,\"y\":1,\"height\":92,\"name\":\"免广告入口/diyuan\",\"x\":110},{\"width\":107,\"y\":1,\"height\":103,\"name\":\"免广告入口/guang\",\"x\":1},{\"width\":73,\"y\":95,\"height\":73,\"name\":\"免广告入口/shipin\",\"x\":110},{\"width\":39,\"y\":95,\"height\":39,\"name\":\"免广告入口/jinzhi\",\"x\":185}],\"width\":256,\"height\":256,\"name\":\"mianguanggao\",\"imagePath\":\"mianguanggao_tex.png\"}",
+  "_texture": {
+    "__uuid__": "c878a323-921b-4be4-8ced-86fc159ff116"
+  },
+  "texture": {
+    "__uuid__": "c878a323-921b-4be4-8ced-86fc159ff116"
+  },
+  "_textureAtlasData": null
+}
