@@ -7,4 +7,11 @@
 	#import <UIKit/UIKit.h>
     #import "HWProdcut.h"
     #import "Macro.h"
+    #import "Masonry.h"
+    #import "HWSimpleHUD.h"
+    #import "HWAppDelegate.h"
+    #import "HWCommonTools.h"
+    #import "HWTools.h"
+
+
 #endif

@@ -54,6 +54,7 @@ PODS:
   - "GoogleUtilities/NSData+zlib (7.11.0)"
   - GoogleUtilities/Reachability (7.11.0):
     - GoogleUtilities/Logger
+  - Masonry (1.1.0)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -68,6 +69,7 @@ DEPENDENCIES:
   - AnyThinkiOS/AnyThinkAdmobAdapter
   - AnyThinkiOS/AnyThinkFacebookAdapter
   - AnyThinkiOS/AnyThinkUnityAdsAdapter
+  - Masonry
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -77,6 +79,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUserMessagingPlatform
     - GoogleUtilities
+    - Masonry
     - nanopb
     - PersonalizedAdConsent
     - PromisesObjC
@@ -89,11 +92,12 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: fe17c92a32207dd5cdd4e8d742767f2da74857f6
   GoogleUserMessagingPlatform: 5f8b30daf181805317b6b985bb51c1ff3beca054
   GoogleUtilities: c2bdc4cf2ce786c4d2e6b3bcfd599a25ca78f06f
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PersonalizedAdConsent: dbecabb3467df967c16d9cebc2ef4a8890e4bbd8
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   UnityAds: 1af6c4fdd7030c2593c58f520504e167561175ab
 
-PODFILE CHECKSUM: cdd8c0d78629de5756ba6e823d0509f2d0c1dcc6
+PODFILE CHECKSUM: 667daf5288da32d8e135889d77b8df9ffc626eb4
 
 COCOAPODS: 1.11.3
