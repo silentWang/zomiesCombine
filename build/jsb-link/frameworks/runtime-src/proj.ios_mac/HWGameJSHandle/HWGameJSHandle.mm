@@ -34,7 +34,7 @@
     NSDictionary *par = [HWTools convert2DictionaryWithJSONString:json];
     NSString *callBackJS  = par[@"method"];
     NSDictionary *params  = par[@"params"];
-    NSString *placementID = [NSString stringWithFormat:@"%@", params[@"adUnitId"]]?:@"";
+    NSString *placementID = [NSString stringWithFormat:@"%@", params[@"placementID"]]?:@"";
 
     HWRewardVideoVC *ATRewardVC = [[HWRewardVideoVC alloc]init];
     ATRewardVC.placementID = placementID;

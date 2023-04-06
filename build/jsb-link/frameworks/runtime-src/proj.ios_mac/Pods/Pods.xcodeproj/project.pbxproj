@@ -533,7 +533,7 @@
 		71F2EBE35F90AE5EA61FECB9FFBE12D2 /* NSURLSession+GULPromises.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+GULPromises.h"; path = "GoogleUtilities/Environment/Public/GoogleUtilities/NSURLSession+GULPromises.h"; sourceTree = "<group>"; };
 		734132CE7ABC44E54012118CC3F7B177 /* PACError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PACError.m; path = PersonalizedAdConsent/PersonalizedAdConsent/PACError.m; sourceTree = "<group>"; };
 		73497C40F68D05DD531A9F8CA55BC906 /* UnityAds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UnityAds.release.xcconfig; sourceTree = "<group>"; };
-		736218BABDA457A978C0B6B633DB269E /* Pods_hdwinged_mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hdwinged_mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		736218BABDA457A978C0B6B633DB269E /* Pods-hdwinged-mobile */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-hdwinged-mobile"; path = Pods_hdwinged_mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73658D69E26B647832114E597853C3AC /* UIView+FBNativeAdViewTag.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+FBNativeAdViewTag.h"; path = "Static/FBAudienceNetwork.xcframework/ios-arm64_armv7/FBAudienceNetwork.framework/Headers/UIView+FBNativeAdViewTag.h"; sourceTree = "<group>"; };
 		73C15E4B4EA7287A74710A108EEAE373 /* Google-Mobile-Ads-SDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Google-Mobile-Ads-SDK-xcframeworks.sh"; sourceTree = "<group>"; };
 		747972C48DFD0F7CD5659228EDAC6F90 /* AnyThinkiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AnyThinkiOS.release.xcconfig; sourceTree = "<group>"; };
@@ -1242,7 +1242,7 @@
 				06FC5C9CF96D60C50FCD47D339C91951 /* nanopb */,
 				651BECD2E7C50DD84CD193E460B4CFFB /* PersonalizedAdConsent.framework */,
 				DB52E15AD4C3B8F1103D2FA7E7180EDB /* PersonalizedAdConsent-PersonalizedAdConsent */,
-				736218BABDA457A978C0B6B633DB269E /* Pods_hdwinged_mobile.framework */,
+				736218BABDA457A978C0B6B633DB269E /* Pods-hdwinged-mobile */,
 				3347A1AB6546F0A3977529B8F199DC41 /* PromisesObjC */,
 			);
 			name = Products;
@@ -1684,7 +1684,7 @@
 			);
 			name = "Pods-hdwinged-mobile";
 			productName = Pods_hdwinged_mobile;
-			productReference = 736218BABDA457A978C0B6B633DB269E /* Pods_hdwinged_mobile.framework */;
+			productReference = 736218BABDA457A978C0B6B633DB269E /* Pods-hdwinged-mobile */;
 			productType = "com.apple.product-type.framework";
 		};
 		2BBF7206D7FAC92C82A042A99C4A98F8 /* PromisesObjC */ = {

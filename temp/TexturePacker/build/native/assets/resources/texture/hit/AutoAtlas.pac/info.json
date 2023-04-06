@@ -4,71 +4,71 @@
   "mtimes": {
     "476ac4ec-a9ac-44e9-a639-c00605d6e117": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578082
+      "metaMtime": 1679975347808
     },
     "042c44c2-d61d-4d8f-8b35-e517e8458483": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578090
+      "metaMtime": 1679975347818
     },
     "39efe214-928f-4c73-8417-29a21c1929ee": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578090
+      "metaMtime": 1679975347818
     },
     "0ef720b7-69a9-40ed-9908-d2b9be018820": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578087
+      "metaMtime": 1679975347809
     },
     "36d6520f-d70a-4bbc-98a1-f6d003d53c96": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578087
+      "metaMtime": 1679975347809
     },
     "743b3942-b4f7-4462-adf7-9ceb0ddbb2a3": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578081
+      "metaMtime": 1679975347807
     },
     "7334aea2-d7f5-48d2-ba80-d652ac58be76": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578081
+      "metaMtime": 1679975347807
     },
     "7a13b600-866e-44e4-a943-e14ef5611f2e": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578089
+      "metaMtime": 1679975347819
     },
     "1df01431-2411-439a-96e9-e1df9a1a60be": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578089
+      "metaMtime": 1679975347819
     },
     "9711a6db-28c2-4cfb-a52e-b4e270140050": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578085
+      "metaMtime": 1679975347812
     },
     "4e9d0b44-aa02-4065-9717-40a156a6e8e6": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578085
+      "metaMtime": 1679975347812
     },
     "bd539cef-8974-4391-91d6-e31a500a8e3d": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578084
+      "metaMtime": 1679975347809
     },
     "ac2c8a58-9dae-4f10-9424-b94f33beb752": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578084
+      "metaMtime": 1679975347809
     },
     "ec46e01d-5102-4f2b-8389-b5845c6920e9": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578086
+      "metaMtime": 1679975347811
     },
     "fb3716c4-3408-4dc3-b618-7ded9343a716": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578086
+      "metaMtime": 1679975347811
     },
     "f117ce2a-5c0a-4651-9756-6974bc58398d": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578088
+      "metaMtime": 1679975347818
     },
     "11563e32-d42c-4974-800f-e2da4a527f73": {
       "assetMtime": 1679906942158,
-      "metaMtime": 1680514578088
+      "metaMtime": 1679975347818
     }
   },
   "result": {
@@ -104,7 +104,7 @@
             "name": "5",
             "uuid": "ec46e01d-5102-4f2b-8389-b5845c6920e9",
             "textureUuid": "fb3716c4-3408-4dc3-b618-7ded9343a716",
-            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1680514602798_image_6.png",
+            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1679975459539_image_6.png",
             "trim": {
               "x": 3,
               "y": 3,
@@ -128,7 +128,7 @@
             "name": "4",
             "uuid": "9711a6db-28c2-4cfb-a52e-b4e270140050",
             "textureUuid": "4e9d0b44-aa02-4065-9717-40a156a6e8e6",
-            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1680514602798_image_4.png",
+            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1679975459539_image_4.png",
             "trim": {
               "x": 3,
               "y": 83,
@@ -152,7 +152,7 @@
             "name": "6",
             "uuid": "042c44c2-d61d-4d8f-8b35-e517e8458483",
             "textureUuid": "39efe214-928f-4c73-8417-29a21c1929ee",
-            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1680514602797_image_0.png",
+            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1679975459539_image_0.png",
             "trim": {
               "x": 3,
               "y": 162,
@@ -176,7 +176,7 @@
             "name": "3",
             "uuid": "0ef720b7-69a9-40ed-9908-d2b9be018820",
             "textureUuid": "36d6520f-d70a-4bbc-98a1-f6d003d53c96",
-            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1680514602797_image_1.png",
+            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1679975459539_image_1.png",
             "trim": {
               "x": 3,
               "y": 238,
@@ -200,7 +200,7 @@
             "name": "7",
             "uuid": "f117ce2a-5c0a-4651-9756-6974bc58398d",
             "textureUuid": "11563e32-d42c-4974-800f-e2da4a527f73",
-            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1680514602798_image_7.png",
+            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1679975459539_image_7.png",
             "trim": {
               "x": 3,
               "y": 316,
@@ -224,7 +224,7 @@
             "name": "2",
             "uuid": "bd539cef-8974-4391-91d6-e31a500a8e3d",
             "textureUuid": "ac2c8a58-9dae-4f10-9424-b94f33beb752",
-            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1680514602798_image_5.png",
+            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1679975459539_image_5.png",
             "trim": {
               "x": 3,
               "y": 382,
@@ -247,7 +247,7 @@
             "name": "8",
             "uuid": "7a13b600-866e-44e4-a943-e14ef5611f2e",
             "textureUuid": "1df01431-2411-439a-96e9-e1df9a1a60be",
-            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1680514602798_image_3.png",
+            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1679975459539_image_3.png",
             "trim": {
               "x": 3,
               "y": 449,
@@ -271,7 +271,7 @@
             "name": "1",
             "uuid": "743b3942-b4f7-4462-adf7-9ceb0ddbb2a3",
             "textureUuid": "7334aea2-d7f5-48d2-ba80-d652ac58be76",
-            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1680514602797_image_2.png",
+            "path": "/Users/dubin/Documents/cocosProject/zomiesCombine/temp/trimImages/spritesheet_js_1679975459539_image_2.png",
             "trim": {
               "x": 74,
               "y": 382,
