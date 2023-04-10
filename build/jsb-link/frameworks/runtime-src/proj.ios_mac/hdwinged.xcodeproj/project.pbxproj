@@ -62,6 +62,7 @@
 		51C05D3E29DACC31004BE458 /* HWInterstitialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D3D29DACC31004BE458 /* HWInterstitialVC.m */; };
 		51C05D4429DEC658004BE458 /* HWBannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D4329DEC658004BE458 /* HWBannerVC.m */; };
 		51C05D4B29E00217004BE458 /* HWIAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D4A29E00217004BE458 /* HWIAPManager.m */; };
+		51C05D5629E3E1DB004BE458 /* HWRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C05D5529E3E1DB004BE458 /* HWRequestManager.m */; };
 		51C06F7229D57DF800616872 /* HWGameJSHandle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 51C06F7129D57DF800616872 /* HWGameJSHandle.mm */; };
 		A92275421517C094001B78AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275411517C094001B78AA /* QuartzCore.framework */; };
 		A92275441517C094001B78AA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275431517C094001B78AA /* OpenGLES.framework */; };
@@ -190,6 +191,8 @@
 		51C05D4329DEC658004BE458 /* HWBannerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWBannerVC.m; sourceTree = "<group>"; };
 		51C05D4929E00217004BE458 /* HWIAPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWIAPManager.h; sourceTree = "<group>"; };
 		51C05D4A29E00217004BE458 /* HWIAPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWIAPManager.m; sourceTree = "<group>"; };
+		51C05D5429E3E1DB004BE458 /* HWRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWRequestManager.h; sourceTree = "<group>"; };
+		51C05D5529E3E1DB004BE458 /* HWRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWRequestManager.m; sourceTree = "<group>"; };
 		51C06F7029D57DF800616872 /* HWGameJSHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWGameJSHandle.h; sourceTree = "<group>"; };
 		51C06F7129D57DF800616872 /* HWGameJSHandle.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HWGameJSHandle.mm; sourceTree = "<group>"; };
 		51C06F7429D595AD00616872 /* HWProdcut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWProdcut.h; sourceTree = "<group>"; };
@@ -402,6 +405,15 @@
 			path = HWIAP;
 			sourceTree = "<group>";
 		};
+		51C05D5329E3E1C4004BE458 /* HWRequest */ = {
+			isa = PBXGroup;
+			children = (
+				51C05D5429E3E1DB004BE458 /* HWRequestManager.h */,
+				51C05D5529E3E1DB004BE458 /* HWRequestManager.m */,
+			);
+			path = HWRequest;
+			sourceTree = "<group>";
+		};
 		51C06F6F29D57DC300616872 /* HWGameJSHandle */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +510,7 @@
 		D45446CC156DE73F00887EB5 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				51C05D5329E3E1C4004BE458 /* HWRequest */,
 				51C05D4829E001FB004BE458 /* HWIAP */,
 				51891BCA29DA7C3700B2AE76 /* HWAD */,
 				51DAEFA529D6DD800006CCD9 /* HWTools */,
@@ -706,6 +719,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-hdwinged-mobile/Pods-hdwinged-mobile-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework",
@@ -714,6 +728,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PersonalizedAdConsent.framework",
@@ -765,6 +780,7 @@
 				51C05D3E29DACC31004BE458 /* HWInterstitialVC.m in Sources */,
 				51C05D1F29DAA4D7004BE458 /* LCProgressHUD.m in Sources */,
 				51C05D1E29DAA4D7004BE458 /* LSMBProgressHUD.m in Sources */,
+				51C05D5629E3E1DB004BE458 /* HWRequestManager.m in Sources */,
 				51C05D3529DAC6B7004BE458 /* HWCommonTools.m in Sources */,
 				51C05D4429DEC658004BE458 /* HWBannerVC.m in Sources */,
 				509D4AC917EBB2AB00697056 /* RootViewController.mm in Sources */,
