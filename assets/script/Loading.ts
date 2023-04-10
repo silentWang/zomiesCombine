@@ -38,7 +38,7 @@ export default class Loading extends BaseUI {
     }
 
     async onLoad() {
-        cc.debug.setDisplayStats(false);
+        // cc.debug.setDisplayStats(false);
         cc.game.setFrameRate(60);
         super.onLoad();
         if(wx) {

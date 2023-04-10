@@ -9,6 +9,7 @@
 #import "cocos2d.h"
 #include "cocos/scripting/js-bindings/jswrapper/SeApi.h"
 #import "HWRewardVideoVC.h"
+#import "HWInterstitialVC.h"
 
 @implementation HWGameJSHandle
 
@@ -34,7 +35,7 @@
     NSDictionary *par = [HWTools convert2DictionaryWithJSONString:json];
     NSString *callBackJS  = par[@"method"];
     NSDictionary *params  = par[@"params"];
-    NSString *placementID = [NSString stringWithFormat:@"%@", params[@"placementID"]]?:@"";
+    NSString *placementID = [NSString stringWithFormat:@"%@", params[@"adUnitId"]]?:@"";
 
     HWRewardVideoVC *ATRewardVC = [[HWRewardVideoVC alloc]init];
     ATRewardVC.placementID = placementID;
@@ -52,9 +53,30 @@
 //topOn 插屏广告
 +(void)loadTopOnInterstitialAd:(NSString *)json{
     
+    NSDictionary *par = [HWTools convert2DictionaryWithJSONString:json];
+    NSString *callBackJS  = par[@"method"];
+    NSDictionary *params  = par[@"params"];
+    NSString *placementID = [NSString stringWithFormat:@"%@", params[@"adUnitId"]]?:@"";
+
+    HWInterstitialVC *ATRewardVC = [[HWInterstitialVC alloc]init];
+    ATRewardVC.placementID = placementID;
+    ATRewardVC.playSuccessBlock = ^(BOOL isPlaySuccess, NSString *errMessage) {
+         if (isPlaySuccess) {
+             [self callJsEngineCallBack:callBackJS Content:[HWTools convert2JSONWithDictionary:@{@"status":@(200),@"message":@"play success"}]];
+             
+         }else{
+             [self callJsEngineCallBack:callBackJS Content:[HWTools convert2JSONWithDictionary:@{@"status":@(-1),@"message":errMessage?:@"failure"}]];
+         }
+     };
+    [[HWCommonTools getDelegateWindowTopViewController] presentViewController:ATRewardVC animated:NO completion:nil];
+    
+    
+    
 }
 
-
++(void)loadBannerAd:(NSString *)json{
+    
+}
 
 
 +(void)callJsEngineCallBack:(NSString*) funcNameStr Content:(NSString*) contentStr

@@ -98,7 +98,7 @@ var Loading = /** @class */ (function (_super) {
             var descs, index;
             var _this = this;
             return __generator(this, function (_a) {
-                cc.debug.setDisplayStats(false);
+                // cc.debug.setDisplayStats(false);
                 cc.game.setFrameRate(60);
                 _super.prototype.onLoad.call(this);
                 if (wx) {
