@@ -143,7 +143,6 @@ var SignView = /** @class */ (function (_super) {
             this.GetGameObject("btn_3times").active = true;
         }
     };
-    SignView.prototype.dYdY_xxxx_fun = function () { console.log("NfG6eQEeaws8mNaF5dTXx6a3x6h8fr"); };
     SignView.prototype.getTodaySign = function () {
         var bSignTody = false;
         if (ChickData_1.default.user.signinfo.sign_time != 0) {

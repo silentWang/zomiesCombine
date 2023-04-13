@@ -64,12 +64,10 @@ var Shake = /** @class */ (function (_super) {
         var randy = this.fgRangeRand(-this._strength_y, this._strength_y);
         this.getTarget().setPosition(randx + this._initial_x, randy + this._initial_y);
     };
-    Shake.prototype.ZGBR_xxxx_fun = function () { console.log("yYZPhdr8zWF7wAxCR3feTBd2mzWsJ"); };
     Shake.prototype.fgRangeRand = function (min, max) {
         var rnd = Math.random();
         return rnd * (max - min) + min;
     };
-    Shake.prototype.iXbQ_xxxx_fun = function () { console.log("TihWycjPNHTACN34"); };
     Shake.prototype.stop = function () {
         this.getTarget().setPosition(new cc.Vec2(this._initial_x, this._initial_y));
         cc.ActionInterval.prototype['stop'].apply(this);

@@ -58,7 +58,6 @@ var DropChickView = /** @class */ (function (_super) {
         }
         return pots;
     };
-    DropChickView.prototype.MTZesda_xxxx_fun = function () { console.log("t87gdsFj7Bpwesx"); };
     DropChickView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;

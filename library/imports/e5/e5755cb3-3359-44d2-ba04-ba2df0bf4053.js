@@ -163,7 +163,6 @@ var UserModel = /** @class */ (function () {
             }
         }
     };
-    UserModel.prototype.dsdse_dsexcxc_fun = function () { console.log('dsfgajisdoe3924-5=34=4--'); };
     //合成
     UserModel.prototype.composeChicks = function (i0, i1) {
         var tmp1 = this.ComPlants.find(function (wj) {
@@ -262,7 +261,6 @@ var UserModel = /** @class */ (function () {
                     this[savepars[i]] = element;
             }
         }
-        this.dsdse_dsexcxc_fun();
     };
     __decorate([
         save

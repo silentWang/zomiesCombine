@@ -69,12 +69,10 @@ var LongTouchComponent = /** @class */ (function (_super) {
         this.node.off(cc.Node.EventType.TOUCH_CANCEL, this._onTouchCancel, this);
         this.unschedule(this._touchCounterCallback);
     };
-    LongTouchComponent.prototype.rCbi_xxxx_fun = function () { console.log("wD85EfrNKA"); };
     LongTouchComponent.prototype.clear = function () {
         this._isTouching = false;
         this.unschedule(this._touchCounterCallback);
     };
-    LongTouchComponent.prototype.Ktrs_xxxx_fun = function () { console.log("sSz82KaN"); };
     LongTouchComponent.prototype._onTouchStart = function (event) {
         var _this = this;
         // 这是为了不支持多点触控
@@ -106,7 +104,6 @@ var LongTouchComponent = /** @class */ (function (_super) {
         this._touchCounter = 0;
         this.unschedule(this._touchCounterCallback);
     };
-    LongTouchComponent.prototype.DkaH_xxxx_fun = function () { console.log("2k58F7Qw4KCk8Qxr7stcAsTFBfJHZ5Cz"); };
     LongTouchComponent.prototype._onTouchCancel = function (event) {
         this._isTouching = false;
         this._touchCounter = 0;

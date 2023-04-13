@@ -65,7 +65,6 @@ var ChickData_1 = require("./manager/ChickData");
 var PoolMgr_1 = require("./manager/PoolMgr");
 var WxCenter_1 = require("./manager/WxCenter");
 var AudioMgr_1 = require("./utils/AudioMgr");
-var Native_1 = require("./utils/Native");
 var Utils_1 = require("./utils/Utils");
 var wx = window["wx"] || window["tt"];
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -115,7 +114,6 @@ var Loading = /** @class */ (function (_super) {
                     if (index > descs.length - 1)
                         index = 0;
                 })).repeatForever());
-                Native_1.Native.getAppVersion();
                 this.GetGameObject("btn_rstart").active = false;
                 return [2 /*return*/];
             });

@@ -176,8 +176,6 @@ export default class UserModel {
         }
     }
 
-    private dsdse_dsexcxc_fun(){console.log('dsfgajisdoe3924-5=34=4--')}
-
     //合成
     public composeChicks(i0: number, i1: number) {
         let tmp1 = this.ComPlants.find((wj) => {
@@ -283,6 +281,5 @@ export default class UserModel {
                     this[savepars[i]] = element;
             }
         }
-        this.dsdse_dsexcxc_fun();
     }
 }

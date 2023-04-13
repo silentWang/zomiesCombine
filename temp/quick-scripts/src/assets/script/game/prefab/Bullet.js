@@ -103,7 +103,6 @@ var Bullet = /** @class */ (function (_super) {
             this.node.removeFromParent(true);
         }
     };
-    Bullet.prototype.pGDA_xxxx_fun = function () { console.log("Zkp"); };
     Bullet.prototype.getBulletType = function () {
         var info = Config_1.Config_chick[this.plantlv - 1];
         var skill = String(info[3]).split("|");
@@ -134,7 +133,7 @@ var Bullet = /** @class */ (function (_super) {
                 }
                 this.resetBullet();
                 idx = Config_1.Config_chick[plantlv - 1][8];
-                idx = (!idx || idx > 5) ? 1 : idx;
+                idx = (!idx || (~~idx) > 5) ? 1 : idx;
                 bullet = this.GetDragonAmature('bsp' + idx);
                 this.GetGameObject('bsp' + idx).active = true;
                 bullet.armatureName = 'Armature';
@@ -143,7 +142,6 @@ var Bullet = /** @class */ (function (_super) {
             });
         });
     };
-    Bullet.prototype.pESGDSEX_xxxx_fun = function () { console.log("Zkpetsdgvse"); };
     Bullet.prototype.resetBullet = function () {
         this.GetGameObject('bsp1').active = false;
         this.GetGameObject('bsp2').active = false;

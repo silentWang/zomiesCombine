@@ -861,7 +861,6 @@ export default class HallScene extends BaseUI {
             return false
         }
     }
-        private SEaw_xxxx_fun(){ console.log("CBdm4nadpBtrd6wp"); }
 
     private composeTip(){
         this.touchendtime = Utils.getServerTime();

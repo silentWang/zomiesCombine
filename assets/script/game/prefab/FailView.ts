@@ -26,7 +26,6 @@ export default class FailView extends BaseUI {
         this.aTobAnim(coin*1.8);
         this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     }
-        private FcMb_xxxx_fun(){ console.log("CcXaFhTmA53RKRMHjJpQNE2kd"); }
 
     private aTobAnim(num:number){
         let aver = Math.ceil(num/60);

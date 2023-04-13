@@ -7,6 +7,7 @@
 
 import BaseUI from "../../framwork/BaseUI";
 import AudioMgr from "../../utils/AudioMgr";
+import { Native } from "../../utils/Native";
 
 const {ccclass, property} = cc._decorator;
 
@@ -16,7 +17,7 @@ export default class MonthView extends BaseUI {
 
     // onLoad () {}
     
-
+    private _selectType = 0
     start () {
         this.SetText('txtPrice','12');
     }
@@ -26,6 +27,7 @@ export default class MonthView extends BaseUI {
         let imgsel = this.GetGameObject('imgSelected');
         let pos = imgsel.position;
         imgsel.position = cc.v3(isAD ? -147 : 147,pos.y,pos.z);
+        this._selectType = type;
     }
 
     // update (dt) {}
@@ -43,9 +45,15 @@ export default class MonthView extends BaseUI {
                 break;
             case "btnBuy":
                 // to do
-                cc.log('cccccccc')
+                let key = this._selectType == 0 ? 'hw_vip_001' : 'hw_vip_002';
+                Native.buyMonthCard(key,(res)=>{
+                    console.log(res)
+                });
                 break;
             case "btnRecover":
+                Native.buyMonthCard('3',(res)=>{
+                    console.log(res)
+                });
                 break;
             case "btnPrivacy":
                 break;

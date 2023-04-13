@@ -34,8 +34,6 @@ export default class DropChickView extends BaseUI {
         } 
         return pots;
     }
-
-    private MTZesda_xxxx_fun(){ console.log("t87gdsFj7Bpwesx"); }
     
     onUIClicked(event, customEventData) {
         var btnName = event.target.name;

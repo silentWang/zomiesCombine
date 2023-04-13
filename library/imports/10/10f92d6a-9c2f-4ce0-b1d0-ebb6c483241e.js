@@ -18,7 +18,6 @@ var ChickData = /** @class */ (function () {
         var strdata = JSON.stringify(data);
         cc.sys.localStorage.setItem(GameConst_1.default.cache_chick_data_key, strdata);
     };
-    ChickData.prototype.Dgdse_ew332_fun = function () { console.log("521ga56sd1g6sda51g5"); };
     ChickData.save = function (bRemote) {
         if (bRemote === void 0) { bRemote = false; }
         ChickData.resetOneDayData();
@@ -32,7 +31,6 @@ var ChickData = /** @class */ (function () {
         //     })
         // }
     };
-    ChickData.prototype.ANhp_xxxx_fun = function () { console.log("QfHBEHAifX8iAzz5d"); };
     ChickData.resetOneDayData = function () {
         var savedatatime = parseInt(cc.sys.localStorage.getItem("savedatatime"));
         if (savedatatime > 0) {
@@ -45,7 +43,6 @@ var ChickData = /** @class */ (function () {
             }
         }
     };
-    ChickData.prototype.KGXM_xxxx_fun = function () { console.log("D7G"); };
     ChickData.loadData = function () {
         var localdata = cc.sys.localStorage.getItem(GameConst_1.default.cache_chick_data_key);
         if (localdata) {

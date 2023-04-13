@@ -75,7 +75,6 @@ var CommonView = /** @class */ (function (_super) {
             this.SetText("lbl_time", "");
         }
     };
-    CommonView.prototype.MTZa_xxxx_fun = function () { console.log("t87Fj7Bpwx"); };
     CommonView.prototype.getEMTime = function () {
         var end_time = 0;
         var max = 0;

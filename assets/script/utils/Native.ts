@@ -51,5 +51,10 @@ export class Native {
         this.callAppMethod('hideBannerAd');
     }
     
-
+    /**月卡購買 */
+    static buyMonthCard(type:string,callback:Function){
+        this.callAppMethod('hwIAP',type,(res)=>{
+            callback && callback(res)
+        })
+    }
 }

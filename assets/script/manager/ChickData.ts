@@ -14,8 +14,6 @@ export default class ChickData {
         cc.sys.localStorage.setItem(GameConst.cache_chick_data_key, strdata);
     }
 
-    private Dgdse_ew332_fun(){ console.log("521ga56sd1g6sda51g5"); }
-
     public static save( bRemote: boolean = false) {
         ChickData.resetOneDayData();
         let obj = {}
@@ -28,7 +26,6 @@ export default class ChickData {
         //     })
         // }
     }
-    private ANhp_xxxx_fun(){ console.log("QfHBEHAifX8iAzz5d"); }
 
     public static resetOneDayData(){
         let savedatatime = parseInt(cc.sys.localStorage.getItem("savedatatime"));
@@ -42,7 +39,6 @@ export default class ChickData {
             }
         }
     }
-    private KGXM_xxxx_fun(){ console.log("D7G"); }
 
     public static loadData() {
         var localdata = cc.sys.localStorage.getItem(GameConst.cache_chick_data_key);

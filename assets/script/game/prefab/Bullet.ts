@@ -48,7 +48,6 @@ export default class Bullet extends BaseUI {
         }
 
     }
-    private pGDA_xxxx_fun(){ console.log("Zkp"); }
 
     private getBulletType(){
         let info = Config_chick[this.plantlv - 1];
@@ -80,7 +79,7 @@ export default class Bullet extends BaseUI {
 
         this.resetBullet();
         let idx = Config_chick[plantlv - 1][8];
-        idx = (!idx || idx > 5) ? 1 : idx;
+        idx = (!idx || (~~idx) > 5) ? 1 : idx;
         // let skpath = `spine:other/bullet${idx}_ske`;
         // let atlaspath = `spine:other/bullet${idx}_tex`;
         let bullet = this.GetDragonAmature('bsp'+idx);
@@ -100,8 +99,6 @@ export default class Bullet extends BaseUI {
         // this.GetGameObject("streak").getComponent(cc.MotionStreak).stroke = this.GetGameObject("sp").height;
         // this.GetGameObject("streak").getComponent(cc.MotionStreak).color = cc.Color.RED.fromHEX(String(DB_plant[plantlv-1][9]))
     }
-
-    private pESGDSEX_xxxx_fun(){ console.log("Zkpetsdgvse"); }
 
     private resetBullet(){
         this.GetGameObject('bsp1').active = false;

@@ -31,14 +31,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AudioMgr_1 = require("../../utils/AudioMgr");
+var Native_1 = require("../../utils/Native");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var MonthView = /** @class */ (function (_super) {
     __extends(MonthView, _super);
     function MonthView() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        // LIFE-CYCLE CALLBACKS:
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        // onLoad () {}
+        _this._selectType = 0;
+        return _this;
     }
-    // LIFE-CYCLE CALLBACKS:
-    // onLoad () {}
     MonthView.prototype.start = function () {
         this.SetText('txtPrice', '12');
     };
@@ -47,6 +50,7 @@ var MonthView = /** @class */ (function (_super) {
         var imgsel = this.GetGameObject('imgSelected');
         var pos = imgsel.position;
         imgsel.position = cc.v3(isAD ? -147 : 147, pos.y, pos.z);
+        this._selectType = type;
     };
     // update (dt) {}
     MonthView.prototype.onUIClicked = function (event, customEventData) {
@@ -62,9 +66,15 @@ var MonthView = /** @class */ (function (_super) {
                 break;
             case "btnBuy":
                 // to do
-                cc.log('cccccccc');
+                var key = this._selectType == 0 ? 'hw_vip_001' : 'hw_vip_002';
+                Native_1.Native.buyMonthCard(key, function (res) {
+                    console.log(res);
+                });
                 break;
             case "btnRecover":
+                Native_1.Native.buyMonthCard('3', function (res) {
+                    console.log(res);
+                });
                 break;
             case "btnPrivacy":
                 break;

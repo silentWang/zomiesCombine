@@ -168,7 +168,6 @@ var Utils = /** @class */ (function () {
             }
         }
     };
-    Utils.prototype.cGESDEXDAY_xxxx_fun = function () { console.log("dssdgewsdgfaIOJOGAkomgDGFMSO"); };
     Utils.loadBundler = function (name) {
         return new Promise(function (resolve, reject) {
             cc.assetManager.loadBundle(name, function (err, ret) {
@@ -177,7 +176,6 @@ var Utils = /** @class */ (function () {
             });
         });
     };
-    Utils.prototype.tSWD_xxxx_fun = function () { console.log("36dY"); };
     Utils.formatCoin = function (num) {
         num = Math.floor(num);
         return NumberUtils_1.default.getLargeString(num);

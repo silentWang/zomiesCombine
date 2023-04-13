@@ -62,6 +62,12 @@ var Native = /** @class */ (function () {
     Native.hideBannerAd = function () {
         this.callAppMethod('hideBannerAd');
     };
+    /**月卡購買 */
+    Native.buyMonthCard = function (type, callback) {
+        this.callAppMethod('hwIAP', type, function (res) {
+            callback && callback(res);
+        });
+    };
     return Native;
 }());
 exports.Native = Native;

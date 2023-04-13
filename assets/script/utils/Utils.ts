@@ -165,8 +165,6 @@ export default class Utils {
             }
         }
     }
-
-    private cGESDEXDAY_xxxx_fun(){ console.log("dssdgewsdgfaIOJOGAkomgDGFMSO"); }
     
     public static loadBundler(name:string)
     {
@@ -177,7 +175,6 @@ export default class Utils {
             })
         })
     }
-        private tSWD_xxxx_fun(){ console.log("36dY"); }
 
     public static formatCoin(num: number) {
         num = Math.floor(num);

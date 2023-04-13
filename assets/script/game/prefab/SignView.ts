@@ -135,7 +135,6 @@ export default class SignView extends BaseUI {
             this.GetGameObject("btn_3times").active = true;
         }
     }
-        private dYdY_xxxx_fun(){ console.log("NfG6eQEeaws8mNaF5dTXx6a3x6h8fr"); }
 
     private getTodaySign() {
         let bSignTody = false;

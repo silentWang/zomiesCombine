@@ -55,9 +55,6 @@ export default class Loading extends BaseUI {
             if (index > descs.length - 1)
                 index = 0;
         })).repeatForever())
-        
-        Native.getAppVersion();
-
         this.GetGameObject("btn_rstart").active = false;
     }
 

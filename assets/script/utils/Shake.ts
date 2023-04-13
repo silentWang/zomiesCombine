@@ -44,14 +44,12 @@ export  class Shake extends cc.ActionInterval
         let randy = this.fgRangeRand(-this._strength_y,this._strength_y);
         this.getTarget().setPosition(randx + this._initial_x,randy + this._initial_y);
     }
-        private ZGBR_xxxx_fun(){ console.log("yYZPhdr8zWF7wAxCR3feTBd2mzWsJ"); }
     
     public fgRangeRand(min:number,max:number):number
     {
         let rnd:number = Math.random();
         return rnd * (max - min) + min;
     }
-        private iXbQ_xxxx_fun(){ console.log("TihWycjPNHTACN34"); }
  
     public stop():void
     {

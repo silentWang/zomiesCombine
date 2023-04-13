@@ -50,7 +50,6 @@ var FailView = /** @class */ (function (_super) {
         this.aTobAnim(coin * 1.8);
         this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
     };
-    FailView.prototype.FcMb_xxxx_fun = function () { console.log("CcXaFhTmA53RKRMHjJpQNE2kd"); };
     FailView.prototype.aTobAnim = function (num) {
         var _this = this;
         var aver = Math.ceil(num / 60);

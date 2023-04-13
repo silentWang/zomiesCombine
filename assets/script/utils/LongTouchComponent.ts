@@ -59,13 +59,11 @@ export default class LongTouchComponent extends cc.Component {
         this.node.off(cc.Node.EventType.TOUCH_CANCEL, this._onTouchCancel, this);
         this.unschedule(this._touchCounterCallback);
     }
-    private rCbi_xxxx_fun(){ console.log("wD85EfrNKA"); }
 
     public clear() {
         this._isTouching = false;
         this.unschedule(this._touchCounterCallback);
     }
-    private Ktrs_xxxx_fun(){ console.log("sSz82KaN"); }
 
     private _onTouchStart(event: cc.Event.EventTouch) {
         // 这是为了不支持多点触控
@@ -100,7 +98,6 @@ export default class LongTouchComponent extends cc.Component {
         this._touchCounter = 0;
         this.unschedule(this._touchCounterCallback);
     }
-    private DkaH_xxxx_fun(){ console.log("2k58F7Qw4KCk8Qxr7stcAsTFBfJHZ5Cz"); }
 
     private _onTouchCancel(event: cc.Event.EventTouch) {
         this._isTouching = false;

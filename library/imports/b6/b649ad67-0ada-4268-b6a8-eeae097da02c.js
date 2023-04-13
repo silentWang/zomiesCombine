@@ -873,7 +873,6 @@ var HallScene = /** @class */ (function (_super) {
             return false;
         }
     };
-    HallScene.prototype.SEaw_xxxx_fun = function () { console.log("CBdm4nadpBtrd6wp"); };
     HallScene.prototype.composeTip = function () {
         this.touchendtime = Utils_1.default.getServerTime();
         if (this.bPauseAutoCom || this.bInAutoCom)
