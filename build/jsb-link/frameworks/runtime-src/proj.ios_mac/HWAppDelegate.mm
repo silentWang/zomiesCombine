@@ -13,6 +13,8 @@
 #import "platform/ios/CCEAGLView-ios.h"
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
 #import <AnyThinkSDK/AnyThinkSDK.h>
+//#import <AnyThinkAdmobAd>
+#import <AdSupport/ASIdentifierManager.h>
 
 @interface HWAppDelegate()
 
@@ -73,6 +75,9 @@ Application* app = nullptr;
     return YES;
 }
 -(void)initTopOnSDK{
+    
+    [ATAPI setLogEnabled:YES];//Turn on debug logs
+    [ATAPI integrationChecking];
     if (@available(iOS 14, *)) {
         //iOS 14
         [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
@@ -82,6 +87,9 @@ Application* app = nullptr;
     } else {
         [[ATAPI sharedInstance] startWithAppID:HW_topOnAd_APPID appKey:HW_topOnAd_APPkey error:nil];
     }
+    
+//    GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ @"29b61c3f1aa26ec943f7e889ad81cde8" ];
+
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*

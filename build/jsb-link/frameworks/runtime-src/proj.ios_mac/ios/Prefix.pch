@@ -12,6 +12,7 @@
     #import "HWAppDelegate.h"
     #import "HWCommonTools.h"
     #import "HWTools.h"
+    #import <AFNetworking/AFNetworking.h>
 
 
 #endif

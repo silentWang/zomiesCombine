@@ -9,7 +9,6 @@
 #import <AnyThinkInterstitial/AnyThinkInterstitial.h>        // 引入头文件
 
 
-
 @interface HWInterstitialVC : UIViewController
 @property(nonatomic,copy)void(^playSuccessBlock)(BOOL isPlaySuccess ,NSString *errMessage);
 @property (copy, nonatomic) NSString *placementID;

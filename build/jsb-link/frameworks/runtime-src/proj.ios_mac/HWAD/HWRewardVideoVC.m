@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    [self loadATRewardAD];
+    [self testATReward];
 
     // Do any additional setup after loading the view.
 }
@@ -137,23 +137,25 @@
 }
 
 -(void)testATReward{
-    [ATAPI setHeaderBiddingTestModeWithDeviceID:@"543B84D4-3F0B-45BB-BD4B-76B152FDDD7F"];
+    [ATAPI setHeaderBiddingTestModeWithDeviceID:@"30E0D3FC-87BF-4012-8D95-6234855E5D1F"];
     [ATAPI setDebuggerConfig:^(ATDebuggerConfig * _Nullable debuggerConfig) {
 //        debuggerConfig.deviceIdfaStr = XMInfo.IDFA();
         //
-        debuggerConfig.netWorkType = ATAdNetWorkMetaType;
+        debuggerConfig.deviceIdfaStr = @"30E0D3FC-87BF-4012-8D95-6234855E5D1F";
+
+        debuggerConfig.netWorkType = ATAdNetWorkAdmobType;
         
         
         
         // Meta
         //               debuggerConfig.meta_nativeAdType = ATMetaNativeAdNativeBannerSelfRenderType;
-                          debuggerConfig.meta_rewardVideoAdType = ATMetaRewardVideoAdDefaultType;
+//                          debuggerConfig.meta_rewardVideoAdType = ATMetaRewardVideoAdDefaultType;
         
         
         
         //               // admob
         //               debuggerConfig.adMob_nativeAdType = ATAdMobNativeAdPictureType;
-//        debuggerConfig.adMob_rewardVideoAdType = ATAdMobRewardVideoAdDefaultType;
+                         debuggerConfig.adMob_rewardVideoAdType = ATAdMobRewardVideoAdDefaultType;
         
         //        pangle
 //                debuggerConfig.pangle_rewardVideoAdType = ATPangleRewardVideoAdDefaultType;

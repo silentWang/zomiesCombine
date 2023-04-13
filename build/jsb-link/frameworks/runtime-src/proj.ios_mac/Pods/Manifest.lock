@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
   - AnyThinkiOS (6.1.71):
     - AnyThinkiOS/AnyThinkSDK (= 6.1.71)
   - AnyThinkiOS/AnyThinkAdmobAdapter (6.1.71):
@@ -65,6 +80,7 @@ PODS:
   - UnityAds (4.4.1)
 
 DEPENDENCIES:
+  - AFNetworking
   - AnyThinkiOS (= 6.1.71)
   - AnyThinkiOS/AnyThinkAdmobAdapter
   - AnyThinkiOS/AnyThinkFacebookAdapter
@@ -73,6 +89,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
     - AnyThinkiOS
     - FBAudienceNetwork
     - Google-Mobile-Ads-SDK
@@ -86,6 +103,7 @@ SPEC REPOS:
     - UnityAds
 
 SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   AnyThinkiOS: 4a26893daa603e34384015a280b51cb0a524fef6
   FBAudienceNetwork: e0fcc9091fced34910ed0b6da06f129db46ac9e6
   Google-Mobile-Ads-SDK: 894be2e3e3e8281004bda14381f9af7ad73eeffd
@@ -98,6 +116,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   UnityAds: 1af6c4fdd7030c2593c58f520504e167561175ab
 
-PODFILE CHECKSUM: 667daf5288da32d8e135889d77b8df9ffc626eb4
+PODFILE CHECKSUM: 669d6e20b1dd7e3c1f990a19a2889e83a94a7f7a
 
 COCOAPODS: 1.11.3
