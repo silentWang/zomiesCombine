@@ -26,7 +26,12 @@ export class Native {
     /**视频广告 */
     static playVideoAd(callback:Function,adUnitId:string){
         this.callAppMethod('loadTopOnRewardAd',{adUnitId},(res)=>{
-            callback && callback();
+            if(res && res.status == 200){
+                callback && callback(1);
+            }
+            else{
+                callback && callback();
+            }
         });
     }
     /**插屏广告 */
