@@ -37,7 +37,12 @@ var Native = /** @class */ (function () {
     /**视频广告 */
     Native.playVideoAd = function (callback, adUnitId) {
         this.callAppMethod('loadTopOnRewardAd', { adUnitId: adUnitId }, function (res) {
-            callback && callback();
+            if (res && res.status == 200) {
+                callback && callback(1);
+            }
+            else {
+                callback && callback();
+            }
         });
     };
     /**插屏广告 */
