@@ -877,8 +877,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "0.00",
-    "_N$string": "0.00",
+    "_string": "1.00",
+    "_N$string": "1.00",
     "_fontSize": 50,
     "_lineHeight": 50,
     "_enableWrapText": true,
@@ -1368,7 +1368,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 55.62,
+      "width": 27.81,
       "height": 63
     },
     "_anchorPoint": {
@@ -1380,8 +1380,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        11.513,
-        -105,
+        14.092,
+        -106.29,
         0,
         0,
         0,
@@ -1420,8 +1420,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "12",
-    "_N$string": "12",
+    "_string": "5",
+    "_N$string": "5",
     "_fontSize": 50,
     "_lineHeight": 50,
     "_enableWrapText": true,

@@ -43,7 +43,7 @@ var MonthView = /** @class */ (function (_super) {
         return _this;
     }
     MonthView.prototype.start = function () {
-        this.SetText('txtPrice', '12');
+        this.SetText('txtPrice', '5');
     };
     MonthView.prototype.setSelect = function (type) {
         var isAD = type == 0;

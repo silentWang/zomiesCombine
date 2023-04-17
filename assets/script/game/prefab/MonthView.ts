@@ -19,7 +19,7 @@ export default class MonthView extends BaseUI {
     
     private _selectType = 0
     start () {
-        this.SetText('txtPrice','12');
+        this.SetText('txtPrice','5');
     }
 
     private setSelect(type:number){
