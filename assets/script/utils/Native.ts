@@ -70,13 +70,14 @@ export default class Native {
     }
     /**get buy info */
     static getMyMonthInfo(callback:Function = null){
-        this.callAppMethod('','',(res)=>{
-            callback && callback(res)
-            if(res.type == VIP_TYPE.RECOVER_VIP || res.type == VIP_TYPE.VIP_FOREVER || res.type == VIP_TYPE.VIP_MONTH){
-                ChickData.isFreeAd = true;
-            }
-            GameEvent.Instance().dispatch(GameConst.FREE_AD_EVENT)
-        })
+        return;
+        // this.callAppMethod('getVipInfo','',(res)=>{
+        //     callback && callback(res)
+        //     if(res.type == VIP_TYPE.RECOVER_VIP || res.type == VIP_TYPE.VIP_FOREVER || res.type == VIP_TYPE.VIP_MONTH){
+        //         ChickData.isFreeAd = true;
+        //     }
+        //     GameEvent.Instance().dispatch(GameConst.FREE_AD_EVENT)
+        // })
     }
     /**open webview */
     static openWebView(url:string){
