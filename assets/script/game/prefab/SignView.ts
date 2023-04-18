@@ -73,6 +73,8 @@ export default class SignView extends BaseUI {
     start() {
         this.updateUI();
         AdCenter.Instance().showGridAd();
+        this.addFreeAdEvent()
+        this.handleFreeAd();
     }
 
     onDestroy()
@@ -168,6 +170,16 @@ export default class SignView extends BaseUI {
                 }
             })
         }
+    }
+
+    protected handleFreeAd(){
+        let isfree = ChickData.isFreeAd;
+        this.GetGameObject('icon_video1').active = !isfree
+        let pos1 = this.GetGameObject('ad_label1').getPosition()
+        this.GetGameObject('ad_label1').setPosition(new cc.Vec2(0,pos1.y))
+        this.GetGameObject('icon_video2').active = !isfree
+        let pos2 = this.GetGameObject('ad_label2').getPosition()
+        this.GetGameObject('ad_label2').setPosition(new cc.Vec2(0,pos2.y))
     }
 
     onUIClicked(event, customEventData) {

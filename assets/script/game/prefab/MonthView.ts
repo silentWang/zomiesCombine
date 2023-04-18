@@ -7,7 +7,7 @@
 
 import BaseUI from "../../framwork/BaseUI";
 import AudioMgr from "../../utils/AudioMgr";
-import { Native } from "../../utils/Native";
+import Native, { VIP_TYPE } from "../../utils/Native";
 
 const {ccclass, property} = cc._decorator;
 
@@ -19,7 +19,6 @@ export default class MonthView extends BaseUI {
     
     private _selectType = 0
     start () {
-        this.SetText('txtPrice','5');
     }
 
     private setSelect(type:number){
@@ -45,19 +44,17 @@ export default class MonthView extends BaseUI {
                 break;
             case "btnBuy":
                 // to do
-                let key = this._selectType == 0 ? 'hw_vip_001' : 'hw_vip_002';
-                Native.buyMonthCard(key,(res)=>{
-                    console.log(res)
-                });
+                let key = this._selectType == 0 ? VIP_TYPE.VIP_FOREVER : VIP_TYPE.VIP_MONTH;
+                Native.buyMonthCard(key);
                 break;
             case "btnRecover":
-                Native.buyMonthCard('3',(res)=>{
-                    console.log(res)
-                });
+                Native.buyMonthCard(VIP_TYPE.RECOVER_VIP);
                 break;
             case "btnPrivacy":
+                Native.openWebView('https://www.huadcx.com/privacy.html')
                 break;
             case "btnXieyi":
+                Native.openWebView('https://www.huadcx.com/privacy.html')
                 break;
         }
     }

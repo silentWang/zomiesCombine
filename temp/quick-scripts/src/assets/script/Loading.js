@@ -65,6 +65,7 @@ var ChickData_1 = require("./manager/ChickData");
 var PoolMgr_1 = require("./manager/PoolMgr");
 var WxCenter_1 = require("./manager/WxCenter");
 var AudioMgr_1 = require("./utils/AudioMgr");
+var Native_1 = require("./utils/Native");
 var Utils_1 = require("./utils/Utils");
 var wx = window["wx"] || window["tt"];
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -91,6 +92,7 @@ var Loading = /** @class */ (function (_super) {
         WxCenter_1.default.init();
         WxCenter_1.default.aldReport('LoadingShow', 'show');
         AdCenter_1.default.Instance().showInterstitialAd();
+        Native_1.default.getMyMonthInfo();
     };
     Loading.prototype.onLoad = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -125,33 +127,37 @@ var Loading = /** @class */ (function (_super) {
             var p;
             var _this = this;
             return __generator(this, function (_a) {
-                ChickData_1.default.loadData();
-                p = 0;
-                this.node.runAction(cc.sequence(cc.delayTime(0.01), cc.callFunc(function () { return __awaiter(_this, void 0, void 0, function () {
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0:
-                                p += 0.018;
-                                this.SetProgressBar("ProgressBar", p);
-                                if (!(p >= 1)) return [3 /*break*/, 2];
-                                this.node.stopAllActions();
-                                return [4 /*yield*/, Utils_1.default.loadBundler("spine")];
-                            case 1:
-                                _a.sent();
-                                Utils_1.default.loadBundler("sounds").then(function () {
-                                    AudioMgr_1.default.Instance().loadSounds();
-                                });
-                                cc.director.loadScene("hall");
-                                p = 1;
-                                _a.label = 2;
-                            case 2:
-                                this.GetGameObject('plane').x = p * 600 - 320;
-                                this.SetText('lbl_progress', (~~(p * 100)) + '%');
-                                return [2 /*return*/];
-                        }
-                    });
-                }); })).repeatForever());
-                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, ChickData_1.default.loadData()];
+                    case 1:
+                        _a.sent();
+                        p = 0;
+                        this.node.runAction(cc.sequence(cc.delayTime(0.01), cc.callFunc(function () { return __awaiter(_this, void 0, void 0, function () {
+                            return __generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0:
+                                        p += 0.018;
+                                        this.SetProgressBar("ProgressBar", p);
+                                        if (!(p >= 1)) return [3 /*break*/, 2];
+                                        this.node.stopAllActions();
+                                        return [4 /*yield*/, Utils_1.default.loadBundler("spine")];
+                                    case 1:
+                                        _a.sent();
+                                        Utils_1.default.loadBundler("sounds").then(function () {
+                                            AudioMgr_1.default.Instance().loadSounds();
+                                        });
+                                        cc.director.loadScene("hall");
+                                        p = 1;
+                                        _a.label = 2;
+                                    case 2:
+                                        this.GetGameObject('plane').x = p * 600 - 320;
+                                        this.SetText('lbl_progress', (~~(p * 100)) + '%');
+                                        return [2 /*return*/];
+                                }
+                            });
+                        }); })).repeatForever());
+                        return [2 /*return*/];
+                }
             });
         }); })));
     };

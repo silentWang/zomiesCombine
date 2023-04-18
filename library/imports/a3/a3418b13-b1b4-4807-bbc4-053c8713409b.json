@@ -1101,7 +1101,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "2watch",
+    "_name": "icon_video",
     "_objFlags": 0,
     "_parent": {
       "__id__": 27
@@ -1138,8 +1138,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -116.428,
-        6.875,
+        -100.802,
+        2.969,
         0,
         0,
         0,
@@ -1208,7 +1208,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "ad_label",
     "_objFlags": 0,
     "_parent": {
       "__id__": 27
@@ -1236,8 +1236,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 196,
-      "height": 64.47999999999999
+      "width": 164,
+      "height": 54.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1290,8 +1290,8 @@
     "_dstBlendFactor": 771,
     "_string": "立即领取",
     "_N$string": "立即领取",
-    "_fontSize": 48,
-    "_lineHeight": 48,
+    "_fontSize": 40,
+    "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,

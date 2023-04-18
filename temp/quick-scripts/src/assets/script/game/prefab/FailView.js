@@ -44,6 +44,8 @@ var FailView = /** @class */ (function (_super) {
         AudioMgr_1.default.Instance().playMX("fail");
         Utils_1.default.playBreath(this.GetGameObject('btn_get'));
         WxCenter_1.default.aldReport('FailShow', 'show');
+        this.addFreeAdEvent();
+        this.handleFreeAd();
     };
     FailView.prototype.setInfo = function (coin) {
         this.coin = coin;
@@ -77,6 +79,13 @@ var FailView = /** @class */ (function (_super) {
                 ChickData_1.default.user.coin += coin;
         });
     };
+    FailView.prototype.handleFreeAd = function () {
+        var isfree = ChickData_1.default.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree;
+        this.GetGameObject('btn_buyfree').active = !isfree;
+        var pos = this.GetGameObject('ad_label').getPosition();
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0, pos.y));
+    };
     FailView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
@@ -98,7 +107,7 @@ var FailView = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_buyfree":
-                // to do
+                Utils_1.default.createUI("prefab/MonthCardUI");
                 break;
         }
     };

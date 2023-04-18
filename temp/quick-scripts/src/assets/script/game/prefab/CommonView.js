@@ -56,6 +56,8 @@ var CommonView = /** @class */ (function (_super) {
     CommonView.prototype.start = function () {
         AdCenter_1.default.Instance().showGridAd();
         Utils_1.default.playBreath(this.GetGameObject('btn_ad'));
+        this.addFreeAdEvent();
+        this.handleFreeAd();
     };
     CommonView.prototype.onDestroy = function () {
         AdCenter_1.default.Instance().hideGridAd();
@@ -179,6 +181,13 @@ var CommonView = /** @class */ (function (_super) {
             MsgToast_1.default.show('使用成功');
         }
     };
+    CommonView.prototype.handleFreeAd = function () {
+        var isfree = ChickData_1.default.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree;
+        this.GetGameObject('btn_buyfree').active = !isfree;
+        var pos = this.GetGameObject('ad_label').getPosition();
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0, pos.y));
+    };
     CommonView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
@@ -199,7 +208,7 @@ var CommonView = /** @class */ (function (_super) {
                 this.GetGameObject('btn_normal').active = false;
                 break;
             case "btn_buyfree":
-                // to do
+                Utils_1.default.createUI("prefab/MonthCardUI");
                 break;
         }
     };

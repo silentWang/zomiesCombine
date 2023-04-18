@@ -5,6 +5,7 @@ export default class GameConst {
     public static BUY_CHICK = "BUY_CHICK"
     public static NEW_CHICK = "NEW_CHICK"
     public static OPEN_GROUND = "OPEN_GROUND"
+    public static FREE_AD_EVENT = "FREE_AD_EVENT"
 }
 
 export const share_titles = []

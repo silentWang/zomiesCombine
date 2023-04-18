@@ -93,6 +93,8 @@ var SignView = /** @class */ (function (_super) {
     SignView.prototype.start = function () {
         this.updateUI();
         AdCenter_1.default.Instance().showGridAd();
+        this.addFreeAdEvent();
+        this.handleFreeAd();
     };
     SignView.prototype.onDestroy = function () {
         AdCenter_1.default.Instance().hideGridAd();
@@ -173,6 +175,15 @@ var SignView = /** @class */ (function (_super) {
                 }
             });
         }
+    };
+    SignView.prototype.handleFreeAd = function () {
+        var isfree = ChickData_1.default.isFreeAd;
+        this.GetGameObject('icon_video1').active = !isfree;
+        var pos1 = this.GetGameObject('ad_label1').getPosition();
+        this.GetGameObject('ad_label1').setPosition(new cc.Vec2(0, pos1.y));
+        this.GetGameObject('icon_video2').active = !isfree;
+        var pos2 = this.GetGameObject('ad_label2').getPosition();
+        this.GetGameObject('ad_label2').setPosition(new cc.Vec2(0, pos2.y));
     };
     SignView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;

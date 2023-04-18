@@ -42,6 +42,8 @@ var DropChickView = /** @class */ (function (_super) {
         AdCenter_1.default.Instance().showGridAd();
         Utils_1.default.playBreath(this.GetGameObject('btn_ad'));
         WxCenter_1.default.aldReport('AirdropShow', 'show');
+        this.addFreeAdEvent();
+        this.handleFreeAd();
     };
     DropChickView.prototype.onDestroy = function () {
         AdCenter_1.default.Instance().hideGridAd();
@@ -57,6 +59,13 @@ var DropChickView = /** @class */ (function (_super) {
             pots.push(n);
         }
         return pots;
+    };
+    DropChickView.prototype.handleFreeAd = function () {
+        var isfree = ChickData_1.default.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree;
+        this.GetGameObject('btn_buyfree').active = !isfree;
+        var pos = this.GetGameObject('ad_label').getPosition();
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0, pos.y));
     };
     DropChickView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
@@ -83,7 +92,7 @@ var DropChickView = /** @class */ (function (_super) {
                 });
                 break;
             case "btn_buyfree":
-                // to do
+                Utils_1.default.createUI("prefab/MonthCardUI");
                 break;
         }
     };

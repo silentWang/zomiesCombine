@@ -1,4 +1,5 @@
 import GameEvent from "../event/GameEvent";
+import GameConst from "../game/GameConst";
 import Utils from '../utils/Utils';
 
 const { ccclass, property } = cc._decorator;
@@ -19,14 +20,13 @@ export default class BaseUI extends cc.Component {
 
     onLoad() {
         this.events = [];
-        // if (this.addClickEvent)
-
         if (this.node.getComponent(cc.Button)) {
             Utils.addClickEvent(this.node, this.node, cc.js.getClassName(this), "onUIClicked", this.node.getComponent(cc.Button).target);
         }
 
         this._addClickEvent(this.node);
         this._create_time = Utils.getServerTime();
+        this.node.zIndex = 2000
     }
 
     fixRedCoinForShow(coin: number, fixed: number = 4, ratio: number = 100) {
@@ -246,6 +246,15 @@ export default class BaseUI extends cc.Component {
 
         return node;
     }
+
+    protected addFreeAdEvent(){
+        this.rigester(GameConst.FREE_AD_EVENT,this.handleFreeAd)
+    }
+
+    protected handleFreeAd(){
+
+    }
+
     rigester(type: string, callFunc: Function) {
         this.events.push(type);
         GameEvent.Instance().register(this, type, callFunc);

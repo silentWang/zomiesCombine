@@ -4,7 +4,7 @@ import ChickData from "./manager/ChickData";
 import PoolMgr from "./manager/PoolMgr";
 import WxCenter from "./manager/WxCenter";
 import AudioMgr from "./utils/AudioMgr";
-import { Native } from "./utils/Native";
+import Native from "./utils/Native";
 import Utils from "./utils/Utils";
 
 const wx = window["wx"] || window["tt"];
@@ -35,6 +35,7 @@ export default class Loading extends BaseUI {
         WxCenter.init();
         WxCenter.aldReport('LoadingShow','show');
         AdCenter.Instance().showInterstitialAd();
+        Native.getMyMonthInfo();
     }
 
     async onLoad() {
@@ -60,7 +61,7 @@ export default class Loading extends BaseUI {
 
     startLGAction() {
         this.node.runAction(cc.sequence(cc.delayTime(.5), cc.callFunc(async () => {
-            ChickData.loadData()
+            await ChickData.loadData()
             var p: number = 0;
             this.node.runAction(cc.sequence(cc.delayTime(0.01), cc.callFunc(async () => {
                 p += 0.018;

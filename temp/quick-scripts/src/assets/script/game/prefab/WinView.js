@@ -44,6 +44,8 @@ var WinView = /** @class */ (function (_super) {
         this.GetSkeleton("fx_victory").setAnimation(1, "idle", true);
         Utils_1.default.playBreath(this.GetGameObject('btn_get'));
         WxCenter_1.default.aldReport('PassShow', 'show');
+        this.addFreeAdEvent();
+        this.handleFreeAd();
     };
     WinView.prototype.setInfo = function (coin) {
         this.coin = coin;
@@ -79,6 +81,13 @@ var WinView = /** @class */ (function (_super) {
             }
         });
     };
+    WinView.prototype.handleFreeAd = function () {
+        var isfree = ChickData_1.default.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree;
+        this.GetGameObject('btn_buyfree').active = !isfree;
+        var pos = this.GetGameObject('ad_label').getPosition();
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0, pos.y));
+    };
     WinView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
         var btnName = event.target.name;
@@ -100,7 +109,7 @@ var WinView = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_buyfree":
-                // to do
+                Utils_1.default.createUI("prefab/MonthCardUI");
                 break;
         }
     };

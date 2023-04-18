@@ -1590,7 +1590,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "ty_shipin",
+    "_name": "icon_video",
     "_objFlags": 0,
     "_parent": {
       "__id__": 41
@@ -1697,7 +1697,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "ad_label",
     "_objFlags": 0,
     "_parent": {
       "__id__": 41

@@ -26,7 +26,6 @@ export type PlantInfo =
 const { ccclass, property } = cc._decorator;
 @ccclass
 export default class UserModel {
-
     @save public last_date:number = 0;
     @save public signinfo: SignInfo = { sign_index: 0, sign_time: 0, sign_beisu: 0 };
     @save public nickName: string = "";
@@ -34,25 +33,21 @@ export default class UserModel {
     @save public openid: string = "";
     @save public nickname: string = "";
     @save public headimg: string = "";
-
     @save public auto_com_time:number = 0;
     @save public double_att_time:number = 0;
     @save public double_income_time:number = 0;
     @save public drop_plant_time:number = 0;
-
     @save public today_getchick_times = 0;
     @save public today_getchick_total = 5;
-    
     @save public today_getcoin_times = 0;
     @save public today_getcoin_total = 5;
-
     @save public share_times:number = 10;
-
     @save public slots = [1,1,1,0,0,0,0,0,0,0,0,0];
     @save public lv = 1;
     @save public wave = 1;
+    @save public dayDateTime = 0;
 
-    T() {
+    private getADLv() {
 	// "20": [20, "U", "U", "G", "G", "M", "AD", "M", "M", "M"],
         let lv = this.getLvlMax();
         var t = Config_shopsort[lv+""]
@@ -67,7 +62,7 @@ export default class UserModel {
     {
         var n = null;
         var o = [ 50, 30, 20, 15, 10, 5, 3, 2 ]
-        var a = Math.max(1, this.T());
+        var a = Math.max(1, this.getADLv());
         var r = this.getLvlMax()
 
         for (var s = Math.max(1, a - 10); s <= a; ++s) {
@@ -266,9 +261,7 @@ export default class UserModel {
     }
     public setData(data: any) {
         //初始化下数据       
-        if (!data) {
-            return;
-        }
+        if (!data) return;
         for (var i = 0; i < savepars.length; ++i) {
             const element = data[savepars[i]];
             if (element != null || element != undefined) {
@@ -277,8 +270,9 @@ export default class UserModel {
                         this[savepars[i]][key] = element[key];
                     }
                 }
-                else
+                else{
                     this[savepars[i]] = element;
+                }
             }
         }
     }

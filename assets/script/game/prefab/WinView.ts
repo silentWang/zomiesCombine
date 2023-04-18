@@ -17,6 +17,8 @@ export default class WinView extends BaseUI {
         this.GetSkeleton("fx_victory").setAnimation(1,"idle",true);
         Utils.playBreath(this.GetGameObject('btn_get'))
         WxCenter.aldReport('PassShow','show');
+        this.addFreeAdEvent()
+        this.handleFreeAd();
     }
 
     private coin = 0;
@@ -58,6 +60,14 @@ export default class WinView extends BaseUI {
         })
     }
 
+    protected handleFreeAd(){
+        let isfree = ChickData.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree
+        this.GetGameObject('btn_buyfree').active = !isfree
+        let pos = this.GetGameObject('ad_label').getPosition()
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0,pos.y))
+    }
+
     onUIClicked(event, customEventData) {
         var btnName = event.target.name;
         AudioMgr.Instance().playMX("click");
@@ -78,7 +88,7 @@ export default class WinView extends BaseUI {
                 this.closeUI();
                 break;
             case "btn_buyfree":
-                // to do
+                Utils.createUI("prefab/MonthCardUI")
                 break;
         }
     }

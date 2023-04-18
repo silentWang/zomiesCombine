@@ -4,7 +4,16 @@ cc._RF.push(module, 'b37b9TahItL06rtAJjikj0a', 'Native');
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Native = void 0;
+exports.VIP_TYPE = void 0;
+var GameEvent_1 = require("../event/GameEvent");
+var GameConst_1 = require("../game/GameConst");
+var ChickData_1 = require("../manager/ChickData");
+var VIP_TYPE;
+(function (VIP_TYPE) {
+    VIP_TYPE["VIP_MONTH"] = "hw_vip_003";
+    VIP_TYPE["VIP_FOREVER"] = "hw_vip_004";
+    VIP_TYPE["RECOVER_VIP"] = "3";
+})(VIP_TYPE = exports.VIP_TYPE || (exports.VIP_TYPE = {}));
 var Native = /** @class */ (function () {
     function Native() {
     }
@@ -29,13 +38,12 @@ var Native = /** @class */ (function () {
         }
         jsb.reflection.callStaticMethod('HWGameJSHandle', methodName + ":", json);
     };
-    Native.getAppVersion = function () {
-        this.callAppMethod('getAppVersion', { x: 1, y: '25222' }, function (res) {
-            console.log('getAppVersion ios 回调', res);
-        });
-    };
     /**视频广告 */
     Native.playVideoAd = function (callback, adUnitId) {
+        if (ChickData_1.default.isFreeAd) {
+            callback && callback(1);
+            return;
+        }
         this.callAppMethod('loadTopOnRewardAd', { adUnitId: adUnitId }, function (res) {
             if (res && res.status == 200) {
                 callback && callback(1);
@@ -64,12 +72,64 @@ var Native = /** @class */ (function () {
     };
     /**月卡購買 */
     Native.buyMonthCard = function (type, callback) {
+        if (callback === void 0) { callback = null; }
         this.callAppMethod('hwIAP', type, function (res) {
             callback && callback(res);
+            if (res.code != 0)
+                return;
+            if (res.type == VIP_TYPE.RECOVER_VIP || res.type == VIP_TYPE.VIP_FOREVER || res.type == VIP_TYPE.VIP_MONTH) {
+                ChickData_1.default.isFreeAd = true;
+            }
+            GameEvent_1.default.Instance().dispatch(GameConst_1.default.FREE_AD_EVENT);
         });
+    };
+    /**get buy info */
+    Native.getMyMonthInfo = function (callback) {
+        if (callback === void 0) { callback = null; }
+        this.callAppMethod('', '', function (res) {
+            callback && callback(res);
+            if (res.type == VIP_TYPE.RECOVER_VIP || res.type == VIP_TYPE.VIP_FOREVER || res.type == VIP_TYPE.VIP_MONTH) {
+                ChickData_1.default.isFreeAd = true;
+            }
+            GameEvent_1.default.Instance().dispatch(GameConst_1.default.FREE_AD_EVENT);
+        });
+    };
+    /**open webview */
+    Native.openWebView = function (url) {
+        this.callAppMethod('hw_openH5', { url: url });
+    };
+    /**setlocal */
+    Native.saveDataToApp = function (json) {
+        if (cc.sys.os === cc.sys.OS_IOS) {
+            this.callAppMethod('setCacheData', { userdata: json });
+        }
+        else {
+            cc.sys.localStorage.setItem(GameConst_1.default.cache_chick_data_key, json);
+        }
+    };
+    /**getlocal */
+    Native.getDataFromApp = function (callback) {
+        if (cc.sys.os === cc.sys.OS_IOS) {
+            this.callAppMethod('getCacheData', '', function (res) {
+                if (res.userdata) {
+                    callback && callback(JSON.parse(res.userdata));
+                }
+                else {
+                    callback && callback(null);
+                }
+            });
+        }
+        else {
+            var res = cc.sys.localStorage.getItem(GameConst_1.default.cache_chick_data_key);
+            var data = null;
+            if (res) {
+                data = JSON.parse(res);
+            }
+            callback && callback(data);
+        }
     };
     return Native;
 }());
-exports.Native = Native;
+exports.default = Native;
 
 cc._RF.pop();

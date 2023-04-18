@@ -43,6 +43,7 @@ var UserModel = /** @class */ (function () {
         this.slots = [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         this.lv = 1;
         this.wave = 1;
+        this.dayDateTime = 0;
         this.DropGiftPts = []; //购买花盆
         this.AdBuyNotDrop = []; //广告购买成功，因为没有空位未成功添加
         this._coin = 1000;
@@ -53,7 +54,7 @@ var UserModel = /** @class */ (function () {
         this.todayComTimes = 0;
         this.ComPlants = [{ open: 1, index: 0, lv: 1 }];
     }
-    UserModel.prototype.T = function () {
+    UserModel.prototype.getADLv = function () {
         // "20": [20, "U", "U", "G", "G", "M", "AD", "M", "M", "M"],
         var lv = this.getLvlMax();
         var t = Config_1.Config_shopsort[lv + ""];
@@ -65,7 +66,7 @@ var UserModel = /** @class */ (function () {
     UserModel.prototype.getOfflineReward = function (t) {
         var n = null;
         var o = [50, 30, 20, 15, 10, 5, 3, 2];
-        var a = Math.max(1, this.T());
+        var a = Math.max(1, this.getADLv());
         var r = this.getLvlMax();
         for (var s = Math.max(1, a - 10); s <= a; ++s) {
             var c = this.buyChickPrice(s);
@@ -246,9 +247,8 @@ var UserModel = /** @class */ (function () {
     };
     UserModel.prototype.setData = function (data) {
         //初始化下数据       
-        if (!data) {
+        if (!data)
             return;
-        }
         for (var i = 0; i < savepars.length; ++i) {
             var element = data[savepars[i]];
             if (element != null || element != undefined) {
@@ -257,8 +257,9 @@ var UserModel = /** @class */ (function () {
                         this[savepars[i]][key] = element[key];
                     }
                 }
-                else
+                else {
                     this[savepars[i]] = element;
+                }
             }
         }
     };
@@ -319,6 +320,9 @@ var UserModel = /** @class */ (function () {
     __decorate([
         save
     ], UserModel.prototype, "wave", void 0);
+    __decorate([
+        save
+    ], UserModel.prototype, "dayDateTime", void 0);
     __decorate([
         save
     ], UserModel.prototype, "DropGiftPts", void 0);

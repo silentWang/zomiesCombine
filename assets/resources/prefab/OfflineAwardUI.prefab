@@ -1311,7 +1311,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "2watch",
+    "_name": "icon_video",
     "_objFlags": 0,
     "_parent": {
       "__id__": 33
@@ -1418,7 +1418,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "ad_label",
     "_objFlags": 0,
     "_parent": {
       "__id__": 33

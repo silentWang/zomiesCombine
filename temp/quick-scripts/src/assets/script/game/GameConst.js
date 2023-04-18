@@ -12,6 +12,7 @@ var GameConst = /** @class */ (function () {
     GameConst.BUY_CHICK = "BUY_CHICK";
     GameConst.NEW_CHICK = "NEW_CHICK";
     GameConst.OPEN_GROUND = "OPEN_GROUND";
+    GameConst.FREE_AD_EVENT = "FREE_AD_EVENT";
     return GameConst;
 }());
 exports.default = GameConst;

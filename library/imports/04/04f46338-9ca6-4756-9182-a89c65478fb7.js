@@ -18,11 +18,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Singleton_1 = require("./Singleton");
-// import MsgToast from "../framwork/MsgToast";
 var Utils_1 = require("../utils/Utils");
-// import WxCenter from "./WxCenter";
 var Native_1 = require("../utils/Native");
-var tt = window["tt"];
 // const { ccclass, property } = cc._decorator;
 var AdCenter = /** @class */ (function (_super) {
     __extends(AdCenter, _super);
@@ -39,21 +36,21 @@ var AdCenter = /** @class */ (function (_super) {
         }
         this._lastPlayTime = Utils_1.default.getServerTime();
         if (cc.sys.os === cc.sys.OS_IOS) {
-            Native_1.Native.playVideoAd(callback, adunitId);
+            Native_1.default.playVideoAd(callback, adunitId);
         }
         else {
             callback && callback(1);
         }
     };
     AdCenter.prototype.showGridAd = function () {
-        Native_1.Native.showBannerAd('b64242ab164d72');
+        Native_1.default.showBannerAd('b64242ab164d72');
     };
     AdCenter.prototype.hideGridAd = function () {
-        Native_1.Native.hideBannerAd();
+        Native_1.default.hideBannerAd();
     };
     AdCenter.prototype.showInterstitialAd = function (adunit) {
         if (adunit === void 0) { adunit = 'b64242a8c01cdc'; }
-        Native_1.Native.showInterstitialAd(adunit);
+        Native_1.default.showInterstitialAd(adunit);
     };
     return AdCenter;
 }(Singleton_1.default));

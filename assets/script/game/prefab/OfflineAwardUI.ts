@@ -22,8 +22,17 @@ export default class OfflineAwardUI extends BaseUI {
     }
 
     start() {
-        this.node.zIndex = 99999;
         Utils.playBreath(this.GetGameObject('btn_ad'))
+        this.addFreeAdEvent()
+        this.handleFreeAd();
+    }
+
+    protected handleFreeAd(){
+        let isfree = ChickData.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree
+        this.GetGameObject('btn_buyfree').active = !isfree
+        let pos = this.GetGameObject('ad_label').getPosition()
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0,pos.y))
     }
 
     onUIClicked(event, customEventData) {
@@ -68,8 +77,7 @@ export default class OfflineAwardUI extends BaseUI {
                 AdCenter.Instance().play(func)
                 break;
             case "btn_buyfree":
-                // to do
-                console.log('dddddd')
+                Utils.createUI("prefab/MonthCardUI")
                 break;
         }
     }

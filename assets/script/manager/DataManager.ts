@@ -1,6 +1,3 @@
-import ChickData from './ChickData';
-
-
 export type BOInfo =
     {
         id: number,

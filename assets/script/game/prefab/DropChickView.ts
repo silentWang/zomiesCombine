@@ -16,6 +16,8 @@ export default class DropChickView extends BaseUI {
         AdCenter.Instance().showGridAd();
         Utils.playBreath(this.GetGameObject('btn_ad'))
         WxCenter.aldReport('AirdropShow','show');
+        this.addFreeAdEvent()
+        this.handleFreeAd();
     }
 
     onDestroy()
@@ -33,6 +35,14 @@ export default class DropChickView extends BaseUI {
             pots.push(n);
         } 
         return pots;
+    }
+
+    protected handleFreeAd(){
+        let isfree = ChickData.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree
+        this.GetGameObject('btn_buyfree').active = !isfree
+        let pos = this.GetGameObject('ad_label').getPosition()
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0,pos.y))
     }
     
     onUIClicked(event, customEventData) {
@@ -60,7 +70,7 @@ export default class DropChickView extends BaseUI {
                 });
                 break;
             case "btn_buyfree":
-                // to do
+                Utils.createUI("prefab/MonthCardUI")
                 break;
         }
     }

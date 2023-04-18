@@ -67,6 +67,7 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var GameEvent_1 = require("../event/GameEvent");
+var GameConst_1 = require("../game/GameConst");
 var Utils_1 = require("../utils/Utils");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var BaseUI = /** @class */ (function (_super) {
@@ -89,12 +90,12 @@ var BaseUI = /** @class */ (function (_super) {
     };
     BaseUI.prototype.onLoad = function () {
         this.events = [];
-        // if (this.addClickEvent)
         if (this.node.getComponent(cc.Button)) {
             Utils_1.default.addClickEvent(this.node, this.node, cc.js.getClassName(this), "onUIClicked", this.node.getComponent(cc.Button).target);
         }
         this._addClickEvent(this.node);
         this._create_time = Utils_1.default.getServerTime();
+        this.node.zIndex = 2000;
     };
     BaseUI.prototype.fixRedCoinForShow = function (coin, fixed, ratio) {
         if (fixed === void 0) { fixed = 4; }
@@ -331,6 +332,11 @@ var BaseUI = /** @class */ (function (_super) {
                 }
             });
         });
+    };
+    BaseUI.prototype.addFreeAdEvent = function () {
+        this.rigester(GameConst_1.default.FREE_AD_EVENT, this.handleFreeAd);
+    };
+    BaseUI.prototype.handleFreeAd = function () {
     };
     BaseUI.prototype.rigester = function (type, callFunc) {
         this.events.push(type);

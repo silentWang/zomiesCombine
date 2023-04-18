@@ -23,6 +23,9 @@ enum GunBuyType {
 @ccclass
 export default class ShopItem extends BaseUI {
 
+    protected start(): void {
+        this.addFreeAdEvent()
+    }
     //观看视频免费获得的枪械等级
     private ShowBuyAd(id:number):boolean
     {
@@ -161,6 +164,15 @@ export default class ShopItem extends BaseUI {
         this.cost_coin = ChickData.user.buyChickPrice(gun[0])
         this.SetText("lbl_buy_coin",Utils.formatNumber( this.cost_coin));
         this.GetButton("btn_yellow").interactable = ChickData.user.coin >= this.cost_coin;
+
+        this.handleFreeAd();
+    }
+
+    protected handleFreeAd(){
+        let isfree = ChickData.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree
+        let pos = this.GetGameObject('ad_label').getPosition()
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0,pos.y))
     }
     
     onUIClicked(event, customEventData) {

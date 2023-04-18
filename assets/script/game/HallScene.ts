@@ -893,7 +893,6 @@ export default class HallScene extends BaseUI {
 	onUIClicked(event, customEventData) {
         var btnName = event.target.name;
         AudioMgr.Instance().playMX("click");
-
         switch (btnName) {
 			case "btn_setting":
 				Utils.createUI("prefab/SettingUI")

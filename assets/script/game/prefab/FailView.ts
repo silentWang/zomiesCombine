@@ -17,6 +17,8 @@ export default class FailView extends BaseUI {
         AudioMgr.Instance().playMX("fail")
         Utils.playBreath(this.GetGameObject('btn_get'))
         WxCenter.aldReport('FailShow','show');
+        this.addFreeAdEvent()
+        this.handleFreeAd();
     }
 
     private coin = 0;
@@ -55,6 +57,14 @@ export default class FailView extends BaseUI {
         })
     }
 
+    protected handleFreeAd(){
+        let isfree = ChickData.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree
+        this.GetGameObject('btn_buyfree').active = !isfree
+        let pos = this.GetGameObject('ad_label').getPosition()
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0,pos.y))
+    }
+
     onUIClicked(event, customEventData) {
         var btnName = event.target.name;
         AudioMgr.Instance().playMX("click");
@@ -75,7 +85,7 @@ export default class FailView extends BaseUI {
                 this.closeUI();
                 break;
             case "btn_buyfree":
-                // to do
+                Utils.createUI("prefab/MonthCardUI")
                 break;    
         }
     }

@@ -49,8 +49,16 @@ var OfflineAwardUI = /** @class */ (function (_super) {
         configurable: true
     });
     OfflineAwardUI.prototype.start = function () {
-        this.node.zIndex = 99999;
         Utils_1.default.playBreath(this.GetGameObject('btn_ad'));
+        this.addFreeAdEvent();
+        this.handleFreeAd();
+    };
+    OfflineAwardUI.prototype.handleFreeAd = function () {
+        var isfree = ChickData_1.default.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree;
+        this.GetGameObject('btn_buyfree').active = !isfree;
+        var pos = this.GetGameObject('ad_label').getPosition();
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0, pos.y));
     };
     OfflineAwardUI.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;
@@ -94,8 +102,7 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                 AdCenter_1.default.Instance().play(func);
                 break;
             case "btn_buyfree":
-                // to do
-                console.log('dddddd');
+                Utils_1.default.createUI("prefab/MonthCardUI");
                 break;
         }
     };

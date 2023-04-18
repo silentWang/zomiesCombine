@@ -85,6 +85,9 @@ var ShopItem = /** @class */ (function (_super) {
         _this.gun = null;
         return _this;
     }
+    ShopItem.prototype.start = function () {
+        this.addFreeAdEvent();
+    };
     //观看视频免费获得的枪械等级
     ShopItem.prototype.ShowBuyAd = function (id) {
         var gunlv = ChickData_1.default.user.getLvlMax();
@@ -202,10 +205,17 @@ var ShopItem = /** @class */ (function (_super) {
                         this.cost_coin = ChickData_1.default.user.buyChickPrice(gun[0]);
                         this.SetText("lbl_buy_coin", Utils_1.default.formatNumber(this.cost_coin));
                         this.GetButton("btn_yellow").interactable = ChickData_1.default.user.coin >= this.cost_coin;
+                        this.handleFreeAd();
                         return [2 /*return*/];
                 }
             });
         });
+    };
+    ShopItem.prototype.handleFreeAd = function () {
+        var isfree = ChickData_1.default.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree;
+        var pos = this.GetGameObject('ad_label').getPosition();
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0, pos.y));
     };
     ShopItem.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;

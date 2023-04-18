@@ -43,7 +43,6 @@ var MonthView = /** @class */ (function (_super) {
         return _this;
     }
     MonthView.prototype.start = function () {
-        this.SetText('txtPrice', '5');
     };
     MonthView.prototype.setSelect = function (type) {
         var isAD = type == 0;
@@ -66,19 +65,17 @@ var MonthView = /** @class */ (function (_super) {
                 break;
             case "btnBuy":
                 // to do
-                var key = this._selectType == 0 ? 'hw_vip_001' : 'hw_vip_002';
-                Native_1.Native.buyMonthCard(key, function (res) {
-                    console.log(res);
-                });
+                var key = this._selectType == 0 ? Native_1.VIP_TYPE.VIP_FOREVER : Native_1.VIP_TYPE.VIP_MONTH;
+                Native_1.default.buyMonthCard(key);
                 break;
             case "btnRecover":
-                Native_1.Native.buyMonthCard('3', function (res) {
-                    console.log(res);
-                });
+                Native_1.default.buyMonthCard(Native_1.VIP_TYPE.RECOVER_VIP);
                 break;
             case "btnPrivacy":
+                Native_1.default.openWebView('https://www.huadcx.com/privacy.html');
                 break;
             case "btnXieyi":
+                Native_1.default.openWebView('https://www.huadcx.com/privacy.html');
                 break;
         }
     };

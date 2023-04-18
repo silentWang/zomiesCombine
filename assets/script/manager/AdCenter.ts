@@ -1,10 +1,6 @@
 import Singleton from "./Singleton";
-// import MsgToast from "../framwork/MsgToast";
-
 import Utils from '../utils/Utils';
-// import WxCenter from "./WxCenter";
-import { Native } from "../utils/Native";
-const tt = window["tt"];
+import Native from "../utils/Native";
 
 // const { ccclass, property } = cc._decorator;
 export default class AdCenter extends Singleton {

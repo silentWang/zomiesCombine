@@ -33,6 +33,8 @@ export default class CoinNotEnoughUI extends BaseUI {
     start () {
         AdCenter.Instance().showGridAd();
         Utils.playBreath(this.GetGameObject('btn_ad'))
+        this.addFreeAdEvent()
+        this.handleFreeAd();
     }
 
     // update (dt) {}
@@ -86,6 +88,14 @@ export default class CoinNotEnoughUI extends BaseUI {
         }
     }
 
+    protected handleFreeAd(){
+        let isfree = ChickData.isFreeAd;
+        this.GetGameObject('icon_video').active = !isfree
+        this.GetGameObject('btn_buyfree').active = !isfree
+        let pos = this.GetGameObject('ad_label').getPosition()
+        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0,pos.y))
+    }
+
     onUIClicked(event, customEventData) {
         var btnName = event.target.name;
         AudioMgr.Instance().playMX("click");
@@ -101,7 +111,7 @@ export default class CoinNotEnoughUI extends BaseUI {
                 });
                 break;
             case "btn_buyfree":
-                // to do
+                Utils.createUI("prefab/MonthCardUI")
                 break;
         }
     }
