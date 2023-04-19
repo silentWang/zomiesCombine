@@ -12,7 +12,8 @@ export default class Native {
         let callfunc = 'callBackFunc_' + new Date().getTime();
         window[callfunc] = (res)=>{
             console.log(`---ios callback---${methodName}`,res)
-            callback && callback(res);
+            let rep = (!res || res == 'undefined') ? '' : res
+            callback && callback(rep);
             window[callfunc] = null;
         }
         let obj = {method:callfunc,params};

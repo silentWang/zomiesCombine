@@ -324,6 +324,7 @@ export default class HallScene extends BaseUI {
         ChickData.user.double_income_time = Math.max(0,ChickData.user.double_income_time);
         ChickData.user.drop_plant_time = Math.max(0,ChickData.user.drop_plant_time);
         ChickData.user.double_att_time = Math.max(0,ChickData.user.double_att_time);
+        this.GetGameObject('btnFreeAd').active = !ChickData.isFreeAd
         this.updateBuyButton();
 
          //离线奖励,暂时只给6小时的
