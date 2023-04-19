@@ -86,13 +86,15 @@ var Native = /** @class */ (function () {
     /**get buy info */
     Native.getMyMonthInfo = function (callback) {
         if (callback === void 0) { callback = null; }
-        this.callAppMethod('', '', function (res) {
-            callback && callback(res);
-            if (res.type == VIP_TYPE.RECOVER_VIP || res.type == VIP_TYPE.VIP_FOREVER || res.type == VIP_TYPE.VIP_MONTH) {
-                ChickData_1.default.isFreeAd = true;
-            }
-            GameEvent_1.default.Instance().dispatch(GameConst_1.default.FREE_AD_EVENT);
-        });
+        callback && callback();
+        return;
+        // this.callAppMethod('getVipInfo','',(res)=>{
+        //     callback && callback(res)
+        //     if(res.type == VIP_TYPE.RECOVER_VIP || res.type == VIP_TYPE.VIP_FOREVER || res.type == VIP_TYPE.VIP_MONTH){
+        //         ChickData.isFreeAd = true;
+        //     }
+        //     GameEvent.Instance().dispatch(GameConst.FREE_AD_EVENT)
+        // })
     };
     /**open webview */
     Native.openWebView = function (url) {
@@ -104,14 +106,14 @@ var Native = /** @class */ (function () {
             this.callAppMethod('setCacheData', { userdata: json });
         }
         else {
-            cc.sys.localStorage.setItem(GameConst_1.default.cache_chick_data_key, json);
+            cc.sys.localStorage.setItem(GameConst_1.default.cache_chick_data_key, JSON.stringify({ userdata: json }));
         }
     };
     /**getlocal */
     Native.getDataFromApp = function (callback) {
         if (cc.sys.os === cc.sys.OS_IOS) {
             this.callAppMethod('getCacheData', '', function (res) {
-                if (res.userdata) {
+                if (res && res.userdata) {
                     callback && callback(JSON.parse(res.userdata));
                 }
                 else {
@@ -121,11 +123,14 @@ var Native = /** @class */ (function () {
         }
         else {
             var res = cc.sys.localStorage.getItem(GameConst_1.default.cache_chick_data_key);
-            var data = null;
+            var userdata = null;
             if (res) {
-                data = JSON.parse(res);
+                var data = JSON.parse(res);
+                if (data.userdata) {
+                    userdata = JSON.parse(data.userdata);
+                }
             }
-            callback && callback(data);
+            callback && callback(userdata);
         }
     };
     return Native;

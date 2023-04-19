@@ -70,6 +70,7 @@ export default class Native {
     }
     /**get buy info */
     static getMyMonthInfo(callback:Function = null){
+        callback && callback()
         return;
         // this.callAppMethod('getVipInfo','',(res)=>{
         //     callback && callback(res)
@@ -89,14 +90,14 @@ export default class Native {
             this.callAppMethod('setCacheData',{userdata:json});
         }
         else{
-            cc.sys.localStorage.setItem(GameConst.cache_chick_data_key,json)
+            cc.sys.localStorage.setItem(GameConst.cache_chick_data_key,JSON.stringify({userdata:json}))
         }
     }
     /**getlocal */
     static getDataFromApp(callback:Function){
         if(cc.sys.os === cc.sys.OS_IOS){
             this.callAppMethod('getCacheData','',(res)=>{
-                if(res.userdata){
+                if(res && res.userdata){
                     callback && callback(JSON.parse(res.userdata));
                 }
                 else{
@@ -106,11 +107,14 @@ export default class Native {
         }
         else{
             let res = cc.sys.localStorage.getItem(GameConst.cache_chick_data_key)
-            let data = null;
+            let userdata = null;
             if(res){
-                data = JSON.parse(res)
+                let data = JSON.parse(res);
+                if(data.userdata){
+                    userdata = JSON.parse(data.userdata)
+                }
             }
-            callback && callback(data);
+            callback && callback(userdata);
         }
     }
 }

@@ -7,13 +7,21 @@ import Native from "../utils/Native";
 
 export default class ChickData {
     public static user: UserModel = new UserModel();
-    public static isFreeAd = false;
+    public static _isFreeAd = false;
+    public static set isFreeAd(value:boolean){
+        this._isFreeAd = value
+        this.save()
+    }
+    public static get isFreeAd(){
+        return this._isFreeAd
+    }
     
     public static save( bRemote: boolean = false) {
         ChickData.resetOneDayData();
         let obj = {}
         obj['user'] = ChickData.user.getAllData()
         obj['savedatatime'] = Utils.getServerTime()
+        obj['isFreeAd'] = this._isFreeAd ? 1 : 0
         let strdata = JSON.stringify(obj);
         Native.saveDataToApp(strdata);
     }
@@ -37,6 +45,7 @@ export default class ChickData {
                 if (data) {
                     ChickData.user.setData(data['user']);
                     ChickData.user.dayDateTime = data.savedatatime
+                    this._isFreeAd = data.isFreeAd == 1
                     this.resetOneDayData();
                 }
                 else {

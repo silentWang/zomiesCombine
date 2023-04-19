@@ -64,8 +64,10 @@ var DropChickView = /** @class */ (function (_super) {
         var isfree = ChickData_1.default.isFreeAd;
         this.GetGameObject('icon_video').active = !isfree;
         this.GetGameObject('btn_buyfree').active = !isfree;
-        var pos = this.GetGameObject('ad_label').getPosition();
-        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0, pos.y));
+        if (isfree) {
+            var pos = this.GetGameObject('ad_label').getPosition();
+            this.GetGameObject('ad_label').setPosition(new cc.Vec2(0, pos.y));
+        }
     };
     DropChickView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;

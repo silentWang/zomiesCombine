@@ -11,12 +11,24 @@ var Native_1 = require("../utils/Native");
 var ChickData = /** @class */ (function () {
     function ChickData() {
     }
+    Object.defineProperty(ChickData, "isFreeAd", {
+        get: function () {
+            return this._isFreeAd;
+        },
+        set: function (value) {
+            this._isFreeAd = value;
+            this.save();
+        },
+        enumerable: false,
+        configurable: true
+    });
     ChickData.save = function (bRemote) {
         if (bRemote === void 0) { bRemote = false; }
         ChickData.resetOneDayData();
         var obj = {};
         obj['user'] = ChickData.user.getAllData();
         obj['savedatatime'] = Utils_1.default.getServerTime();
+        obj['isFreeAd'] = this._isFreeAd ? 1 : 0;
         var strdata = JSON.stringify(obj);
         Native_1.default.saveDataToApp(strdata);
     };
@@ -39,6 +51,7 @@ var ChickData = /** @class */ (function () {
                 if (data) {
                     ChickData.user.setData(data['user']);
                     ChickData.user.dayDateTime = data.savedatatime;
+                    _this._isFreeAd = data.isFreeAd == 1;
                     _this.resetOneDayData();
                 }
                 else {
@@ -53,7 +66,7 @@ var ChickData = /** @class */ (function () {
         });
     };
     ChickData.user = new UserModel_1.default();
-    ChickData.isFreeAd = false;
+    ChickData._isFreeAd = false;
     return ChickData;
 }());
 exports.default = ChickData;

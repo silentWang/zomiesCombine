@@ -171,8 +171,10 @@ export default class ShopItem extends BaseUI {
     protected handleFreeAd(){
         let isfree = ChickData.isFreeAd;
         this.GetGameObject('icon_video').active = !isfree
-        let pos = this.GetGameObject('ad_label').getPosition()
-        this.GetGameObject('ad_label').setPosition(new cc.Vec2(0,pos.y))
+        if(isfree){
+            let pos = this.GetGameObject('ad_label').getPosition()
+            this.GetGameObject('ad_label').setPosition(new cc.Vec2(0,pos.y))
+        }
     }
     
     onUIClicked(event, customEventData) {
