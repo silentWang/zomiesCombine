@@ -50,7 +50,7 @@ var WinView = /** @class */ (function (_super) {
     WinView.prototype.setInfo = function (coin) {
         this.coin = coin;
         this.aTobAnim(coin * 2);
-        this.SetText("btn_normal", "\u9886\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E01");
+        this.SetText("btn_normal", "\u9818\u53D6" + Utils_1.default.formatNumber(coin) + "\u91D1\u5E63");
     };
     WinView.prototype.aTobAnim = function (num) {
         var _this = this;

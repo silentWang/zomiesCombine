@@ -35,7 +35,7 @@ export default class ShareView extends BaseUI {
         let coin = NumberUtils.getLargeString(Utils.fixFloat(this.coinVal));
         let times = ChickData.user.share_times;
         this.SetText("lbl_coin",coin)
-        this.SetText("lbl_times",`还可分享${times}次`);
+        this.SetText("lbl_times",`還可分享${times}次`);
     }
 
     onUIClicked(event, customEventData) {

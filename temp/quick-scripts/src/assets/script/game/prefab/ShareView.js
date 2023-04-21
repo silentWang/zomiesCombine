@@ -53,7 +53,7 @@ var ShareView = /** @class */ (function (_super) {
         var coin = NumberUtils_1.default.getLargeString(Utils_1.default.fixFloat(this.coinVal));
         var times = ChickData_1.default.user.share_times;
         this.SetText("lbl_coin", coin);
-        this.SetText("lbl_times", "\u8FD8\u53EF\u5206\u4EAB" + times + "\u6B21");
+        this.SetText("lbl_times", "\u9084\u53EF\u5206\u4EAB" + times + "\u6B21");
     };
     ShareView.prototype.onUIClicked = function (event, customEventData) {
         var _this = this;

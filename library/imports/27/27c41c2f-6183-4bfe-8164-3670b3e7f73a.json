@@ -222,7 +222,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "e80NylH95Lvr2ZGBi+re4L",
     "sync": false
@@ -426,7 +426,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "4a1FypD7VLvb5yLLaImBM5",
     "sync": false
@@ -533,7 +533,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "c405vsJa1NnYLFpJSWN9eX",
     "sync": false
@@ -641,7 +641,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "f35bE06BZKUpCTp8LGbOpq",
     "sync": false
@@ -816,7 +816,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "f8TA/YASVIwJ2ICLHvFC7W",
     "sync": false
@@ -859,7 +859,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "f5lFqRnzZEKbEjYXgOw4zb",
     "sync": false
@@ -1037,7 +1037,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "9bjjVC6VRJqJutwCJ/1uLs",
     "sync": false
@@ -1178,7 +1178,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "25GzuvxhBBepGDveBSZpr1",
     "sync": false
@@ -1221,7 +1221,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "53d1YzGglCo75eFm2lIF0z",
     "sync": false
@@ -1308,8 +1308,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "立得金币",
-    "_N$string": "立得金币",
+    "_string": "立得金幣",
+    "_N$string": "立得金幣",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -1350,7 +1350,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "cbMVktAb5GbZ2L+44gAHE9",
     "sync": false
@@ -1531,7 +1531,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "12lnq0z/xBRZOsPPP13bT8",
     "sync": false
@@ -1660,7 +1660,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "c60IBCVwdBorG7pGl0m5tt",
     "sync": false
@@ -1773,7 +1773,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "5aBvdWifRPR7P5ctDehHsd",
     "sync": false
@@ -1860,8 +1860,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "还可分享10次",
-    "_N$string": "还可分享10次",
+    "_string": "還可分享10次",
+    "_N$string": "還可分享10次",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -1902,7 +1902,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "76u3a6vy9GzKptn58cv4wR",
     "sync": false
@@ -1913,7 +1913,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "99YTzhxblI/a1GuMsD+tBc",
     "sync": false
@@ -2103,7 +2103,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "c6OnaiBUREw55Nqh2Fme2R",
     "sync": false
@@ -2124,7 +2124,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27c41c2f-6183-4bfe-8164-3670b3e7f73a"
+      "__id__": 0
     },
     "fileId": "",
     "sync": false

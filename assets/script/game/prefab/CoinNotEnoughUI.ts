@@ -64,7 +64,7 @@ export default class CoinNotEnoughUI extends BaseUI {
             this.SetText('lbl_effect',`+${NumberUtils.getLargeString(Utils.fixFloat(coin))}`);
         }
         WxCenter.aldReport('LackShow','show');
-        this.lbl_times.string = `当日次数${str}`;
+        this.lbl_times.string = `當日次數${str}`;
     }
 
     private addCoin(){

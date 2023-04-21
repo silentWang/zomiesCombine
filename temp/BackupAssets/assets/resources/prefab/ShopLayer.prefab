@@ -252,7 +252,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "1aR/s1I1dD/5Sy073ul69Q",
     "sync": false
@@ -433,7 +433,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "96gcPwtihKP5xSd5eimx9U",
     "sync": false
@@ -544,7 +544,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "aeNxz+EDVC4aP67X8v6F/D",
     "sync": false
@@ -796,7 +796,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "ddBABR1UtMbLcO2Xv4A7X/",
     "sync": false
@@ -839,7 +839,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "1cyhw1aZJNRKQEeM3zPRxl",
     "sync": false
@@ -1006,8 +1006,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "萌鸡商店",
-    "_N$string": "萌鸡商店",
+    "_string": "萌雞商店",
+    "_N$string": "萌雞商店",
     "_fontSize": 48,
     "_lineHeight": 48,
     "_enableWrapText": true,
@@ -1048,7 +1048,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "e9VfCpnWxHCY7e1M9Or2xO",
     "sync": false
@@ -1091,7 +1091,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "15BGzL+N5OJKhxbLUHGtv0",
     "sync": false
@@ -1373,7 +1373,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "a51lq9fnxKI48s2II2AaRg",
     "sync": false
@@ -1404,7 +1404,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "25JFJPcPFIWLYXpE0XSqL4",
     "sync": false
@@ -1488,7 +1488,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "9etH6nmr5NoZlFmXuJu/iX",
     "sync": false
@@ -1678,7 +1678,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "f5KQPHGRtMILOpDzBXQGfm",
     "sync": false
@@ -1721,7 +1721,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "92Y7xnK4NFZKcU5LvngWWv",
     "sync": false
@@ -1742,7 +1742,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6c8b8dcd-add2-4890-af4c-c11de1080010"
+      "__id__": 0
     },
     "fileId": "",
     "sync": false

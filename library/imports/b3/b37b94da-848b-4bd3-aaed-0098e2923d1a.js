@@ -25,13 +25,14 @@ var Native = /** @class */ (function () {
         var callfunc = 'callBackFunc_' + new Date().getTime();
         window[callfunc] = function (res) {
             console.log("---ios callback---" + methodName, res);
-            callback && callback(res);
+            var rep = (!res || res == 'undefined') ? '' : res;
+            callback && callback(rep);
             window[callfunc] = null;
         };
         var obj = { method: callfunc, params: params };
         var json = JSON.stringify(obj);
         var methodstr = "" + methodName + json;
-        console.log("----HWGameJSHandle:" + methodName + "---" + methodstr);
+        console.log("--ios callback before---:" + methodName + "---" + methodstr);
         if (!jsb || !jsb.reflection || !jsb.reflection.callStaticMethod) {
             console.log('HWGameJSHandle:找不到jsb');
             return;

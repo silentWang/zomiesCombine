@@ -107,7 +107,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 323.57,
+      "width": 295.57,
       "height": 35.28
     },
     "_anchorPoint": {
@@ -159,8 +159,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "增加5分钟的自动合成时间",
-    "_N$string": "增加5分钟的自动合成时间",
+    "_string": "增加5分鐘自動合成時間",
+    "_N$string": "增加5分鐘自動合成時間",
     "_fontSize": 28,
     "_lineHeight": 28,
     "_enableWrapText": true,
@@ -183,7 +183,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "d84212f4-eb86-4042-b793-ec53e63e22c8"
+      "__id__": 0
     },
     "fileId": "64Z9V0meROs77qMNcr/eO5",
     "sync": false
@@ -245,7 +245,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "d84212f4-eb86-4042-b793-ec53e63e22c8"
+      "__id__": 0
     },
     "fileId": "",
     "sync": false

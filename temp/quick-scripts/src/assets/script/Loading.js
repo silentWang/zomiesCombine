@@ -108,7 +108,7 @@ var Loading = /** @class */ (function (_super) {
                 }
                 PoolMgr_1.default.Instance().loadPrefabs();
                 this.startLGAction();
-                descs = ["初次加载时间可能会较长，请耐心等待...."];
+                descs = ["初次加載時間可能會較長，請耐心等待..."];
                 index = 0;
                 this.node.runAction(cc.sequence(cc.delayTime(2), cc.callFunc(function () {
                     _this.SetText("desp", descs[index]);

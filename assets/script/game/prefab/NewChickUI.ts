@@ -16,7 +16,7 @@ export default class NewChickUI extends BaseUI {
         let lv = ChickData.user.getLvlMax()
         let coin = ChickData.user.buyChickPrice(Math.max(1,lv-3));
         this.SetText('lbl_name',Config_chick[lv - 1][7] + '');
-        this.SetText("lbl_lv","等级 "+lv);
+        this.SetText("lbl_lv","等級 "+lv);
         AudioMgr.Instance().playMX("unlock_plant")
         this.coin = coin;
         this.SetText("lbl_coin",Utils.formatNumber(coin));

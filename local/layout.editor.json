@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1536,
-      "y": 0,
-      "width": 1536,
-      "height": 816,
+      "x": 1528,
+      "y": -8,
+      "width": 1552,
+      "height": 832,
       "layout": {
         "type": "dock-h",
         "children": [
@@ -19,7 +19,7 @@
             "children": [
               {
                 "width": 204.0500030517578,
-                "height": 289.0375061035156,
+                "height": 288.875,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -28,7 +28,7 @@
               },
               {
                 "width": 204.0500030517578,
-                "height": 405.6625061035156,
+                "height": 405.82501220703125,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -48,7 +48,7 @@
                 "type": "dock-h",
                 "children": [
                   {
-                    "width": 662.8875122070312,
+                    "width": 662.4500122070312,
                     "height": 428.70001220703125,
                     "type": "panel",
                     "active": 0,
@@ -57,7 +57,7 @@
                     ]
                   },
                   {
-                    "width": 264.3625183105469,
+                    "width": 264.7875061035156,
                     "height": 428.70001220703125,
                     "type": "panel",
                     "active": 0,
@@ -131,10 +131,10 @@
       "height": 641
     },
     "sprite-editor": {
-      "x": 2096,
-      "y": 196,
-      "width": 540,
-      "height": 564
+      "x": 1976,
+      "y": 212,
+      "width": 541,
+      "height": 565
     },
     "game-window": {
       "x": 448,

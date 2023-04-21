@@ -105,20 +105,20 @@ var CommonView = /** @class */ (function (_super) {
         this.GetGameObject("icon_income").active = e == EADLAYER.DOUBLE_INCOME;
         this.GetGameObject("icon_angre").active = e == EADLAYER.DOUBLE_ATT;
         if (this.type == EADLAYER.AUTO_COM) {
-            this.SetText("lbl_effect", "+" + exports.MAX_AUTO_COM_TIME + "分钟");
+            this.SetText("lbl_effect", "+" + exports.MAX_AUTO_COM_TIME + "分鐘");
             WxCenter_1.default.aldReport('AutoShow', 'show');
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
             this.SetText("lbl_effect", "+" + exports.MAX_DOUBLE_ATT_TIME * 60 + "秒");
-            this.SetText('lbl_d', "\u8FDB\u5165\u6253\u9E21\u8840\u72B6\u6001  \u6301\u7EED" + exports.MAX_DOUBLE_ATT_TIME * 60 + "\u79D2");
+            this.SetText('lbl_d', "\u9032\u5165\u6253\u9DC4\u8840\u72C0\u614B  \u6301\u7E8C" + exports.MAX_DOUBLE_ATT_TIME * 60 + "\u79D2");
             WxCenter_1.default.aldReport('RageShow', 'show');
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            this.SetText("lbl_effect", "+" + exports.MAX_DOUBLE_INCOME_TIME + "分钟");
+            this.SetText("lbl_effect", "+" + exports.MAX_DOUBLE_INCOME_TIME + "分鐘");
             WxCenter_1.default.aldReport('DoubleShow', 'show');
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
-            this.SetText("lbl_effect", "+" + exports.MAX_DROP_PLANT_TIME + "分钟");
+            this.SetText("lbl_effect", "+" + exports.MAX_DROP_PLANT_TIME + "分鐘");
             WxCenter_1.default.aldReport('DropShow', 'show');
         }
         var _a = this.getEMTime(), end_time = _a.end_time, max = _a.max;

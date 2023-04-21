@@ -48,7 +48,7 @@ export default class Loading extends BaseUI {
         }
         PoolMgr.Instance().loadPrefabs()
         this.startLGAction();
-        let descs = ["初次加载时间可能会较长，请耐心等待...."];
+        let descs = ["初次加載時間可能會較長，請耐心等待..."];
         let index = 0;
         this.node.runAction(cc.sequence(cc.delayTime(2), cc.callFunc(() => {
             this.SetText("desp", descs[index]);

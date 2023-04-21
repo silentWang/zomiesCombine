@@ -126,7 +126,7 @@ export default class ShopItem extends BaseUI {
         }
 
         this._findInChildren(node,"lbl_lv").getComponent(cc.Label).string = ""+gun[0];
-        this._findInChildren(node,"New Label").getComponent(cc.Label).string = "到"+(gun[0]+2)+'级解锁';
+        this._findInChildren(node,"New Label").getComponent(cc.Label).string = "到"+(gun[0]+2)+'級解鎖';
 
         let skill = gun[3].split("|");
         let skilltype = skill[0];
@@ -137,16 +137,16 @@ export default class ShopItem extends BaseUI {
         if(bhide) value = "?"
         if(skilltype == 1)
         {
-            str ="技能:" + value+"%的几率触发减速目标1秒";
+            str ="技能:" + value+"%幾率觸發減速目標1秒";
         }
         else if(skilltype == 2){
-            str ="技能:" + value+"%几率对目标造成双倍伤害";
+            str ="技能:" + value+"%幾率對目標造成雙倍傷害";
         }
         else if(skilltype == 3){
-            str ="技能:" + value+"%几率冰冻目标1秒";
+            str ="技能:" + value+"%幾率冰凍目標1秒";
         }
 
-        this._findInChildren(node,"lbl_name").getComponent(cc.Label).string = bhide?'未知萌鸡':gun[7];
+        this._findInChildren(node,"lbl_name").getComponent(cc.Label).string = bhide?'未知萌鷄':gun[7];
         this._findInChildren(node,"lbl_desc").getComponent(cc.Label).string = bhide?'技能:未知':str;
         this._findInChildren(node,"lbl_cd").getComponent(cc.Label).string =bhide?"?": gun[1]+"";
         this._findInChildren(node,"lbl_power").getComponent(cc.Label).string = bhide?"?":Utils.formatNumber(gun[2])+"";

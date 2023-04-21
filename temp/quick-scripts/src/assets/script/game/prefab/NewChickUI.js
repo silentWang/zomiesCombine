@@ -82,7 +82,7 @@ var NewChickUI = /** @class */ (function (_super) {
                         lv = ChickData_1.default.user.getLvlMax();
                         coin = ChickData_1.default.user.buyChickPrice(Math.max(1, lv - 3));
                         this.SetText('lbl_name', Config_1.Config_chick[lv - 1][7] + '');
-                        this.SetText("lbl_lv", "等级 " + lv);
+                        this.SetText("lbl_lv", "等級 " + lv);
                         AudioMgr_1.default.Instance().playMX("unlock_plant");
                         this.coin = coin;
                         this.SetText("lbl_coin", Utils_1.default.formatNumber(coin));

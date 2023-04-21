@@ -364,15 +364,15 @@ export default class HallScene extends BaseUI {
                 ChickData.user.drop_plant_time = Utils.getServerTime();
             }
             this.breathAngry(isX2In);
-            this.SetText("att_x2_time", isX2In ? Utils.getTimeStrByS((ChickData.user.double_att_time - Utils.getServerTime()) / 1000) : '打鸡血');
-            this.SetText("rewardx2_time", isInDb ? Utils.getTimeStrByS((ChickData.user.double_income_time - Utils.getServerTime()) / 1000) : '双倍');
+            this.SetText("att_x2_time", isX2In ? Utils.getTimeStrByS((ChickData.user.double_att_time - Utils.getServerTime()) / 1000) : '打鷄血');
+            this.SetText("rewardx2_time", isInDb ? Utils.getTimeStrByS((ChickData.user.double_income_time - Utils.getServerTime()) / 1000) : '雙倍');
             if( ChickData.user.auto_com_time - Utils.getServerTime() > 0)
             {
                 this.SetText("auto_time", Utils.getTimeStrByS((ChickData.user.auto_com_time - Utils.getServerTime()) / 1000));
             }
             else
             {
-                this.SetText("auto_time", "自动合成");
+                this.SetText("auto_time", "自動合成");
             }
             this.SetText("lbl_drop_plant",isDpIn ? Utils.getTimeStrByS((ChickData.user.drop_plant_time - Utils.getServerTime()) / 1000) : '掉落');
             this.GetGameObject("fx_bt_angry").active = this.GetGameObject("att_x2_time").active;

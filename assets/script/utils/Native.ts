@@ -19,7 +19,7 @@ export default class Native {
         let obj = {method:callfunc,params};
         let json = JSON.stringify(obj);
         let methodstr = `${methodName}${json}`;
-        console.log(`----HWGameJSHandle:${methodName}---${methodstr}`)
+        console.log(`--ios callback before---:${methodName}---${methodstr}`)
         if(!jsb || !jsb.reflection || !jsb.reflection.callStaticMethod) {
             console.log('HWGameJSHandle:找不到jsb')
             return;

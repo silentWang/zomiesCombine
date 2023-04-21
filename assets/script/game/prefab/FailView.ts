@@ -26,7 +26,7 @@ export default class FailView extends BaseUI {
     {
         this.coin = coin;
         this.aTobAnim(coin*1.8);
-        this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
+        this.SetText("btn_normal",`領取${Utils.formatNumber(coin)}金幣`);
     }
 
     private aTobAnim(num:number){

@@ -92,21 +92,21 @@ export default class CommonView extends BaseUI {
         this.GetGameObject("icon_angre").active = e == EADLAYER.DOUBLE_ATT;
 
         if (this.type == EADLAYER.AUTO_COM) {
-            this.SetText("lbl_effect", "+" + MAX_AUTO_COM_TIME + "分钟");
+            this.SetText("lbl_effect", "+" + MAX_AUTO_COM_TIME + "分鐘");
             WxCenter.aldReport('AutoShow','show');
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
             this.SetText("lbl_effect", "+" + MAX_DOUBLE_ATT_TIME*60 + "秒");
-            this.SetText('lbl_d',`进入打鸡血状态  持续${MAX_DOUBLE_ATT_TIME*60}秒`)
+            this.SetText('lbl_d',`進入打鷄血狀態  持續${MAX_DOUBLE_ATT_TIME*60}秒`)
             WxCenter.aldReport('RageShow','show');
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            this.SetText("lbl_effect", "+" + MAX_DOUBLE_INCOME_TIME + "分钟");
+            this.SetText("lbl_effect", "+" + MAX_DOUBLE_INCOME_TIME + "分鐘");
             WxCenter.aldReport('DoubleShow','show');
         }
         else if(this.type == EADLAYER.DROP_PLANT)
         {
-            this.SetText("lbl_effect", "+" + MAX_DROP_PLANT_TIME + "分钟");
+            this.SetText("lbl_effect", "+" + MAX_DROP_PLANT_TIME + "分鐘");
             WxCenter.aldReport('DropShow','show');
         }
         let {end_time,max} = this.getEMTime();

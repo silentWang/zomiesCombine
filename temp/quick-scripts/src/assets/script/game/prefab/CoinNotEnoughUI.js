@@ -130,7 +130,7 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                         _c.label = 4;
                     case 4:
                         WxCenter_1.default.aldReport('LackShow', 'show');
-                        this.lbl_times.string = "\u5F53\u65E5\u6B21\u6570" + str;
+                        this.lbl_times.string = "\u7576\u65E5\u6B21\u6578" + str;
                         return [2 /*return*/];
                 }
             });

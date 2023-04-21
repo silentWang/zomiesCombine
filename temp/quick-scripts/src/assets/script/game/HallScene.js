@@ -365,6 +365,7 @@ var HallScene = /** @class */ (function (_super) {
                         ChickData_1.default.user.double_income_time = Math.max(0, ChickData_1.default.user.double_income_time);
                         ChickData_1.default.user.drop_plant_time = Math.max(0, ChickData_1.default.user.drop_plant_time);
                         ChickData_1.default.user.double_att_time = Math.max(0, ChickData_1.default.user.double_att_time);
+                        this.GetGameObject('btnFreeAd').active = !ChickData_1.default.isFreeAd;
                         this.updateBuyButton();
                         stime = ChickData_1.default.user.serverTime;
                         t = (Utils_1.default.getServerTime() - stime) / 1000;
@@ -401,13 +402,13 @@ var HallScene = /** @class */ (function (_super) {
                                 ChickData_1.default.user.drop_plant_time = Utils_1.default.getServerTime();
                             }
                             _this.breathAngry(isX2In);
-                            _this.SetText("att_x2_time", isX2In ? Utils_1.default.getTimeStrByS((ChickData_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000) : '打鸡血');
-                            _this.SetText("rewardx2_time", isInDb ? Utils_1.default.getTimeStrByS((ChickData_1.default.user.double_income_time - Utils_1.default.getServerTime()) / 1000) : '双倍');
+                            _this.SetText("att_x2_time", isX2In ? Utils_1.default.getTimeStrByS((ChickData_1.default.user.double_att_time - Utils_1.default.getServerTime()) / 1000) : '打鷄血');
+                            _this.SetText("rewardx2_time", isInDb ? Utils_1.default.getTimeStrByS((ChickData_1.default.user.double_income_time - Utils_1.default.getServerTime()) / 1000) : '雙倍');
                             if (ChickData_1.default.user.auto_com_time - Utils_1.default.getServerTime() > 0) {
                                 _this.SetText("auto_time", Utils_1.default.getTimeStrByS((ChickData_1.default.user.auto_com_time - Utils_1.default.getServerTime()) / 1000));
                             }
                             else {
-                                _this.SetText("auto_time", "自动合成");
+                                _this.SetText("auto_time", "自動合成");
                             }
                             _this.SetText("lbl_drop_plant", isDpIn ? Utils_1.default.getTimeStrByS((ChickData_1.default.user.drop_plant_time - Utils_1.default.getServerTime()) / 1000) : '掉落');
                             _this.GetGameObject("fx_bt_angry").active = _this.GetGameObject("att_x2_time").active;
