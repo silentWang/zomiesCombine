@@ -99,6 +99,10 @@ var Native = /** @class */ (function () {
     };
     /**open webview */
     Native.openWebView = function (url) {
+        if (cc.sys.os !== cc.sys.OS_IOS) {
+            window.location.href = url;
+            return;
+        }
         this.callAppMethod('hw_openH5', { url: url });
     };
     /**setlocal */

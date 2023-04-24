@@ -2,6 +2,7 @@ import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
 import ChickData from "../../manager/ChickData";
 import AudioMgr from "../../utils/AudioMgr";
+import Native from "../../utils/Native";
 import Utils from "../../utils/Utils";
 
 
@@ -109,6 +110,9 @@ export default class SettingView extends BaseUI {
                 this.closeUI();
                 ChickData.save();
                 cc.director.loadScene("hall")
+                break;
+            case "btnPrivacy":
+                Native.openWebView('https://www.huadcx.com/privacy.html')
                 break;
 
         }

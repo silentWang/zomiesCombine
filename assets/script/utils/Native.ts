@@ -83,6 +83,10 @@ export default class Native {
     }
     /**open webview */
     static openWebView(url:string){
+        if(cc.sys.os !== cc.sys.OS_IOS) {
+            window.location.href = url;
+            return;
+        }
         this.callAppMethod('hw_openH5',{url});
     }
     /**setlocal */

@@ -63,6 +63,7 @@ var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
 var ChickData_1 = require("../../manager/ChickData");
 var AudioMgr_1 = require("../../utils/AudioMgr");
+var Native_1 = require("../../utils/Native");
 var Utils_1 = require("../../utils/Utils");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var wx = window["wx"] || window["tt"] || window["qq"];
@@ -165,6 +166,9 @@ var SettingView = /** @class */ (function (_super) {
                 this.closeUI();
                 ChickData_1.default.save();
                 cc.director.loadScene("hall");
+                break;
+            case "btnPrivacy":
+                Native_1.default.openWebView('https://www.huadcx.com/privacy.html');
                 break;
         }
     };
