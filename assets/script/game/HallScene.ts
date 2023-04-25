@@ -104,7 +104,7 @@ export default class HallScene extends BaseUI {
             this.composeTip();
         }
         this.saveTime++;
-        if(this.saveTime >= 10){
+        if(this.saveTime >= 900){
             this.saveTime = 0;
             ChickData.save();
         }

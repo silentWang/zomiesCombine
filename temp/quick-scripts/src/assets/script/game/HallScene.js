@@ -164,7 +164,7 @@ var HallScene = /** @class */ (function (_super) {
             this.composeTip();
         }
         this.saveTime++;
-        if (this.saveTime >= 10) {
+        if (this.saveTime >= 900) {
             this.saveTime = 0;
             ChickData_1.default.save();
         }
