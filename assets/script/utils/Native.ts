@@ -7,6 +7,13 @@ export enum VIP_TYPE  {
     RECOVER_VIP = '3'
 }
 export default class Native {
+    static initAppCallMethod(){
+        window['HWGameDidEnterBackground'] = ()=>{
+            console.log('--HWGameDidEnterBackground--')
+            ChickData.save();
+        }
+        
+    }
     static callAppMethod(methodName:string,params:any = '',callback:Function = null){
         if(cc.sys.os !== cc.sys.OS_IOS) return;
         let callfunc = 'callBackFunc_' + new Date().getTime();

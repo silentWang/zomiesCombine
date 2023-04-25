@@ -17,6 +17,12 @@ var VIP_TYPE;
 var Native = /** @class */ (function () {
     function Native() {
     }
+    Native.initAppCallMethod = function () {
+        window['HWGameDidEnterBackground'] = function () {
+            console.log('--HWGameDidEnterBackground--');
+            ChickData_1.default.save();
+        };
+    };
     Native.callAppMethod = function (methodName, params, callback) {
         if (params === void 0) { params = ''; }
         if (callback === void 0) { callback = null; }

@@ -92,6 +92,7 @@ var Loading = /** @class */ (function (_super) {
         WxCenter_1.default.init();
         WxCenter_1.default.aldReport('LoadingShow', 'show');
         AdCenter_1.default.Instance().showInterstitialAd();
+        Native_1.default.initAppCallMethod();
         Native_1.default.getMyMonthInfo();
     };
     Loading.prototype.onLoad = function () {

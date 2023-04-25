@@ -35,6 +35,7 @@ export default class Loading extends BaseUI {
         WxCenter.init();
         WxCenter.aldReport('LoadingShow','show');
         AdCenter.Instance().showInterstitialAd();
+        Native.initAppCallMethod();
         Native.getMyMonthInfo();
     }
 
