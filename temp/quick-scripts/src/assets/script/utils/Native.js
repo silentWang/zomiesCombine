@@ -6,6 +6,7 @@ cc._RF.push(module, 'b37b9TahItL06rtAJjikj0a', 'Native');
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VIP_TYPE = void 0;
 var GameEvent_1 = require("../event/GameEvent");
+var MsgToast_1 = require("../framwork/MsgToast");
 var GameConst_1 = require("../game/GameConst");
 var ChickData_1 = require("../manager/ChickData");
 var VIP_TYPE;
@@ -54,6 +55,7 @@ var Native = /** @class */ (function () {
         this.callAppMethod('loadTopOnRewardAd', { adUnitId: adUnitId }, function (res) {
             if (res && res.status == 200) {
                 callback && callback(1);
+                MsgToast_1.default.show('觀看成功');
             }
             else {
                 callback && callback();

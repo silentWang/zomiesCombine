@@ -1,4 +1,5 @@
 import GameEvent from "../event/GameEvent";
+import MsgToast from "../framwork/MsgToast";
 import GameConst from "../game/GameConst";
 import ChickData from "../manager/ChickData";
 export enum VIP_TYPE  {
@@ -42,6 +43,7 @@ export default class Native {
         this.callAppMethod('loadTopOnRewardAd',{adUnitId},(res)=>{
             if(res && res.status == 200){
                 callback && callback(1);
+                MsgToast.show('觀看成功');
             }
             else{
                 callback && callback();
