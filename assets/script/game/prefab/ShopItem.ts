@@ -189,7 +189,7 @@ export default class ShopItem extends BaseUI {
                     {
                         if(HallScene.Instance.buyChick(this.gun[0],2))
                         {
-                           MsgToast.show("购买成功");
+                           MsgToast.show("購買成功");
                            this.dispatch(GameConst.BUY_CHICK,this.gun,this.node.getComponent(ListItem).listId);
                         }
                     }
@@ -198,12 +198,12 @@ export default class ShopItem extends BaseUI {
             case "btn_yellow":
                 if(ChickData.user.coin < this.cost_coin )
                 {
-                    MsgToast.show("金币不足")
+                    MsgToast.show("金幣不足")
                     return;
                 }
                 if(HallScene.Instance.buyChick(this.gun[0],0))
                 {
-                    MsgToast.show("购买成功");
+                    MsgToast.show("購買成功");
                     this.dispatch(GameConst.BUY_CHICK,this.gun,this.node.getComponent(ListItem).listId);
                 }
                 break;

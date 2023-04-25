@@ -85,6 +85,7 @@ var HallScene = /** @class */ (function (_super) {
         _this._lastdroptime = 0;
         _this.enemylist = [];
         _this.wave_info = null;
+        _this.saveTime = 0;
         _this.bFail = false;
         _this.createcomplete = false;
         _this.path = [];
@@ -162,6 +163,11 @@ var HallScene = /** @class */ (function (_super) {
         if (this.touchendtime != 0 && Utils_1.default.getServerTime() - this.touchendtime > 5000) {
             this.composeTip();
         }
+        this.saveTime++;
+        if (this.saveTime >= 10) {
+            this.saveTime = 0;
+            ChickData_1.default.save();
+        }
     };
     //中间显示图片
     HallScene.prototype.showImage = function (imgpath) {
@@ -226,6 +232,7 @@ var HallScene = /** @class */ (function (_super) {
                     ChickData_1.default.user.lv++;
                     this.openNewGround();
                     ChickData_1.default.save(true);
+                    this.saveTime = 0;
                     var key = ChickData_1.default.user.lv + "_" + ChickData_1.default.user.wave;
                     this.wave_info = Config_1.User_level[key];
                     WxCenter_1.default.aldLevelReport(ChickData_1.default.user.lv);
@@ -482,7 +489,7 @@ var HallScene = /** @class */ (function (_super) {
                 Utils_1.default.sharecallback(true);
             }
             else {
-                MsgToast_1.default.show("分享失败");
+                MsgToast_1.default.show("分享失敗");
                 Utils_1.default.sharecallback(false);
             }
         }
@@ -498,11 +505,12 @@ var HallScene = /** @class */ (function (_super) {
             return;
         ChickData_1.default.user.slots[curopen] = 1;
         ChickData_1.default.save();
+        this.saveTime = 0;
         var slots = this.GetGameObject("slots");
         var slot = slots.children[curopen];
         if (slot) {
             slot.getComponent(GroundItem_1.default).setIndex(curopen);
-            MsgToast_1.default.show("成功解锁新位置");
+            MsgToast_1.default.show("成功解鎖新位置");
         }
     };
     HallScene.prototype.breathAngry = function (isbool) {
@@ -690,15 +698,15 @@ var HallScene = /** @class */ (function (_super) {
                     if (this.items[i].datacopy)
                         tmp++;
                 }
-                if (tmp <= 2) {
-                    MsgToast_1.default.show("小鸡数量过少不能删除");
+                if (tmp <= 0) {
+                    MsgToast_1.default.show("小鷄數量過少不能刪除");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
                     return;
                 }
                 if (this.item_drag.datacopy.lv >= ChickData_1.default.user.getLvlMax()) {
-                    MsgToast_1.default.show("最高等级小鸡就不删除了吧！");
+                    MsgToast_1.default.show("最高等級的小鷄就不刪除了吧");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
@@ -764,6 +772,7 @@ var HallScene = /** @class */ (function (_super) {
         if (ChickData_1.default.user.guideIndex == 1) {
             ChickData_1.default.user.guideIndex++;
             ChickData_1.default.save();
+            this.saveTime = 0;
         }
         if (!b)
             return;
@@ -839,7 +848,7 @@ var HallScene = /** @class */ (function (_super) {
                         });
                     }
                     else {
-                        MsgToast_1.default.show("金币不足");
+                        MsgToast_1.default.show("金幣不足");
                     }
                     return;
                 }
@@ -866,7 +875,7 @@ var HallScene = /** @class */ (function (_super) {
         }
         else {
             if (buytype <= 2) {
-                MsgToast_1.default.show("位置不够啦！");
+                MsgToast_1.default.show("位置不夠啦！");
                 this.GetGameObject("btn_delete").stopAllActions();
                 this.GetGameObject("btn_delete").opacity = 255;
                 this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.25), cc.fadeTo(0.25, 0)));
@@ -919,6 +928,7 @@ var HallScene = /** @class */ (function (_super) {
                 if (ChickData_1.default.user.guideIndex == 0) {
                     ChickData_1.default.user.guideIndex++;
                     ChickData_1.default.save();
+                    this.saveTime = 0;
                 }
                 if (ChickData_1.default.user.guideIndex == 1) {
                     this.composeTip();
@@ -949,7 +959,7 @@ var HallScene = /** @class */ (function (_super) {
                 break;
             case "btn_delete":
                 if (this.GetGameObject("btn_delete").opacity == 255)
-                    MsgToast_1.default.show("拖动到这里卖出");
+                    MsgToast_1.default.show("拖動到這裏賣出");
                 break;
             case "btn_inviate":
                 // WxCenter.shareAppMessage();

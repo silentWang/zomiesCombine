@@ -229,7 +229,7 @@ var ShopItem = /** @class */ (function (_super) {
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
                         if (HallScene_1.default.Instance.buyChick(_this.gun[0], 2)) {
-                            MsgToast_1.default.show("购买成功");
+                            MsgToast_1.default.show("購買成功");
                             _this.dispatch(GameConst_1.default.BUY_CHICK, _this.gun, _this.node.getComponent(ListItem_1.default).listId);
                         }
                     }
@@ -237,11 +237,11 @@ var ShopItem = /** @class */ (function (_super) {
                 break;
             case "btn_yellow":
                 if (ChickData_1.default.user.coin < this.cost_coin) {
-                    MsgToast_1.default.show("金币不足");
+                    MsgToast_1.default.show("金幣不足");
                     return;
                 }
                 if (HallScene_1.default.Instance.buyChick(this.gun[0], 0)) {
-                    MsgToast_1.default.show("购买成功");
+                    MsgToast_1.default.show("購買成功");
                     this.dispatch(GameConst_1.default.BUY_CHICK, this.gun, this.node.getComponent(ListItem_1.default).listId);
                 }
                 break;

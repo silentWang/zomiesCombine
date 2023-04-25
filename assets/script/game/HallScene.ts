@@ -36,6 +36,7 @@ export default class HallScene extends BaseUI {
     private _lastdroptime = 0;
     public enemylist:cc.Node[] = [];
     private wave_info:any = null;
+    private saveTime = 0;
 
     hidComposeTips()
     {
@@ -102,6 +103,11 @@ export default class HallScene extends BaseUI {
         {
             this.composeTip();
         }
+        this.saveTime++;
+        if(this.saveTime >= 10){
+            this.saveTime = 0;
+            ChickData.save();
+        }
     }
 
     //中间显示图片
@@ -166,6 +172,7 @@ export default class HallScene extends BaseUI {
                     ChickData.user.lv++;
                     this.openNewGround();
                     ChickData.save(true);
+                    this.saveTime = 0;
                     let key = ChickData.user.lv + "_" + ChickData.user.wave;
                     this.wave_info = User_level[key];
                     WxCenter.aldLevelReport(ChickData.user.lv);
@@ -455,7 +462,7 @@ export default class HallScene extends BaseUI {
                 Utils.sharecallback(true)
             }
             else {
-                MsgToast.show("分享失败");
+                MsgToast.show("分享失敗");
                 Utils.sharecallback(false)
             }
         }
@@ -471,11 +478,12 @@ export default class HallScene extends BaseUI {
         if(lv < ChickData.user.lv) return;
         ChickData.user.slots[curopen] = 1;
         ChickData.save();
+        this.saveTime = 0;
         let slots = this.GetGameObject("slots");
         let slot = slots.children[curopen];
         if(slot){
             slot.getComponent(GroundItem).setIndex(curopen);
-            MsgToast.show("成功解锁新位置");
+            MsgToast.show("成功解鎖新位置");
         }
     }
 
@@ -678,8 +686,8 @@ export default class HallScene extends BaseUI {
                     if (this.items[i].datacopy) tmp++;
                 }
 
-                if (tmp <= 2) {
-                    MsgToast.show("小鸡数量过少不能删除");
+                if (tmp <= 0) {
+                    MsgToast.show("小鷄數量過少不能刪除");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
@@ -687,7 +695,7 @@ export default class HallScene extends BaseUI {
                 }
 
                 if (this.item_drag.datacopy.lv >= ChickData.user.getLvlMax()) {
-                    MsgToast.show("最高等级小鸡就不删除了吧！");
+                    MsgToast.show("最高等級的小鷄就不刪除了吧");
                     this.item_drag.linkItem.setItemData(this.item_drag.datacopy);
                     this.item_drag.linkItem = null;
                     this.item_drag.node.active = false;
@@ -762,6 +770,7 @@ export default class HallScene extends BaseUI {
         {
             ChickData.user.guideIndex ++;
             ChickData.save();
+            this.saveTime = 0;
         }
         if (!b) return;
         let nextGun = ChickData.user.getChickInfo(item.index);
@@ -824,7 +833,7 @@ export default class HallScene extends BaseUI {
                         });
                     }
                     else{
-                        MsgToast.show("金币不足");
+                        MsgToast.show("金幣不足");
                     }
                     return;
                 }
@@ -854,7 +863,7 @@ export default class HallScene extends BaseUI {
         }
         else {
             if (buytype <= 2) {
-                MsgToast.show("位置不够啦！");
+                MsgToast.show("位置不夠啦！");
                 this.GetGameObject("btn_delete").stopAllActions();
                 this.GetGameObject("btn_delete").opacity = 255;
                 this.GetGameObject("btn_delete").runAction(cc.sequence(cc.delayTime(0.25),cc.fadeTo(0.25,0)))
@@ -908,6 +917,7 @@ export default class HallScene extends BaseUI {
                 {
                     ChickData.user.guideIndex++;
                     ChickData.save();
+                    this.saveTime = 0;
                 }
                 if(ChickData.user.guideIndex == 1)
                 {
@@ -939,7 +949,7 @@ export default class HallScene extends BaseUI {
                 break;
             case "btn_delete":
                 if(this.GetGameObject("btn_delete").opacity == 255)
-                MsgToast.show("拖动到这里卖出")
+                MsgToast.show("拖動到這裏賣出")
                 break;
             case "btn_inviate":
                 // WxCenter.shareAppMessage();
