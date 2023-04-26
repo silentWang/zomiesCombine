@@ -230,7 +230,6 @@ var HallScene = /** @class */ (function (_super) {
                     isStop = true;
                     ChickData_1.default.user.wave = 1;
                     ChickData_1.default.user.lv++;
-                    this.openNewGround();
                     ChickData_1.default.save(true);
                     this.saveTime = 0;
                     var key = ChickData_1.default.user.lv + "_" + ChickData_1.default.user.wave;
@@ -503,7 +502,8 @@ var HallScene = /** @class */ (function (_super) {
         if (curopen < 0)
             return;
         var lv = Config_1.Config_ground[curopen].price;
-        var ulv = ChickData_1.default.user.lv;
+        // let ulv = ChickData.user.lv
+        var ulv = ChickData_1.default.user.getLvlMax();
         if (lv > ulv)
             return;
         ChickData_1.default.user.slots[curopen] = 1;
@@ -788,6 +788,7 @@ var HallScene = /** @class */ (function (_super) {
         var targetpos = this.GetGameObject("node_com").convertToWorldSpaceAR(item.node.position);
         targetpos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(targetpos);
         this.playSkeAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0, 20, 0)), 1);
+        this.openNewGround();
     };
     HallScene.prototype.updateBuyButton = function () {
         return __awaiter(this, void 0, void 0, function () {

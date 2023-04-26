@@ -170,7 +170,6 @@ export default class HallScene extends BaseUI {
                     isStop = true;
                     ChickData.user.wave = 1;
                     ChickData.user.lv++;
-                    this.openNewGround();
                     ChickData.save(true);
                     this.saveTime = 0;
                     let key = ChickData.user.lv + "_" + ChickData.user.wave;
@@ -477,7 +476,8 @@ export default class HallScene extends BaseUI {
         let curopen = GroundItem.getNeedOpen();
         if(curopen < 0) return;
         let lv = Config_ground[curopen].price;
-        let ulv = ChickData.user.lv
+        // let ulv = ChickData.user.lv
+        let ulv = ChickData.user.getLvlMax()
         if(lv > ulv) return;
         ChickData.user.slots[curopen] = 1;
         ChickData.save();
@@ -787,6 +787,8 @@ export default class HallScene extends BaseUI {
         let targetpos = this.GetGameObject("node_com").convertToWorldSpaceAR(item.node.position);
         targetpos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(targetpos);
         this.playSkeAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0,20,0)), 1);
+
+        this.openNewGround();
     }
 
     async updateBuyButton()

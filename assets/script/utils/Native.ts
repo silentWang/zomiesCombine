@@ -112,7 +112,7 @@ export default class Native {
         if(cc.sys.os === cc.sys.OS_IOS){
             this.callAppMethod('getCacheData','',(res)=>{
                 if(res && res.userdata){
-                    callback && callback(JSON.parse(res.userdata));
+                    callback && callback(JSON.parse(res.user));
                 }
                 else{
                     callback && callback(null);
