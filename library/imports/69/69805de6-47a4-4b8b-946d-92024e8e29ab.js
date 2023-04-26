@@ -96,7 +96,7 @@ var GroundItem = /** @class */ (function (_super) {
         this.GetGameObject("lock").active = info == 0;
         this.GetGameObject("lbl_index").active = info == 0;
         this.GetGameObject("node_cost").active = info == 0;
-        var str = Config_1.Config_ground[i - 1].price + "\u95DC";
+        var str = Config_1.Config_ground[i - 1].price + "\u7D1A";
         this.SetText("lbl_open_cost", str);
     };
     var GroundItem_1;

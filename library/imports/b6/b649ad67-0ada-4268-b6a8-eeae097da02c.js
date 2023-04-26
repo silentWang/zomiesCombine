@@ -293,10 +293,12 @@ var HallScene = /** @class */ (function (_super) {
             _loop_1(i);
         }
         //关卡信息
-        this.SetText("lbl_cur_lv", ChickData_1.default.user.lv + "");
+        var lv = ChickData_1.default.user.lv;
+        this.SetText("lbl_cur_lv", lv + "");
         this.SetText("lbl_waves", ChickData_1.default.user.wave + "/" + this.wave_info[2]);
-        this.SetText("lbl_pre_lv", (ChickData_1.default.user.lv - 1) + "");
-        this.SetText("lbl_nex_lv", (ChickData_1.default.user.lv + 1) + "");
+        this.SetText("lbl_pre_lv", (lv - 1) + "");
+        this.GetGameObject('lvl_small').active = lv - 1 > 0;
+        this.SetText("lbl_nex_lv", (lv + 1) + "");
         if (isChange) {
             Utils_1.default.playBreath(this.GetGameObject('lbl_waves'), 1, 3, 0.5, false);
         }
@@ -501,7 +503,8 @@ var HallScene = /** @class */ (function (_super) {
         if (curopen < 0)
             return;
         var lv = Config_1.Config_ground[curopen].price;
-        if (lv < ChickData_1.default.user.lv)
+        var ulv = ChickData_1.default.user.lv;
+        if (lv > ulv)
             return;
         ChickData_1.default.user.slots[curopen] = 1;
         ChickData_1.default.save();

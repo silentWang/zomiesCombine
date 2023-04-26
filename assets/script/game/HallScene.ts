@@ -127,7 +127,7 @@ export default class HallScene extends BaseUI {
         let isStop = false;
         let isChange = false;
         if(bFail) this.bFail = true;
-        for(var i = this.enemylist.length-1;i>=0;--i)
+        for(var i = this.enemylist.length - 1;i >= 0;--i)
         {
             if(node == this.enemylist[i])
             {
@@ -139,7 +139,7 @@ export default class HallScene extends BaseUI {
         {
             if(this.bFail)
             {
-                if(ChickData.user.wave>= this.wave_info[2])
+                if(ChickData.user.wave >= this.wave_info[2])
                 {
                     ChickData.user.wave= 1;
                     isStop = true;
@@ -243,10 +243,12 @@ export default class HallScene extends BaseUI {
         }
         
         //关卡信息
-        this.SetText("lbl_cur_lv",ChickData.user.lv+"");
+        let lv = ChickData.user.lv
+        this.SetText("lbl_cur_lv",lv+"");
         this.SetText("lbl_waves",ChickData.user.wave+"/"+ this.wave_info[2]);
-        this.SetText("lbl_pre_lv",(ChickData.user.lv-1)+"");
-        this.SetText("lbl_nex_lv",(ChickData.user.lv+1)+"");
+        this.SetText("lbl_pre_lv",(lv-1)+"");
+        this.GetGameObject('lvl_small').active = lv - 1 > 0
+        this.SetText("lbl_nex_lv",(lv+1)+"");
         if(isChange){
             Utils.playBreath(this.GetGameObject('lbl_waves'),1,3,0.5,false);
         }
@@ -475,7 +477,8 @@ export default class HallScene extends BaseUI {
         let curopen = GroundItem.getNeedOpen();
         if(curopen < 0) return;
         let lv = Config_ground[curopen].price;
-        if(lv < ChickData.user.lv) return;
+        let ulv = ChickData.user.lv
+        if(lv > ulv) return;
         ChickData.user.slots[curopen] = 1;
         ChickData.save();
         this.saveTime = 0;
