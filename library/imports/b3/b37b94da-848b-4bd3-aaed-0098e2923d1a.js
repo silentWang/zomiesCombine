@@ -127,9 +127,12 @@ var Native = /** @class */ (function () {
         if (cc.sys.os === cc.sys.OS_IOS) {
             this.callAppMethod('getCacheData', '', function (res) {
                 if (res && res.userdata) {
+                    var obj = JSON.parse(res.userdata);
                     console.log('---getCacheData111---' + res.userdata);
-                    console.log('---getCacheData222---' + JSON.parse(res.userdata));
-                    callback && callback(JSON.parse(res.userdata).user);
+                    console.log('---getCacheData222---' + obj);
+                    console.log('---getCacheData333---' + obj.user);
+                    console.log('---getCacheData444---' + JSON.stringify(obj.user));
+                    callback && callback(obj);
                 }
                 else {
                     callback && callback(null);
