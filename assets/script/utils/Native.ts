@@ -113,10 +113,6 @@ export default class Native {
             this.callAppMethod('getCacheData','',(res)=>{
                 if(res && res.userdata){
                     let obj = JSON.parse(res.userdata);
-                    console.log('---getCacheData111---' + res.userdata)
-                    console.log('---getCacheData222---' + obj)
-                    console.log('---getCacheData333---' + obj.user)
-                    console.log('---getCacheData444---' + JSON.stringify(obj.user))
                     callback && callback(obj);
                 }
                 else{
