@@ -60,13 +60,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("./framwork/BaseUI");
-var AdCenter_1 = require("./manager/AdCenter");
 var ChickData_1 = require("./manager/ChickData");
 var PoolMgr_1 = require("./manager/PoolMgr");
-var WxCenter_1 = require("./manager/WxCenter");
 var AudioMgr_1 = require("./utils/AudioMgr");
 var Utils_1 = require("./utils/Utils");
-var wx = window["wx"] || window["tt"];
+var dyTT = window["tt"];
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Loading = /** @class */ (function (_super) {
     __extends(Loading, _super);
@@ -87,11 +85,7 @@ var Loading = /** @class */ (function (_super) {
                 break;
         }
     };
-    Loading.prototype.start = function () {
-        WxCenter_1.default.init();
-        WxCenter_1.default.aldReport('LoadingShow', 'show');
-        AdCenter_1.default.Instance().showInterstitialAd();
-    };
+    Loading.prototype.start = function () { };
     Loading.prototype.onLoad = function () {
         return __awaiter(this, void 0, void 0, function () {
             var descs, index;
@@ -100,9 +94,9 @@ var Loading = /** @class */ (function (_super) {
                 cc.debug.setDisplayStats(false);
                 cc.game.setFrameRate(60);
                 _super.prototype.onLoad.call(this);
-                if (wx) {
-                    wx.setPreferredFramesPerSecond(60);
-                    wx.setKeepScreenOn({ keepScreenOn: true });
+                if (dyTT) {
+                    dyTT.setPreferredFramesPerSecond(60);
+                    dyTT.setKeepScreenOn({ keepScreenOn: true });
                 }
                 PoolMgr_1.default.Instance().loadPrefabs();
                 this.startLGAction();

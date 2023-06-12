@@ -1,7 +1,6 @@
 import BaseUI from "../../framwork/BaseUI";
 import List from "../../framwork/List";
 import ChickData from "../../manager/ChickData";
-import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 import { Config_chick } from "../Config";
@@ -31,8 +30,6 @@ export default class ShopView extends BaseUI{
 
     list = null;
     start () {
-        if(window && window['xxxxx']) window['xxxxx']("rasjRJpYskKJp7t5f2mQrN");
-        WxCenter.aldReport('ShopShow','show');
         ShopView._instance = this.node;
         this.list = Config_chick
         this.reLoad();

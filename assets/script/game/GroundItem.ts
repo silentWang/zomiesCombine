@@ -83,7 +83,7 @@ export default class GroundItem extends BaseUI {
         this.GetGameObject("lock").active = info == 0;
         this.GetGameObject("lbl_index").active = info == 0;
         this.GetGameObject("node_cost").active = info == 0;
-        let str  = `${Config_ground[i-1].price}关`;
+        let str  = `${Config_ground[i-1].price}级`;
         this.SetText("lbl_open_cost",str);
     }
 }

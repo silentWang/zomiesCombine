@@ -226,13 +226,9 @@ var ShopItem = /** @class */ (function (_super) {
         AudioMgr_1.default.Instance().playMX("click");
         switch (btnName) {
             case "btn_free":
-                if (window && window['xxxxx'])
-                    window['xxxxx']("7tnkcYdyZcthbRnjE2mHckiQ");
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
                         if (HallScene_1.default.Instance.buyChick(_this.gun[0], 2)) {
-                            if (window && window['xxxxx'])
-                                window['xxxxx']("EPem3QPTBF6rtYjchp7WYWa");
                             MsgToast_1.default.show("购买成功");
                             _this.dispatch(GameConst_1.default.BUY_CHICK, _this.gun, _this.node.getComponent(ListItem_1.default).listId);
                         }
@@ -241,8 +237,6 @@ var ShopItem = /** @class */ (function (_super) {
                 break;
             case "btn_yellow":
                 if (ChickData_1.default.user.coin < this.cost_coin) {
-                    if (window && window['xxxxx'])
-                        window['xxxxx']("hzRNeci");
                     MsgToast_1.default.show("金币不足");
                     return;
                 }

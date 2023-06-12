@@ -26,7 +26,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
 var ChickData_1 = require("../../manager/ChickData");
-var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var HallScene_1 = require("../HallScene");
@@ -43,21 +42,16 @@ var WinView = /** @class */ (function (_super) {
         this.GetSkeleton("fx_victory").setAnimation(0, "start", false);
         this.GetSkeleton("fx_victory").setAnimation(1, "idle", true);
         Utils_1.default.playBreath(this.GetGameObject('btn_get'));
-        WxCenter_1.default.aldReport('PassShow', 'show');
+        AdCenter_1.default.Instance().showInterstitialAd();
     };
     WinView.prototype.setInfo = function (coin) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("Sn2mfdEzWRYhwXAtSRK8c5");
         this.coin = coin;
         this.aTobAnim(coin * 2);
         // this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     };
-    WinView.prototype.RstP_xxxx_fun = function () { console.log("ykzPX2QsDWmFfEfSaPiy"); };
     WinView.prototype.aTobAnim = function (num) {
         var _this = this;
         var aver = Math.ceil(num / 60);
-        if (window && window['xxxxx'])
-            window['xxxxx']("ED");
         var xn = 0;
         this.SetText("lbl_coin", Utils_1.default.formatNumber(0));
         var cb = function () {
@@ -72,8 +66,6 @@ var WinView = /** @class */ (function (_super) {
     };
     WinView.prototype.closeUI = function () {
         this.shutAnim();
-        if (window && window['xxxxx'])
-            window['xxxxx']("3CsKk45QY");
         HallScene_1.default.Instance.createEnemys();
     };
     WinView.prototype.getCoinReward = function (isdouble) {
@@ -83,8 +75,8 @@ var WinView = /** @class */ (function (_super) {
         Utils_1.default.flyAnim(0, this.node, "icon_coin", Utils_1.default.getRandomInt(5, 10), 100, function (b) {
             if (b) {
                 ChickData_1.default.user.coin += coin;
-                if (ChickData_1.default.user.lv >= 30)
-                    AdCenter_1.default.Instance().showInterstitialAd();
+                // if(ChickData.user.lv >= 30)
+                //     AdCenter.Instance().showInterstitialAd();
             }
         });
     };
@@ -98,19 +90,16 @@ var WinView = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_get":
-                WxCenter_1.default.aldReport('PassClick', 'click');
-                if (window && window['xxxxx'])
-                    window['xxxxx']("DZxBHMTnts7Nb");
-                AdCenter_1.default.Instance().play(function () {
-                    _this.getCoinReward();
-                    _this.closeUI();
+                AdCenter_1.default.Instance().play(function (b) {
+                    if (b) {
+                        _this.getCoinReward();
+                        _this.closeUI();
+                    }
                 }, 1);
                 break;
             case "btn_normal":
                 this.getCoinReward();
                 this.closeUI();
-                if (window && window['xxxxx'])
-                    window['xxxxx']("ZrHnJSB53BTwr");
                 break;
         }
     };

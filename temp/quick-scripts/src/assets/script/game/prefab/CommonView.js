@@ -28,7 +28,6 @@ var BaseUI_1 = require("../../framwork/BaseUI");
 var MsgToast_1 = require("../../framwork/MsgToast");
 var AdCenter_1 = require("../../manager/AdCenter");
 var ChickData_1 = require("../../manager/ChickData");
-var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -111,22 +110,18 @@ var CommonView = /** @class */ (function (_super) {
         this.GetGameObject("icon_angre").active = e == EADLAYER.DOUBLE_ATT;
         if (this.type == EADLAYER.AUTO_COM) {
             this.SetText("lbl_effect", "+" + exports.MAX_AUTO_COM_TIME + "分钟");
-            WxCenter_1.default.aldReport('AutoShow', 'show');
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
             this.SetText("lbl_effect", "+" + exports.MAX_DOUBLE_ATT_TIME * 60 + "秒");
             this.SetText('lbl_d', "\u8FDB\u5165\u6253\u9E21\u8840\u72B6\u6001  \u6301\u7EED" + exports.MAX_DOUBLE_ATT_TIME * 60 + "\u79D2");
-            WxCenter_1.default.aldReport('RageShow', 'show');
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
             this.SetText("lbl_effect", "+" + exports.MAX_DOUBLE_INCOME_TIME + "分钟");
             if (window && window['xxxxx'])
                 window['xxxxx']("5XByGB");
-            WxCenter_1.default.aldReport('DoubleShow', 'show');
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
             this.SetText("lbl_effect", "+" + exports.MAX_DROP_PLANT_TIME + "分钟");
-            WxCenter_1.default.aldReport('DropShow', 'show');
         }
         var _a = this.getEMTime(), end_time = _a.end_time, max = _a.max;
         var isRunning = end_time > Utils_1.default.getServerTime();
@@ -137,7 +132,6 @@ var CommonView = /** @class */ (function (_super) {
         if (double === void 0) { double = 1; }
         var isUse = false;
         if (this.type == EADLAYER.AUTO_COM) {
-            WxCenter_1.default.aldReport('AutoClick', 'click');
             // if (ChickData.user.auto_com_time - Utils.getServerTime() > (MAX_AUTO_COM_TIME - AUTO_COM_TIME) * 60 * 1000) {
             //     MsgToast.show("最大累积时间" + MAX_AUTO_COM_TIME + "分钟");
             //     return;
@@ -150,7 +144,6 @@ var CommonView = /** @class */ (function (_super) {
             isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
-            WxCenter_1.default.aldReport('RageClick', 'click');
             // if (ChickData.user.double_att_time - Utils.getServerTime() > (MAX_DOUBLE_ATT_TIME - DOUBLE_ATT_TIME) * 60 * 1000) {
             // MsgToast.show("最大累积时间" + MAX_DOUBLE_ATT_TIME + "分钟");
             // return;
@@ -163,7 +156,6 @@ var CommonView = /** @class */ (function (_super) {
             isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            WxCenter_1.default.aldReport('DoubleClick', 'click');
             // if (ChickData.user.double_income_time - Utils.getServerTime() > (MAX_DOUBLE_INCOME_TIME - DOUBLE_INCOME_TIME) * 60 * 1000) {
             // MsgToast.show("最大累积时间" + MAX_DOUBLE_INCOME_TIME + "分钟");
             // return;
@@ -174,17 +166,12 @@ var CommonView = /** @class */ (function (_super) {
             isUse = true;
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
-            if (double == 2) {
-                WxCenter_1.default.aldReport('DropClick', 'click');
-            }
             // if (ChickData.user.drop_plant_time - Utils.getServerTime() > (MAX_DROP_PLANT_TIME - DROP_PLANT_TIME) * 60 * 1000) {
             //     MsgToast.show("最大累积时间" + MAX_DROP_PLANT_TIME + "分钟");
             //     return;
             // }
             // if (ChickData.user.drop_plant_time < Utils.getServerTime())
             ChickData_1.default.user.drop_plant_time = Utils_1.default.getServerTime();
-            if (window && window['xxxxx'])
-                window['xxxxx']("6rMK85kkR2d2pjfFDSztDrjMXJC5cBc");
             ChickData_1.default.user.drop_plant_time += DROP_PLANT_TIME * 60 * 1000 * double;
             isUse = true;
         }
@@ -208,8 +195,6 @@ var CommonView = /** @class */ (function (_super) {
                     if (b)
                         _this.addCoin(2);
                 }, 2);
-                if (window && window['xxxxx'])
-                    window['xxxxx']("RdfKGMXYZPH3P7YBnN");
                 break;
             case "btn_normal":
                 this.addCoin(1);

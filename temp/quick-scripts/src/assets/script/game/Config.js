@@ -498,15 +498,15 @@ exports.Config_ground = [
     { id: 1, type: 0, price: 0 },
     { id: 2, type: 0, price: 0 },
     { id: 3, type: 0, price: 0 },
-    { id: 4, type: 0, price: 2 },
+    { id: 4, type: 0, price: 3 },
     { id: 5, type: 0, price: 4 },
-    { id: 6, type: 0, price: 6 },
-    { id: 7, type: 0, price: 8 },
-    { id: 8, type: 0, price: 10 },
-    { id: 9, type: 0, price: 12 },
-    { id: 10, type: 0, price: 15 },
-    { id: 11, type: 0, price: 18 },
-    { id: 12, type: 0, price: 20 },
+    { id: 6, type: 0, price: 5 },
+    { id: 7, type: 0, price: 6 },
+    { id: 8, type: 0, price: 7 },
+    { id: 9, type: 0, price: 8 },
+    { id: 10, type: 0, price: 9 },
+    { id: 11, type: 0, price: 10 },
+    { id: 12, type: 0, price: 11 },
 ];
 if (window && window['xxxxx'])
     window['xxxxx']("K7WG2jffhx7");

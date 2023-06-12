@@ -46,7 +46,6 @@ require('./assets/script/manager/ConfigManager');
 require('./assets/script/manager/DataManager');
 require('./assets/script/manager/PoolMgr');
 require('./assets/script/manager/Singleton');
-require('./assets/script/manager/WxCenter');
 require('./assets/script/utils/AudioMgr');
 require('./assets/script/utils/DebugTools');
 require('./assets/script/utils/LongTouchComponent');

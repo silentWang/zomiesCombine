@@ -68,7 +68,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
 var ChickData_1 = require("../../manager/ChickData");
-var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var NumberUtils_1 = require("../../utils/NumberUtils");
 var Utils_1 = require("../../utils/Utils");
@@ -130,7 +129,6 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                         }
                         _c.label = 4;
                     case 4:
-                        WxCenter_1.default.aldReport('LackShow', 'show');
                         this.lbl_times.string = "\u5F53\u65E5\u6B21\u6570" + str;
                         return [2 /*return*/];
                 }
@@ -170,7 +168,6 @@ var CoinNotEnoughUI = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_ad":
-                WxCenter_1.default.aldReport('LackClick', 'click');
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b)
                         _this.addCoin();

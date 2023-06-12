@@ -1,7 +1,6 @@
 import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
 import ChickData from "../../manager/ChickData";
-import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 import HallScene from "../HallScene";
@@ -16,22 +15,20 @@ export default class WinView extends BaseUI {
         this.GetSkeleton("fx_victory").setAnimation(0,"start",false);
         this.GetSkeleton("fx_victory").setAnimation(1,"idle",true);
         Utils.playBreath(this.GetGameObject('btn_get'))
-        WxCenter.aldReport('PassShow','show');
+
+        AdCenter.Instance().showInterstitialAd();
     }
 
     private coin = 0;
     setInfo(coin:number)
     {
-        if(window && window['xxxxx']) window['xxxxx']("Sn2mfdEzWRYhwXAtSRK8c5");
         this.coin = coin;
         this.aTobAnim(coin*2);
         // this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     }
-        private RstP_xxxx_fun(){ console.log("ykzPX2QsDWmFfEfSaPiy"); }
 
     private aTobAnim(num:number){
         let aver = Math.ceil(num/60);
-        if(window && window['xxxxx']) window['xxxxx']("ED");
         let xn = 0;
         this.SetText("lbl_coin",Utils.formatNumber(0));
         let cb = ()=>{
@@ -47,7 +44,6 @@ export default class WinView extends BaseUI {
 
     closeUI() {
         this.shutAnim();
-        if(window && window['xxxxx']) window['xxxxx']("3CsKk45QY");
         HallScene.Instance.createEnemys();
     }
 
@@ -58,8 +54,8 @@ export default class WinView extends BaseUI {
             if(b)
             {
                 ChickData.user.coin += coin;
-                if(ChickData.user.lv >= 30)
-                    AdCenter.Instance().showInterstitialAd();
+                // if(ChickData.user.lv >= 30)
+                //     AdCenter.Instance().showInterstitialAd();
             }  
         })
     }
@@ -73,17 +69,16 @@ export default class WinView extends BaseUI {
                 this.closeUI();
                 break;
             case "btn_get":
-                WxCenter.aldReport('PassClick','click');
-                if(window && window['xxxxx']) window['xxxxx']("DZxBHMTnts7Nb");
-                AdCenter.Instance().play(()=>{
-                    this.getCoinReward();
-                    this.closeUI();
+                AdCenter.Instance().play((b)=>{
+                    if(b){
+                        this.getCoinReward();
+                        this.closeUI();
+                    }
                 },1);
                 break;
             case "btn_normal":
                 this.getCoinReward();
                 this.closeUI();
-                if(window && window['xxxxx']) window['xxxxx']("ZrHnJSB53BTwr");
                 break;
         }
     }

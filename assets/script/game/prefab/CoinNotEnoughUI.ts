@@ -8,7 +8,6 @@
 import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
 import ChickData from "../../manager/ChickData";
-import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import NumberUtils from "../../utils/NumberUtils";
 import Utils from "../../utils/Utils";
@@ -62,7 +61,6 @@ export default class CoinNotEnoughUI extends BaseUI {
             let coin = 0.5*ChickData.user.buyChickPrice(lv);
             this.SetText('lbl_effect',`+${NumberUtils.getLargeString(Utils.fixFloat(coin))}`);
         }
-        WxCenter.aldReport('LackShow','show');
         this.lbl_times.string = `当日次数${str}`;
     }
 
@@ -97,7 +95,6 @@ export default class CoinNotEnoughUI extends BaseUI {
                 this.closeUI();
                 break;
             case "btn_ad":
-                WxCenter.aldReport('LackClick','click');
                 AdCenter.Instance().play((b)=>{
                     if(b) this.addCoin();
                 },1);

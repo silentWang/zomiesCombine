@@ -176,13 +176,11 @@ export default class ShopItem extends BaseUI {
         AudioMgr.Instance().playMX("click");
         switch (btnName) {
             case "btn_free":
-                if(window && window['xxxxx']) window['xxxxx']("7tnkcYdyZcthbRnjE2mHckiQ");
                 AdCenter.Instance().play((b)=>{
                     if(b)
                     {
                         if(HallScene.Instance.buyChick(this.gun[0],2))
                         {
-                           if(window && window['xxxxx']) window['xxxxx']("EPem3QPTBF6rtYjchp7WYWa");
                            MsgToast.show("购买成功");
                            this.dispatch(GameConst.BUY_CHICK,this.gun,this.node.getComponent(ListItem).listId);
                         }
@@ -192,7 +190,6 @@ export default class ShopItem extends BaseUI {
             case "btn_yellow":
                 if(ChickData.user.coin < this.cost_coin )
                 {
-                    if(window && window['xxxxx']) window['xxxxx']("hzRNeci");
                     MsgToast.show("金币不足")
                     return;
                 }

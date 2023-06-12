@@ -1,7 +1,6 @@
 import BaseUI from "../framwork/BaseUI";
 import MsgToast from "../framwork/MsgToast";
 import ChickData from "../manager/ChickData";
-import WxCenter from "../manager/WxCenter";
 import AudioMgr from "../utils/AudioMgr";
 import Utils from "../utils/Utils";
 import { User_level, Config_chick, Config_ground } from "./Config";
@@ -171,15 +170,12 @@ export default class HallScene extends BaseUI {
                     isStop = true;
                     ChickData.user.wave = 1;
                     ChickData.user.lv++;
-                    this.openNewGround();
                     ChickData.save(true);
                     let key = ChickData.user.lv + "_" + ChickData.user.wave;
                     this.wave_info = User_level[key];
-                    WxCenter.aldLevelReport(ChickData.user.lv);
                 }
                 else
                 {
-                    if(window && window['xxxxx']) window['xxxxx']("aZdRiB");
                     AudioMgr.Instance().playMX("win_wave")
                     // this.showImage("texture/success");
                     this.playSkeAni("spine:other/shengjichenggong", "effect", this.node,cc.v3(0,150,0), 2);
@@ -203,7 +199,6 @@ export default class HallScene extends BaseUI {
         if(!this.wave_info)
         {
             let key = 60 + "_" + ChickData.user.wave;
-            if(window && window['xxxxx']) window['xxxxx']("ArRzG2WMzEmMZfjiWa8S6KasHz");
             this.wave_info = User_level[key];
         }
 
@@ -216,7 +211,6 @@ export default class HallScene extends BaseUI {
         }
         else if(ChickData.user.wave == 1)
         {
-            if(window && window['xxxxx']) window['xxxxx']("B3AEM7J75BWdr3sQ7myfae");
             AudioMgr.Instance().playMusic("BGM1");
         }
 
@@ -246,7 +240,6 @@ export default class HallScene extends BaseUI {
         }
         
         //关卡信息
-        if(window && window['xxxxx']) window['xxxxx']("hEXSmcDd57zwYGnDHTZrKT");
         this.SetText("lbl_cur_lv",ChickData.user.lv+"");
         this.SetText("lbl_waves",ChickData.user.wave+"/"+ this.wave_info[2]);
         this.SetText("lbl_pre_lv",(ChickData.user.lv-1)+"");
@@ -273,7 +266,6 @@ export default class HallScene extends BaseUI {
                 list.splice(i,1);
                 console.warn("错误...修正")
                 continue;
-                if(window && window['xxxxx']) window['xxxxx']("jYEpCE24wWZ2ZGkW");
             }
             m[list[i].index] = 1;
         }
@@ -282,7 +274,6 @@ export default class HallScene extends BaseUI {
             if (this.items[list[i].index])
                 this.items[list[i].index].setItemData(list[i]);
         }
-        if(window && window['xxxxx']) window['xxxxx']("6sDpi");
     }
     bPauseAutoCom: boolean = false; //是否暂停自动合成
 	bInAutoCom: boolean = false;     //是否正在自动合成动画
@@ -304,7 +295,6 @@ export default class HallScene extends BaseUI {
 	
 	async start()
 	{
-        WxCenter.aldReport('HomeShow','show');
         this.hidComposeTips();
         HallScene._instance = this;
 		let slots = this.GetGameObject("slots");
@@ -325,7 +315,6 @@ export default class HallScene extends BaseUI {
                    ChickData.user.DropGiftPts.shift();
             }
            //  广告购买成功，因为没有空位未成功添加
-           if(window && window['xxxxx']) window['xxxxx']("hZF2RfaahNHMbEQ7X2ae");
            if(ChickData.user.AdBuyNotDrop.length>0)
             {
                let b= this.buyChick(ChickData.user.AdBuyNotDrop[0],2);
@@ -335,7 +324,6 @@ export default class HallScene extends BaseUI {
 
 		})).repeatForever())
         
-        if(window && window['xxxxx']) window['xxxxx']("cFH6JekkpasTYZZXshHwky3ADdS3TZ");
         ChickData.user.auto_com_time = Math.max(0,ChickData.user.auto_com_time);
         ChickData.user.double_income_time = Math.max(0,ChickData.user.double_income_time);
         ChickData.user.drop_plant_time = Math.max(0,ChickData.user.drop_plant_time);
@@ -487,7 +475,9 @@ export default class HallScene extends BaseUI {
         let curopen = GroundItem.getNeedOpen();
         if(curopen < 0) return;
         let lv = Config_ground[curopen].price;
-        if(lv < ChickData.user.lv) return;
+        // let ulv = ChickData.user.lv
+        let ulv = ChickData.user.getLvlMax()
+        if(lv > ulv) return;
         ChickData.user.slots[curopen] = 1;
         ChickData.save();
         let slots = this.GetGameObject("slots");
@@ -812,6 +802,7 @@ export default class HallScene extends BaseUI {
         var targetpos = this.GetGameObject("node_com").convertToWorldSpaceAR(item.node.position);
         targetpos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(targetpos);
         this.playSkeAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0,20,0)), 1);
+        this.openNewGround()
     }
 
     async updateBuyButton()
@@ -831,7 +822,6 @@ export default class HallScene extends BaseUI {
     }
     //0 coin 1 gem 2 ad 3普通掉落 4小精灵掉落
     public buyChick(lv:number,buytype:number) {
-        if(window && window['xxxxx']) window['xxxxx']("biYwQzHEFs5KKJ23");
         var item: ChickItem = null;
         for (var i = 0; i < 12; ++i) {
             if (ChickData.user.slots[i] == 0) continue;
@@ -981,7 +971,6 @@ export default class HallScene extends BaseUI {
 					node.getComponent(CommonView).setType(EADLAYER.AUTO_COM)
 				})
                 break;
-            if(window && window['xxxxx']) window['xxxxx']("yWXK2GCrckXNNh");
             case "btn_shop":
                ShopView.show();
                 break;
@@ -990,8 +979,6 @@ export default class HallScene extends BaseUI {
                 MsgToast.show("拖动到这里卖出")
                 break;
             case "btn_inviate":
-                // WxCenter.shareAppMessage();
-                WxCenter.aldReport('InvitationClick','click');
                 Utils.createUI("prefab/ShareLayer").then((node:cc.Node)=>{
                     node.getComponent(ShareLayer).setData();
                 })

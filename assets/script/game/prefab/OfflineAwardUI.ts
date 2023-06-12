@@ -67,7 +67,6 @@ export default class OfflineAwardUI extends BaseUI {
                         this.closeUI()
                     }
                 }
-                if(window && window['xxxxx']) window['xxxxx']("bNcyjzSnzsMfJs35C");
                 AdCenter.Instance().play(func,1)
                 break;
         }

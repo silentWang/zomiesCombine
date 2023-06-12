@@ -26,7 +26,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
 var ChickData_1 = require("../../manager/ChickData");
-var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var HallScene_1 = require("../HallScene");
@@ -43,20 +42,14 @@ var FailView = /** @class */ (function (_super) {
         this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5), cc.fadeTo(1, 255)));
         AudioMgr_1.default.Instance().playMX("fail");
         Utils_1.default.playBreath(this.GetGameObject('btn_get'));
-        WxCenter_1.default.aldReport('FailShow', 'show');
     };
     FailView.prototype.setInfo = function (coin) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("fswbt5YFcd5xCdJMdMH7Mj");
         this.coin = coin;
         this.aTobAnim(coin * 1.8);
         // this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     };
-    FailView.prototype.FcMb_xxxx_fun = function () { console.log("CcXaFhTmA53RKRMHjJpQNE2kd"); };
     FailView.prototype.aTobAnim = function (num) {
         var _this = this;
-        if (window && window['xxxxx'])
-            window['xxxxx']("rJJEDED4rWEptMPsAbj");
         var aver = Math.ceil(num / 60);
         var xn = 0;
         this.SetText("lbl_coin", Utils_1.default.formatNumber(0));
@@ -71,8 +64,6 @@ var FailView = /** @class */ (function (_super) {
         this.schedule(cb, 0, 61);
     };
     FailView.prototype.closeUI = function () {
-        if (window && window['xxxxx'])
-            window['xxxxx']("rza6xdb446ZPznaQxG");
         this.shutAnim();
         HallScene_1.default.Instance.createEnemys();
     };
@@ -94,10 +85,11 @@ var FailView = /** @class */ (function (_super) {
                 this.closeUI();
                 break;
             case "btn_get":
-                WxCenter_1.default.aldReport('FailClick', 'click');
-                AdCenter_1.default.Instance().play(function () {
-                    _this.getCoinReward();
-                    _this.closeUI();
+                AdCenter_1.default.Instance().play(function (b) {
+                    if (b) {
+                        _this.getCoinReward();
+                        _this.closeUI();
+                    }
                 }, 1);
                 break;
             case 'btn_normal':

@@ -26,7 +26,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var List_1 = require("../../framwork/List");
 var ChickData_1 = require("../../manager/ChickData");
-var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var Config_1 = require("../Config");
@@ -54,9 +53,6 @@ var ShopView = /** @class */ (function (_super) {
     };
     ShopView.prototype.start = function () {
         var _this = this;
-        if (window && window['xxxxx'])
-            window['xxxxx']("rasjRJpYskKJp7t5f2mQrN");
-        WxCenter_1.default.aldReport('ShopShow', 'show');
         ShopView_1._instance = this.node;
         this.list = Config_1.Config_chick;
         this.reLoad();

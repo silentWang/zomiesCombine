@@ -2,7 +2,6 @@ import BaseUI from "../../framwork/BaseUI";
 import MsgToast from "../../framwork/MsgToast";
 import AdCenter from "../../manager/AdCenter";
 import ChickData from "../../manager/ChickData";
-import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 
@@ -95,22 +94,18 @@ export default class CommonView extends BaseUI {
 
         if (this.type == EADLAYER.AUTO_COM) {
             this.SetText("lbl_effect", "+" + MAX_AUTO_COM_TIME + "分钟");
-            WxCenter.aldReport('AutoShow','show');
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
             this.SetText("lbl_effect", "+" + MAX_DOUBLE_ATT_TIME*60 + "秒");
             this.SetText('lbl_d',`进入打鸡血状态  持续${MAX_DOUBLE_ATT_TIME*60}秒`)
-            WxCenter.aldReport('RageShow','show');
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
             this.SetText("lbl_effect", "+" + MAX_DOUBLE_INCOME_TIME + "分钟");
             if(window && window['xxxxx']) window['xxxxx']("5XByGB");
-            WxCenter.aldReport('DoubleShow','show');
         }
         else if(this.type == EADLAYER.DROP_PLANT)
         {
             this.SetText("lbl_effect", "+" + MAX_DROP_PLANT_TIME + "分钟");
-            WxCenter.aldReport('DropShow','show');
         }
         let {end_time,max} = this.getEMTime();
         let isRunning = end_time > Utils.getServerTime();
@@ -122,7 +117,6 @@ export default class CommonView extends BaseUI {
     {
         let isUse = false;
         if (this.type == EADLAYER.AUTO_COM) {
-            WxCenter.aldReport('AutoClick','click');
             // if (ChickData.user.auto_com_time - Utils.getServerTime() > (MAX_AUTO_COM_TIME - AUTO_COM_TIME) * 60 * 1000) {
             //     MsgToast.show("最大累积时间" + MAX_AUTO_COM_TIME + "分钟");
             //     return;
@@ -134,7 +128,6 @@ export default class CommonView extends BaseUI {
             isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_ATT) {
-            WxCenter.aldReport('RageClick','click');
             // if (ChickData.user.double_att_time - Utils.getServerTime() > (MAX_DOUBLE_ATT_TIME - DOUBLE_ATT_TIME) * 60 * 1000) {
                 // MsgToast.show("最大累积时间" + MAX_DOUBLE_ATT_TIME + "分钟");
                 // return;
@@ -146,7 +139,6 @@ export default class CommonView extends BaseUI {
             isUse = true;
         }
         else if (this.type == EADLAYER.DOUBLE_INCOME) {
-            WxCenter.aldReport('DoubleClick','click');
             // if (ChickData.user.double_income_time - Utils.getServerTime() > (MAX_DOUBLE_INCOME_TIME - DOUBLE_INCOME_TIME) * 60 * 1000) {
                 // MsgToast.show("最大累积时间" + MAX_DOUBLE_INCOME_TIME + "分钟");
                 // return;
@@ -157,16 +149,12 @@ export default class CommonView extends BaseUI {
             isUse = true;
         }
         else if (this.type == EADLAYER.DROP_PLANT) {
-            if(double == 2) {
-                WxCenter.aldReport('DropClick','click');
-            }
             // if (ChickData.user.drop_plant_time - Utils.getServerTime() > (MAX_DROP_PLANT_TIME - DROP_PLANT_TIME) * 60 * 1000) {
             //     MsgToast.show("最大累积时间" + MAX_DROP_PLANT_TIME + "分钟");
             //     return;
             // }
             // if (ChickData.user.drop_plant_time < Utils.getServerTime())
             ChickData.user.drop_plant_time = Utils.getServerTime();
-            if(window && window['xxxxx']) window['xxxxx']("6rMK85kkR2d2pjfFDSztDrjMXJC5cBc");
             ChickData.user.drop_plant_time += DROP_PLANT_TIME * 60 * 1000 * double;
             isUse = true;
         }
@@ -189,7 +177,6 @@ export default class CommonView extends BaseUI {
                 AdCenter.Instance().play((b)=>{
                     if(b) this.addCoin(2);
                 },2);
-                if(window && window['xxxxx']) window['xxxxx']("RdfKGMXYZPH3P7YBnN");
                 break;
             case "btn_normal":
                 this.addCoin(1);

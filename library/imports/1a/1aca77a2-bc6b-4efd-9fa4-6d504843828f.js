@@ -206,8 +206,6 @@ var SignView = /** @class */ (function (_super) {
                     if (b) {
                         ChickData_1.default.user.signinfo.sign_beisu = 2;
                         _this.flayAnim(2);
-                        if (window && window['xxxxx'])
-                            window['xxxxx']("XissQnKkW4J7t8xJBDW3Rpkjd");
                         if (!SignView_1.checkIsToday(ChickData_1.default.user.signinfo.sign_time)) {
                             ChickData_1.default.user.signinfo.sign_index++;
                         }
@@ -218,8 +216,6 @@ var SignView = /** @class */ (function (_super) {
                 break;
             case "btn_3times":
                 AdCenter_1.default.Instance().play(function (b) {
-                    if (window && window['xxxxx'])
-                        window['xxxxx']("yyFyEHEwzt");
                     if (b) {
                         ChickData_1.default.user.signinfo.sign_beisu = 3;
                         _this.flayAnim(3);
@@ -230,8 +226,6 @@ var SignView = /** @class */ (function (_super) {
                         _this.updateUI();
                     }
                 }, 1);
-                if (window && window['xxxxx'])
-                    window['xxxxx']("en67ZtrmG5i4R5f4RA2xXctkEBXa55");
                 break;
             case "btn_sign":
                 ChickData_1.default.user.signinfo.sign_beisu = 1;

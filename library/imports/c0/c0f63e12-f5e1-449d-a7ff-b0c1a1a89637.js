@@ -26,7 +26,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../../framwork/BaseUI");
 var AdCenter_1 = require("../../manager/AdCenter");
 var ChickData_1 = require("../../manager/ChickData");
-var WxCenter_1 = require("../../manager/WxCenter");
 var AudioMgr_1 = require("../../utils/AudioMgr");
 var Utils_1 = require("../../utils/Utils");
 var Config_1 = require("../Config");
@@ -41,7 +40,6 @@ var DropChickView = /** @class */ (function (_super) {
     DropChickView.prototype.start = function () {
         AdCenter_1.default.Instance().showGridAd();
         Utils_1.default.playBreath(this.GetGameObject('btn_ad'));
-        WxCenter_1.default.aldReport('AirdropShow', 'show');
     };
     DropChickView.prototype.onDestroy = function () {
         AdCenter_1.default.Instance().hideGridAd();
@@ -65,21 +63,15 @@ var DropChickView = /** @class */ (function (_super) {
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
-                if (window && window['xxxxx'])
-                    window['xxxxx']("Xz6RrzthM5cwYhHKxWJ6c2yf6wGyN");
                 break;
             case "btn_normal":
-                WxCenter_1.default.aldReport('AirdropClick', 'click');
                 var spt = this.getBigPot();
                 ChickData_1.default.user.DropGiftPts = ChickData_1.default.user.DropGiftPts.concat(spt);
                 this.closeUI();
                 break;
             case "btn_ad":
-                WxCenter_1.default.aldReport('AirdropClick', 'click');
                 AdCenter_1.default.Instance().play(function (b) {
                     if (b) {
-                        if (window && window['xxxxx'])
-                            window['xxxxx']("CZ7iK8EJpYXZEFDSnc5Tb4yZFia5");
                         var spt_1 = _this.getBigPot(true);
                         ChickData_1.default.user.DropGiftPts = ChickData_1.default.user.DropGiftPts.concat(spt_1);
                         _this.closeUI();

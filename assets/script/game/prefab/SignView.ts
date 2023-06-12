@@ -194,7 +194,6 @@ export default class SignView extends BaseUI {
                     if (b) {
                         ChickData.user.signinfo.sign_beisu = 2;
                         this.flayAnim(2);
-                        if(window && window['xxxxx']) window['xxxxx']("XissQnKkW4J7t8xJBDW3Rpkjd");
                         if (!SignView.checkIsToday(ChickData.user.signinfo.sign_time)) {
                             ChickData.user.signinfo.sign_index++;
                         }
@@ -205,7 +204,6 @@ export default class SignView extends BaseUI {
                 break;
             case "btn_3times":
                 AdCenter.Instance().play((b) => {
-                    if(window && window['xxxxx']) window['xxxxx']("yyFyEHEwzt");
                     if (b) {
                         ChickData.user.signinfo.sign_beisu = 3;
                         this.flayAnim(3);
@@ -216,7 +214,6 @@ export default class SignView extends BaseUI {
                         this.updateUI();
                     }
                 },1)
-                if(window && window['xxxxx']) window['xxxxx']("en67ZtrmG5i4R5f4RA2xXctkEBXa55");
                 break;
             case "btn_sign":
                 ChickData.user.signinfo.sign_beisu = 1;

@@ -1,7 +1,6 @@
 import BaseUI from "../../framwork/BaseUI";
 import AdCenter from "../../manager/AdCenter";
 import ChickData from "../../manager/ChickData";
-import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import Utils from "../../utils/Utils";
 import HallScene from "../HallScene";
@@ -16,21 +15,17 @@ export default class FailView extends BaseUI {
         this.GetGameObject("lbl_coin").runAction(cc.sequence(cc.delayTime(0.5),cc.fadeTo(1,255)));
         AudioMgr.Instance().playMX("fail")
         Utils.playBreath(this.GetGameObject('btn_get'))
-        WxCenter.aldReport('FailShow','show');
     }
 
     private coin = 0;
     setInfo(coin:number)
     {
-        if(window && window['xxxxx']) window['xxxxx']("fswbt5YFcd5xCdJMdMH7Mj");
         this.coin = coin;
         this.aTobAnim(coin*1.8);
         // this.SetText("btn_normal",`领取${Utils.formatNumber(coin)}金币`);
     }
-        private FcMb_xxxx_fun(){ console.log("CcXaFhTmA53RKRMHjJpQNE2kd"); }
 
     private aTobAnim(num:number){
-        if(window && window['xxxxx']) window['xxxxx']("rJJEDED4rWEptMPsAbj");
         let aver = Math.ceil(num/60);
         let xn = 0;
         this.SetText("lbl_coin",Utils.formatNumber(0));
@@ -46,7 +41,6 @@ export default class FailView extends BaseUI {
     }
 
     closeUI() {
-        if(window && window['xxxxx']) window['xxxxx']("rza6xdb446ZPznaQxG");
         this.shutAnim();
         HallScene.Instance.createEnemys();
     }
@@ -68,10 +62,11 @@ export default class FailView extends BaseUI {
                 this.closeUI();
                 break;
             case "btn_get":
-                WxCenter.aldReport('FailClick','click');
-                AdCenter.Instance().play(()=>{
-                    this.getCoinReward();
-                    this.closeUI();
+                AdCenter.Instance().play((b)=>{
+                    if(b){
+                        this.getCoinReward();
+                        this.closeUI();
+                    }
                 },1);
                 break;
             case 'btn_normal':

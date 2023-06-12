@@ -95,8 +95,6 @@ var OfflineAwardUI = /** @class */ (function (_super) {
                         _this.closeUI();
                     }
                 };
-                if (window && window['xxxxx'])
-                    window['xxxxx']("bNcyjzSnzsMfJs35C");
                 AdCenter_1.default.Instance().play(func, 1);
                 break;
         }

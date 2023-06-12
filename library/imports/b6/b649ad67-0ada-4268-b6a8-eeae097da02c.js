@@ -62,7 +62,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var BaseUI_1 = require("../framwork/BaseUI");
 var MsgToast_1 = require("../framwork/MsgToast");
 var ChickData_1 = require("../manager/ChickData");
-var WxCenter_1 = require("../manager/WxCenter");
 var AudioMgr_1 = require("../utils/AudioMgr");
 var Utils_1 = require("../utils/Utils");
 var Config_1 = require("./Config");
@@ -239,15 +238,11 @@ var HallScene = /** @class */ (function (_super) {
                     isStop = true;
                     ChickData_1.default.user.wave = 1;
                     ChickData_1.default.user.lv++;
-                    this.openNewGround();
                     ChickData_1.default.save(true);
                     var key = ChickData_1.default.user.lv + "_" + ChickData_1.default.user.wave;
                     this.wave_info = Config_1.User_level[key];
-                    WxCenter_1.default.aldLevelReport(ChickData_1.default.user.lv);
                 }
                 else {
-                    if (window && window['xxxxx'])
-                        window['xxxxx']("aZdRiB");
                     AudioMgr_1.default.Instance().playMX("win_wave");
                     // this.showImage("texture/success");
                     this.playSkeAni("spine:other/shengjichenggong", "effect", this.node, cc.v3(0, 150, 0), 2);
@@ -268,8 +263,6 @@ var HallScene = /** @class */ (function (_super) {
         //通关后就一直读最后一关
         if (!this.wave_info) {
             var key_1 = 60 + "_" + ChickData_1.default.user.wave;
-            if (window && window['xxxxx'])
-                window['xxxxx']("ArRzG2WMzEmMZfjiWa8S6KasHz");
             this.wave_info = Config_1.User_level[key_1];
         }
         if (ChickData_1.default.user.wave == this.wave_info[2]) {
@@ -279,8 +272,6 @@ var HallScene = /** @class */ (function (_super) {
             })));
         }
         else if (ChickData_1.default.user.wave == 1) {
-            if (window && window['xxxxx'])
-                window['xxxxx']("B3AEM7J75BWdr3sQ7myfae");
             AudioMgr_1.default.Instance().playMusic("BGM1");
         }
         //创建怪物
@@ -307,8 +298,6 @@ var HallScene = /** @class */ (function (_super) {
             _loop_1(i);
         }
         //关卡信息
-        if (window && window['xxxxx'])
-            window['xxxxx']("hEXSmcDd57zwYGnDHTZrKT");
         this.SetText("lbl_cur_lv", ChickData_1.default.user.lv + "");
         this.SetText("lbl_waves", ChickData_1.default.user.wave + "/" + this.wave_info[2]);
         this.SetText("lbl_pre_lv", (ChickData_1.default.user.lv - 1) + "");
@@ -327,8 +316,6 @@ var HallScene = /** @class */ (function (_super) {
                 list.splice(i, 1);
                 console.warn("错误...修正");
                 continue;
-                if (window && window['xxxxx'])
-                    window['xxxxx']("jYEpCE24wWZ2ZGkW");
             }
             m[list[i].index] = 1;
         }
@@ -336,8 +323,6 @@ var HallScene = /** @class */ (function (_super) {
             if (this.items[list[i].index])
                 this.items[list[i].index].setItemData(list[i]);
         }
-        if (window && window['xxxxx'])
-            window['xxxxx']("6sDpi");
     };
     HallScene.prototype.getItemByPos = function (pos) {
         for (var i = 0; i < this.items.length; ++i) {
@@ -359,7 +344,6 @@ var HallScene = /** @class */ (function (_super) {
             return __generator(this, function (_d) {
                 switch (_d.label) {
                     case 0:
-                        WxCenter_1.default.aldReport('HomeShow', 'show');
                         this.hidComposeTips();
                         HallScene_1._instance = this;
                         slots = this.GetGameObject("slots");
@@ -382,16 +366,12 @@ var HallScene = /** @class */ (function (_super) {
                                     ChickData_1.default.user.DropGiftPts.shift();
                             }
                             //  广告购买成功，因为没有空位未成功添加
-                            if (window && window['xxxxx'])
-                                window['xxxxx']("hZF2RfaahNHMbEQ7X2ae");
                             if (ChickData_1.default.user.AdBuyNotDrop.length > 0) {
                                 var b = _this.buyChick(ChickData_1.default.user.AdBuyNotDrop[0], 2);
                                 if (b)
                                     ChickData_1.default.user.AdBuyNotDrop.shift();
                             }
                         })).repeatForever());
-                        if (window && window['xxxxx'])
-                            window['xxxxx']("cFH6JekkpasTYZZXshHwky3ADdS3TZ");
                         ChickData_1.default.user.auto_com_time = Math.max(0, ChickData_1.default.user.auto_com_time);
                         ChickData_1.default.user.double_income_time = Math.max(0, ChickData_1.default.user.double_income_time);
                         ChickData_1.default.user.drop_plant_time = Math.max(0, ChickData_1.default.user.drop_plant_time);
@@ -534,7 +514,9 @@ var HallScene = /** @class */ (function (_super) {
         if (curopen < 0)
             return;
         var lv = Config_1.Config_ground[curopen].price;
-        if (lv < ChickData_1.default.user.lv)
+        // let ulv = ChickData.user.lv
+        var ulv = ChickData_1.default.user.getLvlMax();
+        if (lv > ulv)
             return;
         ChickData_1.default.user.slots[curopen] = 1;
         ChickData_1.default.save();
@@ -852,6 +834,7 @@ var HallScene = /** @class */ (function (_super) {
         var targetpos = this.GetGameObject("node_com").convertToWorldSpaceAR(item.node.position);
         targetpos = this.GetGameObject("item_drag").parent.convertToNodeSpaceAR(targetpos);
         this.playSkeAni("spine:other/effect_hecheng", "effect", this.GetGameObject("item_drag").parent, targetpos.add(cc.v3(0, 20, 0)), 1);
+        this.openNewGround();
     };
     HallScene.prototype.updateBuyButton = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -884,8 +867,6 @@ var HallScene = /** @class */ (function (_super) {
     };
     //0 coin 1 gem 2 ad 3普通掉落 4小精灵掉落
     HallScene.prototype.buyChick = function (lv, buytype) {
-        if (window && window['xxxxx'])
-            window['xxxxx']("biYwQzHEFs5KKJ23");
         var item = null;
         for (var i = 0; i < 12; ++i) {
             if (ChickData_1.default.user.slots[i] == 0)
@@ -1037,8 +1018,6 @@ var HallScene = /** @class */ (function (_super) {
                     node.getComponent(CommonView_1.default).setType(CommonView_1.EADLAYER.AUTO_COM);
                 });
                 break;
-                if (window && window['xxxxx'])
-                    window['xxxxx']("yWXK2GCrckXNNh");
             case "btn_shop":
                 ShopView_1.default.show();
                 break;
@@ -1047,8 +1026,6 @@ var HallScene = /** @class */ (function (_super) {
                     MsgToast_1.default.show("拖动到这里卖出");
                 break;
             case "btn_inviate":
-                // WxCenter.shareAppMessage();
-                WxCenter_1.default.aldReport('InvitationClick', 'click');
                 Utils_1.default.createUI("prefab/ShareLayer").then(function (node) {
                     node.getComponent(ShareView_1.default).setData();
                 });

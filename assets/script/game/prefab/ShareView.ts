@@ -7,7 +7,6 @@
 
 import BaseUI from "../../framwork/BaseUI";
 import ChickData from "../../manager/ChickData";
-import WxCenter from "../../manager/WxCenter";
 import AudioMgr from "../../utils/AudioMgr";
 import NumberUtils from "../../utils/NumberUtils";
 import Utils from "../../utils/Utils";
@@ -42,7 +41,6 @@ export default class ShareView extends BaseUI {
     onUIClicked(event, customEventData) {
         var btnName = event.target.name;
         AudioMgr.Instance().playMX("click");
-        if(window && window['xxxxx']) window['xxxxx']("ZQckt3e7wXz8ApzjWaTD858");
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
@@ -59,17 +57,6 @@ export default class ShareView extends BaseUI {
                     }
                     this.closeUI();
                 });
-                // WxCenter.shareAppMessage(()=>{
-                //     if(ChickData.user.share_times > 0){
-                //         ChickData.user.share_times--;
-                //         AudioMgr.Instance().playMX("coin");
-                //         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
-                //             if(b) ChickData.user.coin += this.coinVal;
-                //             ChickData.save();
-                //         })
-                //     }
-                //     this.closeUI();
-                // });
                 break;
             }
     }

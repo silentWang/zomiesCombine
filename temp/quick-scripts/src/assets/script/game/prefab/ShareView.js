@@ -60,8 +60,6 @@ var ShareView = /** @class */ (function (_super) {
         var _this = this;
         var btnName = event.target.name;
         AudioMgr_1.default.Instance().playMX("click");
-        if (window && window['xxxxx'])
-            window['xxxxx']("ZQckt3e7wXz8ApzjWaTD858");
         switch (btnName) {
             case "btn_close":
                 this.closeUI();
@@ -79,17 +77,6 @@ var ShareView = /** @class */ (function (_super) {
                     }
                     _this.closeUI();
                 });
-                // WxCenter.shareAppMessage(()=>{
-                //     if(ChickData.user.share_times > 0){
-                //         ChickData.user.share_times--;
-                //         AudioMgr.Instance().playMX("coin");
-                //         Utils.flyAnim(0,this.node,"icon_coin",Utils.getRandomInt(5,10),100,(b)=>{
-                //             if(b) ChickData.user.coin += this.coinVal;
-                //             ChickData.save();
-                //         })
-                //     }
-                //     this.closeUI();
-                // });
                 break;
         }
     };

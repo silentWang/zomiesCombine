@@ -2,11 +2,10 @@ import BaseUI from "./framwork/BaseUI";
 import AdCenter from "./manager/AdCenter";
 import ChickData from "./manager/ChickData";
 import PoolMgr from "./manager/PoolMgr";
-import WxCenter from "./manager/WxCenter";
 import AudioMgr from "./utils/AudioMgr";
 import Utils from "./utils/Utils";
 
-const wx = window["wx"] || window["tt"];
+const dyTT = window["tt"];
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -30,20 +29,16 @@ export default class Loading extends BaseUI {
         }
     }
 
-    start(){
-        WxCenter.init();
-        WxCenter.aldReport('LoadingShow','show');
-        AdCenter.Instance().showInterstitialAd();
-    }
+    start(){}
 
     async onLoad() {
         cc.debug.setDisplayStats(false);
         cc.game.setFrameRate(60);
 
         super.onLoad();
-        if(wx) {
-            wx.setPreferredFramesPerSecond(60);
-            wx.setKeepScreenOn({ keepScreenOn: true });
+        if(dyTT) {
+            dyTT.setPreferredFramesPerSecond(60);
+            dyTT.setKeepScreenOn({ keepScreenOn: true });
         }
         
         PoolMgr.Instance().loadPrefabs()
